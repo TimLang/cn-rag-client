@@ -1,17 +1,27 @@
-# This file controls the colors used to highlight messages in the
-# console.
-# Valid colors are:
-# black, darkgrey, grey, white
-# red, darkred, yellow, brown, green, darkgreen,
-# cyan, darkcyan, blue, darkblue, magenta, darkmagenta,
-# default
-# 
-# Format:
-# [Message type]
-# <message domain> [foreground color][/background color]
+# consolecolors.txt：终端机消息正文颜色设定文件
 
-# Set to 0 to disable colors
+# 本档案控制着终端机里文字讯息的颜色。
+# 若您对终端机的文字讯息颜色不满意，可于此处自己定义。
+#
+# 中文参考数据
+# 
+# 有效的颜色包括，设定时需使用英文颜色名：
+# black(黑色)、darkgrey(深灰色)、grey(灰色)、white(白色)
+# red(红色)、darkred(暗红色)
+# magenta(洋红色)、darkmagenta(紫色)
+# yellow(黄色)、brown(棕色)
+# green(绿色)、darkgreen(暗绿色)
+# cyan(青色)、darkcyan(暗青色)
+# blue(蓝色)、darkblue(暗蓝色)
+# default(预设色，通常为灰色)
+# 
+# 格式：
+# [讯息类型]
+# <讯息域> [前景色][/背景色]
+
+
 useColors 1
+# 是否使用自定义颜色？此选项若为 0，则会取消颜色的使用
 
 [message]
 attackMon cyan 
@@ -20,7 +30,6 @@ attacked magenta
 attackedMiss magenta 
 
 connection darkgreen
-startup darkgreen
 menu yellow
 drop blue
 useItem blue

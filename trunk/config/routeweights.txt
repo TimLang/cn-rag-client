@@ -1,36 +1,53 @@
+# Routeweights.txt：偏好地图路径设定文件
 #
-# Map routing weights
+# 本档可藉由指定地图的「额外格子数」，来设定偏好地图路径。
+# 偏好地图路径：指「补给点」到「练功地图」之间要路过的地图。
 #
-# This control file allows you to modify Kore's map routing by specifying
-# weights for maps that Kore is walking through to reach the destination.
-# Kore generally tries to use the shortest path to get to the desired
-# destination map. The path is counted in number of steps (tiles) the
-# character would have to walk.
-# Map routing weights can be seen as additional steps that Kore thinks
-# it would have to do on a specific map. Positive weights makes Kore
-# avoid a map, negative weights makes it prefer a map.
+# 中文参考数据
 #
-# Example:
-# Specifying a weight of 500 for prt_fild08 makes Kore avoid walking
-# through prt_fild08, as long as there is an alternative path that has
-# not more than 500 additional steps.
-# Therefore you could say Kore prefers to walk up to 500 additional steps
-# rather than walking through prt_fild08
+# 格式：
+# 英文地图名称 <额外格子数>
 #
-# Using a weight of 10000 makes it pretty sure to completely avoid a map.
+# 说明：
+# 1.<额外格子数>：这是一个用来骗 kore 的数字，如果要走这张地图的话，
+#                 它需要走多少「额外格子数」（可为负数）。
+#
+# 2.正数的「额外格子数」让 Kore 避开这张地图，因为它讲求效率，不走冤枉路。
+#   负数的「额外格子数」让 Kore 喜欢走这张地图，因为少走很多路。 
+#
+# 3.此文件的设定逻辑比较奇怪，不是用直接指定的，
+#   而是用「额外格子数」来骗过 kore，
+#   但了解概念后，会发觉这样其实也很容易设定。
+#   
+# 范例：
+# 在免服波利的斐扬附近有一张地图 pay_fild07，原先那地图的怪并不强，
+# 却总是被用变怪夹弄出一堆强怪，凡走过那张地图必趴。
+# 若挂在那附近，想避免走过这变态地图，可如此设定：
+#  
+# pay_fild07 500
+# 
+# 这会让 Kore 避开 pay_fild07，而选择附近的地图路过，
+# 因为「它」被骗，误以为若走 pay_fild07 的话，需多走 500 格，
+# 而选择附近地图路过的话，则不用走到 500 格那么多。
+#
+# 但假如走附近地图真的超过 500 格怎办？
+#
+# 由于这个「额外格子数」是可以自订的， 
+# 「额外格子数」若设为 10000，即可明确地保证绝不走这张地图，
+# 因为若走这张地图，要走上1万格，等于可以绕 RO 世界好几圈，
+# 自然任何其它替代路径都会比它省时。 
+#
+# 「额外格子数」也可以是负的，例如 -5000，
+# 这可以骗过 kore 若走这张地图，可少走 5千格，
+# 那「它」肯定会走这张地图。
+#
+#
+# 设定诀窍：
+# 1.偏好的地图，「额外格子数」全设成-负数即可，例如 -5000。
+# 2.危险的地图，经过必趴的地图，可设 10000，代表绝不会去走。
 #
 
-# Portal weight. This can be used to make Kore avoid/prefer walking through
-# map portals. Only change this, if you exactly know what you're doing!
-PORTAL 20
+############################
+#     档案内容由此开始     #
+############################
 
-# NPC weight. This can be used to avoid/prefer going to the destination
-# by using a NPC. Only change this, if you exactly know what you're doing!
-NPC 200
-
-# Maps where you can exit to the same place you came from,
-# which confuses routing if added to portals thoughtlessly.
-bat_room 10000
-moc_para01 10000
-
-# Add your map weights here. Format: <mapname> <weight>
