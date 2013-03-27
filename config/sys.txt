@@ -1,11 +1,16 @@
-###### Localization settings ######
-locale
+﻿# sys.txt：OpenKore 系统设定文件
+
+# 此设定文件是在更改一些 OpenKore 程序的执行参数。
+# 一般情况下，无须更改，除非您懂这些设定的意义。
+
+###### 本地化设定 ######
+locale zh_CN
 
 ###### Localization compatibility ######
 # Enable to make Kore compatible with old 2.0 configs.
 locale_compat 0
 
-###### Wx interface settings ######
+###### Wx 接口的设定 ######
 wxHideConsole 1
 
 
@@ -19,7 +24,7 @@ bus_server_host
 bus_server_port
 
 
-###### Vx interface settings ######
+###### Vx 接口的设定 ######
 panelTwo_domains publicchat, pm, guildchat, partychat, pm/sent, list, info, selfchat, schat, error, warning
 panelOne_lineLimit 900
 panelTwo_lineLimit 100
@@ -36,24 +41,30 @@ panelTwo_side bottom
 panelTwo_fontsize 8
 
 
-###### Plugin settings ######
-# loadPlugins <0|1|2|3>
-#   this option controls loading of plugins at startup or when the "plugin load all" command is used.
-#   0 : do not load plugins
-#   1 : load all plugins
-#   2 : only load plugins that are listed in loadPlugins_list
-#   3 : load all plugins except those listed in skipPlugins_list
+###### Plugin 扩充套件的设定 ######
+
+# loadPlugins <0|1|2>
+#   这个选项用来控制加载「plugins 扩充套件」的方式。
+#   包括 kore 启动时的自动加载，和 "plugin load all" 指令被下达时。
+#   0 : 不载入 plugins。
+#   1 : 载入所有 plugins。
+#   2 : 只加载列于下个选项 loadPlugins_list 列表中的 plugins。
 loadPlugins 1
 
 # loadPlugins_list <list>
-#   if loadPlugins is set to 2, this comma-separated list of plugin names (filename without the extension)
-#   specifies which plugin files to load at startup or when the "plugin load all" command is used.
+#   假如上个选项是设定 2，此处填入要加载的 plugins 名称 （多个用半角逗号隔开）。
+
 loadPlugins_list macro
 
 # skipPlugins_list <list>
 #   if loadPlugins is set to 3, this comma-separated list of plugin names (filename without the extension)
 #   specifies which plugin files to skip at startup or when the "plugin load all" command is used.
 skipPlugins_list
+
+# 注：使用 OpenKore，您应该检查 plugins 数据夹，有无被放了不明的 plugins，
+#     不明的 plugins，代表可能含有木马，
+#     可于此处限制它们的执行，只让您确定没有危险的 plugins 才允许执行（例如 macros 宏）
+#     又或者，把那些不明 plugins 删除掉会更安全。
 
 ###### Miscellaneous ######
 sendAnonymousStatisticReport 0

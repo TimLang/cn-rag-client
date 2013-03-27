@@ -1,54 +1,32 @@
-# avoid.txt: Avoid certain players
-# WARNING: The commented players and IDs here are for iRO GMs/bot-hunters and are probably outdated.
+# avoid.txt：回避特定玩家设定档
 
-# Format: <name> (TAB(s)) <disconnect when in sight> <teleport when in sight> <disconnect on chat>
+# 要让本档案运作，config.txt 里的 avoidList 请设为 1 (默认值）
+
+############################
+#   以玩家名字为侦测依据   #
+############################
+
+# 格式: <玩家名字> (TAB(s)) <当玩家在视野范围中则断线> <当玩家在视野范围中则瞬移> <当玩家说话时则断线>
+
 [Players]
-# Examples:
-[GM]Example		1 0 1
-# Sir Kills A Lot		1 0 1
-# GOD-POING		1 0 1
-# Petite Christy		1 0 1
-# My Christy		1 0 1
-# pusher			1 0 1
-# Aerok			1 0 1
-# Newbie			1 0 1
-# Queenstown		1 0 1
-# karlina			1 0 1
-# Style			1 0 1
-# -Aerok-			1 0 1
-# Kross			1 0 1
-# ~Jinx~			1 0 1
-# Rose			1 0 1
-# Ebi-chu			1 0 1
-# MeloColmECA		1 0 1
-# Leileil			1 0 1
-# Angel			1 0 1
+GM01	1 0 1
+GM02	1 0 1
+GM03	1 0 1
+
+############################
+#     以 UID 为侦测依据    #
+############################
+
+# 格式: <玩家识别码> (TAB(s)) <当玩家在视野范围中则断线> <当玩家在视野范围中则瞬移>
+
+# UID = 服务器中每位玩家的唯一识别码。
+# 与上面一样，但使用玩家的 UID 识别码而非他们的名字来办别。
+# 此处没有 <当玩家说话时则断线> 的选项。
+# 以下数据为通过对游戏主程序数据文件 data.grf 解压缩后里面寻得，疑似 GM 化身之玩家识别码。
 
 [ID]
-# Same as above, but uses player IDs instead of names
-# There is no disconnect on chat for this section.
-# Examples:
-000001		1 0
-# 100001		1 0
-# 100002		1 0
-# 100003		1 0
-# 231656		1 0
-# 483461		1 0
-# 483502		1 0
-# 483527		1 0
-# 527195		1 0
-# 527197		1 0
-# 527198		1 0
-# 527199		1 0
-# 527206		1 0
-# 527207		1 0
-# 527210		1 0
-# 543887		1 0
-# 650874		1 0
-# 650882		1 0
-# 650884		1 0
-# 650886		1 0
-# 650887		1 0
-# 527205		1 0
-# 483471		1 0
-# 527211		1 0
+100001		1 0
+100002		1 0
+100003		1 0
+
+

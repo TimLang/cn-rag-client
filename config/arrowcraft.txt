@@ -1,15 +1,21 @@
-# Archers have the special skill Arrow Craft, which allows you to create
-# arrows using certain items.
-# If you want Kore to automatically create arrows with Arrow Craft, then
-# you can do that by editing this file.
+# arrowcraft.txt：自动制作箭矢设定文件 (弓手系列专用)
 #
-# In this file, specify the ingredients that you need to create arrows.
-# The format is as follows:
-# (item name) (amount)
+# 弓手系有一个特殊的技能「制作箭」，此技能可让你用某些物品来制造箭矢。
+# 假如您想要 Kore 自动地制造箭矢，那么您可以藉由编辑本档案来达成。
 #
-# For example:
-# Red Blood 1
-# Garlet
+# 本档案中，请具体指定您要用来制造的原料。
+# 格式如下：
+# <物品名称> [每次制作使用的数量]
 #
-# This will allow Kore to create Fire Arrows and Iron Arrows by using
-# the above items.
+# 范例：
+# 火灵矿石 1
+# 剎勒空结晶 
+#
+# 这将会允许 Kore 使用以上的物品来制造火箭矢与银箭矢。
+# 数量若无指定，代表制作身上持有该物品的最大量。
+# 若制作出来箭矢数量超过人物本身负重量，则会制作失败。
+
+############################
+#     档案内容由此开始     #
+############################
+
