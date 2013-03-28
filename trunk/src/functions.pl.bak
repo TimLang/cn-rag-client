@@ -72,7 +72,7 @@ sub mainLoop {
 
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
-		sleep(10);
+		sleep(100);
 		loadPlugins();
 		Log::message("\n");
 		Plugins::callHook('start');
