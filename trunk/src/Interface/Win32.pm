@@ -37,7 +37,7 @@ sub new {
 	my $class = shift;
 	my $self = {
 		mw => undef,
-		default_font=>"MS Sans Serif",
+		default_font=>"宋体",
 		r_field => undef,
 	};
 
