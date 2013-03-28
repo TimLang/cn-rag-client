@@ -1,29 +1,38 @@
-.PHONY: all clean dist bindist test
+PERL=perl
+CC=gcc
+CFLAGS=-Wall -Wno-unused -O3 -funroll-loops -finline-functions -march=i586 -mcpu=i686
 
-# NOTE TO DEVELOPERS:
-# We use the SCons build system (http://www.scons.org/). This makefile is
-# just a wrapper around it.
-#
-# The real build system definitions are in the file SConstruct. If you need
-# to change anything, edit SConstruct (or SConscript in the subfolders).
-#
-# If you experience any build problems, read this web page:
-# http://wiki.openkore.com/index.php/How_to_run_OpenKore
+CXX=g++
+CXXFLAGS=-Wall -O3 -funroll-loops -finline-functions -march=i586 -mcpu=i686
 
-all:
-	@python src/scons-local-2.0.1/scons.py || echo -e "\e[1;31mCompilation failed. Please read http://wiki.openkore.com/index.php/How_to_run_OpenKore for help.\e[0m"
+VERSION=1.2.0
+DISTNAME=openkore-$(VERSION)
+DISTFILES=DevelopersNotes.txt Inject.cpp Tools.cpp Makefile Makefile.win32\
+	News.txt Inject.def Tools.def openkore.pl functions.pl\
+	Tools_wrap.c Tools.pm\
+	Input.pm Modules.pm Utils.pm Log.pm Settings.pm
+
+.PHONY: all clean dist distdir
+
+all: Tools.so
+
+Tools.so: Tools.cpp Tools_wrap.o
+	$(CXX) -shared -fPIC $(CXXFLAGS) Tools.cpp Tools_wrap.o -o Tools.so
+
+Tools_wrap.o: Tools_wrap.c
+	@# Autodetect Perl header directory
+	@PERLDIR=`$(PERL) -e 'use Config; print "-I" . $$Config{"installarchlib"};'`; \
+	echo $(CC) -D_LARGEFILE64_SOURCE $(CFLAGS) "$$PERLDIR/CORE" -c Tools_wrap.c -o Tools_wrap.o; \
+	$(CC) -D_LARGEFILE64_SOURCE $(CFLAGS) "$$PERLDIR/CORE" -c Tools_wrap.c -o Tools_wrap.o
+
+distdir:
+	rm -rf $(DISTNAME)
+	mkdir $(DISTNAME)
+	cp $(DISTFILES) $(DISTNAME)/
+
+dist: distdir
+	tar -czf $(DISTNAME).tar.gz $(DISTNAME)
+	rm -rf $(DISTNAME)
 
 clean:
-	python src/scons-local-2.0.1/scons.py -c
-
-dist:
-	bash makedist.sh
-
-bindist:
-	bash makedist.sh --bin
-
-test:
-	perl openkore.pl --control=../control --tables=../tables --fields=../fields $$ARGS
-
-doc:
-	cd src/doc && ./createdoc.pl
+	rm -f Tools.so Tools_wrap.o $(DISTNAME.zip)
