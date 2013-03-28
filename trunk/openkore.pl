@@ -82,7 +82,6 @@ sub __start {
 	use Utils::Benchmark;
 	use Utils::HttpReader;
 	use Utils::Whirlpool;
-	use Poseidon::Client;
 	Modules::register(qw/Utils FileParsers
 		Network::Receive Network::Send Misc AI AI::CoreLogic
 		AI::Attack AI::Slave AI::Slave::Homunculus AI::Slave::Mercenary
