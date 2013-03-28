@@ -766,7 +766,7 @@ sub processTake {
 			my $direction;
 			getVector(\%vec, $item->{pos}, $myPos);
 			$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
-			$messageSender->sendLook($direction, 0) if ($direction != $char->{look}{body});
+			$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); ÔÝÊ±×¢ÊÍµô
 			$messageSender->sendTake($item->{ID});
 			$timeout{ai_take}{time} = time;
 		}
