@@ -52,6 +52,8 @@ use constant {
 
 our $state;
 
+
+
 sub mainLoop {
 	Benchmark::begin('mainLoop') if DEBUG;
 	$state = STATE_LOAD_PLUGINS if (!defined $state);
