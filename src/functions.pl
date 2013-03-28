@@ -426,7 +426,7 @@ sub processServerSettings {
 		exit;
 	}
 	
-	foreach my $serverOption ('serverType', 'chatLangCode', 'storageEncryptKey', 'gameGuard', 'charBlockSize',
+	foreach my $serverOption ('serverType', 'chatLangCode', 'storageEncryptKey', 'charBlockSize',
 				'paddedPackets', 'paddedPackets_attackID', 'paddedPackets_skillUseID',
 				'mapServer_ip', 'mapServer_port') {
 		if ($master->{$serverOption} ne '' && $config{$serverOption} ne $master->{$serverOption}) {
@@ -716,16 +716,6 @@ sub mainLoop_initialized {
 		$net->serverSend($_) for $messageSender->process(
 			$outgoingClientMessages, $clientPacketHandler
 		);
-	}
-
-	# GameGuard support
-	if ($config{gameGuard} && ($net->version != 1 || ($net->version == 1 && $config{gameGuard} eq '2'))) {
-		my $result = Poseidon::Client::getInstance()->getResult();
-		if (defined($result)) {
-			debug "Received Poseidon result.\n", "poseidon";
-			$messageSender->encryptMessageID(\$result, unpack("v", $result));
-			$net->serverSend($result);
-		}
 	}
 
 	Benchmark::end("mainLoop_part1") if DEBUG;

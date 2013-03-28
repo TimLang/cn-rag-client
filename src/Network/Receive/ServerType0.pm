@@ -319,7 +319,6 @@ sub new {
 		'0223' => ['upgrade_message', 'a4 v', [qw(type itemID)]],
 		'0224' => ['taekwon_rank', 'V2', [qw(type rank)]],
 		'0226' => ['top10_taekwon_rank'],
-		'0227' => ['gameguard_request'],
 		'0229' => ['character_status', 'a4 v2 V C', [qw(ID opt1 opt2 option stance)]],
 		'022A' => ['actor_exists', 'a4 v3 V v10 a4 a2 v V C2 a3 C3 v',		[qw(ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords unknown1 unknown2 act lv)]], # standing
 		'022B' => ['actor_connected', 'a4 v3 V v10 a4 a2 v V C2 a3 C2 v',		[qw(ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords unknown1 unknown2 lv)]], # spawning
@@ -345,7 +344,6 @@ sub new {
 		'0255' => ['mail_setattachment', 'v C', [qw(index fail)]],
 		'0256' => ['auction_add_item', 'v C', [qw(index fail)]],
 		'0257' => ['mail_delete', 'V v', [qw(mailID fail)]],
-		'0259' => ['gameguard_grant', 'C', [qw(server)]],
 		'025A' => ['cooking_list', 'v', [qw(type)]],
 		'025D' => ['auction_my_sell_stop', 'V', [qw(flag)]],
 		'025F' => ['auction_windows', 'V C4 v', [qw(flag unknown1 unknown2 unknown3 unknown4 unknown5)]],
@@ -371,9 +369,6 @@ sub new {
 		'029B' =>  ['mercenary_init', 'a4 v8 Z24 v V5 v V2 v',	[qw(ID atk matk hit critical def mdef flee aspd name level hp hp_max sp sp_max contract_end faith summons kills attack_range)]],
 		'029D' => ['skills_list'], # mercenary skills
 		'02A2' => ['stat_info', 'v V', [qw(type val)]], # was "mercenary_param_change"
-		# tRO HShield packet challenge.
-		# Borrow sub gameguard_request because it use the same mechanic.
-		'02A6' => ['gameguard_request'],
 		'02AA' => ['cash_password_request', 'v', [qw(info)]], #TODO: PACKET_ZC_REQ_CASH_PASSWORD
 		'02AC' => ['cash_password_result', 'v2', [qw(info count)]], #TODO: PACKET_ZC_RESULT_CASH_PASSWORD
 		# mRO PIN code Check
@@ -2332,34 +2327,6 @@ sub slave_calcproperty_handler {
 	$slave->{hpPercent}    = $slave->{hp_max} ? ($slave->{hp} / $slave->{hp_max}) * 100 : undef;
 	$slave->{spPercent}    = $slave->{sp_max} ? ($slave->{sp} / $slave->{sp_max}) * 100 : undef;
 	$slave->{expPercent}   = ($args->{exp_max}) ? ($args->{exp} / $args->{exp_max}) * 100 : undef;
-}
-
-sub gameguard_grant {
-	my ($self, $args) = @_;
-
-	if ($args->{server} == 0) {
-		error T("The server Denied the login because GameGuard packets where not replied " .
-			"correctly or too many time has been spent to send the response.\n" .
-			"Please verify the version of your poseidon server and try again\n"), "poseidon";
-		return;
-	} elsif ($args->{server} == 1) {
-		message T("Server granted login request to account server\n"), "poseidon";
-	} else {
-		message T("Server granted login request to char/map server\n"), "poseidon";
-		# FIXME
-		change_to_constate25 if ($config{'gameGuard'} eq "2");
-	}
-	$net->setState(1.3) if ($net->getState() == 1.2);
-}
-
-sub gameguard_request {
-	my ($self, $args) = @_;
-
-	return if ($net->version == 1 && $config{gameGuard} ne '2');
-	Poseidon::Client::getInstance()->query(
-		substr($args->{RAW_MSG}, 0, $args->{RAW_MSG_SIZE})
-	);
-	debug "Querying Poseidon\n", "poseidon";
 }
 
 sub guild_allies_enemy_list {
