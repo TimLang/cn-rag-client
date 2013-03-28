@@ -1,0 +1,427 @@
+valkyrie.rsw#巴奇利神殿 (伟大战士们的殿堂)#
+nif_in.rsw#尼芙菲姆内部#
+yggdrasil01.rsw#禾贝勒开米勒之岛 (天地树叶树干)#
+nif_fild02.rsw#鬼的峡谷#
+nif_fild01.rsw#斯凯领顿 (尼芙菲姆 偏远村落)#
+niflheim.rsw#死者国家 尼芙菲姆#
+um_dun01.rsw#树木里的 木工所#
+um_dun02.rsw#树木里的 异界通路#
+um_in.rsw#汶巴拉内部#
+um_fild01.rsw#噜噜卡森林#
+um_fild02.rsw#沪家森林#
+um_fild03.rsw#卡拉拉森林#
+um_fild04.rsw#沪家丛林#
+umbala.rsw#雨檀族村落 汶巴拉#
+sec_in01.rsw#巴哈拉宫 内部#
+sec_in02.rsw#巴哈拉宫 内部#
+sec_pri.rsw#巴哈拉宫 反省的房间(监狱)#
+gon_test.rsw#战斗场#
+gon_dun01.rsw#西王母神殿#
+gon_dun02.rsw#神仙的围棋台#
+gon_dun03.rsw#武陵道院#
+gon_fild01.rsw#昆仑原野#
+gon_in.rsw#昆仑内部#
+gonryun.rsw#神仙之岛 昆仑#
+ama_test.rsw#摩摩塔乐 体验所#
+ama_dun03.rsw#天津町 地下神舍#
+ama_dun02.rsw#地下森 战场#
+ama_dun01.rsw#榻榻米 迷宫#
+ama_fild01.rsw#天津町原野#
+ama_in02.rsw#天水角内部#
+ama_in01.rsw#天津町内部#
+amatsu.rsw#天水之国 天津町#
+alde_alche.rsw#炼金术师 转职所#
+yuno_in05.rsw#伊美乐的心脏 动力室#
+yuno_in04.rsw#朱诺 内部#
+job_duncer.rsw#克魔岛 小剧场#
+job_sage.rsw#贤者 转职 考试场#
+job_cru.rsw#十字军 转职 考试场#
+job_monk.rsw#圣 卡毕利那 修道院#
+monk_test.rsw#圣 卡毕利那 修道院#
+in_rogue.rsw#流氓工会 内部#
+mag_dun02.rsw#诺可罗德#
+mag_dun01.rsw#诺可罗德#
+yuno_fild04.rsw#尔迈斯 瀑雷德#
+yuno_fild03.rsw#尔迈斯 瀑雷德#
+yuno_fild02.rsw#吉 海伊洛 别墅#
+yuno_fild01.rsw#国界 检查站#
+yuno_in03.rsw#朱诺 内部#
+yuno_in02.rsw#贤者 城堡内部#
+yuno_in01.rsw#朱诺 内部#
+yuno.rsw#修发兹 共和国 首都 朱诺#
+job_wiz.rsw#巫师转职 考场#
+job_prist.rsw#祭司转职 考场#
+job_knt.rsw#骑士转职 考场#
+job_hunte.rsw#猎人转职 考场#
+gld_dun04.rsw#地下工会 密穴#
+gld_dun03.rsw#地下工会 密穴#
+gld_dun02.rsw#地下工会 密穴#
+gld_dun01.rsw#地下工会 密穴#
+payg_cas05.rsw#青林湖泊 工会#
+payg_cas04.rsw#青林湖泊 工会#
+payg_cas03.rsw#青林湖泊 工会#
+payg_cas02.rsw#青林湖泊 工会#
+payg_cas01.rsw#青林湖泊 工会#
+pay_gld.rsw#青林湖泊#
+aldeg_cas05.rsw#露依纳 工会#
+aldeg_cas04.rsw#露依纳 工会#
+aldeg_cas03.rsw#露依纳 工会#
+aldeg_cas02.rsw#露依纳 工会#
+aldeg_cas01.rsw#露依纳 工会#
+alde_gld.rsw#艾尔帕兰卫星都市 露依纳#
+gefg_cas05.rsw#咘哩妥利亚 工会#
+gefg_cas04.rsw#咘哩妥利亚 工会#
+gefg_cas03.rsw#咘哩妥利亚 工会#
+gefg_cas02.rsw#咘哩妥利亚 工会#
+gefg_cas01.rsw#咘哩妥利亚 工会#
+prtg_cas05.rsw#巴基力雷恩 工会#
+prtg_cas04.rsw#巴基力雷恩 工会#
+prtg_cas03.rsw#巴基力雷恩 工会#
+prtg_cas02.rsw#巴基力雷恩 工会#
+prtg_cas01.rsw#巴基力雷恩 工会#
+prt_gld.rsw#巴基力雷恩# 
+tur_dun01.rsw#乌龟岛#
+tur_dun02.rsw#乌龟岛  密穴#
+tur_dun03.rsw#良龟村#
+tur_dun04.rsw#旧良宫#
+tur_dun05.rsw#地下 沼泽地带#
+tur_dun06.rsw#地下 沼泽地带#
+guild_vs5.rsw#工会 对抗竞技场#
+guild_vs4.rsw#工会 对抗竞技场#
+guild_vs3.rsw#工会 对抗竞技场#
+guild_vs2.rsw#工会 对抗竞技场#
+guild_vs1.rsw#工会 对抗竞技场#
+guild_room.rsw#工会对抗竞技场 休息室#
+quiz_00.rsw#OX益智游戏竞赛场#
+quiz_01.rsw#OX益智游戏竞赛场#
+gef_fild12.rsw#克特 森林#
+gef_fild13.rsw#怖立特离亚#
+gef_fild14.rsw#西边 兽人村落#
+cmd_in02.rsw#克魔岛 内部#
+cmd_in01.rsw#克魔岛 内部#
+comodo.rsw#海边之都 克魔岛#
+beach_dun.rsw#西边 洞穴 加露#
+beach_dun2.rsw#北边 洞穴 卢安达#
+beach_dun3.rsw#东边 洞穴 马吾#
+cmd_fild01.rsw#巴不其卡 森林#
+cmd_fild02.rsw#克克魔 海边#
+cmd_fild03.rsw#基乃依 沼泽地#
+cmd_fild04.rsw#克克魔 海边#
+cmd_fild05.rsw#巴不其卡 森林边界#
+cmd_fild06.rsw#要塞都市 山特乐曼(西边)#
+cmd_fild07.rsw#发乐斯 灯塔岛#
+cmd_fild08.rsw#要塞都市 山特乐曼(东边)#
+cmd_fild09.rsw#要塞都市 山特乐曼(南边)#
+xmas_in.rsw#姜饼城内部#
+xmas_dun02.rsw#玩具分类场#
+xmas_dun01.rsw#玩具工厂仓库#
+xmas_fild01.rsw#姜饼城原野#
+xmas.rsw#白雪村落 姜饼城#
+mjolnir_01.rsw#妙勒尼 山脉#
+mjolnir_02.rsw#妙勒尼 山脉#
+mjolnir_03.rsw#妙勒尼 山脉#
+mjolnir_04.rsw#妙勒尼 山脉#
+mjolnir_05.rsw#妙勒尼 山脉#
+mjolnir_06.rsw#妙勒尼 山脉#
+mjolnir_07.rsw#妙勒尼 山脉#
+mjolnir_08.rsw#妙勒尼 山脉#
+mjolnir_09.rsw#妙勒尼 山脉#
+mjolnir_10.rsw#妙勒尼 山脉#
+mjolnir_11.rsw#妙勒尼 山脉#
+mjolnir_12.rsw#妙勒尼 山脉#
+prt_fild00.rsw#普隆德拉 区域#
+prt_fild01.rsw#普隆德拉 区域#
+prt_fild02.rsw#普隆德拉 区域#
+prt_fild03.rsw#普隆德拉 区域#
+prt_fild04.rsw#普隆德拉 区域#
+prt_fild05.rsw#普隆德拉 区域#
+prt_fild06.rsw#普隆德拉 区域#
+prt_fild07.rsw#普隆德拉 区域#
+prt_fild08.rsw#普隆德拉 区域#
+prt_fild09.rsw#普隆德拉 区域#
+prt_fild10.rsw#普隆德拉 区域#
+prt_fild11.rsw#普隆德拉 区域#
+prt_monk.rsw#圣卡毕利那 修道院#
+gef_fild00.rsw#吉芬 区域#
+gef_fild01.rsw#吉芬 区域#
+gef_fild02.rsw#吉芬 区域#
+gef_fild03.rsw#吉芬 区域#
+gef_fild04.rsw#吉芬 区域#
+gef_fild05.rsw#吉芬 区域#
+gef_fild06.rsw#吉芬 区域#
+gef_fild07.rsw#吉芬 区域#
+gef_fild08.rsw#吉芬 区域#
+gef_fild09.rsw#吉芬 区域#
+gef_fild10.rsw#东边 兽人村落#
+in_orcs01.rsw#兽人村落 室内#
+gef_fild11.rsw#吉芬 区域#
+moc_fild01.rsw#苏克拉特 沙漠#
+moc_fild02.rsw#苏克拉特 沙漠#
+moc_fild03.rsw#苏克拉特 沙漠#
+moc_fild04.rsw#苏克拉特 沙漠#
+moc_fild05.rsw#苏克拉特 沙漠#
+moc_fild06.rsw#苏克拉特 沙漠#
+moc_fild07.rsw#苏克拉特 沙漠#
+moc_fild08.rsw#苏克拉特 沙漠#
+moc_fild09.rsw#苏克拉特 沙漠#
+moc_fild10.rsw#苏克拉特 沙漠#
+moc_fild11.rsw#苏克拉特 沙漠#
+moc_fild12.rsw#苏克拉特 沙漠#
+moc_fild13.rsw#苏克拉特 沙漠#
+moc_fild14.rsw#苏克拉特 沙漠#
+moc_fild15.rsw#苏克拉特 沙漠#
+moc_fild16.rsw#苏克拉特 沙漠#
+in_moc_16.rsw#刺客 工会#
+moc_fild17.rsw#苏克拉特 沙漠#
+moc_fild18.rsw#苏克拉特 沙漠#
+moc_fild19.rsw#苏克拉特 沙漠#
+pay_fild01.rsw#斐扬 树林#
+pay_fild02.rsw#斐扬 树林#
+pay_fild03.rsw#斐扬 树林#
+pay_fild04.rsw#苏克拉特 沙漠#
+pay_fild05.rsw#斐扬 树林#
+pay_fild06.rsw#斐扬 树林#
+pay_fild07.rsw#斐扬 树林#
+pay_fild08.rsw#斐扬 树林#
+pay_fild09.rsw#斐扬 树林#
+pay_fild10.rsw#斐扬 树林#
+pay_fild11.rsw#斐扬 树林#
+new_1-1.rsw#初学者 修练场#
+new_2-1.rsw#初学者 修练场#
+new_3-1.rsw#初学者 修练场#
+new_4-1.rsw#初学者 修练场#
+new_5-1.rsw#初学者 修练场#
+new_1-2.rsw#初学者 修练场#
+new_2-2.rsw#初学者 修练场#
+new_3-2.rsw#初学者 修练场#
+new_4-2.rsw#初学者 修练场#
+new_5-2.rsw#初学者 修练场#
+new_1-3.rsw#初学者 修练场#
+new_2-3.rsw#初学者 修练场#
+new_3-3.rsw#初学者 修练场#
+new_4-3.rsw#初学者 修练场#
+new_5-3.rsw#初学者 修练场#
+new_1-4.rsw#初学者 修练场#
+new_2-4.rsw#初学者 修练场#
+new_3-4.rsw#初学者 修练场#
+new_4-4.rsw#初学者 修练场#
+new_5-4.rsw#初学者 修练场#
+anthell01.rsw#蚂蚁 地狱 密穴#
+anthell02.rsw#蚂蚁 地狱 密穴#
+gef_dun00.rsw#吉芬 地下 密穴#
+gef_dun01.rsw#吉芬 地下 密穴#
+gef_dun02.rsw#葛帔尼亚 密穴#
+gef_dun03.rsw#葛帔尼亚 密穴#
+iz_dun00.rsw#海底 洞窟#
+iz_dun01.rsw#海底 洞窟#
+iz_dun02.rsw#海底 洞窟#
+iz_dun03.rsw#海底 洞窟#
+iz_dun04.rsw#海底 洞窟#
+iz_dun05.rsw#海底 洞窟#
+in_sphinx1.rsw#史芬克斯 密穴#
+in_sphinx2.rsw#史芬克斯 密穴#
+in_sphinx3.rsw#史芬克斯 密穴#
+in_sphinx4.rsw#史芬克斯 密穴#
+in_sphinx5.rsw#史芬克斯 密穴#
+moc_pryd01.rsw#金字塔 迷宫#
+moc_pryd02.rsw#金字塔 迷宫#
+moc_pryd03.rsw#金字塔 迷宫#
+moc_pryd04.rsw#金字塔 迷宫#
+moc_pryd05.rsw#金字塔 迷宫#
+moc_pryd06.rsw#金字塔 迷宫#
+moc_prydb1.rsw#盗贼 工会#
+mjo_dun01.rsw#妙勒尼 废弃矿场#
+mjo_dun02.rsw#妙勒尼 废弃矿场#
+mjo_dun03.rsw#妙勒尼 废弃矿场#
+orcsdun01.rsw#兽人地下洞窟#
+orcsdun02.rsw#兽人地下洞窟#
+pay_dun00.rsw#斐扬 地下#
+pay_dun01.rsw#斐扬 地下#
+pay_dun02.rsw#斐扬 地下#
+pay_dun03.rsw#地下废弃村落#
+pay_dun04.rsw#地下废弃村落#
+prt_maze01.rsw#迷藏森林#
+prt_maze02.rsw#迷藏森林#
+prt_maze03.rsw#迷藏森林#
+prt_sewb1.rsw#普隆德拉 地下水道#
+prt_sewb2.rsw#普隆德拉 地下水道#
+prt_sewb3.rsw#普隆德拉 地下水道#
+prt_sewb4.rsw#普隆德拉 地下水道#
+treasure01.rsw#沉没之船 1楼#
+treasure02.rsw#沉没之船 2楼#
+hunter_1-1.rsw#猎人转职所#
+hunter_2-1.rsw#猎人转职所#
+hunter_3-1.rsw#猎人转职所#
+in_hunter.rsw#猎人转职所#
+knight_1-1.rsw#骑士转职所#
+knight_2-1.rsw#骑士转职所#
+knight_3-1.rsw#骑士转职所#
+priest_1-1.rsw#祭司转职所#
+priest_2-1.rsw#祭司转职所#
+priest_3-1.rsw#祭司转职所#
+sword_1-1.rsw#剑士转职所#
+sword_2-1.rsw#剑士转职所#
+sword_3-1.rsw#剑士转职所#
+job_thief1.rsw#盗贼转职所#
+wizard_1-1.rsw#巫师转职所#
+wizard_2-1.rsw#巫师转职所#
+wizard_3-1.rsw#巫师转职所#
+force_1-1.rsw#限时激斗模式#
+force_2-1.rsw#限时激斗模式#
+force_3-1.rsw#限时激斗模式#
+force_1-2.rsw#限时激斗模式#
+force_2-2.rsw#限时激斗模式#
+force_3-2.rsw#限时激斗模式#
+force_1-3.rsw#限时激斗模式#
+force_2-3.rsw#限时激斗模式#
+force_3-3.rsw#限时激斗模式#
+ordeal_1-1.rsw#团体战斗模式#
+ordeal_2-1.rsw#团体战斗模式#
+ordeal_3-1.rsw#团体战斗模式#
+ordeal_1-2.rsw#团体战斗模式#
+ordeal_2-2.rsw#团体战斗模式#
+ordeal_3-2.rsw#团体战斗模式#
+ordeal_1-3.rsw#团体战斗模式#
+ordeal_2-3.rsw#团体战斗模式#
+ordeal_3-3.rsw#团体战斗模式#
+ordeal_1-4.rsw#团体战斗模式#
+ordeal_2-4.rsw#团体战斗模式#
+ordeal_3-4.rsw#团体战斗模式#
+alb_ship.rsw#艾尔贝塔 船舶内#
+alberta.rsw#港口之都 艾尔贝塔#
+alberta_in.rsw#港口之都 艾尔贝塔#
+alb2trea.rsw#沉船附近的岛屿#
+aldebaran.rsw#运河之都 艾尔帕兰#
+aldeba_in.rsw#运河之都 艾尔帕兰#
+gef_tower.rsw#吉芬 中央塔#
+geffen.rsw#魔法之都 吉芬#
+geffen_in.rsw#魔法之都 吉芬#
+moc_castle.rsw#梦罗克 城内#
+moc_ruins.rsw#沙漠之都 梦罗克#
+morocc.rsw#沙漠之都 梦罗克#
+morocc_in.rsw#沙漠之都 梦罗克#
+pay_arche.rsw#山岳之都 斐扬#
+payon.rsw#山岳之都 斐扬#
+payon_in01.rsw#山岳之都 斐扬#
+payon_in02.rsw#山岳之都 斐扬#
+prontera.rsw#卢恩 米德加兹王国 首都 普隆德拉#
+prt_in.rsw#卢恩 米德加兹王国 首都 普隆德拉#
+prt_castle.rsw#普隆德拉 城内#
+prt_church.rsw#普隆德拉 圣堂内#
+izlude.rsw#卫星都市 依斯鲁得岛#
+izlude_in.rsw#卫星都市 依斯鲁得岛#
+izlu2dun.rsw#卫星都市 依斯鲁得岛#
+monk_in.rsw#圣卡毕利那 修道院内#
+prt_are_in.rsw#亚雷那 等候室#
+arena_room.rsw#亚雷那 等候室#
+prt_arena01.rsw#亚雷那#
+prt_are01.rsw#亚雷那#
+glast_01.rsw#克雷斯特汉姆古城#
+alde_dun01.rsw#艾尔帕兰 钟塔地下楼层 1楼#
+alde_dun02.rsw#艾尔帕兰 钟塔地下楼层 2楼#
+alde_dun03.rsw#艾尔帕兰 钟塔地下楼层 3楼#
+alde_dun04.rsw#艾尔帕兰 钟塔地下楼层 4楼#
+c_tower1.rsw#艾尔帕兰 钟塔地上楼层 1楼#
+c_tower2.rsw#艾尔帕兰 钟塔地上楼层 2楼#
+c_tower3.rsw#艾尔帕兰 钟塔地上楼层 3楼#
+c_tower4.rsw#艾尔帕兰 钟塔地上楼层 4楼#
+gl_cas01.rsw#克雷斯特汉姆古城 地上楼层 1楼#
+gl_cas02.rsw#克雷斯特汉姆古城 地上楼层 2楼#
+gl_church.rsw#克雷斯特汉姆古城 修道院#
+gl_chyard.rsw#克雷斯特汉姆古城 地下公墓#
+gl_dun01.rsw#克雷斯特汉姆 最下层 地下洞窟# 
+gl_dun02.rsw#克雷斯特汉姆 最下层 地下洞窟# 
+gl_in01.rsw#克雷斯特汉姆古城 室内#
+gl_knt01.rsw#克雷斯特汉姆 骑士团1楼#
+gl_knt02.rsw#克雷斯特汉姆 骑士团2楼#
+gl_prison.rsw#克雷斯特汉姆 地下监狱1楼#
+gl_prison1.rsw#克雷斯特汉姆 地下监狱2楼#
+gl_sew01.rsw#克雷斯特汉姆 地下水道#
+gl_sew02.rsw#克雷斯特汉姆 地下水道#
+gl_sew03.rsw#克雷斯特汉姆 地下水道#
+gl_sew04.rsw#克雷斯特汉姆 地下水道#
+gl_step.rsw#克雷斯特汉姆 楼梯密穴#  
+pvp_y_room.rsw#PvP : 等待室#
+pvp_n_room.rsw#PvP : 等待室#
+pvp_n_1-1.rsw#PvP : 三明治 房间#
+pvp_n_2-1.rsw#PvP : 三明治 房间#
+pvp_n_3-1.rsw#PvP : 三明治 房间#
+pvp_n_4-1.rsw#PvP : 三明治 房间#
+pvp_n_5-1.rsw#PvP : 三明治 房间#
+pvp_n_6-1.rsw#PvP : 三明治 房间#
+pvp_n_7-1.rsw#PvP : 三明治 房间#
+pvp_n_8-1.rsw#PvP : 三明治 房间#
+pvp_n_1-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_2-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_3-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_4-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_5-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_6-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_7-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_8-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_1-3.rsw#PvP : 四通道 房间#
+pvp_n_2-3.rsw#PvP : 四通道 房间#
+pvp_n_3-3.rsw#PvP : 四通道 房间#
+pvp_n_4-3.rsw#PvP : 四通道 房间#
+pvp_n_5-3.rsw#PvP : 四通道 房间#
+pvp_n_6-3.rsw#PvP : 四通道 房间#
+pvp_n_7-3.rsw#PvP : 四通道 房间#
+pvp_n_8-3.rsw#PvP : 四通道 房间#
+pvp_n_1-4.rsw#PvP : 反十字 房间#
+pvp_n_2-4.rsw#PvP : 反十字 房间#
+pvp_n_3-4.rsw#PvP : 反十字 房间#
+pvp_n_4-4.rsw#PvP : 反十字 房间#
+pvp_n_5-4.rsw#PvP : 反十字 房间#
+pvp_n_6-4.rsw#PvP : 反十字 房间#
+pvp_n_7-4.rsw#PvP : 反十字 房间#
+pvp_n_8-4.rsw#PvP : 反十字 房间#
+pvp_n_1-5.rsw#PvP : 罗盘 房间#
+pvp_n_2-5.rsw#PvP : 罗盘 房间#
+pvp_n_3-5.rsw#PvP : 罗盘 房间#
+pvp_n_4-5.rsw#PvP : 罗盘 房间#
+pvp_n_5-5.rsw#PvP : 罗盘 房间#
+pvp_n_6-5.rsw#PvP : 罗盘 房间#
+pvp_n_7-5.rsw#PvP : 罗盘 房间#
+pvp_n_8-5.rsw#PvP : 罗盘 房间#
+pvp_y_1-1.rsw#PvP : 普隆德拉#
+pvp_y_2-1.rsw#PvP : 普隆德拉#
+pvp_y_3-1.rsw#PvP : 普隆德拉#
+pvp_y_4-1.rsw#PvP : 普隆德拉#
+pvp_y_5-1.rsw#PvP : 普隆德拉#
+pvp_y_6-1.rsw#PvP : 普隆德拉#
+pvp_y_7-1.rsw#PvP : 普隆德拉#
+pvp_y_8-1.rsw#PvP : 普隆德拉#
+pvp_y_1-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_2-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_3-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_4-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_5-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_6-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_7-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_8-2.rsw#PvP : 依斯鲁得岛#
+pvp_y_1-3.rsw#PvP : 斐扬#
+pvp_y_2-3.rsw#PvP : 斐扬#
+pvp_y_3-3.rsw#PvP : 斐扬#
+pvp_y_4-3.rsw#PvP : 斐扬#
+pvp_y_5-3.rsw#PvP : 斐扬#
+pvp_y_6-3.rsw#PvP : 斐扬#
+pvp_y_7-3.rsw#PvP : 斐扬#
+pvp_y_8-3.rsw#PvP : 斐扬#
+pvp_y_1-4.rsw#PvP : 艾尔贝塔#
+pvp_y_2-4.rsw#PvP : 艾尔贝塔#
+pvp_y_3-4.rsw#PvP : 艾尔贝塔#
+pvp_y_4-4.rsw#PvP : 艾尔贝塔#
+pvp_y_5-4.rsw#PvP : 艾尔贝塔#
+pvp_y_6-4.rsw#PvP : 艾尔贝塔#
+pvp_y_7-4.rsw#PvP : 艾尔贝塔#
+pvp_y_8-4.rsw#PvP : 艾尔贝塔#
+pvp_y_1-5.rsw#PvP : 梦罗克#
+pvp_y_2-5.rsw#PvP : 梦罗克#
+pvp_y_3-5.rsw#PvP : 梦罗克#
+pvp_y_4-5.rsw#PvP : 梦罗克#
+pvp_y_5-5.rsw#PvP : 梦罗克#
+pvp_y_6-5.rsw#PvP : 梦罗克#
+pvp_y_7-5.rsw#PvP : 梦罗克#
+pvp_y_8-5.rsw#PvP : 梦罗克#
+pvp_2vs2.rsw#PvP : 活动 竞技场#
+um_fild01.rsw#噜噜卡森林#

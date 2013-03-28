@@ -1,0 +1,88 @@
+%$cmd_user
+
+dateS 不要玩了 %$cmd_user, 现在是 %$date
+dateS 我是什么? 钟吗?? (不过现在是 %$date)
+
+authS 您现在已经是我的主人了 %$cmd_user, 来吧! ^^
+authF 您已经是我的主人了 %$cmd_user!
+
+relogS 我稍候回来
+relogS 嗯, 等一下...
+
+reloadS 哔
+reloadS 嗯
+reloadS 完美啊
+
+confS1 这个 %$key 是... %$value
+confS2 哔
+confS2 嗯
+confS2 完成
+confF1 嗄?
+confF2 我没看到有这个东西
+confF3 我不这么认为耶
+
+timeoutS1 我想 %$key 的时间应该是 %$value 吧...
+timeoutS2 哔
+timeoutS2 嗯
+timeoutS2 完成
+timeoutF1 嗄?
+timeoutF2 我没看过这个东西
+
+quitS 再见啦
+quitS 我要离开了, 掰掰
+quitS 我走啦!
+
+sitS *boof*
+sitS *plop*
+
+standS 好的 ^^
+standS 是
+standS 嗯 %$cmd_user, 好像这样?
+
+tankS Leecher
+tankF 嗄?
+
+tankStopS 几好笑...
+tankStopF 我像一个盾吗?
+
+moveS 好, 现在就去!
+moveS 我要自由啊!
+moveS 老子明白了!
+moveF 我不明白您在说什么啊 %$user
+moveF 这我不知道 ><
+
+followS 好, 现在就来!
+followS 我要自由啊!
+followS 老子明白了!
+followF 我不明白您在说什么啊 %$user
+followF 这我不知道 ><
+
+followStopS 我明白...
+followStopS 我很烦吗?
+followStopF 您是偏执狂...
+followStopF 我图谋不轨地盯着您
+
+statusS HP: %$char_hp / %$char_hp_max   SP: %$char_sp / %$char_sp_max\nBase: %$char_lv  |  %$char_exp / %$char_exp_max\nJob: %$char_lv_job  |  %$char_exp_job / %$char_exp_job_max\nWeight: %$char_weight / %$char_weight_max   Zenny: %$zenny
+
+thankS 没问题 ^^
+thankS 没有问题
+thankS 好高兴啊, 主人 %$cmd_user
+thankS ^^
+
+verboseOnS 啊, 最于.
+verboseOnS 唉... 谢谢主人... 您老子...
+verboseOnF 我好像不太会说话吗?
+verboseOnF 您愚弄我吗? 我说话技巧不太好...
+
+verboseOffS 您老子...好...
+verboseOffS 我的天...
+verboseOffF 好...我会静静等待
+verboseOffF 嗯嗯... 我知道了
+
+whereS 不见了我吗? 我在 %$map: %$x, %$y
+whereS 我在这! %$map: %$x, %$y
+
+healS 好了点吧!
+healF1 啊? 我不知道要补谁
+healF2 啊, 我 SP 只剩 %$char_sp ... 我要 SP 啊...T_T
+healF3 我没有这技能啦

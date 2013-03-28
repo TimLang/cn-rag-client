@@ -1,0 +1,225 @@
+um_in.rsw#汶巴拉内部#
+nif_in.rsw#尼芙菲姆内部#
+yggdrasil01.rsw#禾贝勒开米勒之岛 (天地树叶树干)#
+sec_in01.rsw#巴哈拉宫 内部#
+sec_in02.rsw#巴哈拉宫 内部#
+gon_test.rsw#战斗场#
+gon_in.rsw#昆仑内部#
+ama_in02.rsw#天水角内部#
+ama_in01.rsw#天津町内部#
+ama_dun01.rsw#榻榻米 迷宫#
+ama_test.rsw#摩摩塔乐 体验所#
+ama_dun03.rsw#天津町 地下神舍#
+yuno_in05.rsw#伊美乐的心脏 动力室#
+yuno_in04.rsw#朱诺 内部#
+job_duncer.rsw#克魔岛 小剧场#
+job_sage.rsw#贤者 转职 考试场#
+job_cru.rsw#十字军 转职 考试场#
+job_monk.rsw#圣 卡毕利那 修道院#
+monk_test.rsw#圣 卡毕利那 修道院#
+in_rogue.rsw#流氓工会 内部#
+yuno_in03.rsw#朱诺 内部#
+yuno_in02.rsw#贤者 城堡内部#
+yuno_in01.rsw#朱诺 内部#
+job_wiz.rsw#巫师转职 考场#
+job_prist.rsw#祭司转职 考场#
+job_knt.rsw#骑士转职 考场#
+job_hunte.rsw#猎人转职 考场#
+alde_alche.rsw#炼金术师 转职所#
+payg_cas05.rsw#青林湖泊 工会#
+payg_cas04.rsw#青林湖泊 工会#
+payg_cas03.rsw#青林湖泊 工会#
+payg_cas02.rsw#青林湖泊 工会# 
+payg_cas01.rsw#青林湖泊 工会#
+aldeg_cas05.rsw#露依纳 工会#
+aldeg_cas04.rsw#露依纳 工会#
+aldeg_cas03.rsw#露依纳 工会#
+aldeg_cas02.rsw#露依纳 工会#
+aldeg_cas01.rsw#露依纳 工会#
+gefg_cas05.rsw#咘哩妥利亚 工会#
+gefg_cas04.rsw#咘哩妥利亚 工会#
+gefg_cas03.rsw#咘哩妥利亚 工会#
+gefg_cas02.rsw#咘哩妥利亚 工会#
+gefg_cas01.rsw#咘哩妥利亚 工会#
+prtg_cas05.rsw#巴基力雷恩 工会#
+prtg_cas04.rsw#巴基力雷恩 工会#
+prtg_cas03.rsw#巴基力雷恩 工会#
+prtg_cas02.rsw#巴基力雷恩 工会#
+prtg_cas01.rsw#巴基力雷恩 工会#
+alb_ship.rsw#艾尔贝塔 船舶内#
+alberta_in.rsw#港口之都 艾尔贝塔#
+aldeba_in.rsw#运河之都 艾尔帕兰#
+in_moc_16.rsw#刺客工会#
+arena_room.rsw#亚雷那 候车室#
+cmd_in01.rsw#克魔岛 内部#
+cmd_in02.rsw#克魔岛 内部#
+in_orcs01.rsw#欧克村村庄内#
+force_1-1.rsw#限时激斗模式#
+force_1-2.rsw#限时激斗模式#
+force_1-3.rsw#限时激斗模式#
+force_2-1.rsw#限时激斗模式#
+force_2-2.rsw#限时激斗模式#
+force_2-3.rsw#限时激斗模式#
+force_3-1.rsw#限时激斗模式#
+force_3-2.rsw#限时激斗模式#
+force_3-3.rsw#限时激斗模式#
+gef_tower.rsw#吉芬 中央塔#
+geffen_in.rsw#魔幻之都 吉芬#
+moc_prydb1.rsw#盗贼 工会#
+hunter_1-1.rsw#猎人转职所#
+hunter_2-1.rsw#猎人转职所#
+hunter_3-1.rsw#猎人转职所#
+in_hunter.rsw#猎人转职所#
+knight_1-1.rsw#骑士转职所#
+knight_2-1.rsw#骑士转职所#
+knight_3-1.rsw#骑士转职所#
+priest_1-1.rsw#服事转职所#
+priest_2-1.rsw#服事转职所#
+priest_3-1.rsw#服事转职所#
+sword_1-1.rsw#剑士转职所#
+sword_2-1.rsw#剑士转职所#
+sword_3-1.rsw#剑士转职所#
+thief_1-1.rsw#盗贼转职所#
+thief_2-1.rsw#盗贼转职所#
+thief_3-1.rsw#盗贼转职所#
+wizard_1-1.rsw#魔法师转职所#
+wizard_2-1.rsw#魔法师转职所#
+wizard_3-1.rsw#魔法师转职所#
+moc_castle.rsw#梦罗克 城内#
+monk_in.rsw#圣卡毕利那 修道院内#
+morocc_in.rsw#边境之都 梦罗克#
+new_1-1.rsw#初学者 修练场#
+new_1-2.rsw#初学者 修练场#
+new_1-3.rsw#初学者 修练场#
+new_1-4.rsw#初学者 修练场#
+new_2-1.rsw#初学者 修练场#
+new_2-2.rsw#初学者 修练场#
+new_2-3.rsw#初学者 修练场#
+new_2-4.rsw#初学者 修练场#
+new_3-1.rsw#初学者 修练场#
+new_3-2.rsw#初学者 修练场#
+new_3-3.rsw#初学者 修练场#
+new_3-4.rsw#初学者 修练场#
+new_4-1.rsw#初学者 修练场#
+new_4-2.rsw#初学者 修练场#
+new_4-3.rsw#初学者 修练场#
+new_4-4.rsw#初学者 修练场#
+new_5-1.rsw#初学者 修练场#
+new_5-2.rsw#初学者 修练场#
+new_5-3.rsw#初学者 修练场#
+new_5-4.rsw#初学者 修练场#
+ordeal_1-1.rsw#团体战斗模式#
+ordeal_1-2.rsw#团体战斗模式#
+ordeal_1-3.rsw#团体战斗模式#
+ordeal_1-4.rsw#团体战斗模式#
+ordeal_2-1.rsw#团体战斗模式#
+ordeal_2-2.rsw#团体战斗模式#
+ordeal_2-3.rsw#团体战斗模式#
+ordeal_2-4.rsw#团体战斗模式#
+ordeal_3-1.rsw#团体战斗模式#
+ordeal_3-2.rsw#团体战斗模式#
+ordeal_3-3.rsw#团体战斗模式#
+ordeal_3-4.rsw#团体战斗模式#
+pay_arche.rsw#山岳之都 裴扬#
+payon_in01.rsw#山岳之都 裴扬#
+payon_in02.rsw#山岳之都 裴扬#
+priest_1-1.rsw#服事转职所#
+priest_2-1.rsw#服事转职所#
+priest_3-1.rsw#服事转职所#
+prt_are_in.rsw#亚雷那 候车室#
+prt_castle.rsw#普隆德拉 城内#
+prt_church.rsw#普隆德拉 圣堂内#
+prt_in.rsw#卢恩 米德加尔特王国 首都 普隆德拉#
+pvp_2vs2.rsw#特别竞技场#
+pvp_n_1-1.rsw#PvP : 三明治 房间#
+pvp_n_1-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_1-3.rsw#PvP : 四通道 房间#
+pvp_n_1-4.rsw#PvP : 反十字 房间#
+pvp_n_1-5.rsw#PvP : 罗盘 房间#
+pvp_n_2-1.rsw#PvP : 三明治 房间#
+pvp_n_2-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_2-3.rsw#PvP : 四通道 房间#
+pvp_n_2-4.rsw#PvP : 反十字 房间#
+pvp_n_2-5.rsw#PvP : 罗盘 房间#
+pvp_n_3-1.rsw#PvP : 三明治 房间#
+pvp_n_3-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_3-3.rsw#PvP : 四通道 房间#
+pvp_n_3-4.rsw#PvP : 反十字 房间#
+pvp_n_3-5.rsw#PvP : 罗盘 房间#
+pvp_n_4-1.rsw#PvP : 三明治 房间#
+pvp_n_4-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_4-3.rsw#PvP : 四通道 房间#
+pvp_n_4-4.rsw#PvP : 反十字 房间#
+pvp_n_4-5.rsw#PvP : 罗盘 房间#
+pvp_n_5-1.rsw#PvP : 三明治 房间#
+pvp_n_5-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_5-3.rsw#PvP : 四通道 房间#
+pvp_n_5-4.rsw#PvP : 反十字 房间#
+pvp_n_5-5.rsw#PvP : 罗盘 房间#
+pvp_n_6-1.rsw#PvP : 三明治 房间#
+pvp_n_6-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_6-3.rsw#PvP : 四通道 房间#
+pvp_n_6-4.rsw#PvP : 反十字 房间#
+pvp_n_6-5.rsw#PvP : 罗盘 房间#
+pvp_n_7-1.rsw#PvP : 三明治 房间#
+pvp_n_7-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_7-3.rsw#PvP : 四通道 房间#
+pvp_n_7-4.rsw#PvP : 反十字 房间#
+pvp_n_7-5.rsw#PvP : 罗盘 房间#
+pvp_n_8-1.rsw#PvP : 三明治 房间#
+pvp_n_8-2.rsw#PvP : 雷达锁定 房间#
+pvp_n_8-3.rsw#PvP : 四通道 房间#
+pvp_n_8-4.rsw#PvP : 反十字 房间#
+pvp_n_8-5.rsw#PvP : 罗盘 房间#
+pvp_n_room.rsw#PvP : 打斗场#
+pvp_y_1-1.rsw#PvP : #普隆德拉#
+pvp_y_1-2.rsw#PvP : #依斯鲁得#
+pvp_y_1-3.rsw#PvP : #裴扬#
+pvp_y_1-4.rsw#PvP : #艾尔贝塔#
+pvp_y_1-5.rsw#PvP : #梦罗克#
+pvp_y_2-1.rsw#PvP : #普隆德拉#
+pvp_y_2-2.rsw#PvP : #依斯鲁得#
+pvp_y_2-3.rsw#PvP : #裴扬#
+pvp_y_2-4.rsw#PvP : #艾尔贝塔#
+pvp_y_2-5.rsw#PvP : #梦罗克#
+pvp_y_3-1.rsw#PvP : #普隆德拉#
+pvp_y_3-2.rsw#PvP : #依斯鲁得#
+pvp_y_3-3.rsw#PvP : #裴扬#
+pvp_y_3-4.rsw#PvP : #艾尔贝塔#
+pvp_y_3-5.rsw#PvP : #梦罗克#
+pvp_y_4-1.rsw#PvP : #普隆德拉#
+pvp_y_4-2.rsw#PvP : #依斯鲁得#
+pvp_y_4-3.rsw#PvP : #裴扬#
+pvp_y_4-4.rsw#PvP : #艾尔贝塔#
+pvp_y_4-5.rsw#PvP : #梦罗克#
+pvp_y_5-1.rsw#PvP : #普隆德拉#
+pvp_y_5-2.rsw#PvP : #依斯鲁得#
+pvp_y_5-3.rsw#PvP : #裴扬#
+pvp_y_5-4.rsw#PvP : #艾尔贝塔#
+pvp_y_5-5.rsw#PvP : #梦罗克#
+pvp_y_6-1.rsw#PvP : #普隆德拉#
+pvp_y_6-2.rsw#PvP : #依斯鲁得#
+pvp_y_6-3.rsw#PvP : #裴扬#
+pvp_y_6-4.rsw#PvP : #艾尔贝塔#
+pvp_y_6-5.rsw#PvP : #梦罗克#
+pvp_y_7-1.rsw#PvP : #普隆德拉#
+pvp_y_7-2.rsw#PvP : #依斯鲁得#
+pvp_y_7-3.rsw#PvP : #裴扬#
+pvp_y_7-4.rsw#PvP : #艾尔贝塔#
+pvp_y_7-5.rsw#PvP : #梦罗克#
+pvp_y_8-1.rsw#PvP : #普隆德拉#
+pvp_y_8-2.rsw#PvP : #依斯鲁得#
+pvp_y_8-3.rsw#PvP : #裴扬#
+pvp_y_8-4.rsw#PvP : #艾尔贝塔#
+pvp_y_8-5.rsw#PvP : #梦罗克#
+pvp_y_room.rsw#PvP : 打斗场#
+quiz_00.rsw#OX益智游戏竞赛场#
+quiz_01.rsw#OX益智游戏竞赛场#
+xmas_in.rsw#姜饼城内部#
+prt_monk.rsw#圣卡毕利那 修道院#
+guild_vs5.rsw#工会 对抗竞技场#
+guild_vs4.rsw#工会 对抗竞技场#
+guild_vs3.rsw#工会 对抗竞技场#
+guild_vs2.rsw#工会 对抗竞技场#
+guild_vs1.rsw#工会 对抗竞技场#
+guild_room.rsw#工会 对抗竞技场 休息室#
