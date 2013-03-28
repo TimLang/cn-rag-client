@@ -1,0 +1,19 @@
+beach_dun.rsw#西边 洞穴 加露##5000
+job_knt.rsw#骑士转职所##5000
+mjo_dun01.rsw#妙勒尼 废弃矿场##5000
+moc_castle.rsw#梦罗克 城内##5000
+moc_fild03.rsw#苏克拉特 沙漠##5000
+gef_fild00.rsw#吉芬 区域##5000
+alb2trea.rsw#沉船附近的岛屿##5000
+pay_dun03.rsw#地下废弃村落##5000
+arena_room.rsw#亚雷那 候车室##5000
+guild_room.rsw#工会战备战大厅##5000
+gef_dun00.rsw#吉芬 地下 密穴##5000
+anthell01.rsw#蚂蚁 地狱##5000
+alde_dun01.rsw#艾尔帕兰 钟塔地下楼层 1楼##5000
+in_sphinx1.rsw#史芬克斯 密穴##5000
+aldebaran.rsw#运河之都 艾尔帕兰##5000
+gl_dun02.rsw#克雷斯特汉姆古城 地下洞窟##5000
+gef_dun03.rsw葛帔尼亚 密穴###5000
+c_tower1.rsw#艾尔帕兰 钟塔地上楼层 1楼##5000
+job_hunte.rsw#猎人转职所##5000
