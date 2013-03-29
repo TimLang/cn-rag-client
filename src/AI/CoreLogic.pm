@@ -46,12 +46,10 @@ use Utils::Exceptions;
 # This is the main function from which the rest of the AI
 # will be invoked.
 sub iterate {
-	Benchmark::begin("ai_prepare") if DEBUG;
 	processWipeOldActors();
 	processGetPlayerInfo();
 	processMisc();
 	processPortalRecording();
-	Benchmark::end("ai_prepare") if DEBUG;
 
 	return if $AI == AI::OFF;
 	if ($net->clientAlive() && !$sentWelcomeMessage && timeOut($timeout{welcomeText})) {
@@ -63,22 +61,16 @@ sub iterate {
 	##### MANUAL AI STARTS HERE #####
 
 	Plugins::callHook('AI_pre/manual');
-	Benchmark::begin("AI (part 1)") if DEBUG;
 	return if processClientSuspend();
-	Benchmark::begin("AI (part 1.1)") if DEBUG;
 	processLook();
 	$char->processTask('NPC');
 	processEquip();
 	processDrop();
 	processEscapeUnknownMaps();
-	Benchmark::end("AI (part 1.1)") if DEBUG;
-	Benchmark::begin("AI (part 1.2)") if DEBUG;
 	processDelayedTeleport();
 	$char->processTask("sitting");
 	$char->processTask("standing");
 	AI::Attack::process();
-	Benchmark::end("AI (part 1.2)") if DEBUG;
-	Benchmark::begin("AI (part 1.3)") if DEBUG;
 	processSkillUse();
 	processAutoCommandUse();
 	$char->processTask("route", onError => sub {
@@ -90,20 +82,9 @@ sub iterate {
 	});
 	processTake();
 	$char->processTask('move');
-	Benchmark::end("AI (part 1.3)") if DEBUG;
 
-	Benchmark::begin("AI (part 1.4)") if DEBUG;
-	Benchmark::begin("ai_autoItemUse") if DEBUG;
 	processAutoItemUse();
-	Benchmark::end("ai_autoItemUse") if DEBUG;
-	Benchmark::begin("ai_autoSkillUse") if DEBUG;
 	processAutoSkillUse();
-	Benchmark::end("ai_autoSkillUse") if DEBUG;
-	Benchmark::end("AI (part 1.4)") if DEBUG;
-
-	Benchmark::end("AI (part 1)") if DEBUG;
-
-
 
 	Misc::checkValidity("AI part 1");
 	return unless $AI == AI::AUTO;
@@ -112,7 +93,6 @@ sub iterate {
 	##### AUTOMATIC AI STARTS HERE #####
 
 	Plugins::callHook('AI_pre');
-	Benchmark::begin("AI (part 2)") if DEBUG;
 
 	ChatQueue::processFirst;
 
@@ -129,12 +109,8 @@ sub iterate {
 	processCartAdd();
 	processCartGet();
 	processAutoMakeArrow();
-	Benchmark::end("AI (part 2)") if DEBUG;
 	Misc::checkValidity("AI part 2");
 
-
-	Benchmark::begin("AI (part 3)") if DEBUG;
-	Benchmark::begin("AI (part 3.1)") if DEBUG;
 	processAutoStorage();
 	Misc::checkValidity("AI (autostorage)");
 	processAutoSell();
@@ -143,26 +119,17 @@ sub iterate {
 	Misc::checkValidity("AI (autobuy)");
 	processAutoCart();
 	Misc::checkValidity("AI (autocart)");
-	Benchmark::end("AI (part 3.1)") if DEBUG;
 
-	Benchmark::begin("AI (part 3.2)") if DEBUG;
 	processLockMap();
 	#processAutoStatsRaise(); moved to a task
 	#processAutoSkillsRaise(); moved to a task
 	#processTask("skill_raise");
 	processRandomWalk();
 	processFollow();
-	Benchmark::end("AI (part 3.2)") if DEBUG;
 
-	Benchmark::begin("AI (part 3.3)") if DEBUG;
 	processSitAutoIdle();
 	processSitAuto();
 
-
-	Benchmark::end("AI (part 3.3)") if DEBUG;
-	Benchmark::end("AI (part 3)") if DEBUG;
-
-	Benchmark::begin("AI (part 4)") if DEBUG;
 	processPartySkillUse();
 	processMonsterSkillUse();
 
@@ -180,7 +147,6 @@ sub iterate {
 	processAutoShopOpen();
 	processRepairAuto();
 	processFeed();
-	Benchmark::end("AI (part 4)") if DEBUG;
 
 
 	##########
@@ -2560,7 +2526,6 @@ sub processMonsterSkillUse {
 
 ##### AUTO-EQUIP #####
 sub processAutoEquip {
-	Benchmark::begin("ai_autoEquip") if DEBUG;
 	if ((AI::isIdle || AI::is(qw(route mapRoute follow sitAuto skill_use take items_gather items_take attack)))
 	  && timeOut($timeout{ai_item_equip_auto}) && time > $ai_v{'inventory_time'}) {
 
@@ -2599,7 +2564,6 @@ sub processAutoEquip {
 		$timeout{ai_item_equip_auto}{time} = time;
 
 	}
-	Benchmark::end("ai_autoEquip") if DEBUG;
 }
 
 ##### AUTO-ATTACK #####
@@ -2607,8 +2571,6 @@ sub processAutoAttack {
 	# The auto-attack logic is as follows:
 	# 1. Generate a list of monsters that we are allowed to attack.
 	# 2. Pick the "best" monster out of that list, and attack it.
-
-	Benchmark::begin("ai_autoAttack") if DEBUG;
 
 	return if (!$field);
 	if ((AI::isIdle || AI::is(qw/route follow sitAuto take items_gather items_take/) || (AI::action eq "mapRoute" && AI::args->{stage} eq 'Getting Map Solution'))
@@ -2748,8 +2710,6 @@ sub processAutoAttack {
 			$timeout{'ai_attack_auto'}{'time'} = time;
 		}
 	}
-
-	Benchmark::end("ai_autoAttack") if DEBUG;
 }
 
 ##### ITEMS TAKE #####
