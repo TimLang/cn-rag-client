@@ -31,12 +31,10 @@ use Misc;
 use Network::Send ();
 use Skill;
 use Utils;
-use Utils::Benchmark;
 use Utils::PathFinding;
 
 
 sub process {
-	Benchmark::begin("ai_attack") if DEBUG;
 	my $args = AI::args;
 
 	if (AI::action eq "attack" && AI::args->{suspended}) {
@@ -132,7 +130,6 @@ sub process {
 		$args->{movingWhileAttackingTimeout} = time;
 	}
 
-	Benchmark::end("ai_attack") if DEBUG;
 }
 
 sub shouldGiveUp {
@@ -231,8 +228,6 @@ sub dropTargetWhileMoving {
 sub main {
 	my $args = AI::args;
 
-	Benchmark::begin("ai_attack (part 1)") if DEBUG;
-	Benchmark::begin("ai_attack (part 1.1)") if DEBUG;
 	# The attack sequence hasn't timed out and the monster is on screen
 
 	# Update information about the monster and the current situation
@@ -278,9 +273,6 @@ sub main {
 	$args->{dmgFromYou_last} = $target->{dmgFromYou};
 	$args->{missedFromYou_last} = $target->{missedFromYou};
 	$args->{lastSkillTime} = $char->{last_skill_time};
-
-	Benchmark::end("ai_attack (part 1.1)") if DEBUG;
-	Benchmark::begin("ai_attack (part 1.2)") if DEBUG;
 
 	# Determine what combo skill to use
 	delete $args->{attackMethod};
@@ -369,11 +361,6 @@ sub main {
 	if ($args->{attackMethod}{maxDistance} < $args->{attackMethod}{distance}) {
 		$args->{attackMethod}{maxDistance} = $args->{attackMethod}{distance};
 	}
-
-	Benchmark::end("ai_attack (part 1.2)") if DEBUG;
-	Benchmark::end("ai_attack (part 1)") if DEBUG;
-
-
 
 	if ($char->{sitting}) {
 		ai_setSuspend(0);

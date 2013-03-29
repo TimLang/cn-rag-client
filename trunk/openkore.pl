@@ -79,22 +79,19 @@ sub __start {
 	use Task;
 	use Task::WithSubtask;
 	use Task::TalkNPC;
-	use Utils::Benchmark;
 	use Utils::HttpReader;
 	use Utils::Whirlpool;
 	Modules::register(qw/Utils FileParsers
 		Network::Receive Network::Send Misc AI AI::CoreLogic
 		AI::Attack AI::Slave AI::Slave::Homunculus AI::Slave::Mercenary
 		ChatQueue Actor Actor::Player Actor::Monster Actor::You
-		Actor::Party Actor::Unknown Actor::Item Match Utils::Benchmark/);
+		Actor::Party Actor::Unknown Actor::Item Match/);
 
 
 	##### MAIN LOOP #####
 	# Note: Further initialization is done in the mainLoop() function in functions.pl.
 
-	Benchmark::begin("Real time") if DEBUG;
 	$interface->mainLoop();
-	Benchmark::end("Real time") if DEBUG;
 
 	main::shutdown();
 }
@@ -175,12 +172,6 @@ sub shutdown {
 	# Translation Comment: Kore's exit message
 	Log::message(T("Bye!\n"));
 	Log::message($Settings::versionText);
-
-	if (DEBUG && open(F, ">:utf8", "benchmark-results.txt")) {
-		print F Benchmark::results("mainLoop");
-		close F;
-		print "Benchmark results saved to benchmark-results.txt\n";
-	}
 }
 
 if (!defined($ENV{INTERPRETER}) && !$ENV{NO_AUTOSTART}) {

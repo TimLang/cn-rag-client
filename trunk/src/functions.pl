@@ -32,7 +32,6 @@ use Plugins;
 use Utils;
 use ChatQueue;
 use I18N;
-use Utils::Benchmark;
 use Utils::HttpReader;
 use Win32::OLE qw(in);
 use Win32::OLE::Variant;
@@ -58,7 +57,6 @@ our $state;
 
 
 sub mainLoop {
-	Benchmark::begin('mainLoop') if DEBUG;
 	$state = STATE_LOAD_PLUGINS if (!defined $state);
 
 	# Parse command input
@@ -107,7 +105,6 @@ sub mainLoop {
 		die "Unknown state $state.";
 	}
 
-	Benchmark::end('mainLoop') if DEBUG;
 	# Reload any modules that requested to be reloaded
 	Modules::reloadAllInQueue();
 }
@@ -741,7 +738,6 @@ sub initStatVars {
 # This function is called every time in the main loop, when OpenKore has been
 # fully initialized.
 sub mainLoop_initialized {
-	Benchmark::begin("mainLoop_part1") if DEBUG;
 
 	# Handle connection states
 	$net->checkConnection();
@@ -749,14 +745,12 @@ sub mainLoop_initialized {
 	# Receive and handle data from the RO server
 	my $data = $net->serverRecv;
 	if (defined($data) && length($data) > 0) {
-		Benchmark::begin("parseMsg") if DEBUG;
 
 		$incomingMessages->add($data);
 		$net->clientSend($_) for $packetParser->process(
 			$incomingMessages, $packetParser
 		);
 		$net->clientFlush() if (UNIVERSAL::isa($net, 'Network::XKoreProxy'));
-		Benchmark::end("parseMsg") if DEBUG;
 	}
 
 	# Receive and handle data from the RO client
@@ -769,26 +763,16 @@ sub mainLoop_initialized {
 		);
 	}
 
-	Benchmark::end("mainLoop_part1") if DEBUG;
-	Benchmark::begin("mainLoop_part2") if DEBUG;
-
 	# Process AI
 	if ($net->getState() == Network::IN_GAME && timeOut($timeout{ai}) && $net->serverAlive()) {
 		Misc::checkValidity("AI (pre)");
-		Benchmark::begin("ai") if DEBUG;
 		AI::CoreLogic::iterate();
-		Benchmark::end("ai") if DEBUG;
-		Benchmark::begin("ai_homunculus") if DEBUG;
 		AI::SlaveManager::iterate();
-		Benchmark::end("ai_homunculus") if DEBUG;
 		Misc::checkValidity("AI");
 		return if $quit;
 	}
 	Misc::checkValidity("mainLoop_part2.1");
 	$taskManager->iterate();
-
-	Benchmark::end("mainLoop_part2") if DEBUG;
-	Benchmark::begin("mainLoop_part3") if DEBUG;
 
 	# Process bus events.
 	$bus->iterate() if ($bus);
@@ -913,7 +897,6 @@ sub mainLoop_initialized {
 	$interface->title($args{return});
 
 	Misc::checkValidity("mainLoop_part3");
-	Benchmark::end("mainLoop_part3") if DEBUG;
 }
 
 =pod

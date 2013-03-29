@@ -260,7 +260,6 @@ sub slave_setMapChanged {
 ##### ATTACK #####
 sub processAttack {
 	my $slave = shift;
-	#Benchmark::begin("ai_homunculus_attack") if DEBUG;
 
 	if ($slave->action eq "attack" && $slave->args->{suspended}) {
 		$slave->args->{ai_attack_giveup}{time} += time - $slave->args->{suspended};
@@ -644,8 +643,6 @@ sub processAttack {
 			}
 		}
 	}
-
-	#Benchmark::end("ai_homunculus_attack") if DEBUG;
 }
 
 sub processClientSuspend {
@@ -720,8 +717,6 @@ sub processAutoAttack {
 	# The auto-attack logic is as follows:
 	# 1. Generate a list of monsters that we are allowed to attack.
 	# 2. Pick the "best" monster out of that list, and attack it.
-
-	#Benchmark::begin("ai_homunculus_autoAttack") if DEBUG;
 
 	if ((($slave->isIdle || $slave->action eq 'route') && (AI::isIdle || AI::is(qw(follow sitAuto take items_gather items_take attack skill_use))))
 	     # Don't auto-attack monsters while taking loot, and itemsTake/GatherAuto >= 2
@@ -955,8 +950,6 @@ sub processAutoAttack {
 			$timeout{'ai_homunculus_attack_auto'}{'time'} = time;
 		}
 	}
-
-	#Benchmark::end("ai_homunculus_autoAttack") if DEBUG;
 }
 
 sub sendAttack {
