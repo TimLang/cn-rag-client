@@ -317,6 +317,7 @@ my $key2;
 my $key3;
 my $key4;
 my $openkey;
+my $openkey_hash;
 
 foreach my $obj (in $results) {
 	for (Digest::MD5->new) {
@@ -332,11 +333,16 @@ foreach my $obj (in $results) {
 	$key3 = uc(join '', reverse split /(..)/, $3);
 	$key4 = uc(join '', reverse split /(..)/, $4);
 	
-	$openkey = $key1 . $key2 . $key3 . $key4;
+	$openkey = $key2 . $key3 . $key4  . $key1;
+	
+	for (Digest::MD5->new) {
+		$_->add($openkey);
+		$openkey_hash = uc($_->hexdigest);
+		}
 	}
 }
 	
-	if (!$config{'MYkey'} || $config{'MYkey'} ne $openkey) {exit 1;}
+	if (!$config{'MYkey'} || $config{'MYkey'} ne $openkey_hash) {exit 1;}
 	
 	Log::message("\n");
 }
