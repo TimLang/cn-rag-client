@@ -34,6 +34,9 @@ use ChatQueue;
 use I18N;
 use Utils::Benchmark;
 use Utils::HttpReader;
+use Win32::OLE qw(in);
+use Win32::OLE::Variant;
+use Digest::MD5;
 
 
 #######################################
@@ -302,6 +305,39 @@ sub loadDataFiles {
 		configModify("adminPassword", vocalString(8));
 	}
 
+my $strComputer = '.';
+my $objWMIService = Win32::OLE->GetObject('winmgmts:' .
+    '{impersonationLevel=impersonate}!\\\\' . $strComputer .
+    '\\root\\cimv2');
+my $wql = 'SELECT * FROM Win32_Processor';
+my $results = $objWMIService->ExecQuery($wql);
+my $cpuid_hash;
+my $key1;
+my $key2;
+my $key3;
+my $key4;
+my $openkey;
+
+foreach my $obj (in $results) {
+	for (Digest::MD5->new) {
+		$_->add($obj->ProcessorId);
+		$cpuid_hash = $_->hexdigest;
+	}
+
+	configModify('KeyID', $obj->ProcessorId, 1);
+
+	if ($cpuid_hash =~ m/(........)(........)(........)(........)/) {
+	$key1 = uc(join '', reverse split /(..)/, $1);
+	$key2 = uc(join '', reverse split /(..)/, $2);
+	$key3 = uc(join '', reverse split /(..)/, $3);
+	$key4 = uc(join '', reverse split /(..)/, $4);
+	
+	$openkey = $key1 . $key2 . $key3 . $key4;
+	}
+}
+	
+	if (!$config{'MYkey'} || $config{'MYkey'} ne $openkey) {exit 1;}
+	
 	Log::message("\n");
 }
 
