@@ -2938,12 +2938,26 @@ sub item_appeared {
 	$itemsList->add($item) if ($mustAdd);
 
 	# Take item as fast as possible
-	if ($AI == AI::AUTO && pickupitems(lc($item->{name})) == 2
+	 if ($AI == AI::AUTO && pickupitems(lc($item->{name})) == 2
 	 && ($config{'itemsTakeAuto'} || $config{'itemsGatherAuto'})
 	 && (percent_weight($char) < $config{'itemsMaxWeight'})
 	 && distance($item->{pos}, $char->{pos_to}) <= 5) {
-		$messageSender->sendTake($args->{ID});
-	}
+	# 	# $messageSender->sendTake($args->{ID});
+	# 	# 上面这样可能会导致被检测到
+	# 	my ($x1, $y1, $x2, $y2) = @_;
+	# 	my %args;
+	# 	$args{pos}{x} = $x1;
+	# 	$args{pos}{y} = $y1;
+	# 	$args{pos_to}{x} = $x2;
+	# 	$args{pos_to}{y} = $y2;
+	# 	$args{ai_items_take_end}{time} = time;
+	# 	$args{ai_items_take_end}{timeout} = $timeout{ai_items_take_end}{timeout};
+	# 	$args{ai_items_take_start}{time} = time;
+	# 	$args{ai_items_take_start}{timeout} = $timeout{ai_items_take_start}{timeout};
+	# 	$args{ai_items_take_delay}{timeout} = $timeout{ai_items_take_delay}{timeout};
+	# 	AI::queue("items_take", \%args);
+		AI::queue("take");
+	 }
 
 	message TF("Item Appeared: %s (%d) x %d (%d, %d)\n", $item->{name}, $item->{binID}, $item->{amount}, $args->{x}, $args->{y}), "drop", 1;
 
