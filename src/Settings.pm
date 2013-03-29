@@ -76,15 +76,15 @@ use Log qw(message warning error debug);
 # The version number of this program.
 
 # Translation Comment: Strings for the name and version of the application
-our $NAME = 'CN Kore - RO自制客户端';
+our $NAME = 'CN Kore - 解放你的双手';
 our $ZONE = 'cRO';
 our $VERSION = 'Open Beta - v0.0.3 for 国服cRO';
-our $SVN_VERSION = '25';
+our $SVN_VERSION = '38';
 # Translation Comment: Version String
 #our $SVN = T(" (SVN Version) ");
 our $WEBSITE = 'http://www.CNKore.com/';
 # Translation Comment: Version String
-our $versionText = "        *** $NAME - r$SVN_VERSION - 本程序为开源免费版谨防被骗!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                  █         ◢\n            ▔█◤▔▔◥◣                               █       ◢◤\n              █        █                                  ▉    ◢◤\n              █▁▂▃█◤                              ▉  ◢◤\n        ▂▅▆████◤                              ●●▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉  ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊    ◥█  █◥█◤█◥██  ██◥◣◥█◤▌◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▌  ◥◣\n              ▎               RAGNAROK ONLINE BOT         ▍    ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ▏      ◥◣\n                         $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki Nikco Jacky LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
+our $versionText = "        *** $NAME - r$SVN_VERSION - 本程序开源免费，谨防被骗!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                  █         ◢\n            ▔█◤▔▔◥◣                               █       ◢◤\n              █        █                                  ▉    ◢◤\n              █▁▂▃█◤                              ▉  ◢◤\n        ▂▅▆████◤                              ●●▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉  ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊    ◥█  █◥█◤█◥██  ██◥◣◥█◤▌◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▌  ◥◣\n              ▎               RAGNAROK ONLINE BOT         ▍    ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ▏      ◥◣\n                         $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki Nikco Jacky LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
 our $welcomeText = TF("Welcome to %s.", $NAME);
 
 # Log::message("$Settings::versionText\n");
