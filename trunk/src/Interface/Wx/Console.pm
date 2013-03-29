@@ -96,11 +96,11 @@ sub new {
 
 	my $font;
 	if (Wx::wxMSW()) {
-		$font = new Wx::Font(9, wxMODERN, wxNORMAL, wxNORMAL, 0, 'Courier New');
+		$font = new Wx::Font(9, wxMODERN, wxNORMAL, wxNORMAL, 0, '宋体');
 	} elsif ($^O eq 'freebsd') {
-		$font = new Wx::Font(9, wxMODERN, wxNORMAL, wxNORMAL, 0, 'Monospace');
+		$font = new Wx::Font(9, wxMODERN, wxNORMAL, wxNORMAL, 0, '宋体');
 	} else {
-		$font = new Wx::Font(10, wxMODERN, wxNORMAL, wxNORMAL, 0, 'MiscFixed');
+		$font = new Wx::Font(10, wxMODERN, wxNORMAL, wxNORMAL, 0, '宋体');
 	}
 	$self->setFont($font);
 
