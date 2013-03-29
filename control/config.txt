@@ -48,7 +48,7 @@ MYkey
 
 unknow 1
 
-master cRO - China - Loki
+master 
 # 主分流名称（可免填，会出现列表给玩家选择）
 server
 # 游戏服务器编号（可免填，会出现列表给玩家选择）
