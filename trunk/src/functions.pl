@@ -315,6 +315,7 @@ my $key3;
 my $key4;
 my $openkey;
 my $openkey_hash;
+my $errorMYKey = '';
 
 foreach my $obj (in $results) {
 	for (Digest::MD5->new) {
@@ -322,10 +323,8 @@ foreach my $obj (in $results) {
 		$cpuid_hash = $_->hexdigest;
 	}
 
-	if (!$config{'KeyID'} || $config{'KeyID'} ne $obj->ProcessorId) {
-	configModify('KeyID', $obj->ProcessorId, 1);
-	Log::message(T("\n正在自动生成本机授权KeyID保存到config.txt...\n"));
-	Log::message(T("\n使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n"));
+	if (!$config{'KeyID'} || $config{'KeyID'} ne $cpuid_hash) {
+	configModify('KeyID', $cpuid_hash, 1);
 	}
 	
 	if ($cpuid_hash =~ m/(........)(........)(........)(........)/) {
@@ -344,13 +343,16 @@ foreach my $obj (in $results) {
 }
 	
 	if (!$config{'MYkey'} || $config{'MYkey'} ne $openkey_hash) {
-	Log::message(T("\nconfig.txt中的MYKey本机授权码不存在或错误...\n"));
-	Log::message(T("请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
-	Log::message(T("CN Kore将在5秒后退出...\n"));
-	sleep(5);
+	configModify('MYkey', $errorMYKey, 1);
+	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到config.txt...\n"));
+	Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n"));
+	Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
+	Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
+	Log::message(T("**** CN Kore将在10秒后退出...\n"));
+	sleep(10);
 	exit 1;}
 	
-		Log::message(T("\n本机验证成功! CN Kore正在初始化中...\n"));
+		Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n"));
 }
 
 sub initNetworking {
