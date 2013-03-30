@@ -24,6 +24,8 @@ use I18N qw(bytesToString stringToBytes);
 sub new {
 	my ($class) = @_;
 	my $self = $class->SUPER::new(@_);
+	$self->{char_create_version} = 1;
+
 
 	my %packets = (
 
