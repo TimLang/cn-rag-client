@@ -23,24 +23,6 @@ bus 0
 bus_server_host
 bus_server_port
 
-
-###### Vx 接口的设定 ######
-panelTwo_domains publicchat, pm, guildchat, partychat, pm/sent, list, info, selfchat, schat, error, warning
-panelOne_lineLimit 900
-panelTwo_lineLimit 100
-panelFont Verdana
-menuFont Lucida Console
-sbarFont Arial
-panelOne_height 8
-panelOne_width 60
-panelOne_side top
-panelOne_fontsize 8
-panelTwo_height 4
-panelTwo_width 40
-panelTwo_side bottom
-panelTwo_fontsize 8
-
-
 ###### Plugin 扩充套件的设定 ######
 
 # loadPlugins <0|1|2>
