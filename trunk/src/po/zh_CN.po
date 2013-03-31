@@ -2626,7 +2626,7 @@ msgstr "对方没有开启装备栏.\n"
 #: ../Network/Receive/ServerType0.pm:4119
 #, perl-format
 msgid "msg_id: %s gave unknown results in: %s\n"
-msgstr "msg_id: %s 给未知结果: %s\n"
+msgstr "msg_id: %s 你设置的AI过快或运营商服务器LAG: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4264
 #: ../Network/Receive/ServerType0.pm:4127
