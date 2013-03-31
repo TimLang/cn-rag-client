@@ -1348,8 +1348,8 @@ sub checkMonsterCleanness {
 		return 1;
 	}
 	
-	#add by jackywei 
-	if($config{AutoAgainstMonter})
+	# config抢怪设置 by jackywei 
+	if($config{KillStealMonter})
 	{
 		return 1;
 	}
