@@ -29,7 +29,7 @@ use Translation;
 sub showError {
 	$net->serverDisconnect() if ($net);
 
-	if (!$Globals::interface || UNIVERSAL::isa($Globals::interface, "Interface::Startup") || UNIVERSAL::isa($Globals::interface, "Interface::Socket")) {
+	if (!$Globals::interface || UNIVERSAL::isa($Globals::interface, "Interface::Startup")) {
 		print TF("%s\nPress ENTER to exit this program.\n", $_[0]);
 		<STDIN>;
 	} else {
