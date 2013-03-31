@@ -1,27 +1,18 @@
-# timeouts.txt：Openkore 各项 AI 动作时间设定档
+#CnKore 更新时间 2013.3.31
+#本文本控制CnKore中各项AI动作时间设定，默认值即是符合多数情况的最佳化设定，无须更改，乱改有可能会造成外挂无法正常执行。
 #
-# 参考数据
+# 所有项目的单位皆是「秒」，允许小数点后两位。小数点前面的 0 可以省略，例如 0.3 ，可简写为 .3
 #
-# 本档可设定 OpenKore 执行各项 AI 动作时的时间。
-# 默认值即是符合多数情况的最佳化设定，无须更改。
 #
-# ※ 除非懂这些设定的意义，否则不建议乱改，
-#    乱改有可能会造成外挂无法正常执行。
 #
-# 所有项目的单位皆是「秒」，允许小数点后两位。
-# 小数点前面的 0 可以省略，例如 0.3 ，可简写为 .3。
-#
-
-# 连接各项主机，超过以下时间无响应则自动重新联机。
+#------------------------服务器链接设定----------------------
 master 60
 gamelogin 60
 charlogin 60
 maplogin 60
 play 40
-
 reconnect 20
-# 断线时，等待几秒后重连
-
+#-------------------------AI控制设定-----------------------------------
 ai 2
 # 过地图启始 AI 等待时间
 # 加载地图数据后，等待几秒才开始其它 AI 动作，
@@ -57,9 +48,6 @@ ai_attack_giveup 5
 # 因为肉搏系从发现怪物，到走过去打到，需要一些时间，
 # 太早放弃，有可能什么也打不到。
 
-# If you've just killed a monster, and there are no aggressives,
-# and you're not picking up any items, wait x seconds before doing
-# anything else.
 ai_attack_waitAfterKill 0.7
 # 攻击后等待时间
 # 假如刚杀掉一个怪物，并且也没被其它怪物围殴，
@@ -77,9 +65,7 @@ ai_attack_unfail 5
 # 假如因为一些原因(无法靠近、无法打到)，而放弃攻击某只目标怪物时，
 # 直到超过这个时间前，都不会再去锁定同一只。
 
-# Pause for the specified number of seconds after taking something,
-# it increases the interval between taking several items and between
-# taking the last item and continuing the actions.
+
 ai_items_take_delay 1.4
 
 ai_items_take_start 0.5
@@ -293,7 +279,6 @@ ai_storageAuto_giveup 15
 # 自动仓库放弃时间
 # 开启仓库后，超过这个时间仍无法存仓或取仓，则放弃。
 
-# delay between sending cart item add/get packets
 ai_cartAuto 0.15
 # 手推车使用间隔时间
 # 每次放物品到手堆车，或从手推车取物的间隔时间。
@@ -313,7 +298,6 @@ ai_shop 4
 # 如果 config.txt 中，自动露天功能是开启的，
 # 当闲置超过这个时间的时候，自动开启露天。
 
-# delay between repairAuto
 ai_repair 4
 
 ai_route_escape 8
@@ -323,7 +307,7 @@ ai_route_escape 8
 ai_sync 12
 # 每隔几秒送出 ping 封包
 # 原文建议此值只能是 12，不能更改。
-
+#-----------------------其他设置----------------------
 injectSync 5
 # 当使用 xkore 内挂模式时，
 # 每隔这个时间，去呼叫函式 function $xkore->sync。
