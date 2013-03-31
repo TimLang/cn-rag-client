@@ -34,7 +34,6 @@ use ChatQueue;
 use I18N;
 use Utils::HttpReader;
 use Win32::OLE qw(in);
-use Win32::OLE::Variant;
 use Digest::MD5;
 
 
@@ -303,56 +302,77 @@ sub loadDataFiles {
 	}
 
 my $strComputer = '.';
-my $objWMIService = Win32::OLE->GetObject('winmgmts:' .
-    '{impersonationLevel=impersonate}!\\\\' . $strComputer .
-    '\\root\\cimv2');
-my $wql = 'SELECT * FROM Win32_Processor';
-my $results = $objWMIService->ExecQuery($wql);
-my $cpuid_hash;
-my $key1;
-my $key2;
-my $key3;
-my $key4;
-my $openkey;
-my $openkey_hash;
-my $errorMYKey = '';
+my $objWMIService = Win32::OLE->GetObject('winmgmts:' . '{impersonationLevel=impersonate}!\\\\' . $strComputer . '\\root\\cimv2');
+my $wqlc = 'SELECT * FROM Win32_Processor';
+my $wqlb = 'SELECT * FROM Win32_BIOS';
+my $wqlv = 'SELECT * FROM Win32_VideoController';
+my $wqln = 'SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=True';
+my $resultsc = $objWMIService->ExecQuery($wqlc);
+my $resultsb = $objWMIService->ExecQuery($wqlb);
+my $resultsv = $objWMIService->ExecQuery($wqlv);
+my $resultsn = $objWMIService->ExecQuery($wqln);
+my ($objc, $objb, $objv, $objn) = shift;
+my ($keyID1, $keyID2, $keyID3, $keyID4, $KeyID) = shift;
+my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 
-foreach my $obj (in $results) {
-	for (Digest::MD5->new) {
-		$_->add($obj->ProcessorId);
-		$cpuid_hash = $_->hexdigest;
+	$objc = $_->{ProcessorId} foreach  in($resultsc);
+		for (Digest::MD5->new) {
+		$_->add($objc);
+		$keyID1 = substr(uc($_->hexdigest), 0, 8);
 	}
 
-	if (!$config{'KeyID'} || $config{'KeyID'} ne $cpuid_hash) {
-	configModify('KeyID', $cpuid_hash, 1);
+	$objb = $_->{ReleaseDate} foreach in($resultsb);
+		$objb = substr($objb, 0, 8);
+		for (Digest::MD5->new) {
+		$_->add($objb);
+		$keyID2 = substr(uc($_->hexdigest), 0, 8);
 	}
-	
-	if ($cpuid_hash =~ m/(........)(........)(........)(........)/) {
-	$key1 = uc(join '', reverse split /(..)/, $1);
-	$key2 = uc(join '', reverse split /(..)/, $2);
-	$key3 = uc(join '', reverse split /(..)/, $3);
-	$key4 = uc(join '', reverse split /(..)/, $4);
-	
-	$openkey = $key2 . $key3 . $key4  . $key1;
-	
-	for (Digest::MD5->new) {
-		$_->add($openkey);
-		$openkey_hash = uc($_->hexdigest);
+
+	$objv = $_->{DriverDate} foreach in($resultsv);
+		$objv = substr($objv, 0, 14);
+		for (Digest::MD5->new) {
+		$_->add($objv);
+		$keyID3 = substr(uc($_->hexdigest), 0, 8);
+	}
+
+	$objn = $_->{MACAddress} foreach in($resultsn);
+		$objn =~ s/://g;
+		for (Digest::MD5->new) {
+		$_->add($objn);
+		$keyID4 = substr(uc($_->hexdigest), 0, 8);
+	}
+
+	$KeyID = $keyID2 . $keyID3 . $keyID4 . $keyID1;
+
+	if (!$config{'KeyID'} || $config{'KeyID'} ne $KeyID) {
+	configModify('KeyID', $KeyID, 1);
+	}
+
+	if ($KeyID =~ m/(........)(........)(........)(........)/) {
+		$key1 = substr(("RSK" . uc(join '', reverse split /(..)/, $1)), 0, 8);
+		$key2 = substr(("ZXJ" . uc(join '', reverse split /(..)/, $2)), 0, 8);
+		$key3 = substr(("RTY" . uc(join '', reverse split /(..)/, $3)), 0, 8);
+		$key4 = substr(("666" . uc(join '', reverse split /(..)/, $4)), 0, 8);
+
+		$MyKey = $key3 . $key1 . $key4 . $key2;
+
+		for (Digest::MD5->new) {
+		$_->add($MyKey);
+		$MyKey = uc($_->hexdigest);
 		}
 	}
-}
-	
-	if (!$config{'MYkey'} || $config{'MYkey'} ne $openkey_hash) {
-	configModify('MYkey', $errorMYKey, 1);
+
+	if (!$config{'MYkey'} || $config{'MYkey'} ne $MyKey) {
+	configModify('MYkey', "", 1);
 	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到config.txt...\n"));
 	Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n"));
 	Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
 	Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
 	Log::message(T("**** CN Kore将在10秒后退出...\n"));
 	sleep(10);
-	exit 1;}
-	
-		Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n"));
+	exit 1;} else {
+	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n"));
+	}
 }
 
 sub initNetworking {
