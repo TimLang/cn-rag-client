@@ -1296,11 +1296,13 @@ teleportAuto_equip_leftAccessory
 teleportAuto_equip_rightAccessory
 # 指定瞬移时右边装饰品的装备名称
 
-teleportAuto_useItemForRespawn 新手用蝴蝶翅膀,回城咒术书,蝴蝶翅膀
-# 使用物品回城，填入物品名称，例如：蝴蝶翅膀
+teleportAuto_useItemForRespawn
+# 空 = 不使用; 1 = 使用物品瞬移,
 # 瞬移夹 (瞬间移动 Lv. 1）不能瞬移回城，要靠物品。
 
-
+teleportAuto_useItemNameForRespawn
+#如果使用teleportAuto_useItemForRespawn 请填入物品名称
+#物品名称，例如：新手用蝴蝶翅膀 或蝴蝶翅膀 或回城咒术书
 
 ####################################################################
 #                                                                  #
