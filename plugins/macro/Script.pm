@@ -247,7 +247,7 @@ sub next {
 	# if statement: if (foo = bar) goto label?
 	# Unlimited If Statement by: ezza @ http://forums.openkore.com/
 	} elsif ($line =~ /^if\s/) {
-		my ($text, $then) = $line =~ /^if\s+\(\s*(.*)\s*\)\s+(goto\s+.*|call\s+.*|stop)\s*/;
+		my ($text, $then) = $line =~ /^if\s+\(\s*(.*)\s*\)\s+(goto\s+.*|call\s+.*|stop|{|)\s*/;
 
 		# The main trick is parse all the @special keyword and vars 1st,
 		$text = parseCmd($text, $self);
@@ -256,7 +256,43 @@ sub next {
 		if (multi($savetxt, $self, $errtpl)) {
 			newThen($then, $self, $errtpl);
 			if (defined $self->{error}) {$self->{error} = "$errtpl: $self->{error}"; return}
+		} elsif ($then eq "{") { # If the condition is false and are using block of commands, will be skipped
+			my $countBlockIf = 1;
+			while ($countBlockIf) {
+				$self->{line}++;
+				my $searchEnd = ${$macro{$self->{name}}}[$self->{line}];
+				
+				if ($searchEnd =~ /if.*{/) {
+					$countBlockIf++;
+				} elsif (($searchEnd eq '}') || ($searchEnd =~ /}\s*else\s*{/ && $countBlockIf == 1)) {
+					$countBlockIf--;
+				}
+			}
 		}
+		$self->{line}++;
+		$self->{timeout} = 0
+
+	##########################################
+	# If arriving at a line 'else', it should be skipped -
+	#  it will never be activated if coming from a false 'if'
+	} elsif ($line =~ /}\s*else\s*{/) {
+			my $countBlockIf = 1;
+			while ($countBlockIf) {
+				$self->{line}++;
+				my $searchEnd = ${$macro{$self->{name}}}[$self->{line}];
+				
+				if ($searchEnd =~ /if.*{/) {
+					$countBlockIf++;
+				} elsif (($searchEnd eq '}') || ($searchEnd =~ /}\s*else\s*{/ && $countBlockIf == 1)) {
+					$countBlockIf--;
+				}
+			}
+
+		$self->{timeout} = 0
+
+	##########################################
+	# end block of if
+	} elsif ($line eq '}') {
 		$self->{line}++;
 		$self->{timeout} = 0
 
