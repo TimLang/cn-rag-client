@@ -3368,3 +3368,6 @@ dic_dun02 102 148 dic_dun01 290 99
 malangdo 219 86 izlude 194 180 0 c c r0
 malangdo 219 86 alberta 192 150 0 c c r1
 alberta 200 151 malangdo 217 85 0 c r1 c c r0
+
+# CN Kore新增
+geffen 120 62 mjolnir_02 99 351 1700 c r2 c r3
