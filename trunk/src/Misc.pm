@@ -3008,13 +3008,27 @@ sub useTeleport {
 	# 11 Mar 2010 - instead of name, use nameID, names can be different for different servers
 	my $item;
 	if ($use_lvl == 1) {
-		#$item = $char->inventory->getByName("Fly Wing");
 		$item = $char->inventory->getByNameID(601);
-		unless ($item) { $item = $char->inventory->getByNameID(12323); } # only if we don't have any fly wing
+		unless ($item) { $item = $char->inventory->getByNameID(12323); }
 	} elsif ($use_lvl == 2) {
-		#$item = $char->inventory->getByName("Butterfly Wing");
+		if (!$config{'teleportAuto_useItemNameForRespawn'}) {
 		$item = $char->inventory->getByNameID(602);
-		unless ($item) { $item = $char->inventory->getByNameID(12324); } # only if we don't have any butterfly wing
+		unless ($item) { $item = $char->inventory->getByNameID(12324); }
+		unless ($item) { $item = $char->inventory->getByNameID(12003); }
+		} else {
+		foreach my $Respawnitem (@{$char->inventory->getItems()}) {
+		if ($Respawnitem->{name} eq $config{'teleportAuto_useItemNameForRespawn'}) {
+		$item = $char->inventory->getByNameID($Respawnitem->{nameID});
+			}
+		}
+		
+		if (!$item) {
+		message T("config.txt [teleportAuto_useItemNameForRespawn] Setting error\n"), "teleport";
+		$item = $char->inventory->getByNameID(602);
+		unless ($item) { $item = $char->inventory->getByNameID(12324); }
+		unless ($item) { $item = $char->inventory->getByNameID(12003); }
+			}
+		}
 	}
 
 	if ($item) {
