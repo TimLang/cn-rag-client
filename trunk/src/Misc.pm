@@ -1351,7 +1351,8 @@ sub checkMonsterCleanness {
 	# config抢怪设置 by jackywei 
 	if($config{KillStealMonter})
 	{
-		return 1;
+		return 1 if ($config{KillStealMonter != 0});
+		return 0
 	}
 
 	if ($config{aggressiveAntiKS}) {
