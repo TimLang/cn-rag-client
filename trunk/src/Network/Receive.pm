@@ -1234,7 +1234,9 @@ sub minimap_indicator {
 			$indicator = "unknown effect $args->{effect}";
 		}
 	}
+}
 
+=pot
 	if ($args->{show}) {
 		message TF("%s shown %s at location %d, %d " .
 		"with the color %s\n", $args->{actor}, $indicator, @{$args}{qw(x y)}, $color_str),
@@ -1245,6 +1247,7 @@ sub minimap_indicator {
 		'effect';
 	}
 }
+=cut
 
 sub parse_sage_autospell {
 	my ($self, $args) = @_;
