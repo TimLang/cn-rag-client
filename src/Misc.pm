@@ -1347,6 +1347,12 @@ sub checkMonsterCleanness {
 	if ($monster->{dmgFromParty} > 0 || $monster->{missedFromParty} > 0 || $monster->{dmgToParty} > 0 || $monster->{missedToParty} > 0) {
 		return 1;
 	}
+	
+	#add by jackywei 
+	if($config{AutoAgainstMonter})
+	{
+		return 1;
+	}
 
 	if ($config{aggressiveAntiKS}) {
 		# Aggressive anti-KS mode, for people who are paranoid about not kill stealing.
