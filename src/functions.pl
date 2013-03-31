@@ -74,7 +74,7 @@ sub mainLoop {
 
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
-		sleep(10);
+		sleep(5);
 		loadPlugins();
 		Log::message("\n");
 		Plugins::callHook('start');
@@ -301,6 +301,28 @@ sub loadDataFiles {
 		configModify("adminPassword", vocalString(8));
 	}
 
+	## 通知用户本软件免费
+	my $answerfree = 0;
+	Log::message(TF("\nCN Kore (包含MYKey验证) 均**免费**, 如果您是从淘宝或QQ群等平台的付费获得本软件(或者MYKey), 很遗憾的告诉您, 您被骗了!\n\n如果您是从倒卖者手上获取的该软件(或者MYKey), 我们建议您立即退款维权差评卖家!\n\n请回答您是否已经知晓我们告知的信息?\n\n(请在程序内或者控制台窗口输入: 0 否 1 是)\n"));
+	chomp (my $answerfree = <STDIN>);
+	if ($answerfree != 1) {
+	    Log::message(T("**** CN Kore唯一的官方地址是 http://www.CNKore.com \n"));
+		Log::message(T("**** CN Kore将在10秒后退出...\n"));
+		sleep(10);
+		exit 1;
+	}
+	
+	## 账号安全性通知
+	my $answersafe = 1;
+	Log::message(TF("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用第三方程序登陆游戏造成的运营商对用户账户的处罚负责\n\n请回答您是否已经知晓并同意以上使用条款? \n\n(请在程序内或者控制台窗口输入: 1 不同意 2 同意)\n"));
+	chomp (my $answersafe = <STDIN>);
+	if (!$answersafe || $answersafe != 2) {
+		Log::message(TF("**** 您必须同意以上条款才能使用CN Kore\n"));
+		Log::message(T("**** CN Kore唯一的官方地址是 http://www.CNKore.com \n"));
+		Log::message(T("**** CN Kore将在10秒后退出...\n"));
+		sleep(10);
+		exit 1;
+	}
 my $strComputer = '.';
 my $objWMIService = Win32::OLE->GetObject('winmgmts:' . '{impersonationLevel=impersonate}!\\\\' . $strComputer . '\\root\\cimv2');
 my $wqlc = 'SELECT * FROM Win32_Processor';
@@ -371,7 +393,7 @@ my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 	Log::message(T("**** CN Kore将在10秒后退出...\n"));
 	sleep(10);
 	exit 1;} else {
-	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n"));
+	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
 	}
 }
 
