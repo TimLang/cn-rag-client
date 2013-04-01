@@ -37,41 +37,6 @@ forceuse <inventory item #>	craft arrows immediately from an item without using 
 [as]
 Stop attacking a monster.
 
-[au]
-Display possible commands for auction.
-
-[aua]
-Adds an item to the auction.
-<inventory item> <amount>	adds an item to the auction
-
-[aub]
-Bids an auction.
-<id> <price>	bids an auction
-
-[auc]
-Creates an auction.
-<current price> <instant buy price> <hours>		creates an auction
-
-[aud]
-Deletes an auction.
-<index>		deletes an auction
-
-[aue]
-Ends an auction.
-<index>		ends an auction
-
-[aui]
-Displays your auction info.
-selling		display selling info
-buying		display buying info
-
-[aur]
-Removes item from auction.
-
-[aus]
-Search for an auction according to the criteria.
-<type> <price> <text>	Item's search criteria. Type: 1 Armor, 2 Weapon, 3 Card, 4 Misc, 5 By Text, 6 By Price, 7 Sell, 8 Buy
-
 [auth]
 (Un)authorize a user for using Kore chat commands.
 <player name> 0		unauthorize <player name>
@@ -331,19 +296,6 @@ Look in a certain direction.
 Look at a certain player.
 <player #>			look at player
 
-[m]
-Displays Mail commands.
-
-[ma]
-Mail & Attachment.
-get <mail #>		takes items attached from mail
-add zeny <amount> 	attaches zenys in the mail
-add item <amount> <inventory item>		attaches items in the mail
-
-[md]
-Deletes a Mail.
-<mail #>		delete a mail with a corresponding number from the mail list when you open your mailbox
-
 [memo]
 Save current position for warp portal.
 
@@ -366,15 +318,8 @@ skills			displays mercenary skills
 skills add <skill #>	add a skill point to the current mercenary skill
 desc <skill #>	display a description of the specified mercenary skill
 
-[mi]
-Opens Mailbox.
-
 [ml]
 List monsters that are on screen.
-
-[mo]
-Open a mail.
-<mail #>	open the mail with a corresponding number from the mail list when you open your mailbox
 
 [move]
 Move your character.
@@ -382,20 +327,6 @@ Move your character.
 <map name> 			move to map
 <portal #>			move to nearby portal
 stop				stop all movement
-
-[mr]
-Returns the mail to the sender.
-<mail #>	a corresponding number from the mail list when you open your mailbox
-
-[ms]
-Sends Mail.
-<receiver> <tittle>	<message>	sends mail to <receiver>
-
-[mw]
-Interacts with mail box window.
-0	write mail
-1	take attached items back
-2	inputs zenys
 
 [nl]
 List NPCs that are on screen.

@@ -329,8 +329,8 @@ sub loadDataFiles {
 	if (!$answersafe || $answersafe != 1) {
 		Log::message(TF("**** 您必须同意以上条款才能使用CN Kore\n"));
 		Log::message(T("**** CN Kore唯一的官方地址是 http://www.CNKore.com \n"));
-		Log::message(T("**** CN Kore将在10秒后退出...\n"));
-		sleep(10);
+		Log::message(T("**** CN Kore将在3秒后退出...\n"));
+		sleep(3);
 		exit 1;
 	}
 	

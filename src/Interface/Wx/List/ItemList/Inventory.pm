@@ -54,9 +54,6 @@ sub new {
 		['packet/use_item', sub {
 			$self->onItemsChanged ($_[1]{index})
 		}],
-		['packet/mail_send', sub {
-			$self->update
-		}],
 	);
 	
 	$self->_addCallbacks;
