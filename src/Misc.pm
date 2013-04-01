@@ -1347,13 +1347,6 @@ sub checkMonsterCleanness {
 	if ($monster->{dmgFromParty} > 0 || $monster->{missedFromParty} > 0 || $monster->{dmgToParty} > 0 || $monster->{missedToParty} > 0) {
 		return 1;
 	}
-	
-	# config抢怪设置 by jackywei 
-	if($config{KillStealMonter})
-	{
-		return 1 if ($config{KillStealMonter != 0});
-		return 0
-	}
 
 	if ($config{aggressiveAntiKS}) {
 		# Aggressive anti-KS mode, for people who are paranoid about not kill stealing.
