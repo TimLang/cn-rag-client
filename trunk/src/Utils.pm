@@ -41,15 +41,15 @@ our @EXPORT = (
 	qw(calcPosFromTime calcPosition calcTime checkMovementDirection countSteps distance
 	intToSignedInt intToSignedShort
 	blockDistance getVector moveAlong moveAlongVector
-	normalize vectorToDegree max min round ceil),
+	normalize vectorToDegree max min round),
 	# OS-specific
-	qw(checkLaunchedApp launchApp launchScript),
+	qw(launchApp),
 	# Other stuff
-	qw(dataWaiting dumpHash formatNumber getCoordString getCoordString2
+	qw(dataWaiting dumpHash formatNumber getCoordString
 	getFormattedDate getHex giveHex getRange getTickCount
-	inRange judgeSkillArea makeCoordsDir makeCoordsXY makeCoordsFromTo makeDistMap makeIP encodeIP parseArgs
+	inRange judgeSkillArea makeCoordsDir makeCoordsXY makeCoordsFromTo makeDistMap makeIP parseArgs
 	quarkToString stringToQuark shiftPack swrite timeConvert timeOut
-	urldecode urlencode unShiftPack vocalString wrapText pin_encode)
+    urlencode unShiftPack vocalString wrapText pin_encode)
 );
 
 our %strings;
@@ -512,15 +512,6 @@ sub round {
 	return int($number + .5 * ($number <=> 0));
 }
 
-##
-# ceil($number)
-#
-# Returns the rounded up number
-# Used for distances (only deciles taken into consideration)
-sub ceil {
-	my($number) = shift;
-	return int($number + .9 * ($number <=> 0));
-}
 
 
 #################################################
@@ -528,33 +519,6 @@ sub ceil {
 ### CATEGORY: Operating system-specific stuff
 #################################################
 #################################################
-
-##
-# checkLaunchApp(pid, [retval])
-# pid: the return value of launchApp() or launchScript()
-# retval: a reference to a scalar. If the app exited, the return value will be stored in here.
-# Returns: 1 if the app is still running, 0 if it has exited.
-#
-# If you ran a script or an app asynchronously, you can use this function to check
-# whether it's currently still running.
-#
-# See also: launchApp(), launchScript()
-sub checkLaunchedApp {
-	my ($pid, $retval) = @_;
-	if ($^O eq 'MSWin32') {
-		my $result = ($pid->Wait(0) == 0);
-		if ($result == 0 && $retval) {
-			my $code;
-			$pid->GetExitCode($code);
-			$$retval = $code;
-		}
-		return $result;
-	} else {
-		import POSIX ':sys_wait_h';
-		my $wnohang = eval "WNOHANG";
-		return (waitpid($pid, $wnohang) <= 0);
-	}
-}
 
 ##
 # launchApp(detach, args...)
@@ -610,43 +574,6 @@ sub launchApp {
 	}
 }
 
-##
-# launchScript(async, module_paths, script, [args...])
-# async: 1 if you want to run the script in the background, or 0 if you want to wait until the script has exited.
-# module_paths: reference to an array which contains paths to look for modules, or undef.
-# script: filename of the Perl script.
-# args: parameters to pass to the script.
-# Returns: a PID on Unix, a Win32::Process object on Windows.
-#
-# Run a Perl script.
-#
-# See also: launchApp(), checkLaunchedApp()
-sub launchScript {
-	my $async = shift;
-	my $module_paths = shift;
-	my $script = shift;
-	my @interp;
-
-	if (-f $Config{perlpath}) {
-		@interp = ($Config{perlpath});
-		delete $ENV{INTERPRETER};
-	} else {
-		@interp = ($ENV{INTERPRETER}, '!');
-	}
-
-	my @paths;
-	if ($module_paths) {
-		foreach (@{$module_paths}) {
-			push @paths, "-I$_";
-		}
-	}
-
-	if ($async) {
-		return launchApp(0, @interp, @paths, $script, @_);
-	} else {
-		system(@interp, @paths, $script, @_);
-	}
-}
 
 
 ########################################
@@ -727,48 +654,6 @@ sub formatNumber {
 	}
 }
 
-sub _find_x {
-	my ($x, $y) = @_;
-	my $a = _find_x_top($x, $y);
-
-	my @ans = (
-		[$a,$a+1,$a+2,$a+3,$a+4,$a+5,$a+6,$a+7],
-		[$a+1,$a,$a+3,$a+2,$a+5,$a+4,$a+7,$a+6],
-		[$a+2,$a+3,$a,$a+1,$a+6,$a+7,$a+4,$a+5],
-		[$a+3,$a+2,$a+1,$a,$a+7,$a+6,$a+5,$a+4],
-		[$a+4,$a+5,$a+6,$a+7,$a,$a+1,$a+2,$a+3],
-		[$a+5,$a+4,$a+7,$a+6,$a+1,$a,$a+3,$a+2],
-		[$a+6,$a+7,$a+4,$a+5,$a+2,$a+3,$a,$a+2],
-		[$a+7,$a+6,$a+5,$a+4,$a+3,$a+2,$a+1,$a]
-	);
-	return $ans[int($x % 32) / 4][int($y % 32) / 4];
-}
-
-sub _find_x_top {
-	my ($x, $y) = @_;
-	my $b;
-
-	if ($x < 256 && $y < 256) {
-		$b = 0;
-	} elsif ($x >= 256 && $y >= 256) {
-		$b = 0;
-	} else {
-		$b = 64;
-	}
-
-	my @ans = (
-		[$b,$b+1*8,$b+2*8,$b+3*8,$b+4*8,$b+5*8,$b+6*8,$b+7*8],
-		[$b+1*8,$b,$b+3*8,$b+2*8,$b+5*8,$b+4*8,$b+7*8,$b+6*8],
-		[$b+2*8,$b+3*8,$b,$b+1*8,$b+6*8,$b+7*8,$b+4*8,$b+5*8],
-		[$b+3*8,$b+2*8,$b+1*8,$b,$b+7*8,$b+6*8,$b+5*8,$b+4*8],
-		[$b+4*8,$b+5*8,$b+6*8,$b+7*8,$b,$b+1*8,$b+2*8,$b+3*8],
-		[$b+5*8,$b+4*8,$b+7*8,$b+6*8,$b+1*8,$b,$b+3*8,$b+2*8],
-		[$b+6*8,$b+7*8,$b+4*8,$b+5*8,$b+2*8,$b+3*8,$b,$b+2*8],
-		[$b+7*8,$b+6*8,$b+5*8,$b+4*8,$b+3*8,$b+2*8,$b+1*8,$b]
-	);
-	return $ans[int($x % 256) / 32][int($y % 256) / 32];
-}
-
 sub getCoordString {
 	my $x = int(shift);
 	my $y = int(shift);
@@ -781,22 +666,6 @@ sub getCoordString {
 	shiftPack(\$coords, 0, 4);
 	$coords = substr($coords, 1)
 		if (($config{serverType} == 0) || $nopadding);
-	
-	return $coords;
-}
-
-sub getCoordString2 {
-	my $x = int(shift);
-	my $y = int(shift);
-	my $nopadding = shift;
-	my $coords = "";
-
-	shiftPack(\$coords, 0x44, 8);
-	shiftPack(\$coords, $x, 10);
-	shiftPack(\$coords, $y, 10);
-	shiftPack(\$coords, 0, 28);
-	$coords = substr($coords, 1)
-		if (($config{serverType} == 0) || ($config{serverType} == 3) || ($config{serverType} == 5) || $nopadding);
 	
 	return $coords;
 }
@@ -994,17 +863,6 @@ sub shiftPack {
 }
 
 ##
-# urldecode(encoded_string)
-#
-# Decode an URL-encoded string.
-sub urldecode {
-	my ($str) = @_;
-	$str =~ tr/+?/  /;
-	$str =~ s/%([0-9a-fA-F]{2})/pack('H2',$1)/ge;
-	return $str;
-}
-
-##
 # urlencode(str)
 #
 # URL-encodes a string.
@@ -1180,9 +1038,6 @@ sub makeIP {
 	return $ret;
 }
 
-sub encodeIP {	
-	return pack("C*", split(/\./, shift));	
-}
 
 
 ##
