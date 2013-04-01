@@ -175,10 +175,8 @@ ai_sit_wait 1
 # 坐下延迟时间
 # 当 AI 判断该「坐下」时，延迟几秒才送出「坐下」的信号封包。
 
-# If there are non-party players around and you are to stand up due to the
-# hp/sp sufficiency, do so when the specified number of seconds elapsed
-ai_safe_stand_up 2
 
+ai_safe_stand_up 2
 ai_skill_use 1.4
 ai_skill_use_giveup 1
 # 技能使用放弃时间
