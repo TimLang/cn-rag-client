@@ -164,18 +164,6 @@ sub shop_close {
 		#syncSync support for XKore 1 mode
 		$syncSync = substr($msg, $masterServer->{syncTickOffset}, 4);
 
-# sendSync
-	} elsif ($switch eq "00A7") {
-		if($masterServer && $masterServer->{paddedPackets}) {
-			$syncSync = substr($msg, 8, 4);
-		}
-
-# sendSync
-	} elsif ($switch eq "007E") {
-		if ($masterServer && $masterServer->{paddedPackets}) {
-			$syncSync = substr($msg, 4, 4);
-		}
-
 # sendMapLoaded
 	} elsif ($switch eq "007D") {
 		# syncSync support for XKore 1 mode
