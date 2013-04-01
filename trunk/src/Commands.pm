@@ -132,15 +132,12 @@ sub initHandlers {
 	pml                => \&cmdPMList,
 	portals            => \&cmdPortalList,
 	quit               => \&cmdQuit,
-	rc                 => \&cmdReloadCode,
-	rc2                 => \&cmdReloadCode2,
 	reload             => \&cmdReload,
 	relog              => \&cmdRelog,
 	repair             => \&cmdRepair,
 	respawn            => \&cmdRespawn,
 	s                  => \&cmdStatus,
 	sell               => \&cmdSell,
-	send               => \&cmdSendRaw,
 	sit                => \&cmdSit,
 	skills             => \&cmdSkills,
 	sll                => \&cmdSlaveList,
@@ -173,7 +170,6 @@ sub initHandlers {
 	warp               => \&cmdWarp,
 	weight             => \&cmdWeight,
 	where              => \&cmdWhere,
-	who                => \&cmdWho,
 	whoami             => \&cmdWhoAmI,
 
 	m                  => \&cmdMail,	# see commands
@@ -3600,24 +3596,6 @@ sub cmdReload {
 	}
 }
 
-sub cmdReloadCode {
-	my (undef, $args) = @_;
-	if ($args ne "") {
-		Modules::addToReloadQueue(parseArgs($args));
-	} else {
-		Modules::reloadFile("$FindBin::RealBin/src/functions.pl");
-	}
-}
-
-sub cmdReloadCode2 {
-	my (undef, $args) = @_;
-	if ($args ne "") {
-		($args =~ /\.pm$/)?Modules::addToReloadQueue2($args):Modules::addToReloadQueue2($args.".pm");
-	} else {
-		Modules::reloadFile("$FindBin::RealBin/src/functions.pl");
-	}
-}
-
 sub cmdRelog {
 	my (undef, $arg) = @_;
 	if (!$arg || $arg =~ /^\d+$/) {
@@ -3735,15 +3713,6 @@ sub cmdSell {
 				$args[0]);
 		}
 	}
-}
-
-sub cmdSendRaw {
-	if (!$net || $net->getState() == Network::NOT_CONNECTED) {
-		error TF("You must be connected to the server to use this command (%s)\n", shift);
-		return;
-	}
-	my (undef, $args) = @_;
-	$messageSender->sendRaw($args);
 }
 
 sub cmdShopInfoSelf {
@@ -4985,14 +4954,6 @@ sub cmdWhere {
 	}
 	my $pos = calcPosition($char);
 	message TF("Location: %s : (baseName: %s) : %d, %d\n", $field->descString(), $field->baseName(), $pos->{x}, $pos->{y}), "info";
-}
-
-sub cmdWho {
-	if (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", shift);
-		return;
-	}
-	$messageSender->sendWho();
 }
 
 sub cmdWhoAmI {

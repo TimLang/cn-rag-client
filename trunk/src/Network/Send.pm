@@ -265,22 +265,6 @@ sub sendToServer {
 	}
 }
 
-##
-# void $messageSender->sendRaw(String raw)
-# raw: space-delimited list of hex byte values
-#
-# Send a raw data to the server.
-sub sendRaw {
-	my ($self, $raw) = @_;
-	my $msg;
-	my @raw = split / /, $raw;
-	foreach (@raw) {
-		$msg .= pack("C", hex($_));
-	}
-	$self->sendToServer($msg);
-	debug "Sent Raw Packet: @raw\n", "sendPacket", 2;
-}
-
 # parse/reconstruct callbacks and send* subs left for compatibility
 
 sub parse_master_login {
