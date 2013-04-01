@@ -301,7 +301,7 @@ sub loadDataFiles {
 	}
 
 	## 通知用户本软件免费
-	#my $answerfree = 0;
+	#my $answerfree = 1;
 	my $answerfree = $interface->showMenu(
 		T("\nCN Kore (包含MYKey验证) 均**免费**, 如果您是从淘宝或QQ群等平台付费获得本软件(或者MYKey), 很遗憾的告诉您, 您被骗了!\n\n如果您是从倒卖者手上获取的该软件(或者MYKey), 我们建议您立即退款维权差评卖家!\n\n" .
 		"请回答您是否已经知晓我们告知的信息?\n\n" .
@@ -319,9 +319,8 @@ sub loadDataFiles {
 	
 	## 账号安全性通知
 	#my $answersafe = 1;
-	Log::message(TF("请回答您是否已经知晓并同意以上使用条款? \n\n(请在程序内或者控制台窗口输入: 1 不同意 2 同意)\n"));
 	my $answersafe = $interface->showMenu(
-		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用第三方程序登陆游戏造成的运营商对用户账户的处罚负责\n\n" .
+		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n" .
 		"请回答您是否已经知晓并自愿同意以上使用条款? \n\n" .
 		"请选择或在控制台窗口输入:\n （0 不同意 1 同意)\n\n"),
 		[T("不同意"), T("同意")],
@@ -329,8 +328,8 @@ sub loadDataFiles {
 	if (!$answersafe || $answersafe != 1) {
 		Log::message(TF("**** 您必须同意以上条款才能使用CN Kore\n"));
 		Log::message(T("**** CN Kore唯一的官方地址是 http://www.CNKore.com \n"));
-		Log::message(T("**** CN Kore将在3秒后退出...\n"));
-		sleep(3);
+		Log::message(T("**** CN Kore将在5秒后退出...\n"));
+		sleep(5);
 		exit 1;
 	}
 	
@@ -379,8 +378,15 @@ my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 
 	if (!$config{'KeyID'} || $config{'KeyID'} ne $KeyID) {
 	configModify('KeyID', $KeyID, 1);
+	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到config.txt...\n"));
+	Log::message(T("\n\n本机的KeyID 为: " . $KeyID . "\n"));
+	Log::message(T("您可以在config.txt文件中找到KeyID用以复制.\n"));
+	} else {
+	Log::message(T("\n\n本机的KeyID 为: " . $KeyID . "\n"));
+	Log::message(T("您可以在config.txt文件中找到KeyID用以复制.\n"));
 	}
-
+	sleep(3);
+	
 	if ($KeyID =~ m/(........)(........)(........)(........)/) {
 		$key1 = substr(("RSK" . uc(join '', reverse split /(..)/, $1)), 0, 8);
 		$key2 = substr(("ZXJ" . uc(join '', reverse split /(..)/, $2)), 0, 8);
@@ -397,12 +403,17 @@ my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 
 	if (!$config{'MYkey'} || $config{'MYkey'} ne $MyKey) {
 	configModify('MYkey', "", 1);
-	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到config.txt...\n"));
-	Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n"));
+	# print $MyKey . "\n";
+	Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n\n"));
 	Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
 	Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
-	Log::message(T("**** CN Kore将在10秒后退出...\n"));
-	sleep(3);
+	Log::message(T("**** CN Kore将在20秒后退出...\n"));
+	for (Digest::MD5->new) {
+		$_->add($MyKey);
+		$MyKey = uc($_->hexdigest);
+	}
+	# print $MyKey . "\n";
+	sleep(20);
 	exit 1;} else {
 	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
 	}
