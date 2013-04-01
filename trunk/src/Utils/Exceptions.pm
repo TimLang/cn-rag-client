@@ -43,7 +43,6 @@ use Exception::Class (
 	'IOException',
 	'FileNotFoundException'  => { isa => 'IOException', fields => 'filename' },
 	'SocketException'        => { isa => 'IOException' },
-	'BusNotRunningException' => { isa => 'IOException' },
 	'ProtocolException'      => { isa => 'IOException' },
 
 	'DataFormatException',

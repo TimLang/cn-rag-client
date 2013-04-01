@@ -25,7 +25,6 @@ use Misc;
 use Network::Receive;
 use Network::Send ();
 use Network::ClientReceive;
-use Network::PaddedPackets;
 use Network::MessageTokenizer;
 use Commands;
 use Plugins;
@@ -419,16 +418,6 @@ sub initNetworking {
 			# Inject DLL to running Ragnarok process
 			require Network::XKore;
 			$net = new Network::XKore;
-		} elsif ($XKore_version eq "2") {
-			# Run as a proxy bot, allowing Ragnarok to connect while botting
-			require Network::DirectConnection;
-			require Network::XKore2;
-			$net = new Network::DirectConnection;
-			Network::XKore2::start();
-		} elsif ($XKore_version eq "3") {
-			# Proxy Ragnarok client connection
-			require Network::XKoreProxy;
-			$net = new Network::XKoreProxy;
 		} else {
 			# Run as a standalone bot, with no interface to the official RO client
 			require Network::DirectConnection;
@@ -440,19 +429,6 @@ sub initNetworking {
 		$interface->errorDialog($@);
 		exit 1;
 	}
-
-	if ($sys{bus}) {
-		require Bus::Client;
-		require Bus::Handlers;
-		my $host = $sys{bus_server_host};
-		my $port = $sys{bus_server_port};
-		$host = undef if ($host eq '');
-		$port = undef if ($port eq '');
-		$bus = new Bus::Client(host => $host, port => $port);
-		our $busMessageHandler = new Bus::Handlers($bus);
-	}
-	
-	Network::PaddedPackets::init();
 }
 
 sub initPortalsDatabase {
@@ -533,7 +509,6 @@ sub processServerSettings {
 	}
 	
 	foreach my $serverOption ('serverType', 'chatLangCode', 'storageEncryptKey', 'charBlockSize',
-				'paddedPackets', 'paddedPackets_attackID', 'paddedPackets_skillUseID',
 				'mapServer_ip', 'mapServer_port') {
 		if ($master->{$serverOption} ne '' && $config{$serverOption} ne $master->{$serverOption}) {
 			# Delete Wite Space
@@ -808,7 +783,6 @@ sub mainLoop_initialized {
 		$net->clientSend($_) for $packetParser->process(
 			$incomingMessages, $packetParser
 		);
-		$net->clientFlush() if (UNIVERSAL::isa($net, 'Network::XKoreProxy'));
 	}
 
 	# Receive and handle data from the RO client
@@ -832,8 +806,6 @@ sub mainLoop_initialized {
 	Misc::checkValidity("mainLoop_part2.1");
 	$taskManager->iterate();
 
-	# Process bus events.
-	$bus->iterate() if ($bus);
 	Misc::checkValidity("mainLoop_part2.2");
 
 
