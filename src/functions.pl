@@ -402,7 +402,7 @@ my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 	Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
 	Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
 	Log::message(T("**** CN Kore将在10秒后退出...\n"));
-	sleep(10);
+	sleep(3);
 	exit 1;} else {
 	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
 	}
