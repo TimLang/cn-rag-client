@@ -1,20 +1,21 @@
-0 Item
-1 Lower Mask
-2 One-Handed Weapon
-4 Cape
-8 Right Accessory
-10 Arrow
-16 Armor
-32 Shield
-34 Two-Handed Weapon
-64 Foot Wear
-128 Left Accessory
-136 Accessory
-256 Helmet
-512 Eye Mask
-513 Mid-Lower Mask
-768 Up-Mid Helmet
-769 Up-Mid-Lower Helmet
-1024 Visual Helmet
-2048 Visual Eye Mask
-4096 Visual Lower Mask
+﻿0 物品
+1 头部(下)
+2 单手武器
+4 披风
+8 装饰品(右)
+16 盔甲
+32 盾牌
+34 双手武器
+64 鞋子
+128 装饰品(左)
+136 装饰品
+256 头部(上)
+257 头部(中、下)
+512 头部(中)
+513 头部(中、下)
+768 头部(上、中)
+769 头部(上、中、下)
+1024 服饰(上)
+2048 服饰(中)
+4096 服饰(下)
+32768 箭矢/子弹

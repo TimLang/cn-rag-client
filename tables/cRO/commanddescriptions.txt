@@ -8,621 +8,604 @@
 #You can use as many tabs as you want
 #
 [a]
-Attack a monster.
-<monster #>	attack the specified monster
+攻击指定编号魔物-请输入ml指令查询魔物编号 注意:不是ID
+使用方法:a <魔物编号>
 
 [ai]
-Enable/disable AI.
-				toggles AI on/manual/off
-on				enables AI
-off				disables AI
-manual			makes AI manual
-ai_v			displays the contents of the %ai_v hash, for debugging purposes
-clear			clears AI sequences
-print			displays detailed info about current AI sequence
+切换AI模式 分为自动/手动/关闭
+				切换 AI 开/关
+on				开启 AI
+off				关闭 AI
+ai_v			显示 %ai_v 内容, 用于除错模式
+clear			清除AI序列
+print			显示详细讯息关于目前AI序列
 
 [aiv]
-Display current AI sequences.
+显示目前 AI 序列
 
 [al]
-Display the status of your vending shop.
+显示您的露天商店状态(包含已卖的物品.已赚的钱)
 
 [arrowcraft]
-Create Arrows.
-				lists available arrow-crafting items
-use				use the Archer's Arrow Craft skill
+制造箭矢
+				列出可用于制作箭的物品
+use				使用制作箭和技能
 <arrowcraft #>			create arrows using an item from the 'arrowcraft' list
 forceuse <inventory item #>	craft arrows immediately from an item without using the skill
 
 [as]
-Stop attacking a monster.
+停止攻击魔物
+
+[au]
+显示可用的拍卖命令
+
+[aua]
+新增物品到拍卖
+<背包物品> <数量>	新增物品到拍卖
+
+[aub]
+下标拍卖物品
+<id> <金额>	下标拍卖物品
+
+[auc]
+新建拍卖
+<当前价格> <立即购买价格> <小时>		新建拍卖
+
+[aud]
+删除拍卖
+<index>		删除拍卖
+
+[aue]
+拍卖结束
+<index>		拍卖结束
+
+[aui]
+显示您的拍卖讯息
+selling		已卖的讯息
+buying		已买的讯息
+
+[aur]
+从拍卖删除物品
+
+[aus]
+搜索拍卖按照标准
+<类型> <价格> <文字>	      类型:(0:铠甲 1:武器 2:卡片 3:其他 4:从文字 5:从价格 6:卖 7:买)
 
 [auth]
-(Un)authorize a user for using Kore chat commands.
-<player name> 0		unauthorize <player name>
-<player name> 1		authorize <player name>
+授权指定玩家使用Kore的聊天命令
+<玩家名称> 0		取消授权
+<玩家名称> 1		授权
 
 [autobuy]
-Initiate auto-buy AI sequence.
+启动自动买物
 
 [autosell]
-Initiate auto-sell AI sequence.
+启动自动卖物
 
 [autostorage]
-Initiate auto-storage AI sequence.
+启动自动存仓
 
-[bangbang]
+#[bangbang]
 Does a bangbang body turn.
 
 [bg]
-Send a message in the battlegrounds chat.
-<message>		send <message> in the battlegrounds chat
+发送一条讯息在战场聊天
+<讯息>		发送一条讯息在战场聊天
 
-[bingbing]
+#[bingbing]
 Does a bingbing body turn.
 
-[booking]
-Interact with a group booking
-
 [buy]
-Buy an item from the current NPC shop
-<store item #> [<amount>]	buy <amount> items from the 'store' list
+从目前NPC买一个物品
+使用方法: buy <物品编号> [<数量>]
 
 [c]
-Chat in the public chat.
-<message>			send <message> to public chat
-
-[captcha]
-Answer captcha
+在公开频道聊天
+<讯息>			在公开频道聊天
 
 [card]
-Card compounding.
-list				lists cards in the inventory
-use <card #>		initiate card compounding using the specified card
-mergelist			lists items to merge card with
-mergecancel			cancel a card merge request
-merge <card merge #>		merge card with item and finalize card compounding
-forceuse <card #> <inventory item #>	instantly merge the card with an item
+卡片组合.
+list				显示适配器片清单
+use <卡片编号>		使用指定的卡片进行组合
+mergelist			列出可插入卡片的装备
+mergecancel			取消卡片合并请求
+merge <装备编号>		插入卡片并完成卡片组合
+forceuse <卡片编号> <装备编号>	立即合并卡片
 
 [cart]
-Cart management
-				lists items in cart.
-add <inventory item #> [<amount>]	add <amount> items from inventory to cart
-get <cart item #> [<amount>]	get <amount> items from cart to inventory
-desc <cart item #> [<amount>]	displays cart item description
+手推车管理
+				显示手推车物品
+add <背包物品编号> [<数量>]	放入 <数量> 从背包到手推车
+get <手推车物品> [<数量>]	拿取 <数量> 从手推车到背包
+desc <手推车物品编号> 显示手推车物品的说明
 
 [charselect]
-Ask server to exit to the character selection screen.
+回到人物选择画面.
 
 [chat]
-Chat room management.
-list				lists chat rooms on screen
-join <chat room #>		join a chat room
-info				displays info about the current chat room
-leave				leave the current chat room
-create \"<title>\" [<limit #> <public flag> <password>]	create a chat room
-modify \"<title>\" [<limit #> <public flag> <password>]	modify the current chat room
-bestow <user #>			bestow admin to chat room user
-kick <user #>			kick a chat room user
+管理聊天室
+list				显示附近聊天室
+join <聊天室编号>		加入聊天室
+info				显示聊天室讯息
+leave				离开聊天室
+create              新建聊天室  使用方法: chat create "<聊天室名称>" [<限制的人数> <是否公开(1或0)> <密码>]
+modify              修改聊天室  使用方法: chat modify "<聊天室名称>" [<限制的人数> <是否公开(1或0)> <密码>]
+bestow <玩家编号>			给予某玩家管理聊天室
+kick <玩家编号>			踢除聊天室某玩家
+注意:聊天室名称必须要有引号 例如 "收租枪" 20 1
+如用内挂时发现聊天名称空白和成 未公开(1/0) 皆为正常请不用在意
 
 [chist]
-Display last few entries from the chat log.
-				display last 5 entries
-<number>		display last <number> entries
+显示过去最后5条聊天历史记录
+				显示过去最后5条聊天历史记录
+<数量>		自定义数量
 
 [cil]
-Clear the item log.
+清除物品记录
 
 [cl]
-Clear the chat log.
+清除聊天记录.
 
 [closeshop]
-Close your vending shop.
+关闭露天商店.
 
 [conf]
-Change a configuration key
-<key>				displays value of <key>
-<key> <value>		sets value of <key> to <value>
-<key> none			unsets <key>
+更改设定的变量
+<变量>				显示设置值从变量
+<变量> <设定值>		套用设定值
+<变数> none			unsets <key>
 <label.attribute> <value>	set a new value for the specified configuration key through label
 <label.attribute> none		unset the specified configuration key through label
 
 [cook]
-Attempt to create a food item.
-<cook list #>	attempt to create a food item
+制造一个使用物品
+<cook list #>	制造一个使用物品
 
 [damage]
-Damage taken report
-				displays the damage taken report
-reset			resets the damage taken report
+伤害取得报告
+				伤害取得报告
+reset			重置伤害取得报告
 
 [deal]
-Trade items with another player.
-				accept an incoming deal/finalize the current deal/trade
-<player #>			request a deal with player
-add <inventory item #> [<amount>]	add items to current deal
-add z [<amount>]		add zenny to current deal
-no				deny an incoming deal/cancel the current deal
+与玩家进行交易.
+				接受交易/确定交易/交换
+<玩家编号>			邀请交易
+add <背包物品编号> [<数量>]	加入背包物品到交易窗口
+add z [<数量>]		加入R币到交易窗口
+no				拒绝交易/取消目前的交易
 
 [debug]
-Toggle debug on/off.
-<level>				sets debug level to <level>
-info				displays debug information
+切换调试 开/关
+<等级>				除错的等级 1~2
+info				显示除错讯息
 
 [dl]
-List items in the current deal.
+显示交易列表
 
-[doridori]
+#[doridori]
 Does a doridori head turn.
 
 [drop]
-Drop an item from the inventory.
-<inventory item #> [<amount>]	drop an item from inventory
+丢弃物品
+<背包物品编号> [<数量>]
 
 [dump]
-Dump the current packet receive buffer and quit.
+转储当前接收缓冲区封包 并 退出
 
 [dumpnow]
-Dump the current packet receive buffer without quitting.
+转储当前接收缓冲区封包  不会退出
 
 [e]
-Show emotion.
-<emotion>			show specified emotion (see tables\emotions.txt)
+使用图释
+<e+表情>			显示指定的表情 (在 tables\emotions.txt)
 
 [eq]
-Equip an item.
-<inventory item #>		equips the specified item
-<slotname> <inventory item #>	equips the specified item on the specified slot
-slots				lists slot names
+显示装备物品
+<背包物品编号>		装备指定的物品
+<装备部位> <背包物品编号>	装备指定物品在指定装备部位
+slots				显示装备部位名称
 
-[eval]
-Evaluate a Perl expression.
-<expression>			evaluate a Perl expression
+#[eval]
+评量一个 Perl expression (开发者用)
+<expression>			评量一个 Perl expression
 
 [exp]
-Experience report.
-				displays the experience report
-reset				resets the experience report
-
-[falcon]
-Falcon status.
-				displays falcon status
-release 		releases your falcon
-
+显示经验报告
+				显示经验报告
+reset				重置报告
+#[falcon]
+老鹰状态
+				显示老鹰状态
+release 		释放您的老鹰
 [follow]
-Follow another player.
-<player name|player #>		follow the specified player
-stop				stop following
+跟随一名玩家
+<玩家名称或玩家编号>		跟随一名指定的玩家
+stop				停止跟随
 
 [friend]
-Friend management.
-				lists friends
-request <player name|player #>	requests player to be your friend
-accept				accepts a friend request
-reject				rejects a friend request
-pm <friend #>			pm a friend
-remove <friend #>		remove a friend from friends list
+好友管理
+				好友列表
+request <玩家名称或玩家编号>	要求玩家成为您的朋友
+accept				接受加入好友请求
+reject				拒绝加入好友请求
+pm <好友编号>			发送密语给好友
+remove <好友编号>		删除一个好友从好友名单
 
 [g]
-Chat in the guild chat.
-<message>			send <message> to guild chat
-
-[getplayerinfo]
-Get the name of the player with specified ID
-<player ID>			show the name of the specified ID (needs debug 2)
+在公会频道聊天
+<讯息>			发送 <讯息> 到公会频道
 
 [guild]
-Guild management.
-					request guild info
-info				displays guild info
-members				displays guild member info
-request <player name|player #>	request player to join your guild
-join <flag>			accepts a guild join request if <flag> is 1, deny if 0
-leave				leave the guild
-
+公会管理
+				请求公会讯息
+info				显示公会讯息
+member			    显示公会会员讯息
+request <玩家名称或编号>	要求指定玩家加入您的公会
+join <数>			接受加入公会请求<数> 接受 1, 如果拒绝 0
+leave				离开公会
 [help]
-Help displays commands
-					lists available commands
-<command>			displays detailed information about a command
+显示可用的命令
+				列出可用的命令
+<命令>*			显示命令的详细讯息
 
 [homun]
-Interact with homunculus.
-s				display homunculus status
-status			display homunculus status
-feed			feed your homunculus. (Food needed)
-fire			deletes your homunculus
-move <x> <y>	moves your homunculus
-standby 		makes your homunculus standby
-aiv 			display current homunculus AI 
-ai				toggles AI on, off or manual 
+控制人工生命体
+s				显示生命体状态
+feed			喂食您的生命体
+fire			删除您的生命体
+move <x> <y>	移动您的生命体
+standby 		把您的生命体设为 "等待"
+aiv 			显示目前生命体 AI 
+ai				切换 AI 开, 关 或手动
 on 				turns homunculus AI on
 auto			turns homunculus AI on
 manual			turns homunculus AI to manual
 off				turns homunculus AI off
 clear			clears homunculus AI
 print			prints homunculus AI
-skills			displays homunculus skills
-skills add <skill #>	add a skill point to the current homunculus skill
-desc <skill #>	display a description of the specified homunculus skill
+skills			显示生命体技能
+skills add <技能 #>	增加技能点数到生命体技能
+desc <技能 #>	显示您的生命体技能描述
 
 [i]
-Display inventory items.
-				display all inventory items.
-eq				lists equipped items
-neq				lists unequipped items
-nu				lists non-usable items
-u				lists usable items
-desc <inventory item #>		displays inventory item description
-
+显示背包物品
+				显示所有背包物品
+eq				显示装备物品
+neq				显示未装备的物品
+nu				显示不可使用的物品
+u				显示可用的物品
+desc <背包物品编号>		显示包背该物品详细讯息
 [identify]
-Identify an unindentified item.
-				lists items to be identified
-<identify #>			identify an item
-
+显示可鉴定的装备
+				显示可鉴定的装备
+<装备编号>			鉴定一个装备物品
 [ignore]
-Ignore a user (block his messages).
-<flag> <player name>		ignores a player if <flag> is 1, unignore if 0
-<flag> all			ignores all players if <flag> is 1, unignore if 0
-
+拒绝接收指定玩家密语
+<值> <玩家名称>		拒绝该玩家所有密语 是=1, 否=0
+<值> all			拒绝接收所有玩家密语 <值> 是=1, 否=0
 [il]
-Display items on the ground.
-
+显示附近地面上的物品
 [ihist]
-Displays last few entries of the item log.
-				display last 5 entries
-<number>			display last <number> entries
-
+物品历史记录
+				显示最后 5个项目
+<数>			显示上次 <数> 项目
 [im]
-Use item on monster.
-<inventory item #> <monster #>	use item on monster
-
+使用物品在魔物身上
+<背包物品编号> <魔物编号>	使用物品在魔物身上
 [ip]
-Use item on player.
-<inventory item #> <player #>	use item on player
-
+使用物品在玩家身上
+<背包物品编号> <玩家编号>	使用物品在玩家身上
 [is]
-Use item on yourself.
-<inventory item #>		use item on yourself
-
+使用物品在自己身上
+<背包物品编号>		使用物品在自己身上
 [kill]
-Attack another player (PVP/GVG only).
-<player #>			attack the specified player
-
-[look]
-Look in a certain direction.
-<body dir> [<head dir>]		look at <body dir> (0-7) with head at <head dir> (0-2)
-
+攻击其他玩家 (用于PVP/GVG)
+<玩家编号>			攻击指定玩家
+#[look]
+指定的人物看哪个方向
+<身体方向> [<头的方向>]		<身体方向> (0-7)  <头的方向> (0-2)
 [lookp]
-Look at a certain player.
-<player #>			look at player
-
+面向某位玩家
+<玩家编号>			面向某位玩家
+[m]
+显示邮件可用的指令
+[ma]
+邮件和附件
+get <邮件编号>		拿取附件从邮件
+add zeny <数目> 	在邮件中附加zeny
+add item <数量> <背包物品>		在邮件中附加物品
+[md]
+删除一个邮件
+<邮件编号>		当您打开您的邮箱有一个相应的数字，是由邮件列表
 [memo]
-Save current position for warp portal.
-
+保存目前位置经传阵记忆
 [merc]
-Interact with Mercenary.
-s				display mercenary status
-status			display mercenary status
-fire			fires your mercenary
-move <x> <y>	moves your mercenary
-standby			makes your mercenary standby
-aiv				display current mercenary AI
-ai				toggles AI on, off or manual
+佣兵控制
+s				显示状态
+status			显示您的佣兵状态
+fire			删除您的生命体
+move <x> <y>	移动您的佣兵
+standby			把您的佣兵设为 "等待"
+aiv				显示目前佣兵 AI
+ai				切换 AI 开, 关 或 手动
 on				turns mercenary AI on
 auto			turns mercenary AI on
 manual			turns mercenary AI to manual
 off				turns mercenary AI off
 clear			clears mercenary AI
 print			prints mercenary AI
-skills			displays mercenary skills
-skills add <skill #>	add a skill point to the current mercenary skill
-desc <skill #>	display a description of the specified mercenary skill
-
+skills			显示佣兵技能
+skills add <技能 #>	增加技能点数到 佣兵技能
+desc <技能 #>	显示您的佣兵技能描述
+[mi]
+打开信箱
 [ml]
-List monsters that are on screen.
-
+魔物清单
+[mo]
+打开邮件
+<邮件编号>	当你打开你的邮箱时邮件列表，有一个相应的数字
 [move]
-Move your character.
-<x> <y> [<map name>]		move to the coordinates on a map
-<map name> 			move to map
-<portal #>			move to nearby portal
-stop				stop all movement
-
+移动到指定位置
+<x> <y> [<地图名称>]		移动到你指定的地图坐标
+<地图名称> 			移动到该地图
+<传送点编号>			移动附近的传送点<可能是玩家的传送之阵>
+stop				停止所有移动
+[mr]
+传回给发件人的邮件
+<邮件编号>	当你打开你的邮箱时邮件列表，有一个相应的数字
+[ms]
+发送邮件
+<接收者> <标题>	<讯息>	发送邮件 <接收者>
+#[mw]
+Interacts with mail box window.
+0	写邮件
+1	take attached items back
+2	输入 zenys
 [nl]
-List NPCs that are on screen.
-
+显示附近NPC.
 [openshop]
-Open your vending shop.
-
+开启我的露天商店
 [p]
-Chat in the party chat.
-<message>			send <message> to party chat
-
+在队伍频道聊天
+<讯息>			发送 <讯息> 到队伍频道
 [party]
-Party management.
-				displays party member info
-create \"<party name>"\		organize a party
-share <flag>			sets party exp sharing to even if flag is 1, individual take if 0
-request <player #>		request player to join your party
-join <flag>			accept a party join request if <flag> is 1, deny if 0
-kick <party member #>		kick party member from party
-leave				leave the party
-
-[pause]
-Delay the next console commands.
+显示队伍讯息
+				显示队伍讯息
+create \"<队五名称>\"		创队伍
+share <值>			经验共享 1, 各自取得 0
+request <玩家编号>		要求玩家加入你的队伍
+join <值>			接受队伍邀请 <值> 加入 1, 拒绝 0
+kick <队伍成员编号>		踢出一位队伍成员
+leave				离开队伍
+#[pause]
+延迟下一个命令
 <seconds>		delay the next console commands by a specified number of seconds (default: 1 sec.)
-
 [pecopeco]
-Pecopeco status.
-				display pecopeco status
-release			release your pecopeco
-
+大嘴鸟状态
+				显示您的大嘴鸟状态
+release			释放您的大嘴鸟
 [pet]
-Pet management.
-s				displays pet status
-status			displays pet status
-c <monster #>	captures a monster
-capture <monster #>		captures a monster
-hatch <egg #> 	hatches a pet egg, but first you should use the item Pet Incubator
-info			sends pet menu
-feed			feeds your pet
-performance		plays with your pet
-return			sends your pet back to the egg
-unequip			unequips your pet
-name <name>		changes the name of the pet
-
+宠物管理
+s				显示宠物状态
+f               喂食您的宠物
+p               表现宠物
+r               回复到蛋状态
+u               移除宠物装饰品
 [petl]
-List pets that are on screen.
-
+显示附近宠物列表
 [pl]
-List players that are on screen.
-				lists players on screen
-<player #>		displays detailed info about a player
-p				lists party players on screen
-g				lists guild players on screen
-
+显示附近玩家列表
+				显示附近玩家列表
+<玩家编号>		显示该玩家详细讯息
+p				列出附近队伍的玩家
+g				列出附近公会的玩家
 [plugin]
-Control plugins.
-				lists loaded plugins
-load <filename>			loads a plugin file
-reload <plugin name|plugin #>	reloads a loaded plugin
-unload <plugin name|plugin #>	unloads a loaded plugin
-help				displays plugin help
-
+插件控制
+				以载入的插件
+load <文件名>			加载插件文件
+reload <插件名称|插件编号>	重载插件
+unload <插件名称|插件编号>	卸除插件
+help				显示插件帮助
 [pm]
-Send a private message.
-<player name|PM list #> <message>	send <message> to player through PM
-
+发送密语
+<玩家名称|PM 列表编号> <讯息>	发送密语到指定玩家
 [pml]
-Quick PM list.
-
+密频清单
 [portals]
-List portals that are on screen.
-
+显示附近传点
 [quest]
-Quest management.
-						displays possible commands for quest
+任务管理
+						显示可用的指令
 set <questID> on		enable quest
 set <questID> off		disable quest
-list					displays a list of your quests
-
+list					显示您的任务列表
 [quit]
-Exit this program.
-
-[rc]
-Reload source code files.
+结束程序
+#[rc]
+重载源代码文件
 				reload functions.pl
 <module names>			reload module files in the space-separated <module names>
-
-[refine]
+#[refine]
 Refine an item (using the whitesmith skill)
 refine (<item name> | <item index>) 
-
 [reload]
-Reload configuration files.
-all				reload all control and table files
-<names>				reload control files in the list of <names>
-all except <names>		reload all files except those in the list of <names>
-
+重载配置文件
+all				重载所有配置文件
+<名称>				重载该配置文件
+all except <名称>		重载所有配置文件 除了这些名称
 [relog]
-Log out then log in again.
-				logout and login after 5 seconds
-<seconds>			logout and login after <seconds>
-
+重新登入
+				5秒后重新登入
+<秒>			几秒后重新登入
 [respawn]
-Respawn back to the save point.
+注销到人物选择
 
 [s]
-Display character status.
+显示角色状态.
 
 [sell]
-Sell items to an NPC.
-<inventory item #> [<amount>]	put inventory items in sell list
-list				show items in the sell list
-done				sell everything in the sell list
-cancel				clear the sell list
+从NPC卖出物品
+<背包物品编号> [<数量>]	从NPC卖出物品
+list				显示在贩卖列表的物品
+done				卖出所有在贩卖列表的物品
+cancel				清除贩卖列表
 
-[send]
+#[send]
 Send a raw packet to the server.
 <hex string>			sends a raw packet to connected server
 
 [showeq]
-Equipment showing.
-<player>	request equipment information for player
-me on		enables equipment showing
-me off		disables equipment showing
+显示某玩家装备或开放别人查看自己的装备
+<玩家>	显示该玩家装备
+me on		开启
+me off		关闭
 
 [sit]
-Sit down.
+指示玩家坐下
 
 [skills]
-Skills management.
-						Lists available skills.
-add <skill #>			add a skill point
-desc <skill #>			displays skill description
+显示技能列表
+				显示技能列表
+add <技能编号>			对该技能使用技能点
+desc <技能编号>			显示该技能详细讯息
 
 [sl]
-Use skill on location.
-<skill #> <x> <y> [<level>]		use skill on location
+使用技能在一个坐标位置
+<技能编号> <x> <y> [<等级>]		使用技能在一个位置
 
 [sll]
-Display a list of slaves in your immediate area.
+显示附近人工生命体/佣兵
 
 [sm]
-Use skill on monster.
-<skill #> <monster #> [<level>]		use skill on monster
+对魔物使用技能
+<技能编号> <魔物编号> [<等级>]		对魔物使用技能
 
 [sp]
-Use skill on player.
-<skill #> <player #> [<level>]		use skill on player
+对指定玩家使用技能
+<技能编号> <玩家编号> [<等级>]		使用技能在指定玩家
 
 [spells]
-List area effect spells on screen.
+区域效果列表
 
 [ss]
-Use skill on self.
-<skill #> [<level>]					use skill on self
+对自己使用技能
+<技能编号> [<等级>]					对自己使用技能
 
 [ssl]
-Use skill on slave.
-<skill #> <target #> <skill level>	use skill on slave
+使用技能在人工生命体/佣兵
+<技能 #> <目标 #> <技能等级>	使用技能在 slave
 
 [ssp]
-Use skill on ground spell.
-<skill #> <target #> [<skill level>]	use skill on ground spell
+对地面有害法术施展技能
+<技能编号> <目标编号> [<技能等级>]	使用技能在地面法术
 
 [st]
-Display stats.
+角色状态 
 
 [stand]
-Stand up.
+指示玩家站起
 
 [stat_add]
-Add status point.
-str|agi|int|vit|dex|luk		add status points to a stat
+添加属性点数
+str|agi|int|vit|dex|luk		添加属性点数
 
 [storage]
-Handle items in Kafra storage.
-				lists items in storage
-eq				lists equipments in storage
-nu				lists non-usable items in storage
-u				lists usable items in storage
-add <inventory item #> [<amount>]	adds inventory item to storage
-addfromcart <cart item #> [<amount>]	adds cart item to storage
-get <storage item #> [<amount>]	gets item from storage to inventory
-gettocart <storage item #> [<amount>]	gets item from storage to cart
-close				close storage
-log				logs storage items to logs\storage.txt
-
+与卡普拉存仓.
+				列出仓库物品
+eq				列出可装备的物品
+nu				列出无法装备的物品
+u				列出可以使用的物品
+add <背包物品 #> [<数量>]	移动背包物品到仓库
+addfromcart <首推车物品 #> [<数量>]	移动手推车物品到仓库
+get <仓库物品 #> [<数量>]	移动仓库物品到背包
+gettocart <仓库物品 #> [<数量>]	移动仓库物品到手推车
+close				关闭仓库
+log				纪录仓库物品到 logs\storage.txt
 [store]
-Display shop items from NPC.
-					lists available shop items from NPC
-desc <store item #>	displays store item description
+从NPC列出了可用的商店物品
+				从NPC列出了可用的商店物品
+desc <商店物品 #>		显示商店物品描述
 
 [switchconf]
-Switch configuration file.
-<filename>			switches configuration file to <filename>
+切换config.txt配置文件
+<文件名>			切换config.txt配置文件
 
 [take]
-Take an item from the ground.
-<item #>			take an item from the ground
-first				take the first item on the ground
+从地上捡取一个物品
+<物品编号>			从地上捡取一个物品
+first				捡取缔上的第一个物品
 
 [talk]
-Manually talk to an NPC.
-<NPC #>				talk to an NPC
-cont				continue talking to NPC
-resp				lists response options to NPC
-resp <response #>	select a response to NPC
-num <number>		send a number to NPC
-text <string>		send text to NPC
-no					ends/cancels conversation with NPC
-
+手动和一位NPC对话.
+<NPC编号>		 	跟一位NPC对话
+cont				继续跟NPC对话
+resp				选择一个选项来继续
+resp <响应编号>	    选择响应来继续对话
+num <数>		    发送一个数字到NPC
+text <字>		    发送文字到NPC
+no					与NPC结束对话/取消对话
 [talknpc]
-Send a sequence of responses to an NPC.
-<x> <y> <NPC talk codes>	talk to the NPC standing at <x> <y> and use <NPC talk codes>
-
+发送回应序列到一个NPC
+<x> <y> <NPC对话代码>	
 [tank]
-Tank for a player.
-<player name|player #>		starts tank mode with player as tankModeTarget
-stop				stops tank mode
-
+玩家肉盾
+<玩家名称或玩家编号>		让指定的玩家成为自己的肉盾
+stop				停止肉盾模式
 [tele]
-Teleport to a random location.
-
+使用物品或技能瞬间移动
 [testshop]
-Show what your vending shop would sell.
-
+测试露天商店 这不会真的贩卖
 [timeout]
-Set a timeout.
-<type>				displays value of <type>
-<type> <second>		sets value of <type> to <seconds>
-
+设定 timeout
+<类型>				显示值重 <类型>
+<类型> <秒>		套用值 <类型> 与 <秒>
 [top10]
-Displays top10 ranking.
-top10 (a | alche | alchemist)		displays Alchemist's top10 ranking
-top10 (b | black | blacksmith)		displays Blackmith's top10 ranking
-top10 (p | pk | pvp)				displays PVP top10 ranking
-top10 (t | tk | taekwon)			displays Taekwon's top10 ranking
-
+显示前10排名
+top10 (a | alche | alchemist)		显示炼金术师的十大排名
+top10 (b | black | blacksmith)		显示铁匠的十大排名
+top10 (p | pk | pvp)				显示 PVP的十大排名
+top10 (t | tk | taekwon)			显示跆拳道家的十大排名
 [uneq]
-Unequp an item.
-<inventory item #>		unequips the specified item
-
+已装备的物品
+<背包物品编号>		装备指定的物品
 [vender]
-Buy items from vending shops.
-<vender #>			enter vender shop
-<vender #> <vender item #> [<amount>]	buy items from vender shop
-end				leave current vender shop
-
+查看露天商店或购买
+<露天商店编号> 显示该露天商店物品
+<露天商店编号> <露天商店 物品编号> <数量> 购买一个物品
+end				离开目前的露天商店
 [verbose]
-Toggle verbose on/off.
-
+切换 verbose 开/关
 [version]
-Display the version of openkore.
-
+显示openkore系统的版本
 [vl]
-List nearby vending shops.
-
+显示附近的商店名称
 [warp]
-Open warp portal.
-list				lists available warp portals to open
-<warp portal #|map name>	opens a warp portal to a map
-
+打开传送之阵
+list				列出可传送的地图需先咏唱传送之阵
+<传送编号或地图名称>	打开通往该地图传点
 [weight]
-Gives a report about your inventory weight.
-				displays info about current weight
-<item weight>			calculates how much more items of specified weight can be carried
-
+显示一个关于您的负重量的报告
+				显示目前负重
+<item weight>			计算多少之后会负重50或90
 [where]
-Shows your current location.
-
-[who]
-Display the number of people on the current server.
-
+显示您目前的坐标位置
+#[who]
+显示服务器在线人数
 [whoami]
-Display your character and account ID.
-
+显示你的角色名称帐户ID
 [north]
-Move 5 steps north.
-
+向北移动5步
 [south]
-Move 5 steps south.
-
+向南移动5步
 [east]
-Move 5 steps east.
-
+向东移动5步
 [west]
-Move 5 steps west.
-
+向西移动5步
 [northeast]
-Move 5 steps northeast.
-
+向东北移动5步
 [northwest]
-Move 5 steps northwest.
-
+向西北移动5步
 [southeast]
-Move 5 steps southeast.
-
+向东南移动5步
 [southwest]
-Move 5 steps southwest.
+向西南移动5步

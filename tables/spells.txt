@@ -1,111 +1,54 @@
-﻿126 Safety Wall
-127 Fire Wall
-128 Warp Portal Opening
-129 Warp Portal
+﻿126 暗之障壁
+127 火焰之壁
+128 传送之阵开启中
+129 传送之阵
 130 Holy Communion?
-131 Sanctuary
-132 Magnus Exorcismus
-133 Pneuma
+131 光耀之堂
+132 十字驱魔攻击
+133 光之障壁
 134 Big Magic
-135 Fire Pillar (standby)
-136 Fire Pillar (detonating)
-137 Hidden Trap
-138 Trap
-139 Hidden Warp NPC
+135 火柱攻击 (standby)
+136 火柱攻击 (detonating)
 140 Talkie Box (hatsudou-chuu)
-141 Ice Wall
-142 Quagmire
-143 Blast Mine
-144 Skid Trap
-145 Ankle Snare
-146 Venom Dust
-147 Land Mine
-148 Shockwave
-149 Sandman
-150 Flasher
-151 Freezing Trap
-152 Claymore
-153 Talkie Box
-154 Volcano
-155 Deluge
-156 Violent Gale
-157 Land Protector
-158 Lullaby
-159 Rich Man Mr.Kim
-160 Eternal Chaos
-161 Drum Sound on Battlefield
-162 Ring of Nibelungen
-163 Roki's Weil
-164 Into the Abyss
-165 Invulnerable Siegfried
-166 Dissonance
-167 Whistle
-168 Assassin Cross
-169 Poem of Bragi
-170 Apple of Idun
-171 Ugly Dance
-172 Humming
-173 Don't Forget Me
-174 Fortune's Kiss
-175 At Your Service
-176 Graffiti
-177 Demonstration
-# Wedding skills
+141 冰刃之墙
+142 泥沼地
+143 定时爆炸陷阱
+144 滑动陷阱
+145 定位陷阱
+146 病毒散拨
+147 地雷陷阱
+148 魔耗陷阱
+149 睡魔陷阱
+150 强光陷阱
+151 霜冻陷阱
+152 爆散陷阱
+153 陷阱探查
+154 火元素领域
+155 水元素领域
+156 风元素领域
+157 地元素领域
+158 Zeny Mark
+159 经验值倍增
+160 永远的混沌
+161 战鼓震天
+162 尼贝隆根之戒指
+163 洛奇的悲鸣
+164 触媒之所
+165 不死神齐格弗里德
+166 不谐和音
+167 吹口哨
+168 刺客的黄昏
+169 布莱奇之诗
+170 伊登的苹果
+171 丑陋之舞
+172 哼唱之音
+173 勿忘我
+174 女神之吻
+175 为您服务
+176 涂鸦
+177 火烟瓶投掷
 178 Pink Warp Portal Wind
-179 Gospel
-180 Basilica
-181 Moonlit Water Mill
-182 Wall of Fog
-183 Spider Web
-184 Gravitation Field
-185 Wand of Hermode
-186 JT_KAENSIN
-187 Suiton
-188 Reverse Tatami
-189 Kaensin
-190 Ground Drift
-191 JT_BLIND_S
-192 Death Poison Slash
-193 Death Freezer
-194 JT_FLARE_S
-195 Death Wave
-196 Dead Water Attack
-197 Dead Storm Attack
-198 Earth Quake
-199 Evil Land
-200 Dark Runner
-201 Dark Transfer
-202 Epiclesis
-203 Earth Strain
-204 Man Hole
-205 Dimension Door
-206 Chaos Panic
-207 Maelstrom
-208 Blood Lust
-209 Feint Bomb
-210 Magenta Trap
-211 Cobalt Trap
-212 Maize Trap
-213 Verdure Trap
-214 Firing Trap
-215 Ice Bound Trap
-216 Electric Shocker
-217 Cluster Bomb
-218 Reverberation
-219 Severe Rainstorm
-220 Fire Walk
-221 Electric Walk
-222 Poem of the Netherworld
-223 Psychic Wave
-224 Cloud Kill
-225 Poison Smoke
-226 Neutral Barrier
-227 Stealth Field
-228 Warmer
-229 Thorn Trap
-230 Wall of Thorns
-231 Demonic Fire
-232 Fire Expansion Smoke Powder
-233 Fire Expansion Tear Gas
-234 Hell's Plant  
-235 Vacuum Extreme
+179 圣音
+180 神圣殿堂
+182 a black cross rises three-dimensionally
+183 易燃之网
