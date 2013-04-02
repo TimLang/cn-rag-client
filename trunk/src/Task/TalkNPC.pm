@@ -195,13 +195,6 @@ sub iterate {
 		} elsif ( $step =~ /x/i ) {
 			# Initiate NPC conversation.
 			if (!$self->{target}->isa('Actor::Monster')) {
-				my %vec;
-				my $bodyDirection;
-				my $myPos = $self->{pos};
-				getVector(\%vec, $target->{pos}, $myPos);
-				$bodyDirection = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
-				$messageSender->sendLook($bodyDirection, 0);
-				# NPC 交互时转身过新的检测
 				# TODO: 转头和转身的计算
 				$messageSender->sendTalk($self->{ID});
 			} else {
