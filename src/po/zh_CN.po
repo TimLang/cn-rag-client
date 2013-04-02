@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2010-12-07 19:17+0800\n"
-"Last-Translator: 1sa\n"
+"PO-Revision-Date: 2013-04-02 22:39+0800\n"
+"Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +87,7 @@ msgstr "物品栏的物品:%s 已装备在: %s.\n"
 #: ../Commands.pm:4722
 #, perl-format
 msgid "No such equipped Inventory Item: %s in slot: %s\n"
-msgstr "物品栏里没有这种 equipped 的物品: %s 于装备部位: %s\n"
+msgstr "物品栏里没有这种装备的的物品: %s 于装备部位: %s\n"
 
 #: ../Actor/Player.pm:38
 msgid "himself"
@@ -103,16 +103,16 @@ msgstr "自己"
 
 #: ../Actor/You.pm:83
 msgid "you"
-msgstr "你"
+msgstr "您"
 
 #: ../Actor/You.pm:84
 msgid "You"
-msgstr "你"
+msgstr "您"
 
 #: ../Actor/You.pm:220
 #, perl-format
 msgid "Encounter Monster : %s\n"
-msgstr "遭遇魔物: %s\n"
+msgstr "遇到怪物: %s\n"
 
 #: ../Actor/You.pm:225
 #: ../Actor/You.pm:293
@@ -176,7 +176,7 @@ msgstr "更改攻击是否使用武器为默认值: %s\n"
 #: ../AI/Attack.pm:228
 #: ../AI/Attack.pm:398
 msgid "Dropping target - you will not kill steal others\n"
-msgstr "放弃目标 - 你不可抢别人的怪\n"
+msgstr "放弃目标 - CN Kore 不允许抢别人的怪\n"
 
 #: ../AI/Attack.pm:123
 #: ../AI/Attack.pm:164
@@ -228,7 +228,7 @@ msgstr "逃脱至最近的传点.\n"
 
 #: ../AI/CoreLogic.pm:562
 msgid "Found warp portal escaping into warp portal.\n"
-msgstr "发现传阵正在逃脱进入传阵.\n"
+msgstr "发现传送阵，正在逃脱进入传送阵.\n"
 
 #: ../AI/CoreLogic.pm:571
 msgid "Escape failed no portal found.\n"
@@ -246,7 +246,7 @@ msgstr ""
 #: ../AI/CoreLogic.pm:1947
 #, perl-format
 msgid "Calculating random route to: %s: %s, %s\n"
-msgstr "计算随机路径至: %s: %s, %s\n"
+msgstr "计算随机路径至坐标: %s: %s, %s\n"
 
 #: ../AI/CoreLogic.pm:641
 msgid "Timeout equiping for skill\n"
@@ -295,7 +295,7 @@ msgstr "*** 你已死亡, 自动断线! ***\n"
 
 #: ../AI/CoreLogic.pm:1090
 msgid "Auto-storaging due to excess weight\n"
-msgstr "因负重而启动自动存仓功能\n"
+msgstr "因负重达到设置而启动自动存仓功能\n"
 
 #: ../AI/CoreLogic.pm:1126
 #: ../AI/CoreLogic.pm:1127
@@ -312,16 +312,16 @@ msgstr "因 %s 不足而启动自动存仓功能\n"
 
 #: ../AI/CoreLogic.pm:1204
 msgid "Teleporting to auto-storage\n"
-msgstr "瞬移以进行自动存仓功能\n"
+msgstr "瞬移回城以进行自动存仓功能\n"
 
 #: ../AI/CoreLogic.pm:1209
 #, perl-format
 msgid "Calculating auto-storage route to: %s(%s): %s, %s\n"
-msgstr "正在计算自动存仓路径至: %s(%s): %s, %s\n"
+msgstr "正在计算自动存仓路径至坐标: %s(%s): %s, %s\n"
 
 #: ../AI/CoreLogic.pm:1223
 msgid "Warning storageAuto has changed. Please read News.txt\n"
-msgstr "警告: storageAuto已改变. 请阅读News.txt\n"
+msgstr "警告: storageAuto已改变. 请告知开发人员\n"
 
 #: ../AI/CoreLogic.pm:1230
 msgid "Using storage steps defined in config.\n"
@@ -329,7 +329,7 @@ msgstr "使用config档定义的存仓步骤.\n"
 
 #: ../AI/CoreLogic.pm:1232
 msgid "Something is wrong with storageAuto_npc_type in your config.\n"
-msgstr "你的config檔中的 storageAuto_npc_type 有误.\n"
+msgstr "你的config档案中的 storageAuto_npc_type 有误.\n"
 
 #: ../AI/CoreLogic.pm:1263
 #: ../AI/CoreLogic.pm:1264
@@ -352,7 +352,7 @@ msgid ""
 "This problem could be caused by a server bug.\n"
 "To work around this problem, set 'relogAfterStorage' to 1, and relogin.\n"
 msgstr ""
-"Kore试着从仓库拿取物品3次, 但都失败了.\n"
+"CN Kore试着从仓库拿取物品3次, 但都失败了.\n"
 "这个问题可能是因为服务器bug引起的.\n"
 "若要在这个问题下进行, 请设定 'relogAfterStorage' 为1, 然后重新登入.\n"
 
@@ -371,21 +371,21 @@ msgstr "自动卖出的程序已完成.\n"
 
 #: ../AI/CoreLogic.pm:1484
 msgid "Teleporting to auto-sell\n"
-msgstr "瞬移以进行自动卖出功能\n"
+msgstr "瞬移回城以进行自动卖出功能\n"
 
 #: ../AI/CoreLogic.pm:1488
 #, perl-format
 msgid "Calculating auto-sell route to: %s(%s): %s, %s\n"
-msgstr "正在计算自动卖出路径至: %s(%s): %s, %s\n"
+msgstr "正在计算自动卖出路径至坐标: %s(%s): %s, %s\n"
 
 #: ../AI/CoreLogic.pm:1653
 msgid "Teleporting to auto-buy\n"
-msgstr "瞬移以进行自动买物功能\n"
+msgstr "瞬移回城以进行自动买物功能\n"
 
 #: ../AI/CoreLogic.pm:1660
 #, perl-format
 msgid "Calculating auto-buy route to: %s (%s): %s, %s\n"
-msgstr "正在计算自动买物路径至: %s (%s): %s, %s\n"
+msgstr "正在计算自动买物路径至坐标: %s (%s): %s, %s\n"
 
 #: ../AI/CoreLogic.pm:1787
 #, perl-format
@@ -404,7 +404,7 @@ msgstr "计算路径至: %s(%s): %s, %s\n"
 #: ../AI/CoreLogic.pm:1819
 #, perl-format
 msgid "Calculating lockMap route to: %s(%s)\n"
-msgstr "计算路径至: %s(%s)\n"
+msgstr "计算路径至坐标: %s(%s)\n"
 
 #: ../AI/CoreLogic.pm:1866
 #, perl-format
@@ -413,38 +413,38 @@ msgstr "自动加技能点 %s\n"
 
 #: ../AI/CoreLogic.pm:1944
 msgid "Invalid coordinates specified for randomWalk (coordinates are unwalkable); randomWalk disabled\n"
-msgstr "无效的randomWalk指定坐标(坐标点是无法走动区域); randomWalk disabled\n"
+msgstr "无效的randomWalk指定坐标(坐标点是无法走动区域); 随机走动功能关闭\n"
 
 #: ../AI/CoreLogic.pm:1979
 #, perl-format
 msgid "Found my master - %s\n"
-msgstr "找到我的主人 - %s\n"
+msgstr "找到我跟随的主人 - %s\n"
 
 #: ../AI/CoreLogic.pm:1986
 msgid "Found my master!\n"
-msgstr "找到我的主人了!\n"
+msgstr "找到我跟随的主人了!\n"
 
 #: ../AI/CoreLogic.pm:2040
 msgid "Master died. I'll wait here.\n"
-msgstr "主人死了. 我会在这里等候.\n"
+msgstr "主人挂了. 我会在这里等候着他的o(︶︿︶)o.\n"
 
 #: ../AI/CoreLogic.pm:2043
 msgid "I lost my master\n"
-msgstr "我跟丢了主人\n"
+msgstr "跟丢了我的主人\n"
 
 #: ../AI/CoreLogic.pm:2045
 msgid "Trying to get him back\n"
-msgstr "试着让他回来\n"
+msgstr "正在试着让他回来\n"
 
 #: ../AI/CoreLogic.pm:2052
 #: ../AI/CoreLogic.pm:2137
 msgid "My master disconnected\n"
-msgstr "我的主人下线了\n"
+msgstr "我跟随的主人下线了\n"
 
 #: ../AI/CoreLogic.pm:2088
 #: ../AI/CoreLogic.pm:2165
 msgid "My master teleported\n"
-msgstr "我的主人已瞬移\n"
+msgstr "我跟随的主人已瞬移\n"
 
 #: ../AI/CoreLogic.pm:2092
 msgid "Trying to find lost master\n"
@@ -456,7 +456,7 @@ msgstr "不知道主人发生了什么事\n"
 
 #: ../AI/CoreLogic.pm:2133
 msgid "Couldn't find master, giving up\n"
-msgstr "无法找到主人，放弃了\n"
+msgstr "无法找到我的主人，放弃了\n"
 
 #: ../AI/CoreLogic.pm:2161
 #, perl-format
@@ -466,22 +466,22 @@ msgstr "我的主人进入传点(%s, %s) - 跟着移动至传点位置\n"
 #: ../AI/CoreLogic.pm:2787
 #, perl-format
 msgid "Gathering: %s (%s)\n"
-msgstr "收集: %s (%s)\n"
+msgstr "收集无主物品: %s (%s)\n"
 
 #: ../AI/CoreLogic.pm:2804
 #, perl-format
 msgid "Failed to gather %s (%s) : Lost target\n"
-msgstr "收集 %s (%s) 失败: 失去目标\n"
+msgstr "收集无主物品 %s (%s) 失败: 失去目标\n"
 
 #: ../AI/CoreLogic.pm:2812
 #, perl-format
 msgid "Failed to gather %s (%s) : No looting!\n"
-msgstr "收集 %s (%s) 失败: 不可捡取!\n"
+msgstr "收集无主物品 %s (%s) 失败: 不可捡取!\n"
 
 #: ../AI/CoreLogic.pm:2816
 #, perl-format
 msgid "Failed to gather %s (%s) : Timeout\n"
-msgstr "收集 %s (%s) 失败: 逾时\n"
+msgstr "收集无主物品 %s (%s) 失败: 超时\n"
 
 #: ../AI/CoreLogic.pm:2867
 msgid "Teleporting to avoid all players\n"
@@ -489,7 +489,7 @@ msgstr "正在瞬移以避免所有的玩家\n"
 
 #: ../AI/CoreLogic.pm:2907
 msgid "Teleporting due to insufficient HP/SP or too many aggressives\n"
-msgstr "由于HP/SP不足或有太多攻击而瞬移\n"
+msgstr "由于HP/SP不足或有被太多怪物围攻而瞬移\n"
 
 #: ../AI/CoreLogic.pm:2920
 #, perl-format
@@ -499,15 +499,15 @@ msgstr "瞬移以避开 %s\n"
 #: ../AI/CoreLogic.pm:2930
 #, perl-format
 msgid "Teleporting due to monster being too close %s\n"
-msgstr "因魔物太靠近而瞬移 %s\n"
+msgstr "因怪物太靠近而瞬移 %s\n"
 
 #: ../AI/CoreLogic.pm:2948
 msgid "Teleporting due to idle\n"
-msgstr "因闲置而瞬移\n"
+msgstr "因发呆而瞬移\n"
 
 #: ../AI/CoreLogic.pm:2960
 msgid "Teleporting to avoid portal\n"
-msgstr "正在瞬移以避免传点\n"
+msgstr "正在瞬移以避免传送点\n"
 
 #: ../AI/CoreLogic.pm:2982
 #: ../Misc.pm:1259
@@ -562,7 +562,7 @@ msgstr "%s 移动太远 (距离: %.2f) - 移动到附近\n"
 #: ../AI/Slave.pm:361
 #, perl-format
 msgid "%s can't reach or damage target, dropping target\n"
-msgstr "%s 无法到达或伤害到目标，放弃目标\n"
+msgstr "%s 无法靠近或伤害到目标，放弃该目标\n"
 
 #: ../AI/Slave.pm:363
 #: ../AI/Slave.pm:489
@@ -586,12 +586,12 @@ msgstr "目标 %s 已失去\n"
 #: ../AI/Slave.pm:671
 #, perl-format
 msgid "Dropping target - %s will not kill steal others\n"
-msgstr "放弃目标 %s 你不可抢别人的怪\n"
+msgstr "放弃目标 %s CN Kore 不可以抢别人的怪\n"
 
 #: ../AI/Slave.pm:524
 #, perl-format
 msgid "%s has no LOS from (%d, %d) to target (%d, %d)"
-msgstr "从 %s (%d,%d) 到 (%d,%d) 的传点无 LOS."
+msgstr "从 %s (%d,%d) 到 (%d,%d) 的传点无 LOS. 请联系BUG搜集人员"
 
 #: ../AI/Slave.pm:622
 #, perl-format
@@ -607,17 +607,17 @@ msgstr "%s目的地已到达.\n"
 #: ../AI/Slave.pm:792
 #, perl-format
 msgid "Slave is stuck at %s (%d,%d), while walking from (%d,%d) to (%d,%d)."
-msgstr "人工生命体在 %s (%d,%d) 呆住，从 (%d,%d) 移动到 (%d,%d) 的时候。"
+msgstr "人工生命体在 %s (%d,%d) 卡住，在您从 (%d,%d) 移动到 (%d,%d) 的时候。"
 
 #: ../AI/Slave/Homunculus.pm:47
 #, perl-format
 msgid "Auto-feeding %s (%d hunger).\n"
-msgstr "自动喂食你的 %s 人工生命体(%d 饥饿).\n"
+msgstr "自动喂食您的 %s 人工生命体(%d 饥饿).\n"
 
 #: ../AI/Slave/Homunculus.pm:49
 #, perl-format
 msgid "Next feeding at: %d hunger.\n"
-msgstr "下一次喂食: %d 饥饿.\n"
+msgstr "在 %d 饥饿时进行下一次喂食.\n"
 
 #: ../Interface/Wx/List/ItemList/Cart.pm:14
 #: ../Interface/Wx/StatView/You.pm:23
@@ -636,7 +636,7 @@ msgstr "放到仓库"
 
 #: ../Interface/Wx/List/ItemList/Inventory.pm:149
 msgid "Use 1 on self"
-msgstr "使用 1 - 自己"
+msgstr "使用 1 - 给自己"
 
 #: ../Interface/Wx/List/ItemList/Inventory.pm:152
 msgid "Equip"
@@ -645,7 +645,7 @@ msgstr "装备"
 #: ../Interface/Wx/List/ItemList/Inventory.pm:154
 #: ../Interface/Wx/StatView/Pet.pm:23
 msgid "Unequip"
-msgstr "未知装备"
+msgstr "卸下"
 
 #: ../Interface/Wx/List/ItemList/Inventory.pm:160
 msgid "Start card merging"
@@ -672,7 +672,7 @@ msgstr "%d 物品"
 #: ../Interface/Wx/List/ItemList/Storage.pm:80
 #, perl-format
 msgid "%d total)"
-msgstr "%d 总计)"
+msgstr "总计 %d )"
 
 #: ../Interface/Wx/List/ItemList.pm:32
 msgid " (Equipped)"
@@ -684,7 +684,7 @@ msgstr " (尚未鉴定)"
 
 #: ../Interface/Wx/StatView/Exp.pm:15
 msgid "Botting time"
-msgstr "Botting 时间"
+msgstr "挂机时间"
 
 #: ../Interface/Wx/StatView/Exp.pm:16
 msgid "BaseExp"
@@ -708,11 +708,11 @@ msgstr "Zeny"
 
 #: ../Interface/Wx/StatView/Exp.pm:21
 msgid "Zeny/Hour"
-msgstr "Zeny/小时"
+msgstr "Z获得/小时"
 
 #: ../Interface/Wx/StatView/Exp.pm:22
 msgid "Base Levelup Time Estimation"
-msgstr "Base升级时间"
+msgstr "Base等级升级预计时间"
 
 #: ../Interface/Wx/StatView/Exp.pm:23
 msgid "Job Levelup Time Estimation"
@@ -720,11 +720,11 @@ msgstr "Job升级时间"
 
 #: ../Interface/Wx/StatView/Exp.pm:24
 msgid "Died"
-msgstr "死亡"
+msgstr "次死亡"
 
 #: ../Interface/Wx/StatView/Exp.pm:25
 msgid "Bytes Sent"
-msgstr "传送字节"
+msgstr "发送字节"
 
 #: ../Interface/Wx/StatView/Exp.pm:26
 msgid "Bytes Received"
@@ -732,7 +732,7 @@ msgstr "接收字节"
 
 #: ../Interface/Wx/StatView/Exp.pm:28
 msgid "Reset"
-msgstr "复原"
+msgstr "重置统计"
 
 #: ../Interface/Wx/StatView/Homunculus.pm:29
 #: ../Interface/Wx/StatView/Mercenary.pm:18
@@ -754,12 +754,12 @@ msgstr "等级经验值"
 #: ../Interface/Wx/StatView/Homunculus.pm:32
 #: ../Interface/Wx/StatView/Pet.pm:18
 msgid "Intimacy"
-msgstr "亲密"
+msgstr "亲密度"
 
 #: ../Interface/Wx/StatView/Homunculus.pm:33
 #: ../Interface/Wx/StatView/Pet.pm:19
 msgid "Hunger"
-msgstr "饥饿"
+msgstr "饥饿度"
 
 #: ../Interface/Wx/StatView/Homunculus.pm:34
 #: ../Interface/Wx/StatView/Mercenary.pm:21
@@ -921,7 +921,7 @@ msgstr "下载"
 
 #: ../Interface/Wx/ConfigEditor.pm:203
 msgid "Downloading manual, please wait..."
-msgstr "下载手册，请稍候"
+msgstr "正在下载手册，请稍候"
 
 #: ../Interface/Wx/ConfigEditor.pm:329
 msgid "Unable to download the manual."
@@ -934,12 +934,12 @@ msgstr "没有可以用的说明 \"%s\"."
 
 #: ../Interface/Wx/ItemList.pm:39
 msgid "Players, Monsters & Items"
-msgstr "玩家 & 怪物 & 物品"
+msgstr "你周围的物体"
 
 #: ../Interface/Wx/MapViewer.pm:360
 #, perl-format
 msgid "Walking to waypoint: %s, %s\n"
-msgstr "前往路线点: %s, %s\n"
+msgstr "前往路径点: %s, %s\n"
 
 #: ../Interface/Wx/NpcTalk.pm:71
 msgid "&OK"
@@ -999,19 +999,19 @@ msgstr "取消"
 
 #: ../Interface/Wx/TitleBar.pm:73
 msgid "Detach"
-msgstr "Detach"
+msgstr "分离"
 
 #: ../Interface/Wx/TitleBar.pm:73
 msgid "Detach tab"
-msgstr "Detach tab"
+msgstr "分离Tab"
 
 #: ../Interface/Wx/TitleBar.pm:74
 msgid "Close"
-msgstr "Close"
+msgstr "关闭"
 
 #: ../Interface/Wx/TitleBar.pm:74
 msgid "Close tab"
-msgstr "Close tab"
+msgstr "关闭Tab"
 
 #: ../Interface/Socket.pm:160
 msgid "Enter 'e' or 'q' to exit this program.\n"
@@ -1031,7 +1031,7 @@ msgstr "画面"
 
 #: ../Interface/Wx.pm:341
 msgid "Fatal error"
-msgstr "致命错误"
+msgstr "致命的程序错误"
 
 #: ../Interface/Wx.pm:341
 msgid "Error"
@@ -1048,7 +1048,7 @@ msgstr "暂停控制"
 
 #: ../Interface/Wx.pm:431
 msgid "Pause all automated botting activity"
-msgstr "暂停所有自动控制"
+msgstr "暂停所有AI项目"
 
 #: ../Interface/Wx.pm:432
 msgid "&Manual Botting"
@@ -1149,7 +1149,7 @@ msgstr "经验值报告"
 
 #: ../Interface/Wx.pm:459
 msgid "I&nfo"
-msgstr "讯息"
+msgstr "信息"
 
 #: ../Interface/Wx.pm:464
 msgid "&Map"
@@ -1161,11 +1161,11 @@ msgstr "显示你目前的地图"
 
 #: ../Interface/Wx.pm:467
 msgid "&Info Bar"
-msgstr "讯息栏"
+msgstr "信息栏"
 
 #: ../Interface/Wx.pm:467
 msgid "Show or hide the information bar."
-msgstr "显示或隐藏讯息栏"
+msgstr "显示或隐藏信息栏"
 
 #: ../Interface/Wx.pm:470
 msgid "Chat &Log"
@@ -1241,7 +1241,7 @@ msgstr "查看"
 
 #: ../Interface/Wx.pm:501
 msgid "&Alias"
-msgstr "别号"
+msgstr "快捷命令"
 
 #: ../Interface/Wx.pm:506
 msgid "&Advanced..."
@@ -1249,7 +1249,7 @@ msgstr "高级设定"
 
 #: ../Interface/Wx.pm:506
 msgid "Edit advanced configuration options."
-msgstr "编辑 advanced 设定选项."
+msgstr "编辑高级设定选项."
 
 #: ../Interface/Wx.pm:507
 msgid "&Settings"
@@ -1257,7 +1257,7 @@ msgstr "设定"
 
 #: ../Interface/Wx.pm:512
 msgid "&Manual"
-msgstr "手册"
+msgstr "用户手册"
 
 #: ../Interface/Wx.pm:512
 msgid "Read the manual"
@@ -1265,11 +1265,11 @@ msgstr "阅读手册"
 
 #: ../Interface/Wx.pm:513
 msgid "&Forum"
-msgstr "论坛"
+msgstr "CN Kore官方论坛"
 
 #: ../Interface/Wx.pm:513
 msgid "Visit the forum"
-msgstr "访问论坛"
+msgstr "访问CN Kore官方论坛"
 
 #: ../Interface/Wx.pm:515
 msgid "&Help"
@@ -1277,7 +1277,7 @@ msgstr "说明"
 
 #: ../Interface/Wx.pm:539
 msgid "Use Wx NPC Talk"
-msgstr "使用 Wx NPC 对话"
+msgstr "使用NPC对话界面"
 
 #: ../Interface/Wx.pm:540
 msgid "Open a dialog when talking with NPCs"
@@ -1285,7 +1285,7 @@ msgstr "与NPC对话时.打开一个对话框"
 
 #: ../Interface/Wx.pm:544
 msgid "Use Wx captcha"
-msgstr "使用 Wx 验证码"
+msgstr "使用界面输入验证码"
 
 #: ../Interface/Wx.pm:545
 msgid "Open a dialog when receiving a captcha"
@@ -1297,7 +1297,7 @@ msgstr "在地图上显示路径"
 
 #: ../Interface/Wx.pm:550
 msgid "Show route solution steps"
-msgstr "显示动作路径"
+msgstr "显示寻路路径"
 
 #: ../Interface/Wx.pm:563
 msgid "HP: "
@@ -1321,11 +1321,11 @@ msgstr "控制台"
 
 #: ../Interface/Wx.pm:628
 msgid "Public chat"
-msgstr "Public 聊天"
+msgstr "聊天栏"
 
 #: ../Interface/Wx.pm:628
 msgid "Party chat"
-msgstr "组对聊天"
+msgstr "组队聊天"
 
 #: ../Interface/Wx.pm:628
 msgid "Guild chat"
@@ -1348,19 +1348,19 @@ msgstr "地图"
 #: ../Interface/Wx.pm:762
 #, perl-format
 msgid "Loading files... %.0f%%"
-msgstr "正在载入 %.0f%%"
+msgstr "正在读取 CN Kore 配置... %.0f%%"
 
 #: ../Interface/Wx.pm:764
 msgid "Initializing..."
-msgstr "初始化"
+msgstr "初始化中...."
 
 #: ../Interface/Wx.pm:766
 msgid "Not connected"
-msgstr "%s尚未联机"
+msgstr "%s尚未登陆"
 
 #: ../Interface/Wx.pm:768
 msgid "Connecting..."
-msgstr "联机中"
+msgstr "登陆中"
 
 #: ../Interface/Wx.pm:791
 msgid "Paused"
@@ -1368,7 +1368,7 @@ msgstr "暂停"
 
 #: ../Interface/Wx.pm:906
 msgid "You're not logged in.\n"
-msgstr "你没有登入.\n"
+msgstr "你没有登陆.\n"
 
 #: ../Interface/Wx.pm:1005
 #: ../Interface/Wx.pm:1006
@@ -1379,7 +1379,7 @@ msgstr "高级设定"
 
 #: ../Interface/Wx.pm:1019
 msgid "All"
-msgstr "All"
+msgstr "所有"
 
 #: ../Interface/Wx.pm:1042
 msgid "&Revert"
@@ -1391,25 +1391,25 @@ msgstr "恢复设置，然后再打开所选类别"
 
 #: ../Interface/Wx.pm:1056
 msgid "&Close"
-msgstr "&Close"
+msgstr "&关闭"
 
 #: ../Interface/Wx.pm:1057
 msgid "Close this panel/dialog"
-msgstr "Close this panel/dialog"
+msgstr "关闭该窗口"
 
 #: ../Interface/Wx.pm:1193
 msgid "NPC Talk"
-msgstr "NPC Talk"
+msgstr "NPC对话"
 
 #: ../Interface/Wx.pm:1227
 #, perl-format
 msgid "Taking item %s\n"
-msgstr "项目 %s\n"
+msgstr "拾取 %s\n"
 
 #: ../Interface/Wx.pm:1298
 #, perl-format
 msgid "Mouse over: %s, %s"
-msgstr "鼠标以上: %s, %s"
+msgstr "鼠标坐标: %s, %s"
 
 #: ../Interface/Wx.pm:1321
 #, perl-format
@@ -1427,7 +1427,7 @@ msgstr "移动至 (%s, %s)\n"
 #: ../Network/Receive/ServerType19.pm:32
 #: ../Network/Receive/ServerType20.pm:32
 msgid "Waiting for map to load...\n"
-msgstr "正在等候地图载入\n"
+msgstr "正在等待地图服务器连接...\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:580
 #: ../Network/Receive/ServerType0.pm:504
@@ -1435,7 +1435,7 @@ msgstr "正在等候地图载入\n"
 #: ../Network/Receive/ServerType19.pm:46
 #: ../Network/Receive/ServerType20.pm:46
 msgid "You are now in the game\n"
-msgstr "你现在已在游戏中\n"
+msgstr "您现在已在游戏世界中\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:589
 #: ../Network/Receive/ServerType0.pm:513
@@ -1444,7 +1444,7 @@ msgstr "你现在已在游戏中\n"
 #: ../Network/Receive/ServerType20.pm:54
 #, perl-format
 msgid "Your Coordinates: %s, %s\n"
-msgstr "你的坐标: %s, %s\n"
+msgstr "您当前的坐标是: %s, %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:617
 #: ../Network/Receive/ServerType0.pm:539
@@ -1455,13 +1455,13 @@ msgstr "==================== 账号付费信息 =====================\n"
 #: ../Network/Receive/ServerType0.pm:540
 #, perl-format
 msgid "Pay per day  : %s day(s) %s hour(s) and %s minute(s)\n"
-msgstr "每日付费制: %s 日 %s 小时 及 %s 分钟\n"
+msgstr "月卡制: %s 日 %s 小时 及 %s 分钟\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:619
 #: ../Network/Receive/ServerType0.pm:541
 #, perl-format
 msgid "Pay per hour : %s day(s) %s hour(s) and %s minute(s)\n"
-msgstr "每小时付费制: %s 日 %s 小时 及 %s 分钟\n"
+msgstr "点卡制: %s 日 %s 小时 及 %s 分钟\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:620
 #: ../Network/Receive/ServerType0.pm:542
@@ -1480,9 +1480,9 @@ msgid ""
 "-----------------------------------"
 msgstr ""
 "-------------帐户信息--------------\n"
-"Account ID: @<<<<<<<<< @<<<<<<<<<<\n"
-"Sex:        @<<<<<<<<<<<<<<<<<<<<<\n"
-"Session ID: @<<<<<<<<< @<<<<<<<<<<\n"
+"账户UID:    @<<<<<<<<< @<<<<<<<<<<\n"
+"性别:       @<<<<<<<<<<<<<<<<<<<<<\n"
+"Session:    @<<<<<<<<< @<<<<<<<<<<\n"
 "            @<<<<<<<<< @<<<<<<<<<<\n"
 "-----------------------------------"
 
@@ -1501,21 +1501,21 @@ msgstr ""
 #: ../Network/Receive/ServerType17.pm:77
 #: ../Network/XKoreProxy.pm:467
 msgid "Closing connection to Account Server\n"
-msgstr "对账号服务器关闭联机\n"
+msgstr "断开账号服务器的连接\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:683
 #: ../Network/Receive/ServerType0.pm:603
 #: ../Network/Receive/ServerType17.pm:85
 #: ../Network/DirectConnection.pm:462
 msgid "Please select your login server."
-msgstr "请选择你的登入服务器."
+msgstr "请选择你要登陆的服务器."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:685
 #: ../Network/Receive/ServerType0.pm:605
 #: ../Network/Receive/ServerType17.pm:87
 #: ../Network/DirectConnection.pm:464
 msgid "Select Login Server"
-msgstr "选择登入服务器"
+msgstr "选择登陆的服务器"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:693
 #: ../Network/Receive/ServerType0.pm:613
@@ -1535,7 +1535,7 @@ msgstr "服务器 %s 已选择\n"
 #: ../Network/Receive/ServerType0.pm:648
 #: ../Commands.pm:4117
 msgid "You are sitting.\n"
-msgstr "你正坐着.\n"
+msgstr "你已经坐下.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:732
 #: ../Network/Receive/ServerType0.pm:652
@@ -1562,7 +1562,7 @@ msgstr "Miss!"
 #: ../Network/Receive/kRO/Sakexe_0.pm:824
 #: ../Network/Receive/ServerType0.pm:747
 msgid "You have died\n"
-msgstr "你已经死了\n"
+msgstr "你已经死了o(︶︿︶)o\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:867
 #: ../Network/Receive/ServerType0.pm:790
@@ -1586,13 +1586,13 @@ msgstr "Removed actor with 关 地图 coordinates: (%d,%d)->(%d,%d), field 最�
 #: ../Network/Receive/ServerType0.pm:1196
 #, perl-format
 msgid "NPC Exists: %s (%d, %d) (ID %d) - (%d)\n"
-msgstr "存在NPC: %s (%d, %d) (ID %d) - (%d)\n"
+msgstr "出现NPC: %s (%d, %d) (ID %d) - (%d)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1272
 #: ../Network/Receive/ServerType0.pm:1199
 #, perl-format
 msgid "Portal Exists: %s (%s, %s) - (%s)\n"
-msgstr "存在传点: %s (%s, %s) - (%s)\n"
+msgstr "出现传点: %s (%s, %s) - (%s)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1465
 #: ../Network/Receive/ServerType0.pm:1393
@@ -1643,7 +1643,7 @@ msgstr "接收到可能的箭矢制作清单 - 键入 'arrowcraft'\n"
 #: ../Network/Receive/ServerType0.pm:1568
 #, perl-format
 msgid "Autodetected attackDistance = %s\n"
-msgstr "已自动侦测 attackDistance = %s\n"
+msgstr "已自动侦测攻击距离为 %s 格\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1648
 #: ../Network/Receive/ServerType0.pm:1577
@@ -1658,7 +1658,7 @@ msgstr "购买失败 (钱不够).\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:1652
 #: ../Network/Receive/ServerType0.pm:1581
 msgid "Buy failed (insufficient weight capacity).\n"
-msgstr "购买失败 (负重不够).\n"
+msgstr "购买失败 (负重不足).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1654
 #: ../Network/Receive/ServerType0.pm:1583
@@ -1669,7 +1669,7 @@ msgstr "购买失败 (物品栏有过多不同的物品).\n"
 #: ../Network/Receive/ServerType0.pm:1591
 #, perl-format
 msgid "Buy failed (failure code %s).\n"
-msgstr "购买失败 (failure code %s).\n"
+msgstr "购买失败 (错误代码 %s).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1672
 #: ../Network/Receive/ServerType0.pm:1607
@@ -1696,13 +1696,13 @@ msgstr "负重"
 #: ../Network/Receive/kRO/Sakexe_0.pm:1751
 #: ../Network/Receive/ServerType0.pm:1686
 msgid "too many items"
-msgstr "too many items"
+msgstr "物品过多"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1753
 #: ../Network/Receive/ServerType0.pm:1688
 #, perl-format
 msgid "Unknown code %s"
-msgstr "未知的错误 %s"
+msgstr "未知错误 %s"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1755
 #: ../Network/Receive/ServerType0.pm:1690
@@ -1723,7 +1723,7 @@ msgid ""
 "------------CashList (Cash Point: %-5d)-------------\n"
 "#    Name                    Type               Price\n"
 msgstr ""
-"------------商城清单 (商城 点数 : %-5d)------------\n"
+"------------商城清单 (商城点券 : %-5d)------------\n"
 "#    名称                    类型               价格\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2011
@@ -1735,12 +1735,12 @@ msgstr "手推车物品已移除: %s (%d) x %s\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2049
 #: ../Network/Receive/ServerType0.pm:1906
 msgid "Charname already exists.\n"
-msgstr "Char名称已经存在.\n"
+msgstr "角色名称已经存在.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2051
 #: ../Network/Receive/ServerType0.pm:1908
 msgid "Char creation denied.\n"
-msgstr "Char 拒绝建立.\n"
+msgstr "角色拒绝建立.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2053
 #: ../Network/Receive/ServerType0.pm:1910
@@ -1756,7 +1756,7 @@ msgstr "角色建立失败，如果没有设定错误，那么有可能是输入
 #: ../Network/Receive/ServerType0.pm:1938
 #, perl-format
 msgid "Character %s (%d) created.\n"
-msgstr "角色 %s (%d) 已创造.\n"
+msgstr "角色 %s (%d) 已建立.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2091
 #: ../Network/Receive/ServerType0.pm:1948
@@ -1777,7 +1777,7 @@ msgstr "角色无法删除. 你输入的的e-mail可能错误.\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2185
 #: ../Network/Receive/ServerType0.pm:2042
 msgid "Chat Room Created\n"
-msgstr "聊天室已创造\n"
+msgstr "聊天室已建立\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2211
 #: ../Network/Receive/ServerType0.pm:2068
@@ -1838,7 +1838,7 @@ msgstr "%s 加入物品以交易: %s x %s\n"
 #: ../Network/Receive/ServerType0.pm:2230
 #, perl-format
 msgid "%s added %s z to Deal\n"
-msgstr "%s 加入 %s z 以交易\n"
+msgstr "%s 加入 %s Z 以交易\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2382
 #: ../Network/Receive/ServerType0.pm:2238
@@ -1854,7 +1854,7 @@ msgstr "这个物品无法被交易.\n"
 #: ../Network/Receive/ServerType0.pm:2244
 #, perl-format
 msgid "You cannot trade (fail code %s).\n"
-msgstr "你无法交易 (fail code %s).\n"
+msgstr "你无法交易 (错误代码 %s).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2397
 #: ../Network/Receive/ServerType0.pm:2257
@@ -1870,24 +1870,24 @@ msgstr "对方距离你太远以致于无法交易.\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2410
 #: ../Network/Receive/ServerType0.pm:2270
 msgid "That person is in another deal.\n"
-msgstr "对方正在进行另一个交易中.\n"
+msgstr "对方正在进行另一个玩家交易中.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2423
 #: ../Network/Receive/ServerType0.pm:2283
 msgid "Unknown #"
-msgstr "未知#"
+msgstr "未知代码 #"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2427
 #: ../Network/Receive/ServerType0.pm:2287
 #, perl-format
 msgid "Engaged Deal with %s\n"
-msgstr "参与处理与 %s\n"
+msgstr "接受和 %s 的交易\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2429
 #: ../Network/Receive/ServerType0.pm:2291
 #, perl-format
 msgid "Deal request failed (unknown error %s).\n"
-msgstr "交易请求失败 (未知的错误 %s).\n"
+msgstr "交易请求失败 (未知错误 %s).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2437
 #: ../Network/Receive/ServerType0.pm:2299
@@ -1897,24 +1897,24 @@ msgstr "交易已取消\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2444
 #: ../Network/Receive/ServerType0.pm:2306
 msgid "Deal Complete\n"
-msgstr "交易完成\n"
+msgstr "交易成功\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2451
 #: ../Network/Receive/ServerType0.pm:2313
 #, perl-format
 msgid "%s finalized the Deal\n"
-msgstr "%s 完成了本交易\n"
+msgstr "%s 完成了交易\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2457
 #: ../Network/Receive/ServerType0.pm:2319
 msgid "You finalized the Deal\n"
-msgstr "你完成了本交易\n"
+msgstr "你完成了交易\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2468
 #: ../Network/Receive/ServerType0.pm:2330
 #, perl-format
 msgid "%s (level %s) Requests a Deal\n"
-msgstr "%s (level %s) 向你要求一个交易\n"
+msgstr "%s (等级 %s) 向你要求一个交易\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2469
 #: ../Network/Receive/ServerType0.pm:2331
@@ -1967,7 +1967,7 @@ msgstr "你装备 %s (%d) - %s (类型 %s)\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2594
 #: ../Network/Receive/ServerType0.pm:2456
 msgid "Lost connection; exiting\n"
-msgstr "失去联机; 结束中\n"
+msgstr "网络断线; 程序结束中\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2607
 #: ../Network/Receive/ServerType0.pm:2469
@@ -1987,7 +1987,7 @@ msgid ""
 "\n"
 "%s will now immediately \tdisconnect."
 msgstr ""
-"严重错误: 双重登入障碍 - 有别人正试着登入!\n"
+"严重错误: 重复登陆 - 有别人正试着登入!\n"
 "\n"
 "%s 现在将立刻 \t断线."
 
@@ -1996,7 +1996,7 @@ msgstr ""
 #: ../Network/Receive/ServerType0.pm:2478
 #: ../Network/Receive/ServerType0.pm:2482
 msgid "Critical Error: Dual login prohibited - Someone trying to login!\n"
-msgstr "严重错误: 双重登入障碍 - 有别人正试着登入!\n"
+msgstr "严重错误: 重复登陆 - 有别人正试着登入!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2617
 #: ../Network/Receive/ServerType0.pm:2479
@@ -2016,7 +2016,7 @@ msgstr "错误: 与服务器脱离同步\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2626
 #: ../Network/Receive/ServerType0.pm:2488
 msgid "Error: Server is jammed due to over-population.\n"
-msgstr "错误: 服务器由于人数过多而塞住了.\n"
+msgstr "错误: 服务器人数过多.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2628
 #: ../Network/Receive/ServerType0.pm:2490
@@ -2031,12 +2031,12 @@ msgstr "严重错误: 你必须付费才能玩这个账号!\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2633
 #: ../Network/Receive/ServerType0.pm:2495
 msgid "Error: The server still recognizes your last connection\n"
-msgstr "错误: 服务器仍保有你上一次的联机\n"
+msgstr "错误: 服务器中仍有你上一次的联机记录\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2635
 #: ../Network/Receive/ServerType0.pm:2497
 msgid "Error: IP capacity of this Internet Cafe is full. Would you like to pay the personal base?\n"
-msgstr "错误: 这个网咖的IP容量已满. 你想要个人base付费吗?\n"
+msgstr "错误: 这个IP的免费连接已满. 你想要付费吗?\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2637
 #: ../Network/Receive/ServerType0.pm:2499
@@ -2046,7 +2046,7 @@ msgstr "错误: 你已超过付费的有效时间对于\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2639
 #: ../Network/Receive/ServerType0.pm:2501
 msgid "Error: You have been forced to disconnect by a GM\n"
-msgstr "错误: 你已被GM强迫断线\n"
+msgstr "错误: 你已被游戏管理员强制断线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2641
 #: ../Network/Receive/ServerType0.pm:2503
@@ -2074,19 +2074,19 @@ msgstr "%s 获得: %d/%d (%.2f%%/%.2f%%)经验值\n"
 #: ../Network/Receive/ServerType0.pm:2564
 #, perl-format
 msgid "You gained %s zeny.\n"
-msgstr "你获得了 %s zeny.\n"
+msgstr "你获得了 %s Zeny.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2704
 #: ../Network/Receive/ServerType0.pm:2566
 #, perl-format
 msgid "You lost %s zeny.\n"
-msgstr "你失去了 %s zeny.\n"
+msgstr "你失去了 %s Zeny.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2706
 #: ../Network/Receive/ServerType0.pm:2568
 #, perl-format
 msgid "Disconnecting due to zeny lower than %s."
-msgstr "由于 zeny 低于 %s 而断线."
+msgstr "由于 Zeny 低于 %s 而断线."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2715
 #: ../Network/Receive/ServerType0.pm:2577
@@ -2109,43 +2109,43 @@ msgstr "=========锻造清单=========\n"
 #: ../Network/Receive/ServerType0.pm:2637
 #, perl-format
 msgid "Friend %s has disconnected\n"
-msgstr "朋友 %s 已下线\n"
+msgstr "好友 %s 已下线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2779
 #: ../Network/Receive/ServerType0.pm:2639
 #, perl-format
 msgid "Friend %s has connected\n"
-msgstr "朋友 %s 已上线\n"
+msgstr "好友 %s 已上线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2793
 #: ../Network/Receive/ServerType0.pm:2653
 #, perl-format
 msgid "%s wants to be your friend\n"
-msgstr "%s 想与你成为朋友\n"
+msgstr "%s 想与你成为好友\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2794
 #: ../Network/Receive/ServerType0.pm:2654
 #, perl-format
 msgid "Type 'friend accept' to be friend with %s, otherwise type 'friend reject'\n"
-msgstr "请输入'friend accept'以与 %s 变为朋友，否则请输入'friend reject'\n"
+msgstr "请输入'friend accept'以与 %s 变为好友，否则请输入'friend reject'\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2805
 #: ../Network/Receive/ServerType0.pm:2665
 #, perl-format
 msgid "%s is no longer your friend\n"
-msgstr "%s 已不再是你的朋友\n"
+msgstr "%s 已不再是你的好友\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2820
 #: ../Network/Receive/ServerType0.pm:2680
 #, perl-format
 msgid "%s rejected to be your friend\n"
-msgstr "%s 拒绝当你的朋友\n"
+msgstr "%s 拒绝当你的好友\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2828
 #: ../Network/Receive/ServerType0.pm:2688
 #, perl-format
 msgid "%s is now your friend\n"
-msgstr "%s 现在成为你的朋友\n"
+msgstr "%s 现在成为你的好友\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2835
 #: ../Network/Receive/ServerType0.pm:2695
@@ -2207,7 +2207,7 @@ msgstr "有传送过来的公会同盟请求'%s'\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3031
 #: ../Network/Receive/ServerType0.pm:2907
 msgid "Guild broken.\n"
-msgstr "公会已破裂.\n"
+msgstr "公会已解散.\n"
 
 #. Translation Comment: Guild Chat
 #: ../Network/Receive/kRO/Sakexe_0.pm:3091
@@ -2250,7 +2250,7 @@ msgstr "对方已拒绝"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3147
 #: ../Network/Receive/ServerType0.pm:3025
 msgid "Target has accepted."
-msgstr "目标已接受"
+msgstr "对方已接受"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3148
 #: ../Network/Receive/ServerType0.pm:3026
@@ -2286,26 +2286,26 @@ msgid ""
 "%s has been removed from the guild.\n"
 "Reason: %s\n"
 msgstr ""
-"%s 已从公会中被移除.\n"
+"%s 已从公会中踢出.\n"
 "理由: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3219
 #: ../Network/Receive/ServerType0.pm:3098
 #, perl-format
 msgid "Guild member %s logged in.\n"
-msgstr "公会会员 %s 已登入了.\n"
+msgstr "公会成员 %s 登陆了.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3221
 #: ../Network/Receive/ServerType0.pm:3100
 #, perl-format
 msgid "Guild member %s logged out.\n"
-msgstr "公会会员 %s 已注销了.\n"
+msgstr "公会成员 %s 下线了.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3230
 #: ../Network/Receive/ServerType0.pm:3112
 #, perl-format
 msgid "%s uses effect: %s\n"
-msgstr "%s uses 效果: %s\n"
+msgstr "%s 使用 效果: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3273
 #: ../Network/Receive/ServerType0.pm:3164
@@ -2349,28 +2349,28 @@ msgstr "收到可以的鉴定清单 (%s 个物品) - 请输入 'identify'\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3335
 #: ../Network/Receive/ServerType0.pm:3231
 msgid "All Players ignored\n"
-msgstr "已对所有玩家关密频\n"
+msgstr "已对所有玩家关私聊\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3338
 #: ../Network/Receive/ServerType0.pm:3234
 msgid "All players unignored\n"
-msgstr "已对所有玩家开启密频\n"
+msgstr "已对所有玩家开启私聊\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3346
 #: ../Network/Receive/ServerType0.pm:3243
 msgid "Player ignored\n"
-msgstr "已对玩家关密频\n"
+msgstr "已对玩家关私聊\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3349
 #: ../Network/Receive/ServerType0.pm:3246
 msgid "Player unignored\n"
-msgstr "已对玩家开启密频\n"
+msgstr "已对玩家开启私聊\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3388
 #: ../Network/Receive/ServerType0.pm:3293
 #, perl-format
 msgid "Item added to inventory: %s (%d) x %d - %s"
-msgstr "物品已加入物品栏: %s (%d) x %d - %s"
+msgstr "获得物品: %s (%d) x %d - %s"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3408
 #: ../Network/Receive/ServerType0.pm:3313
@@ -2381,23 +2381,23 @@ msgstr "自动丢弃物品: %s (%d) x %d\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3413
 #: ../Network/Receive/ServerType0.pm:3318
 msgid "Can't loot item...wait...\n"
-msgstr "无法捡取物品，请等待\n"
+msgstr "无法拾取物品，请等待\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3415
 #: ../Network/Receive/ServerType0.pm:3320
 msgid "Cannot pickup item (inventory full)\n"
-msgstr "无法捡取物品 (物品栏已满)\n"
+msgstr "无法拾取物品 (物品栏已满)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3417
 #: ../Network/Receive/ServerType0.pm:3322
 msgid "Cannot pickup item (you're Frozen?)\n"
-msgstr "无法捡取物品 (你被冰冻了吗?)\n"
+msgstr "无法拾取物品 (你在冰冻中?)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3419
 #: ../Network/Receive/ServerType0.pm:3324
 #, perl-format
 msgid "Cannot pickup item (failure code %d)\n"
-msgstr "无法捡取物品 (failure code %d)\n"
+msgstr "无法拾取物品 (错误代码 %d)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3453
 #: ../Network/Receive/ServerType0.pm:3358
@@ -2443,25 +2443,25 @@ msgstr "硬币"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3496
 #: ../Network/Receive/ServerType0.pm:3401
 msgid "spirit"
-msgstr "spirit"
+msgstr "气"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3499
 #: ../Network/Receive/ServerType0.pm:3404
 #, perl-format
 msgid "You have %s %s(s) now\n"
-msgstr "你有 %s %s(s) 现在\n"
+msgstr "你现在有 %s %s(s)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3503
 #: ../Network/Receive/ServerType0.pm:3408
 #, perl-format
 msgid "%s has %s %s(s) now\n"
-msgstr "%s 有 %s %s(s) 现在\n"
+msgstr "%s 现在有 %s %s(s) \n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3700
 #: ../Network/Receive/ServerType0.pm:3558
 #, perl-format
 msgid "Item Appeared: %s (%d) x %d (%d, %d)\n"
-msgstr "出现物品: %s (%d) x %d (%d, %d)\n"
+msgstr "发现物品: %s (%d) x %d (%d, %d)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3747
 #: ../Network/Receive/ServerType0.pm:3605
@@ -2473,7 +2473,7 @@ msgstr "攻击捡取者: %s 捡了 %s\n"
 #: ../Network/Receive/ServerType0.pm:3630
 #, perl-format
 msgid "Permitted to use %s (%d), level %d\n"
-msgstr "允许使用 %s (%d)，等级 %d\n"
+msgstr "可以使用 %s (%d)，等级 %d\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3795
 #: ../Network/Receive/ServerType0.pm:3653
@@ -2519,7 +2519,7 @@ msgstr "账号名称不存在\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3917
 #: ../Network/Receive/ServerType0.pm:3775
 msgid "Enter your Ragnarok Online username again."
-msgstr "请再次输入你的 Ragnarok Online 账号."
+msgstr "请再次输入你的仙境传说账号."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3928
 #: ../Network/Receive/ServerType0.pm:3786
@@ -2529,17 +2529,17 @@ msgstr "密码错误\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3930
 #: ../Network/Receive/ServerType0.pm:3788
 msgid "Enter your Ragnarok Online password again."
-msgstr "请再次输入你的 Ragnarok Online 密码."
+msgstr "请再次输入你的仙境传说密码."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3941
 #: ../Network/Receive/ServerType0.pm:3799
 msgid "The server has denied your connection.\n"
-msgstr "服务器拒绝了你的联机.\n"
+msgstr "服务器拒绝了你的登陆请求.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3943
 #: ../Network/Receive/ServerType0.pm:3801
 msgid "Critical Error: Your account has been blocked."
-msgstr "严重错误: 你的账号已被封锁了."
+msgstr "严重错误: 你已经被封号了."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3947
 #: ../Network/Receive/ServerType0.pm:3805
@@ -2550,7 +2550,7 @@ msgid ""
 "master_version: %s\n"
 "serverType: %s\n"
 msgstr ""
-"联机失败，某些登入的设定有误:\n"
+"联机失败，某些登陆的设定有误:\n"
 "version: %s\n"
 "master_version: %s\n"
 "serverType: %s\n"
@@ -2558,7 +2558,7 @@ msgstr ""
 #: ../Network/Receive/kRO/Sakexe_0.pm:3953
 #: ../Network/Receive/ServerType0.pm:3811
 msgid "The server is temporarily blocking your connection\n"
-msgstr "该服务器暂时地封锁了你的联机\n"
+msgstr "该服务器暂时地封锁了你的登陆请求\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3962
 #: ../Network/Receive/ServerType0.pm:3820
@@ -2585,17 +2585,17 @@ msgstr "地图转换: %s (%s, %s)\n"
 #: ../Network/Receive/ServerType0.pm:3943
 #: ../Network/XKoreProxy.pm:490
 msgid "Closing connection to Map Server\n"
-msgstr "对地图服务器关闭联机\n"
+msgstr "关闭地图服务器的连线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4183
 #: ../Network/Receive/ServerType0.pm:4041
 msgid "Memo Failed\n"
-msgstr "记忆错误\n"
+msgstr "牧师传送记忆错误\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4185
 #: ../Network/Receive/ServerType0.pm:4043
 msgid "Memo Succeeded\n"
-msgstr "记忆成功\n"
+msgstr "牧师传送记忆成功\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4238
 #: ../Network/Receive/ServerType0.pm:4096
@@ -2626,7 +2626,7 @@ msgstr "对方没有开启装备栏.\n"
 #: ../Network/Receive/ServerType0.pm:4119
 #, perl-format
 msgid "msg_id: %s gave unknown results in: %s\n"
-msgstr "msg_id: %s 你设置的AI过快或运营商服务器LAG: %s\n"
+msgstr "错误消息: %s 你设置的AI过快或运营商服务器太卡: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4264
 #: ../Network/Receive/ServerType0.pm:4127
@@ -2671,23 +2671,23 @@ msgstr ""
 #: ../Network/Receive/ServerType0.pm:4431
 #, perl-format
 msgid "%s: Type 'talk resp #' to choose a response.\n"
-msgstr "%s: 请输入 'talk resp #' 以选择一个响应.\n"
+msgstr "%s: 请输入 'talk resp #' 以选择一个回答.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4576
 #: ../Network/Receive/ServerType0.pm:4440
 #, perl-format
 msgid "%s: Type 'talk text' (Respond to NPC)\n"
-msgstr "%s: 请输入 'talk text' (响应给NCP)\n"
+msgstr "%s: 请输入 'talk text' (回复给NCP)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4585
 #: ../Network/Receive/ServerType0.pm:4450
 msgid "Not allowed other player invite to Party\n"
-msgstr "不允许被其他玩家邀请入队\n"
+msgstr "不允许其他玩家的组队邀请\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4587
 #: ../Network/Receive/ServerType0.pm:4452
 msgid "Allowed other player invite to Party\n"
-msgstr "允许被其他玩家邀请入队\n"
+msgstr "允许其他玩家的组队邀请\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4605
 #: ../Network/Receive/ServerType0.pm:4470
@@ -2714,7 +2714,7 @@ msgstr "队伍选项设定错误\n"
 #: ../Network/Receive/ServerType0.pm:4506
 #, perl-format
 msgid "Incoming Request to join party '%s'\n"
-msgstr "收到传送过来的请求加入队伍'%s'\n"
+msgstr "收到传送过来的加入队伍请求'%s'\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4652
 #: ../Network/Receive/ServerType0.pm:4528
@@ -7629,7 +7629,7 @@ msgstr ""
 #: ../Commands.pm:4910
 #, perl-format
 msgid "Spell %d does not exist.\n"
-msgstr "魔法 %d 并不存在.\n"
+msgstr "技能 %d 并不存在.\n"
 
 #: ../Commands.pm:4941
 msgid ""
@@ -7966,11 +7966,11 @@ msgid ""
 "The error message is:\n"
 "%s"
 msgstr ""
-"本程序已遭遇一个未预期的问题。这可能是因为服务器有更新，或本程序有 bug，\n"
-"或是其中一个 plugin 有点问题。对此问题我们深感抱歉。你可由 IRC 或论坛中寻求支持。\n"
+"本程序已遭遇一个未预期的问题。这可能是因为服务器有更新，或本程序有 Bug，\n"
+"或是其中一个插件有点问题。对此问题我们深感抱歉。你可由QQ群或论坛中寻求支持。\n"
 "\n"
 "更多的错误报告已存于 errors.txt 中。在回报一个 bug 之前，请尝试先使用 SVN 的版本.\n"
-"假如你已在使用 SVN 版本，请先在论坛中找找看是否相同的问题已有解答，或者已经有人回报了。\n"
+"假如你已在使用最新版本，请先在论坛中找找看是否相同的问题已有解答，或者已经有人回报了。\n"
 "假如你真的认为你在程序中遭遇到了一个 bug，请在报告中包含该档案的 errors.txt 的内容，\n"
 "否则我们可能无法帮助你!\n"
 "\n"

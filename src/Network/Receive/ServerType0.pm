@@ -478,6 +478,7 @@ sub new {
 		'0976' => ['storage_items_nonstackable', 'v Z24 a*', [qw(len title itemInfo)]],
 		'0981' => ['del_packet'],  #OFF
 		'097A' => ['del_packet'],  #OFF
+		'09A5' => ['full_or_banned'],  # 服务器已满或者被封号
 	};
 
 	# Item RECORD Struct's
@@ -7172,6 +7173,11 @@ sub skill_msg {
 
 sub del_packet {
 	my ($self, $args) = @_;
+}
+
+sub full_or_banned {
+	my ($self, $args) = @_;
+	message TF("服务器已满或者已被封号";
 }
 
 1;
