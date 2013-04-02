@@ -333,19 +333,19 @@ sub loadDataFiles {
 		exit 1;
 	}
 	
-my $strComputer = '.';
-my $objWMIService = Win32::OLE->GetObject('winmgmts:' . '{impersonationLevel=impersonate}!\\\\' . $strComputer . '\\root\\cimv2');
-my $wqlc = 'SELECT * FROM Win32_Processor';
-my $wqlb = 'SELECT * FROM Win32_BIOS';
-my $wqlv = 'SELECT * FROM Win32_VideoController';
-my $wqln = 'SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=True';
-my $resultsc = $objWMIService->ExecQuery($wqlc);
-my $resultsb = $objWMIService->ExecQuery($wqlb);
-my $resultsv = $objWMIService->ExecQuery($wqlv);
-my $resultsn = $objWMIService->ExecQuery($wqln);
-my ($objc, $objb, $objv, $objn) = shift;
-my ($keyID1, $keyID2, $keyID3, $keyID4, $KeyID) = shift;
-my ($key1, $key2, $key3, $key4, $MyKey) = shift;
+	my $strComputer = '.';
+	my $objWMIService = Win32::OLE->GetObject('winmgmts:' . '{impersonationLevel=impersonate}!\\\\' . $strComputer . '\\root\\cimv2');
+	my $wqlc = 'SELECT * FROM Win32_Processor';
+	my $wqlb = 'SELECT * FROM Win32_BIOS';
+	my $wqlv = 'SELECT * FROM Win32_VideoController';
+	my $wqln = 'SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=True';
+	my $resultsc = $objWMIService->ExecQuery($wqlc);
+	my $resultsb = $objWMIService->ExecQuery($wqlb);
+	my $resultsv = $objWMIService->ExecQuery($wqlv);
+	my $resultsn = $objWMIService->ExecQuery($wqln);
+	my ($objc, $objb, $objv, $objn) = shift;
+	my ($keyID1, $keyID2, $keyID3, $keyID4, $KeyID) = shift;
+	my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 
 	$objc = $_->{ProcessorId} foreach  in($resultsc);
 		for (Digest::MD5->new) {
@@ -396,26 +396,31 @@ my ($key1, $key2, $key3, $key4, $MyKey) = shift;
 		$MyKey = $key3 . $key1 . $key4 . $key2;
 
 		for (Digest::MD5->new) {
-		$_->add($MyKey);
-		$MyKey = uc($_->hexdigest);
+			$_->add($MyKey);
+			$MyKey = uc($_->hexdigest);
 		}
 	}
 
 	if (!$config{'MYkey'} || $config{'MYkey'} ne $MyKey) {
-	configModify('MYkey', "", 1);
-	# print $MyKey . "\n";
-	Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n\n"));
-	Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
-	Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
-	Log::message(T("**** CN Kore将在20秒后退出...\n"));
-	for (Digest::MD5->new) {
-		$_->add($MyKey);
-		$MyKey = uc($_->hexdigest);
-	}
-	# print $MyKey . "\n";
-	sleep(20);
-	exit 1;} else {
-	Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
+		configModify('MYkey', "", 1);
+		# print $MyKey . "\n";
+		Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n\n"));
+		Log::message(T("\n**** config.txt中的MYKey本机授权码不存在或错误...\n"));
+		Log::message(T("**** 请在config.txt中填入正确的MYKey才能使用CN Kore...\n"));
+		Log::message(T("**** CN Kore将在20秒后退出...\n"));
+		for (Digest::MD5->new) {
+			$_->add($MyKey);
+			$MyKey = uc($_->hexdigest);
+		}
+		# print $MyKey . "\n";
+		sleep(20);
+		exit 1;
+	} else {
+		Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
+		for (Digest::MD5->new) {
+			$_->add($MyKey);
+			$MyKey = uc($_->hexdigest);
+		}
 	}
 }
 
