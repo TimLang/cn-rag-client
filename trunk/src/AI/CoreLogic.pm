@@ -733,6 +733,7 @@ sub processTake {
 			getVector(\%vec, $item->{pos}, $myPos);
 			$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
 			$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); 暂时注释掉
+			# TODO: 转头和转身的计算
 			$messageSender->sendTake($item->{ID});
 			$timeout{ai_take}{time} = time;
 		}
