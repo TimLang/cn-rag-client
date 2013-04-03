@@ -22,6 +22,7 @@
 package Actor::NPC;
 
 use strict;
+use encoding 'utf8';
 use Actor;
 use base qw(Actor);
 

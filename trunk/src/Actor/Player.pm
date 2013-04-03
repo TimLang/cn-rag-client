@@ -23,13 +23,14 @@ package Actor::Player;
 
 use strict;
 use Actor;
+use encoding 'utf8';
 use Globals;
 use base qw(Actor);
 use Translation;
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('Player');
+	return $class->SUPER::new('玩家');
 }
 
 sub selfString {

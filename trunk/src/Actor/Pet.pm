@@ -23,11 +23,12 @@ package Actor::Pet;
 
 use strict;
 use Actor;
+use encoding 'utf8';
 use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('Pet');
+	return $class->SUPER::new('宠物');
 }
 
 1;

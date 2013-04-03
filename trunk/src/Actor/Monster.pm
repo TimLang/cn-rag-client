@@ -22,12 +22,13 @@
 package Actor::Monster;
 
 use strict;
+use encoding 'utf8';
 
 use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('Monster');
+	return $class->SUPER::new('怪物');
 }
 
 1;

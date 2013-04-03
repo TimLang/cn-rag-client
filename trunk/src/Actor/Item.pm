@@ -24,6 +24,7 @@ use strict;
 use Carp::Assert;
 use Scalar::Util;
 use Time::HiRes qw(time);
+use encoding 'utf8';
 
 use Globals;
 use Actor;
@@ -83,7 +84,7 @@ our @slots = qw(
 # Creates a new Actor::Item object.
 sub new {
 	my $class = $_[0];
-	my $self = $class->SUPER::new('Item');
+	my $self = $class->SUPER::new('道具');
 	$self->{name} = 'Uninitialized Item';
 	$self->{index} = 0;
 	$self->{amount} = 0;
