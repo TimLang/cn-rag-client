@@ -29,6 +29,7 @@ use InventoryList;
 use Network::PacketParser;
 use Translation;
 use Utils;
+use encoding 'utf8';
 
 ##
 # Skill $char->{permitSkill}
@@ -70,7 +71,7 @@ use Utils;
 
 sub new {
 	my ($class) = @_;
-	my $self = $class->SUPER::new('You');
+	my $self = $class->SUPER::new('你');
 	$self->{__inventory} = new InventoryList();
 	$self->{configPrefix} = '';
 	$self->{dcOnEmptyItems} = '';

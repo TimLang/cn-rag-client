@@ -44,6 +44,7 @@ use Task;
 use Translation qw(T TF);
 use Actor::Unknown;
 use Task::Timeout;
+use encoding 'utf8';
 
 # Make it so that
 #     print $actor;

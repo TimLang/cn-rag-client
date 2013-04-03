@@ -24,12 +24,13 @@ package Actor::Party;
 
 use strict;
 use Actor;
+use encoding 'utf8';
 
 use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('Party');
+	return $class->SUPER::new('队友');
 }
 
 ##

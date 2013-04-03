@@ -23,12 +23,13 @@ package Actor::Unknown;
 
 use strict;
 use Actor;
+use encoding 'utf8';
 
 use base qw(Actor);
 
 sub new {
 	my ($class, $ID) = @_;
-	my $self = $class->SUPER::new('Unknown');
+	my $self = $class->SUPER::new('未知');
 	$self->{ID} = $ID;
 	$self->{nameID} = unpack("V", $ID);
 	return $self;

@@ -23,11 +23,12 @@ package Actor::Portal;
 
 use strict;
 use Actor;
+use encoding 'utf8';
 use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('Portal');
+	return $class->SUPER::new('传送点');
 }
 
 1;
