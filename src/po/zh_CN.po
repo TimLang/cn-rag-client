@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-02 22:39+0800\n"
+"PO-Revision-Date: 2013-04-03 14:22+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,13 @@ msgid ""
 "You have old files in the OpenKore folder, which may cause conflicts.\n"
 "Please delete your entire OpenKore source folder, and redownload everything."
 msgstr ""
-"你在OpenKore文件夹中有旧式档案, 可能造成程序冲突.\n"
-"请删除全部的OpenKore原始码, 并重新下载所有档案."
+"你在CN Kore文件夹中有旧式文档, 可能造成程序冲突.\n"
+"请删除全部的CN Kore文件夹, 并重新下载所有文档."
+
+#: ../Task/Move.pm:146
+#, fuzzy, perl-format
+msgid "%s tried too long to move"
+msgstr "%s 花费太长的时间尝试移动\n"
 
 #: ../../openkore.pl:146
 #: ../../openkore.pl:166
@@ -91,15 +96,15 @@ msgstr "物品栏里没有这种装备的的物品: %s 于装备部位: %s\n"
 
 #: ../Actor/Player.pm:38
 msgid "himself"
-msgstr "自己"
+msgstr "他自己"
 
 #: ../Actor/Player.pm:38
 msgid "herself"
-msgstr "自己"
+msgstr "她自己"
 
 #: ../Actor/You.pm:82
 msgid "yourself"
-msgstr "自己"
+msgstr "你自己"
 
 #: ../Actor/You.pm:83
 msgid "you"
@@ -188,7 +193,7 @@ msgstr "因放弃要攻击的目标而瞬移\n"
 #: ../AI/Attack.pm:133
 #, perl-format
 msgid "Dropping target - %s (%s) has been provoked\n"
-msgstr "放弃目标 - %s (%s) 已被挑衅\n"
+msgstr "放弃目标 - %s (%s) 已攻击别的玩家\n"
 
 #: ../AI/Attack.pm:162
 msgid "Can't reach or damage target, dropping target\n"
@@ -200,11 +205,11 @@ msgstr "目标已死亡\n"
 
 #: ../AI/Attack.pm:216
 msgid "Target lost, teleporting.\n"
-msgstr "目标已失去, 瞬移中.\n"
+msgstr "目标已消失, 瞬移中.\n"
 
 #: ../AI/Attack.pm:219
 msgid "Target lost\n"
-msgstr "目标已失去\n"
+msgstr "目标已消失\n"
 
 #: ../AI/Attack.pm:455
 #: ../AI/Slave.pm:526
@@ -224,7 +229,7 @@ msgstr "无法计算路径至目标，放弃目标\n"
 
 #: ../AI/CoreLogic.pm:554
 msgid "Escaping to into nearest portal.\n"
-msgstr "逃脱至最近的传点.\n"
+msgstr "逃离最近的传送点.\n"
 
 #: ../AI/CoreLogic.pm:562
 msgid "Found warp portal escaping into warp portal.\n"
@@ -232,7 +237,7 @@ msgstr "发现传送阵，正在逃脱进入传送阵.\n"
 
 #: ../AI/CoreLogic.pm:571
 msgid "Escape failed no portal found.\n"
-msgstr "逃脱失败找不到传点.\n"
+msgstr "逃脱失败找不到传送点.\n"
 
 #: ../AI/CoreLogic.pm:591
 msgid ""
@@ -250,7 +255,7 @@ msgstr "计算随机路径至坐标: %s: %s, %s\n"
 
 #: ../AI/CoreLogic.pm:641
 msgid "Timeout equiping for skill\n"
-msgstr "为了技能而装备的逾时\n"
+msgstr "为了装备技能而连接超时\n"
 
 #: ../AI/CoreLogic.pm:788
 #, perl-format
@@ -295,7 +300,7 @@ msgstr "*** 你已死亡, 自动断线! ***\n"
 
 #: ../AI/CoreLogic.pm:1090
 msgid "Auto-storaging due to excess weight\n"
-msgstr "因负重达到设置而启动自动存仓功能\n"
+msgstr "因负重达到设置值而启动自动存仓功能\n"
 
 #: ../AI/CoreLogic.pm:1126
 #: ../AI/CoreLogic.pm:1127
@@ -329,7 +334,7 @@ msgstr "使用config档定义的存仓步骤.\n"
 
 #: ../AI/CoreLogic.pm:1232
 msgid "Something is wrong with storageAuto_npc_type in your config.\n"
-msgstr "你的config档案中的 storageAuto_npc_type 有误.\n"
+msgstr "你的config文档中的 storageAuto_npc_type 有误.\n"
 
 #: ../AI/CoreLogic.pm:1263
 #: ../AI/CoreLogic.pm:1264
@@ -344,7 +349,7 @@ msgstr "尝试从仓库获得 %s x %s, 重试次数: %s\n"
 #: ../AI/CoreLogic.pm:1382
 #, perl-format
 msgid "storage: %s out of stock\n"
-msgstr "仓库: %s 已罄\n"
+msgstr "仓库中的: %s 已取完\n"
 
 #: ../AI/CoreLogic.pm:1390
 msgid ""
@@ -380,12 +385,12 @@ msgstr "正在计算自动卖出路径至坐标: %s(%s): %s, %s\n"
 
 #: ../AI/CoreLogic.pm:1653
 msgid "Teleporting to auto-buy\n"
-msgstr "瞬移回城以进行自动买物功能\n"
+msgstr "瞬移回城以进行自动购买功能\n"
 
 #: ../AI/CoreLogic.pm:1660
 #, perl-format
 msgid "Calculating auto-buy route to: %s (%s): %s, %s\n"
-msgstr "正在计算自动买物路径至坐标: %s (%s): %s, %s\n"
+msgstr "正在计算自动购买路径至坐标: %s (%s): %s, %s\n"
 
 #: ../AI/CoreLogic.pm:1787
 #, perl-format
@@ -426,7 +431,7 @@ msgstr "找到我跟随的主人了!\n"
 
 #: ../AI/CoreLogic.pm:2040
 msgid "Master died. I'll wait here.\n"
-msgstr "主人挂了. 我会在这里等候着他的o(︶︿︶)o.\n"
+msgstr "主人挂了. 我会在这里等候着ta的o(︶︿︶)o.\n"
 
 #: ../AI/CoreLogic.pm:2043
 msgid "I lost my master\n"
@@ -461,7 +466,7 @@ msgstr "无法找到我的主人，放弃了\n"
 #: ../AI/CoreLogic.pm:2161
 #, perl-format
 msgid "My master warped at (%s, %s) - moving to warp point\n"
-msgstr "我的主人进入传点(%s, %s) - 跟着移动至传点位置\n"
+msgstr "我的主人进入传送点(%s, %s) - 跟着移动至传送点位置\n"
 
 #: ../AI/CoreLogic.pm:2787
 #, perl-format
@@ -591,7 +596,7 @@ msgstr "放弃目标 %s CN Kore 不可以抢别人的怪\n"
 #: ../AI/Slave.pm:524
 #, perl-format
 msgid "%s has no LOS from (%d, %d) to target (%d, %d)"
-msgstr "从 %s (%d,%d) 到 (%d,%d) 的传点无 LOS. 请联系BUG搜集人员"
+msgstr "从 %s (%d,%d) 到 (%d,%d) 的传送点无 LOS. 请联系BUG搜集人员"
 
 #: ../AI/Slave.pm:622
 #, perl-format
@@ -925,7 +930,7 @@ msgstr "正在下载手册，请稍候"
 
 #: ../Interface/Wx/ConfigEditor.pm:329
 msgid "Unable to download the manual."
-msgstr "无法载入档案."
+msgstr "无法载入文档."
 
 #: ../Interface/Wx/ConfigEditor.pm:332
 #, perl-format
@@ -1592,7 +1597,7 @@ msgstr "出现NPC: %s (%d, %d) (ID %d) - (%d)\n"
 #: ../Network/Receive/ServerType0.pm:1199
 #, perl-format
 msgid "Portal Exists: %s (%s, %s) - (%s)\n"
-msgstr "出现传点: %s (%s, %s) - (%s)\n"
+msgstr "出现传送点: %s (%s, %s) - (%s)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1465
 #: ../Network/Receive/ServerType0.pm:1393
@@ -1697,6 +1702,43 @@ msgstr "负重"
 #: ../Network/Receive/ServerType0.pm:1686
 msgid "too many items"
 msgstr "物品过多"
+
+#: ../Network/Receive/kRO/Sakexe_0.pm:3146
+#: ../Network/Receive/ServerType0.pm:3276
+msgid "The server has denied your connection.\n"
+msgstr "服务器拒绝连接."
+
+msgid "The server has denied your connection for unknown reason (%d).\n"
+msgstr "服务器认证失败, 错误代码 (%d)."
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Item"
+msgstr "道具"
+
+msgid "Monster"
+msgstr "怪物"
+
+msgid "Party"
+msgstr "队友"
+
+msgid "Pet"
+msgstr "宠物"
+
+msgid "Player"
+msgstr "玩家"
+
+msgid "Portal"
+msgstr "传送点"
+
+msgid "Homunculus"
+msgstr "人工生命体"
+
+msgid "Mercenary"
+msgstr "佣兵"
+
+
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1753
 #: ../Network/Receive/ServerType0.pm:1688
@@ -3132,7 +3174,7 @@ msgstr "不允许其他玩家观看自己的装备\n"
 #: ../Network/Receive/ServerType0.pm:5498
 #, perl-format
 msgid "Monster Skill - switch Target to : %s (%d)\n"
-msgstr "魔物技能 - 转换目标为 : %s (%d)\n"
+msgstr "怪物技能 - 转换目标为 : %s (%d)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5622
 #: ../Network/Receive/ServerType0.pm:5527
@@ -3502,19 +3544,19 @@ msgstr ""
 #: ../Network/Receive/ServerType0.pm:6698
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (insufficient zeny).\n"
-msgstr "从露店购买物品 #%s 的 %s 失败(金钱不够).\n"
+msgstr "从露店购购买品 #%s 的 %s 失败(金钱不够).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6858
 #: ../Network/Receive/ServerType0.pm:6700
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (overweight).\n"
-msgstr "从露店购买物品 #%s 的 %s 失败(负重过重).\n"
+msgstr "从露店购购买品 #%s 的 %s 失败(负重过重).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6860
 #: ../Network/Receive/ServerType0.pm:6702
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (unknown code %s).\n"
-msgstr "从露店购买物品 #%s 的 %s 失败(未知码 %s).\n"
+msgstr "从露店购购买品 #%s 的 %s 失败(未知码 %s).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6877
 #: ../Network/Receive/ServerType0.pm:6720
@@ -3957,7 +3999,7 @@ msgstr "[跆拳任务]:目标怪物 : %s (%d%)\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:7286
 #: ../Network/Receive/ServerType0.pm:7129
 msgid "Your Hate and Feel targets have been resetted.\n"
-msgstr "你的 太阳、月亮、星星位置.太阳、月亮、星星魔物 已经重置\n"
+msgstr "你的 太阳、月亮、星星位置.太阳、月亮、星星怪物 已经重置\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:7296
 #: ../Network/Receive/ServerType0.pm:7139
@@ -4341,7 +4383,7 @@ msgstr "送出已加密的密码\n"
 
 #: ../Network/DirectConnection.pm:423
 msgid "Timeout on Account Server, reconnecting...\n"
-msgstr "账号服务器逾时，重新联机中\n"
+msgstr "账号服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:446
 msgid "Connecting to Character Server...\n"
@@ -4354,7 +4396,7 @@ msgstr "无效的指定服务器，服务器 %s 并不存在\n"
 
 #: ../Network/DirectConnection.pm:497
 msgid "Timeout on Character Server, reconnecting...\n"
-msgstr "角色服务器逾时，重新联机中\n"
+msgstr "角色服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:506
 msgid "Connecting to Character Select Server...\n"
@@ -4362,15 +4404,15 @@ msgstr "正在联机至角色选择服务器\n"
 
 #: ../Network/DirectConnection.pm:520
 msgid "Timeout on Character Select Server, reconnecting...\n"
-msgstr "角色选择服务器逾时，重新联机中\n"
+msgstr "角色选择服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:533
 msgid "Connecting to Map Server...\n"
-msgstr "正在联机至地图服务器\n"
+msgstr "正在连接地图服务器\n"
 
 #: ../Network/DirectConnection.pm:559
 msgid "Timeout on Map Server, connecting to Account Server...\n"
-msgstr "地图服务器逾时，联机至账号服务器中\n"
+msgstr "地图服务器连接超时，连接账号服务器中\n"
 
 #: ../Network/DirectConnection.pm:569
 msgid "*** You disconnected, auto quit! ***\n"
@@ -4387,11 +4429,11 @@ msgstr "从地图服务器断线 %s 秒后联机至账号服务器\n"
 
 #: ../Network/DirectConnection.pm:581
 msgid "Timeout on Map Server, "
-msgstr "地图服务器逾时，"
+msgstr "地图服务器连接超时，"
 
 #: ../Network/DirectConnection.pm:584
 msgid "exiting...\n"
-msgstr "结束中\n"
+msgstr "正在退出...\n"
 
 #: ../Network/DirectConnection.pm:587
 #, perl-format
@@ -4604,12 +4646,12 @@ msgstr "从 %s (%s,%s) 到最终的目的地 (%s,%s) 无 LOS。\n"
 #: ../Task/MapRoute.pm:306
 #, perl-format
 msgid "Attempting to teleport near portal, try #%s\n"
-msgstr "尝试瞬移至传点附近，尝试次数 #%s\n"
+msgstr "尝试瞬移至下一个传送点附近，尝试次数 #%s\n"
 
 #: ../Task/MapRoute.pm:342
 #, perl-format
 msgid "No LOS from %s (%s,%s) to Portal at (%s,%s).\n"
-msgstr "从 %s (%s,%s) 到 (%s,%s) 的传点无 LOS。\n"
+msgstr "从 %s (%s,%s) 到 (%s,%s) 的传送点无 LOS。\n"
 
 #: ../Task/RaiseSkill.pm:57
 #, perl-format
@@ -4637,15 +4679,15 @@ msgstr "目的地已到达.\n"
 
 #: ../Task/Route.pm:263
 msgid " Teleporting to unstuck."
-msgstr "瞬移以避免呆住."
+msgstr "瞬移以避免发呆."
 
 #: ../Task/Route.pm:267
 msgid "Stuck during route."
-msgstr "计算路径时呆住."
+msgstr "计算路径时发呆."
 
 #: ../Task/SitStand.pm:100
 msgid "Basic Skill level 3 is required in order to sit or stand."
-msgstr "基本技能要达到 3 级才能坐下或站起."
+msgstr "基础技能要达到 3 级才能坐下或站起."
 
 #: ../Task/TalkNPC.pm:113
 #, perl-format
@@ -4659,7 +4701,7 @@ msgstr "与 %s 结束对话.\n"
 
 #: ../Task/TalkNPC.pm:150
 msgid "The NPC did not respond."
-msgstr "NPC 无回应."
+msgstr "NPC 没有响应."
 
 #: ../Task/TalkNPC.pm:208
 msgid "According to the given NPC instructions, the Next button must now be clicked on, but that's not possible."
@@ -4697,7 +4739,7 @@ msgstr "目标已失去."
 #: ../Task/UseSkill.pm:353
 #, perl-format
 msgid "Unable to cast skill %s in %d tries."
-msgstr "技能 %s 无法施展，已尝试 %d 次。"
+msgstr "技能 %s 无法施放，已尝试 %d 次。"
 
 #: ../Task/UseSkill.pm:359
 #: ../Task/UseSkill.pm:393
@@ -4712,25 +4754,25 @@ msgstr "施法已被取消."
 #: ../Task/UseSkill.pm:388
 #, perl-format
 msgid "Unable to cast skill in %d tries."
-msgstr "技能无法施展，已尝试 %d 次。"
+msgstr "技能无法施放，已尝试 %d 次。"
 
 #: ../Task/UseSkill.pm:398
 msgid "Casting is supposed to be finished now, but nothing happened."
-msgstr "此刻咏唱应该已经结束，但却没有发生任何事。"
+msgstr "此时技能咏唱应该已经结束，但却没有发生任何事。"
 
 #: ../AI.pm:231
 #, perl-format
 msgid "Calculating route to find master: %s\n"
-msgstr "计算路径以寻找主人: %s\n"
+msgstr "计算路径以找到主人: %s\n"
 
 #: ../AI.pm:233
 #, perl-format
 msgid "Calculating route to find master: %s (%s,%s)\n"
-msgstr "计算路径以寻找主人: %s (%s,%s)\n"
+msgstr "计算路径以找到主人: %s (%s,%s)\n"
 
 #: ../Actor.pm:227
 msgid "Your "
-msgstr "你"
+msgstr "你的"
 
 #: ../Actor.pm:239
 msgid "itself"
@@ -4990,15 +5032,15 @@ msgid ""
 "Error in function 'a' (Attack Monster)\n"
 "Monster %s does not exist.\n"
 msgstr ""
-"'a' 功能错误 (攻击魔物)\n"
-"魔物 %s 并不存在.\n"
+"'a' 功能错误 (攻击怪物)\n"
+"怪物 %s 并不存在.\n"
 
 #: ../Commands.pm:602
 msgid ""
 "Syntax Error in function 'a' (Attack Monster)\n"
 "Usage: attack <monster # | no | yes >\n"
 msgstr ""
-"'a' 功能语法错误 (攻击魔物)\n"
+"'a' 功能语法错误 (攻击怪物)\n"
 "使用方法: attack <monster # | no | yes >\n"
 
 #: ../Commands.pm:615
@@ -5674,8 +5716,8 @@ msgid ""
 "JobExp       : %s %s\n"
 "BaseExp/Hour : %s %s\n"
 "JobExp/Hour  : %s %s\n"
-"zeny        : %s\n"
-"zeny/Hour   : %s\n"
+"zeny         : %s\n"
+"zeny/Hour    : %s\n"
 "Base Levelup Time Estimation : %s\n"
 "Job Levelup Time Estimation  : %s\n"
 "Died : %s\n"
@@ -5683,7 +5725,7 @@ msgid ""
 "Bytes Rcvd   : %s\n"
 msgstr ""
 "------------经验值报告------------\n"
-"Botting 时间 : %s\n"
+"运行时间 : %s\n"
 "Base 经验值   : %s %s\n"
 "Job 经验值   : %s %s\n"
 "每小时Base经验值 : %s %s\n"
@@ -5693,28 +5735,28 @@ msgstr ""
 "预计下次Base升级所需时间 : %s\n"
 "预计下次Job 升级所需时间 : %s\n"
 "死亡次数 : %s\n"
-"字节发送  : %s\n"
-"字节接收  : %s\n"
+"发送字节  : %s\n"
+"接收字节  : %s\n"
 
 #: ../Commands.pm:1658
 msgid ""
 "-[Monster Killed Count]-----------------------\n"
 "#   ID     Name                      Count\n"
 msgstr ""
-"-[杀死的魔物计算]-----------------------------\n"
+"-[杀死的怪物总数]-----------------------------\n"
 "#   ID     名称                            数量\n"
 
 #: ../Commands.pm:1669
 #, perl-format
 msgid "Total number of killed monsters: %s\n"
-msgstr "总共杀死的魔物数量: %s\n"
+msgstr "总共杀死的怪物数量: %s\n"
 
 #: ../Commands.pm:1677
 msgid ""
 "-[Item Change Count]--------------------------\n"
 "Name                                    Count\n"
 msgstr ""
-"-[物品改变量计算]-----------------------------\n"
+"-[物品改变量总数]-----------------------------\n"
 "名称                                     计数\n"
 
 #: ../Commands.pm:1688
@@ -6399,7 +6441,7 @@ msgid ""
 "-----------Monster List-----------\n"
 "#   Name                        ID      DmgTo DmgFrom  Distance    Coordinates\n"
 msgstr ""
-"-------------魔物清单-------------\n"
+"-------------怪物清单-------------\n"
 "#   名称                 ID      给予伤害 被伤害  距离        坐标\n"
 
 #: ../Commands.pm:3065
@@ -6806,7 +6848,7 @@ msgid ""
 "-----------Portal List-----------\n"
 "#    Name                                Coordinates\n"
 msgstr ""
-"------------传点清单-------------\n"
+"------------传送点清单-------------\n"
 "#    名称                                坐标\n"
 
 #: ../Commands.pm:3724
@@ -7112,7 +7154,7 @@ msgstr ""
 "--------------------------------------------------------\n"
 "对敌总伤害: @>>>>>>>>>>>>> 每秒输出伤害: @<<<<<<<<<<<<<<\n"
 "花费时间 (秒): @>>>>>>>>\n"
-"打死最后一只魔物所花时间 (秒): @>>>>>>>\n"
+"打死最后一只怪物所花时间 (秒): @>>>>>>>\n"
 "--------------------------------------------------------"
 
 #: ../Commands.pm:4219
@@ -7224,7 +7266,7 @@ msgid ""
 "File %s does not exist.\n"
 msgstr ""
 "'switchconf' 功能语法错误 (切换config檔)\n"
-"档案 %s 并不存在.\n"
+"文档 %s 并不存在.\n"
 
 #: ../Commands.pm:4444
 #, perl-format
@@ -7452,8 +7494,8 @@ msgid ""
 "Syntax Error in function 'im' (Use Item on Monster)\n"
 "Usage: im <item #> <monster #>\n"
 msgstr ""
-"'im' 功能语法错误 (使用物品在魔物身上)\n"
-"使用方法: im <物品编号> <魔物编号>\n"
+"'im' 功能语法错误 (使用物品在怪物身上)\n"
+"使用方法: im <物品编号> <怪物编号>\n"
 
 #: ../Commands.pm:4751
 #, perl-format
@@ -7461,7 +7503,7 @@ msgid ""
 "Error in function 'im' (Use Item on Monster)\n"
 "Inventory Item %s does not exist.\n"
 msgstr ""
-"'im' 功能错误 (使用物品在魔物身上)\n"
+"'im' 功能错误 (使用物品在怪物身上)\n"
 "物品栏的物品 %s 并不存在.\n"
 
 #: ../Commands.pm:4754
@@ -7470,7 +7512,7 @@ msgid ""
 "Error in function 'im' (Use Item on Monster)\n"
 "Inventory Item %s is not of type Usable.\n"
 msgstr ""
-"'im' 功能错误 (使用物品在魔物身上)\n"
+"'im' 功能错误 (使用物品在怪物身上)\n"
 "物品栏的物品 %s 非可使用物品.\n"
 
 #: ../Commands.pm:4757
@@ -7479,8 +7521,8 @@ msgid ""
 "Error in function 'im' (Use Item on Monster)\n"
 "Monster %s does not exist.\n"
 msgstr ""
-"'im' 功能错误 (使用物品在魔物身上)\n"
-"魔物 %s 并不存在.\n"
+"'im' 功能错误 (使用物品在怪物身上)\n"
+"怪物 %s 并不存在.\n"
 
 #: ../Commands.pm:4773
 msgid ""
@@ -7589,8 +7631,8 @@ msgid ""
 "Syntax error in function 'sm' (Use Skill on Monster)\n"
 "Usage: sm <skill #> <monster #> [level]\n"
 msgstr ""
-"'sm' 功能语法错误 (使用技能在魔物身上)\n"
-"使用方法: sm <技能编号> <魔物编号> [技能等级]\n"
+"'sm' 功能语法错误 (使用技能在怪物身上)\n"
+"使用方法: sm <技能编号> <怪物编号> [技能等级]\n"
 
 #: ../Commands.pm:4878
 #, perl-format
@@ -7598,8 +7640,8 @@ msgid ""
 "Error in function 'sm' (Use Skill on Monster)\n"
 "Monster %d does not exist.\n"
 msgstr ""
-"'sm' 功能错误 (使用技能在魔物身上)\n"
-"魔物 %d 并不存在.\n"
+"'sm' 功能错误 (使用技能在怪物身上)\n"
+"怪物 %d 并不存在.\n"
 
 #: ../Commands.pm:4888
 msgid ""
@@ -7971,7 +8013,7 @@ msgstr ""
 "\n"
 "更多的错误报告已存于 errors.txt 中。在回报一个 bug 之前，请尝试先使用 SVN 的版本.\n"
 "假如你已在使用最新版本，请先在论坛中找找看是否相同的问题已有解答，或者已经有人回报了。\n"
-"假如你真的认为你在程序中遭遇到了一个 bug，请在报告中包含该档案的 errors.txt 的内容，\n"
+"假如你真的认为你在程序中遭遇到了一个 bug，请在报告中包含该文档的 errors.txt 的内容，\n"
 "否则我们可能无法帮助你!\n"
 "\n"
 "错误的讯息为:\n"
@@ -8003,7 +8045,7 @@ msgstr "chat_resp.txt 格式已改变.请参阅 News.txt 并更新为新的格�
 #: ../FileParsers.pm:1101
 #, perl-format
 msgid "%s: Include file not found: %s\n"
-msgstr "%s: 包含的档案未找到: %s\n"
+msgstr "%s: 包含的文档未找到: %s\n"
 
 #: ../FileParsers.pm:299
 #, perl-format
@@ -8330,7 +8372,7 @@ msgstr "在 %d 秒后重新登入\n"
 #: ../Misc.pm:2376
 #, perl-format
 msgid "Found perfectly hidden %s\n"
-msgstr "消除绝对隐藏 %s\n"
+msgstr "发现隐秘的GM %s\n"
 
 #: ../Misc.pm:2442
 #, perl-format
@@ -8344,12 +8386,12 @@ msgstr "因攻击Miss而瞬移\n"
 #: ../Misc.pm:2486
 #, perl-format
 msgid "Teleporting after attacking a monster %d times\n"
-msgstr "因攻击魔物超过 %d 次而瞬移\n"
+msgstr "因攻击怪物超过 %d 次而瞬移\n"
 
 #: ../Misc.pm:2492
 #, perl-format
 msgid "%s (%s) has been provoked, searching another monster\n"
-msgstr "%s (%s) 已被挑衅，寻找其它魔物中\n"
+msgstr "%s (%s) 已被挑衅，寻找其它怪物中\n"
 
 #: ../Misc.pm:2641
 #, perl-format
@@ -8415,7 +8457,7 @@ msgstr "变化"
 #: ../Misc.pm:2733
 #, perl-format
 msgid "%s has been provoked, searching another monster\n"
-msgstr "%s 已被挑衅，寻找其它魔物中\n"
+msgstr "%s 已被挑衅，寻找其它怪物中\n"
 
 #: ../Misc.pm:2877
 msgid "Using Teleport Skill Level 2 though we not have it!\n"
@@ -8431,7 +8473,7 @@ msgstr "你并没有瞬移技能或苍蝇翅膀\n"
 
 #: ../Misc.pm:2943
 msgid "You don't have the Teleport skill or a Butterfly Wing\n"
-msgstr "你并没有瞬移技能或蝴蝶翅膀\n"
+msgstr "你并没有瞬移技能, 回城咒术书或蝴蝶翅膀\n"
 
 #: ../Misc.pm:3005
 #, perl-format
@@ -8455,7 +8497,7 @@ msgstr ""
 
 #: ../Misc.pm:3022
 msgid "Storage logged\n"
-msgstr "仓库信息已记录\n"
+msgstr "仓库中的物品已添加至记录\n"
 
 #: ../Misc.pm:3025
 #, perl-format
@@ -8692,9 +8734,9 @@ msgid ""
 "currently not. To solve this prolem, please use Notepad\n"
 "to save that file as valid UTF-8."
 msgstr ""
-"%s 这个档案必须是有效的 UTF-8 编码，但它目前不是。\n"
+"%s 这个文档必须是有效的 UTF-8 编码，但它目前不是。\n"
 "为了解决这个问题，请使用记事本开启\n"
-"并将档案以有效的 UTF-8 储存。"
+"并将文档以有效的 UTF-8 储存。"
 
 #: ../Modules.pm:137
 #, perl-format
@@ -8805,12 +8847,12 @@ msgstr "欢迎来到 %s."
 #: ../Settings.pm:440
 #, perl-format
 msgid "Cannot load control file %s"
-msgstr "无法载入 control 档案 %s"
+msgstr "无法载入 control 文档 %s"
 
 #: ../Settings.pm:444
 #, perl-format
 msgid "Cannot load table file %s"
-msgstr "无法载入 table 档案 %s"
+msgstr "无法载入 table 文档 %s"
 
 #: ../functions.pl:113
 #, perl-format
@@ -8828,7 +8870,7 @@ msgstr ""
 #: ../functions.pl:282
 #, perl-format
 msgid "Unable to load the file %s."
-msgstr "无法载入档案 %s。"
+msgstr "无法载入文档 %s。"
 
 #: ../functions.pl:290
 msgid ""
@@ -8848,15 +8890,15 @@ msgstr ""
 
 #: ../functions.pl:359
 msgid "Checking for new portals... "
-msgstr "检查有无新的传点"
+msgstr "检查有无新的传送点"
 
 #: ../functions.pl:361
 msgid "found new portals!\n"
-msgstr "发现新的传点!\n"
+msgstr "发现新的传送点!\n"
 
 #: ../functions.pl:363
 msgid "New portals have been added to the portals database. The portals database must be compiled before the new portals can be used. Would you like to compile portals now?\n"
-msgstr "新的传点已经加入传点数据库。传点数据库必须重新编译才可应用新的传点。请问你现在要编译传点吗?\n"
+msgstr "新的传送点已经加入传送点数据库。传送点数据库必须重新编译才可应用新的传送点。请问你现在要编译传送点吗?\n"
 
 #: ../functions.pl:366
 msgid "Yes, compile now."
@@ -8868,11 +8910,11 @@ msgstr "不，不要编译它。"
 
 #: ../functions.pl:367
 msgid "Compile portals?"
-msgstr "编译传点?"
+msgstr "编译传送点?"
 
 #: ../functions.pl:369
 msgid "compiling portals"
-msgstr "正在编绎传点"
+msgstr "正在编绎传送点"
 
 #: ../functions.pl:372
 msgid "skipping compile"
@@ -8955,7 +8997,7 @@ msgstr "(获得: %s HP)"
 
 #: ../ServerType0.pm:4247
 msgid "Monster %s (%d) changed to %s\n"
-msgstr "魔物 %s (%d) 变为 %s\n"
+msgstr "怪物 %s (%d) 变为 %s\n"
 
 #: ../Network/Receive/ServerType0.pm:3713
 #: ../Network/Receive/kRO/Sakexe_0.pm:3726
@@ -8976,15 +9018,15 @@ msgstr "无Los障碍物 从 ($realMyPos->{x}, $realMyPos->{y}) 至锁定目标 (
 
 #: ../AI/CoreLogic.pm:519
 msgid "Recorded new portal (destination): %s (%s, %s) -> %s (%s, %s)\n"
-msgstr "纪录新传点(目标地址): %s (%s, %s) -> %s (%s, %s)\n"
+msgstr "纪录新传送点(目标地址): %s (%s, %s) -> %s (%s, %s)\n"
 
 #: ../AI/CoreLogic.pm:536
 msgid "Recorded new portal (source): %s (%s, %s) -> %s (%s, %s)\n"
-msgstr "纪录新传点(原地址): %s (%s, %s) -> %s (%s, %s)\n"
+msgstr "纪录新传送点(原地址): %s (%s, %s) -> %s (%s, %s)\n"
 
 #: ../AI/CoreLogic.pm:1649
 msgid "Auto-buy: $needitem\n"
-msgstr "启动自动买物: $needitem\n"
+msgstr "启动自动购买: $needitem\n"
 
 #: ../AI/CoreLogic.pm:536
 msgid "Unknown #$args->{effect}"
@@ -9248,7 +9290,7 @@ msgstr "未知路径无法计算"
 #~ "'p' 功能语法错误 (队频说话)\n"
 #~ "使用方法: p <要说话的内容>\n"
 #~ msgid "File %s does not exist."
-#~ msgstr "档案 %s 并不存在."
+#~ msgstr "文档 %s 并不存在."
 
 #, fuzzy
 #~ msgid "Summary: %s\n"
