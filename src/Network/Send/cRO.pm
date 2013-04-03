@@ -20,7 +20,6 @@ use Math::BigInt;
 use Digest::MD5;
 use I18N qw(bytesToString stringToBytes);
 
-
 sub new {
 	my ($class) = @_;
 	my $self = $class->SUPER::new(@_);
@@ -32,14 +31,14 @@ sub new {
 		'0369' => ['actor_action', 'a4 C', [qw(targetID type)]],
 		'0437' => ['character_move','a3', [qw(coords)]],		
 		'035F' => ['sync', 'V', [qw(time)]],
-		'0361' => ['actor_look_at', 'v C', [qw(head body)]],
-		'0360' => ['item_take', 'a4', [qw(ID)]],
-		'0919' => ['item_drop', 'v2', [qw(index amount)]],		
-		'0367' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'0947' => ['storage_item_remove', 'v V', [qw(index amount)]],
+		'092B' => ['actor_look_at', 'v C', [qw(head body)]],
+		'07E4' => ['item_take', 'a4', [qw(ID)]],
+		'0362' => ['item_drop', 'v2', [qw(index amount)]],		
+		'07EC' => ['storage_item_add', 'v V', [qw(index amount)]],
+		'0364' => ['storage_item_remove', 'v V', [qw(index amount)]],
 		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
-		'0940' => ['actor_info_request', 'a4', [qw(ID)]],
-		'0860' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],	
+		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
+		'0947' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],	
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],		
 	);
 	
@@ -50,14 +49,14 @@ sub new {
 		actor_action 0369
 		character_move 0437
 		sync 035F
-		actor_look_at 0361
-		item_take 0360
-		item_drop 0919
-		storage_item_add 0367
-		storage_item_remove 0947
+		actor_look_at 092B
+		item_take 07E4
+		item_drop 0362
+		storage_item_add 07EC
+		storage_item_remove 0364
 		skill_use_location 0438
-		actor_info_request 0940
-		map_login 0860
+		actor_info_request 096A
+		map_login 0947
 		party_setting 07D7
 	);
 	
@@ -91,11 +90,11 @@ sub encryptMessageID
 sub PrepareKeys()
 {
 	# K
-	$enc_val1 = Math::BigInt->new('0x5e2f2f8e');
+	$enc_val1 = Math::BigInt->new('0x22c12159');
 	# M
-	$enc_val3 = Math::BigInt->new('0x280c0c55');
+	$enc_val3 = Math::BigInt->new('0x395a120b');
 	# A
-	$enc_val2 = Math::BigInt->new('0x7dd07a71');
+	$enc_val2 = Math::BigInt->new('0x29c84e84');
 }
 
 sub sendMasterLogin {
@@ -124,7 +123,7 @@ sub sendMapLogin
 	$sex = 0 if ($sex > 1 || $sex < 0); # Sex can only be 0 (female) or 1 (male)
 	
 	if ( $map_login == 0 ) { PrepareKeys(); $map_login = 1; }
-	
+
 	# Reconstructing Packet 
 	$msg = $self->reconstruct({
 		switch => 'map_login',
@@ -145,7 +144,7 @@ sub sendFriendRequest {
 	my $binName = stringToBytes($name);
 	$binName = substr($binName, 0, 24) if (length($binName) > 24);
 	$binName = $binName . chr(0) x (24 - length($binName));
-	my $msg = pack("C*", 0x21, 0x09) . $binName;
+	my $msg = pack("C*", 0xA6, 0x08) . $binName;
 
 	$self->sendToServer($msg);
 	debug "Sent Request to be a friend: $name\n", "sendPacket";
