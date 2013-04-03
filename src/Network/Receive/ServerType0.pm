@@ -7177,7 +7177,7 @@ sub del_packet {
 
 sub full_or_banned {
 	my ($self, $args) = @_;
-	message TF("服务器已满或者已被封号";
+	message TF("Server full or Banned.");
 }
 
 1;
