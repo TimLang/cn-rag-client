@@ -126,7 +126,7 @@ sub sync_request_ex {
 	my ($self, $args) = @_;
 	
 	# Debug Log
-	message "Received Sync Ex : 0x" . $args->{switch} . "\n";
+	# debug "Received Sync Ex : 0x" . $args->{switch} . "\n";
 	
 	# Computing Sync Ex - By Fr3DBr
 	my $PacketID = $args->{switch};
