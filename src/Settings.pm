@@ -105,6 +105,7 @@ our $logs_folder;
 our $maps_folder;
 
 our $config_file;
+our $key_file;
 our $mon_control_file;
 our $items_control_file;
 our $shop_file;
@@ -154,6 +155,7 @@ sub parseArguments {
 	undef $logs_folder;
 	undef $maps_folder;
 	undef $config_file;
+	undef $key_file;
 	undef $mon_control_file;
 	undef $items_control_file;
 	undef $shop_file;
@@ -175,6 +177,7 @@ sub parseArguments {
 		'maps=s',             \$maps_folder,
 
 		'config=s',           \$config_file,
+		'key=s',              \$key_file,
 		'mon_control=s',      \$mon_control_file,
 		'items_control=s',    \$items_control_file,
 		'shop=s',             \$shop_file,
@@ -278,6 +281,7 @@ sub getUsageText {
 
 		Control files lookup options:
 		--config=FILENAME         Which config.txt to use.
+		--key=FILENAME            Which key.txt to use.
 		--mon_control=FILENAME    Which mon_control.txt to use.
 		--items_control=FILENAME  Which items_control.txt to use.
 		--shop=FILENAME           Which shop.txt to use.
@@ -600,6 +604,26 @@ sub setConfigFilename {
 		}
 	}
 	$config_file = $new_filename;
+}
+
+sub getKeyFilename {
+	if (defined $key_file) {
+		return $key_file;
+	} else {
+		return getControlFilename("key.txt");
+	}
+}
+
+sub setKeyFilename {
+	my ($new_filename) = @_;
+	my $current_filename = getKeyFilename();
+	foreach my $object (@{$files->getItems()}) {
+		if ($object->{name} eq $current_filename) {
+			$object->{name} = $new_filename;
+			last;
+		}
+	}
+	$key_file = $new_filename;
 }
 
 sub getMonControlFilename {

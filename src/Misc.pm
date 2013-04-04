@@ -60,6 +60,8 @@ our @EXPORT = (
 	qw/auth
 	configModify
 	bulkConfigModify
+	keyModify
+	bulkKeyModify
 	setTimeout
 	saveConfigFile/,
 
@@ -314,6 +316,47 @@ sub configModify {
 	saveConfigFile();
 }
 
+sub keyModify {
+	my $key = shift;
+	my $val = shift;
+	my %args;
+
+	if (@_ == 1) {
+		$args{silent} = $_[0];
+	} else {
+		%args = @_;
+	}
+	$args{autoCreate} = 1 if (!exists $args{autoCreate});
+
+	Plugins::callHook('keyModify', {
+		key => $key,
+		val => $val,
+		additionalOptions => \%args
+	});
+
+	if (!$args{silent} && $key !~ /password/i) {
+		my $oldval = $key{$key};
+		if (!defined $oldval) {
+			$oldval = "not set";
+		}
+
+		if (!defined $val) {
+			message TF("Key '%s' unset (was %s)\n", $key, $oldval), "info";
+		} else {
+			message TF("Key '%s' set to %s (was %s)\n", $key, $val, $oldval), "info";
+		}
+	}
+	if ($args{autoCreate} && !exists $key{$key}) {
+		my $f;
+		if (open($f, ">>", Settings::getKeyFilename())) {
+			print $f "$key\n";
+			close($f);
+		}
+	}
+	$key{$key} = $val;
+	saveKeyFile();
+}
+
 ##
 # bulkConfigModify (r_hash, [silent])
 # r_hash: key => value to change
@@ -345,12 +388,41 @@ sub bulkConfigModify {
 	saveConfigFile();
 }
 
+sub bulkKeyModify {
+	my $r_hash = shift;
+	my $silent = shift;
+	my $oldval;
+
+	foreach my $key (keys %{$r_hash}) {
+		Plugins::callHook('keyModify', {
+			key => $key,
+			val => $r_hash->{$key},
+			silent => $silent
+		});
+
+		$oldval = $key{$key};
+
+		$key{$key} = $r_hash->{$key};
+
+		if ($key =~ /password/i) {
+			message TF("Key '%s' set to %s (was *not-displayed*)\n", $key, $r_hash->{$key}), "info" unless ($silent);
+		} else {
+			message TF("Key '%s' set to %s (was %s)\n", $key, $r_hash->{$key}, $oldval), "info" unless ($silent);
+		}
+	}
+	saveKeyFile();
+}
+
 ##
 # saveConfigFile()
 #
 # Writes %config to config.txt.
 sub saveConfigFile {
 	writeDataFileIntact(Settings::getConfigFilename(), \%config);
+}
+
+sub saveKeyFile {
+	writeDataFileIntact(Settings::getKeyFilename(), \%key);
 }
 
 sub setTimeout {
