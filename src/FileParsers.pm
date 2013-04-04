@@ -40,6 +40,7 @@ our @EXPORT = qw(
 	parseChatResp
 	parseCommandsDescription
 	parseConfigFile
+	parseKeyFile
 	parseDataFile
 	parseDataFile_lc
 	parseDataFile2
@@ -284,6 +285,102 @@ sub parseConfigFile {
 				}
 				if (-f $f) {
 					my $ret = parseConfigFile($f, $r_hash, 1, $blocks);
+					return $ret unless $ret;
+				} else {
+					error Translation::TF("%s: Include file not found: %s\n", $file, $f);
+					return 0;
+				}
+
+			} else {
+				$r_hash->{$key} = $value;
+			}
+		}
+	}
+
+	if ($inBlock) {
+		error Translation::TF("%s: Unclosed { at EOF\n", $file);
+		return 0;
+	}
+	return 1;
+}
+
+sub parseKeyFile {
+	my $file = shift;
+	my $r_hash = shift;
+	my $no_undef = shift;
+	my $blocks = (shift) || {};
+
+	undef %{$r_hash} unless $no_undef;
+	my ($key, $value, $inBlock, $commentBlock);
+	
+	my $reader = new Utils::TextReader($file);
+	while (!$reader->eof()) {
+		my $line = $reader->readLine();
+		$line =~ s/\x{FEFF}//g;
+		next if ($line =~ /^[\s\t]*#/);
+		$line =~ s/[\r\n]//g;	# Remove line endings
+		$line =~ s/^[\t\s]*//;	# Remove leading tabs and whitespace
+		$line =~ s/\s+$//g;	# Remove trailing whitespace
+		next if ($line eq "");
+
+		if (!defined $commentBlock && $line =~ /^\/\*/) {
+			$commentBlock = 1;
+			next;
+
+		} elsif (defined $commentBlock && $line =~ m/\*\/$/) {
+			undef $commentBlock;
+			next;
+
+		} elsif (defined $commentBlock) {
+			next;
+
+		} elsif (!defined $inBlock && $line =~ /{$/) {
+			# Begin of block
+			$line =~ s/ *{$//;
+			($key, $value) = $line =~ /^(.*?) (.*)/;
+			$key = $line if ($key eq '');
+
+			if (!exists $blocks->{$key}) {
+				$blocks->{$key} = 0;
+			} else {
+				$blocks->{$key}++;
+			}
+			if ($key ne 'teleportAuto'){
+				$inBlock = "${key}_$blocks->{$key}";
+			} else {
+				$inBlock = "${key}";
+			}
+			$r_hash->{$inBlock} = $value;
+
+		} elsif (defined $inBlock && $line eq "}") {
+			# End of block
+			undef $inBlock;
+
+		} else {
+			# Option
+			($key, $value) = $line =~ /^(.*?) (.*)/;
+			if ($key eq "") {
+				$key = $line;
+				$key =~ s/ *$//;
+			}
+			#$value = $r_hash->{$1} if ($value =~ /^constant\.(.*)/);
+			$key = "${inBlock}_${key}" if (defined $inBlock);
+
+			if ($key eq "!include") {
+				# Process special !include directives
+				# The filename can be relative to the current file
+				my $f = $value;
+				if (!File::Spec->file_name_is_absolute($value) && $value !~ /^\//) {
+					if ($file =~ /[\/\\]/) {
+						$f = $file;
+						$f =~ s/(.*)[\/\\].*/$1/;
+						$f = File::Spec->catfile($f, $value);
+					} else {
+						$f = $value;
+					}
+				}
+				if (-f $f) {
+					my $ret = parseKeyFile($f, $r_hash, 1, $blocks);
 					return $ret unless $ret;
 				} else {
 					error Translation::TF("%s: Include file not found: %s\n", $file, $f);
