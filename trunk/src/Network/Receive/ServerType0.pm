@@ -479,6 +479,7 @@ sub new {
 		'0981' => ['del_packet'],  #OFF
 		'097A' => ['del_packet'],  #OFF
 		'09A5' => ['full_or_banned'],  # 服务器已满或者被封号
+		'098B' => ['server_full'],  # 服务器已满
 	};
 
 	# Item RECORD Struct's
@@ -7177,7 +7178,13 @@ sub del_packet {
 
 sub full_or_banned {
 	my ($self, $args) = @_;
-	message TF("Server full or Banned.");
+	message TF("Server full or Banned.\n");
+}
+
+sub server_full
+{
+	my ($self, $args) = @_;
+	message TF("Server is full. Please try later.\n");
 }
 
 1;
