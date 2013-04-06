@@ -337,7 +337,7 @@ sub new {
 		'025A' => ['cooking_list', 'v', [qw(type)]],
 		'027B' => ['premium_rates_info', 'V3', [qw(exp death drop)]],
 		# tRO new packets, need some work on them
-		'0283' => ['account_id', 'V', [qw(accountID)]],
+		'0283' => ['account_id', 'a4', [qw(accountID)]],
 		'0284' => ['GANSI_RANK', 'c24 c24 c24 c24 c24 c24 c24 c24 c24 c24 V10 v', [qw(name1 name2 name3 name4 name5 name6 name7 name8 name9 name10 pt1 pt2 pt3 pt4 pt5 pt6 pt7 pt8 pt9 pt10 switch)]], #TODO: PACKET_ZC_GANGSI_RANK
 		'0287' => ['cash_dealer'],
 		'0289' => ['cash_buy_fail', 'V2 v', [qw(cash_points kafra_points fail)]],
@@ -4341,6 +4341,12 @@ sub received_characters {
 	return if ($net->getState() == Network::IN_GAME);
 	my ($self, $args) = @_;
 	$net->setState(Network::CONNECTED_TO_LOGIN_SERVER);
+	$charSvrSet{total_slot} = $args->{total_slot} if (exists $args->{total_slot});
+	$charSvrSet{normal_slot} = $args->{normal_slot} if (exists $args->{normal_slot});
+	$charSvrSet{premium_slot} = $args->{premium_slot} if (exists $args->{premium_slot});
+	$charSvrSet{billing_slot} = $args->{billing_slot} if (exists $args->{billing_slot});
+	$charSvrSet{producible_slot} = $args->{producible_slot} if (exists $args->{producible_slot});
+	$charSvrSet{valid_slot} = $args->{valid_slot} if (exists $args->{valid_slot});
 	undef $conState_tries;
 
 	Plugins::callHook('parseMsg/recvChars', $args->{options});
@@ -4400,10 +4406,17 @@ sub received_characters {
 		$chars[$slot]{name} = bytesToString($chars[$slot]{name});
 	}
 
+	my $nChars = 0;
+	foreach (@chars) { $nChars++ if($_); } 
+
 	# FIXME better support for multiple received_characters packets
-	if ($args->{switch} eq '099D' && $args->{RAW_MSG_SIZE} != 4) {
+	if ($args->{switch} eq '099D' && $args->{RAW_MSG_SIZE} >= ($blockSize * 3)) {
 		$net->setState(1.5);
 		return
+		if ($nChars < $charSvrSet{normal_slot} && $config{'XKore'} ne '1') {
+			$messageSender->sendToServer($messageSender->reconstruct({switch => 'sync_received_characters'}));
+		}
+		return;
 	}
 
 	message T("Received characters from Character Server\n"), "connection";
@@ -6541,13 +6554,13 @@ sub instance_window_join {
 sub instance_window_leave {
 	my ($self, $args) = @_;
 	# TYPE_NOTIFY =  0x0; Ihis one will make Window, as Client logic do.
-	if($args->{type} == 1) { # TYPE_DESTROY_LIVE_TIMEOUT =  0x1
+	if($args->{flag} == 1) { # TYPE_DESTROY_LIVE_TIMEOUT =  0x1
 		message T("The Memorial Dungeon expired it has been destroyed.\n"), "info";
-	} elsif($args->{type} == 2) { # TYPE_DESTROY_ENTER_TIMEOUT =  0x2
+	} elsif($args->{flag} == 2) { # TYPE_DESTROY_ENTER_TIMEOUT =  0x2
 		message T("The Memorial Dungeon's entry time limit expired it has been destroyed.\n"), "info";
-	} elsif($args->{type} == 3) { # TYPE_DESTROY_USER_REQUEST =  0x3
+	} elsif($args->{flag} == 3) { # TYPE_DESTROY_USER_REQUEST =  0x3
 		message T("The Memorial Dungeon has been removed.\n"), "info";
-	} elsif ($args->{type} == 4) { # TYPE_CREATE_FAIL =  0x4
+	} elsif ($args->{flag} == 4) { # TYPE_CREATE_FAIL =  0x4
 		message T("The instance windows has been removed, possibly due to party/guild leave.\n"), "info";
 	} else {
 		warning TF("flag: %s gave unknown results in: %s\n", $args->{flag}, $self->{packet_list}{$args->{switch}}->[0]);
