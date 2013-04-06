@@ -29,17 +29,18 @@ sub new {
 	my %packets = (
 
 		'0369' => ['actor_action', 'a4 C', [qw(targetID type)]],
-		'0437' => ['character_move','a3', [qw(coords)]],		
+		'083C' => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
+		'0437' => ['character_move','a3', [qw(coords)]],
 		'035F' => ['sync', 'V', [qw(time)]],
 		'092B' => ['actor_look_at', 'v C', [qw(head body)]],
 		'07E4' => ['item_take', 'a4', [qw(ID)]],
-		'0362' => ['item_drop', 'v2', [qw(index amount)]],		
+		'0362' => ['item_drop', 'v2', [qw(index amount)]],
 		'07EC' => ['storage_item_add', 'v V', [qw(index amount)]],
 		'0364' => ['storage_item_remove', 'v V', [qw(index amount)]],
 		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
 		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
-		'0947' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],	
-		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],		
+		'0947' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
+		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
 	$self->{packet_list}{$_} = $packets{$_} for keys %packets;	
@@ -47,6 +48,7 @@ sub new {
 	my %handlers = qw(	
 		
 		actor_action 0369
+		skill_use 083C
 		character_move 0437
 		sync 035F
 		actor_look_at 092B
@@ -140,14 +142,19 @@ sub sendMapLogin
 
 sub sendFriendRequest {
 	my ($self, $name) = @_;
-
 	my $binName = stringToBytes($name);
 	$binName = substr($binName, 0, 24) if (length($binName) > 24);
 	$binName = $binName . chr(0) x (24 - length($binName));
-	my $msg = pack("C*", 0xA6, 0x08) . $binName;
-
+	my $msg = pack('v C*', 0x08A6, $binName);
 	$self->sendToServer($msg);
 	debug "Sent Request to be a friend: $name\n", "sendPacket";
+}
+
+sub sendHomunculusCommand {
+	my ($self, $command, $type) = ;
+	my $msg = pack('v2 C', 0x022D, $type, $command);
+	$self->sendToServer();
+	debug "Sent Homunculus Command ", "sendPacket", 2;
 }
 
 1;
