@@ -44,24 +44,11 @@ sub new {
 		'0066' => ['char_login', 'C', [qw(slot)]],
 		'0067' => ['char_create'], # TODO
 		'0068' => ['char_delete'], # TODO
-		'0072' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
 		'007D' => ['map_loaded'], # len 2
-		'007E' => ['sync', 'V', [qw(time)]],
-		'0085' => ['character_move', 'a3', [qw(coords)]],
-		'0089' => ['actor_action', 'a4 C', [qw(targetID type)]],
 		'008C' => ['public_chat', 'x2 Z*', [qw(message)]],
-		'0094' => ['actor_info_request', 'a4', [qw(ID)]],
 		'0096' => ['private_message', 'x2 Z24 Z*', [qw(privMsgUser privMsg)]],
-		'009B' => ['actor_look_at', 'v C', [qw(head body)]],
-		'009F' => ['item_take', 'a4', [qw(ID)]],
-		'00A2' => ['item_drop', 'v2', [qw(index amount)]],
 		'00B2' => ['restart', 'C', [qw(type)]],
-		#'00F3' => ['map_login', '', [qw()]],
-		'00F3' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'00F5' => ['storage_item_remove', 'v V', [qw(index amount)]],
-		'0102' => ['party_setting', 'V', [qw(exp)]],
 		'0108' => ['party_chat', 'x2 Z*', [qw(message)]],
-		'0116' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
 		'0134' => ['buy_bulk_vender', 'x2 a4 a*', [qw(venderID itemInfo)]],
 		'0149' => ['alignment', 'a4 C v', [qw(targetID type point)]],
 		'014D' => ['guild_check'], # len 2
@@ -82,20 +69,9 @@ sub new {
 		'0232' => ['actor_move', 'a4 a3', [qw(ID coords)]],
 		'0275' => ['game_login', 'a4 a4 a4 v C x16 v', [qw(accountID sessionID sessionID2 userLevel accountSex iAccountSID)]],
 		'02B0' => ['master_login', 'V Z24 a24 C Z16 Z14 C', [qw(version username password_rijndael master_version ip mac isGravityID)]],
-		'035F' => ['character_move', 'a3', [qw(coords)]],
-		'0360' => ['sync', 'V', [qw(time)]],
-		'0361' => ['actor_look_at', 'v C', [qw(head body)]],
-		'0362' => ['item_take', 'a4', [qw(ID)]],
-		'0363' => ['item_drop', 'v2', [qw(index amount)]],
-		'0364' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'0365' => ['storage_item_remove', 'v V', [qw(index amount)]],
-		'0366' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
-		'0368' => ['actor_info_request', 'a4', [qw(ID)]],
 		'0369' => ['actor_name_request', 'a4', [qw(ID)]],
-		'0436' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
 		'0437' => ['character_move','a3', [qw(coords)]],
 		'0443' => ['skill_select', 'V v', [qw(why skillID)]],
-		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 		'0801' => ['buy_bulk_vender', 'x2 a4 a4 a*', [qw(venderID venderCID itemInfo)]], # not "buy", it sells items!
 		'0802' => ['booking_register', 'v8', [qw(level MapID job0 job1 job2 job3 job4 job5)]],
 		'0804' => ['booking_search', 'v3 V s', [qw(level MapID job LastIndex ResultCount)]],
@@ -321,14 +297,6 @@ sub sendChatRoomLeave {
 	debug "Sent Leave Chat Room\n", "sendPacket", 2;
 }
 
-# 0x022d,5,hommenu,4
-sub sendHomunculusCommand {
-	my ($self, $command, $type) = @_; # $type is ignored, $command can be 0:get stats, 1:feed or 2:fire
-	my $msg = pack ('v2 C', 0x022D, $type, $command);
-	$self->sendToServer($msg);
-	debug "Sent Homunculus Command $command", "sendPacket", 2;
-}
-
 sub sendCompanionRelease {
 	my $msg = pack("C*", 0x2A, 0x01);
 	$_[0]->sendToServer($msg);
@@ -424,18 +392,6 @@ sub sendEquip {
 
 # 0x0208,11,friendslistreply,2:6:10
 # Reject:0/Accept:1
-
-sub sendFriendRequest {
-	my ($self, $name) = @_;
-
-	my $binName = stringToBytes($name);
-	$binName = substr($binName, 0, 24) if (length($binName) > 24);
-	$binName = $binName . chr(0) x (24 - length($binName));
-	my $msg = pack("C*", 0x02, 0x02) . $binName;
-
-	$self->sendToServer($msg);
-	debug "Sent Request to be a friend: $name\n", "sendPacket";
-}
 
 sub sendFriendRemove {
 	my ($self, $accountID, $charID) = @_;
