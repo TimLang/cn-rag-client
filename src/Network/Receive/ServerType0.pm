@@ -4412,7 +4412,6 @@ sub received_characters {
 	# FIXME better support for multiple received_characters packets
 	if ($args->{switch} eq '099D' && $args->{RAW_MSG_SIZE} >= ($blockSize * 3)) {
 		$net->setState(1.5);
-		return
 		if ($nChars < $charSvrSet{normal_slot} && $config{'XKore'} ne '1') {
 			$messageSender->sendToServer($messageSender->reconstruct({switch => 'sync_received_characters'}));
 		}
