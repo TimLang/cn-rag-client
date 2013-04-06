@@ -40,6 +40,7 @@ sub new {
 		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
 		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
 		'0947' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
+		'0871' => ['homunculus_command', 'v C', [qw($type $command)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
@@ -59,6 +60,7 @@ sub new {
 		skill_use_location 0438
 		actor_info_request 096A
 		map_login 0947
+		homunculus_command 0871
 		party_setting 07D7
 	);
 	
@@ -148,13 +150,6 @@ sub sendFriendRequest {
 	my $msg = pack('v C*', 0x08A6, $binName);
 	$self->sendToServer($msg);
 	debug "Sent Request to be a friend: $name\n", "sendPacket";
-}
-
-sub sendHomunculusCommand {
-	my ($self, $command, $type) = ;
-	my $msg = pack('v2 C', 0x022D, $type, $command);
-	$self->sendToServer();
-	debug "Sent Homunculus Command ", "sendPacket", 2;
 }
 
 1;
