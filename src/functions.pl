@@ -296,11 +296,12 @@ sub loadDataFiles {
 
 	if ($config{'adminPassword'} eq 'x' x 10) {
 		Log::message(T("\nAuto-generating Admin Password due to default...\n"));
-		configModify("adminPassword", vocalString(8));
+		configModify("adminPassword", vocalString(10));
 	} elsif ($config{'secureAdminPassword'} eq '1') {
 		# This is where we induldge the paranoid and let them have session generated admin passwords
 		Log::message(T("\nGenerating session Admin Password...\n"));
-		configModify("adminPassword", vocalString(8));
+		configModify("adminPassword", vocalString(10));
+		Log::message(T("本次自动生成的adminPassword是:" . $config{'adminPassword'} ."\n"));
 	}
 }
 
