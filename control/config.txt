@@ -1,4 +1,4 @@
-# 使用说明：
+﻿# 使用说明：
 # 1.#字符号开头为说明批注，程序执行时会自动略过。
 # 2.以下选项若无特别说明，0 = 关闭、1 = 开启、空白 = 预设值。
 # 3.建议用 notepad 或类似的文书编辑器，来编辑此档，层次会比较分明容易阅读。
@@ -330,7 +330,7 @@ sitAuto_idle 0
 # 可设定多组，请自行复制区块贴上。
 # 无设定（物品名称没有填上），代表关闭该区块功能。
 #
-# 「辅助状态」名称，如：觉醒药水状态，请查 /tables/skillsstatus.txt。
+# 「辅助状态」名称，如：觉醒药水，请查 /tables/skillsstatus.txt。
 # 「不良状态」名称，如：中毒、黑暗，请查 /tables/skillsailments.txt 。
 #
 # 设定说明：
@@ -339,9 +339,9 @@ sitAuto_idle 0
 # 3.因为服务器有 LAG 问题，使用任何物品 (补血品例外)，请加上 timeout 时间（秒）。
 # 4.依照物品的不同性质，设定时必须加上不同的侦测器，例如：侦测状态、侦测数量。
 #
-# 范例-1："若「不在」觉醒药水状态，喝觉醒药水"
+# 范例-1："若「不在」觉醒药水，喝觉醒药水"
 # useSelf_item 觉醒药水 {
-#   whenStatusInactive 觉醒药水状态
+#   whenStatusInactive 觉醒药水
 #   timeout 10
 # }
 #
@@ -358,7 +358,7 @@ sitAuto_idle 0
 #
 # 范例-4："「在」中毒状态，吃绿草解毒"
 # useSelf_item 绿色药草 {
-#   whenStatusActive 中毒状态
+#   whenStatusActive 中毒中
 #   timeout 1
 # }
 
@@ -932,7 +932,7 @@ attackSkillSlot {
 # attackSkillSlot 冰冻术 {
 #   lvl 10
 #   dist 9
-#   target_whenStatusInactive 冰冻状态
+#   target_whenStatusInactive 冰冻中
 #   # 当目标怪物「不在」这个状态时
 #   timeout 0.5
 #   # 避免因为 LAG 造成误判状态。
@@ -942,7 +942,7 @@ attackSkillSlot {
 # attackComboSlot 雷鸣术 {
 #   lvl 10
 #   afterSkill 冰冻术
-#   target_whenStatusActive 冰冻状态
+#   target_whenStatusActive 冰冻中
 #   # 当目标怪物「在」这个状态时
 # }
 # 
@@ -978,7 +978,7 @@ attackComboSlot {
 #范例-1："当「不在」加速状态时，给自己加速"
 # useSelf_skill 加速术 {
 #   lvl 10
-#   whenStatusInactive 加速术状态
+#   whenStatusInactive 加速术
 #   notWhileSitting 1
 #   timeout 10
 # }
@@ -986,7 +986,7 @@ attackComboSlot {
 #范例-2："「在」诅咒状态，用天赐解"
 # useSelf_skill 天使之赐福 {
 #   lvl 1
-#   whenStatusActive 诅咒状态
+#   whenStatusActive 诅咒中
 #   timeout 1
 # }
 #
@@ -1429,7 +1429,7 @@ skillsAddAuto_list
 #
 # 范例-2："打金波，被卸除武器，重登可以解除"
 # doCommand relog {
-#    whenStatusActive 卸除武器状态
+#    whenStatusActive 卸除武器
 #    # 当人物「在」这个状态时
 # }
 # 
