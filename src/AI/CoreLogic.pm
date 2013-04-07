@@ -1350,7 +1350,7 @@ sub processAutoStorage {
 				Misc::checkValidity("AutoStorage part 4");
 			}
 
-			$messageSender->sendStorageClose() unless $config{storageAuto_keepOpen};
+			$messageSender->sendStorageClose(); # unless $config{storageAuto_keepOpen};
 			if (percent_weight($char) >= $config{'itemsMaxWeight_sellOrStore'} && ai_storageAutoCheck()) {
 				error T("Character is still overweight after storageAuto (storage is full?)\n");
 				if ($config{dcOnStorageFull}) {
