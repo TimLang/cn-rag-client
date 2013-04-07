@@ -102,7 +102,7 @@ sub iterate {
 	my ($self) = @_;
 	$self->SUPER::iterate(); # Do not forget to call this!
 	return unless ($net->getState() == Network::IN_GAME);
-	my $timeResponse = ($config{npcTimeResponse} >= 5) ? $config{npcTimeResponse}:5;
+	my $timeResponse = ($config{npcTimeResponse} >= 6) ? $config{npcTimeResponse}:6;
 	
 	if ($self->{stage} eq 'Not Started') {
 		if (!timeOut($char->{time_move}, $char->{time_move_calc} + 0.2)) {
@@ -149,7 +149,7 @@ sub iterate {
 		$messageSender->sendTalkCancel($self->{ID});
 		$self->setError(NPC_NO_RESPONSE, T("The NPC did not respond."));
 
-	} elsif (timeOut($ai_v{npc_talk}{time}, 0.25)) {
+	} elsif (timeOut($ai_v{npc_talk}{time}, 1.22)) {
 		# 0.25 seconds have passed since we last talked to the NPC.
 
 		if ($ai_v{npc_talk}{talk} eq 'close' && $self->{steps}[0] =~ /x/i) {
@@ -196,6 +196,12 @@ sub iterate {
 			# Initiate NPC conversation.
 			if (!$self->{target}->isa('Actor::Monster')) {
 				# TODO: 转头和转身的计算
+				my $myPos = $char->{pos};
+				my %vec;
+				my $direction;
+				getVector(\%vec, $self->{pos}, $myPos);
+				$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
+				$messageSender->sendLook($direction, 0);
 				$messageSender->sendTalk($self->{ID});
 			} else {
 				$messageSender->sendAction($self->{ID}, 0);

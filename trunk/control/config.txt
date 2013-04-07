@@ -202,6 +202,9 @@ storageAuto_password
 # 一般状况下，无须更改，保留预设值即可。
 # 若仓库无法开启，请修改 npc 对话类型。
 
+npcTimeResponse 6
+# NPC对话超时时间(不要设置比6还低)
+
 storageAuto_npc_type 1
 # 与 npc 对话的类型
 # 1=c r1 n
@@ -219,11 +222,6 @@ storageAuto_npc_steps c r1 n
 
 storageAuto_distance 8
 # 自动存仓时要站在距离 npc 多少格的位置
-
-storageAuto_keepOpen 0
-# 是否保持仓库开启？（特殊功能）
-# kore 使用完仓库，在同一地图内，可以不关闭仓库而继续走动。
-# 这在利用宏写自动买物填满仓库时，可用来节省开仓库的费用。
 
 storageAuto_notAfterDeath 1
 # 是否避免每次死亡趴回城后就进行自动仓库(及卖物)？
