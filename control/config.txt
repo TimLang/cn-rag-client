@@ -189,6 +189,7 @@ storageAuto_password
    # }
 
 ######## 自订 取仓物品 ########
+
 #getAuto 赤色药水 {
 #    minAmount 1
 #    maxAmount 40
@@ -216,7 +217,7 @@ storageAuto_npc_steps c r1 n
 # r0  代表第1选项，以此类推。
 # n   代表取消或关闭。
 
-storageAuto_distance 4
+storageAuto_distance 8
 # 自动存仓时要站在距离 npc 多少格的位置
 
 storageAuto_keepOpen 0
@@ -282,7 +283,7 @@ sellAuto 1
 sellAuto_npc izlude_in 57 110
 # 自动卖物的 NPC 资料，请查 /tables/npcs.txt
 
-sellAuto_distance 5
+sellAuto_distance 9
 # 距离 NPC 多少格开启对话
 
 sellAuto_standpoint
@@ -462,7 +463,7 @@ attackMaxRouteTime 2
 # 通常超过 3 秒以上，还计算不出攻击路径的怪物，
 # 代表被障碍物严重阻挡，应立刻放弃改打别只，以免浪费时间。
 
-attackMinPlayerDistance 0
+attackMinPlayerDistance 2
 # 以魔物为中心多少格范围内有其它玩家时，放弃锁定（指尚未被攻击的怪物）
 # 说明：
 # 已被其它玩家打的怪物，Kore 绝对不会攻击（主程序内定），
@@ -566,7 +567,7 @@ itemsTakeAuto 2
 itemsTakeAuto_party 0
 # 是否也捡取队友打死魔物后掉落的物品
 
-itemsGatherAuto 2
+itemsGatherAuto 0
 # 是否捡取地上的无主物品？
 # 0 = 不捡
 # 1 = 先打死正在攻击你的魔物，然后才捡 (比较不会趴)
@@ -636,7 +637,7 @@ autoSwitch_default_rightHand
 autoSwitch_default_leftHand
 # 预设「左手武器」或「盾牌」名称
 
-autoSwitch_default_arrow 火箭矢
+autoSwitch_default_arrow 箭矢
 # 预设箭矢名称
 
 ##############
@@ -701,7 +702,7 @@ autoSwitch {
 # 此处的自动装备防具，指的是自动装备回「预设防具」。
 
 ##############
-#   ??-1   #
+#   模式-1   #
 ##############
 
 # 只有在攻击怪物时，才会检查身上防具，
@@ -736,7 +737,7 @@ attackEquip_rightAccessory
 
 
 ##############
-#   ??-2   #
+#   模式-2   #
 ##############
 
 # 无时无刻都在检查身上的防具，
@@ -1152,12 +1153,12 @@ route_randomWalk_maxRouteTime 100
 # 便会开始走过去，走的过程中会花时间，
 # 若超过最大时间仍未走到则放弃，重新挑选新的路径点。
 
-route_maxWarpFee 2200
+route_maxWarpFee 3000
 # 愿意付给 NPC 的最高传送费用 (zeny)，留空白代表无上限
 # 当 NPC 索取价格高于这个数目，kore 会计算其它节省路径，例如用走路的，
 # 有些地图一定要靠 NPC 传送才能到达，计算其它节省路径可能到不了。
 
-route_maxNpcTries 6
+route_maxNpcTries 8
 # 距离 NPC 多少距离(格)内才开启对话 (有些地图需靠 NPC 传送才能到)
 
 
@@ -1196,19 +1197,19 @@ teleportAuto_hp 5
 teleportAuto_sp 0
 # SP 多少 % 百分比以下瞬移 
 
-teleportAuto_minAggressives 3
+teleportAuto_minAggressives 6
 # 被多少只以上的怪物围殴时瞬移
-teleportAuto_minAggressivesInLock 3
+teleportAuto_minAggressivesInLock 6
 # 在锁定地图，被多少只以上的怪物围殴时瞬移
 
-teleportAuto_maxDmg 500
+teleportAuto_maxDmg 2000
 # 被怪物打一下，损超过多少 HP 就飞走
-teleportAuto_maxDmgInLock 500
+teleportAuto_maxDmgInLock 2000
 # 在锁定地图，被怪物打一下，损超过多少 HP 就飞走
 
-teleportAuto_totalDmg 5000
+teleportAuto_totalDmg 10000
 # 被同一只怪物打，累积共损多少 HP 就飞走
-teleportAuto_totalDmgInLock 5000
+teleportAuto_totalDmgInLock 10000
 # 在锁定地图，被同一只怪物打，累积共损多少 HP 就飞走
 
 teleportAuto_deadly 0
@@ -1239,7 +1240,7 @@ teleportAuto_dropTarget 0
 teleportAuto_dropTargetKS 0
 # 是否为了防止抢到他人的怪而放弃该怪飞走？
 
-teleportAuto_lostHomunculus
+teleportAuto_lostHomunculus 0
  # 是否失去人工生命体时要瞬移？
 ############################
 #       瞬移 - 伪装        #
@@ -1278,11 +1279,11 @@ teleportAuto_equip_leftAccessory
 teleportAuto_equip_rightAccessory
 # 指定瞬移时右边装饰品的装备名称
 
-teleportAuto_useItemForRespawn
+teleportAuto_useItemForRespawn 1
 # 空 = 不使用; 1 = 使用物品瞬移,
 # 瞬移夹 (瞬间移动 Lv. 1）不能瞬移回城，要靠物品。
 
-teleportAuto_useItemNameForRespawn
+teleportAuto_useItemNameForRespawn 新手用蝴蝶翅膀,蝴蝶翅膀,回城咒术书
 #如果使用teleportAuto_useItemForRespawn 请填入物品名称
 #物品名称，例如：新手用蝴蝶翅膀 或蝴蝶翅膀 或回城咒术书
 
@@ -1325,9 +1326,9 @@ followEmotion_distance 4
 followFaceDirection 0
 # 是否永远面向主人
 
-followDistanceMax 15
+followDistanceMax 3
 # 跟随的最长距离
-followDistanceMin 8
+followDistanceMin 1
 # 跟随的最短距离
 followLostStep 12
 # 跟丢主人时，往主人最后出现的方位走几步以尝试寻找主人
@@ -1624,7 +1625,7 @@ avoidList 1
 avoidGM_ignoreList
 # 例外名单 （玩家名字，多组用逗号隔开）
 
-avoidList_reconnect 60000
+avoidList_reconnect 6001
 # 若采取断线的策略，几秒后重连
 
 ############################
@@ -1650,7 +1651,7 @@ dcOnDeath 0
 # 0 = 过一段时间后回城，这个时间是在 timeout.txt 中设置。(预设4秒)
 # 1 = 直接断线（结束自动练功）。
 
-dcOnDualLogin 1
+dcOnDualLogin 0
 # 遇到相同帐号登入时的反应。
 # 0 = 立刻重连、 1 = 断线结束、 >1以上 = 断线几秒后重连。
 
@@ -1668,7 +1669,7 @@ dcOnMute 0
 dcOnPM 0
 # 被密语时是否断线结束？
 
-dcOnZeny 10000
+dcOnZeny 5000
 # 身上 zeny 少于多少钱时自动断线结束
 # 0 = 忽略、>1以上 = zeny 数目
 
@@ -1919,7 +1920,7 @@ showDomain 0
 # 如果设 1，在终端机显示的每行讯息前面，
 # 都会用中括号标示该行是属于那个 [讯息域]。
 
-squelchDomains attackedMiss, emotion, skill
+squelchDomains attackedMiss, emotion, 
 # 设定想过滤的 [讯息域]，使其不显示在终端机上
 # 参考资料：
 # attackedMiss   被怪物攻击 MISS 讯息
@@ -1955,7 +1956,7 @@ beepDomains_notInTown
 
 ######## 自订 指令串别名 ########
 
-alias_heal ss 28 10
+alias_123 ss 28 10
 # 输入 heal 可施展治愈术 10 级，
 # 没 10 级则自动施展角色能用的最高等级。
 
@@ -2034,7 +2035,7 @@ missDamage 10
 # 任何你伤害魔物的数值小于此设定值者将会视为 Miss
 # 0 = 关闭此功能、>1以上 = 数值
 
-autoTalkCont 1
+autoTalkCont 0
 # 是否与 NPC 自动对话至出现选项？
 
 clientSight 20
@@ -2100,7 +2101,7 @@ XKore_silent 0
 XKore_bypassBotDetection 0
 # 是否开启反制官方外挂侦测功能
 
-XKore_exeName ro.exe
+XKore_exeName ragexe.exe
 # XKore 模式所对应的 RO 主程序档名 
 # ragfree.exe 是免服主程序档名。
 
@@ -2117,7 +2118,7 @@ adminPassword
 # 2.即使密码为空白（无设置），基于安全理由，
 #   kore 启动时，也会自动产生一个乱数的密码。
 
-secureAdminPassword 0
+secureAdminPassword 1
 # 是否要自动产生安全密码？ 
 # 0 = 关闭此功能。
 # 1 = 每次启动 kore 时，自动乱数产生新的 adminPassword 密码。
@@ -2178,4 +2179,4 @@ charBlockSize 144
 locale zh_CN
 wx_npcTalk
 wx_captcha
-wx_map_route
+wx_map_route 1
