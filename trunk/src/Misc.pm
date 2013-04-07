@@ -1895,15 +1895,12 @@ sub itemName {
 		} sort { cardName($a) cmp cardName($b) } keys %cards);
 	}
 
-	my $numSlots = $itemSlotCount_lut{$item->{nameID}} if ($prefix eq "");
-
 	my $display = "";
 	$display .= "BROKEN " if $item->{broken};
 	$display .= "+$item->{upgrade} " if $item->{upgrade};
 	$display .= $prefix if $prefix;
 	$display .= $name;
 	$display .= " [$suffix]" if $suffix;
-	$display .= " [$numSlots]" if $numSlots;
 
 	return $display;
 }
