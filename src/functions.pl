@@ -229,8 +229,6 @@ sub loadDataFiles {
 		loader => [\&parseRODescLUT, \%itemsDesc_lut], mustExist => 0);
 	Settings::addTableFile('itemslots.txt',
 		loader => [\&parseROSlotsLUT, \%itemSlots_lut]);
-	Settings::addTableFile('itemslotcounttable.txt',
-		loader => [\&parseROLUT, \%itemSlotCount_lut]);
 	Settings::addTableFile('itemtypes.txt',
 		loader => [\&parseDataFile2, \%itemTypes_lut]);
 	Settings::addTableFile('resnametable.txt',

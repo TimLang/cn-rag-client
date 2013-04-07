@@ -3564,6 +3564,7 @@ sub cmdPrivateMessage {
 }
 
 sub cmdQuit {
+	$messageSender->sendQuit();
 	quit();
 }
 
