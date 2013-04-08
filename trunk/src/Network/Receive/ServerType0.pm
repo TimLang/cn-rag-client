@@ -2923,7 +2923,6 @@ sub item_appeared {
 	$item->{pos_to}{y} = $args->{y};
 	$itemsList->add($item) if ($mustAdd);
 
-
 	# Take item as fast as possible
 	 if ($AI == AI::AUTO && pickupitems(lc($item->{name})) == 2
 	 # && ($config{'openFastTake'})
