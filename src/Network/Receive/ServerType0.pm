@@ -94,7 +94,8 @@ sub new {
 		'0098' => ['private_message_sent', 'C', [qw(type)]],
 		'009A' => ['system_chat', 'v a*', [qw(len message)]], #maybe use a* instead and $message =~ /\000$//; if there are problems
 		'009C' => ['actor_look_at', 'a4 v C', [qw(ID head body)]],
-		'009D' => ['item_exists', 'a4 v C v3 C2', [qw(ID nameID identified x y amount subx suby)]],
+#		'009D' => ['item_exists', 'a4 v C v3 C2', [qw(ID nameID identified x y amount subx suby)]],
+		'009D' => ['del_packet'],
 		'009E' => ['item_appeared', 'a4 v C v2 C2 v', [qw(ID nameID identified x y subx suby amount)]],
 		'00A0' => ['inventory_item_added', 'v3 C3 a8 v C2', [qw(index amount nameID identified broken upgrade cards type_equip type fail)]],
 		'00A1' => ['item_disappeared', 'a4', [qw(ID)]],
@@ -2760,8 +2761,6 @@ sub inventory_item_added {
 		$disp .= " (". $field->baseName . ")\n";
 		itemLog($disp);
 
-		Plugins::callHook('item_gathered',{item => $item->{name}});
-
 		$args->{item} = $item;
 
 		# TODO: move this stuff to AI()
@@ -2928,7 +2927,7 @@ sub item_appeared {
 	# Take item as fast as possible
 	 if ($AI == AI::AUTO && pickupitems(lc($item->{name})) == 2
 	 # && ($config{'openFastTake'})
-	 && ($config{'itemsTakeAuto'} || $config{'itemsGatherAuto'})
+	 && ($config{'itemsTakeAuto'})
 	 && (percent_weight($char) < $config{'itemsMaxWeight'})
 	 && distance($item->{pos}, $char->{pos_to}) <= 1) {
 		my $myPos = $char->{pos};
@@ -2942,10 +2941,7 @@ sub item_appeared {
 		# AI::queue("take");
 	 }
 
-
 	message TF("Item Appeared: %s (%d) x %d (%d, %d)\n", $item->{name}, $item->{binID}, $item->{amount}, $args->{x}, $args->{y}), "drop", 1;
-
- 
 }
 
 sub item_exists {

@@ -287,8 +287,6 @@ followRandomDistance 4
 itemsTakeAuto 2
 # 自動幫助隊友撿物設定 [ 0: 停用  1: 啟動 ]
 itemsTakeAuto_party 0
-# 自動收集物品設定 [ 0: 不收集 1: 殺死所有怪後收集  >=2: 優先收集 ]
-itemsGatherAuto 2
 # 設定自動撿物最大負重量 [ 負重量百份比 ]
 itemsMaxWeight 89
 # 設定自動賣物負重量觸發點 [ 負重量百份比 ]

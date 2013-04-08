@@ -137,8 +137,6 @@ sub iterate {
 	processAutoEquip();
 	processAutoAttack();
 	processItemsTake();
-	processItemsAutoGather();
-	processItemsGather();
 	processAutoTeleport();
 	processAllowedMaps();
 	processAutoResponse();
@@ -340,33 +338,6 @@ sub processLook {
 		AI::dequeue;
 	}
 }
-
-=pod
-##### TALK WITH NPC ######
-sub processNPCTalk {
-	return if (AI::action ne "NPC");
-	my $args = AI::args;
-	my $task = $args->{task};
-	if (!$task) {
-		$task = new Task::TalkNPC(x => $args->{pos}{x},
-					y => $args->{pos}{y},
-					sequence => $args->{sequence});
-		$task->activate();
-		$args->{task} = $task;
-	} else {
-		$task->iterate();
-		if ($task->getStatus() == Task::DONE) {
-			AI::dequeue;
-			my $error = $task->getError();
-			if ($error) {
-				error("$error->{message}\n", "ai_npcTalk");
-			} else {
-				message TF("Done talking with %s.\n", $task->target()->name), "ai_npcTalk";
-			}
-		}
-	}
-}
-=cut
 
 ##### DROPPING #####
 # Drop one or more items from inventory.
@@ -722,9 +693,11 @@ sub processTake {
 				moveAlongVector(\%pos, $myPos, \%vec, $dist - 1);
 				$char->move(@pos{qw(x y)});
 			} else {
+				if ($char->{pos} != $item->{pos}) {
 				my $pos = $item->{pos};
 				message TF("Routing to (%s, %s) to take %s (%s), distance %s\n", $pos->{x}, $pos->{y}, $item->{name}, $item->{binID}, $dist);
 				ai_route($field->baseName, $pos->{x}, $pos->{y}, maxRouteDistance => $config{'attackMaxRouteDistance'});
+				}
 			}
 
 		} elsif (timeOut($timeout{ai_take})) {
@@ -967,7 +940,7 @@ sub processCartGet {
 
 sub processAutoMakeArrow {
 	####### AUTO MAKE ARROW #######
-	if ((AI::isIdle || AI::is(qw/route move autoBuy storageAuto follow sitAuto items_take items_gather/))
+	if ((AI::isIdle || AI::is(qw/route move autoBuy storageAuto follow sitAuto items_take/))
 	 && timeOut($AI::Timeouts::autoArrow, 0.2) && $config{autoMakeArrows} && defined binFind(\@skillsID, 'AC_MAKINGARROW') ) {
 		my $max = @arrowCraftID;
 		my $nMake = 0;
@@ -1687,7 +1660,7 @@ sub processAutoBuy {
 
 ##### AUTO-CART ADD/GET ####
 sub processAutoCart {
-	if ((AI::isIdle || AI::is(qw/route move buyAuto follow sitAuto items_take items_gather/))) {
+	if ((AI::isIdle || AI::is(qw/route move buyAuto follow sitAuto items_take/))) {
 		my $timeout = $timeout{ai_cartAutoCheck}{timeout} || 2;
 		my $hasCart = $cart{exists} || $char->cartActive;
 		if (timeOut($AI::Timeouts::autoCart, $timeout) && $hasCart) {
@@ -1793,108 +1766,6 @@ sub processLockMap {
 		}
 	}
 }
-
-=pod moved to task
-##### AUTO STATS RAISE #####
-sub processAutoStatsRaise {
-	if (!$statChanged && $config{statsAddAuto}) {
-		# Split list of stats/values
-		my @list = split(/ *,+ */, $config{"statsAddAuto_list"});
-		my $statAmount;
-		my ($num, $st);
-
-		foreach my $item (@list) {
-			# Split each stat/value pair
-			($num, $st) = $item =~ /(\d+) (str|vit|dex|int|luk|agi)/i;
-			$st = lc $st;
-			# If stat needs to be raised to match desired amount
-			$statAmount = $char->{$st};
-			$statAmount += $char->{"${st}_bonus"} if (!$config{statsAddAuto_dontUseBonus});
-
-			if ($statAmount < $num && ($char->{$st} < 99 || $config{statsAdd_over_99})) {
-				# If char has enough stat points free to raise stat
-				if ($char->{points_free} &&
-				    $char->{points_free} >= $char->{"points_$st"}) {
-					my $ID;
-					if ($st eq "str") {
-						$ID = 0x0D;
-					} elsif ($st eq "agi") {
-						$ID = 0x0E;
-					} elsif ($st eq "vit") {
-						$ID = 0x0F;
-					} elsif ($st eq "int") {
-						$ID = 0x10;
-					} elsif ($st eq "dex") {
-						$ID = 0x11;
-					} elsif ($st eq "luk") {
-						$ID = 0x12;
-					}
-
-					$char->{$st} += 1;
-					# Raise stat
-					message TF("Auto-adding stat %s\n", $st);
-					$messageSender->sendAddStatusPoint($ID);
-					# Save which stat was raised, so that when we received the
-					# "stat changed" packet (00BC?) we can changed $statChanged
-					# back to 0 so that kore will start checking again if stats
-					# need to be raised.
-					# This basically prevents kore from sending packets to the
-					# server super-fast, by only allowing another packet to be
-					# sent when $statChanged is back to 0 (when the server has
-					# replied with a a stat change)
-					$statChanged = $st;
-					# After we raise a stat, exit loop
-					last;
-				}
-				# If stat needs to be changed but char doesn't have enough stat points to raise it then
-				# don't raise it, exit loop
-				last;
-			}
-		}
-	}
-}
-=cut
-
-=pod moved to task
-##### AUTO SKILLS RAISE #####
-sub processAutoSkillsRaise {
-	if (!$skillChanged && $config{skillsAddAuto}) {
-		# Split list of skills and levels
-		my @list = split / *,+ */, lc($config{skillsAddAuto_list});
-
-		foreach my $item (@list) {
-			# Split each skill/level pair
-			my ($sk, undef, $num) = $item =~ /^(.*?)( (\d+))?$/;
-			$num = 1 if (!defined $num);
-			my $skill = new Skill(auto => $sk);
-
-			if (!$skill->getIDN()) {
-				error TF("Unknown skill '%s'; disabling skillsAddAuto\n", $sk);
-				$config{skillsAddAuto} = 0;
-				last;
-			}
-
-			my $handle = $skill->getHandle();
-
-			# If skill needs to be raised to match desired amount && skill points are available
-			if ($skill->getIDN() && $char->{points_skill} > 0 && $char->getSkillLevel($skill) < $num) {
-				# raise skill
-				$messageSender->sendAddSkillPoint($skill->getIDN());
-				message TF("Auto-adding skill %s\n", $skill->getName());
-
-				# save which skill was raised, so that when we received the
-				# "skill changed" packet (010F?) we can changed $skillChanged
-				# back to 0 so that kore will start checking again if skills
-				# need to be raised.
-				# this basically does what $statChanged does for stats
-				$skillChanged = $handle;
-				# after we raise a skill, exit loop
-				last;
-			}
-		}
-	}
-}
-=cut
 
 ##### RANDOM WALK #####
 sub processRandomWalk {
@@ -2272,7 +2143,7 @@ sub processSitAuto {
 
 ##### AUTO-COMMAND USE #####
 sub processAutoCommandUse {
-	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_gather items_take attack skill_use))) {
+	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_take attack skill_use))) {
 		my $i = 0;
 		while (exists $config{"doCommand_$i"}) {
 			if ($config{"doCommand_$i"} && checkSelfCondition("doCommand_$i")) {
@@ -2289,7 +2160,7 @@ sub processAutoCommandUse {
 
 ##### AUTO-ITEM USE #####
 sub processAutoItemUse {
-	if ((AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_gather items_take attack skill_use)))
+	if ((AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_take attack skill_use)))
 	  && timeOut($timeout{ai_item_use_auto})) {
 		my $i = 0;
 		while (exists $config{"useSelf_item_$i"}) {
@@ -2315,7 +2186,7 @@ sub processAutoItemUse {
 
 ##### AUTO-SKILL USE #####
 sub processAutoSkillUse {
-	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_gather items_take attack))
+	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_take attack))
 	|| (AI::action eq "skill_use" && AI::args->{tag} eq "attackSkill")) {
 		my %self_skill;
 		for (my $i = 0; exists $config{"useSelf_skill_$i"}; $i++) {
@@ -2374,7 +2245,7 @@ sub processAutoSkillUse {
 
 ##### PARTY-SKILL USE #####
 sub processPartySkillUse {
-	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_gather items_take attack move))){
+	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_take attack move))){
 		my %party_skill;
 		PARTYSKILL:
 		for (my $i = 0; exists $config{"partySkill_$i"}; $i++) {
@@ -2491,7 +2362,7 @@ sub processPartySkillUse {
 
 ##### MONSTER SKILL USE #####
 sub processMonsterSkillUse {
-	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_gather items_take attack move))) {
+	if (AI::isIdle || AI::is(qw(route mapRoute follow sitAuto take items_take attack move))) {
 		my $i = 0;
 		my $prefix = "monsterSkill_$i";
 		while ($config{$prefix}) {
@@ -2527,7 +2398,7 @@ sub processMonsterSkillUse {
 
 ##### AUTO-EQUIP #####
 sub processAutoEquip {
-	if ((AI::isIdle || AI::is(qw(route mapRoute follow sitAuto skill_use take items_gather items_take attack)))
+	if ((AI::isIdle || AI::is(qw(route mapRoute follow sitAuto skill_use take items_take attack)))
 	  && timeOut($timeout{ai_item_equip_auto}) && time > $ai_v{'inventory_time'}) {
 
 		my $ai_index_attack = AI::findAction("attack");
@@ -2574,10 +2445,9 @@ sub processAutoAttack {
 	# 2. Pick the "best" monster out of that list, and attack it.
 
 	return if (!$field);
-	if ((AI::isIdle || AI::is(qw/route follow sitAuto take items_gather items_take/) || (AI::action eq "mapRoute" && AI::args->{stage} eq 'Getting Map Solution'))
-	     # Don't auto-attack monsters while taking loot, and itemsTake/GatherAuto >= 2
+	if ((AI::isIdle || AI::is(qw/route follow sitAuto take items_take/) || (AI::action eq "mapRoute" && AI::args->{stage} eq 'Getting Map Solution'))
+	     # Don't auto-attack monsters while taking loot, and itemsTake >= 2
 	  && !($config{'itemsTakeAuto'} >= 2 && AI::is("take", "items_take"))
-	  && !($config{'itemsGatherAuto'} >= 2 && AI::is("take", "items_gather"))
 	  && timeOut($timeout{ai_attack_auto})
 	  # If !teleportAuto_search, then searchMonsters >= teleportAuto_search will be true - no need for first condition?
 	  && (!$config{teleportAuto_search} || $ai_v{temp}{searchMonsters} >= $config{teleportAuto_search})
@@ -2660,7 +2530,7 @@ sub processAutoAttack {
 				}
 
 				my $control = mon_control($monster->{name});
-				if (!AI::is(qw/sitAuto take items_gather items_take/)
+				if (!AI::is(qw/sitAuto take items_take/)
 				 && $config{'attackAuto'} >= 2
 				 && ($control->{attack_auto} == 1 || $control->{attack_auto} == 3)
 				 && (!$config{'attackAuto_onlyWhenSafe'} || isSafe())
@@ -2750,81 +2620,6 @@ sub processItemsTake {
 		} elsif (AI::args->{started} || timeOut(AI::args->{ai_items_take_end})) {
 			$timeout{'ai_attack_auto'}{'time'} = 0;
 			AI::dequeue;
-		}
-	}
-}
-
-##### ITEMS AUTO-GATHER #####
-sub processItemsAutoGather {
-	if ( (AI::isIdle || AI::action eq "follow"
-		|| ( AI::is("route", "mapRoute") && (!AI::args->{ID} || $config{'itemsGatherAuto'} >= 2)  && !$config{itemsTakeAuto_new}))
-	  && $config{'itemsGatherAuto'}
-	  && !$ai_v{sitAuto_forcedBySitCommand}
-	  && ($config{'itemsGatherAuto'} >= 2 || !ai_getAggressives())
-	  && percent_weight($char) < $config{'itemsMaxWeight'}
-	  && timeOut($timeout{ai_items_gather_auto}) ) {
-
-		foreach my $item (@itemsID) {
-			next if ($item eq ""
-				|| !timeOut($items{$item}{appear_time}, $timeout{ai_items_gather_start}{timeout})
-				|| $items{$item}{take_failed} >= 1
-				|| pickupitems(lc($items{$item}{name})) eq "0"
-				|| pickupitems(lc($items{$item}{name})) == -1 );
-			if (!positionNearPlayer($items{$item}{pos}, 12) &&
-			    !positionNearPortal($items{$item}{pos}, 10)) {
-				message TF("Gathering: %s (%s)\n", $items{$item}{name}, $items{$item}{binID});
-				gather($item);
-				last;
-			}
-		}
-		$timeout{ai_items_gather_auto}{time} = time;
-	}
-}
-
-##### ITEMS GATHER #####
-sub processItemsGather {
-	if (AI::action eq "items_gather" && AI::args->{suspended}) {
-		AI::args->{ai_items_gather_giveup}{time} += time - AI::args->{suspended};
-		delete AI::args->{suspended};
-	}
-	if (AI::action eq "items_gather" && !($items{AI::args->{ID}} && %{$items{AI::args->{ID}}})) {
-		my $ID = AI::args->{ID};
-		message TF("Failed to gather %s (%s) : Lost target\n", $items_old{$ID}{name}, $items_old{$ID}{binID}), "drop";
-		AI::dequeue;
-
-	} elsif (AI::action eq "items_gather") {
-		my $ID = AI::args->{ID};
-		my ($dist, $myPos);
-
-		if (positionNearPlayer($items{$ID}{pos}, 12)) {
-			message TF("Failed to gather %s (%s) : No looting!\n", $items{$ID}{name}, $items{$ID}{binID}), undef, 1;
-			AI::dequeue;
-
-		} elsif (timeOut(AI::args->{ai_items_gather_giveup})) {
-			message TF("Failed to gather %s (%s) : Timeout\n", $items{$ID}{name}, $items{$ID}{binID}), undef, 1;
-			$items{$ID}{take_failed}++;
-			AI::dequeue;
-
-		} elsif ($char->{sitting}) {
-			AI::suspend();
-			stand();
-
-		} elsif (( $dist = distance($items{$ID}{pos}, ( $myPos = calcPosition($char) )) > 2 )) {
-			if (!$config{itemsTakeAuto_new}) {
-				my (%vec, %pos);
-				getVector(\%vec, $items{$ID}{pos}, $myPos);
-				moveAlongVector(\%pos, $myPos, \%vec, $dist - 1);
-				$char->move(@pos{qw(x y)});
-			} else {
-				my $item = $items{$ID};
-				my $pos = $item->{pos};
-				message TF("Routing to (%s, %s) to take %s (%s), distance %s\n", $pos->{x}, $pos->{y}, $item->{name}, $item->{binID}, $dist);
-				ai_route($field->baseName, $pos->{x}, $pos->{y}, maxRouteDistance => $config{'attackMaxRouteDistance'});
-			}
-
-		} else {
-			AI::dequeue;
-			take($ID);
 		}
 	}
 }
