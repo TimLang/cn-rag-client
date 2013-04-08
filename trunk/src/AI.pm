@@ -55,7 +55,6 @@ our @EXPORT = (
 	cartAdd
 	ai_talkNPC
 	attack
-	gather
 	move
 	sit
 	stand
@@ -634,17 +633,6 @@ sub ai_talkNPC {
 }
 
 sub attack { $char->attack(@_) }
-
-sub gather {
-	my $ID = shift;
-	my %args;
-	$args{ai_items_gather_giveup}{time} = time;
-	$args{ai_items_gather_giveup}{timeout} = $timeout{ai_items_gather_giveup}{timeout};
-	$args{ID} = $ID;
-	$args{pos} = { %{$items{$ID}{pos}} };
-	AI::queue("items_gather", \%args);
-	debug "Targeting for Gather: $items{$ID}{name} ($items{$ID}{binID})\n";
-}
 
 sub sit {
 	require Task::SitStand;

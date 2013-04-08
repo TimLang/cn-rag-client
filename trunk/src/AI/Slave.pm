@@ -718,8 +718,8 @@ sub processAutoAttack {
 	# 1. Generate a list of monsters that we are allowed to attack.
 	# 2. Pick the "best" monster out of that list, and attack it.
 
-	if ((($slave->isIdle || $slave->action eq 'route') && (AI::isIdle || AI::is(qw(follow sitAuto take items_gather items_take attack skill_use))))
-	     # Don't auto-attack monsters while taking loot, and itemsTake/GatherAuto >= 2
+	if ((($slave->isIdle || $slave->action eq 'route') && (AI::isIdle || AI::is(qw(follow sitAuto take items_take attack skill_use))))
+	     # Don't auto-attack monsters while taking loot, and itemsTake >= 2
 	  && timeOut($timeout{ai_homunculus_attack_auto})
 	  && (!$config{$slave->{configPrefix}.'attackAuto_notInTown'} || !$field->isCity)) {
 
