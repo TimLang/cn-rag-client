@@ -199,7 +199,7 @@ sub iterate {
 				my $myPos = $char->{pos};
 				my %vec;
 				my $direction;
-				getVector(\%vec, $self->{pos}, $myPos);
+				getVector(\%vec, $myPos, $self->{pos});
 				$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
 				$messageSender->sendLook($direction, 0);
 				$messageSender->sendTalk($self->{ID});
