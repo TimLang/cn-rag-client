@@ -78,11 +78,8 @@ izlude 182 218 malangdo 217 85 1000 c r1 c c r0 c
 izlude 198 213 cmd_fild07 92 129 2800 c r0 c
 #崑崙原野
 gon_fild01 255 79 alberta 243 67 0 c r0 n
-
 #岛柏伊亚嵐岛
-#izlu2dun 108 27 izlude 176 182 0 c r0 n
-# 回城会挂掉，暂时屏蔽掉
-
+izlu2dun 108 27 izlude 176 182 0 c r0 n
 #毁葛
 hugel 209 109 odin_tem01 100 146 0 c r1 n
 #奥丁神殿
@@ -135,12 +132,12 @@ prontera 151 29 payon 161 58 1200 c r2 c r2 n
 prontera 151 29 morocc 156 46 1200 c r2 c r3 n
 prontera 151 29 gef_fild10 52 326 1700 c r2 c r4 n
 prontera 151 29 alberta 117 56 1800 c r2 c r5 n
-prontera 29 207 izlude 94 103 600 c r2 c r0 n
-prontera 29 207 geffen 120 39 1200 c r2 c r1 n
-prontera 29 207 payon 161 58 1200 c r2 c r2 n
-prontera 29 207 morocc 156 46 1200 c r2 c r3 n
-prontera 29 207 gef_fild10 52 326 1700 c r2 c r4 n
-prontera 29 207 alberta 117 56 1800 c r2 c r5 n
+#prontera 29 207 izlude 94 103 600 c r2 c r0 n
+#prontera 29 207 geffen 120 39 1200 c r2 c r1 n
+#prontera 29 207 payon 161 58 1200 c r2 c r2 n
+#prontera 29 207 morocc 156 46 1200 c r2 c r3 n
+#prontera 29 207 gef_fild10 52 326 1700 c r2 c r4 n
+#prontera 29 207 alberta 117 56 1800 c r2 c r5 n
 prontera 282 200 izlude 94 103 600 c r2 c r0 n
 prontera 282 200 geffen 120 39 1200 c r2 c r1 n
 prontera 282 200 payon 161 58 1200 c r2 c r2 n
@@ -167,10 +164,10 @@ geffen 120 62 prontera 116 72 1200 c r2 c r0 n
 geffen 120 62 aldebaran 168 112 1200 c r2 c r1 n
 geffen 120 62 gef_fild10 52 326 1700 c r2 c r2 n
 geffen 120 62 mjolnir_02 99 351 1700 c r2 c r3 n
-geffen 203 123 prontera 116 72 1200 c r2 c r0 n
-geffen 203 123 aldebaran 168 112 1200 c r2 c r1 n
-geffen 203 123 gef_fild10 52 326 1700 c r2 c r2 n
-geffen 203 123 mjolnir_02 99 351 1700 c r2 c r3 n
+#geffen 203 123 prontera 116 72 1200 c r2 c r0 n
+#geffen 203 123 aldebaran 168 112 1200 c r2 c r1 n
+#geffen 203 123 gef_fild10 52 326 1700 c r2 c r2 n
+#geffen 203 123 mjolnir_02 99 351 1700 c r2 c r3 n
 #斐扬
 payon 181 104 prontera 116 72 1200 c r2 c r0 n
 payon 181 104 alberta 117 56 1200 c r2 c r1 n
@@ -215,7 +212,7 @@ rachel 109 138 veins 208 128 2200 c r2 c r0 n
 veins 208 128 rachel 109 138 2200 c r2 c r0 n
 ##############################################################
 #卢恩米德加兹王国首都-普隆德拉
-#prontera 161 192 mid_camp 210 291 0 c c r0 n
+prontera 161 192 mid_camp 210 291 0 c c r0 n
 prontera 45 346 prt_in 80 113
 prontera 156 360 prt_castle 102 16
 prontera 22 203 prt_fild05 373 205
@@ -738,7 +735,10 @@ geffen 140 99 geffen_in 166 54
 geffen 138 138 geffen_in 28 106
 geffen 98 141 geffen_in 28 160
 geffen 120 114 gef_tower 52 177
-geffen 119 55 gefenia03 130 206
+geffen 113 57 gefenia03 130 206
+geffen 113 57 gefenia01 130 206
+geffen 113 57 gefenia02 130 206
+geffen 113 57 gefenia04 130 206
 geffen_in 28 156 geffen 101 138
 geffen_in 28 106 geffen 138 138
 geffen_in 166 54 geffen 140 99
@@ -3183,20 +3183,20 @@ payg_cas05 237 227 payg_cas05 39 264
 #########################################
 
 #新手训练场
-#prt_fild08 148 112 new_zone02 100 9
-#new_zone02 126 106 new_zone02 160 171
-#new_zone02 156 171 new_zone02 123 106
-#new_zone01 148 112 new_zone02 100 6
-#new_zone02 100 6 new_zone01 148 112
-#new_zone02 73 106 new_zone02 46 172
-#new_zone02 46 172 new_zone02 73 106
-#new_zone03 103 50 new_zone03 96 21 0 c c c r0 n
-#new_zone03 103 50 new_zone03 96 21 0 c c c r1 n
-#new_zone03 prontera 150 50 0 c c r1 c r0 n
-#new_zone03 morocc 155 110 0 c c r1 c r0 n
-#new_zone03 payon 166 67 0 c c r1 c r0 n
-#new_zone03 alberta 114 58 0 c c r1 c r0 n
-#new_zone03 geffen 122 65 0 c c r1 c r0 n
+prt_fild08 148 112 new_zone02 100 9
+new_zone02 126 106 new_zone02 160 171
+new_zone02 156 171 new_zone02 123 106
+new_zone01 148 112 new_zone02 100 6
+new_zone02 100 6 new_zone01 148 112
+new_zone02 73 106 new_zone02 46 172
+new_zone02 46 172 new_zone02 73 106
+new_zone03 103 50 new_zone03 96 21 0 c c c r0 n
+new_zone03 103 50 new_zone03 96 21 0 c c c r1 n
+new_zone03 prontera 150 50 0 c c r1 c r0 n
+new_zone03 morocc 155 110 0 c c r1 c r0 n
+new_zone03 payon 166 67 0 c c r1 c r0 n
+new_zone03 alberta 114 58 0 c c r1 c r0 n
+new_zone03 geffen 122 65 0 c c r1 c r0 n
 #########################################
 #无名岛(白天)
 nameless_i 228 232 nameless_in 12 172
