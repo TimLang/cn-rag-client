@@ -28,15 +28,15 @@ ai_move_giveup 3
 # 超过这个时间都没有移动位置(卡住)即放弃，
 # 另外选定新路径再次随机走动。
 
-ai_attack 1
+ai_attack 2
 # 武器攻击间隔时间
 # 用武器打怪时，每隔几秒送出一次攻击的信号封包。
 
-ai_homunculus_attack 1
+ai_homunculus_attack 1.2
 # 人工生命体攻击间隔时间
 # 打怪时每隔几秒送出一次攻击信号封包。
 
-ai_attack_auto 0.4
+ai_attack_auto 0.3
 # 检测怪物信息间隔时间
 # 如果 config.txt 中 auto-attack (自动攻击) 是开启的，
 # 每隔几秒检测附近有无怪物可以打。
@@ -60,7 +60,7 @@ ai_attack_unstuck 2.75
 # 则可以判定怪物已经脱离可攻击距离，此时会暂停送出攻击信号，
 # 先移动到可攻击该怪物的距离内，再继续攻击。
 
-ai_attack_unfail 5
+ai_attack_unfail 20
 # 避免重复锁定保障时间
 # 假如因为一些原因(无法靠近、无法打到)，而放弃攻击某只目标怪物时，
 # 直到超过这个时间前，都不会再去锁定同一只。
@@ -73,19 +73,19 @@ ai_items_take_start 0.5
 # 打死怪物后，延迟几秒后才开始检查怪物掉了什么物品。
 # 注意若太快来不急接收服务器传来封包，有掉物品有可能会判断为没有掉。
 
-ai_items_take_end 4
+ai_items_take_end 5
 # 捡取战利品放弃时间
 # 在上一个项目开始检查怪物掉落物品后，
 # 假如一直没侦测到任何掉落物品，几秒后放弃捡取，继续打怪。
 # 若原先就没打算捡东西（练等级为主），可改小。
 # 打宝为主的情况，考虑到服务器lag问题，可改大。
 
-ai_take 0.7
+ai_take 0.9
 # 捡取速度
 # 当站在某个物品旁边，想捡它，
 # 每隔几秒送出捡取信号的封包，直到捡取成功。
 
-ai_take_giveup 3
+ai_take_giveup 6
 # 捡取战利品放弃时间
 # 如果打死怪物掉落物品无法捡取，超过几秒后放弃。
 # 无法捡取的原因，多半是抢怪或被抢怪，优先捡取权是别人的，
@@ -127,7 +127,7 @@ ai_partyAutoDeny 4
 ai_guildAutoDeny 4
 # 自动拒绝「加入工会」邀请的等待时间
 
-ai_dead_respawn 8
+ai_dead_respawn 10
 # 死亡后几秒才回城
 # 此值只有在 config.txt 中，
 # dcOnDeath 设为 0 (过一段时间回城)，才会参考。
@@ -141,7 +141,7 @@ ai_wipe_check 30
 # 例如：玩家名称、怪物名称、NPC 数据、传点数据...等等，
 # 每隔这个时间，kore 会去检查快取是否该清除旧的资料。
 
-# Every x seconds, check pet hungry for feeding
+# 每多少秒检测宠物是不是要喂食了
 ai_petFeed 60
 
 ai_sit 4
@@ -151,7 +151,7 @@ ai_sit 4
 # 如果担心坐下后遇敌攻击，想快速站立还击或瞬移逃离，可改小，
 # 过快的速度，会被看出不是人类操作。
 
-ai_sit_idle 10
+ai_sit_idle 20
 # 闲置几秒后坐下
 # 此值只有在 config.txt 中有设定「闲置过久坐下」，才会参考。
 
@@ -165,13 +165,13 @@ ai_sit_wait 1
 
 
 ai_safe_stand_up 2
-ai_skill_use 1.4
-ai_skill_use_giveup 1
+ai_skill_use 2
+ai_skill_use_giveup 1.5
 # 技能使用放弃时间
 # 当尝试使用某项技能，如果超过这个时间都使用不出来，则放弃。
 # 使用不出来的原因有：SP 不足，或设定错误，人物无此技能。
 
-ai_item_use_auto 0.5
+ai_item_use_auto 0.3
 # 自动使用物品条件检查间隔时间
 # 如果自动使用物品功能是开启的，
 # 每隔几秒确认是否需要自动使用物品。
@@ -191,20 +191,20 @@ ai_equip_giveup 2
 # 自动装备放弃时间
 # 自动装备时，超过此时间仍无法装备则放弃。
 
-ai_teleport 1
+ai_teleport 2
 # 每次「使用物品」（苍翅、蝶翅）瞬移的间隔时间
 
 ai_teleport_away 0.8
 # 每次「瞬移逃离怪物」的间隔时间
 # 瞬移逃离是指在 mon_control.txt 中，<瞬移模式> 设定为 2 的怪物。
 
-ai_teleport_idle 4
+ai_teleport_idle 8
 # 闲置时瞬移的间隔时间
 
 ai_teleport_portal 2
 # 瞬移避开传点的间隔时间
 
-ai_teleport_hp 3
+ai_teleport_hp 3.5
 # HP 过低瞬移保命的间隔时间
 
 ai_teleport_safe_force 120
@@ -213,10 +213,10 @@ ai_teleport_safe_force 120
 # 只要超过这个时间，就算旁边有玩家也会强制瞬移。
 # 如没有设安全状态才瞬移，则此值可忽略。
 
-ai_teleport_retry 0.5
+ai_teleport_retry 1
 # 瞬移失败，下次再瞬移的间隔时间
 
-ai_teleport_delay 0.5
+ai_teleport_delay 1
 # 每次「使用技能」瞬移的间隔时间
 
 ai_route_calcRoute 1
@@ -237,7 +237,7 @@ ai_buyAuto_giveup 15
 # 自动买物放弃时间
 # 自动买物时，超过这个时间仍无法购买则放弃。
 
-ai_buyAuto_wait 2
+ai_buyAuto_wait 3
 # 自动买物延迟时间
 # 与自动买物 NPC 交谈后，等待几秒才开始买。
 # 需等取得购买列表资料封包后，才能开始购买。
@@ -265,7 +265,7 @@ ai_storageAuto_giveup 15
 # 自动仓库放弃时间
 # 开启仓库后，超过这个时间仍无法存仓或取仓，则放弃。
 
-ai_cartAuto 0.15
+ai_cartAuto 0.5
 # 手推车使用间隔时间
 # 每次放物品到手堆车，或从手推车取物的间隔时间。
 
@@ -309,4 +309,4 @@ patchserver 120
 # (不明)
 
 #macro
-macro_delay 3
+macro_delay 2
