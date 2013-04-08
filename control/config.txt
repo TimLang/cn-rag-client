@@ -1627,6 +1627,11 @@ partyAuto 1
 partyAutoShare 1
 # 组队时经验值是否均分 (队长才有作用)
 
+partyAutoShareItem 0
+# 组队时掉落是否共有拾取权 (队长才有作用)
+
+partyAutoShareItemDiv 0
+# 组队时掉落是否平均分配 (队长才有作用)
 
 ############################
 #         拟真设定         #
