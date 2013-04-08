@@ -736,9 +736,9 @@ geffen 138 138 geffen_in 28 106
 geffen 98 141 geffen_in 28 160
 geffen 120 114 gef_tower 52 177
 geffen 113 57 gefenia03 130 206
-geffen 113 57 gefenia01 130 206
-geffen 113 57 gefenia02 130 206
-geffen 113 57 gefenia04 130 206
+geffen 113 57 gefenia01 58 169
+geffen 113 57 gefenia02 116 115
+geffen 113 57 gefenia04 133 88
 geffen_in 28 156 geffen 101 138
 geffen_in 28 106 geffen 138 138
 geffen_in 166 54 geffen 140 99
