@@ -32,15 +32,15 @@ sub new {
 		'083C' => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
 		'0437' => ['character_move','a3', [qw(coords)]],
 		'035F' => ['sync', 'V', [qw(time)]],
-		'092B' => ['actor_look_at', 'v C', [qw(head body)]],
-		'07E4' => ['item_take', 'a4', [qw(ID)]],
-		'0362' => ['item_drop', 'v2', [qw(index amount)]],
-		'07EC' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'0364' => ['storage_item_remove', 'v V', [qw(index amount)]],
+		'0917' => ['actor_look_at', 'v C', [qw(head body)]],
+		'0363' => ['item_take', 'a4', [qw(ID)]],
+		'0930' => ['item_drop', 'v2', [qw(index amount)]],
+		'087C' => ['storage_item_add', 'v V', [qw(index amount)]],
+		'0956' => ['storage_item_remove', 'v V', [qw(index amount)]],
 		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
 		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
-		'0947' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
-		'0871' => ['homunculus_command', 'v C', [qw($type $command)]],
+		'0362' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
+		'07E4' => ['homunculus_command', 'v C', [qw(type command)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
@@ -52,15 +52,15 @@ sub new {
 		skill_use 083C
 		character_move 0437
 		sync 035F
-		actor_look_at 092B
-		item_take 07E4
-		item_drop 0362
-		storage_item_add 07EC
-		storage_item_remove 0364
+		actor_look_at 0917
+		item_take 0363
+		item_drop 0930
+		storage_item_add 087C
+		storage_item_remove 0956
 		skill_use_location 0438
 		actor_info_request 096A
-		map_login 0947
-		homunculus_command 0871
+		map_login 0362
+		homunculus_command 07E4
 		party_setting 07D7
 	);
 	
@@ -73,8 +73,7 @@ sub new {
 my $map_login = 0;
 my $enc_val3 = 0;
 		
-sub encryptMessageID 
-{
+sub encryptMessageID {
 	my ($self, $r_message, $MID) = @_;
 	
 	# Checking In-Game State
@@ -91,14 +90,13 @@ sub encryptMessageID
 		$$r_message = pack("v", $MID) . substr($$r_message, 2);
 }
 
-sub PrepareKeys()
-{
+sub PrepareKeys() {
 	# K
-	$enc_val1 = Math::BigInt->new('0x22c12159');
+	$enc_val1 = Math::BigInt->new('0x65b631d4');
 	# M
-	$enc_val3 = Math::BigInt->new('0x395a120b');
+	$enc_val3 = Math::BigInt->new('0x3a23394f');
 	# A
-	$enc_val2 = Math::BigInt->new('0x29c84e84');
+	$enc_val2 = Math::BigInt->new('0x1240557e');
 }
 
 sub sendMasterLogin {
@@ -119,8 +117,7 @@ sub sendMasterLogin {
 	debug "Sent sendMasterLogin\n", "sendPacket", 2;
 }
 
-sub sendMapLogin 
-{
+sub sendMapLogin {
 	my ($self, $accountID, $charID, $sessionID, $sex) = @_;
 	my $msg;
 
@@ -147,7 +144,7 @@ sub sendFriendRequest {
 	my $binName = stringToBytes($name);
 	$binName = substr($binName, 0, 24) if (length($binName) > 24);
 	$binName = $binName . chr(0) x (24 - length($binName));
-	my $msg = pack('v C*', 0x08A6, $binName);
+	my $msg = pack('v C*', 0x0875, $binName);
 	$self->sendToServer($msg);
 	debug "Sent Request to be a friend: $name\n", "sendPacket";
 }
