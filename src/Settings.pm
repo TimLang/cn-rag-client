@@ -76,7 +76,7 @@ use Log qw(message warning error debug);
 # The version number of this program.
 
 # Translation Comment: Strings for the name and version of the application
-our $NAME = 'CN Kore - 解放你的双手';
+our $NAME = 'CN Kore - 解放双手 绿色游戏';
 our $ZONE = 'cRO';
 our $VERSION = 'Open Beta - v0.0.5.1 for cRO & twRO';
 our $SVN_VERSION = '120';
