@@ -1,6 +1,6 @@
-﻿# sys.txt：OpenKore 系统设定文件
+﻿# sys.txt：CN Kore 系统设定文件
 
-# 此设定文件是在更改一些 OpenKore 程序的执行参数。
+# 此设定文件是在更改一些 CN Kore 程序的执行参数。
 # 一般情况下，无须更改，除非您懂这些设定的意义。
 
 ###### 本地化设定 ######
@@ -27,16 +27,9 @@ loadPlugins 1
 #   假如上个选项是设定 2，此处填入要加载的 plugins 名称 （多个用半角逗号隔开）。
 
 loadPlugins_list macro
-
-# skipPlugins_list <list>
-#   if loadPlugins is set to 3, this comma-separated list of plugin names (filename without the extension)
-#   specifies which plugin files to skip at startup or when the "plugin load all" command is used.
 skipPlugins_list
 
-# 注：使用 OpenKore，您应该检查 plugins 数据夹，有无被放了不明的 plugins，
+# 注：使用 CN Kore ，您应该检查 plugins 数据夹，有无被放了不明的 plugins，
 #     不明的 plugins，代表可能含有木马，
 #     可于此处限制它们的执行，只让您确定没有危险的 plugins 才允许执行（例如 macros 宏）
 #     又或者，把那些不明 plugins 删除掉会更安全。
-
-###### Miscellaneous ######
-sendAnonymousStatisticReport 0

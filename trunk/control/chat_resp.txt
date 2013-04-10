@@ -1,18 +1,36 @@
-# Kore can reply with a message when someone talks to you. In this file,
-# you can configure what Kore should say when someone says something.
+# chat_resp.txt ：自动对话脚本档
+# 
+# 中文参考数据
 #
-# Each line has the following format:
-# (words) TAB (answers)
+# 当有人跟外掛说话时，CN Kore能用此脚本档做自动对话答復。
+# 在这个脚本档中，您可以设定当有人说了一些话时 CN Kore要回答什麼。
 #
-# (words) is a comma-seperated list of words. When the message (of the
-# one who talks to Kore) contains a word that's in this list, Kore will
-# pick a random answer from (answers), which is a comma-seperated list
-# of possible answers.
+# ※本档仅有在 config.txt 中，autoResponse 设為 1 才有作用。
 #
-# For example:
-# bot,botter	no,I'm not a bot,huh?
+# 每一行都要有以下的格式：
+# <说话关键词> (TAB键s) <回復内容>
 #
-# When someone says something that contains the word "bot" or "botter",
-# Kore will reply with "no", "I'm not a bot" or "huh?".
+# <说话关键词> 為「与 CN Kore说话的玩家」之关键词列表，多个以半角逗号分隔，
+# 当「与 CN Kore说话的玩家」讯息内容含有列表中的关键词时，
+# CN Kore将会从 <回復内容> 裡随机选择一个做為回復，
+# 回復内容若有多个，也是以半角逗号来分隔。
+#
+# 范例：
+# 外掛,掛机		没有啊,我不是外掛,啊？
+#
+# 当某人所说的话中含有 "外掛"、"掛机" 其中之一时，
+# CN Kore会以 "没有啊"、"我不是外掛"、 "啊？" 其中一句来做回復。
+#
+# 使用自动对话时，有几点是要注意的：
+#   1. CN Kore不会用重復讯息回应同一个玩家，即 <回復内容> 会随机抽出一句来回应，且不重復。
+#   2. 自动对话只能回「公频」跟「密频」，没办法用在「队频」或「公会频」上。
+#   3. 自动对话不会在城镇裡运作，只有在野外地图才会运作。
+#   4. 為了要仿真真人打字的速度，在送出响应前会有一小段经过计算的延迟时间，
+#      这个延迟是假设玩家可以以每分鐘输入 65 个（英文）字的速度来做计算的。
+#   5. 两组关键词间只能用  隔开，不能用空白，用空白会执行错误。而关键词中可以含有空白。
+#
+############################
+#     档案内容由此开始     #
+############################
 
 外挂,挂	草，你才是外挂，你们全家都是外挂！
