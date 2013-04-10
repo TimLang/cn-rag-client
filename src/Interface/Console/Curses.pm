@@ -68,7 +68,7 @@ sub new {
 
 	$self->{time_start} = time;
 
-	$self->{revision} = Settings::getSVNRevision;
+	$self->{revision} = ${Settings::SVN_VERSION};
 	$self->{revision} = " (r$self->{revision})" if defined $self->{revision};
 
 	$self->{loading} = {
