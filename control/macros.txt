@@ -4,7 +4,7 @@
 # 若要编辑此文件，请使用支持转换文字编码的文书编辑器，例如：MadEidt。
 #
 # 使用MACRO脚本，您必须先安装 macros 这个 plugins 扩充套件。
-# 详情请自行上网查相关教学，仙境外挂研究网 http://www.openkore.cn
+# 详情请自行上网查相关教学 http://www.CNKore.com
 # 若无安装扩充套件 macros，则此档没有作用。
 #
 # （macros）是一种 script 脚本语言，可以用来写小型的描述式，

@@ -1,148 +1,361 @@
-# responses.txt：自动应答脚本档 （剧本档）
+﻿# 要新增 自动回应的话请设定 chat_resp.txt 档案
+# responses.txt：自动回应脚本档
 #
-# 中文参考数据
-# 
-# 一般练功用途不会用到这个设定档，预设为不开启此文件任何功能，
-# 若您未于 config.txt 中开启相关功能，可完全忽略本档。
+# 一般练功用途不会用到这个设定档，预设為不开啟此档案任何功能，
+# 若您未於 config.txt 中开啟相关功能，可完全忽略本档。
 #
 #
 # 本设定档共有 2 个不同功能：
 #
 # 1.自动应答其它玩家施放技能：
-#     当外挂自动练功中，若有其它玩家对「kore」或「怪物」放技能，
-#     想自动用密频向该位玩家道谢或骂白目，可于此处设定回应语句。
-#     此功能仅有在 config.txt 中，autoResponseOnHeal 设为 1 才有作用。
+#     当外掛自动练功中，若有其它玩家对「CN Kore」或「怪物」放技能，
+#     想自动用密频向该位玩家道谢或骂白目，可於此处设定回应语句。
+#     此功能仅有在 config.txt 中，autoResponseOnHeal 设為 1 才有作用。<此功能已无法使用>
 #
-# 2.对远程遥控玩家，所下指令的响应讯息：
-#     当遥控端的玩家对 kore 下 chat command （对话指令）时，
-#     kore 要自动应答什么讯息，可于此处设定。
-#     此功能仅有在 config.txt 中，secureAdminPassword 设为 1 才有作用。
+# 2.对远程遥控玩家，所下指令的回应讯息：
+#     当遥控端的玩家对 CN Kore 下 chat command （对话指令）时，
+#     CN Kore 要自动回应什麼讯息，可於此处设定。
+#     此功能仅有在 config.txt 中，secureAdminPassword 设為 1 才有作用。
 #
 # 格式：
-# <response tag 响应卷标> <message 响应讯息>
+#  
 #
-# <response tag 响应标签>
+# 
 #    对话指令可能成功或失败，有时候指令成功或失败会有不同的响应结果。
-#    指令成功的响应卷标名称后面会附加一个 'S'，
-#    指令失败的响应卷标名称后面会附加一个 'F'，
-#    若响应讯息不只一种的话还可能会附加数字。 
-#    同数字的多项响应卷标，代表随机抽出一个来响应。
-#    *beep*、*boop*、*plop* 代表让计算机发出提醒音效。
+#    指令成功的回应卷标名称后面会附加一个 'S'，
+#    指令失败的回应卷标名称后面会附加一个 'F'，
+#    若回应讯息不只一种的话还可能会附加数字。 
+#    同数字的多项回应卷标，代表随机抽出一个来回应。
+#    *beep*、*boop*、*plop* 代表让电脑发出提醒音效。
 #
-# <message 响应讯息>
-#    Kore 提供了几个变量可加在响应讯息中。变数的前导符为 %$：
+# 
+#    CN Kore 提供了几个变量可加在回应讯息中。变数的前导符為 %$：
 #    当这些变量在响应讯息中被使用时，
-#    在将讯息送出给发指令的玩家前 Kore 会将它们取代为实际的值。
+#    在将讯息送出给发指令的玩家前 CN Kore 会将它们取代為实际的值。
 #    可用的变量相当的多，具体请查阅中文参考数据。
 #
-# ※ 以下数据皆为原文内建的（英文），请视需要自行修改。
-# 
+####################################################################
+#                                                                  #
+#               1.自动应答其它玩家施放技能                         #
+#                                                                  #
+####################################################################
+
+# ※本功能仅有在 config.txt 中，autoResponseOnHeal 设為 1 才有作用。
+#
+# 本回应会以密频方式传送。
+# 本回应无定义的变量可用，所以请勿尝试使用变量。 
+# 可设定多组，只会随机抽出一组回应。
+
+############################
+#   技能放在 CN CN Kore 身上  #
+############################
+
+skillgoodM 谢谢你
+skillgoodM 感谢
+skillgoodM 3Q
+skillgoodM
+skillgoodM
+skillgoodM
+# 当其它玩家对您的人物使用治癒术、加速术、或天使之赐福等辅助技能，
+# 这时使用这个回应讯息。 
+# 通常是道谢之类的。
+
+############################
+#    技能放在怪物上        #
+############################
+
+skillbadM 你在做什麼?
+skillbadM 你有问题喔!
+skillbadM 别闹了!
+skillbadM ...
+skillbadM ...
+skillbadM
+skillbadM
+# 当其它玩家使用治癒术、加速术、或天使之赐福，
+# 技能施展「在 CN Kore 正在攻击的魔物上」时使用这个回应讯息。 
+# 通常是骂白目之类的。
 
 
-authS You are now an admin %$cmd_user. Go nuts! ^^
-authF You're already an admin %$cmd_user!
+####################################################################
+#                                                                  #
+#            2. 对远程遥控玩家，所下指令的回应讯息                 #
+#                                                                  #
+#                           ########################################
+#        身份验证          #
+###########################
 
-confS1 That variable %$key is...%$value
+authS 您现在可以管理 %$cmd_user. 了! ^^
+# 验证成功。
+
+authF 认证失败无法控制 %$cmd_user!
+# 验证失败。
+
+############################
+#        重新设定         #
+#              ###########
+#   config    #
+##############
+# 对话指令：conf <设定键> <设定值>
+
+confS1 我的 %$key 设定键 的设定值是 %$value
+# 查询当前 config 某个「设定键」的设定值。
 confS2 *beep*
 confS2 *boop*
-confS2 All done.
-confF1 Huh?
-confF2 I don't see that config variable
-confF3 uhh, nice try %$cmd_user
-confF3 I don't think so
+confS2 设定已成功完成.
+# 重新设定 config 某个「设定键」成功。
 
-dateS Lay off the RO %$cmd_user.  It's %$date
-dateS What am I?  A clock?? (BTW it's %$date)
+confF1 什麼?您没有指定「设定键」请指定一个
+# 玩家没有指定「设定键」。
 
-expS Botting time : %$time\nBaseExp      : %$bExp %$percentBExp\nJobExp       : %$jExp %$percentJExp\nBaseExp/Hour : %$bExpPerHour %$percentBExpPerHour\nJobExp/Hour  : %$jExpPerHour %$percentJExpPerHour\nBase Levelup Time Estimation : %$bLvlUp\nJob Levelup Time Estimation  : %$jLvlUp\nDied : %$numDeaths
-expF Huh?
-expMonsterS1 No  Name                      Count
+confF2 我没有看到这个设定键....
+# 尝试设定不存在的“设定键“而导致失败。
+
+confF3 别开玩笑了!!! %$cmd_user
+confF3 我不可能会给您的!!!!!!!!!
+# 尝试请求 Kore的帐号与密码的错误而失败。
+
+##############
+#  timeout   #
+##############
+# 对话指令：timeout <timeout 功能键> <数值>
+
+timeoutS1 I think the timeout %$key is %$value
+# 查询当前某个「timeout 键」的数值。
+timeoutS2 *beep*
+timeoutS2 *boop*
+timeoutS2 设定已成功完成.
+# 重新设定某个 「timeout 键」成功。
+
+timeoutF1 什麼 您没有指定「设定键」?
+timeoutF2 我没有看到timeout
+# 尝试设定不存在的「timeout 键」而导致失败。
+
+##############
+#  重新读取  #
+##############
+# 对话指令：reload <设定档名>
+
+reloadS *beep*
+reloadS *boop*
+reloadS 已成功重新读取.
+# 重新读取成功。
+
+
+############################
+#        状态讯息          #
+#             ##############
+#  日期时间  #
+##############
+# 对话指令：date
+
+dateS %$cmd_user.目前时间是 %$date
+dateS 我是什麼？怎变一个时鐘了...Orz?? (现在时间是%$date)
+# 查询当前的日期与时间。
+
+##############
+#  角色状态  #
+##############
+# 对话指令：status
+
+statusS 血量: %$char_hp / %$char_hp_max   魔量: %$char_sp / %$char_sp_max\n人物等级: %$char_lv  |  %$char_exp / %$char_exp_max\n职业等级: %$char_lv_job  |  %$char_exp_job / %$char_exp_job_max\n负重: %$char_weight / %$char_weight_max   Zeny币: %$zeny
+# 查询当前角色基本状态。
+
+##############
+#  位置座标  #
+##############
+# 对话指令：where
+
+whereS 失去了我？我在 %$map: %$x, %$y
+whereS 您在想我吗？我在 %$map: %$x, %$y
+whereS 我在这裡! %$map: %$x, %$y
+# 查询当前角色所在地图和座标。
+
+##############
+#  经验报告  #
+##############
+# 对话指令：exp [monster] [item]
+expS 已经过时间 : %$time\n获得的Base经验值      : %$bExp %$percentBExp\n获得的Job经验值       : %$jExp %$percentJExp\n预计每小时Base经验值 : %$bExpPerHour %$percentBExpPerHour\n计每小时Job经验值  : %$jExpPerHour %$percentJExpPerHour\n估计下次Base等级升级时间剩餘 : %$bLvlUp\n估计下次Job 等级升级时间剩餘  : %$jLvlUp\n阵亡次数 : %$numDeaths
+# 查询经验值报告(exp)。
+expF 什麼?
+# 查询经验值报告(exp)，失败。
+
+# 查询当前已打倒的魔物。
+对话指令：exp monster
+expMonsterS1 编号  名称                      数量
 expMonsterS2 %$killedMonsters
-expMonsterS3 Total number of killed monsters: %$numKilledMonsters
-expItemS1 Name                                    Count
+expMonsterS3 已杀魔物总数: %$numKilledMonsters
+
+# 查询当前已获得消耗的物品。
+对话指令：exp item
+expItemS1 名称                                    变量
 expItemS2 %$gotItems
 
-followS Right away!
-followS For freedom!
-followS Yes sah!
-followF I have no idea what you're saying %$user
-followF That makes no sense ><
+##############
+#  CN Kore 版本 #
+##############
+# 对话指令：version
+versionS 我的版本 %$ver
 
-followStopS I get the idea...
-followStopS Am I that annoying?
-followStopF You're so paranoid
-followStopF Like I'd be stalking YOU
+############################
+#   肉盾/跟随/辅助技能     #
+#             #############
+#    肉盾    #
+##############
+# 对话指令：tank [stop] <玩家名字> 
 
-moveS Right away!
-moveS For freedom!
-moveS Yes sah!
-moveF I have no idea what you're saying %$user
-moveF That makes no sense ><
+tankS 让我来挡!!!
+# 成功设定 CN Kore 成為玩家肉盾。
+tankF 什麼?
+# 因為无法找到玩家而导致肉盾模式失败。
+
+tankStopS 这很有趣...看来您不需要我来挡了
+# 成功让 CN Kore 停止当肉盾。
+tankStopF 我看起来像您的坦克?
+# 因為肉盾模式已关闭而导致失败。
+
+##############
+#    跟随    #
+##############
+# 对话指令：follow [stop] <玩家名字> 
+
+followS 马上就到..!
+followS 我要自由......
+followS 是的!
+# 成功让 CN Kore 跟随玩家。
+followF  %$user 我不知道你在说什麼
+followF 这是没有意义的 ><
+# 因為 CN Kore 无法找到要跟随的玩家而导致失败。
+
+followStopS 我有一个想法...
+followStopS 我有那麼烦人?
+# 成功让 CN Kore 停止跟随。
+followStopF 做什麼?
+followStopF 难道我像是在跟纵你..?
+# 因為跟随模式已停止而导致失败。
+
+# 对话指令：move [英文地图名称] <X座标> <Y座标>
+
+moveS %$cmd_user 等我马上到!
+moveS 等我一下我马上就来!
+moveS OK!好~
+moveS 好的!
+moveS 我可能走太快了!等我马上来!
+moveS 您LAG了吗?
+moveS 您累了吗?
+moveS ...等我~马上到!
+# 成功让 CN Kore 移动至一个新位置（包括走动和飞回城）。
+moveF %$user  我不知道你在说什麼
+moveF 这是没有意义的 ><
+
+##############
+#  辅助技能  #
+##############
+
+# 对话指令：
+# 补血：       heal  < me | 玩家名称> [指定补多少HP]
+# 加速术：     agi   < me | 玩家名称>
+# 天使之赐福： bless < me | 玩家名称>
+# 霸邪之阵：   kyrie < me | 玩家名称>
+# 圣母之颂歌： mag 
+# ※ 圣母之颂歌只能施放于全队友，无法指定玩家名称。
+
+healS 
+# 成功地让 CN Kore 使用辅助法术在玩家或队友身上。
+
+healF1 找不到人
+#因為 CN Kore 无法找到施法对象而失败。
+healF2 我的SP不够了.
+# 因為 CN Kore 的 SP 不足而导致失败。
+healF3  我没这个技能.....
+# 因為 CN Kore 没有该项要求施放的技能而导致失败。
+
+############################
+#        AI 动作          #
+#             #############
+#  坐下/站起 #
+#############
+
+##### 坐下 #####
+# 对话指令：sit
+
+sitS *boof*
+sitS *plop*
+sitS 终於可以让我休息一下了
+# 成功让 CN Kore 坐下。
+
+##### 站起 #####
+# 对话指令：stand
+
+standS OK继续 ^^
+standS 好的
+standS ok %$cmd_user, 怎样?
+# 成功让 CN Kore 站起来。
+
+##############
+#   thank    #
+##############
+
+# 对话指令：thank | thn |thx
+
+thankS 呵 ^^
+thankS ~~
+thankS 总是很高兴，%$cmd_user 主人
+thankS ^^
+
+# 成功地对 CN Kore 送出 thank 指令时。
+
+# 注：thank 对话指令是用来称赞 CN Kore 干得好，
+#     然后这边又设定 CN Kore 受称赞后要回什麼，
+#     即是说从头到尾都玩家自导自演，自爽的，
+#     仅是一个有趣功能而已，似乎没什麼意义，
+#     不过可以把回应内容改成女僕式之类满足一下。
+
+
+##############
+#   讯息域   #
+##############
+
+##### 开啟 #####
+# 对话指令：speak
+# 用来设定 config.txt 中选项 verbose 的数值為 1。
+# 详细请参考 config.txt 裡面的中文说明。
+
+verboseOnS Ah, finally.
+verboseOnS *gasp* Oh thank you master...ass.
+# 开啟 verbose 成功。
+verboseOnF Does it look like I can't talk?
+verboseOnF You twit, I can speak fine...
+# 开啟 verbose 失败。
+
+##### 关闭 #####
+
+# 对话指令：shut up
+# 用来设定 config.txt 中选项 verbose 的数值為 0 。
+
+verboseOffS You ass...fine.
+verboseOffS OMG, whatever
+# 关闭 verbose 成功。
+
+verboseOffF Screw off, im already staying quiet
+verboseOffF Ya ya..I get it already
+## 关闭 verbose 失败。
+
+############################
+#          系统            #
+#             ##############
+#   重登     #
+##############
+# 对话指令：relog
+relogS brb
+relogS k, be back..
+# 重登成功。
+
+##############
+#  结束程式  #
+##############
+# 对话指令：quit
 
 quitS Ciao
 quitS I'm outta here, lamers
 quitS Off I go!
-
-reloadS *beep*
-reloadS *boop*
-reloadS All done.
-
-relogS brb
-relogS k, be back..
-
-sitS *boof*
-sitS *plop*
-
-skillgoodM Thank, you.
-skillgoodM You are too kind.
-skillgoodM Oh no. That's enough. =)
-skillgoodM
-skillgoodM
-skillgoodM
-
-skillbadM What did you do that for?
-skillbadM Please stop!
-skillbadM I said stop it!
-skillbadM ...
-skillbadM ...
-skillbadM
-skillbadM
-
-standS Okie ^^
-standS Right
-standS ok %$cmd_user, like this?
-
-statusS HP: %$char_hp / %$char_hp_max   SP: %$char_sp / %$char_sp_max\nBase: %$char_lv  |  %$char_exp / %$char_exp_max\nJob: %$char_lv_job  |  %$char_exp_job / %$char_exp_job_max\nWeight: %$char_weight / %$char_weight_max   Zeny: %$zeny
-
-tankS Leecher
-tankF huh?
-
-tankStopS That was fun...
-tankStopF Does it look like I'm tanking?
-
-thankS np ^^
-thankS No problem
-thankS Always a pleasure, master %$cmd_user
-thankS ^^
-
-timeoutS1 I think the timeout %$key is %$value
-timeoutS2 *beep*
-timeoutS2 *boop*
-timeoutS2 All done.
-timeoutF1 Huh?
-timeoutF2 I don't see that timeout
-
-verboseOnS Ah, finally.
-verboseOnS *gasp* Oh thank you master...ass.
-verboseOnF Does it look like I can't talk?
-verboseOnF You twit, I can speak fine...
-
-verboseOffS You ass...fine.
-verboseOffS OMG, whatever
-verboseOffF Screw off, im already staying quiet
-verboseOffF Ya ya..I get it already
-
-versionS It's %$ver
-
-whereS Lost me? I'm at %$map: %$x, %$y
-whereS Here I am! %$map: %$x, %$y
+# 成功让 CN Kore 结束程式。
