@@ -80,8 +80,6 @@ our $NAME = 'CN Kore - 解放双手 绿色游戏';
 our $ZONE = 'cRO';
 our $VERSION = 'Open Beta - v0.0.5.1 for cRO & twRO';
 our $SVN_VERSION = '120';
-# Translation Comment: Version String
-#our $SVN = T(" (SVN Version) ");
 our $WEBSITE = 'http://www.CNKore.com/';
 # Translation Comment: Version String
 our $versionText = "        *** $NAME - r$SVN_VERSION - 拒绝盗版Key, 从我做起!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                  █         ◢\n            ▔█◤▔▔◥◣                               █       ◢◤\n              █        █                                  ▉    ◢◤\n              █▁▂▃█◤                              ▉  ◢◤\n        ▂▅▆████◤                              ●●▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉  ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊    ◥█  █◥█◤█◥██  ██◥◣◥█◤▌◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▌  ◥◣\n              ▎               RAGNAROK ONLINE BOT         ▍    ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ▏      ◥◣\n                     $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki 至尊宝 彪彪 LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
@@ -523,29 +521,6 @@ sub loadAll {
 	}
 	
 	Plugins::callHook('postloadfiles', {files => \@{$files->getItems}});
-}
-
-##
-# int Settings::getSVNRevision()
-#
-# Return OpenKore's SVN revision number, or undef if that information cannot be retrieved.
-sub getSVNRevision {
-	my $f;
-	if (open($f, "<", "$RealBin/.svn/entries")) {
-		my $revision;
-		eval {
-			die unless <$f> =~ /^\d+$/;	# We only support the non-XML format
-			die unless <$f> eq "\n";	# Empty string for current directory.
-			die unless <$f> eq "dir\n";	# We expect a directory entry.
-			$revision = <$f>;
-			$revision =~ s/[\r\n]//g;
-			undef $revision unless $revision =~ /^\d+$/;
-		};
-		close($f);
-		return $revision;
-	} else {
-		return;
-	}
 }
 
 sub loadSysConfig {
