@@ -1716,14 +1716,12 @@ sub getNPCName {
 # Retrieve a player's name from cache and modify the player object.
 sub getPlayerNameFromCache {
 	my ($player) = @_;
-
-	return if (!$config{cachePlayerNames});
 	my $entry = $playerNameCache{$player->{ID}};
 	return if (!$entry);
 
 	# Check whether the cache entry is too old or inconsistent.
 	# Default cache life time: 15 minutes.
-	if (timeOut($entry->{time}, $config{cachePlayerNames_duration}) || $player->{lv} != $entry->{lv} || $player->{jobID} != $entry->{jobID}) {
+	if (timeOut($entry->{time}, 1800) || $player->{lv} != $entry->{lv} || $player->{jobID} != $entry->{jobID}) {
 		binRemove(\@playerNameCacheIDs, $player->{ID});
 		delete $playerNameCache{$player->{ID}};
 		compactArray(\@playerNameCacheIDs);
@@ -2252,7 +2250,7 @@ sub processNameRequestQueue {
 		# Remove actors with a distance greater than clientSight. Some private servers (notably Freya) use
 		# a technique where they send actor_exists packets with ridiculous distances in order to automatically
 		# ban bots. By removingthose actors, we eliminate that possibility and emulate the client more closely.
-		if (defined $actor->{pos_to} && (my $block_dist = blockDistance($char->{pos_to}, $actor->{pos_to})) >= ($config{clientSight} || 16)) {
+		if (defined $actor->{pos_to} && (my $block_dist = blockDistance($char->{pos_to}, $actor->{pos_to})) >= 20) {
 			debug "Removed actor at $actor->{pos_to}{x} $actor->{pos_to}{y} (distance: $block_dist)\n";
 			shift @{$queue};
 			next;
@@ -2313,17 +2311,17 @@ sub sendMessage {
 				$msg[$i] = " ";
 				$space = 1;
 			}
-			if (length($msg[$i]) > $config{'message_length_max'}) {
-				while (length($msg[$i]) >= $config{'message_length_max'}) {
+			if (length($msg[$i]) > 80) {
+				while (length($msg[$i]) >= 80) {
 					$oldmsg = $msg;
 					if (length($msg)) {
-						$amount = $config{'message_length_max'};
+						$amount == 80;
 						if ($amount - length($msg) > 0) {
-							$amount = $config{'message_length_max'} - 1;
+							$amount == 79;
 							$msg .= " " . substr($msg[$i], 0, $amount - length($msg));
 						}
 					} else {
-						$amount = $config{'message_length_max'};
+						$amount == 80;
 						$msg .= substr($msg[$i], 0, $amount);
 					}
 					sendMessage_send($sender, $type, $msg, $user);
@@ -2331,7 +2329,7 @@ sub sendMessage {
 					undef $msg;
 				}
 			}
-			if (length($msg[$i]) && length($msg) + length($msg[$i]) <= $config{'message_length_max'}) {
+			if (length($msg[$i]) && length($msg) + length($msg[$i]) <= 80) {
 				if (length($msg)) {
 					if (!$space) {
 						$msg .= " " . $msg[$i];
@@ -2930,14 +2928,12 @@ sub updateDamageTables {
 sub updatePlayerNameCache {
 	my ($player) = @_;
 
-	return if (!$config{cachePlayerNames});
-
 	# First, cleanup the cache. Remove entries that are too old.
 	# Default life time: 15 minutes
 	my $changed = 1;
 	for (my $i = 0; $i < @playerNameCacheIDs; $i++) {
 		my $ID = $playerNameCacheIDs[$i];
-		if (timeOut($playerNameCache{$ID}{time}, $config{cachePlayerNames_duration})) {
+		if (timeOut($playerNameCache{$ID}{time}, 1800)) {
 			delete $playerNameCacheIDs[$i];
 			delete $playerNameCache{$ID};
 			$changed = 1;
@@ -2947,7 +2943,7 @@ sub updatePlayerNameCache {
 
 	# Resize the cache if it's still too large.
 	# Default cache size: 100
-	while (@playerNameCacheIDs > $config{cachePlayerNames_maxSize}) {
+	while (@playerNameCacheIDs > 200) {
 		my $ID = shift @playerNameCacheIDs;
 		delete $playerNameCache{$ID};
 	}

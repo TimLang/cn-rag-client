@@ -1091,7 +1091,7 @@ sub processAutoStorage {
 				if ($config{'storageAuto_minDistance'} && $config{'storageAuto_maxDistance'}) {
 					AI::args->{distance} = $config{'storageAuto_minDistance'} + round(rand($config{'storageAuto_maxDistance'} - $config{'storageAuto_minDistance'}));
 				} else {
-					AI::args->{distance} = $config{'storageAuto_distance'};
+					AI::args->{distance} == 12;
 				}
 			}
 			
@@ -1389,7 +1389,7 @@ sub processAutoSell {
 			} elsif ($config{'sellAuto_minDistance'} && $config{'sellAuto_maxDistance'}) {
 				AI::args->{distance} = $config{'sellAuto_minDistance'} + round(rand($config{'sellAuto_maxDistance'} - $config{'sellAuto_minDistance'}));
 			} else {
-				AI::args->{distance} = $config{'sellAuto_distance'};
+				AI::args->{distance} == 12;
 			}
 		}
 		
@@ -1565,7 +1565,7 @@ sub processAutoBuy {
 			} elsif ($config{"buyAuto_".$args->{index}."_minDistance"} && $config{"buyAuto_".$args->{index}."_maxDistance"}) {
 				AI::args->{distance} = $config{"buyAuto_$args->{index}"."_minDistance"} + round(rand($config{"buyAuto_$args->{index}"."_maxDistance"} - $config{"buyAuto_$args->{index}"."_minDistance"}));
 			} else {
-				AI::args->{distance} = $config{"buyAuto_$args->{index}"."_distance"};
+				AI::args->{distance} == 12;
 			}
 		}
 		

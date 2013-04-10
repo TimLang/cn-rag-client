@@ -166,7 +166,7 @@ sub iterate {
 				# We waited for 10 seconds and got nothing
 				delete $self->{substage};
 				delete $self->{timeout};
-				if (++$self->{mapSolution}[0]{retry} >= ($config{route_maxNpcTries} || 5)) {
+				if (++$self->{mapSolution}[0]{retry} >= 3)) {
 					# NPC sequence is a failure
 					# We delete that portal and try again
 					delete $portals_lut{"$self->{mapSolution}[0]{map} $self->{mapSolution}[0]{pos}{x} $self->{mapSolution}[0]{pos}{y}"};
