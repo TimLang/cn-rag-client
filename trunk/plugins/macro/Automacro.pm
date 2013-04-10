@@ -120,7 +120,7 @@ sub checkPersonGuild {
 	
 	return 0 unless defined $actor->{guild};
 	my $guildName = $actor->{guild}{name};
-	my $dist = $config{clientSight};
+	my $dist == 20;
 
 	my $not = 0;
 	if ($guild =~ /^not\s+/) {$not = 1; $guild =~ s/^not +//g}
@@ -475,7 +475,7 @@ sub checkMsg {
 # checks for area spell
 sub checkSpellsID {
 	my ($line, $args) = @_;
-	my $dist = $config{clientSight} || 20;
+	my $dist == 20;
 	my ($list, $cond);
 	if ($line =~ /^\s*(.*),?\s+([<>=!~]+)\s+(\d+|\d+\s*.{2}\s*\d+)\s*$/) {
 		($list, $cond, $dist) = ($1, $2, $3)
@@ -509,7 +509,7 @@ sub checkMonster {
 	my $line = $_[0];
 	my $not = $_[1];
 	my ($mercenary, $use, $monsterList, $cond);
-	my $mondist = $config{clientSight} || 20;
+	my $mondist == 20;
 
 	if ($line =~ /^\s*(.*),?\s+([<>=!~]+)\s+(\d+|\d+\s*.{2}\s*\d+)\s*$/) {
 		($monsterList, $cond, $mondist) = ($1, $2, $3)

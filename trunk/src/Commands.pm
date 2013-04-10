@@ -1049,7 +1049,7 @@ sub cmdChatRoom {
 			if ($public eq "") {
 				$public = 1;
 			}
-			$title = ($config{chatTitleOversize}) ? $title : substr($title,0,36);
+			$title = substr($title,0,36);
 			$messageSender->sendChatRoomCreate($title, $users, $public, $password);
 			%createdChatRoom = ();
 			$createdChatRoom{title} = $title;
