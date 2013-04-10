@@ -99,7 +99,23 @@ sub new {
 	my $class = shift;
 	my %args = @_;
 	my $self = bless {}, $class;
-
+	
+	if($args{name}){
+		#add by jackywei 地图分流问题导致无法计算路径
+		if ($args{name} =~ /prt_fild08[a-d]$/){
+			$args{name} =~ s/[a-d]$//;
+		}
+		elsif($args{name} =~ /izlude_[a-d]$/){
+			$args{name} =~ s/_[a-d]$//;
+		}
+		elsif($args{name} =~ /iz_ac\d{2}_[a-d]$/){
+			$args{name} =~ s/_[a-d]$//;
+		}
+		elsif($args{name} =~ /iz_int\d{2}$/){
+			$args{name} =~ s/\d{2}$//;
+		}
+	}
+	
 	if ($args{file}) {
 		$self->loadFile($args{file}, $args{loadDistanceMap});
 	} elsif ($args{name}) {
