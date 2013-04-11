@@ -2432,8 +2432,6 @@ sub guild_chat {
 	chatLog("g", "$chat\n") if ($config{'logGuildChat'});
 	# Translation Comment: Guild Chat
 	message TF("[Guild] %s\n", $chat), "guildchat";
-	# Only queue this if it's a real chat message
-	ChatQueue::add('g', 0, $chatMsgUser, $chatMsg) if ($chatMsgUser);
 
 	Plugins::callHook('packet_guildMsg', {
 		MsgUser => $chatMsgUser,
@@ -3780,7 +3778,6 @@ sub party_chat {
 	message TF("[Party] %s\n", $chat), "partychat";
 
 	chatLog("p", "$chat\n") if ($config{'logPartyChat'});
-	ChatQueue::add('p', $args->{ID}, $chatMsgUser, $chatMsg);
 
 	Plugins::callHook('packet_partyMsg', {
 		MsgUser => $chatMsgUser,
@@ -4263,7 +4260,6 @@ sub public_chat {
 	chatLog("c", "$position $message\n") if ($config{logChat});
 	message TF("%s%s\n", $distInfo, $message), "publicchat";
 
-	ChatQueue::add('c', $args->{ID}, $chatMsgUser, $chatMsg);
 	Plugins::callHook('packet_pubMsg', {
 		pubID => $args->{ID},
 		pubMsgUser => $chatMsgUser,
@@ -4296,7 +4292,6 @@ sub private_message {
 	chatLog("pm", TF("(From: %s) : %s\n", $privMsgUser, $privMsg)) if ($config{'logPrivateChat'});
  	message TF("(From: %s) : %s\n", $privMsgUser, $privMsg), "pm";
 
-	ChatQueue::add('pm', undef, $privMsgUser, $privMsg);
 	Plugins::callHook('packet_privMsg', {
 		privMsgUser => $privMsgUser,
 		privMsg => $privMsg,
@@ -5923,7 +5918,6 @@ sub system_chat {
 	chatLog("s", "$message\n") if ($config{logSystemChat});
 	# Translation Comment: System/GM chat
 	message TF("[GM] %s\n", $message), "schat";
-	ChatQueue::add('gm', undef, undef, $message);
 
 	Plugins::callHook('packet_sysMsg', {
 	Msg => $message
