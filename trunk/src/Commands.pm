@@ -1641,7 +1641,7 @@ sub cmdExp {
 		}
 	}
 	
-	if (($arg1 eq "monster") || ($arg1 eq "report")) {
+	if (($arg1 eq "m") || ($arg1 eq "report")) {
 		my $total;
  
 		$knownArg = 1;
@@ -1662,7 +1662,7 @@ sub cmdExp {
 			"list");
 	}
 
-	if (($arg1 eq "item") || ($arg1 eq "report")) {
+	if (($arg1 eq "i") || ($arg1 eq "report")) {
 		$knownArg = 1;
 
 		message T("-[Item Change Count]--------------------------\n" .
