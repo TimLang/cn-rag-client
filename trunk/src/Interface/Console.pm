@@ -34,54 +34,18 @@ sub new {
 	# Automatically load the correct module for
 	# the current operating system
 	
-	my $mod = 'Interface::Console::Simple';
+	my $mod;
 	
 	if ($^O eq 'MSWin32') {
 		$mod = 'Interface::Console::Win32';
-		
-	# manual suggests that to run on both threaded and non-threaded Perl
-	# but it creates segfault on exit (FreeBSD, threaded Perl 5.10.1)
-	# so using Console::Simple if Console::Unix doesn't work depends on user
-	# } elsif (eval 'use threads; 1') {
-	} elsif (1) {
-		$mod = 'Interface::Console::Unix';
+
 	} else {
-		# Load Curses, if available, because Simple has bad keyboard input handling
-		#eval 'use Curses';
-		#$mod = 'Interface::Console::Curses' unless $@;
 	}
 	
 	eval "use $mod";
 	die $@ if $@;
 	Modules::register ($mod);
 	return $mod->new;
-
-=pod
-	if ($^O eq 'MSWin32') {
-		eval "use Interface::Console::Win32;";
-		die $@ if $@;
-		Modules::register("Interface::Console::Win32");
-		return new Interface::Console::Win32();
-
-	} elsif ($^O eq 'linux' || $^O eq 'darwin') {
-		my $mod = 'Interface::Console::Unix';
-		my $str = "use $mod;";
-		eval ${\$str};
-		die $@ if $@;
-		Modules::register($mod);
-		return new Interface::Console::Unix();
-
-	} else {
-		# Other Unix. For some reason Readline doesn't work correctly
-		# on FreeBSD.
-		my $mod = 'Interface::Console::Simple';
-		my $str = "use $mod;";
-		eval ${\$str};
-		die $@ if $@;
-		Modules::register($mod);
-		return new Interface::Console::Simple();
-	}
-=cut
 }
 
 sub beep {
