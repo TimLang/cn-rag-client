@@ -74,7 +74,6 @@ sub __start {
 	use Actor::Unknown;
 	use ActorList;
 	use Interface;
-	use ChatQueue;
 	use TaskManager;
 	use Task;
 	use Task::WithSubtask;
@@ -84,7 +83,7 @@ sub __start {
 	Modules::register(qw/Utils FileParsers
 		Network::Receive Network::Send Misc AI AI::CoreLogic
 		AI::Attack AI::Slave AI::Slave::Homunculus AI::Slave::Mercenary
-		ChatQueue Actor Actor::Player Actor::Monster Actor::You
+		Actor Actor::Player Actor::Monster Actor::You
 		Actor::Party Actor::Unknown Actor::Item Match/);
 
 

@@ -31,7 +31,6 @@ use Network::Send ();
 use Settings;
 use AI;
 use AI::SlaveManager;
-use ChatQueue;
 use Utils;
 use Commands;
 use Network;
@@ -94,8 +93,6 @@ sub iterate {
 
 	Plugins::callHook('AI_pre');
 
-	ChatQueue::processFirst;
-
 	processDcOnPlayer();
 	processDeal();
 	processDealAuto();
@@ -103,14 +100,13 @@ sub iterate {
 	processGuildAutoDeny();
 
 	Misc::checkValidity("AI part 1.1");
-	#processAutoBreakTime(); moved to a plugin
 	processDead();
 	processStorageGet();
 	processCartAdd();
 	processCartGet();
 	processAutoMakeArrow();
-	Misc::checkValidity("AI part 2");
 
+	Misc::checkValidity("AI part 2");
 	processAutoStorage();
 	Misc::checkValidity("AI (autostorage)");
 	processAutoSell();
@@ -121,15 +117,10 @@ sub iterate {
 	Misc::checkValidity("AI (autocart)");
 
 	processLockMap();
-	#processAutoStatsRaise(); moved to a task
-	#processAutoSkillsRaise(); moved to a task
-	#processTask("skill_raise");
 	processRandomWalk();
 	processFollow();
-
 	processSitAutoIdle();
 	processSitAuto();
-
 	processPartySkillUse();
 	processMonsterSkillUse();
 

@@ -29,7 +29,6 @@ use Network::MessageTokenizer;
 use Commands;
 use Plugins;
 use Utils;
-use ChatQueue;
 use I18N;
 use Utils::HttpReader;
 use Win32::OLE qw(in);
@@ -964,7 +963,6 @@ sub initMapChangeVars {
 
 	AI::clear(qw(attack move teleport));
 	AI::SlaveManager::clear("attack", "route", "move");
-	ChatQueue::clear;
 
 	Plugins::callHook('packet_mapChange');
 
