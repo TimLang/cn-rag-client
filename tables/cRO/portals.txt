@@ -1673,8 +1673,8 @@ ayo_dun02 276 22 ayo_dun01 24 283
 ayo_dun02 24 22 ayo_dun01 24 283
 ########################################
 #钢铁之都-艾音布罗克
-#einbroch 232 272 einbech 43 215 200 c r0 n
-#einbroch 252 301 einbech 43 215 200 c r0 n
+einbroch 232 272 einbech 43 215 200 c r0 n
+einbroch 252 301 einbech 43 215 200 c r0 n
 einbroch 157 331 ein_fild04 184 26
 einbroch 129 229 ein_in01 11 147
 einbroch 214 263 einbroch 233 312
@@ -1727,7 +1727,7 @@ ein_in01 195 224 einbroch 257 199
 ein_in01 108 13 einbroch 216 214
 ein_in01 11 147 einbroch 129 229
 #採矿村落 艾音贝赫
-#einbech 39 215 einbroch 226 276 200 c r0 n
+einbech 39 215 einbroch 226 276 200 c r0 n
 einbech 138 252 ein_dun01 22 11
 einbech 62 29 ein_fild09 71 352
 einbech 177 136 ein_in01 190 35
