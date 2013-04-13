@@ -135,7 +135,7 @@ sub initHandlers {
 	reload             => \&cmdReload,
 	relog              => \&cmdRelog,
 	repair             => \&cmdRepair,
-	respawn            => \&cmdRespawn,
+	hg		           => \&cmdRespawn,
 	s                  => \&cmdStatus,
 	sell               => \&cmdSell,
 	sit                => \&cmdSit,
@@ -158,7 +158,7 @@ sub initHandlers {
 	talk               => \&cmdTalk,
 	talknpc            => \&cmdTalkNPC,
 	tank               => \&cmdTank,
-	tele               => \&cmdTeleport,
+	t                  => \&cmdTeleport,
 	testshop           => \&cmdTestShop,
 	timeout            => \&cmdTimeout,
 	top10              => \&cmdTop10,
@@ -1596,7 +1596,7 @@ sub cmdExp {
 		return;
 	}
 
-	if (($arg1 eq "") || ($arg1 eq "report")) {
+	if (($arg1 eq "") || ($arg1 eq "r")) {
 		$knownArg = 1;
 		my ($endTime_EXP, $w_sec, $bExpPerHour, $jExpPerHour, $EstB_sec, $percentB, $percentJ, $zenyMade, $zenyPerHour, $EstJ_sec, $percentJhr, $percentBhr);
 		$endTime_EXP = time;
@@ -1641,7 +1641,7 @@ sub cmdExp {
 		}
 	}
 	
-	if (($arg1 eq "m") || ($arg1 eq "report")) {
+	if (($arg1 eq "m") || ($arg1 eq "r")) {
 		my $total;
  
 		$knownArg = 1;
@@ -1662,7 +1662,7 @@ sub cmdExp {
 			"list");
 	}
 
-	if (($arg1 eq "i") || ($arg1 eq "report")) {
+	if (($arg1 eq "i") || ($arg1 eq "r")) {
 		$knownArg = 1;
 
 		message T("-[Item Change Count]--------------------------\n" .
