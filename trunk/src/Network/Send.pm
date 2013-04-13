@@ -819,16 +819,6 @@ sub reconstruct_actor_move {
 	$args->{coords} = getCoordString(@{$args}{qw(x y)}, !($config{serverType} > 0));
 }
 
-sub sendHomunculusCommand {
-	my ($self, $command, $type) = @_;
-	$self->sendToServer($self->reconstruct({
-		switch => 'homunculus_command',
-		commandType => $type,
-		commandID => $command,
-	}));
-	debug "Sent Homunculus Command $command", "sendPacket", 2;
-}
-
 sub sendHomunculusMove {
 	my ($self, $ID, $x, $y) = @_;
 	$self->sendToServer($self->reconstruct({switch => 'actor_move', ID => $ID, x => $x, y => $y}));
