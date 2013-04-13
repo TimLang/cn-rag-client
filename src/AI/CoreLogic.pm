@@ -678,7 +678,7 @@ sub processTake {
 			stand();
 
 		} elsif ($dist > 1) {
-			if ($config{attackMaxDistance} <= 2.5) {
+			if (!$config{itemsTakeAuto_new}) {
 				my (%vec, %pos);
 				getVector(\%vec, $item->{pos}, $myPos);
 				moveAlongVector(\%pos, $myPos, \%vec, $dist - 1);

@@ -40,7 +40,7 @@ sub new {
 		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
 		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
 		'0362' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
-		'07E4' => ['homunculus_command', 'v C', [qw(type command)]],
+		'07E4' => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
@@ -137,6 +137,16 @@ sub sendMapLogin {
 
 	$self->sendToServer($msg);
 	debug "Sent sendMapLogin\n", "sendPacket", 2;
+}
+
+sub sendHomunculusCommand {
+	my ($self, $command, $type) = @_;
+	$self->sendToServer($self->reconstruct({
+		switch => 'homunculus_command',
+		commandType => $type,
+		commandID => $command,
+	}));
+	debug "Sent Homunculus Command $command", "sendPacket", 2;
 }
 
 sub sendFriendRequest {
