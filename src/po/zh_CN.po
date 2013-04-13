@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-05 05:00+0800\n"
+"PO-Revision-Date: 2013-04-13 15:22+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1580,7 +1580,7 @@ msgstr "接收到可能的箭矢制作清单 - 键入 'arrowcraft'\n"
 #: ../Network/Receive/ServerType0.pm:1568
 #, perl-format
 msgid "Autodetected attackDistance = %s\n"
-msgstr "已自动侦测攻击距离为 %s 格\n"
+msgstr "已自动检测攻击距离为 %s 格\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1648
 #: ../Network/Receive/ServerType0.pm:1577
@@ -4159,13 +4159,13 @@ msgstr "Logged out from the server succesfully.\n"
 #: ../Network/Receive/ServerType0.pm:2785
 #, perl-format
 msgid "Autodetected attackDistance for homunculus = %s\n"
-msgstr "已自动侦测人工生命体攻击距离 = %s\n"
+msgstr "已自动检测人工生命体攻击距离 = %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_2007_11_06a.pm:52
 #: ../Network/Receive/ServerType0.pm:2762
 #, perl-format
 msgid "Autodetected attackDistance for mercenary = %s\n"
-msgstr "已自动侦测佣兵攻击距离 = %s\n"
+msgstr "已自动检测佣兵攻击距离 = %s\n"
 
 #: ../Network/Receive/ServerType0.pm:1585
 msgid "Buy failed (item does not exist in store).\n"
@@ -4471,7 +4471,7 @@ msgstr "准备\n"
 
 #: ../Network/XKore.pm:440
 msgid "Patching client to remove bot detection:\n"
-msgstr "修正客户端程序以移除对bot的侦测:\n"
+msgstr "修正客户端程序以移除对bot的检测:\n"
 
 #: ../Network/XKore.pm:502
 #, perl-format
@@ -5761,7 +5761,7 @@ msgstr ""
 
 #: ../Commands.pm:1836
 msgid "Error: Can't detect slaves - character is not yet ready\n"
-msgstr "错误: 无法侦测到 slaves - 角色尚未准备好\n"
+msgstr "错误: 无法检测到宠物 - 角色尚未准备好\n"
 
 #: ../Commands.pm:1846
 msgid "Error: Unknown command in cmdSlave\n"
@@ -5769,21 +5769,11 @@ msgstr "错误: 未知的命令在 cmdSlave\n"
 
 #: ../Commands.pm:1855
 msgid "Error: No slave detected.\n"
-msgstr "错误: 没有侦测到 slave.\n"
+msgstr "错误: 没有检测到宠物.\n"
 
 #: ../Commands.pm:1889
 msgid " Slave Status "
-msgstr "Slave已死亡"
-
-#: ../Commands.pm:1890
-msgid ""
-"Name: @<<<<<<<<<<<<<<<<<<<<<<<<< HP: @>>>>>>>>>>>>>>>>>>\n"
-"Type: @<<<<<<<<<<<<<<<<<<<<<<<<< SP: @>>>>>>>>>>>>>>>>>>\n"
-"Level: @<<   @>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
-msgstr ""
-"名子: @<<<<<<<<<<<<<<<<<<<<<<<<< HP: @>>>>>>>>>>>>>>>>>>\n"
-"类型: @<<<<<<<<<<<<<<<<<<<<<<<<< SP: @>>>>>>>>>>>>>>>>>>\n"
-"等级: @<<   @>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
+msgstr "宠物状态"
 
 #: ../Commands.pm:1894
 msgid ""
@@ -5793,11 +5783,11 @@ msgid ""
 "Flee:@>>>    Aspd:     @>>>    Summons:     @>>>\n"
 "Range: @<<   Skill pt: @>>>    Contract End: @>>>>>>>>>>\n"
 msgstr ""
-"Atk: @>>>    Matk:     @>>>    饥饿度:       @>>>\n"
-"Hit: @>>>    Critical: @>>>    @<<<<<<<<<    @>>>\n"
-"Def: @>>>    Mdef:     @>>>    Accessory:    @>>>\n"
-"Flee:@>>>    Aspd:     @>>>    Summons:      @>>>\n"
-"Range: @<<   技能 pt:  @>>>    Contract End: @>>>>>>>>>>\n"
+"攻击: @>>>    魔攻:     @>>>    饥饿度:       @>>>\n"
+"命中: @>>>    爆击:     @>>>    @<<<<<<<<<    @>>>\n"
+"防御: @>>>    魔防:     @>>>    Accessory:    @>>>\n"
+"闪避: @>>>    攻速:     @>>>    Summons:      @>>>\n"
+"距离: @<<     技能点:  @>>>     契约结束时间: @>>>>>>>>>>\n"
 
 #: ../Commands.pm:1908 ../Commands.pm:2999 ../Commands.pm:3536
 #, perl-format
@@ -5806,7 +5796,7 @@ msgstr "状态: %s \n"
 
 #: ../Commands.pm:1915
 msgid "This slave can not be feeded\n"
-msgstr "这个 slave 无法被喂食.\n"
+msgstr "这个宝宝无法被喂食.\n"
 
 #: ../Commands.pm:1923
 msgid ""
@@ -8050,7 +8040,7 @@ msgid ""
 "to:\n"
 "%s"
 msgstr ""
-"没有侦测到合适的浏览器. 请启动你喜欢的浏览器并前往:\n"
+"没有检测到合适的浏览器. 请启动你喜欢的浏览器并前往:\n"
 "%s"
 
 #: ../Misc.pm:939
