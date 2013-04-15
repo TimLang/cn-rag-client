@@ -2088,7 +2088,7 @@ sub friend_request {
 	my ($self, $args) = @_;
 
 	my $Friendname = bytesToString($args->{name});
-	message TF("自动拒绝 %s 成为朋友\n", $Friendname;
+	message TF("自动拒绝 %s 成为朋友\n", $Friendname);
 
 	if (timeOut($timeout{'ai_friendAutoDeny'})) {
 	$messageSender->sendFriendListReply($args->{accountID}, $args->{charID}, 0);
@@ -2990,7 +2990,6 @@ sub map_changed {
 		delete $char->{encoreSkill};
 	}
 	$cart{exists} = 0;
-	undef %guild;
 
 	Plugins::callHook('Network::Receive::map_changed', {
 		oldMap => $oldMap,
