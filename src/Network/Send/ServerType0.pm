@@ -22,7 +22,7 @@ use Misc qw(stripLanguageCode);
 use Network::Send ();
 use base qw(Network::Send);
 use Plugins;
-use Globals qw($accountID $sessionID $sessionID2 $accountSex $char $charID %config %guild @chars $masterServer $syncSync);
+use Globals qw($accountID $sessionID $sessionID2 $accountSex $char $charID %config @chars $masterServer $syncSync);
 use Log qw(debug);
 use Translation qw(T TF);
 use I18N qw(bytesToString stringToBytes);
