@@ -932,12 +932,10 @@ sub initMapChangeVars {
 	undef $buyingStoreID;
 	undef @buyerListsID;
 	undef %buyerLists;
-	undef %incomingGuild;
 	undef @chatRoomsID;
 	undef %chatRooms;
 	undef %createdChatRoom;
 	undef @lastpm;
-	undef %incomingFriend;
 	undef $repairList;
 	undef $devotionList;
 	undef $cookingList;

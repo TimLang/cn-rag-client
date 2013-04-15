@@ -149,14 +149,4 @@ sub sendHomunculusCommand {
 	debug "Sent Homunculus Command $command", "sendPacket", 2;
 }
 
-sub sendFriendRequest {
-	my ($self, $name) = @_;
-	my $binName = stringToBytes($name);
-	$binName = substr($binName, 0, 24) if (length($binName) > 24);
-	$binName = $binName . chr(0) x (24 - length($binName));
-	my $msg = pack('v C*', 0x0875, $binName);
-	$self->sendToServer($msg);
-	debug "Sent Request to be a friend: $name\n", "sendPacket";
-}
-
 1;

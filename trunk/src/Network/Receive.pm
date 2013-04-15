@@ -599,7 +599,6 @@ sub actor_display {
 		# invitation priveledges), regardless of whether or not guildID is set.
 		# I bet that this is yet another brilliant "feature" by GRAVITY's good programmers.
 		$actor->{emblemID} = $args->{emblemID} if (exists $args->{emblemID});
-		$actor->{guildID} = $args->{guildID} if (exists $args->{guildID});
 
 		if (exists $args->{lowhead}) {
 			$actor->{headgear}{low} = $args->{lowhead};
@@ -625,7 +624,6 @@ sub actor_display {
 		# (shield OR lowhead) + midhead = emblemID		(either shield or lowhead depending on the packet)
 		# tophead = guildID
 		$actor->{emblemID} = $args->{emblemID};
-		$actor->{guildID} = $args->{guildID};
 	}
 
 	# But hair_style is used for pets, and their bodies can look different ways...
@@ -732,8 +730,7 @@ typedef enum <unnamed-tag> {
 		# Actor Exists (standing)
 
 		if ($actor->isa('Actor::Player')) {
-			my $domain = existsInList($config{friendlyAID}, unpack("V", $actor->{ID})) ? 'parseMsg_presence' : 'parseMsg_presence/player';
-			debug "Player Exists: " . $actor->name . " ($actor->{binID}) Level $actor->{lv} $sex_lut{$actor->{sex}} $jobs_lut{$actor->{jobID}} ($coordsFrom{x}, $coordsFrom{y})\n", $domain;
+			debug "Player Exists: " . $actor->name . " ($actor->{binID}) Level $actor->{lv} $sex_lut{$actor->{sex}} $jobs_lut{$actor->{jobID}} ($coordsFrom{x}, $coordsFrom{y})\n";
 
 			Plugins::callHook('player', {player => $actor});  #backwards compatibility
 
@@ -768,8 +765,7 @@ typedef enum <unnamed-tag> {
 		# Actor Connected (new)
 
 		if ($actor->isa('Actor::Player')) {
-			my $domain = existsInList($config{friendlyAID}, unpack("V", $args->{ID})) ? 'parseMsg_presence' : 'parseMsg_presence/player';
-			debug "Player Connected: ".$actor->name." ($actor->{binID}) Level $args->{lv} $sex_lut{$actor->{sex}} $jobs_lut{$actor->{jobID}} ($coordsTo{x}, $coordsTo{y})\n", $domain;
+			debug "Player Connected: ".$actor->name." ($actor->{binID}) Level $args->{lv} $sex_lut{$actor->{sex}} $jobs_lut{$actor->{jobID}} ($coordsTo{x}, $coordsTo{y})\n";
 
 			Plugins::callHook('player', {player => $actor});  #backwards compatibailty
 
@@ -1103,8 +1099,6 @@ sub actor_info {
 		$player->{info} = 1;
 
 		$player->{party}{name} = bytesToString($args->{partyName}) if defined $args->{partyName};
-		$player->{guild}{name} = bytesToString($args->{guildName}) if defined $args->{guildName};
-		$player->{guild}{title} = bytesToString($args->{guildTitle}) if defined $args->{guildTitle};
 
 		message "Player Info: " . $player->nameIdx . "\n", "parseMsg_presence", 2;
 		updatePlayerNameCache($player);

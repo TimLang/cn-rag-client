@@ -200,36 +200,45 @@ sub new {
 		'0148' => ['resurrection', 'a4 v', [qw(targetID type)]],
 		'014A' => ['manner_message', 'V', [qw(type)]],
 		'014B' => ['GM_silence', 'C Z24', [qw(type name)]],
-		'014C' => ['guild_allies_enemy_list'],
-		'014E' => ['guild_master_member', 'V', [qw(type)]],
-		'0152' => ['guild_emblem', 'v a4 a4 a*', [qw(len guildID emblemID emblem)]],
-		'0154' => ['guild_members_list'],
-		'0156' => ['guild_member_position_changed', 'v V3', [qw(unknown accountID charID positionID)]],
-		'015A' => ['guild_leave', 'Z24 Z40', [qw(name message)]],
-		'015C' => ['guild_expulsion', 'Z24 Z40 Z24', [qw(name message unknown)]],
-		'015E' => ['guild_broken', 'V', [qw(flag)]], # clif_guild_broken
-		'0160' => ['guild_member_setting_list'],
-		'0162' => ['guild_skills_list'],
-		'0163' => ['guild_expulsionlist'],
-		'0166' => ['guild_members_title_list'],
-		'0167' => ['guild_create_result', 'C', [qw(type)]],
-		'0169' => ['guild_invite_result', 'C', [qw(type)]],
 		'016A' => ['guild_request', 'a4 Z24', [qw(ID name)]],
-		'016C' => ['guild_name', 'a4 a4 V x5 Z24', [qw(guildID emblemID mode guildName)]],
-		'016D' => ['guild_member_online_status', 'a4 a4 V', [qw(ID charID online)]],
-		'016F' => ['guild_notice'],
-		'0171' => ['guild_ally_request', 'a4 Z24', [qw(ID guildName)]],
-		'0173' => ['guild_alliance', 'C', [qw(flag)]],
-		'0174' => ['guild_position_changed', 'v a4 a4 a4 V Z20', [qw(unknown ID mode sameID exp position_name)]],
+		
+		# guild
+		'014C' => ['del_packet'],
+		'014E' => ['del_packet'],
+		'0152' => ['del_packet'],
+		'0154' => ['del_packet'],
+		'0156' => ['del_packet'],
+		'015A' => ['del_packet'],
+		'015C' => ['del_packet'],
+		'015E' => ['del_packet'],
+		'0160' => ['del_packet'],
+		'0162' => ['del_packet'],
+		'0163' => ['del_packet'],
+		'0166' => ['del_packet'],
+		'0167' => ['del_packet'],
+		'0169' => ['del_packet'],
+		'016C' => ['del_packet'],
+		'016D' => ['del_packet'],
+		'016F' => ['del_packet'],
+		'0171' => ['del_packet'],
+		'0173' => ['del_packet'],
+		'0174' => ['del_packet'],
+		'0181' => ['del_packet'],
+		'0182' => ['del_packet'],
+		'0184' => ['del_packet'],
+		'0185' => ['del_packet'],
+		'01B4' => ['del_packet'],
+		'01B6' => ['del_packet'],
+		'01EB' => ['del_packet'],
+		'01EC' => ['del_packet'],
+		'01F2' => ['del_packet'],
+		'0839' => ['del_packet'],
+		
 		'0177' => ['identify_list'],
 		'0179' => ['identify', 'v C', [qw(index flag)]],
 		'017B' => ['card_merge_list'],
 		'017D' => ['card_merge_status', 'v2 C', [qw(item_index card_index fail)]],
 		'017F' => ['guild_chat', 'x2 Z*', [qw(message)]],
-		'0181' => ['guild_opposition_result', 'C', [qw(flag)]], # clif_guild_oppositionack
-		'0182' => ['guild_member_add', 'a4 a4 v5 V3 Z50 Z24', [qw(AID GID head_type head_color sex job lv contribution_exp current_state positionID intro name)]], # 106 # TODO: rename the vars and add sub
-		'0184' => ['guild_unally', 'a4 V', [qw(guildID flag)]], # clif_guild_delalliance
-		'0185' => ['guild_alliance_added', 'a4 a4 Z24', [qw(opposition alliance_guildID name)]], # clif_guild_allianceadded
 		'0187' => ['sync_request', 'a4', [qw(ID)]],
 		'0188' => ['item_upgrade', 'v3', [qw(type index upgrade)]],
 		'0189' => ['no_teleport', 'v', [qw(fail)]],
@@ -257,9 +266,7 @@ sub new {
 		'01AD' => ['arrowcraft_list'],
 		'01B0' => ['monster_typechange', 'a4 a V', [qw(ID unknown type)]],
 		'01B3' => ['npc_image', 'Z64 C', [qw(npc_image type)]],
-		'01B4' => ['guild_emblem_update', 'a4 a4 a2', [qw(ID guildID emblemID)]],
 		'01B5' => ['account_payment_info', 'V2', [qw(D_minute H_minute)]],
-		'01B6' => ['guild_info', 'a4 V9 a4 Z24 Z24 Z20', [qw(ID lv conMember maxMember average exp exp_next tax tendency_left_right tendency_down_up emblemID name master castles_string)]],
 		'01B9' => ['cast_cancelled', 'a4', [qw(ID)]],
 		'01C3' => ['local_broadcast', 'x2 a3 x9 Z*', [qw(color message)]],
 		'01C4' => ['storage_item_added', 'v V v C4 a8', [qw(index amount nameID type identified broken upgrade cards)]],
@@ -288,12 +295,9 @@ sub new {
 		'01E6' => ['marriage_partner_name', 'Z24', [qw(name)]],
 		'01E9' => ['party_join', 'a4 V v2 C Z24 Z24 Z16 v C2', [qw(ID role x y type name user map lv item_pickup item_share)]],
 		'01EA' => ['married', 'a4', [qw(ID)]],
-		'01EB' => ['guild_location', 'a4 v2', [qw(ID x y)]],
-		'01EC' => ['guild_member_map_change', 'a4 a4 Z16', [qw(GDID AID mapName)]], # 26 # TODO: change vars, add sub
 		'01EE' => ['inventory_items_stackable', 'v a*', [qw(len itemInfo)]],
 		'01EF' => ['cart_items_stackable', 'v a*', [qw(len itemInfo)]],
 		'01F0' => ['storage_items_stackable', 'v a*', [qw(len itemInfo)]],
-		'01F2' => ['guild_member_online_status', 'a4 a4 V v3', [qw(ID charID online sex hair_style hair_color)]],
 		'01F3' => ['misc_effect', 'a4 V', [qw(ID effect)]], # weather/misceffect2 packet
 		'01F4' => ['deal_request', 'Z24 a4 v', [qw(user ID level)]],
 		'01F5' => ['deal_begin', 'C a4 v', [qw(type targetID level)]],
@@ -302,12 +306,15 @@ sub new {
 		'01FC' => ['repair_list'],
 		'01FE' => ['repair_result', 'v C', [qw(nameID flag)]],
 		'01FF' => ['high_jump', 'a4 v2', [qw(ID x y)]],
-		'0201' => ['friend_list'],
 		'0205' => ['divorced', 'Z24', [qw(name)]], # clif_divorced
-		'0206' => ['friend_logon', 'a4 a4 C', [qw(friendAccountID friendCharID isNotOnline)]],
 		'0207' => ['friend_request', 'a4 a4 Z24', [qw(accountID charID name)]],
-		'0209' => ['friend_response', 'v a4 a4 Z24', [qw(type accountID charID name)]],
-		'020A' => ['friend_removed', 'a4 a4', [qw(friendAccountID friendCharID)]],
+		
+		# friend
+		'0201' => ['del_packet'],
+		'0206' => ['del_packet'],
+		'0209' => ['del_packet'],
+		'020A' => ['del_packet'],
+
 		'020E' => ['taekwon_packets', 'Z24 a4 C2', [qw(name ID value flag)]],
 		'020F' => ['pvp_point', 'V2', [qw(AID GID)]], #TODO: PACKET_CZ_REQ_PVPPOINT
 		'0215' => ['gospel_buff_aligned', 'a4', [qw(ID)]],
@@ -457,7 +464,7 @@ sub new {
 		'0828' => ['char_delete2_result', 'a4 V2', [qw(charID result deleteDate)]], # 14
 		'082C' => ['char_delete2_cancel_result', 'a4 V', [qw(charID result)]], # 14
 		'082D' => ['received_characters', 'v C x2 C2 x20 a*', [qw(len total_slot premium_start_slot premium_end_slot charInfo)]],
-		'0839' => ['guild_expulsion', 'Z40 Z24', [qw(message name)]],
+
 		'083E' => ['login_error', 'V Z20', [qw(type date)]],
 		'084B' => ['item_appeared', 'a4 v2 C v4', [qw(ID nameID unknown1 identified x y unknown2 amount)]], # 19 TODO   provided by try71023, modified sofax222
 		'0856' => ['actor_moved', 'v C a4 v3 V v5 a4 v6 a4 a2 v V C2 a6 C2 v2 Z*', [qw(len object_type ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tick tophead midhead hair_color clothes_color head_dir costume guildID emblemID manner opt3 stance sex coords xSize ySize lv font name)]], # -1 # walking provided by try71023 TODO: costume
@@ -2077,90 +2084,15 @@ sub forge_list {
 	message "=========================\n";
 }
 
-sub friend_list {
-	my ($self, $args) = @_;
-
-	# Friend list
-	undef @friendsID;
-	undef %friends;
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-
-	my $ID = 0;
-	for (my $i = 4; $i < $msg_size; $i += 32) {
-		binAdd(\@friendsID, $ID);
-		$friends{$ID}{'accountID'} = substr($msg, $i, 4);
-		$friends{$ID}{'charID'} = substr($msg, $i + 4, 4);
-		$friends{$ID}{'name'} = bytesToString(unpack("Z24", substr($msg, $i + 8 , 24)));
-		$friends{$ID}{'online'} = 0;
-		$ID++;
-	}
-}
-
-sub friend_logon {
-	my ($self, $args) = @_;
-
-	# Friend In/Out
-	my $friendAccountID = $args->{friendAccountID};
-	my $friendCharID = $args->{friendCharID};
-	my $isNotOnline = $args->{isNotOnline};
-
-	for (my $i = 0; $i < @friendsID; $i++) {
-		if ($friends{$i}{'accountID'} eq $friendAccountID && $friends{$i}{'charID'} eq $friendCharID) {
-			$friends{$i}{'online'} = 1 - $isNotOnline;
-			if ($isNotOnline) {
-				message TF("Friend %s has disconnected\n", $friends{$i}{name}), undef, 1;
-			} else {
-				message TF("Friend %s has connected\n", $friends{$i}{name}), undef, 1;
-			}
-			last;
-		}
-	}
-}
-
 sub friend_request {
 	my ($self, $args) = @_;
 
-	# Incoming friend request
-	$incomingFriend{'accountID'} = $args->{accountID};
-	$incomingFriend{'charID'} = $args->{charID};
-	$incomingFriend{'name'} = bytesToString($args->{name});
-	message TF("%s wants to be your friend\n", $incomingFriend{'name'});
-	message TF("Type 'friend accept' to be friend with %s, otherwise type 'friend reject'\n", $incomingFriend{'name'});
-}
+	my $Friendname = bytesToString($args->{name});
+	message TF("自动拒绝 %s 成为朋友\n", $Friendname;
 
-sub friend_removed {
-	my ($self, $args) = @_;
-
-	# Friend removed
-	my $friendAccountID =  $args->{friendAccountID};
-	my $friendCharID =  $args->{friendCharID};
-	for (my $i = 0; $i < @friendsID; $i++) {
-		if ($friends{$i}{'accountID'} eq $friendAccountID && $friends{$i}{'charID'} eq $friendCharID) {
-			message TF("%s is no longer your friend\n", $friends{$i}{'name'});
-			binRemove(\@friendsID, $i);
-			delete $friends{$i};
-			last;
-		}
-	}
-}
-
-sub friend_response {
-	my ($self, $args) = @_;
-
-	# Response to friend request
-	my $type = $args->{type};
-	my $name = bytesToString($args->{name});
-	if ($type) {
-		message TF("%s rejected to be your friend\n", $name);
-	} else {
-		my $ID = @friendsID;
-		binAdd(\@friendsID, $ID);
-		$friends{$ID}{accountID} = substr($args->{RAW_MSG}, 4, 4);
-		$friends{$ID}{charID} = substr($args->{RAW_MSG}, 8, 4);
-		$friends{$ID}{name} = $name;
-		$friends{$ID}{online} = 1;
-		message TF("%s is now your friend\n", $name);
+	if (timeOut($timeout{'ai_friendAutoDeny'})) {
+	$messageSender->sendFriendListReply($args->{accountID}, $args->{charID}, 0);
+	$timeout{'ai_friendAutoDeny'}{'time'} = time;
 	}
 }
 
@@ -2318,257 +2250,6 @@ sub slave_calcproperty_handler {
 	$slave->{expPercent}   = ($args->{exp_max}) ? ($args->{exp} / $args->{exp_max}) * 100 : undef;
 }
 
-sub guild_allies_enemy_list {
-	my ($self, $args) = @_;
-
-	# Guild Allies/Enemy List
-	# <len>.w (<type>.l <guildID>.l <guild name>.24B).*
-	# type=0 Ally
-	# type=1 Enemy
-
-	# This is the length of the entire packet
-	my $msg = $args->{RAW_MSG};
-	my $len = unpack("v", substr($msg, 2, 2));
-
-	# clear $guild{enemy} and $guild{ally} otherwise bot will misremember alliances -zdivpsa
-	$guild{enemy} = {}; $guild{ally} = {};
-
-	for (my $i = 4; $i < $len; $i += 32) {
-		my ($type, $guildID, $guildName) = unpack('V2 Z24', substr($msg, $i, 32));
-		$guildName = bytesToString($guildName);
-		if ($type) {
-			# Enemy guild
-			$guild{enemy}{$guildID} = $guildName;
-		} else {
-			# Allied guild
-			$guild{ally}{$guildID} = $guildName;
-		}
-		debug "Your guild is ".($type ? 'enemy' : 'ally')." with guild $guildID ($guildName)\n", "guild";
-	}
-}
-
-sub guild_ally_request {
-	my ($self, $args) = @_;
-
-	my $ID = $args->{ID}; # is this a guild ID or account ID? Freya calls it an account ID
-	my $name = bytesToString($args->{guildName}); # Type: String
-
-	message TF("Incoming Request to Ally Guild '%s'\n", $name);
-	$incomingGuild{ID} = $ID;
-	$incomingGuild{Type} = 2;
-	$timeout{ai_guildAutoDeny}{time} = time;
-}
-
-sub guild_broken {
-	my ($self, $args) = @_;
-	my $flag = $args->{flag};
-
-	if ($flag == 2) {
-		error T("Guild can not be undone: there are still members in the guild\n");		
-	} elsif ($flag == 1) {
-		error T("Guild can not be undone: invalid key\n");
-	} elsif ($flag == 0) {
-		message T("Guild broken.\n");
-		undef %{$char->{guild}};
-		undef $char->{guildID};
-		undef %guild;
-	} else {
-		error TF("Guild can not be undone: unknown reason (flag: %s)\n", $flag);		
-	}
-}
-
-sub guild_member_setting_list {
-	my ($self, $args) = @_;
-	my $newmsg;
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-	$self->decrypt(\$newmsg, substr($msg, 4, length($msg)-4));
-	$msg = substr($msg, 0, 4).$newmsg;
-	my $gtIndex;
-	for (my $i = 4; $i < $msg_size; $i += 16) {
-		$gtIndex = unpack("V1", substr($msg, $i, 4));
-		$guild{positions}[$gtIndex]{invite} = (unpack("C1", substr($msg, $i + 4, 1)) & 0x01) ? 1 : '';
-		$guild{positions}[$gtIndex]{punish} = (unpack("C1", substr($msg, $i + 4, 1)) & 0x10) ? 1 : '';
-		$guild{positions}[$gtIndex]{feeEXP} = unpack("V1", substr($msg, $i + 12, 4));
-	}
-}
-
-# TODO: merge with skills_list?
-sub guild_skills_list {
-	my ($self, $args) = @_;
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-	for (my $i = 6; $i < $msg_size; $i += 37) {
-		my $skillID = unpack("v1", substr($msg, $i, 2));
-		my $targetType = unpack("v1", substr($msg, $i+2, 2));
-		my $level = unpack("v1", substr($msg, $i + 6, 2));
-		my $sp = unpack("v1", substr($msg, $i + 8, 2));
-		my ($skillName) = unpack("Z*", substr($msg, $i + 12, 24));
-
-		my $up = unpack("C1", substr($msg, $i+36, 1));
-		$guild{skills}{$skillName}{ID} = $skillID;
-		$guild{skills}{$skillName}{sp} = $sp;
-		$guild{skills}{$skillName}{up} = $up;
-		$guild{skills}{$skillName}{targetType} = $targetType;
-		if (!$guild{skills}{$skillName}{lv}) {
-			$guild{skills}{$skillName}{lv} = $level;
-		}
-	}
-}
-
-sub guild_chat {
-	my ($self, $args) = @_;
-	my ($chatMsgUser, $chatMsg); # Type: String
-	my $chat; # Type: String
-
-	return unless changeToInGameState();
-
-	$chat = bytesToString($args->{message});
-	if (($chatMsgUser, $chatMsg) = $chat =~ /(.*?) : (.*)/) {
-		$chatMsgUser =~ s/ $//;
-		stripLanguageCode(\$chatMsg);
-		$chat = "$chatMsgUser : $chatMsg";
-	}
-
-	chatLog("g", "$chat\n") if ($config{'logGuildChat'});
-	# Translation Comment: Guild Chat
-	message TF("[Guild] %s\n", $chat), "guildchat";
-
-	Plugins::callHook('packet_guildMsg', {
-		MsgUser => $chatMsgUser,
-		Msg => $chatMsg
-	});
-}
-
-sub guild_create_result {
-	my ($self, $args) = @_;
-	my $type = $args->{type};
-
-	my %types = (
-		0 => T("Guild create successful.\n"),
-		2 => T("Guild create failed: Guild name already exists.\n"),
-		3 => T("Guild create failed: Emperium is needed.\n")
-	);
-	if ($types{$type}) {
-		message $types{$type};
-	} else {
-		message TF("Guild create: Unknown error %s\n", $type);
-	}
-}
-
-sub guild_expulsionlist {
-	my ($self, $args) = @_;
-
-	for (my $i = 4; $i < $args->{RAW_MSG_SIZE}; $i += 88) {
-		my ($name)  = unpack("Z24", substr($args->{'RAW_MSG'}, $i, 24));
-		my $acc     = unpack("Z24", substr($args->{'RAW_MSG'}, $i + 24, 24));
-		my ($cause) = unpack("Z44", substr($args->{'RAW_MSG'}, $i + 48, 44));
-		$guild{expulsion}{$acc}{name} = bytesToString($name);
-		$guild{expulsion}{$acc}{cause} = bytesToString($cause);
-	}
-}
-
-sub guild_info {
-	my ($self, $args) = @_;
-	# Guild Info
-	foreach (qw(ID lv conMember maxMember average exp exp_next tax tendency_left_right tendency_down_up name master castles_string)) {
-		$guild{$_} = $args->{$_};
-	}
-	$guild{name} = bytesToString($args->{name});
-	$guild{master} = bytesToString($args->{master});
-	$guild{members}++; # count ourselves in the guild members count
-}
-
-sub guild_invite_result {
-	my ($self, $args) = @_;
-
-	my $type = $args->{type};
-
-	my %types = (
-		0 => T('Target is already in a guild.'),
-		1 => T('Target has denied.'),
-		2 => T('Target has accepted.'),
-		3 => T('Your guild is full.')
-	);
-	if ($types{$type}) {
-	    message TF("Guild join request: %s\n", $types{$type});
-	} else {
-	    message TF("Guild join request: Unknown %s\n", $type);
-	}
-}
-
-sub guild_location {
-	# FIXME: not implemented
-	my ($self, $args) = @_;
-	unless ($args->{x} > 0 && $args->{y} > 0) {
-		# delete locator for ID
-	} else {
-		# add/replace locator for ID
-	}
-}
-
-sub guild_leave {
-	my ($self, $args) = @_;
-
-	message TF("%s has left the guild.\n" .
-		"Reason: %s\n", bytesToString($args->{name}), bytesToString($args->{message})), "schat";
-}
-
-sub guild_expulsion {
-	my ($self, $args) = @_;
-
-	message TF("%s has been removed from the guild.\n" .
-		"Reason: %s\n", bytesToString($args->{name}), bytesToString($args->{message})), "schat";
-}
-
-sub guild_members_list {
-	my ($self, $args) = @_;
-
-	my ($newmsg, $jobID);
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-	$self->decrypt(\$newmsg, substr($msg, 4, length($msg) - 4));
-	$msg = substr($msg, 0, 4) . $newmsg;
-
-	my $c = 0;
-	delete $guild{member};
-	for (my $i = 4; $i < $msg_size; $i+=104){
-		$guild{member}[$c]{ID}    = substr($msg, $i, 4);
-		$guild{member}[$c]{charID}	  = substr($msg, $i+4, 4);
-		$jobID = unpack('v', substr($msg, $i + 14, 2));
-		# wtf? i guess this was a 'hack' for when the 40xx jobs weren't added to the globals yet...
-		#if ($jobID =~ /^40/) {
-		#	$jobID =~ s/^40/1/;
-		#	$jobID += 60;
-		#}
-		$guild{member}[$c]{jobID} = $jobID;
-		$guild{member}[$c]{lv}   = unpack('v', substr($msg, $i + 16, 2));
-		$guild{member}[$c]{contribution} = unpack('V', substr($msg, $i + 18, 4));
-		$guild{member}[$c]{online} = unpack('v', substr($msg, $i + 22, 2));
-		# TODO: we shouldn't store the guildtitle of a guildmember both in $guild{positions} and $guild{member}, instead we should just store the rank index of the guildmember and get the title from the $guild{positions}
-		my $gtIndex = unpack('V', substr($msg, $i + 26, 4));
-		$guild{member}[$c]{title} = $guild{positions}[$gtIndex]{title};
-		$guild{member}[$c]{name} = bytesToString(unpack('Z24', substr($msg, $i + 80, 24)));
-		$c++;
-	}
-
-}
-
-sub guild_member_online_status {
-	my ($self, $args) = @_;
-
-	foreach my $guildmember (@{$guild{member}}) {
-		if ($guildmember->{charID} eq $args->{charID}) {
-			if ($guildmember->{online} = $args->{online}) {
-				message TF("Guild member %s logged in.\n", $guildmember->{name}), "guildchat";
-			} else {
-				message TF("Guild member %s logged out.\n", $guildmember->{name}), "guildchat";
-			}
-			last;
-		}
-	}
-}
-
 sub misc_effect {
 	my ($self, $args) = @_;
 
@@ -2579,80 +2260,16 @@ sub misc_effect {
 	), 'effect'
 }
 
-sub guild_members_title_list {
-	my ($self, $args) = @_;
-
-	my $newmsg;
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-
-	$self->decrypt(\$newmsg, substr($msg, 4, length($msg) - 4));
-	$msg = substr($msg, 0, 4) . $newmsg;
-	my $gtIndex;
-	for (my $i = 4; $i < $msg_size; $i+=28) {
-		$gtIndex = unpack('V', substr($msg, $i, 4));
-		$guild{positions}[$gtIndex]{title} = bytesToString(unpack('Z24', substr($msg, $i + 4, 24)));
-	}
-}
-
-sub guild_name {
-	my ($self, $args) = @_;
-
-	my $guildID = $args->{guildID};
-	my $emblemID = $args->{emblemID};
-	my $mode = $args->{mode};
-	my $guildName = bytesToString($args->{guildName});
-	$char->{guild}{name} = $guildName;
-	$char->{guildID} = $guildID;
-	$char->{guild}{emblem} = $emblemID;
-
-	$messageSender->sendGuildRequestInfo(0);	#requests for guild info packet 01B6 and 014C
-	$messageSender->sendGuildRequestInfo(1);	#requests for guild member packet 0166 and 0154
-	debug "guild name: $guildName\n";
-}
-
-sub guild_notice {
-	my ($self, $args) = @_;
-
-	my $msg = $args->{RAW_MSG};
-	my ($address) = unpack("Z*", substr($msg, 2, 60));
-	my ($message) = unpack("Z*", substr($msg, 62, 120));
-	stripLanguageCode(\$address);
-	stripLanguageCode(\$message);
-	$address = bytesToString($address);
-	$message = bytesToString($message);
-
-	# don't show the huge guildmessage notice if there is none
-	# the client does something similar to this...
-	if ($address || $message) {
-		my $msg = TF("---Guild Notice---\n"	.
-			"%s\n\n" .
-			"%s\n" .
-			"------------------\n", $address, $message);
-		message $msg, "guildnotice";
-	}
-
-	#message	T("Requesting guild information...\n"), "info"; # Lets Disable this, its kinda useless.
-	$messageSender->sendGuildMasterMemberCheck();
-
-	# Replies 01B6 (Guild Info) and 014C (Guild Ally/Enemy List)
-	$messageSender->sendGuildRequestInfo(0);
-
-	# Replies 0166 (Guild Member Titles List) and 0154 (Guild Members List)
-	$messageSender->sendGuildRequestInfo(1);
-
-}
-
 sub guild_request {
 	my ($self, $args) = @_;
 
-	# Guild request
-	my $ID = $args->{ID};
 	my $name = bytesToString($args->{name});
-	message TF("Incoming Request to join Guild '%s'\n", $name);
-	$incomingGuild{'ID'} = $ID;
-	$incomingGuild{'Type'} = 1;
+	message TF("自动拒绝加入公会 '%s' 的请求\n", $name);
+
+	if (imeOut($timeout{'ai_guildAutoDeny'})) {
+	$messageSender->sendGuildJoin($args->{ID}, 0);
 	$timeout{'ai_guildAutoDeny'}{'time'} = time;
+	}
 }
 
 sub identify {
@@ -6282,23 +5899,6 @@ sub hack_shield_alarm {
 	Commands::run('relog 100000000');
 }
 
-sub guild_alliance {
-	my ($self, $args) = @_;
-	if ($args->{flag} == 0) {
-		message T("Already allied.\n"), "info";
-	} elsif ($args->{flag} == 1) {
-		message T("You rejected the offer.\n"), "info";
-	} elsif ($args->{flag} == 2) {
-		message T("You accepted the offer.\n"), "info";
-	} elsif ($args->{flag} == 3) {
-		message T("They have too any alliances\n"), "info";
-	} elsif ($args->{flag} == 4) {
-		message T("You have too many alliances.\n"), "info";
-	} else {
-		warning TF("flag: %s gave unknown results in: %s\n", $args->{flag}, $self->{packet_list}{$args->{switch}}->[0]);
-	}
-}
-
 sub talkie_box {
 	my ($self, $args) = @_;
 	message TF("%s's talkie box message: %s.\n", Actor::get($args->{ID})->nameString(), $args->{message}), "info";
@@ -6349,75 +5949,6 @@ sub taekwon_packets {
 	} else {
 		warning TF("flag: %s gave unknown results in: %s\n", $args->{flag}, $self->{packet_list}{$args->{switch}}->[0]);
 	}
-}
-
-sub guild_master_member {
-	my ($self, $args) = @_;
-	if ($args->{type} == 0xd7) {
-	} elsif ($args->{type} == 0x57) {
-		message T("You are not a guildmaster.\n"), "info";
-		return;
-	} else {
-		warning TF("type: %s gave unknown results in: %s\n", $args->{type}, $self->{packet_list}{$args->{switch}}->[0]);
-		return;
-	}
-	message T("You are a guildmaster.\n"), "info";
-}
-
-# 0151
-# TODO
-sub guild_emblem_img {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0152
-# TODO
-sub guild_emblem {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0156
-# TODO
-sub guild_member_position_changed {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 01B4
-# TODO
-sub guild_emblem_update {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0174
-# TODO
-sub guild_position_changed {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0184
-# TODO
-sub guild_unally {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0181
-# TODO
-sub guild_opposition_result {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
-}
-
-# 0185
-# TODO: this packet doesn't exist in eA
-sub guild_alliance_added {
-	my ($self, $args) = @_;
-	debug $self->{packet_list}{$args->{switch}}->[0] . " " . join(', ', @{$args}{@{$self->{packet_list}{$args->{switch}}->[2]}}) . "\n";
 }
 
 # 0192
@@ -6538,7 +6069,7 @@ sub instance_window_join {
 #2 = "The Memorial Dungeon's entry time limit expired; it has been destroyed."
 #3 = "The Memorial Dungeon has been removed."
 #4 = "A system error has occurred in the Memorial Dungeon. Please relog in to the game to continue playing."
-#    Just remove the window, maybe party/guild leave.
+#    Just remove the window, maybe party leave.
 # TODO: test if correct message displays, no type == 0 ?
 sub instance_window_leave {
 	my ($self, $args) = @_;
@@ -6550,7 +6081,7 @@ sub instance_window_leave {
 	} elsif($args->{flag} == 3) { # TYPE_DESTROY_USER_REQUEST =  0x3
 		message T("The Memorial Dungeon has been removed.\n"), "info";
 	} elsif ($args->{flag} == 4) { # TYPE_CREATE_FAIL =  0x4
-		message T("The instance windows has been removed, possibly due to party/guild leave.\n"), "info";
+		message T("The instance windows has been removed, possibly due to party leave.\n"), "info";
 	} else {
 		warning TF("flag: %s gave unknown results in: %s\n", $args->{flag}, $self->{packet_list}{$args->{switch}}->[0]);
 	}
@@ -7130,18 +6661,6 @@ sub battlefield_hp {
 	my $ID = $args->{ID};
 	my $name = $args->{name};
 	
-}
-
-sub guild_member_map_change {
-	my ($self, $args) = @_;
-	debug("AID: %d (GID: %d) changed map to %s\n",$args->{AID}, $args->{GDID}, $args->{mapName});
-}
-
-sub guild_member_add {
-	my ($self, $args) = @_;
-	
-	my $name = bytesToString($args->{name});
-	message TF("Guild member added: %s\n",$name), "guildchat";
 }
 
 sub millenium_shield {

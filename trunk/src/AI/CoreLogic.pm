@@ -97,7 +97,6 @@ sub iterate {
 	processDeal();
 	processDealAuto();
 	processPartyAuto();
-	processGuildAutoDeny();
 
 	Misc::checkValidity("AI part 1.1");
 	processDead();
@@ -778,55 +777,6 @@ sub processPartyAuto {
 		undef %incomingParty;
 	}
 }
-
-sub processGuildAutoDeny {
-	if ($config{'guildAutoDeny'} && %incomingGuild && timeOut($timeout{'ai_guildAutoDeny'})) {
-		$messageSender->sendGuildJoin($incomingGuild{'ID'}, 0) if ($incomingGuild{'Type'} == 1);
-		$messageSender->sendGuildAlly($incomingGuild{'ID'}, 0) if ($incomingGuild{'Type'} == 2);
-		$timeout{'ai_guildAutoDeny'}{'time'} = time;
-		undef %incomingGuild;
-	}
-}
-
-=pod moved to a plugin
-##### AUTOBREAKTIME #####
-# Break time: automatically disconnect at certain times of the day
-sub processAutoBreakTime {
-	if (timeOut($AI::Timeouts::autoBreakTime, 30)) {
-		my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime;
-		my $hormin = sprintf("%02d:%02d", $hour, $min);
-		my @wdays = ('sun','mon','tue','wed','thu','fri','sat');
-		debug "autoBreakTime: hormin = $hormin, weekday = $wdays[$wday]\n", "autoBreakTime", 2;
-		for (my $i = 0; exists $config{"autoBreakTime_$i"}; $i++) {
-			next if (!$config{"autoBreakTime_$i"});
-
-			if  ( ($wdays[$wday] eq lc($config{"autoBreakTime_$i"})) || (lc($config{"autoBreakTime_$i"}) eq "all") ) {
-				if ($config{"autoBreakTime_${i}_startTime"} eq $hormin) {
-					my ($hr1, $min1) = split /:/, $config{"autoBreakTime_${i}_startTime"};
-					my ($hr2, $min2) = split /:/, $config{"autoBreakTime_${i}_stopTime"};
-					my $time1 = $hr1 * 60 * 60 + $min1 * 60;
-					my $time2 = $hr2 * 60 * 60 + $min2 * 60;
-					my $diff = ($time2 - $time1) % (60 * 60 * 24);
-
-					message TF("\nDisconnecting due to break time: %s to %s\n\n", $config{"autoBreakTime_$i"."_startTime"}, $config{"autoBreakTime_$i"."_stopTime"}), "system";
-					chatLog("k", TF("*** Disconnected due to Break Time: %s to %s ***\n", $config{"autoBreakTime_$i"."_startTime"}, $config{"autoBreakTime_$i"."_stopTime"}));
-
-					$timeout_ex{'master'}{'timeout'} = $diff;
-					$timeout_ex{'master'}{'time'} = time;
-					$KoreStartTime = time;
-					$net->serverDisconnect();
-					AI::clear();
-					undef %ai_v;
-					$net->setState(Network::NOT_CONNECTED);
-					undef $conState_tries;
-					last;
-				}
-			}
-		}
-		$AI::Timeouts::autoBreakTime = time;
-	}
-}
-=cut
 
 ##### DEAD #####
 sub processDead {
