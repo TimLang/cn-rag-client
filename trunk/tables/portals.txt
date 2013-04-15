@@ -1,4 +1,4 @@
-﻿#飞空艇(国内线)
+#飞空艇(国内线)
 airplane 208 53 airplane 245 160
 airplane 245 160 airplane 208 53
 airplane 254 54 airplane 87 67
@@ -409,6 +409,10 @@ izlude 20 98 prt_fild08 367 212
 izlude 125 257 iz_ac01 99 29
 izlude 135 257 iz_ac01 99 29
 iz_ac01 100 24 izlude 127 253
+iz_ac01 122 25 iz_ac02 104 27
+iz_ac01 78 25 iz_ac02 104 27
+iz_ac02 94 27 iz_ac01 78 28
+iz_ac02 113 27 iz_ac01 122 28
 #依斯鲁得-岛柏伊亚嵐岛
 izlu2dun 108 83 iz_dun00 168 173
 #海底 洞窟
