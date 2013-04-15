@@ -1,13 +1,4 @@
-﻿#######################################################
-# 新增完成日期為 2010/12/2 ,最后修改日期為 2011/2/23  #
-# 新增海洞6                                           #
-# Try71023仅发表於月光论坛                            #
-#                                                     #
-# 最后修改日期為 2012/3/1                             #
-# 新增绵绵岛路径.飞空艇路径                           #
-#######################################################
-
-#飞空艇(国内线)
+﻿#飞空艇(国内线)
 airplane 208 53 airplane 245 160
 airplane 245 160 airplane 208 53
 airplane 254 54 airplane 87 67
@@ -736,9 +727,9 @@ geffen 138 138 geffen_in 28 106
 geffen 98 141 geffen_in 28 160
 geffen 120 114 gef_tower 52 177
 geffen 113 57 gefenia03 130 206
-geffen 113 57 gefenia01 130 206
-geffen 113 57 gefenia02 130 206
-geffen 113 57 gefenia04 130 206
+geffen 113 57 gefenia01 58 169
+geffen 113 57 gefenia02 116 115
+geffen 113 57 gefenia04 133 88
 geffen_in 28 156 geffen 101 138
 geffen_in 28 106 geffen 138 138
 geffen_in 166 54 geffen 140 99
@@ -1682,8 +1673,8 @@ ayo_dun02 276 22 ayo_dun01 24 283
 ayo_dun02 24 22 ayo_dun01 24 283
 ########################################
 #钢铁之都-艾音布罗克
-#einbroch 232 272 einbech 43 215 200 c r0 n
-#einbroch 252 301 einbech 43 215 200 c r0 n
+einbroch 232 272 einbech 43 215 200 c r0 n
+einbroch 252 301 einbech 43 215 200 c r0 n
 einbroch 157 331 ein_fild04 184 26
 einbroch 129 229 ein_in01 11 147
 einbroch 214 263 einbroch 233 312
@@ -1736,7 +1727,7 @@ ein_in01 195 224 einbroch 257 199
 ein_in01 108 13 einbroch 216 214
 ein_in01 11 147 einbroch 129 229
 #採矿村落 艾音贝赫
-#einbech 39 215 einbroch 226 276 200 c r0 n
+einbech 39 215 einbroch 226 276 200 c r0 n
 einbech 138 252 ein_dun01 22 11
 einbech 62 29 ein_fild09 71 352
 einbech 177 136 ein_in01 190 35
@@ -2519,7 +2510,8 @@ gl_step 8 7 glast_01 51 108
 #古城 骑士团
 gl_knt01 128 292 gl_knt01 104 204
 gl_knt01 104 204 gl_knt01 128 292
-gl_knt01 231 197 gl_sew02 296 18
+#gl_knt01 231 197 gl_sew02 296 18
+#暂时屏蔽这个会导致寻路问题
 gl_knt01 150 6 glast_01 77 193
 gl_knt01 12 148 gl_knt02 10 138
 gl_knt01 287 144 gl_knt02 289 138
@@ -3373,3 +3365,8 @@ alberta 200 151 malangdo 217 85 0 c r1 c c r0
 
 # CN Kore新增
 geffen 120 62 mjolnir_02 99 351 1700 c r2 c r3
+# 彩虹桥
+splendide 275 390 bif_fild01 316 50
+bif_fild01 318 48 splendide 271 386
+mora 20 159 bif_fild02 99 308
+bif_fild02 95 310 mora 22 157 0 c r0 n

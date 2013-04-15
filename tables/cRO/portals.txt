@@ -3365,3 +3365,8 @@ alberta 200 151 malangdo 217 85 0 c r1 c c r0
 
 # CN Kore新增
 geffen 120 62 mjolnir_02 99 351 1700 c r2 c r3
+# 彩虹桥
+splendide 275 390 bif_fild01 316 50
+bif_fild01 318 48 splendide 271 386
+mora 20 159 bif_fild02 99 308
+bif_fild02 95 310 mora 22 157 0 c r0 n
