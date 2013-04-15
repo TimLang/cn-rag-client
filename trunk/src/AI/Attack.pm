@@ -377,15 +377,17 @@ sub main {
 		}
 
 	} elsif (
-		$config{attackCheckLOS} && $args->{attackMethod}{distance} > 2
+		$config{attackCheckLOS} && $realMonsterDist > 1
 		&& (($config{attackCanSnipe} && !checkLineSnipable($realMyPos, $realMonsterPos))
-		|| (!$config{attackCanSnipe} && $realMonsterDist <= $args->{attackMethod}{maxDistance} && !checkLineWalkable($realMyPos, $realMonsterPos, 1)))
+		|| (!$config{attackCanSnipe} && $realMonsterDist <= $args->{attackMethod}{maxDistance} && !checkLineWalkable($realMyPos, $realMonsterPos, 0)))
+		# 防止卡住
 	) {
 		# We are a ranged attacker without LOS
 		# Calculate squares around monster within shooting range, but not
 		# closer than runFromTarget_dist
 		my @stand = calcRectArea2($realMonsterPos->{x}, $realMonsterPos->{y},
-					  $args->{attackMethod}{distance},
+					  round($args->{attackMethod}{maxDistance}),
+					  # 四舍五入距离
 								  $config{runFromTarget} ? $config{runFromTarget_dist} : 0);
 
 		my ($master, $masterPos);
@@ -409,7 +411,8 @@ sub main {
 			#    $masterPos, if we have a master.
 			if (
 			    (($config{attackCanSnipe} && checkLineSnipable($spot, $realMonsterPos))
-				|| checkLineWalkable($spot, $realMonsterPos))
+				|| checkLineWalkable($spot, $realMonsterPos, 0))
+				# 防止在LOS上卡住造成不断来回走
 				&& $field->isWalkable($spot->{x}, $spot->{y})
 				&& ($realMyPos->{x} != $spot->{x} && $realMyPos->{y} != $spot->{y})
 				&& (!$master || round(distance($spot, $masterPos)) <= $config{followDistanceMax})
