@@ -1,4 +1,4 @@
-#########################################################################
+﻿#########################################################################
 #  OpenKore - Commandline
 #
 #  This software is open source, licensed under the GNU General Public
@@ -75,10 +75,8 @@ sub initHandlers {
 	card               => \&cmdCard,
 	cart               => \&cmdCart,
 	charselect         => \&cmdCharSelect,
-	chat               => \&cmdChatRoom,
 	chist              => \&cmdChist,
 	cil                => \&cmdItemLogClear,
-	cl                 => \&cmdChatRoom,
 	clearlog           => \&cmdChatLogClear,
 	closeshop          => \&cmdCloseShop,
 	conf               => \&cmdConf,
@@ -937,175 +935,6 @@ sub cmdChat {
 sub cmdChatLogClear {
 	chatLog_clear();
 	message T("Chat log cleared.\n"), "success";
-}
-
-sub cmdChatRoom {
-	if (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", shift);
-		return;
-	}
-
-	my ($command, $args) = @_;
-	my ($arg1) = $args =~ /^(\w+)/;
-
-	if($command eq 'cl') {
-		$arg1 = 'list';
-	}
-
-	if ($arg1 eq "bestow") {
-		my ($arg2) = $args =~ /^\w+ (\d+)/;
-
-		if ($currentChatRoom eq "") {
-			error T("Error in function 'chat bestow' (Bestow Admin in Chat)\n" .
-				"You are not in a Chat Room.\n");
-		} elsif ($arg2 eq "") {
-			error T("Syntax Error in function 'chat bestow' (Bestow Admin in Chat)\n" .
-				"Usage: chat bestow <user #>\n");
-		} elsif ($currentChatRoomUsers[$arg2] eq "") {
-			error TF("Error in function 'chat bestow' (Bestow Admin in Chat)\n" .
-				"Chat Room User %s doesn't exist; type 'chat info' to see the list of users\n", $arg2);
-		} else {
-			$messageSender->sendChatRoomBestow($currentChatRoomUsers[$arg2]);
-		}
-
-	} elsif ($arg1 eq "modify") {
-		my ($title) = $args =~ /^\w+ \"([\s\S]*?)\"/;
-		my ($users) = $args =~ /^\w+ \"[\s\S]*?\" (\d+)/;
-		my ($public) = $args =~ /^\w+ \"[\s\S]*?\" \d+ (\d+)/;
-		my ($password) = $args =~ /^\w+ \"[\s\S]*?\" \d+ \d+ ([\s\S]+)/;
-
-		if ($title eq "") {
-			error T("Syntax Error in function 'chatmod' (Modify Chat Room)\n" .
-				"Usage: chat modify \"<title>\" [<limit #> <public flag> <password>]\n");
-		} else {
-			if ($users eq "") {
-				$users = 20;
-			}
-			if ($public eq "") {
-				$public = 1;
-			}
-			$messageSender->sendChatRoomChange($title, $users, $public, $password);
-		}
-
-	} elsif ($arg1 eq "kick") {
-		my ($arg2) = $args =~ /^\w+ (\d+)/;
-
-		if ($currentChatRoom eq "") {
-			error T("Error in function 'chat kick' (Kick from Chat)\n" .
-				"You are not in a Chat Room.\n");
-		} elsif ($arg2 eq "") {
-			error T("Syntax Error in function 'chat kick' (Kick from Chat)\n" .
-				"Usage: chat kick <user #>\n");
-		} elsif ($currentChatRoomUsers[$arg2] eq "") {
-			error TF("Error in function 'chat kick' (Kick from Chat)\n" .
-				"Chat Room User %s doesn't exist\n", $arg2);
-		} else {
-			$messageSender->sendChatRoomKick($currentChatRoomUsers[$arg2]);
-		}
-
-	} elsif ($arg1 eq "join") {
-		my ($arg2) = $args =~ /^\w+ (\d+)/;
-		my ($arg3) = $args =~ /^\w+ \d+ (\w+)/;
-
-		if ($arg2 eq "") {
-			error T("Syntax Error in function 'chat join' (Join Chat Room)\n" .
-				"Usage: chat join <chat room #> [<password>]\n");
-		} elsif ($currentChatRoom ne "") {
-			error T("Error in function 'chat join' (Join Chat Room)\n" .
-				"You are already in a chat room.\n");
-		} elsif ($chatRoomsID[$arg2] eq "") {
-			error TF("Error in function 'chat join' (Join Chat Room)\n" .
-				"Chat Room %s does not exist.\n", $arg2);
-		} else {
-			$messageSender->sendChatRoomJoin($chatRoomsID[$arg2], $arg3);
-		}
-
-	} elsif ($arg1 eq "leave") {
-		if ($currentChatRoom eq "") {
-			error T("Error in function 'chat leave' (Leave Chat Room)\n" .
-				"You are not in a Chat Room.\n");
-		} else {
-			$messageSender->sendChatRoomLeave();
-		}
-
-	} elsif ($arg1 eq "create") {
-		my ($title) = $args =~ /^\w+ \"([\s\S]*?)\"/;
-		my ($users) = $args =~ /^\w+ \"[\s\S]*?\" (\d+)/;
-		my ($public) = $args =~ /^\w+ \"[\s\S]*?\" \d+ (\d+)/;
-		my ($password) = $args =~ /^\w+ \"[\s\S]*?\" \d+ \d+ ([\s\S]+)/;
-
-		if ($title eq "") {
-			error T("Syntax Error in function 'chat create' (Create Chat Room)\n" .
-				"Usage: chat create \"<title>\" [<limit #> <public flag> <password>]\n");
-		} elsif ($currentChatRoom ne "") {
-			error T("Error in function 'chat create' (Create Chat Room)\n" .
-				"You are already in a chat room.\n");
-		} else {
-			if ($users eq "") {
-				$users = 20;
-			}
-			if ($public eq "") {
-				$public = 1;
-			}
-			$title = substr($title,0,36);
-			$messageSender->sendChatRoomCreate($title, $users, $public, $password);
-			%createdChatRoom = ();
-			$createdChatRoom{title} = $title;
-			$createdChatRoom{ownerID} = $accountID;
-			$createdChatRoom{limit} = $users;
-			$createdChatRoom{public} = $public;
-			$createdChatRoom{num_users} = 1;
-			$createdChatRoom{users}{$char->{name}} = 2;
-		}
-
-	} elsif ($arg1 eq "list") {
-		message T("------------------------------- Chat Room List --------------------------------\n" .
-			"#   Title                                  Owner                Users   Type\n"), "list";
-		for (my $i = 0; $i < @chatRoomsID; $i++) {
-			next if (!defined $chatRoomsID[$i]);
-			my $room = $chatRooms{$chatRoomsID[$i]};
-			my $owner_string = Actor::get($room->{ownerID})->name;
-			my $public_string = ($room->{public}) ? "Public" : "Private";
-			my $limit_string = $room->{num_users} . "/" . $room->{limit};
-			message(swrite(
-				"@<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<< @<<<<<< @<<<<<<",
-				[$i, $room->{title}, $owner_string, $limit_string, $public_string]),
-				"list");
-		}
-		message("-------------------------------------------------------------------------------\n", "list");
-
-	} elsif ($arg1 eq "info") {
-		if ($currentChatRoom eq "") {
-			error T("There is no chat room info - you are not in a chat room\n");
-		} else {
-			message T("-----------Chat Room Info-----------\n" .
-				"Title                     Users   Public/Private\n"), "list";
-			my $public_string = ($chatRooms{$currentChatRoom}{'public'}) ? "Public" : "Private";
-			my $limit_string = $chatRooms{$currentChatRoom}{'num_users'}."/".$chatRooms{$currentChatRoom}{'limit'};
-
-			message(swrite(
-				"@<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<< @<<<<<<<<<",
-				[$chatRooms{$currentChatRoom}{'title'}, $limit_string, $public_string]),
-				"list");
-
-			# Translation Comment: Users in chat room
-			message T("-- Users --\n"), "list";
-			for (my $i = 0; $i < @currentChatRoomUsers; $i++) {
-				next if ($currentChatRoomUsers[$i] eq "");
-				my $user_string = $currentChatRoomUsers[$i];
-				my $admin_string = ($chatRooms{$currentChatRoom}{'users'}{$currentChatRoomUsers[$i]} > 1) ? "(Admin)" : "";
-				message(swrite(
-					"@<< @<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<",
-					[$i, $user_string, $admin_string]),
-					"list");
-			}
-			message("------------------------------------\n", "list");
-		}
-	} else {
-		error T("Syntax Error in function 'chat' (Chat room management)\n" .
-			"Usage: chat <create|modify|join|kick|leave|info|list|bestow>\n");
-	}
-
 }
 
 sub cmdChist {
@@ -2528,11 +2357,7 @@ sub cmdMove {
 		message T("Stopped all movement\n"), "success";
 	} else {
 		AI::clear(qw/move route mapRoute/);
-		if ($currentChatRoom ne "") {
-			error T("Error in function 'move' (Move Player)\n" .
-				"Unable to walk while inside a chat room!\n" .
-				"Use the command: chat leave\n");
-		} elsif ($shopstarted) {
+		if ($shopstarted) {
 			error T("Error in function 'move' (Move Player)\n" .
 				"Unable to walk while the shop is open!\n" .
 				"Use the command: closeshop\n");
@@ -3582,16 +3407,16 @@ sub cmdStats {
 		return;
 	}
 	my $msg = swrite(TF(
-		"---------- Char Stats ----------\n" .
-		"Str: \@<<+\@<< #\@< Atk:  \@<<+\@<< Def:  \@<<+\@<<\n" .
-		"Agi: \@<<+\@<< #\@< Matk: \@<<\@\@<< Mdef: \@<<+\@<<\n" .
-		"Vit: \@<<+\@<< #\@< Hit:  \@<<     Flee: \@<<+\@<<\n" .
-		"Int: \@<<+\@<< #\@< Critical: \@<< Aspd: \@<<\n" .
-		"Dex: \@<<+\@<< #\@< Status Points: \@<<<\n" .
-		"Luk: \@<<+\@<< #\@< \n" .
+		"---------- 人物状态 ----------\n" .
+		"力量: \@<<+\@<< #\@< 攻击力: \@<<+\@<< \t\t防御力: \@<<+\@<<\n" .
+		"敏捷: \@<<+\@<< #\@< 魔法攻击力: \@<<\@\@<< \t魔法防御力: \@<<+\@<<\n" .
+		"体力: \@<<+\@<< #\@< 命中率: \@<< \t\t回避率: \@<<+\@<<\n" .
+		"智力: \@<<+\@<< #\@< 必杀攻击率: \@<< \t\t攻击速度: \@<<\n" .
+		"灵巧: \@<<+\@<< #\@< 属性点数: \@<<<\n" .
+		"幸运: \@<<+\@<< #\@<\n" .
 		"--------------------------------\n" .
-		"Hair color: \@<<<<<<<<<<<<<<<<<\n" .
-		"Walk speed: %.2f secs per block\n" .
+		"头发颜色: \@<<<<<<<<<<<<<<<<<\n" .
+		"移动速度: 每格 %.2f 秒\n" .
 		"--------------------------------", $char->{walk_speed}),	
 	[$char->{'str'}, $char->{'str_bonus'}, $char->{'points_str'}, $char->{'attack'}, $char->{'attack_bonus'}, $char->{'def'}, $char->{'def_bonus'},
 	$char->{'agi'}, $char->{'agi_bonus'}, $char->{'points_agi'}, $char->{'attack_magic_min'}, '~', $char->{'attack_magic_max'}, $char->{'def_magic'}, $char->{'def_magic_bonus'},
@@ -3660,18 +3485,18 @@ sub cmdStatus {
 	my $elasped_string = sprintf("%.2f", $elasped);
 	
 	$msg = swrite(
-		TF("----------------------- Status -------------------------\n" .
+		TF("----------------------- 状态 -------------------------\n" .
 		"\@<<<<<<<<<<<<<<<<<<<<<<<         HP: \@>>>>>>>>>>>>>>>>>>\n" .
 		"\@<<<<<<<<<<<<<<<<<<<<<<<         SP: \@>>>>>>>>>>>>>>>>>>\n" .
-		"Base: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
-		"Job : \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
-		"Zeny: \@<<<<<<<<<<<<<<<<<     Weight: \@>>>>>>>>>>>>>>>>>>\n" .
-		"Statuses: %s\n" .
-		"Spirits/Coins/Amulets: %s\n" .
+		"等级: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
+		"职业等级: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
+		"金钱: \@<<<<<<<<<<<<<<<<<     负重: \@>>>>>>>>>>>>>>>>>>\n" .
+		"状态: %s\n" .
+		"气球数/硬币/护身符: %s\n" .
 		"--------------------------------------------------------\n" .
-		"Total Damage: \@>>>>>>>>>>>>> Dmg/sec: \@<<<<<<<<<<<<<<\n" .
-		"Total Time spent (sec): \@>>>>>>>>\n" .
-		"Last Monster took (sec): \@>>>>>>>\n" .
+		"对敌总伤害: \@>>>>>>>>>>>>> 伤害/秒: \@<<<<<<<<<<<<<<\n" .
+		"花费时间 (秒): \@>>>>>>>>\n" .
+		"打死最后一只魔物所花时间 (秒): \@>>>>>>>\n" .
 		"--------------------------------------------------------",
 		$char->statusesString, (exists $char->{spirits} && $char->{spirits} != 0 ? ($char->{amuletType} ? $char->{spirits} . "\tType: " . $char->{amuletType} : $char->{spirits}) : 0)),
 		[$char->{'name'}, $hp_string, $job_name_string, $sp_string,

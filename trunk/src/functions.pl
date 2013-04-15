@@ -908,8 +908,6 @@ sub initMapChangeVars {
 	undef %incomingDeal;
 	undef %outgoingDeal;
 	undef %currentDeal;
-	undef $currentChatRoom;
-	undef @currentChatRoomUsers;
 	undef @itemsID;
 	undef @identifyID;
 	undef @spellsID;
@@ -932,9 +930,6 @@ sub initMapChangeVars {
 	undef $buyingStoreID;
 	undef @buyerListsID;
 	undef %buyerLists;
-	undef @chatRoomsID;
-	undef %chatRooms;
-	undef %createdChatRoom;
 	undef @lastpm;
 	undef $repairList;
 	undef $devotionList;
