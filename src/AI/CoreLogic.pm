@@ -1514,7 +1514,7 @@ sub processAutoBuy {
 			$ai_v{'temp'}{'do_route'} = 1;
 		} else {
 			$ai_v{'temp'}{'distance'} = distance($args->{'npc'}{'pos'}, $chars[$config{'char'}]{'pos_to'});
-			if (($ai_v{'temp'}{'distance'} > AI::args->{distance}) {
+			if ( $ai_v{'temp'}{'distance'} > AI::args->{distance} ) {
 			# 不同NPC购买造成的问题
 				$ai_v{'temp'}{'do_route'} = 1;
 			}
