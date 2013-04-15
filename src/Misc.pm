@@ -54,6 +54,8 @@ use Actor::Unknown;
 use Time::HiRes qw(time usleep);
 use Translation;
 use Utils::Exceptions;
+use Task::Route;
+# 加入寻路判断 Maple
 
 our @EXPORT = (
 	# Config modifiers
@@ -2096,7 +2098,8 @@ sub meetingPosition {
 				$timeCharWalks = calcTime(\%realMyPos, \%charStep, $mySpeed);
 
 				# Check whether character comes earlier or at the same time
-				if ($timeCharWalks <= $timeMonsterWalks) {
+				if ($timeCharWalks <= $timeMonsterWalks && $field->isWalkable($charStep{x}, $charStep{y}) ) {
+				# 计算是否可以走
 					return \%charStep;
 				}
 			}
@@ -2108,7 +2111,8 @@ sub meetingPosition {
 		%charStep = moveAlong(\%realMyPos, \%monsterPosTo, $charStep);
 
 		# Check whether the distance is fine
-		if (round(distance(\%charStep, \%monsterPosTo)) <= $attackMaxDistance) {
+		if (round(distance(\%charStep, \%monsterPosTo)) <= $attackMaxDistance && $field->isWalkable($charStep{x}, $charStep{y})) {
+		# 同样加上可走计算
 			last;
 		}
 	}
@@ -2858,8 +2862,9 @@ sub updateDamageTables {
 					my $attackSeq = ($player->action eq 'route') ? $player->args(1) : $player->args(2);
 					if (
 						!($accountID eq $targetID ? $attackTarget->{dmgToYou} : $attackTarget->{dmgToPlayer}{$targetID})
-						&& !($accountID eq $targetID ? $attackTarget->{dmgToYou} : $attackTarget->{dmgFromPlayer}{$targetID})
-						&& distance($monster->{pos_to}, calcPosition($player)) <= $attackSeq->{attackMethod}{distance}
+						&& !($accountID eq $targetID ? $attackTarget->{dmgFromYou} : $attackTarget->{dmgFromPlayer}{$targetID}
+						&& distance($monster->{pos_to}, calcPosition($player)) <= $attackSeq->{attackMethod}{maxDistance}
+						# 优先攻击在寻路过程中打你的怪物
 					) {
 						my $ignore = 0;
 						# Don't attack ignored monsters
@@ -3220,6 +3225,8 @@ sub getBestTarget {
 	my @noLOSMonsters;
 	my $myPos = calcPosition($char);
 	my ($highestPri, $smallestDist, $bestTarget);
+	my $MaxSteps = $config{attackMaxRouteDistance} || 40;
+	# 把寻路最大路径初始化 Maple
 
 	# First of all we check monsters in LOS, then the rest of monsters
 
@@ -3239,19 +3246,41 @@ sub getBestTarget {
 				|| ($control->{attack_auto} == 0 && !($monster->{dmgToYou} || $monster->{missedYou}))
 			);
 		}
-		if ($config{'attackCanSnipe'}) {
-			if (!checkLineSnipable($myPos, $pos)) {
-				push(@noLOSMonsters, $_);
-				next;
+		my $name = lc $monster->{name};
+		my $dist = distance($myPos, $pos);
+		# 直接给出距离 不四舍五入
+        
+		# Maple Start
+		if ($config{attackCheckRouteDistance} && $field) {
+			my @solution;
+			if ($dist >= 2 && (!$config{'attackCanSnipe'} || !checkLineSnipable($myPos, $pos)) ) {
+                my $ret = Task::Route->getRoute( \@solution, $field, $myPos, $pos, 1 );
+                unless ($ret) {
+                        $monster->{ignore} = 1;
+                        next;
+                }
+                my $Steps = scalar @solution;
+                if ($Steps < $MaxSteps) {
+                        $dist = $Steps;
+                } else {
+                        next;
+                }
 			}
+			# 给出LOS中最佳的怪物
 		} else {
-			if (!checkLineWalkable($myPos, $pos)) {
-				push(@noLOSMonsters, $_);
-				next;
+			if ($config{'attackCanSnipe'}) {
+                if (!checkLineSnipable($myPos, $pos)) {
+                        push(@noLOSMonsters, $_);
+                        next;
+                }
+			} else {
+                if (!checkLineWalkable($myPos, $pos)) {
+                        push(@noLOSMonsters, $_);
+                        next;
+                }
 			}
 		}
-		my $name = lc $monster->{name};
-		my $dist = round(distance($myPos, $pos));
+		# Maple End
 		
 		# COMMENTED (FIX THIS): attackMaxDistance should never be used as indication of LOS
 		#     The objective of attackMaxDistance is to determine the range of normal attack,
