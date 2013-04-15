@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-13 15:22+0800\n"
+"PO-Revision-Date: 2013-04-15 23:28+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,71 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Poedit 1.5.4\n"
 
+msgid ""
+"Empty coordinates setting for planLockMapWalk; planLockMapWalk disabled\n"
+msgstr "planLockMapWalk锁定地图路径点插件是空白的路径点设置; 插件功能关闭.\n"
+
+msgid "Do plan walking route to: %s: %s, %s\n"
+msgstr "自定义路径点到: %s: %s, %s\n"
+
+msgid ""
+"Invalid coordinates specified (%d, %d) for planLockMapWalk (coordinates are "
+"unwalkable); planLockMapWalk disabled\n"
+msgstr "锁定地图计划路径点坐标 (%d, %d) 是不可行走的无效坐标; 插件功能关闭.\n"
+
+msgid "The Plan Lock Map is : %s (Step: %d)\n"
+msgstr "自定义刷怪地图为 : %s (步数: %d)\n"
+
+msgid "The configuration file is : %s \n"
+msgstr "自定义路径点设置文件为 : %s \n"
+
+msgid "Walk Point(%d/%d) : %s, %s\n"
+msgstr "路径点 (%d/%d) : %s, %s\n"
+
 msgid "Server full or Banned.\n"
 msgstr "服务器已满或者已被封号.\n"
 
 msgid "Server is full. Please try later.\n"
 msgstr "服务器已满, 请稍后再试.\n"
+
+msgid "Reload"
+msgstr "重载"
+
+msgid "Variables"
+msgstr "变量"
+
+msgid "Go"
+msgstr "运行"
+
+msgid "Break"
+msgstr "暂停"
+
+msgid "PAUSE"
+msgstr "暂停"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "STOP"
+msgstr "停止"
+
+msgid "RUN"
+msgstr "运行"
+
+msgid "Step into"
+msgstr "下一步"
+
+msgid "Step over"
+msgstr "至末尾"
+
+msgid "Step out"
+msgstr "跳出"
+
+msgid "Macro"
+msgstr "宏命令"
+
+msgid "Enter new value for variable %s."
+msgstr "输入新的变量值 %s."
 
 #: ../../openkore.pl:129
 #, perl-format
