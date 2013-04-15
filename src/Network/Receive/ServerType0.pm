@@ -128,15 +128,18 @@ sub new {
 		'00D1' => ['ignore_player_result', 'C2', [qw(type error)]],
 		'00D2' => ['ignore_all_result', 'C2', [qw(type error)]],
 		'00D4' => ['whisper_list'],
-		'00D6' => ['chat_created'],
-		'00D7' => ['chat_info', 'x2 a4 a4 v2 C a*', [qw(ownerID ID limit num_users public title)]],
-		'00D8' => ['chat_removed', 'a4', [qw(ID)]],
-		'00DA' => ['chat_join_result', 'C', [qw(type)]],
-		'00DB' => ['chat_users'],
-		'00DC' => ['chat_user_join', 'v Z24', [qw(num_users user)]],
-		'00DD' => ['chat_user_leave', 'v Z24 C', [qw(num_users user flag)]],
-		'00DF' => ['chat_modified', 'x2 a4 a4 v2 C a*', [qw(ownerID ID limit num_users public title)]],
-		'00E1' => ['chat_newowner', 'C x3 Z24', [qw(type user)]],
+		
+		# ChatRoom
+		'00D6' => ['del_packet'],
+		'00D7' => ['del_packet'],
+		'00D8' => ['del_packet'],
+		'00DA' => ['del_packet'],
+		'00DB' => ['del_packet'],
+		'00DC' => ['del_packet'],
+		'00DD' => ['del_packet'],
+		'00DF' => ['del_packet'],
+		'00E1' => ['del_packet'],
+		
 		'00E5' => ['deal_request', 'Z24', [qw(user)]],
 		'00E7' => ['deal_begin', 'C', [qw(type)]],
 		'00E9' => ['deal_add_other', 'V v C3 a8', [qw(amount nameID identified broken upgrade cards)]],
@@ -1572,168 +1575,6 @@ sub character_status {
 	setStatus($actor, $args->{opt1}, $args->{opt2}, $args->{option});
 }
 
-sub chat_created {
-	my ($self, $args) = @_;
-
-	$currentChatRoom = $accountID;
-	$chatRooms{$accountID} = {%createdChatRoom};
-	binAdd(\@chatRoomsID, $accountID);
-	binAdd(\@currentChatRoomUsers, $char->{name});
-	message T("Chat Room Created\n");
-}
-
-sub chat_info {
-	my ($self, $args) = @_;
-
-	my $title;
-	$self->decrypt(\$title, $args->{title});
-	$title = bytesToString($title);
-
-	my $chat = $chatRooms{$args->{ID}};
-	if (!$chat || !%{$chat}) {
-		$chat = $chatRooms{$args->{ID}} = {};
-		binAdd(\@chatRoomsID, $args->{ID});
-	}
-	$chat->{title} = $title;
-	$chat->{ownerID} = $args->{ownerID};
-	$chat->{limit} = $args->{limit};
-	$chat->{public} = $args->{public};
-	$chat->{num_users} = $args->{num_users};
-	
-	Plugins::callHook('packet_chatinfo', {
-	  title => $title,
-	  ownerID => $args->{ownerID},
-	  limit => $args->{limit},
-	  public => $args->{public},
-	  num_users => $args->{num_users}
-	});	
-}
-
-sub chat_join_result {
-	my ($self, $args) = @_;
-
-	if ($args->{type} == 1) {
-		message T("Can't join Chat Room - Incorrect Password\n");
-	} elsif ($args->{type} == 2) {
-		message T("Can't join Chat Room - You're banned\n");
-	}
-}
-
-sub chat_modified {
-	my ($self, $args) = @_;
-
-	my $title;
-	$self->decrypt(\$title, $args->{title});
-	$title = bytesToString($title);
-
-	my ($ownerID, $ID, $limit, $public, $num_users) = @{$args}{qw(ownerID ID limit public num_users)};
-
-	if ($ownerID eq $accountID) {
-		$chatRooms{new}{title} = $title;
-		$chatRooms{new}{ownerID} = $ownerID;
-		$chatRooms{new}{limit} = $limit;
-		$chatRooms{new}{public} = $public;
-		$chatRooms{new}{num_users} = $num_users;
-	} else {
-		$chatRooms{$ID}{title} = $title;
-		$chatRooms{$ID}{ownerID} = $ownerID;
-		$chatRooms{$ID}{limit} = $limit;
-		$chatRooms{$ID}{public} = $public;
-		$chatRooms{$ID}{num_users} = $num_users;
-	}
-	message T("Chat Room Properties Modified\n");
-}
-
-sub chat_newowner {
-	my ($self, $args) = @_;
-
-	my $user = bytesToString($args->{user});
-	if ($args->{type} == 0) {
-		if ($user eq $char->{name}) {
-			$chatRooms{$currentChatRoom}{ownerID} = $accountID;
-		} else {
-			my $players = $playersList->getItems();
-			my $player;
-			foreach my $p (@{$players}) {
-				if ($p->{name} eq $user) {
-					$player = $p;
-					last;
-				}
-			}
-
-			if ($player) {
-				my $key = $player->{ID};
-				$chatRooms{$currentChatRoom}{ownerID} = $key;
-			}
-		}
-		$chatRooms{$currentChatRoom}{users}{$user} = 2;
-	} else {
-		$chatRooms{$currentChatRoom}{users}{$user} = 1;
-	}
-}
-
-sub chat_user_join {
-	my ($self, $args) = @_;
-
-	my $user = bytesToString($args->{user});
-	if ($currentChatRoom ne "") {
-		binAdd(\@currentChatRoomUsers, $user);
-		$chatRooms{$currentChatRoom}{users}{$user} = 1;
-		$chatRooms{$currentChatRoom}{num_users} = $args->{num_users};
-		message TF("%s has joined the Chat Room\n", $user);
-	}
-}
-
-sub chat_user_leave {
-	my ($self, $args) = @_;
-
-	my $user = bytesToString($args->{user});
-	delete $chatRooms{$currentChatRoom}{users}{$user};
-	binRemove(\@currentChatRoomUsers, $user);
-	$chatRooms{$currentChatRoom}{num_users} = $args->{num_users};
-	if ($user eq $char->{name}) {
-		binRemove(\@chatRoomsID, $currentChatRoom);
-		delete $chatRooms{$currentChatRoom};
-		undef @currentChatRoomUsers;
-		$currentChatRoom = "";
-		message T("You left the Chat Room\n");
-	} else {
-		message TF("%s has left the Chat Room\n", $user);
-	}
-}
-
-sub chat_users {
-	my ($self, $args) = @_;
-
-	my $newmsg;
-	$self->decrypt(\$newmsg, substr($args->{RAW_MSG}, 8));
-	my $msg = substr($args->{RAW_MSG}, 0, 8).$newmsg;
-
-	my $ID = substr($args->{RAW_MSG},4,4);
-	$currentChatRoom = $ID;
-
-	my $chat = $chatRooms{$currentChatRoom} ||= {};
-
-	$chat->{num_users} = 0;
-	for (my $i = 8; $i < $args->{RAW_MSG_SIZE}; $i += 28) {
-		my $type = unpack("C1",substr($msg,$i,1));
-		my ($chatUser) = unpack("Z*", substr($msg,$i + 4,24));
-		$chatUser = bytesToString($chatUser);
-
-		if ($chat->{users}{$chatUser} eq "") {
-			binAdd(\@currentChatRoomUsers, $chatUser);
-			if ($type == 0) {
-				$chat->{users}{$chatUser} = 2;
-			} else {
-				$chat->{users}{$chatUser} = 1;
-			}
-			$chat->{num_users}++;
-		}
-	}
-
-	message TF("You have joined the Chat Room %s\n", $chat->{title});
-}
-
 sub cast_cancelled {
 	my ($self, $args) = @_;
 
@@ -1750,13 +1591,6 @@ sub cast_cancelled {
 		sourceID => $ID
 	});
 	delete $source->{casting};
-}
-
-sub chat_removed {
-	my ($self, $args) = @_;
-
-	binRemove(\@chatRoomsID, $args->{ID});
-	delete $chatRooms{ $args->{ID} };
 }
 
 sub deal_add_other {
@@ -4620,7 +4454,7 @@ sub skill_use_failed {
 		13 => T('Need this within the water'),
 		19 => T('Full Amulet'),
 		29 => T('Must have at least 1% of base XP'),
-		83 => T('Location not allowed to create chatroom/market')
+		83 => T('Location not allowed to create market')
 		);
 	
 	my $errorMessage;
