@@ -1027,14 +1027,14 @@ sub processAutoStorage {
 				$args->{done} = 1;
 				return;
 			}
-			if (!AI::args->{distance}) {
-				# Calculate variable or fixed (old) distance
-				if ($config{'storageAuto_minDistance'} && $config{'storageAuto_maxDistance'}) {
-					AI::args->{distance} = $config{'storageAuto_minDistance'} + round(rand($config{'storageAuto_maxDistance'} - $config{'storageAuto_minDistance'}));
-				} else {
-					AI::args->{distance} == 12;
-				}
+			# Calculate variable or fixed (old) distance
+			if ($config{'storageAuto_minDistance'} && $config{'storageAuto_maxDistance'}) {
+				AI::args->{distance} = $config{'storageAuto_minDistance'} + round(rand($config{'storageAuto_maxDistance'} - $config{'storageAuto_minDistance'}));
+			} else {
+				AI::args->{distance} == 12;
 			}
+			# 删除判断，直接定义
+			
 			
 			# Determine whether we have to move to the NPC
 			if ($field->baseName ne $args->{npc}{map}) {
@@ -1514,7 +1514,8 @@ sub processAutoBuy {
 			$ai_v{'temp'}{'do_route'} = 1;
 		} else {
 			$ai_v{'temp'}{'distance'} = distance($args->{'npc'}{'pos'}, $chars[$config{'char'}]{'pos_to'});
-			if (($ai_v{'temp'}{'distance'} > AI::args->{distance}) && !defined($args->{sentBuy})) {
+			if (($ai_v{'temp'}{'distance'} > AI::args->{distance}) {
+			# 不同NPC购买造成的问题
 				$ai_v{'temp'}{'do_route'} = 1;
 			}
 		}
