@@ -695,8 +695,8 @@ sub processTake {
 			my $direction;
 			getVector(\%vec, $item->{pos}, $myPos);
 			$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
-			$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); ÔÝÊ±×¢ÊÍµô
-			# TODO: ×ªÍ·ºÍ×ªÉíµÄ¼ÆËã
+			$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); åˆ é™¤æŽ‰
+			# TODO: è½¬å¤´å’Œè½¬èº«çš„è®¡ç®—
 			$messageSender->sendTake($item->{ID});
 			$timeout{ai_take}{time} = time;
 		}
@@ -2450,7 +2450,7 @@ sub processAutoAttack {
 				next if (!$_ || !checkMonsterCleanness($_));
 				my $monster = $monsters{$_};
 				next if $monster->{ignore};
-				# ×é¶ÓÊ±Ò²ºöÂÔ
+				# ç»„é˜Ÿæ—¶ä¹Ÿå¿½ç•¥
 
 				OpenKoreMod::autoAttack($monster) if (defined &OpenKoreMod::autoAttack);
 
@@ -2494,7 +2494,7 @@ sub processAutoAttack {
 							|| getBestTarget(\@cleanMonsters, $nonLOSNotAllowed);
 
 			if ($LOSSubRoute && $attackTarget) {
-				if ($attackTarget ne AI::args(AI::findAction("attack"))->{ID} ) {
+				if ($attackTarget ne AI::args(AI::findAction("attack"))->{ID}) {
 					Log::message("New target was choosen\n");
 					# Remove all unnecessary actions (attacks and movements but the main route)
 					my $i = scalar(@ai_seq);

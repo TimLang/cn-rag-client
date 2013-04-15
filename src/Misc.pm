@@ -2748,8 +2748,8 @@ sub updateDamageTables {
 					my $attackSeq = ($player->action eq 'route') ? $player->args(1) : $player->args(2);
 					if (
 						!($accountID eq $targetID ? $attackTarget->{dmgToYou} : $attackTarget->{dmgToPlayer}{$targetID})
-						&& !($accountID eq $targetID ? $attackTarget->{dmgFromYou} : $attackTarget->{dmgFromPlayer}{$targetID}
-						&& distance($monster->{pos_to}, calcPosition($player)) <= $attackSeq->{attackMethod}{maxDistance})
+						&& !($accountID eq $targetID ? $attackTarget->{dmgFromYou} : $attackTarget->{dmgFromPlayer}{$targetID})
+						&& distance($monster->{pos_to}, calcPosition($player)) <= $attackSeq->{attackMethod}{maxDistance}
 						# 优先攻击在寻路过程中打你的怪物
 					) {
 						my $ignore = 0;
