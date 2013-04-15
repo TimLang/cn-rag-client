@@ -1708,9 +1708,6 @@ avoidList_reconnect 6001
 #      自动拒绝邀请        #
 ############################
 
-guildAutoDeny 1
-# 是否自动拒绝受邀加入公会
-
 ignoreAll 0
 # 是否对所有人关闭密频
 

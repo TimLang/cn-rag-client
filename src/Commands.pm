@@ -97,13 +97,11 @@ sub initHandlers {
 	exp                => \&cmdExp,
 	falcon             => \&cmdFalcon,
 	follow             => \&cmdFollow,
-	friend             => \&cmdFriend,
 	homun              => \&cmdSlave,
 	merc               => \&cmdSlave,
 	g                  => \&cmdChat,
 	getplayerinfo      => \&cmdGetPlayerInfo,
 	getcharname		   => \&cmdGetCharacterName,
-	guild              => \&cmdGuild,
 	help               => \&cmdHelp,
 	i                  => \&cmdInventory,
 	identify           => \&cmdIdentify,
@@ -1731,94 +1729,6 @@ sub cmdFollow {
 	}
 }
 
-sub cmdFriend {
-	my (undef, $args) = @_;
-	my ($arg1, $arg2) = split(' ', $args, 2);
-
-	if ($arg1 eq "") {
-		message T("------------- Friends --------------\n" .
-			"#   Name                      Online\n"), "list";
-		for (my $i = 0; $i < @friendsID; $i++) {
-			message(swrite(
-				"@<  @<<<<<<<<<<<<<<<<<<<<<<<  @",
-				[$i + 1, $friends{$i}{'name'}, $friends{$i}{'online'}? 'X':'']),
-				"list");
-		}
-		message("----------------------------------\n", "list");
-
-	} elsif (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", 'friend ' . $arg1);
-		return;
-
-	} elsif ($arg1 eq "request") {
-		my $player = Match::player($arg2);
-
-		if (!$player) {
-			error TF("Player %s does not exist\n", $arg2);
-		} elsif (!defined $player->{name}) {
-			error T("Player name has not been received, please try again\n");
-		} else {
-			my $alreadyFriend = 0;
-			for (my $i = 0; $i < @friendsID; $i++) {
-				if ($friends{$i}{'name'} eq $player->{name}) {
-					$alreadyFriend = 1;
-					last;
-				}
-			}
-			if ($alreadyFriend) {
-				error TF("%s is already your friend\n", $player->{name});
-			} else {
-				message TF("Requesting %s to be your friend\n", $player->{name});
-				$messageSender->sendFriendRequest($players{$playersID[$arg2]}{name});
-			}
-		}
-
-	} elsif ($arg1 eq "remove") {
-		if ($arg2 < 1 || $arg2 > @friendsID) {
-			error TF("Friend #%s does not exist\n", $arg2);
-		} else {
-			$arg2--;
-			message TF("Attempting to remove %s from your friend list\n", $friends{$arg2}{'name'});
-			$messageSender->sendFriendRemove($friends{$arg2}{'accountID'}, $friends{$arg2}{'charID'});
-		}
-
-	} elsif ($arg1 eq "accept") {
-		if ($incomingFriend{'accountID'} eq "") {
-			error T("Can't accept the friend request, no incoming request\n");
-		} else {
-			message TF("Accepting the friend request from %s\n", $incomingFriend{'name'});
-			$messageSender->sendFriendListReply($incomingFriend{'accountID'}, $incomingFriend{'charID'}, 1);
-			undef %incomingFriend;
-		}
-
-	} elsif ($arg1 eq "reject") {
-		if ($incomingFriend{'accountID'} eq "") {
-			error T("Can't reject the friend request - no incoming request\n");
-		} else {
-			message TF("Rejecting the friend request from %s\n", $incomingFriend{'name'});
-			$messageSender->sendFriendListReply($incomingFriend{'accountID'}, $incomingFriend{'charID'}, 0);
-			undef %incomingFriend;
-		}
-
-	} elsif ($arg1 eq "pm") {
-		if ($arg2 < 1 || $arg2 > @friendsID) {
-			error TF("Friend #%s does not exist\n", $arg2);
-		} else {
-			$arg2--;
-			if (binFind(\@privMsgUsers, $friends{$arg2}{'name'}) eq "") {
-				message TF("Friend %s has been added to the PM list as %s\n", $friends{$arg2}{'name'}, @privMsgUsers);
-				$privMsgUsers[@privMsgUsers] = $friends{$arg2}{'name'};
-			} else {
-				message TF("Friend %s is already in the PM list\n", $friends{$arg2}{'name'});
-			}
-		}
-
-	} else {
-		error T("Syntax Error in function 'friend' (Manage Friends List)\n" .
-			"Usage: friend [request|remove|accept|reject|pm]\n");
-	}
-}
-
 sub cmdSlave {
 	my ($cmd, $subcmd) = @_;
 	my @args = parseArgs($subcmd);
@@ -2112,186 +2022,6 @@ sub cmdGetCharacterName {
 	}
 	my (undef, $args) = @_;
 	$messageSender->sendGetCharacterName(pack("V", $args));
-}
-
-sub cmdGuild {
-	my (undef, $args) = @_;
-	my ($arg1, $arg2) = split(' ', $args, 2);
-
-	if ($arg1 eq "" || (!%guild && ($arg1 eq "info" || $arg1 eq "member" || $arg1 eq "kick"))) {
-		if (!$net || $net->getState() != Network::IN_GAME) {
-			if ($arg1 eq "") {
-				error T("You must be logged in the game to request guild information\n");
-			} else {
-				error TF("Guild information is not yet available. You must login to the game and use the '%s' command first\n", 'guild');
-			}
-			return;
-		}
-		message	T("Requesting guild information...\n"), "info";
-		$messageSender->sendGuildMasterMemberCheck();
-
-		# Replies 01B6 (Guild Info) and 014C (Guild Ally/Enemy List)
-		$messageSender->sendGuildRequestInfo(0);
-
-		# Replies 0166 (Guild Member Titles List) and 0154 (Guild Members List)
-		$messageSender->sendGuildRequestInfo(1);
-
-		# Replies 0166 (Guild Member Titles List) and 0160 (Guild Member Titles Info List)
-		$messageSender->sendGuildRequestInfo(2);
-
-		# Replies 0162 (Guild Skill Info List)
-		$messageSender->sendGuildRequestInfo(3);
-
-		# Replies 015C (Guild Expulsion List)
-		$messageSender->sendGuildRequestInfo(4);
-
-		if ($arg1 eq "") {
-			message T("Enter command to view guild information: guild <info | member | request | join | leave | kick | ally | create | break>\n"), "info";
-		} else {
-			message	TF("Type 'guild %s' again to view the information.\n", $args), "info";
-		}
-
-	} elsif ($arg1 eq "info") {
-		message swrite(T("---------- Guild Information ----------\n" .
-			"Name    : \@<<<<<<<<<<<<<<<<<<<<<<<<\n" .
-			"Lv      : \@<<\n" .
-			"Exp     : \@>>>>>>>>>/\@<<<<<<<<<<\n" .
-			"Master  : \@<<<<<<<<<<<<<<<<<<<<<<<<\n" .
-			"Connect : \@>>/\@<<"),
-			[$guild{name}, $guild{lv}, $guild{exp}, $guild{exp_next}, $guild{master}, 
-			$guild{conMember}, $guild{maxMember}]),	"info";
-		for my $ally (keys %{$guild{ally}}) {
-			# Translation Comment: List of allies. Keep the same spaces of the - Guild Information - tag.
-			message TF("Ally    : %s (%s)\n", $guild{ally}{$ally}, $ally), "info";
-		}
-		for my $ally (keys %{$guild{enemy}}) {
-			# Translation Comment: List of enemies. Keep the same spaces of the - Guild Information - tag.
-			message TF("Enemy   : %s (%s)\n", $guild{enemy}{$ally}, $ally), "info";
-		}
-		message("---------------------------------------\n", "info");
-
-	} elsif ($arg1 eq "member") {
-		if (!$guild{member}) {
-			error T("No guild member information available.\n");
-			return;
-		}
-
-		my $msg = T("------------ Guild  Member ------------\n" .
-			"#  Name                       Job        Lv  Title                    Online\n");
-
-		my ($i, $name, $job, $lvl, $title, $online, $ID, $charID);
-		my $count = @{$guild{member}};
-		for ($i = 0; $i < $count; $i++) {
-			$name  = $guild{member}[$i]{name};
-			next if (!defined $name);
-
-			$job   = $jobs_lut{$guild{member}[$i]{jobID}};
-			$lvl   = $guild{member}[$i]{lv};
-			$title = $guild{member}[$i]{title};
- 			# Translation Comment: Guild member online
-			$online = $guild{member}[$i]{online} ? T("Yes") : T("No");
-			$ID = unpack("V",$guild{member}[$i]{ID});
-			$charID = unpack("V",$guild{member}[$i]{charID});
-
-			$msg .= swrite("@< @<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<< @<< @<<<<<<<<<<<<<<<<<<<<<<< @<<",
-					[$i, $name, $job, $lvl, $title, $online, $ID, $charID]);
-		}
-		$msg .= "---------------------------------------\n";
-		message $msg, "list";
-		
-	} elsif (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", 'guild ' . $arg1);
-		return;
-
-	} elsif ($arg1 eq "join") {
-		if ($arg2 ne "1" && $arg2 ne "0") {
-			error T("Syntax Error in function 'guild join' (Accept/Deny Guild Join Request)\n" .
-				"Usage: guild join <flag>\n");
-			return;
-		} elsif ($incomingGuild{'ID'} eq "") {
-			error T("Error in function 'guild join' (Join/Request to Join Guild)\n" .
-				"Can't accept/deny guild request - no incoming request.\n");
-			return;
-		}
-
-		$messageSender->sendGuildJoin($incomingGuild{ID}, $arg2);
-		undef %incomingGuild;
-		if ($arg2) {
-			message T("You accepted the guild join request.\n"), "success";
-		} else {
-			message T("You denied the guild join request.\n"), "info";
-		}
-
-	} elsif ($arg1 eq "create") {
-		if (!$arg2) {
-			error T("Syntax Error in function 'guild create' (Create Guild)\n" .
-				"Usage: guild create <name>\n");
-		} else {
-			$messageSender->sendGuildCreate($arg2);
-		}
-
-	} elsif (!defined $char->{guild}) {
-		error T("You are not in a guild.\n");
-
-	} elsif ($arg1 eq "request") {
-		my $player = Match::player($arg2);
-		if (!$player) {
-			error TF("Player %s does not exist.\n", $arg2);
-		} else {
-			$messageSender->sendGuildJoinRequest($player->{ID});
-			message TF("Sent guild join request to %s\n", $player->{name});
-		}
-
-	} elsif ($arg1 eq "ally") {
-		if (!$guild{master}) {
-			error T("No guild information available. Type guild to refresh and then try again.\n");
-			return;
-		}
-		my $player = Match::player($arg2);
-		if (!$player) {
-			error TF("Player %s does not exist.\n", $arg2);
-		} elsif (!$char->{name} eq $guild{master}) {
-			error T("You must be guildmaster to set an alliance\n");
-			return;
-		} else {
-			$messageSender->sendGuildSetAlly($net,$player->{ID},$accountID,$charID);
-			message TF("Sent guild alliance request to %s\n", $player->{name});
-		}
-
-	} elsif ($arg1 eq "leave") {
-		$messageSender->sendGuildLeave($arg2);
-		message TF("Sending guild leave: %s\n", $arg2);
-
-	} elsif ($arg1 eq "break") {
-		if (!$arg2) {
-			error T("Syntax Error in function 'guild break' (Break Guild)\n" .
-				"Usage: guild break <guild name>\n");
-		} else {
-			$messageSender->sendGuildBreak($arg2);
-			message TF("Sending guild break: %s\n", $arg2);
-		}
-
-	} elsif ($arg1 eq "kick") {
-		if (!$guild{member}) {
-			error T("No guild member information available.\n");
-			return;
-		}
-		my @params = split(' ', $arg2, 2);
-		if ($params[0] =~ /^\d+$/) {
-			if ($guild{'member'}[$params[0]]) {
-				$messageSender->sendGuildMemberKick($char->{guildID},
-					$guild{member}[$params[0]]{ID},
-					$guild{member}[$params[0]]{charID},
-					$params[1]);
-			} else {
-				error TF("Error in function 'guild kick' (Kick Guild Member)\n" .
-					"Invalid guild member '%s' specified.\n", $params[0]);
-			}
-		} else {
-			error T("Syntax Error in function 'guild kick' (Kick Guild Member)\n" .
-				"Usage: guild kick <number> <reason>\n");
-		}
-	}
 }
 
 sub cmdHelp {
@@ -3188,45 +2918,6 @@ sub cmdPlayerList {
 	my (undef, $args) = @_;
 	my $msg;
 
-	if ($args eq "g") {
-		my $maxpl;
-		my $maxplg=0;
-		$msg =  T("-----------Player List-----------\n" .
-			"#    Name                                Sex   Lv  Job         Dist  Coord\n");
-		if ($playersList) {
-			foreach my $player (@{$playersList->getItems()}) {
-				my ($name, $dist, $pos);
-				$name = $player->name;
-
-				if ($char->{guild}{name} eq ($player->{guild}{name})) {
-
-					if ($player->{guild} && %{$player->{guild}}) {
-						$name .= " [$player->{guild}{name}]";
-					}
-					$dist = distance($char->{pos_to}, $player->{pos_to});
-					$dist = sprintf("%.1f", $dist) if (index ($dist, '.') > -1);
-					$pos = '(' . $player->{pos_to}{x} . ', ' . $player->{pos_to}{y} . ')';
-					
-					$maxplg = $maxplg+1;
-
-					$msg .= swrite(
-						"@<<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<< @<< @<<<<<<<<<< @<<<< @<<<<<<<<<<",
-						[$player->{binID}, $name, $sex_lut{$player->{sex}}, $player->{lv}, $player->job, $dist, $pos]);
-				}
-				$maxpl = @{$playersList->getItems()};
-			}
-		}
-		$msg .= TF("Total guild players: %s \n",$maxplg);
-		if ($maxpl ne "") {
-			$msg .= TF("Total players: %s \n",$maxpl);
-		} else {
-			$msg .= T("There are no players near you.\n");
-		}
-		$msg .= "---------------------------------\n";
-		message($msg, "list");
-		return;
-	}
-
 	if ($args eq "p") {
 		my $maxpl;
 		my $maxplp=0;
@@ -3239,9 +2930,6 @@ sub cmdPlayerList {
 
 				if ($char->{party}{name} eq ($player->{party}{name})) {
 
-					if ($player->{guild} && %{$player->{guild}}) {
-						$name .= " [$player->{guild}{name}]";
-					}
 					$dist = distance($char->{pos_to}, $player->{pos_to});
 					$dist = sprintf("%.1f", $dist) if (index ($dist, '.') > -1);
 					$pos = '(' . $player->{pos_to}{x} . ', ' . $player->{pos_to}{y} . ')';
@@ -3306,8 +2994,6 @@ sub cmdPlayerList {
 			"%s (%d)\n" .
 			"Account ID: %s (Hex: %s)\n" .
 			"Party: %s\n" .
-			"Guild: %s\n" .
-			"Guild title: %s\n" .
 			"Position: %s, %s (%s of you: %s degrees)\n" .
 			"Level: %-7d Distance: %-17s\n" .
 			"Sex: %-6s    Class: %s\n" .
@@ -3320,8 +3006,6 @@ sub cmdPlayerList {
 			"Walk speed: %s secs per block\n", 
 		$player->name, $player->{binID}, $player->{nameID}, $hex, 
 		($player->{party} && $player->{party}{name} ne '') ? $player->{party}{name} : '',
-		($player->{guild}) ? $player->{guild}{name} : '',
-		($player->{guild}) ? $player->{guild}{title} : '',
 		$pos->{x}, $pos->{y}, $directions_lut{$youToPlayer}, int($degYouToPlayer),
 		$player->{lv}, $dist, $sex_lut{$player->{sex}}, $jobs_lut{$player->{jobID}},
 		"$directions_lut{$body} ($body)", "$directions_lut{$head} ($head)",
@@ -3354,9 +3038,7 @@ sub cmdPlayerList {
 			foreach my $player (@{$playersList->getItems()}) {
 				my ($name, $dist, $pos);
 				$name = $player->name;
-				if ($player->{guild} && %{$player->{guild}}) {
-					$name .= " [$player->{guild}{name}]";
-				}
+
 				$dist = distance($char->{pos_to}, $player->{pos_to});
 				$dist = sprintf("%.1f", $dist) if (index ($dist, '.') > -1);
 				$pos = '(' . $player->{pos_to}{x} . ', ' . $player->{pos_to}{y} . ')';
@@ -3899,7 +3581,6 @@ sub cmdStats {
 		error T("Character stats information not yet available.\n");
 		return;
 	}
-	my $guildName = $char->{guild} ? $char->{guild}{name} : T("None");
 	my $msg = swrite(TF(
 		"---------- Char Stats ----------\n" .
 		"Str: \@<<+\@<< #\@< Atk:  \@<<+\@<< Def:  \@<<+\@<<\n" .
@@ -3907,7 +3588,7 @@ sub cmdStats {
 		"Vit: \@<<+\@<< #\@< Hit:  \@<<     Flee: \@<<+\@<<\n" .
 		"Int: \@<<+\@<< #\@< Critical: \@<< Aspd: \@<<\n" .
 		"Dex: \@<<+\@<< #\@< Status Points: \@<<<\n" .
-		"Luk: \@<<+\@<< #\@< Guild: \@<<<<<<<<<<<<<<<<<<<<<\n" .
+		"Luk: \@<<+\@<< #\@< \n" .
 		"--------------------------------\n" .
 		"Hair color: \@<<<<<<<<<<<<<<<<<\n" .
 		"Walk speed: %.2f secs per block\n" .
@@ -3917,7 +3598,7 @@ sub cmdStats {
 	$char->{'vit'}, $char->{'vit_bonus'}, $char->{'points_vit'}, $char->{'hit'}, $char->{'flee'}, $char->{'flee_bonus'},
 	$char->{'int'}, $char->{'int_bonus'}, $char->{'points_int'}, $char->{'critical'}, $char->{'attack_speed'},
 	$char->{'dex'}, $char->{'dex_bonus'}, $char->{'points_dex'}, $char->{'points_free'},
-	$char->{'luk'}, $char->{'luk_bonus'}, $char->{'points_luk'}, $guildName,
+	$char->{'luk'}, $char->{'luk_bonus'}, $char->{'points_luk'},
 	"$haircolors{$char->{hair_color}} ($char->{hair_color})"]);
 	
 	$msg .= T("You are sitting.\n") if ($char->{sitting});

@@ -53,7 +53,6 @@ sub new {
 		'0149' => ['alignment', 'a4 C v', [qw(targetID type point)]],
 		'014D' => ['guild_check'], # len 2
 		'014F' => ['guild_info_request', 'V', [qw(type)]],
-		'0151' => ['guild_emblem_request', 'a4', [qw(guildID)]],
 		'017E' => ['guild_chat', 'x2 Z*', [qw(message)]],
 		'0187' => ['ban_check', 'a4', [qw(accountID)]],
 		'018A' => ['quit_request', 'v', [qw(type)]],
@@ -390,16 +389,6 @@ sub sendEquip {
 	debug "Sent Equip: $index Type: $type\n" , 2;
 }
 
-# 0x0208,11,friendslistreply,2:6:10
-# Reject:0/Accept:1
-
-sub sendFriendRemove {
-	my ($self, $accountID, $charID) = @_;
-	my $msg = pack("C*", 0x03, 0x02) . $accountID . $charID;
-	$self->sendToServer($msg);
-	debug "Sent Remove a friend\n", "sendPacket";
-}
-
 sub sendProduceMix {
 	my ($self, $ID,
 		# nameIDs for added items such as Star Crumb or Flame Heart
@@ -448,135 +437,11 @@ sub sendGMSummon {
 	$self->sendToServer($packet);
 }
 
-sub sendGuildAlly {
-	my ($self, $ID, $flag) = @_;
-	my $msg = pack("C*", 0x72, 0x01).$ID.pack("V1", $flag);
-	$self->sendToServer($msg);
-	debug "Sent Ally Guild : ".getHex($ID).", $flag\n", "sendPacket", 2;
-}
-
-sub sendGuildBreak {
-	my ($self, $guildName) = @_;
-	my $msg = pack("C C a40", 0x5D, 0x01, stringToBytes($guildName));
-	$self->sendToServer($msg);
-	debug "Sent Guild Break: $guildName\n", "sendPacket", 2;
-}
-
-sub sendGuildCreate {
-	my ($self, $name) = @_;
-	# By Default, the second param is our CharID. which indicate the Guild Master Char ID
-	my $msg = pack('v a4 a24', 0x0165, $charID, stringToBytes($name));
-	$self->sendToServer($msg);
-	debug "Sent Guild Create: $name\n", "sendPacket", 2;
-}
-
 sub sendGuildJoin {
 	my ($self, $ID, $flag) = @_;
 	my $msg = pack("C*", 0x6B, 0x01).$ID.pack("V1", $flag);
 	$self->sendToServer($msg);
 	debug "Sent Join Guild : ".getHex($ID).", $flag\n", "sendPacket";
-}
-
-sub sendGuildJoinRequest {
-	my ($self, $ID) = @_;
-	my $msg = pack("C*", 0x68, 0x01).$ID.$accountID.$charID;
-	$self->sendToServer($msg);
-	debug "Sent Request Join Guild: ".getHex($ID)."\n", "sendPacket";
-}
-
-sub sendGuildLeave {
-	my ($self, $reason) = @_;
-	my $mess = pack("Z40", stringToBytes($reason));
-	my $msg = pack("C*", 0x59, 0x01).$guild{ID}.$accountID.$charID.$mess;
-	$self->sendToServer($msg);
-	debug "Sent Guild Leave: $reason (".getHex($msg).")\n", "sendPacket";
-}
-
-sub sendGuildMemberKick {
-	my ($self, $guildID, $accountID, $charID, $cause) = @_;
-	my $msg = pack("C*", 0x5B, 0x01).$guildID.$accountID.$charID.pack("a40", stringToBytes($cause));
-	$self->sendToServer($msg);
-	debug "Sent Guild Kick: ".getHex($charID)."\n", "sendPacket";
-}
-
-=pod
-sub sendGuildMemberTitleSelect {
-	# set the title for a member
-	my ($self, $accountID, $charID, $index) = @_;
-
-	my $msg = pack("C*", 0x55, 0x01).pack("v1",16).$accountID.$charID.pack("V1",$index);
-	$self->sendToServer($msg);
-	debug "Sent Change Guild title: ".getHex($charID)." $index\n", "sendPacket", 2;
-}
-=cut
-# 0x0155,-1,guildchangememberposition,2
-sub sendGuildMemberPositions {
-	my ($self, $r_array) = @_;
-	my $msg = pack('v2', 0x0155, 4+12*@{$r_array});
-	for (my $i = 0; $i < @{$r_array}; $i++) {
-		$msg .= pack('a4 a4 V', $r_array->[$i]{accountID}, $r_array->[$i]{charID}, $r_array->[$i]{index});
-		debug "Sent GuildChangeMemberPositions: $r_array->[$i]{accountID} $r_array->[$i]{charID} $r_array->[$i]{index}\n", "d_sendPacket", 2;
-	}
-	$self->sendToServer($msg);
-}
-
-sub sendGuildNotice {
-	# sets the notice/announcement for the guild
-	my ($self, $guildID, $name, $notice) = @_;
-	my $msg = pack("C*", 0x6E, 0x01) . $guildID .
-		pack("a60 a120", stringToBytes($name), stringToBytes($notice));
-	$self->sendToServer($msg);
-	debug "Sent Change Guild Notice: $notice\n", "sendPacket", 2;
-}
-
-=pod
-sub sendGuildRankChange {
-	# change the title for a certain index
-	# i would  guess 0 is the top rank, but i dont know
-	my ($self, $index, $permissions, $tax, $title) = @_;
-
-	my $msg = pack("C*", 0x61, 0x01) .
-		pack("v1", 44) . # packet length, we can actually send multiple titles in the same packet if we wanted to
-		pack("V1", $index) . # index of this rank in the list
-		pack("V1", $permissions) . # this is their abilities, not sure what format
-		pack("V1", $index) . # isnt even used on emulators, but leave in case Aegis wants this
-		pack("V1", $tax) . # guild tax amount, not sure what format
-		pack("a24", $title);
-	$self->sendToServer($msg);
-	debug "Sent Set Guild title: $index $title\n", "sendPacket", 2;
-}
-=cut
-# 0x0161,-1,guildchangepositioninfo,2
-sub sendGuildPositionInfo {
-	my ($self, $r_array) = @_;
-	my $msg = pack('v2', 0x0161, 4+44*@{$r_array});
-	for (my $i = 0; $i < @{$r_array}; $i++) {
-		$msg .= pack('v2 V4 a24', $r_array->[$i]{index}, $r_array->[$i]{permissions}, $r_array->[$i]{index}, $r_array->[$i]{tax}, stringToBytes($r_array->[$i]{title}));
-		debug "Sent GuildPositionInfo: $r_array->[$i]{index}, $r_array->[$i]{permissions}, $r_array->[$i]{index}, $r_array->[$i]{tax}, ".stringToBytes($r_array->[$i]{title})."\n", "d_sendPacket", 2;
-	}
-	$self->sendToServer($msg);
-}
-
-sub sendGuildRequestEmblem {
-	my ($self, $guildID) = @_;
-	my $msg = pack("v V", 0x0151, $guildID);
-	$self->sendToServer($msg);
-	debug "Sent Guild Request Emblem.\n", "sendPacket";
-}
-
-sub sendGuildSetAlly {
-	# this packet is for guildmaster asking to set alliance with another guildmaster
-	# the other sub for sendGuildAlly are responses to this sub
-	# kept the parameters open, but everything except $targetAID could be replaced with Global variables
-	# unless you plan to mess around with the alliance packet, no exploits though, I tried ;-)
-	# -zdivpsa
-	my ($self, $targetAID, $myAID, $charID) = @_;	# remote socket, $net
-	my $msg =	pack("C*", 0x70, 0x01) .
-			$targetAID .
-			$myAID .
-			$charID;
-	$self->sendToServer($msg);
-
 }
 
 sub sendHomunculusAttack {

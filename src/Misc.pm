@@ -1731,7 +1731,6 @@ sub getPlayerNameFromCache {
 	}
 
 	$player->{name} = $entry->{name};
-	$player->{guild} = $entry->{guild} if ($entry->{guild});
 	return 1;
 }
 
@@ -2959,7 +2958,6 @@ sub updatePlayerNameCache {
 		push @playerNameCacheIDs, $ID;
 		my %entry = (
 			name => $player->{name},
-			guild => $player->{guild},
 			time => time,
 			lv => $player->{lv},
 			jobID => $player->{jobID}
@@ -3724,7 +3722,7 @@ sub redirectXKoreMessages {
 	my ($type, $domain, $level, $globalVerbosity, $message, $user_data) = @_;
 
 	return if ($config{'XKore_silent'} || $type eq "debug" || $level > 0 || $net->getState() != Network::IN_GAME || $XKore_dontRedirect);
-	return if ($domain =~ /^(connection|startup|pm|publicchat|guildchat|guildnotice|selfchat|emotion|drop|inventory|deal|storage|input)$/);
+	return if ($domain =~ /^(connection|startup|pm|publicchat|guildchat|selfchat|emotion|drop|inventory|deal|storage|input)$/);
 	return if ($domain =~ /^(attack|skill|list|info|partychat|npc|route)/);
 
 	$message =~ s/\n*$//s;
@@ -4204,16 +4202,7 @@ sub checkPlayerCondition {
 		return 0 unless $player->{shield};
 	}
 
-	# Note: This will always fail for Actor::Slave
-	if ($config{$prefix."_isGuild"}) {
-		return 0 unless ($player->{guild} && existsInList($config{$prefix . "_isGuild"}, $player->{guild}{name}));
-	}
-
 	# Note: This will always be true for Actor::Slave
-	#       This will always be true for character that is not in any guild
-	if ($config{$prefix."_isNotGuild"}) {
-		return 0 if ($player->{guild} && existsInList($config{$prefix . "_isNotGuild"}, $player->{guild}{name}));
-	}
 	
 	if ($config{$prefix."_dist"}) {
 		return 0 unless inRange(distance(calcPosition($char), calcPosition($player)), $config{$prefix."_dist"});
