@@ -103,6 +103,9 @@ if (0) {
 
 if ($PerlApp::TOOL eq "PerlApp") {
 	$ENV{INTERPRETER} = PerlApp::exe();
+	if (PerlApp::exe() =~ /CNKore_UI\.exe$/i) {
+		$ENV{OPENKORE_DEFAULT_INTERFACE} = 'Wx';
+	}
 } else {
 	print "Do not run start.pl directly! If you're using Perl then run openkore.pl instead!\n";
 	<STDIN>;
