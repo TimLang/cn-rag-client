@@ -2084,6 +2084,30 @@ sub slave_calcproperty_handler {
 	$slave->{expPercent}   = ($args->{exp_max}) ? ($args->{exp} / $args->{exp_max}) * 100 : undef;
 }
 
+sub guild_chat {
+	my ($self, $args) = @_;
+	my ($chatMsgUser, $chatMsg); # Type: String
+	my $chat; # Type: String
+
+	return unless changeToInGameState();
+
+	$chat = bytesToString($args->{message});
+	if (($chatMsgUser, $chatMsg) = $chat =~ /(.*?) : (.*)/) {
+		$chatMsgUser =~ s/ $//;
+		stripLanguageCode(\$chatMsg);
+		$chat = "$chatMsgUser : $chatMsg";
+	}
+
+	chatLog("g", "$chat\n") if ($config{'logGuildChat'});
+	# Translation Comment: Guild Chat
+	message TF("[Guild] %s\n", $chat), "guildchat";
+
+	Plugins::callHook('packet_guildMsg', {
+		MsgUser => $chatMsgUser,
+		Msg => $chatMsg
+	});
+}
+
 sub misc_effect {
 	my ($self, $args) = @_;
 
