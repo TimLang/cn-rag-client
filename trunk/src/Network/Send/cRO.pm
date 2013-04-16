@@ -28,39 +28,39 @@ sub new {
 
 	my %packets = (
 
-		'0369' => ['actor_action', 'a4 C', [qw(targetID type)]],
-		'083C' => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
-		'0437' => ['character_move','a3', [qw(coords)]],
-		'035F' => ['sync', 'V', [qw(time)]],
-		'0917' => ['actor_look_at', 'v C', [qw(head body)]],
-		'0363' => ['item_take', 'a4', [qw(ID)]],
-		'0930' => ['item_drop', 'v2', [qw(index amount)]],
-		'087C' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'0956' => ['storage_item_remove', 'v V', [qw(index amount)]],
-		'0438' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
-		'096A' => ['actor_info_request', 'a4', [qw(ID)]],
-		'0362' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
-		'07E4' => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
+		'091B' => ['actor_action', 'a4 C', [qw(targetID type)]],
+		'092B' => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
+		'0884' => ['character_move','a3', [qw(coords)]],
+		'095D' => ['sync', 'V', [qw(time)]],
+		'0897' => ['actor_look_at', 'v C', [qw(head body)]],
+		'0938' => ['item_take', 'a4', [qw(ID)]],
+		'0879' => ['item_drop', 'v2', [qw(index amount)]],
+		'0968' => ['storage_item_add', 'v V', [qw(index amount)]],
+		'088E' => ['storage_item_remove', 'v V', [qw(index amount)]],
+		'08AB' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
+		'0860' => ['actor_info_request', 'a4', [qw(ID)]],
+		'0965' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
+		'0898' => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
-	$self->{packet_list}{$_} = $packets{$_} for keys %packets;	
+	$self->{packet_list}{$_} = $packets{$_} for keys %packets;
 	
-	my %handlers = qw(	
+	my %handlers = qw(
 		
-		actor_action 0369
-		skill_use 083C
-		character_move 0437
-		sync 035F
-		actor_look_at 0917
-		item_take 0363
-		item_drop 0930
-		storage_item_add 087C
-		storage_item_remove 0956
-		skill_use_location 0438
-		actor_info_request 096A
-		map_login 0362
-		homunculus_command 07E4
+		actor_action 091B
+		skill_use 092B
+		character_move 0884
+		sync 095D
+		actor_look_at 0897
+		item_take 0938
+		item_drop 0879
+		storage_item_add 0968
+		storage_item_remove 088E
+		skill_use_location 08AB
+		actor_info_request 0860
+		map_login 0965
+		homunculus_command 0898
 		party_setting 07D7
 	);
 	
@@ -141,6 +141,7 @@ sub sendMapLogin {
 
 sub sendHomunculusCommand {
 	my ($self, $command, $type) = @_;
+
 	$self->sendToServer($self->reconstruct({
 		switch => 'homunculus_command',
 		commandType => $type,
