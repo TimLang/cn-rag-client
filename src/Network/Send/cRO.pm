@@ -92,11 +92,11 @@ sub encryptMessageID {
 
 sub PrepareKeys() {
 	# K
-	$enc_val1 = Math::BigInt->new('0x65b631d4');
+	$enc_val1 = Math::BigInt->new('0x4990701c');
 	# M
-	$enc_val3 = Math::BigInt->new('0x3a23394f');
+	$enc_val3 = Math::BigInt->new('0x65307aaf');
 	# A
-	$enc_val2 = Math::BigInt->new('0x1240557e');
+	$enc_val2 = Math::BigInt->new('0x4e6547cf');
 }
 
 sub sendMasterLogin {
