@@ -2891,7 +2891,7 @@ sub useTeleport {
 	# only if we want to use skill ?
 	return if ($char->{muted});
 
-	if ($sk_lvl > 0 && $internal > 0 && ($use_lvl == 1 || !$config{'teleportAuto_useItemForRespawn'})) {
+	if ($sk_lvl > 0 && $internal > 0 && ($use_lvl == 1 || $config{'teleportAuto_useItemForRespawn'} < 1)) {
 		# We have the teleport skill, and should use it
 		my $skill = new Skill(handle => 'AL_TELEPORT');
 		if ($use_lvl == 2 || $internal == 1 || ($internal == 2 && !isSafe())) {
@@ -2939,7 +2939,7 @@ sub useTeleport {
 
 	# No skill try to equip a Tele clip or something,
 	# if teleportAuto_equip_* is set
-	if (Actor::Item::scanConfigAndCheck('teleportAuto_equip') && ($use_lvl == 1 || !$config{'teleportAuto_useItemForRespawn'})) {
+	if (Actor::Item::scanConfigAndCheck('teleportAuto_equip') && ($use_lvl == 1 || $config{'teleportAuto_useItemForRespawn'} < 1)) {
 		return if AI::inQueue('teleport');
 		debug "Equipping Accessory to teleport\n", "useTeleport";
 		AI::queue('teleport', {lv => $use_lvl});
