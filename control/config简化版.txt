@@ -560,8 +560,6 @@ teleportAuto_unstuck 0
 #──────────────── 是否以瞬移尝试解决走路呆住问题？
 teleportAuto_idle 1
 #──────────────── 是否发呆时要瞬移？
-teleportAuto_useChatCommand
-#──────────────── 用对话栏输入指令来进行瞬移(国服不能用)
 teleportAuto_equip_leftAccessory
 #──────────────── 指定瞬移时左边装饰品的装备名称(全名)
 teleportAuto_equip_rightAccessory

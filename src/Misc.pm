@@ -2865,12 +2865,6 @@ sub useTeleport {
 		return 1;
 	}
 
-	if ($use_lvl == 1 && $config{teleportAuto_useChatCommand}) {
-		Plugins::callHook('teleport_sent', \%args);
-		sendMessage($messageSender, "c", $config{teleportAuto_useChatCommand});
-		return 1;
-	}
-
 	# for possible recursive calls
 	if (!defined $internal) {
 		$internal = $config{teleportAuto_useSkill};
