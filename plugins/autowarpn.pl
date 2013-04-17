@@ -69,7 +69,7 @@ sub packet_hook {
    my $switch = $args->{switch};
    my $msg = $args->{msg};
 
-   if ($switch eq "011C") {
+   if ($switch eq "011C" && $args->{skillID} eq 27) {
       $messageSender->sendWarpTele(27, $config{'autoWarp_to'}.".gat");
    }
 }
