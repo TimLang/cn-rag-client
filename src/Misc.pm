@@ -2318,13 +2318,13 @@ sub sendMessage {
 				while (length($msg[$i]) >= 80) {
 					$oldmsg = $msg;
 					if (length($msg)) {
-						$amount == 80;
+						$amount = 80;
 						if ($amount - length($msg) > 0) {
-							$amount == 79;
+							$amount = 79;
 							$msg .= " " . substr($msg[$i], 0, $amount - length($msg));
 						}
 					} else {
-						$amount == 80;
+						$amount = 80;
 						$msg .= substr($msg[$i], 0, $amount);
 					}
 					sendMessage_send($sender, $type, $msg, $user);
