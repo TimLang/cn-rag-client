@@ -128,18 +128,6 @@ sub new {
 		'00D1' => ['ignore_player_result', 'C2', [qw(type error)]],
 		'00D2' => ['ignore_all_result', 'C2', [qw(type error)]],
 		'00D4' => ['whisper_list'],
-		
-		# ChatRoom
-		'00D6' => ['del_packet'],
-		'00D7' => ['del_packet'],
-		'00D8' => ['del_packet'],
-		'00DA' => ['del_packet'],
-		'00DB' => ['del_packet'],
-		'00DC' => ['del_packet'],
-		'00DD' => ['del_packet'],
-		'00DF' => ['del_packet'],
-		'00E1' => ['del_packet'],
-		
 		'00E5' => ['deal_request', 'Z24', [qw(user)]],
 		'00E7' => ['deal_begin', 'C', [qw(type)]],
 		'00E9' => ['deal_add_other', 'V v C3 a8', [qw(amount nameID identified broken upgrade cards)]],
@@ -184,11 +172,6 @@ sub new {
 		'0125' => ['cart_item_removed', 'v V', [qw(index amount)]],
 		'012C' => ['cart_add_failed', 'C', [qw(fail)]],
 		'012D' => ['shop_skill', 'v', [qw(number)]],
-		'0131' => ['vender_found', 'a4 A80', [qw(ID title)]],
-		'0132' => ['vender_lost', 'a4', [qw(ID)]],
-		'0133' => ['vender_items_list', 'v a4', [qw(len venderID)]],
-		'0135' => ['vender_buy_fail', 'v2 C', [qw(index amount fail)]],
-		'0136' => ['vending_start'],
 		'0137' => ['shop_sold', 'v2', [qw(number amount)]],
 		'0139' => ['monster_ranged_attack', 'a4 v5', [qw(ID sourceX sourceY targetX targetY range)]],
 		'013A' => ['attack_range', 'v', [qw(type)]],
@@ -204,39 +187,6 @@ sub new {
 		'014A' => ['manner_message', 'V', [qw(type)]],
 		'014B' => ['GM_silence', 'C Z24', [qw(type name)]],
 		'016A' => ['guild_request', 'a4 Z24', [qw(ID name)]],
-		
-		# guild
-		'014C' => ['del_packet'],
-		'014E' => ['del_packet'],
-		'0152' => ['del_packet'],
-		'0154' => ['del_packet'],
-		'0156' => ['del_packet'],
-		'015A' => ['del_packet'],
-		'015C' => ['del_packet'],
-		'015E' => ['del_packet'],
-		'0160' => ['del_packet'],
-		'0162' => ['del_packet'],
-		'0163' => ['del_packet'],
-		'0166' => ['del_packet'],
-		'0167' => ['del_packet'],
-		'0169' => ['del_packet'],
-		'016C' => ['del_packet'],
-		'016D' => ['del_packet'],
-		'016F' => ['del_packet'],
-		'0171' => ['del_packet'],
-		'0173' => ['del_packet'],
-		'0174' => ['del_packet'],
-		'0181' => ['del_packet'],
-		'0182' => ['del_packet'],
-		'0184' => ['del_packet'],
-		'0185' => ['del_packet'],
-		'01B4' => ['del_packet'],
-		'01B6' => ['del_packet'],
-		'01EB' => ['del_packet'],
-		'01EC' => ['del_packet'],
-		'01F2' => ['del_packet'],
-		'0839' => ['del_packet'],
-		
 		'0177' => ['identify_list'],
 		'0179' => ['identify', 'v C', [qw(index flag)]],
 		'017B' => ['card_merge_list'],
@@ -311,25 +261,15 @@ sub new {
 		'01FF' => ['high_jump', 'a4 v2', [qw(ID x y)]],
 		'0205' => ['divorced', 'Z24', [qw(name)]], # clif_divorced
 		'0207' => ['friend_request', 'a4 a4 Z24', [qw(accountID charID name)]],
-		
-		# friend
-		'0201' => ['del_packet'],
-		'0206' => ['del_packet'],
-		'0209' => ['del_packet'],
-		'020A' => ['del_packet'],
-
 		'020E' => ['taekwon_packets', 'Z24 a4 C2', [qw(name ID value flag)]],
 		'020F' => ['pvp_point', 'V2', [qw(AID GID)]], #TODO: PACKET_CZ_REQ_PVPPOINT
 		'0215' => ['gospel_buff_aligned', 'a4', [qw(ID)]],
 		'0216' => ['adopt_reply', 'V', [qw(type)]],
-		'0219' => ['top10_blacksmith_rank'],
-		'021A' => ['top10_alchemist_rank'],
 		'021B' => ['blacksmith_points', 'V2', [qw(points total)]],
 		'021C' => ['alchemist_point', 'V2', [qw(points total)]],
 		'0221' => ['upgrade_list'],
 		'0223' => ['upgrade_message', 'a4 v', [qw(type itemID)]],
 		'0224' => ['taekwon_rank', 'V2', [qw(type rank)]],
-		'0226' => ['top10_taekwon_rank'],
 		'0229' => ['character_status', 'a4 v2 V C', [qw(ID opt1 opt2 option stance)]],
 		'022A' => ['actor_exists', 'a4 v3 V v10 a4 a2 v V C2 a3 C3 v',		[qw(ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords unknown1 unknown2 act lv)]], # standing
 		'022B' => ['actor_connected', 'a4 v3 V v10 a4 a2 v V C2 a3 C2 v',		[qw(ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords unknown1 unknown2 lv)]], # spawning
@@ -338,7 +278,6 @@ sub new {
 		'022F' => ['homunculus_food', 'C v', [qw(success foodID)]],
 		'0230' => ['homunculus_info', 'C2 a4 V',[qw(type state ID val)]],
 		'0235' => ['skills_list'], # homunculus skills
-		'0238' => ['top10_pk_rank'],
 		# homunculus skill update
 		'0239' => ['skill_update', 'v4 C', [qw(skillID lv sp range up)]], # range = skill range, up = this skill can be leveled up further
 		'023A' => ['storage_password_request', 'v', [qw(flag)]],
@@ -416,7 +355,6 @@ sub new {
 		'02EF' => ['font', 'a4 v', [qw(ID fontID)]],
 		'02F0' => ['progress_bar', 'V2', [qw(color time)]],
 		'02F2' => ['progress_bar_stop'],
-
 		'040C' => ['local_broadcast', 'v a4 v4 Z*', [qw(len color font_type font_size font_align font_y message)]], #TODO: PACKET_ZC_BROADCAST3
 		'043D' => ['skill_post_delay', 'v V', [qw(ID time)]],
 		'043E' => ['skill_post_delaylist'],
@@ -426,7 +364,6 @@ sub new {
 		'0442' => ['sage_autospell', 'x2 V a*', [qw(why autoshadowspell_list)]],
 		'0444' => ['cash_item_list', 'v V3 c v', [qw(len cash_point price discount_price type item_id)]], #TODO: PACKET_ZC_SIMPLE_CASH_POINT_ITEMLIST
 		'0446' => ['minimap_indicator', 'a4 v4', [qw(npcID x y effect qtype)]],
-
 		'0449' => ['hack_shield_alarm'],
 		'07D8' => ['party_exp', 'V C2', [qw(type itemPickup itemDivision)]],
 		'07D9' => ['hotkeys'], # 268 # hotkeys:38
@@ -437,7 +374,6 @@ sub new {
 		'07E6' => ['skill_msg', 'v V', [qw(id msgid)]],
 		'07E8' => ['captcha_image', 'v a*', [qw(len image)]], # -1
 		'07E9' => ['captcha_answer', 'v C', [qw(code flag)]], # 5
-
 		'07F6' => ['exp', 'a4 V v2', [qw(ID val type flag)]], # 14 # type: 1 base, 2 job; flag: 0 normal, 1 quest # TODO: use. I think this replaces the exp gained message trough guildchat hack
 		'07F7' => ['actor_exists', 'v C a4 v3 V v5 a4 v5 a4 a2 v V C2 a6 C2 v2 Z*', [qw(len object_type ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tick tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords xSize ySize lv font name)]], # -1 # walking
 		'07F8' => ['actor_connected', 'v C a4 v3 V v10 a4 a2 v V C2 a3 C2 v2 Z*', [qw(len object_type ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords xSize ySize lv font name)]], # -1 # spawning
@@ -448,7 +384,6 @@ sub new {
 		'07FD' => ['special_item_obtain', 'v C v c/Z a*', [qw(len type nameID holder etc)]],
 		'07FE' => ['sound_effect', 'Z24', [qw(name)]],
 		'07FF' => ['define_check', 'v V', [qw(len result)]], #TODO: PACKET_ZC_DEFINE_CHECK
-		'0800' => ['vender_items_list', 'v a4 a4', [qw(len venderID venderCID)]], # -1
 		'0803' => ['booking_register_request', 'v', [qw(result)]],
 		'0805' => ['booking_search_request', 'x2 a a*', [qw(IsExistMoreResult innerData)]],
 		'0807' => ['booking_delete_request', 'v', [qw(result)]],
@@ -457,17 +392,10 @@ sub new {
 		'080B' => ['booking_delete', 'V', [qw(index)]],
 		'080E' => ['party_hp_info', 'a4 V2', [qw(ID hp hp_max)]],
 		'080F' => ['deal_add_other', 'v C V C3 a8', [qw(nameID type amount identified broken upgrade cards)]], # 0x080F,20
-		'0810' => ['open_buying_store', 'c', [qw(amount)]],
-		'0812' => ['open_buying_store_fail', 'v', [qw(result)]],
-		'0814' => ['buying_store_found', 'a4 Z*', [qw(ID title)]],
-		'0816' => ['buying_store_lost', 'a4', [qw(ID)]],
-		'0818' => ['buying_store_items_list', 'v a4 a4', [qw(len buyerID buyingStoreID zeny)]],
-		'081C' => ['buying_store_item_delete', 'v2 V', [qw(index amount zeny)]],
 		'081E' => ['stat_info', 'v V', [qw(type val)]], # 8, Sorcerer's Spirit - not implemented in Kore
 		'0828' => ['char_delete2_result', 'a4 V2', [qw(charID result deleteDate)]], # 14
 		'082C' => ['char_delete2_cancel_result', 'a4 V', [qw(charID result)]], # 14
 		'082D' => ['received_characters', 'v C x2 C2 x20 a*', [qw(len total_slot premium_start_slot premium_end_slot charInfo)]],
-
 		'083E' => ['login_error', 'V Z20', [qw(type date)]],
 		'084B' => ['item_appeared', 'a4 v2 C v4', [qw(ID nameID unknown1 identified x y unknown2 amount)]], # 19 TODO   provided by try71023, modified sofax222
 		'0856' => ['actor_moved', 'v C a4 v3 V v5 a4 v6 a4 a2 v V C2 a6 C2 v2 Z*', [qw(len object_type ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tick tophead midhead hair_color clothes_color head_dir costume guildID emblemID manner opt3 stance sex coords xSize ySize lv font name)]], # -1 # walking provided by try71023 TODO: costume
@@ -491,6 +419,72 @@ sub new {
 		'097A' => ['del_packet'],  #OFF
 		'09A5' => ['full_or_banned'],  # 服务器已满或者被封号
 		'098B' => ['server_full'],  # 服务器已满
+		
+		# ChatRoom
+		'00D6' => ['del_packet'],
+		'00D7' => ['del_packet'],
+		'00D8' => ['del_packet'],
+		'00DA' => ['del_packet'],
+		'00DB' => ['del_packet'],
+		'00DC' => ['del_packet'],
+		'00DD' => ['del_packet'],
+		'00DF' => ['del_packet'],
+		'00E1' => ['del_packet'],
+		# vender
+		'0131' => ['del_packet'],
+		'0132' => ['del_packet'],
+		'0133' => ['del_packet'],
+		'0135' => ['del_packet'],
+		'0136' => ['del_packet'],
+		'0800' => ['del_packet'],
+		# guild
+		'014C' => ['del_packet'],
+		'014E' => ['del_packet'],
+		'0152' => ['del_packet'],
+		'0154' => ['del_packet'],
+		'0156' => ['del_packet'],
+		'015A' => ['del_packet'],
+		'015C' => ['del_packet'],
+		'015E' => ['del_packet'],
+		'0160' => ['del_packet'],
+		'0162' => ['del_packet'],
+		'0163' => ['del_packet'],
+		'0166' => ['del_packet'],
+		'0167' => ['del_packet'],
+		'0169' => ['del_packet'],
+		'016C' => ['del_packet'],
+		'016D' => ['del_packet'],
+		'016F' => ['del_packet'],
+		'0171' => ['del_packet'],
+		'0173' => ['del_packet'],
+		'0174' => ['del_packet'],
+		'0181' => ['del_packet'],
+		'0182' => ['del_packet'],
+		'0184' => ['del_packet'],
+		'0185' => ['del_packet'],
+		'01B4' => ['del_packet'],
+		'01B6' => ['del_packet'],
+		'01EB' => ['del_packet'],
+		'01EC' => ['del_packet'],
+		'01F2' => ['del_packet'],
+		'0839' => ['del_packet'],
+		# friend
+		'0201' => ['del_packet'],
+		'0206' => ['del_packet'],
+		'0209' => ['del_packet'],
+		'020A' => ['del_packet'],
+		# top10
+		'0219' => ['del_packet'],
+		'021A' => ['del_packet'],
+		'0226' => ['del_packet'],
+		'0238' => ['del_packet'],
+		# buying
+		'0810' => ['del_packet'],
+		'0812' => ['del_packet'],
+		'0814' => ['del_packet'],
+		'0816' => ['del_packet'],
+		'0818' => ['del_packet'],
+		'081C' => ['del_packet'],
 	};
 
 	# Item RECORD Struct's
@@ -5399,46 +5393,6 @@ sub system_chat {
 	});
 }
 
-sub top10_alchemist_rank {
-	my ($self, $args) = @_;
-
-	my $textList = bytesToString(top10Listing($args));
-	message TF("============= ALCHEMIST RANK ================\n" .
-		"#    Name                             Points\n".
-		"%s" .
-		"=============================================\n", $textList), "list";
-}
-
-sub top10_blacksmith_rank {
-	my ($self, $args) = @_;
-
-	my $textList = bytesToString(top10Listing($args));
-	message TF("============= BLACKSMITH RANK ===============\n" .
-		"#    Name                             Points\n".
-		"%s" .
-		"=============================================\n", $textList), "list";
-}
-
-sub top10_pk_rank {
-	my ($self, $args) = @_;
-
-	my $textList = bytesToString(top10Listing($args));
-	message TF("================ PVP RANK ===================\n" .
-		"#    Name                             Points\n".
-		"%s" .
-		"=============================================\n", $textList), "list";
-}
-
-sub top10_taekwon_rank {
-	my ($self, $args) = @_;
-
-	my $textList = bytesToString(top10Listing($args));
-	message TF("=============== TAEKWON RANK ================\n" .
-		"#    Name                             Points\n".
-		"%s" .
-		"=============================================\n", $textList), "list";
-}
-
 sub unequip_item {
 	my ($self, $args) = @_;
 
@@ -5508,150 +5462,6 @@ sub users_online {
 	my ($self, $args) = @_;
 
 	message TF("There are currently %s users online\n", $args->{users}), "info";
-}
-
-sub vender_found {
-	my ($self, $args) = @_;
-	my $ID = $args->{ID};
-
-	if (!$venderLists{$ID} || !%{$venderLists{$ID}}) {
-		binAdd(\@venderListsID, $ID);
-		Plugins::callHook('packet_vender', {ID => $ID});
-	}
-	$venderLists{$ID}{title} = bytesToString($args->{title});
-	$venderLists{$ID}{id} = $ID;
-}
-
-sub vender_items_list {
-	my ($self, $args) = @_;
-
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-	my $headerlen;
-
-	# a hack, but the best we can do now
-	if ($args->{switch} eq "0133") {
-		$headerlen = 8;
-	} else { # switch 0800
-		$headerlen = 12;
-	}
-
-	undef @venderItemList;
-	undef $venderID;
-	undef $venderCID;
-	$venderID = $args->{venderID};
-	$venderCID = $args->{venderCID} if exists $args->{venderCID};
-	my $player = Actor::get($venderID);
-
-	message TF("%s\n" .
-		"#   Name                                      Type           Amount       Price\n",
-		center(' Vender: ' . $player->nameIdx . ' ', 79, '-')), "list";
-	for (my $i = $headerlen; $i < $args->{RAW_MSG_SIZE}; $i+=22) {
-		my $item = {};
-		my $index;
-
-		($item->{price},
-		$item->{amount},
-		$index,
-		$item->{type},
-		$item->{nameID},
-		$item->{identified}, # should never happen
-		$item->{broken}, # should never happen
-		$item->{upgrade},
-		$item->{cards})	= unpack('V v2 C v C3 a8', substr($args->{RAW_MSG}, $i, 22));
-
-		$item->{name} = itemName($item);
-		$venderItemList[$index] = $item;
-
-		debug("Item added to Vender Store: $item->{name} - $item->{price} z\n", "vending", 2);
-
-		Plugins::callHook('packet_vender_store', {
-			venderID => $venderID,
-			number => $index,
-			name => $item->{name},
-			amount => $item->{amount},
-			price => $item->{price},
-			upgrade => $item->{upgrade},
-			cards => $item->{cards},
-			type => $item->{type},
-			id => $item->{nameID}
-		});
-
-		message(swrite(
-			"@<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<< @>>>>> @>>>>>>>>>z",
-			[$index, $item->{name}, $itemTypes_lut{$item->{type}}, $item->{amount}, formatNumber($item->{price})]),
-			"list");
-	}
-	message("-------------------------------------------------------------------------------\n", "list");
-
-	Plugins::callHook('packet_vender_store2', {
-		venderID => $venderID,
-		itemList => \@venderItemList
-	});
-}
-
-sub vender_lost {
-	my ($self, $args) = @_;
-
-	my $ID = $args->{ID};
-	binRemove(\@venderListsID, $ID);
-	delete $venderLists{$ID};
-}
-
-sub vender_buy_fail {
-	my ($self, $args) = @_;
-
-	my $reason;
-	if ($args->{fail} == 1) {
-		error TF("Failed to buy %s of item #%s from vender (insufficient zeny).\n", $args->{amount}, $args->{index});
-	} elsif ($args->{fail} == 2) {
-		error TF("Failed to buy %s of item #%s from vender (overweight).\n", $args->{amount}, $args->{index});
-	} else {
-		error TF("Failed to buy %s of item #%s from vender (unknown code %s).\n", $args->{amount}, $args->{index}, $args->{fail});
-	}
-}
-
-# TODO
-sub vending_start {
-	my ($self, $args) = @_;
-
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = unpack("v1",substr($msg, 2, 2));
-
-	#started a shop.
-	message TF("Shop '%s' opened!\n", $shop{title}), "success";
-	@articles = ();
-	# FIXME: why do we need a seperate variable to track how many items are left in the store?
-	$articles = 0;
-
-	# FIXME: Read the packet the server sends us to determine
-	# the shop title instead of using $shop{title}.
-	message TF("%s\n" .
-		"#  Name                                          Type        Amount       Price\n",
-		center(" $shop{title} ", 79, '-')), "list";
-	for (my $i = 8; $i < $msg_size; $i += 22) {
-		my $number = unpack("v1", substr($msg, $i + 4, 2));
-		my $item = $articles[$number] = {};
-		$item->{nameID} = unpack("v1", substr($msg, $i + 9, 2));
-		$item->{quantity} = unpack("v1", substr($msg, $i + 6, 2));
-		$item->{type} = unpack("C1", substr($msg, $i + 8, 1));
-		$item->{identified} = unpack("C1", substr($msg, $i + 11, 1));
-		$item->{broken} = unpack("C1", substr($msg, $i + 12, 1));
-		$item->{upgrade} = unpack("C1", substr($msg, $i + 13, 1));
-		$item->{cards} = substr($msg, $i + 14, 8);
-		$item->{price} = unpack("V1", substr($msg, $i, 4));
-		$item->{name} = itemName($item);
-		$articles++;
-
-		debug("Item added to Vender Store: $item->{name} - $item->{price} z\n", "vending", 2);
-
-		message(swrite(
-			"@< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<< @>>>>> @>>>>>>>>>z",
-			[$articles, $item->{name}, $itemTypes_lut{$item->{type}}, $item->{quantity}, formatNumber($item->{price})]),
-			"list");
-	}
-	message(('-'x79)."\n", "list");
-	$shopEarned ||= 0;
 }
 
 sub warp_portal_list {
@@ -6336,30 +6146,6 @@ sub special_item_obtain {
 	}
 }
 
-# TODO
-sub buyer_items
-{
-	my($self, $args) = @_;
-
-	my $BinaryID = $args->{venderID};
-	my $Player = Actor::get($BinaryID);
-	my $Name = $Player->name;
-
-	my $headerlen = 12;
-	my $Total = unpack('V4', substr($args->{msg}, $headerlen, 4));
-	$headerlen += 4;
-
-	for (my $i = $headerlen; $i < $args->{msg_size}; $i+=9)
-	{
-		my $Item = {};
-
-		($Item->{price},
-		$Item->{amount},
-		undef,
-		$Item->{nameID}) = unpack('V v C v', substr($args->{msg}, $i, 9));
-	}
-}
-
 sub progress_bar {
 	my($self, $args) = @_;
 	message TF("Progress bar loading (time: %d).\n", $args->{time}), 'info';
@@ -6375,109 +6161,6 @@ sub progress_bar {
 sub progress_bar_stop {
 	my($self, $args) = @_;
 	message TF("Progress bar finished.\n", 'info');
-}
-
-sub open_buying_store { #0x810
-	my($self, $args) = @_;
-	my $amount = $args->{amount};
-	message TF("Your buying store can buy %d items \n", $amount);
-}
-
-sub open_buying_store_fail { #0x812
-	my ($self, $args) = @_;
-	my $result = $args->{result};
-	if($result == 1){
-		message TF("Failed to open Purchasing Store.\n"),"info";
-	} elsif ($result == 2){
-		message TF("The total weight of the item exceeds your weight limit. Please reconfigure.\n"), "info";
-	} elsif ($result == 8){
-		message TF("Shop information is incorrect and cannot be opened.\n"), "info";
-	} else {
-		message TF("Failed opening your buying store.\n");
-	}
-}
-
-sub buying_store_found {
-	my ($self, $args) = @_;
-	my $ID = $args->{ID};
-	
-	if (!$buyerLists{$ID} || !%{$buyerLists{$ID}}) {
-		binAdd(\@buyerListsID, $ID);
-		Plugins::callHook('packet_buying', {ID => unpack 'V', $ID});
-	}
-	$buyerLists{$ID}{title} = bytesToString($args->{title});
-	$buyerLists{$ID}{id} = $ID;
-}
-
-sub buying_store_lost {
-	my ($self, $args) = @_;
-
-	my $ID = $args->{ID};
-	binRemove(\@buyerListsID, $ID);
-	delete $buyerLists{$ID};
-}
-
-sub buying_store_items_list {
-	my($self, $args) = @_;
-	
-	my $msg = $args->{RAW_MSG};
-	my $msg_size = $args->{RAW_MSG_SIZE};
-	my $headerlen = 16;
-	undef @buyerItemList;
-	undef $buyerID;
-	undef $buyingStoreID;
-	$buyerID = $args->{buyerID};
-	$buyingStoreID = $args->{buyingStoreID};
-	my $player = Actor::get($buyerID);
-	
-	message TF("%s\n" .	
-	"#   Name                                      Type           Amount       Price\n",
-		center(' Buyer: ' . $player->nameIdx . ' ', 79, '-')), "list";
-	for (my $i = $headerlen; $i < $args->{RAW_MSG_SIZE}; $i+=9) {
-		my $item = {};
-		my $index = 0;
-
-		($item->{price},
-		$item->{amount},
-		$item->{type},
-		$item->{nameID})	= unpack('V v C v', substr($args->{RAW_MSG}, $i, 9));
-
-		$item->{name} = itemName($item);
-		$buyerItemList[$index] = $item;
-		$index++;
-
-		debug("Item added to Buying Store: $item->{name} - $item->{price} z\n", "buying_store", 2);
-
-		Plugins::callHook('packet_buying_store', {
-			buyerID => $buyerID,
-			number => $index,
-			name => $item->{name},
-			amount => $item->{amount},
-			price => $item->{price},
-			type => $item->{type}
-		});
-
-		message(swrite(
-			"@<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<< @>>>>> @>>>>>>>>>z",
-			[$index, $item->{name}, $itemTypes_lut{$item->{type}}, $item->{amount}, formatNumber($item->{price})]),
-			"list");
-	}
-	message("-------------------------------------------------------------------------------\n", "list");
-
-	Plugins::callHook('packet_buying_store2', {
-		venderID => $buyerID,
-		itemList => \@buyerItemList
-	});
-}
-
-sub buying_store_item_delete {
-	my($self, $args) = @_;
-	return unless changeToInGameState();
-	my $item = $char->inventory->getByServerIndex($args->{index});
-	if ($item) {
-		buyingstoreitemdelete($item->{invIndex}, $args->{amount});
-		Plugins::callHook('buying_store_item_delete', {index => $item->{invIndex}});
-	}
 }
 
 sub define_check {
