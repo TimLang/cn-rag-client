@@ -146,8 +146,6 @@ minStorageZeny 30
 #──────────────── Zeny 少于此数值，不存仓 
 storageAuto_password
 #──────────────── 开仓密码
-autoTalkCont 0
-#──────────────── 是否与 NPC 自动对话至出现选项？
 
 
 
