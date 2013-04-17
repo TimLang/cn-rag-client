@@ -1,13 +1,4 @@
-#Here are the command descriptions stored.
-#
-#[command] -is the name of the command
-#the first line is a short description
-#<key>		description
-#
-#option		description they are divided by tabs
-#You can use as many tabs as you want
-#
-[a]
+﻿[a]
 攻击指定编号魔物-请输入ml指令查询魔物编号 注意:不是ID
 使用方法:a <魔物编号>
 
