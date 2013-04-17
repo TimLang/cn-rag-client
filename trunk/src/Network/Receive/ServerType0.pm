@@ -2124,7 +2124,7 @@ sub guild_request {
 	my $name = bytesToString($args->{name});
 	message TF("自动拒绝加入公会 '%s' 的请求\n", $name);
 
-	if (imeOut($timeout{'ai_guildAutoDeny'})) {
+	if (timeOut($timeout{'ai_guildAutoDeny'})) {
 	$messageSender->sendGuildJoin($args->{ID}, 0);
 	$timeout{'ai_guildAutoDeny'}{'time'} = time;
 	}
