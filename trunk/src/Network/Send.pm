@@ -604,30 +604,6 @@ sub sendPartyChat {
 	$self->sendToServer($self->reconstruct({switch => 'party_chat', message => $message}));
 }
 
-
-sub parse_buy_bulk_vender {
-	my ($self, $args) = @_;
-	@{$args->{items}} = map {{ amount => unpack('v', $_), itemIndex => unpack('x2 v', $_) }} unpack '(a4)*', $args->{itemInfo};
-}
-
-sub reconstruct_buy_bulk_vender {
-	my ($self, $args) = @_;
-	# ITEM index. There were any other indexes expected to be in item buying packet?
-	$args->{itemInfo} = pack '(a4)*', map { pack 'v2', @{$_}{qw(amount itemIndex)} } @{$args->{items}};
-}
-
-# not "buy", it sells items!
-sub sendBuyBulkVender {
-	my ($self, $venderID, $r_array, $venderCID) = @_;
-	$self->sendToServer($self->reconstruct({
-		switch => 'buy_bulk_vender',
-		venderID => $venderID,
-		venderCID => $venderCID,
-		items => $r_array,
-	}));
-	debug "Sent bulk buy vender: ".(join ', ', map {"$_->{itemIndex} x $_->{amount}"} @$r_array)."\n", "sendPacket";
-}
-
 sub parse_buy_bulk_buyer {
 	my ($self, $args) = @_;
 	@{$args->{items}} = map {{ amount => unpack('v', $_), itemIndex => unpack('x2 v', $_) }} unpack '(a4)*', $args->{itemInfo};

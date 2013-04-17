@@ -67,10 +67,10 @@ sub initHandlers {
 	bangbang           => \&cmdBangBang,
 	bingbing           => \&cmdBingBing,
 	bg                 => \&cmdChat,
-	bl				   => \&cmdBuyerList,
-	booking			   => \&cmdBooking,
+	bl                 => \&cmdBuyerList,
+	booking            => \&cmdBooking,
 	buy                => \&cmdBuy,
-	buyer			   => \&cmdBuyer,
+	buyer              => \&cmdBuyer,
 	c                  => \&cmdChat,
 	card               => \&cmdCard,
 	cart               => \&cmdCart,
@@ -99,7 +99,7 @@ sub initHandlers {
 	merc               => \&cmdSlave,
 	g                  => \&cmdChat,
 	getplayerinfo      => \&cmdGetPlayerInfo,
-	getcharname		   => \&cmdGetCharacterName,
+	getcharname        => \&cmdGetCharacterName,
 	help               => \&cmdHelp,
 	i                  => \&cmdInventory,
 	identify           => \&cmdIdentify,
@@ -157,21 +157,18 @@ sub initHandlers {
 	t                  => \&cmdTeleport,
 	testshop           => \&cmdTestShop,
 	timeout            => \&cmdTimeout,
-	top10              => \&cmdTop10,
 	uneq               => \&cmdUnequip,
-	vender             => \&cmdVender,
 	verbose            => \&cmdVerbose,
 	version            => \&cmdVersion,
-	vl                 => \&cmdVenderList,
 	warp               => \&cmdWarp,
 	weight             => \&cmdWeight,
 	where              => \&cmdWhere,
 	whoami             => \&cmdWhoAmI,
 
-	quest			   => \&cmdQuest,
-	showeq			   => \&cmdShowEquip,
-	cook			   => \&cmdCooking,
-	refine			   => \&cmdWeaponRefine,
+	quest              => \&cmdQuest,
+	showeq             => \&cmdShowEquip,
+	cook               => \&cmdCooking,
+	refine             => \&cmdWeaponRefine,
 
 	north              => \&cmdManualMove,
 	south              => \&cmdManualMove,
@@ -181,7 +178,7 @@ sub initHandlers {
 	northwest          => \&cmdManualMove,
 	southeast          => \&cmdManualMove,
 	southwest          => \&cmdManualMove,
-	captcha			   => \&cmdAnswerCaptcha
+	captcha            => \&cmdAnswerCaptcha
 	);
 }
 
@@ -3900,33 +3897,6 @@ sub cmdTimeout {
 	}
 }
 
-sub cmdTop10 {
-	if (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", shift);
-		return;
-	}
-	my (undef, $args) = @_;
-	my ($arg1) = $args;
-	
-	if ($arg1 eq "") {
-		message T("Function 'top10' (Show Top 10 Lists)\n" .
-			"Usage: top10 <b|a|t|p> | <black|alche|tk|pk> | <blacksmith|alchemist|taekwon|pvp>\n");
-	} elsif ($arg1 eq "a" || $arg1 eq "alche" || $arg1 eq "alchemist") {
-		$messageSender->sendTop10Alchemist();
-	} elsif ($arg1 eq "b" || $arg1 eq "black" || $arg1 eq "blacksmith") {
-		$messageSender->sendTop10Blacksmith();
-	} elsif ($arg1 eq "p" || $arg1 eq "pk" || $arg1 eq "pvp") {
-		$messageSender->sendTop10PK();
-	} elsif ($arg1 eq "t" || $arg1 eq "tk" || $arg1 eq "taekwon") {
-		$messageSender->sendTop10Taekwon();		
-	} else {
-		error T("Syntax Error in function 'top10' (Show Top 10 Lists)\n" .
-			"Usage: top10 <b|a|t|p> |\n" .
-			"             <black|alche|tk|pk> |\n".
-			"             <blacksmith|alchemist|taekwon|pvp>\n");
-	}	
-}
-
 sub cmdUnequip {
 
 	# unequip an item
@@ -4170,54 +4140,6 @@ sub cmdUseSkill {
 	);
 	my $task = new Task::ErrorReport(task => $skillTask);
 	$taskManager->add($task);
-}
-
-sub cmdVender {
-	if (!$net || $net->getState() != Network::IN_GAME) {
-		error TF("You must be logged in the game to use this command (%s)\n", shift);
-		return;
-	}
-	my (undef, $args) = @_;
-	my ($arg1) = $args =~ /^([\d\w]+)/;
-	my ($arg2) = $args =~ /^[\d\w]+ (\d+)/;
-	my ($arg3) = $args =~ /^[\d\w]+ \d+ (\d+)/;
-	if ($arg1 eq "") {
-		error T("Syntax error in function 'vender' (Vender Shop)\n" .
-			"Usage: vender <vender # | end> [<item #> <amount>]\n");
-	} elsif ($arg1 eq "end") {
-		undef @venderItemList;
-		undef $venderID;
-		undef $venderCID;
-	} elsif ($venderListsID[$arg1] eq "") {
-		error TF("Error in function 'vender' (Vender Shop)\n" .
-			"Vender %s does not exist.\n", $arg1);
-	} elsif ($arg2 eq "") {
-		$messageSender->sendEnteringVender($venderListsID[$arg1]);
-	} elsif ($venderListsID[$arg1] ne $venderID) {
-		error T("Error in function 'vender' (Vender Shop)\n" .
-			"Vender ID is wrong.\n");
-	} else {
-		if ($arg3 <= 0) {
-			$arg3 = 1;
-		}
-		$messageSender->sendBuyBulkVender($venderID, [{itemIndex  => $arg2, amount => $arg3}], $venderCID);
-	}
-}
-
-sub cmdVenderList {
-	message T("-----------Vender List-----------\n" .
-		"#   Title                                Coords     Owner\n"), "list";
-	for (my $i = 0; $i < @venderListsID; $i++) {
-		next if ($venderListsID[$i] eq "");
-		my $player = Actor::get($venderListsID[$i]);
-		# autovivifies $obj->{pos_to} but it doesnt matter
-		message(sprintf(
-			"%3d %-36s (%3s, %3s) %-20s\n",
-			$i, $venderLists{$venderListsID[$i]}{'title'},
-			$player->{pos_to}{x} || '?', $player->{pos_to}{y} || '?', $player->name),
-			"list");
-	}
-	message("----------------------------------\n", "list");
 }
 
 sub cmdBuyerList {

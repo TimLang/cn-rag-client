@@ -36,41 +36,6 @@ forceuse <inventory item #>	craft arrows immediately from an item without using 
 [as]
 停止攻击魔物
 
-[au]
-显示可用的拍卖命令
-
-[aua]
-新增物品到拍卖
-<背包物品> <数量>	新增物品到拍卖
-
-[aub]
-下标拍卖物品
-<id> <金额>	下标拍卖物品
-
-[auc]
-新建拍卖
-<当前价格> <立即购买价格> <小时>		新建拍卖
-
-[aud]
-删除拍卖
-<index>		删除拍卖
-
-[aue]
-拍卖结束
-<index>		拍卖结束
-
-[aui]
-显示您的拍卖讯息
-selling		已卖的讯息
-buying		已买的讯息
-
-[aur]
-从拍卖删除物品
-
-[aus]
-搜索拍卖按照标准
-<类型> <价格> <文字>	      类型:(0:铠甲 1:武器 2:卡片 3:其他 4:从文字 5:从价格 6:卖 7:买)
-
 [auth]
 授权指定玩家使用Kore的聊天命令
 <玩家名称> 0		取消授权
@@ -542,26 +507,13 @@ stop				停止肉盾模式
 设定 timeout
 <类型>				显示值重 <类型>
 <类型> <秒>		套用值 <类型> 与 <秒>
-[top10]
-显示前10排名
-top10 (a | alche | alchemist)		显示炼金术师的十大排名
-top10 (b | black | blacksmith)		显示铁匠的十大排名
-top10 (p | pk | pvp)				显示 PVP的十大排名
-top10 (t | tk | taekwon)			显示跆拳道家的十大排名
 [uneq]
 已装备的物品
 <背包物品编号>		装备指定的物品
-[vender]
-查看露天商店或购买
-<露天商店编号> 显示该露天商店物品
-<露天商店编号> <露天商店 物品编号> <数量> 购买一个物品
-end				离开目前的露天商店
 [verbose]
 切换 verbose 开/关
 [version]
 显示openkore系统的版本
-[vl]
-显示附近的商店名称
 [warp]
 打开传送之阵
 list				列出可传送的地图需先咏唱传送之阵
@@ -572,8 +524,6 @@ list				列出可传送的地图需先咏唱传送之阵
 <item weight>			计算多少之后会负重50或90
 [where]
 显示您目前的坐标位置
-#[who]
-显示服务器在线人数
 [whoami]
 显示你的角色名称帐户ID
 [north]

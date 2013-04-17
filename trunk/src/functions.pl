@@ -921,11 +921,6 @@ sub initMapChangeVars {
 	$ai_v{temp} = {};
 	$cart{inventory} = [];
 	delete $storage{opened};
-	undef @venderItemList;
-	undef $venderID;
-	undef $venderCID;
-	undef @venderListsID;
-	undef %venderLists;
 	undef $buyerID;
 	undef $buyingStoreID;
 	undef @buyerListsID;

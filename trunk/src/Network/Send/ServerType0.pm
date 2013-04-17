@@ -49,7 +49,6 @@ sub new {
 		'0096' => ['private_message', 'x2 Z24 Z*', [qw(privMsgUser privMsg)]],
 		'00B2' => ['restart', 'C', [qw(type)]],
 		'0108' => ['party_chat', 'x2 Z*', [qw(message)]],
-		'0134' => ['buy_bulk_vender', 'x2 a4 a*', [qw(venderID itemInfo)]],
 		'0149' => ['alignment', 'a4 C v', [qw(targetID type point)]],
 		'014D' => ['guild_check'], # len 2
 		'014F' => ['guild_info_request', 'V', [qw(type)]],
@@ -71,7 +70,6 @@ sub new {
 		'0369' => ['actor_name_request', 'a4', [qw(ID)]],
 		'0437' => ['character_move','a3', [qw(coords)]],
 		'0443' => ['skill_select', 'V v', [qw(why skillID)]],
-		'0801' => ['buy_bulk_vender', 'x2 a4 a4 a*', [qw(venderID venderCID itemInfo)]], # not "buy", it sells items!
 		'0802' => ['booking_register', 'v8', [qw(level MapID job0 job1 job2 job3 job4 job5)]],
 		'0804' => ['booking_search', 'v3 V s', [qw(level MapID job LastIndex ResultCount)]],
 		'0806' => ['booking_delete'],
@@ -90,7 +88,6 @@ sub new {
 	# 	game_login 0065
 	# 	map_login 0072
 	# 	character_move 0085
-	# 	buy_bulk_vender 0134
 	# );
 	# $self->{packet_lut}{$_} = $handlers{$_} for keys %handlers;
 	
@@ -300,13 +297,6 @@ sub sendEmotion {
 	debug "Sent Emotion\n", "sendPacket", 2;
 }
 
-sub sendEnteringVender {
-	my ($self, $ID) = @_;
-	my $msg = pack("C*", 0x30, 0x01) . $ID;
-	$self->sendToServer($msg);
-	debug "Sent Entering Vender: ".getHex($ID)."\n", "sendPacket", 2;
-}
-
 sub sendEquip {
 	my ($self, $index, $type) = @_;
 	my $msg = pack("C*", 0xA9, 0x00) . pack("v*", $index) .  pack("v*", $type);
@@ -324,37 +314,12 @@ sub sendProduceMix {
 	debug "Sent Forge, Produce Item: $ID\n" , 2;
 }
 
-=pod
-sub sendGetCharacterName {
-	my ($self, $ID) = @_;
-	my $msg = pack("C*", 0x93, 0x01) . $ID;
-	$self->sendToServer($msg);
-	debug "Sent get character name: ID - ".getHex($ID)."\n", "sendPacket", 2;
-}
-=cut
-
 sub sendNPCBuySellList { # type:0 get store list, type:1 get sell list
 	my ($self, $ID, $type) = @_;
 	my $msg = pack('v a4 C', 0x00C5, $ID , $type);
 	$self->sendToServer($msg);
 	debug "Sent get ".($type ? "buy" : "sell")." list to NPC: ".getHex($ID)."\n", "sendPacket", 2;
 }
-
-=pod
-sub sendGetStoreList {
-	my ($self, $ID, $type) = @_;
-	my $msg = pack("C*", 0xC5, 0x00) . $ID . pack("C*",0x00);
-	$self->sendToServer($msg);
-	debug "Sent get store list: ".getHex($ID)."\n", "sendPacket", 2;
-}
-
-sub sendGetSellList {
-	my ($self, $ID) = @_;
-	my $msg = pack("C*", 0xC5, 0x00) . $ID . pack("C*",0x01);
-	$self->sendToServer($msg);
-	debug "Sent sell to NPC: ".getHex($ID)."\n", "sendPacket", 2;
-}
-=cut
 
 sub sendGMSummon {
 	my ($self, $playerName) = @_;
@@ -865,52 +830,6 @@ sub sendWarpTele { # type: 26=tele, 27=warp
 	my $msg = pack('v2 Z16', 0x011B, $skillID, stringToBytes($map));
 	$self->sendToServer($msg);
 	debug "Sent ". ($skillID == 26 ? "Teleport" : "Open Warp") . "\n", "sendPacket", 2
-}
-=pod
-sub sendTeleport {
-	my $self = shift;
-	my $location = shift;
-	$location = substr($location, 0, 16) if (length($location) > 16);
-	$location .= chr(0) x (16 - length($location));
-	my $msg = pack("C*", 0x1B, 0x01, 0x1A, 0x00) . $location;
-	$self->sendToServer($msg);
-	debug "Sent Teleport: $location\n", "sendPacket", 2;
-}
-
-sub sendOpenWarp {
-	my ($self, $map) = @_;
-	my $msg = pack("C*", 0x1b, 0x01, 0x1b, 0x00) . $map .
-		chr(0) x (16 - length($map));
-	$self->sendToServer($msg);
-}
-=cut
-
-sub sendTop10Alchemist {
-	my $self = shift;
-	my $msg = pack("v", 0x0218);
-	$self->sendToServer($msg);
-	debug "Sent Top 10 Alchemist request\n", "sendPacket", 2;
-}
-
-sub sendTop10Blacksmith {
-	my $self = shift;
-	my $msg = pack("v", 0x0217);
-	$self->sendToServer($msg);
-	debug "Sent Top 10 Blacksmith request\n", "sendPacket", 2;
-}	
-
-sub sendTop10PK {
-	my $self = shift;
-	my $msg = pack("v", 0x0237);
-	$self->sendToServer($msg);
-	debug "Sent Top 10 PK request\n", "sendPacket", 2;	
-}
-
-sub sendTop10Taekwon {
-	my $self = shift;
-	my $msg = pack("v", 0x0225);
-	$self->sendToServer($msg);
-	debug "Sent Top 10 Taekwon request\n", "sendPacket", 2;
 }
 
 sub sendUnequip {
