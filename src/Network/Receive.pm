@@ -1467,7 +1467,7 @@ sub shop_skill {
 	my $number = $args->{number};
 	message TF("You can sell %s items!\n", $number);
 	
-	main::openShop();
+	main::openShop() unless ($config{XKore});
 }
 
 # 01D0 (spirits), 01E1 (coins), 08CF (amulets)
