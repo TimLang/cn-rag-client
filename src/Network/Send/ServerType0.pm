@@ -924,30 +924,6 @@ sub sendWeaponRefine {
 	debug "Sent Weapon Refine.\n", "sendPacket", 2;
 }
 
-# this is different from kRO
-sub sendCaptchaInitiate {
-	my ($self) = @_;
-	my $msg = pack('v2', 0x07E5, 0x0);
-	$self->sendToServer($msg);
-	debug "Sending Captcha Initiate\n";
-}
-
-# captcha packet from kRO::RagexeRE_2009_09_22a
-#0x07e7,32
-# TODO: what is 0x20?
-sub sendCaptchaAnswer {
-	my ($self, $answer) = @_;
-	my $msg = pack('v2 a4 a24', 0x07E7, 0x20, $accountID, $answer);
-	$self->sendToServer($msg);
-}
-
-sub sendEnteringBuyer {
-	my ($self, $ID) = @_;
-	my $msg = pack("C*", 0x17, 0x08) . $ID;
-	$self->sendToServer($msg);
-	debug "Sent Entering Buyer: ".getHex($ID)."\n", "sendPacket", 2;
-}
-
 sub sendProgress {
 	my ($self) = @_;
 	my $msg = pack("C*", 0xf1, 0x02);

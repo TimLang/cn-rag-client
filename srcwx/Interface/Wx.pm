@@ -90,7 +90,6 @@ sub OnInit {
 		['packet_privMsg',                      $onChat],
 		['packet_sentPM',                       $onChat],
 		['mainLoop_pre',                        sub { $self->onUpdateUI(); }],
-		['captcha_file',                        sub { $self->onCaptcha(@_); }],
 		['packet/minimap_indicator',            sub { $self->onMapIndicator (@_); }],
 		
 		# stat changes
@@ -538,11 +537,6 @@ sub createSettingsMenu {
 	$self->{mBooleanSetting}{'wx_npcTalk'} = $self->addCheckMenu (
 		$parentMenu, T('Use Wx NPC Talk'), sub { $self->onBooleanSetting ('wx_npcTalk'); },
 		T('Open a dialog when talking with NPCs')
-	);
-	
-	$self->{mBooleanSetting}{'wx_captcha'} = $self->addCheckMenu (
-		$parentMenu, T('Use Wx captcha'), sub { $self->onBooleanSetting ('wx_captcha'); },
-		T('Open a dialog when receiving a captcha')
 	);
 	
 	$self->{mBooleanSetting}{'wx_map_route'} = $self->addCheckMenu (
@@ -1382,27 +1376,6 @@ sub onMap_MapChange {
 	my ($mapDock) = @_;
 	$mapDock->title($field->baseName);
 	$mapDock->Fit;
-}
-
-### Captcha ###
-
-sub onCaptcha {
-	my ($self, undef, $args) = @_;
-	
-	return unless $config{wx_captcha};
-	
-	require Interface::Wx::CaptchaDialog;
-	my $dialog = new Interface::Wx::CaptchaDialog ($self->{frame}, $args->{file});
-	my $result;
-	if ($dialog->ShowModal == wxID_OK) {
-		$result = $dialog->GetValue;
-	}
-	$dialog->Destroy;
-	return unless defined $result && $result ne '';
-	
-	$messageSender->sendCaptchaAnswer ($result);
-	
-	$args->{return} = 1;
 }
 
 ### Map ###
