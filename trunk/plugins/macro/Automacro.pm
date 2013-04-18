@@ -543,6 +543,7 @@ sub checkMonster {
 			$varStack{".lastMonsterPos"} = $val;
 			$varStack{".lastMonsterDist"} = $dist;
 			$varStack{".lastMonsterID"} = $monsters{$_}->{binID};
+			$varStack{".lastMonsterBinID"} = $monsters{$_}->{binType};
 			return cmpr($dist, $cond, $mondist)
 		} else {
 			if (existsInList($monsterList, $monsters{$_}->{name})) {
@@ -555,6 +556,7 @@ sub checkMonster {
 				$varStack{".lastMonsterPos"} = $val;
 				$varStack{".lastMonsterDist"} = $dist;
 				$varStack{".lastMonsterID"} = $monsters{$_}->{binID};
+				$varStack{".lastMonsterBinID"} = $monsters{$_}->{binType};
 				for (my $i = 0; $i < @::monstersID; $i++) {
 					next if $::monstersID[$i] eq "";
 					my $monster = Actor::get($::monstersID[$i]);
