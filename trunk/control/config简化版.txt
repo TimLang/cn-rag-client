@@ -1679,7 +1679,6 @@ macro_file macros.txt
 #╰════════════════════════════════════╯
 
 wx_npcTalk
-wx_captcha
 wx_map_route 1
 
 

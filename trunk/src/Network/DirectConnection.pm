@@ -467,7 +467,6 @@ sub checkConnection {
 			my $master = $masterServer;
 			message T("Connecting to Character Server...\n"), "connection";
 			$conState_tries++;
-			$captcha_state = 0;
 
 			if ($master->{charServer_ip}) {
 				$self->serverConnect($master->{charServer_ip}, $master->{charServer_port});
@@ -499,22 +498,9 @@ sub checkConnection {
 				$reconnectCount = 0;
 				return if ($conState == 1.5);
 			}
-			# TODO: the connect code needs a major rewrite =/
-			unless($masterServer->{captcha}) {
 				$messageSender->sendGameLogin($accountID, $sessionID, $sessionID2, $accountSex);
 				$timeout{'gamelogin'}{'time'} = time;
-			}
-		} elsif($self->serverAlive() && $masterServer->{captcha}) {
-			if ($captcha_state == 0) { # send initiate once, then wait for servers captcha_answer packet
-				$messageSender->sendCaptchaInitiate();
-				$captcha_state = -1;
-			} elsif ($captcha_state == 1) { # captcha answer was correct, sent sendGameLogin once, then wait for servers 
-				$messageSender->sendGameLogin($accountID, $sessionID, $sessionID2, $accountSex);
-				$timeout{'gamelogin'}{'time'} = time;
-				$captcha_state = -1;
-			} else {
-				return;
-			}
+
 		} elsif (timeOut($timeout{'gamelogin'}) && ($config{'server'} ne "" || $masterServer->{'charServer_ip'})) {
 			error T("Timeout on Character Server, reconnecting...\n"), "connection";
 			$timeout_ex{'master'}{'time'} = time;
