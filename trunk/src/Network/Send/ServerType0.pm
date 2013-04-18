@@ -645,16 +645,6 @@ sub sendSellBulk {
 	$self->sendToServer($msg);
 }
 
-sub sendSkillUse {
-	my ($self, $ID, $lv, $targetID) = @_;
-	my $msg;
-
-	$msg = pack("C*", 0x13, 0x01).pack("v*",$lv,$ID).$targetID;
-
-	$self->sendToServer($msg);
-	debug "Skill Use: $ID\n", "sendPacket", 2;
-}
-
 sub sendStorageAddFromCart {
 	my $self = shift;
 	my $index = shift;

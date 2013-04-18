@@ -409,7 +409,11 @@ sub use {
 	my $self = shift;
 	my $target = shift;
 	# TODO: use Actor as an argument
-	return 0 unless $self->usable;
+	if (!$self->usable) {
+		error TF("使用物品错误 %s\n" .
+			"该物品不能使用\n", $self->{name});
+		return 0;
+	}
 	$messageSender->sendItemUse($self->{index}, !$target?$accountID:$target);
 	return 1;
 }
