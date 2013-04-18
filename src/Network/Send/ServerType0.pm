@@ -70,10 +70,6 @@ sub new {
 		'0369' => ['actor_name_request', 'a4', [qw(ID)]],
 		'0437' => ['character_move','a3', [qw(coords)]],
 		'0443' => ['skill_select', 'V v', [qw(why skillID)]],
-		'0802' => ['booking_register', 'v8', [qw(level MapID job0 job1 job2 job3 job4 job5)]],
-		'0804' => ['booking_search', 'v3 V s', [qw(level MapID job LastIndex ResultCount)]],
-		'0806' => ['booking_delete'],
-		'0808' => ['booking_update', 'v6', [qw(job0 job1 job2 job3 job4 job5)]],
 		'0819' => ['buy_bulk_buyer', 'x2 x2 a4 a*', [qw(buyerID buyingStoreID zeny itemInfo)]],
 		'0827' => ['char_delete2', 'a4', [qw(charID)]], # 6
 		'082B' => ['char_delete2_cancel', 'a4', [qw(charID)]], # 6
