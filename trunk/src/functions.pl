@@ -730,7 +730,12 @@ sub processServerSettings {
 	my $master = $masterServer = $masterServers{$config{master}};
 	
 	# Check for required options
+<<<<<<< .mine
+	# TODO: add more besides serverType, if any exist
 	if (my @missingOptions = grep { $master->{$_} eq '' } qw(ip port master_version version serverType)) {
+=======
+	if (my @missingOptions = grep { $master->{$_} eq '' } qw(ip port master_version version serverType)) {
+>>>>>>> .r181
 		$interface->errorDialog(TF("Required server options are not set: %s\n", "@missingOptions"));
 		exit;
 	}
