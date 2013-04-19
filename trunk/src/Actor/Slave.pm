@@ -10,9 +10,9 @@ sub new {
 	my ($class, $type) = @_;
 	
 	my $actorType =
-		(($type >= 6001 && $type <= 6016) || ($type >= 6048 && $type <= 6052)) ? '人工生命体' :
-		($type >= 6017 && $type <= 6046) ? '佣兵' :
-	'未知';
+		(($type >= 6001 && $type <= 6016) || ($type >= 6048 && $type <= 6052)) ? 'Homunculus' :
+		($type >= 6017 && $type <= 6046) ? 'Mercenary' :
+	'Unknown';
 	
 	return $class->SUPER::new ($actorType);
 }

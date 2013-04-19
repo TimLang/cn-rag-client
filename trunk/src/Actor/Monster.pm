@@ -28,7 +28,7 @@ use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('怪物');
+	return $class->SUPER::new('Monster');
 }
 
 1;
