@@ -2056,11 +2056,14 @@ hu_fild06 200 372 hugel 95 33
 # 毁葛-深渊湖水 地下洞穴 1F~3F
 # 每次进入消耗 龙牙x 1 龙鳞x 1 龙尾x 1 
 hu_fild05 168 304 abyss_01 275 280 0 c r0 c c c n
-#跟石头对话去湖中央
-hu_fild05 171 211 hu_fild05 169 305 0 c r0 c c c c n
-#离开湖中央
-hu_fild05 184 204 hu_fild05 196 210
-hu_fild05 196 210 abyss_01 265 274
+# 从湖边到湖中心岛
+hu_fild05 168 304 hu_fild05 184 204 0 c r0 c c c n
+# 从中心岛进洞
+hu_fild05 196 210 abyss_01 260 268
+# 从中央岛到湖边
+hu_fild05 171 211 hu_fild05 169 305 0 c r0 c c c n
+# 离开湖中央
+#hu_fild05 184 204 hu_fild05 196 210
 abyss_01 265 274 hu_fild05 196 210
 abyss_01 25 24 abyss_02 277 270
 abyss_02 277 270 abyss_01 25 24
