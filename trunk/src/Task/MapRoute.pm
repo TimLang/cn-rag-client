@@ -32,6 +32,7 @@ use Misc qw(useTeleport);
 use Utils qw(timeOut distance existsInList);
 use Utils::PathFinding;
 use Utils::Exceptions;
+use encoding 'utf8';
 
 
 # Error constants.
@@ -193,7 +194,7 @@ sub iterate {
 					$field->baseName, $self->{mapSolution}[0]{pos}{x}, $self->{mapSolution}[0]{pos}{y},
 					$self->{actor}{zeny}), "route";
 					AI::clear(qw/move route mapRoute/);
-					message T("Stopped all movement\n"), "success";
+					message T("已停止所有行动\n"), "success";
 			}
 
 		} elsif ( $self->{maxTime} && time - $self->{time_start} > $self->{maxTime} ) {

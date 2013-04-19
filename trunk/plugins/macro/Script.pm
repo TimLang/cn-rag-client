@@ -257,10 +257,11 @@ sub next {
 			newThen($then, $self, $errtpl);
 			if (defined $self->{error}) {$self->{error} = "$errtpl: $self->{error}"; return}
 		} elsif ($then eq "{") { # If the condition is false and are using block of commands, will be skipped
+			my $searchEnd;
 			my $countBlockIf = 1;
 			while ($countBlockIf) {
 				$self->{line}++;
-				my $searchEnd = ${$macro{$self->{name}}}[$self->{line}];
+				$searchEnd = ${$macro{$self->{name}}}[$self->{line}];
 				
 				if ($searchEnd =~ /^if.*{/) {
 					$countBlockIf++;
