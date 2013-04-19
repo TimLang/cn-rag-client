@@ -1,4 +1,4 @@
-#飞空艇(国内线)
+﻿#飞空艇(国内线)
 airplane 208 53 airplane 245 160
 airplane 245 160 airplane 208 53
 airplane 254 54 airplane 87 67
@@ -2267,7 +2267,8 @@ que_thor 69 56 thor_v02 146 84
 thor_v03 30 262 thor_v02 192 60
 ########################################
 #莫斯科比亚
-moscovia 136 46 mosk_fild01 95 93 0 c c r0 c c c c
+moscovia 140 50 mosk_fild01 95 93
+# 码头自动对话需要范例中的macro支持
 moscovia 256 179 mosk_in 211 111
 moscovia 223 174 mosk_in 11 246
 moscovia 203 171 mosk_in 89 180
