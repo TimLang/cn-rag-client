@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-15 23:28+0800\n"
+"PO-Revision-Date: 2013-04-20 00:11+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,9 @@ msgstr ""
 msgid ""
 "Empty coordinates setting for planLockMapWalk; planLockMapWalk disabled\n"
 msgstr "planLockMapWalk锁定地图路径点插件是空白的路径点设置; 插件功能关闭.\n"
+
+msgid "All files were loaded\n"
+msgstr "所有文件已加载完毕\n"
 
 msgid "Do plan walking route to: %s: %s, %s\n"
 msgstr "自定义路径点到: %s: %s, %s\n"
@@ -85,7 +88,7 @@ msgid ""
 "  %s\n"
 "to learn how to solve this."
 msgstr ""
-"你的 Windows TCP/IP stack 坏了. 请阅读\n"
+"你的 Windows TCP/IP 堆栈功能坏了. 请阅读\n"
 "  %s\n"
 "以学习如何解决."
 
@@ -94,7 +97,7 @@ msgid ""
 "You have old files in the OpenKore folder, which may cause conflicts.\n"
 "Please delete your entire OpenKore source folder, and redownload everything."
 msgstr ""
-"你在CN Kore文件夹中有旧式文档, 可能造成程序冲突.\n"
+"你在CN Kore文件夹中有旧的文档, 可能造成程序冲突.\n"
 "请删除全部的CN Kore文件夹, 并重新下载所有文档."
 
 #: ../Task/Move.pm:146
@@ -117,7 +120,7 @@ msgid ""
 "Your version of (wx)start.exe is incompatible.\n"
 "Please upgrade it from %s"
 msgstr ""
-"你的 (wx)start.exe 版本不兼容.\n"
+"你的主程序版本不兼容.\n"
 "请参阅 %s 以更新它"
 
 #: ../../openkore.pl:155
@@ -135,7 +138,7 @@ msgid ""
 "Your version of (wx)start.exe is too old.\n"
 "Please upgrade it from %s"
 msgstr ""
-"你的 (wx)start.exe 版本太旧.\n"
+"你的主程序版本太旧.\n"
 "请参阅 %s 以更新它"
 
 #. Translation Comment: Kore's exit message
@@ -145,7 +148,7 @@ msgstr "再见!\n"
 
 #: ../Actor/Item.pm:408 ../Actor/Item.pm:429
 msgid "Wrong equip slot specified\n"
-msgstr "错误的装备规格\n"
+msgstr "错误的装备格子\n"
 
 #: ../Actor/Item.pm:413
 #, perl-format
@@ -344,11 +347,11 @@ msgstr "移动至 %s\n"
 
 #: ../AI/CoreLogic.pm:986
 msgid "Disconnecting on death!\n"
-msgstr "因死亡而自动断线\n"
+msgstr "因死亡而自动断开连接\n"
 
 #: ../AI/CoreLogic.pm:987
 msgid "*** You died, auto disconnect! ***\n"
-msgstr "*** 你已死亡, 自动断线! ***\n"
+msgstr "*** 你已死亡, 自动断开连接! ***\n"
 
 #: ../AI/CoreLogic.pm:1090
 msgid "Auto-storaging due to excess weight\n"
@@ -358,7 +361,7 @@ msgstr "因负重达到设置值而启动自动存仓功能\n"
 #: ../AI/CoreLogic.pm:2298
 #, perl-format
 msgid "Disconnecting on empty %s!\n"
-msgstr "因已无 %s 而断线中!\n"
+msgstr "因已无 %s 而断开连接中!\n"
 
 #: ../AI/CoreLogic.pm:1150
 #, perl-format
@@ -388,7 +391,7 @@ msgstr "你的config文档中的 storageAuto_npc_type 有误.\n"
 
 #: ../AI/CoreLogic.pm:1263 ../AI/CoreLogic.pm:1264
 msgid "Disconnecting because storage is full!\n"
-msgstr "因仓库已满而断线中!\n"
+msgstr "因仓库已满而断开连接中!\n"
 
 #: ../AI/CoreLogic.pm:1371
 #, perl-format
@@ -408,7 +411,7 @@ msgid ""
 msgstr ""
 "CN Kore试着从仓库拿取物品3次, 但都失败了.\n"
 "这个问题可能是因为服务器bug引起的.\n"
-"若要在这个问题下进行, 请设定 'relogAfterStorage' 为1, 然后重新登入.\n"
+"若要解决这个问题, 请尝试设定 'relogAfterStorage' 为1, 然后重新登入.\n"
 
 #: ../AI/CoreLogic.pm:1406
 msgid "Character is still overweight after storageAuto (storage is full?)\n"
@@ -416,7 +419,7 @@ msgstr "在自动存仓后角色仍然负重 (是否仓库已满?)\n"
 
 #: ../AI/CoreLogic.pm:1408 ../AI/CoreLogic.pm:1409
 msgid "Disconnecting on storage full!\n"
-msgstr "因仓库已满而断线中!\n"
+msgstr "因仓库已满而断开连接中!\n"
 
 #: ../AI/CoreLogic.pm:1446
 msgid "Auto-sell sequence completed.\n"
@@ -485,7 +488,7 @@ msgstr "主人挂了. 我会在这里等候着ta的o(︶︿︶)o.\n"
 
 #: ../AI/CoreLogic.pm:2043
 msgid "I lost my master\n"
-msgstr "跟丢了我的主人\n"
+msgstr "我跟丢了我的主人\n"
 
 #: ../AI/CoreLogic.pm:2045
 msgid "Trying to get him back\n"
@@ -505,11 +508,11 @@ msgstr "试着找寻跟丢的主人\n"
 
 #: ../AI/CoreLogic.pm:2117
 msgid "Don't know what happened to Master\n"
-msgstr "不知道主人发生了什么事\n"
+msgstr "我不知道主人发生了什么事\n"
 
 #: ../AI/CoreLogic.pm:2133
 msgid "Couldn't find master, giving up\n"
-msgstr "无法找到我的主人，放弃了\n"
+msgstr "我无法找到我的主人，放弃了\n"
 
 #: ../AI/CoreLogic.pm:2161
 #, perl-format
@@ -542,7 +545,7 @@ msgstr "正在瞬移以避免所有的玩家\n"
 
 #: ../AI/CoreLogic.pm:2907
 msgid "Teleporting due to insufficient HP/SP or too many aggressives\n"
-msgstr "由于HP/SP不足或有被太多怪物围攻而瞬移\n"
+msgstr "由于HP/SP不足或被太多怪物围攻而瞬移\n"
 
 #: ../AI/CoreLogic.pm:2920
 #, perl-format
@@ -583,7 +586,7 @@ msgstr "** 正在瞬移回重生点.\n"
 #: ../AI/CoreLogic.pm:3037
 #, perl-format
 msgid "Disconnecting for 30 secs to avoid %s\n"
-msgstr "断线 30 秒以回避 %s\n"
+msgstr "断开连接 30 秒以回避 %s\n"
 
 #: ../AI/Slave.pm:183
 #, perl-format
@@ -672,7 +675,7 @@ msgstr "负重"
 #: ../Interface/Wx/List/ItemList/Cart.pm:88
 #: ../Interface/Wx/List/ItemList/Storage.pm:91
 msgid "Move all to inventory"
-msgstr "将所有物品栏"
+msgstr "移动所有至物品栏"
 
 #: ../Interface/Wx/List/ItemList/Cart.pm:89
 #: ../Interface/Wx/List/ItemList/Inventory.pm:170
@@ -681,7 +684,7 @@ msgstr "放到仓库"
 
 #: ../Interface/Wx/List/ItemList/Inventory.pm:149
 msgid "Use 1 on self"
-msgstr "使用 1 - 给自己"
+msgstr "给自己使用一个"
 
 #: ../Interface/Wx/List/ItemList/Inventory.pm:152
 msgid "Equip"
@@ -753,7 +756,7 @@ msgstr "Zeny"
 
 #: ../Interface/Wx/StatView/Exp.pm:21
 msgid "Zeny/Hour"
-msgstr "Z获得/小时"
+msgstr "Zeny/小时"
 
 #: ../Interface/Wx/StatView/Exp.pm:22
 msgid "Base Levelup Time Estimation"
@@ -765,7 +768,7 @@ msgstr "Job升级时间"
 
 #: ../Interface/Wx/StatView/Exp.pm:24
 msgid "Died"
-msgstr "次死亡"
+msgstr "死亡次数"
 
 #: ../Interface/Wx/StatView/Exp.pm:25
 msgid "Bytes Sent"
@@ -948,7 +951,7 @@ msgstr "选项"
 
 #: ../Interface/Wx/ConfigEditor.pm:165
 msgid "Value"
-msgstr "重要"
+msgstr "值"
 
 #: ../Interface/Wx/ConfigEditor.pm:201
 msgid "Downloading"
@@ -1517,7 +1520,7 @@ msgstr "选择登陆的服务器"
 #: ../Network/Receive/ServerType0.pm:613 ../Network/Receive/ServerType17.pm:95
 #, perl-format
 msgid "Forcing connect to char server %s: %s\n"
-msgstr "正在强迫联机至角色服务器 %s: %s\n"
+msgstr "正在强迫联线至角色服务器 %s: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:696
 #: ../Network/Receive/ServerType0.pm:616 ../Network/Receive/ServerType17.pm:98
@@ -1983,7 +1986,7 @@ msgstr "你装备 %s (%d) - %s (类型 %s)\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2594
 #: ../Network/Receive/ServerType0.pm:2456
 msgid "Lost connection; exiting\n"
-msgstr "网络断线; 程序结束中\n"
+msgstr "网络断开连接; 程序结束中\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2607
 #: ../Network/Receive/ServerType0.pm:2469
@@ -2005,7 +2008,7 @@ msgid ""
 msgstr ""
 "严重错误: 重复登陆 - 有别人正试着登入!\n"
 "\n"
-"%s 现在将立刻 \t断线."
+"%s 现在将立刻 \t断开连接."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2616
 #: ../Network/Receive/kRO/Sakexe_0.pm:2620
@@ -2019,7 +2022,7 @@ msgstr "严重错误: 重复登陆 - 有别人正试着登入!\n"
 #: ../Misc.pm:3377 ../Misc.pm:3398
 #, perl-format
 msgid "Disconnect for %s seconds...\n"
-msgstr "断线 %s 秒\n"
+msgstr "断开连接 %s 秒\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2624
 #: ../Network/Receive/ServerType0.pm:2486
@@ -2044,7 +2047,7 @@ msgstr "严重错误: 你必须付费才能玩这个账号!\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2633
 #: ../Network/Receive/ServerType0.pm:2495
 msgid "Error: The server still recognizes your last connection\n"
-msgstr "错误: 服务器中仍有你上一次的联机记录\n"
+msgstr "错误: 服务器中仍有你上一次的联线记录\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2635
 #: ../Network/Receive/ServerType0.pm:2497
@@ -2061,7 +2064,7 @@ msgstr "错误: 你已超过付费的有效时间对于\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2639
 #: ../Network/Receive/ServerType0.pm:2501
 msgid "Error: You have been forced to disconnect by a GM\n"
-msgstr "错误: 你已被游戏管理员强制断线\n"
+msgstr "错误: 你已被游戏管理员强制断开连接\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2641
 #: ../Network/Receive/ServerType0.pm:2503
@@ -2076,7 +2079,7 @@ msgid ""
 "Error: For an hour, more than 10 connections having same IP address, have "
 "made. Please check this matter.\n"
 msgstr ""
-"错误: 一小时内有超过 10 个拥有同一个 IP 地址的联机被建立，请检查这件事。\n"
+"错误: 一小时内有超过 10 个拥有同一个 IP 地址的联线被建立，请检查这件事。\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2645
 #: ../Network/Receive/ServerType0.pm:2507
@@ -2106,7 +2109,7 @@ msgstr "你失去了 %s Zeny.\n"
 #: ../Network/Receive/ServerType0.pm:2568
 #, perl-format
 msgid "Disconnecting due to zeny lower than %s."
-msgstr "由于 Zeny 低于 %s 而断线."
+msgstr "由于 Zeny 低于 %s 而断开连接."
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2715
 #: ../Network/Receive/ServerType0.pm:2577
@@ -2567,7 +2570,7 @@ msgid ""
 "master_version: %s\n"
 "serverType: %s\n"
 msgstr ""
-"联机失败，某些登陆的设定有误:\n"
+"联线失败，某些登陆的设定有误:\n"
 "version: %s\n"
 "master_version: %s\n"
 "serverType: %s\n"
@@ -2719,7 +2722,19 @@ msgstr "经验值分配设定为各自取得\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:4624
 #: ../Network/Receive/ServerType0.pm:4488
 msgid "Party EXP set to Even Share\n"
-msgstr "经验值分配设定为均等分配\n"
+msgstr "组队经验值设定为平均分配\n"
+
+msgid "Party item set to Individual Take\n"
+msgstr "组队拾取权设定为各自所有\n"
+
+msgid "Party item set to Even Share\n"
+msgstr "组队拾取权设定为共有拾取权\n"
+
+msgid "Party item division set to Individual Take\n"
+msgstr "组队掉落分配设定为个人所有\n"
+
+msgid "Party item division set to Even Share\n"
+msgstr "组队掉落分配设定为平均分配\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4626
 #: ../Network/Receive/ServerType0.pm:4490
@@ -2730,7 +2745,7 @@ msgstr "队伍选项设定错误\n"
 #: ../Network/Receive/ServerType0.pm:4506
 #, perl-format
 msgid "Incoming Request to join party '%s'\n"
-msgstr "收到传送过来的加入队伍请求'%s'\n"
+msgstr "收到'%s'传送过来的加入队伍请求\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4652
 #: ../Network/Receive/ServerType0.pm:4528
@@ -2856,12 +2871,12 @@ msgstr "(From: %s) : %s\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:4995
 #: ../Network/Receive/ServerType0.pm:4890
 msgid "*** You were PM'd, auto disconnect! ***\n"
-msgstr "*** 你已被人密语，自动断线! ***\n"
+msgstr "*** 你已被人密语，自动断开连接! ***\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:4996
 #: ../Network/Receive/ServerType0.pm:4891
 msgid "Disconnecting on PM!\n"
-msgstr "因密语而断线中!\n"
+msgstr "因密语而断开连接中!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5004
 #: ../Network/Receive/ServerType0.pm:4899
@@ -2916,7 +2931,7 @@ msgstr ""
 #: ../Network/Receive/kRO/Sakexe_0.pm:5155
 #: ../Network/Receive/ServerType0.pm:5043 ../Network/XKoreProxy.pm:488
 msgid "Closing connection to Character Server\n"
-msgstr "对角色服务器关闭联机\n"
+msgstr "对角色服务器关闭联线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5169
 #: ../Network/Receive/ServerType0.pm:5057
@@ -3229,13 +3244,13 @@ msgstr "禁言期间已过.\n"
 #: ../Network/Receive/ServerType0.pm:5963
 #, perl-format
 msgid "You've been muted for %s minutes, auto disconnect!\n"
-msgstr "你被禁言 %s 分钟，自动断线!\n"
+msgstr "你被禁言 %s 分钟，自动断开连接!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6081
 #: ../Network/Receive/ServerType0.pm:5964
 #, perl-format
 msgid "*** You have been muted for %s minutes, auto disconnect! ***\n"
-msgstr "*** 你被禁言了 %s 分钟，自动断线! ***\n"
+msgstr "*** 你被禁言了 %s 分钟，自动断开连接! ***\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6084
 #: ../Network/Receive/ServerType0.pm:5967
@@ -3255,7 +3270,7 @@ msgstr "你现在等级为 %s\n"
 #: ../Network/Receive/ServerType0.pm:5990
 #, perl-format
 msgid "Disconnecting on level %s!\n"
-msgstr "在等级 %s 时断线!\n"
+msgstr "在等级 %s 时断开连接!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6161
 #: ../Network/Receive/ServerType0.pm:6044
@@ -3269,7 +3284,7 @@ msgstr "你现在JOB等级为 %s\n"
 #: ../Network/Receive/ServerType0.pm:6047
 #, perl-format
 msgid "Disconnecting on job level %s!\n"
-msgstr "在Job等级 %s 时断线!\n"
+msgstr "在Job等级 %s 时断开连接!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6233
 #: ../Network/Receive/ServerType0.pm:6116
@@ -3421,7 +3436,7 @@ msgstr "你输入的登入 PIN 码是不正确的.请重新输入你的登入 PI
 #: ../Network/Receive/ServerType0.pm:6455
 msgid ""
 "You have entered 3 incorrect login PIN codes in a row. Reconnecting...\n"
-msgstr "你已输入 3 次错误的登入 PIN 码.重新联机中\n"
+msgstr "你已输入 3 次错误的登入 PIN 码.重新联线中\n"
 
 #. Translation Comment: System/GM chat
 #: ../Network/Receive/kRO/Sakexe_0.pm:6654
@@ -3536,19 +3551,19 @@ msgstr ""
 #: ../Network/Receive/ServerType0.pm:6698
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (insufficient zeny).\n"
-msgstr "从露店购购买品 #%s 的 %s 失败(金钱不够).\n"
+msgstr "从露天商店购买品 #%s 的 %s 失败(金钱不够).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6858
 #: ../Network/Receive/ServerType0.pm:6700
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (overweight).\n"
-msgstr "从露店购购买品 #%s 的 %s 失败(负重过重).\n"
+msgstr "从露天商店购买品 #%s 的 %s 失败(负重过重).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6860
 #: ../Network/Receive/ServerType0.pm:6702
 #, perl-format
 msgid "Failed to buy %s of item #%s from vender (unknown code %s).\n"
-msgstr "从露店购购买品 #%s 的 %s 失败(未知码 %s).\n"
+msgstr "从露天商店购买品 #%s 的 %s 失败(未知码 %s).\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6877
 #: ../Network/Receive/ServerType0.pm:6720
@@ -3838,7 +3853,7 @@ msgstr "拍卖窗口已关闭.\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:7180
 #: ../Network/Receive/ServerType0.pm:7022
 msgid "Auction window is now opened.\n"
-msgstr "拍卖窗口以打开.\n"
+msgstr "拍卖窗口已打开.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:7187
 #: ../Network/Receive/ServerType0.pm:7029
@@ -3862,12 +3877,12 @@ msgstr "Hotkeys"
 #: ../Network/Receive/kRO/Sakexe_0.pm:7201
 #: ../Network/Receive/ServerType0.pm:7043
 msgid "Name"
-msgstr "名子"
+msgstr "名字"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:7201
 #: ../Network/Receive/ServerType0.pm:7043
 msgid "Type"
-msgstr "Type"
+msgstr "类型"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:7201
 #: ../Network/Receive/ServerType0.pm:7043
@@ -3896,7 +3911,7 @@ msgid ""
 "Error: You have been forced to disconnect by a Hack Shield.\n"
 " Please check Poseidon.\n"
 msgstr ""
-"错误: 你已被强迫断线\n"
+"错误: 你已被强迫断开连接\n"
 "请检查网络\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:7227
@@ -4282,11 +4297,11 @@ msgstr "%s 已经离开组队 (不明原因: %d)\n"
 
 #: ../Network/Receive/ServerType0.pm:7117
 msgid "Sun"
-msgstr "Sun"
+msgstr "太阳"
 
 #: ../Network/Receive/ServerType0.pm:7117
 msgid "Moon"
-msgstr "无"
+msgstr "月亮"
 
 #: ../Network/Receive/ServerType0.pm:7117
 msgid "Stars"
@@ -4310,22 +4325,22 @@ msgstr "%2$s 打开: %s\n"
 #: ../Network/Receive/ServerType0.pm:7373
 #, perl-format
 msgid "%2$s are now playing: %s\n"
-msgstr "%2$s 现在拨放: %s\n"
+msgstr "%2$s 现在播放: %s\n"
 
 #: ../Network/Receive/ServerType0.pm:7373
 #, perl-format
 msgid "%2$s is now playing: %s\n"
-msgstr "%2$s 现在拨放: %s\n"
+msgstr "%2$s 现在播放: %s\n"
 
 #: ../Network/Receive/ServerType0.pm:7374
 #, perl-format
 msgid "%2$s stopped playing: %s\n"
-msgstr "%2$s 停止拨放: %s\n"
+msgstr "%2$s 停止播放: %s\n"
 
 #: ../Network/Receive/ServerType0.pm:7375
 #, perl-format
 msgid "Now playing: %s\n"
-msgstr "Now playing: %s\n"
+msgstr "正在播放: %s\n"
 
 #: ../Network/Receive/ServerType0.pm:7534
 #, perl-format
@@ -4340,33 +4355,33 @@ msgstr "Quest %s is now inactive.\n"
 #: ../Network/DirectConnection.pm:148
 #, perl-format
 msgid "Connecting (%s:%s)... "
-msgstr "联机中 (%s:%s) "
+msgstr "联线中 (%s:%s) "
 
 #: ../Network/DirectConnection.pm:156
 msgid "connected\n"
-msgstr "已联机\n"
+msgstr "已联线\n"
 
 #: ../Network/DirectConnection.pm:157
 #, perl-format
 msgid "couldn't connect: %s (error code %d)\n"
-msgstr "无法联机: %s (错误代码 %d)\n"
+msgstr "无法联线: %s (错误代码 %d)\n"
 
 #: ../Network/DirectConnection.pm:227
 #, perl-format
 msgid "Disconnecting (%s:%s)..."
-msgstr "断线中 (%s:%s)"
+msgstr "断开连接中 (%s:%s)"
 
 #: ../Network/DirectConnection.pm:231
 msgid "disconnected\n"
-msgstr "已断线\n"
+msgstr "已断开连接\n"
 
 #: ../Network/DirectConnection.pm:232
 msgid "couldn't disconnect\n"
-msgstr "无法断线\n"
+msgstr "无法断开连接\n"
 
 #: ../Network/DirectConnection.pm:317
 msgid "Connecting to Account Server...\n"
-msgstr "正在联机至账号服务器\n"
+msgstr "正在联线至账号服务器\n"
 
 #: ../Network/DirectConnection.pm:346
 msgid "Requesting permission to logon on account server...\n"
@@ -4386,7 +4401,7 @@ msgstr "账号服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:446
 msgid "Connecting to Character Server...\n"
-msgstr "正在联机至角色服务器\n"
+msgstr "正在联线至角色服务器\n"
 
 #: ../Network/DirectConnection.pm:455
 #, perl-format
@@ -4399,7 +4414,7 @@ msgstr "角色服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:506
 msgid "Connecting to Character Select Server...\n"
-msgstr "正在联机至角色选择服务器\n"
+msgstr "正在联线至角色选择服务器\n"
 
 #: ../Network/DirectConnection.pm:520
 msgid "Timeout on Character Select Server, reconnecting...\n"
@@ -4415,17 +4430,17 @@ msgstr "地图服务器连接超时，连接账号服务器中\n"
 
 #: ../Network/DirectConnection.pm:569
 msgid "*** You disconnected, auto quit! ***\n"
-msgstr "*** 你已断线，自动结束! ***\n"
+msgstr "*** 你已断开连接，自动结束! ***\n"
 
 #: ../Network/DirectConnection.pm:570
 msgid "Disconnected from Map Server, exiting...\n"
-msgstr "从地图服务器断线，结束中\n"
+msgstr "从地图服务器断开连接，结束中\n"
 
 #: ../Network/DirectConnection.pm:573
 #, perl-format
 msgid ""
 "Disconnected from Map Server, connecting to Account Server in %s seconds...\n"
-msgstr "从地图服务器断线 %s 秒后联机至账号服务器\n"
+msgstr "从地图服务器断开连接 %s 秒后联线至账号服务器\n"
 
 #: ../Network/DirectConnection.pm:581
 msgid "Timeout on Map Server, "
@@ -4438,7 +4453,7 @@ msgstr "正在退出...\n"
 #: ../Network/DirectConnection.pm:587
 #, perl-format
 msgid "connecting to Account Server in %s seconds...\n"
-msgstr "%s 秒后联机至账号服务器\n"
+msgstr "%s 秒后联线至账号服务器\n"
 
 #: ../Network/Receive.pm:83
 #, perl-format
@@ -4540,12 +4555,12 @@ msgstr "客户端程序已修改于 %d 处.\n"
 
 #: ../Network/XKoreProxy.pm:291
 msgid "Client disconnected\n"
-msgstr "客户端已断线\n"
+msgstr "客户端已断开连接\n"
 
 #: ../Network/XKoreProxy.pm:322
 #, perl-format
 msgid "Waiting Ragnarok Client to connect on (%s:%s)\n"
-msgstr "正在等候 Ragnarok 客户端去联机在 (%s:%s)\n"
+msgstr "正在等候 Ragnarok 客户端去联线在 (%s:%s)\n"
 
 #: ../Network/XKoreProxy.pm:348
 #, perl-format
@@ -4567,7 +4582,7 @@ msgstr ""
 
 #: ../Network/XKoreProxy.pm:395
 msgid "Client did not respond. Forcing disconnection\n"
-msgstr "客户端没有响应. 强迫断线\n"
+msgstr "客户端没有响应. 强迫断开连接\n"
 
 #: ../Network/XKoreProxy.pm:426
 msgid "Logon-grant packet received twice! Avoiding bug in client.\n"
@@ -4575,7 +4590,7 @@ msgstr "登入授权 接收到两次! 请检查客户端.\n"
 
 #: ../Network/XKoreProxy.pm:559 ../functions.pl:406
 msgid "Please choose a master server to connect to."
-msgstr "请选择一个主服务器以联机."
+msgstr "请选择一个主服务器以联线."
 
 #: ../Network/XKoreProxy.pm:561 ../functions.pl:408
 msgid "Master servers"
@@ -7806,7 +7821,7 @@ msgstr "没有发现拍卖项目列表: %s. (可能需要重新开启拍卖窗�
 
 #: ../Commands.pm:5264 ../Commands.pm:5288 ../Commands.pm:5303
 msgid "Auction window has not been opened or is empty.\n"
-msgstr "一个露店尚未开启.\n"
+msgstr "一个露天商店尚未开启.\n"
 
 #: ../Commands.pm:5274
 msgid "Usage: aui (selling|buying)\n"
@@ -8115,22 +8130,22 @@ msgstr "actorRemoved: %s %s (%s), 大小 %s\n"
 
 #: ../Misc.pm:1047
 msgid "Disconnecting to avoid GM!\n"
-msgstr "断线以回避GM!\n"
+msgstr "断开连接以回避GM!\n"
 
 #: ../Misc.pm:1048
 #, perl-format
 msgid "*** The GM %s talked to you, auto disconnected ***\n"
-msgstr "*** GM %s 与你说话，自动断线 ***\n"
+msgstr "*** GM %s 与你说话，自动断开连接 ***\n"
 
 #: ../Misc.pm:1062
 #, perl-format
 msgid "Disconnecting to avoid %s!\n"
-msgstr "断线以回避 %s!\n"
+msgstr "断开连接以回避 %s!\n"
 
 #: ../Misc.pm:1063
 #, perl-format
 msgid "*** %s talked to you, auto disconnected ***\n"
-msgstr "*** %s 与你说话，自动断线 ***\n"
+msgstr "*** %s 与你说话，自动断开连接 ***\n"
 
 #: ../Misc.pm:1114
 msgid ""
@@ -8472,7 +8487,7 @@ msgstr "使用"
 #: ../Misc.pm:3184
 #, perl-format
 msgid "location (%d, %d)"
-msgstr "位子 (%d, %d)"
+msgstr "位置 (%d, %d)"
 
 #: ../Misc.pm:3195 ../Misc.pm:3210
 msgid "use"
@@ -8480,12 +8495,12 @@ msgstr "使用"
 
 #: ../Misc.pm:3195 ../Misc.pm:3210
 msgid "uses"
-msgstr "使用"
+msgstr "使用了"
 
 #: ../Misc.pm:3197 ../Misc.pm:3212
 #, perl-format
 msgid "(Lv: %s)"
-msgstr "(Lv %s)"
+msgstr "(Lv.%s)"
 
 #: ../Misc.pm:3198
 msgid "on"
@@ -8503,7 +8518,7 @@ msgstr "Miss"
 #: ../Misc.pm:3201
 #, perl-format
 msgid "(Delay: %sms)"
-msgstr "(延迟: %s毫秒)"
+msgstr "(间隔: %s毫秒)"
 
 #: ../Misc.pm:3213
 msgid "on location"
@@ -8547,12 +8562,12 @@ msgstr "(时间: %s秒)"
 #: ../Misc.pm:3334
 #, perl-format
 msgid "GM %s is nearby, teleport & disconnect for %d seconds"
-msgstr "GM %s 在附近，瞬移并断线 %d 秒"
+msgstr "GM %s 在附近，瞬移并断开连接 %d 秒"
 
 #: ../Misc.pm:3339
 #, perl-format
 msgid "GM %s is nearby, disconnect for %s seconds"
-msgstr "GM %s 在附近，断线 %s 秒"
+msgstr "GM %s 在附近，断开连接 %s 秒"
 
 #: ../Misc.pm:3345
 #, perl-format
@@ -8567,12 +8582,12 @@ msgstr "GM %s 在附近，瞬移回城中"
 #: ../Misc.pm:3375
 #, perl-format
 msgid "%s (%s) is nearby, disconnecting...\n"
-msgstr "%s (%s) 在附近，断线中\n"
+msgstr "%s (%s) 在附近，断开连接中\n"
 
 #: ../Misc.pm:3376
 #, perl-format
 msgid "*** Found %s (%s) nearby and disconnected ***\n"
-msgstr "*** 发现 %s (%s) 在附近且已断线 ***\n"
+msgstr "*** 发现 %s (%s) 在附近且已断开连接 ***\n"
 
 #: ../Misc.pm:3382
 #, perl-format
@@ -8587,17 +8602,17 @@ msgstr "*** 发现 %s (%s) 在附近且已瞬移 ***\n"
 #: ../Misc.pm:3396
 #, perl-format
 msgid "%s is nearby, disconnecting...\n"
-msgstr "%s 在附近，断线中\n"
+msgstr "%s 在附近，断开连接中\n"
 
 #: ../Misc.pm:3397
 #, perl-format
 msgid "*** Found %s nearby and disconnected ***\n"
-msgstr "*** 发现 %s 在附近且已断线 ***\n"
+msgstr "*** 发现 %s 在附近且已断开连接 ***\n"
 
 #: ../Misc.pm:3430
 #, perl-format
 msgid "Processing map %s...\n"
-msgstr "处理地图 %s 中\n"
+msgstr "正在处理地图 %s\n"
 
 #: ../Misc.pm:3465
 #, perl-format
@@ -8629,15 +8644,15 @@ msgstr "无效的 NPC 信息对于 autoBuy，autoSell 或 autoStorage! (%s)\n"
 
 #: ../Misc.pm:4106
 msgid "A shop has already been opened.\n"
-msgstr "一个露店已被开启.\n"
+msgstr "一个露天商店已被开启.\n"
 
 #: ../Misc.pm:4113
 msgid "You don't have the Vending skill.\n"
-msgstr "你并没有开设露店的技能.\n"
+msgstr "你并没有开设露天商店的技能.\n"
 
 #: ../Misc.pm:4118
 msgid "Your shop does not have a title.\n"
-msgstr "你的露店没有店名.\n"
+msgstr "你的露天商店没有店名.\n"
 
 #: ../Misc.pm:4150
 msgid "There are no items to sell.\n"
@@ -8646,15 +8661,15 @@ msgstr "无物品卖出.\n"
 #: ../Misc.pm:4165
 #, perl-format
 msgid "Shop opened (%s) with %d selling items.\n"
-msgstr "露店 (%s) 已开启并含有 %d 个要卖的物品.\n"
+msgstr "露天商店 (%s) 已开启并含有 %d 个要卖的物品.\n"
 
 #: ../Misc.pm:4172
 msgid "A shop has not been opened.\n"
-msgstr "一个露店尚未开启.\n"
+msgstr "一个露天商店尚未开启.\n"
 
 #: ../Misc.pm:4180
 msgid "Shop closed.\n"
-msgstr "露店已关闭.\n"
+msgstr "露天商店已关闭.\n"
 
 #: ../Misc.pm:4201 ../functions.pl:270
 #, perl-format
@@ -8927,13 +8942,13 @@ msgstr "%s B%s (%s)，J%s (%s) : w%s%s - %s"
 #: ../functions.pl:865
 #, perl-format
 msgid "%sNot connected - %s"
-msgstr "%s尚未联机 - %s"
+msgstr "%s尚未联线 - %s"
 
 #. Translation Comment: Interface Title
 #: ../functions.pl:868
 #, perl-format
 msgid "%sConnecting - %s"
-msgstr "%s联机中 - %s"
+msgstr "%s联线中 - %s"
 
 #: ../functions.pl:1083
 msgid "Map loaded\n"
