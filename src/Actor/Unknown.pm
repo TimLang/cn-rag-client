@@ -29,7 +29,7 @@ use base qw(Actor);
 
 sub new {
 	my ($class, $ID) = @_;
-	my $self = $class->SUPER::new('未知');
+	my $self = $class->SUPER::new('Unknown');
 	$self->{ID} = $ID;
 	$self->{nameID} = unpack("V", $ID);
 	return $self;

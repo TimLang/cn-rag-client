@@ -30,7 +30,7 @@ use Translation;
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('玩家');
+	return $class->SUPER::new('Player');
 }
 
 sub selfString {

@@ -30,7 +30,7 @@ use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('队友');
+	return $class->SUPER::new('Party');
 }
 
 ##

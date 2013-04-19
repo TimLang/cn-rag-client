@@ -28,7 +28,7 @@ use base qw(Actor);
 
 sub new {
 	my ($class) = @_;
-	return $class->SUPER::new('传送点');
+	return $class->SUPER::new('Portal');
 }
 
 1;

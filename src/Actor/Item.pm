@@ -84,7 +84,7 @@ our @slots = qw(
 # Creates a new Actor::Item object.
 sub new {
 	my $class = $_[0];
-	my $self = $class->SUPER::new('道具');
+	my $self = $class->SUPER::new('Item');
 	$self->{name} = 'Uninitialized Item';
 	$self->{index} = 0;
 	$self->{amount} = 0;

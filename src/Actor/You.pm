@@ -71,7 +71,7 @@ use encoding 'utf8';
 
 sub new {
 	my ($class) = @_;
-	my $self = $class->SUPER::new('你');
+	my $self = $class->SUPER::new('You');
 	$self->{__inventory} = new InventoryList();
 	$self->{configPrefix} = '';
 	$self->{dcOnEmptyItems} = '';
