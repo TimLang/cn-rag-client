@@ -1,3 +1,9 @@
+# 自动传送之阵功能
+# 插件修订: CoCo
+# 发布 CN Kore Team
+# Revision: r189
+# Date: 2013年4月20日 02:27:09
+
 package autowarpn;
 
 use strict;
@@ -40,7 +46,7 @@ sub cHook {
    
    if ($message =~ /计算路径至坐标/ && $warpoff == 0 &&
      existsInList($config{autoWarp_from}, $field->baseName) &&
-     $char->{skills}{AL_WARP} && $char->{skills}{AL_WARP}{lv} > 0) {
+     $char->{skills}{AL_WARP} && $char->{skills}{AL_WARP}{lv} > 0 && !$char->statusActive(EFST_POSTDELAY) ) {
       AI::queue("autowarp");
       AI::args->{timeout} = 1;
       AI::args->{time} = time;
@@ -64,7 +70,7 @@ sub AI_hook {
 			$messageSender->sendSkillUseLoc(27, 4, $pos->{x}, $pos->{y});
 			$warpOpened = 0;
 #			stopAttack();
-			message "尝试在 $pos->{x} $pos->{y} 打开传送之门!\n";
+			message "尝试在坐标 $pos->{x}, $pos->{y} 施放传送之阵\n";
 			AI::args->{timeout} = 15;
 			AI::args->{time} = time;
 			}
@@ -84,7 +90,7 @@ sub warplist_hook {
 		for (my $i = 0; $i < @{$char->{warp}{memo}}; $i++) {
 			last if ($char->{warp}{memo}[$i] eq $config{autoWarp_to});
 			if (($i == @{$char->{warp}{memo}} - 1) && ($char->{warp}{memo}[$i] ne $config{autoWarp_to})) {
-				error TF("您并未记录 '%s' 传送点! 再次使用自动传送之门需重启!!!\n", $config{autoWarp_to});
+				error TF("您当前角色并未记录地图 '%s' 的传送点! 自动传送之阵功能关闭, 再次使用自动传送之门需重启程序!\n", $config{autoWarp_to});
 				$warpfailed = 1;
 			} 
 		}
@@ -100,7 +106,7 @@ sub warpopen_hook {
 		if ($args->{sourceID} eq $accountID && $args->{skillID} == 27 && $warpNowOpen == 1) {
 		$warpNowOpen = 0;
 		$movewarp = 1;
-		message "到 $args->{x} $args->{y} 进入传送之阵!\n";
+		message "正在移动至坐标 $args->{x}, $args->{y} 进入传送之阵\n";
 		main::ai_route($field->baseName, $args->{x}, $args->{y},
 		noSitAuto => 1,
 		attackOnRoute => 0);
@@ -124,7 +130,7 @@ sub warpfailed_hook {
 
 	if ($movewarp == 1) {
 		if ($args->{skillID} == 27 && $args->{type} == 8) {
-		error "您身上已没有蓝色魔力矿石了! 再次使用自动传送之门需重启!!!\n";
+		error "您没有设置自动购买蓝色魔力矿石并且身上已没有蓝色魔力矿石了! 自动传送之阵功能关闭, 再次使用自动传送之门需重启程序!\n";
 		$movewarp = 0;
 		$warpfailed = 1;
 		}
