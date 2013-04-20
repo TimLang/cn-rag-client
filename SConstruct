@@ -54,7 +54,7 @@ def CheckPerl(context):
 	global win32
 	global perlconfig
 
-	context.Message('Checking Perl configuration ...')
+	context.Message('Perl...')
 	source = '''
 	use strict;
 	use Config;
@@ -128,7 +128,7 @@ def CheckPerl(context):
 	return ret == 0
 
 def CheckReadline(context, conf):
-	context.Message('Checking for GNU readline 4.3 or higher...')
+	context.Message('GNU readline 4.3 Checking...')
 	result = context.TryCompile("""
 		#include <stdio.h>
 		#include <readline/readline.h>
@@ -142,7 +142,7 @@ def CheckReadline(context, conf):
 	return result
 
 def CheckLibCurl(context):
-	context.Message('Checking for libcurl...')
+	context.Message('Checking libcurl...')
 	p = subprocess.Popen('curl-config --version', shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, universal_newlines=True)
 	(input, output, error) = (p.stdin, p.stdout, p.stderr)
 	if input != None:
@@ -167,19 +167,17 @@ conf = Configure(env, custom_tests = {
 	'CheckLibCurl'  : CheckLibCurl
 })
 if not conf.CheckPerl():
-	print "You do not have Perl installed! Read:"
-	print "http://wiki.openkore.com/index.php/How_to_run_OpenKore#Perl_module:_Time::HiRes"
+	print "We need Perl!"
 	Exit(1)
 if not win32:
 	have_ncurses = conf.CheckLib('ncurses')
 	if not conf.CheckReadline(conf):
-		print "You don't have GNU readline installed, or your version of GNU readline is not recent enough! Read:"
-		print "http://wiki.openkore.com/index.php/How_to_run_OpenKore#GNU_readline"
+		print "GNU readline not installed or not new"
 		Exit(1)
 
 	if darwin:
 		has_readline_5 = conf.CheckLib('readline.5')
-		sys.stdout.write('Checking whether Readline 5 is available...')
+		sys.stdout.write('Readline 5 Checking...')
 		sys.stdout.flush
 		if has_readline_5:
 			READLINE_LIB = 'readline.5'
@@ -188,8 +186,7 @@ if not win32:
 			sys.stdout.write(" no\n")
 
 	if not conf.CheckLibCurl():
-		print "You don't have libcurl installed. Please download it at:";
-		print "http://curl.haxx.se/libcurl/";
+		print "No libcurl";
 		Exit(1)
 conf.Finish()
 
@@ -298,8 +295,6 @@ if win32:
 	perlenv['CCFLAGS'] += Split('-Wno-comments -include stdint.h')
 	perlenv['CPPDEFINES'] += Split('__MINGW32__ WIN32IO_IS_STDIO ' +
 		'_UINTPTR_T_DEFINED CHECK_FORMAT')
-	#perlenv['LIBS'] += ['perl58']
-	#perlenv['LIBS'] += ['perl510']
 	perlenv['LIBS'] += ['perl512']
 	perlenv['LIBPATH'] += [perlconfig['coredir']]
 elif not darwin:
@@ -333,7 +328,7 @@ def buildXS(target, source, env):
 
 	close STDOUT;
 	if (!open(STDOUT, ">", $out)) {
-		print STDERR "Cannot open $out for writing: $!\n";
+		print STDERR "Cannot open $out to write: $!\n";
 		exit 1;
 	}
 	select STDOUT;
@@ -361,6 +356,6 @@ perlenv.Append(BUILDERS = { 'XS' : Builder(action = buildXS) })
 Export('env libenv perlenv platform win32 cygwin darwin have_ncurses READLINE_LIB')
 sconscripts = []
 if not int(ARGUMENTS.get('TESTS_ONLY', 0)):
-	sconscripts += ['src/auto/XSTools/SConscript']
-sconscripts += ['src/test/SConscript']
-SConscript(sconscripts)
+	sconscripts += ['srcXS/SConscript']
+	# CNKore SVN dir change Maple
+	SConscript(sconscripts)
