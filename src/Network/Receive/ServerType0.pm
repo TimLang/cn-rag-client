@@ -231,7 +231,6 @@ sub new {
 		'01D0' => ['revolving_entity', 'a4 v', [qw(sourceID entity)]],
 		'01D1' => ['blade_stop', 'a4 a4 V', [qw(sourceID targetID active)]],
 		'01D2' => ['combo_delay', 'a4 V', [qw(ID delay)]],
-		'01D3' => ['sound_effect', 'Z24 C V a4', [qw(name type term ID)]],
 		'01D4' => ['npc_talk_text', 'a4', [qw(ID)]],
 		'01D7' => ['player_equipment', 'a4 C v2', [qw(sourceID type ID1 ID2)]],
 		'01D8' => ['actor_exists', 'a4 v14 a4 a2 v2 C2 a3 C3 v',		[qw(ID walk_speed opt1 opt2 option type hair_style weapon shield lowhead tophead midhead hair_color clothes_color head_dir guildID emblemID manner opt3 stance sex coords unknown1 unknown2 act lv)]], # standing
@@ -247,7 +246,6 @@ sub new {
 		##
 		'01E6' => ['marriage_partner_name', 'Z24', [qw(name)]],
 		'01E9' => ['party_join', 'a4 V v2 C Z24 Z24 Z16 v C2', [qw(ID role x y type name user map lv item_pickup item_share)]],
-		'01EA' => ['married', 'a4', [qw(ID)]],
 		'01EE' => ['inventory_items_stackable', 'v a*', [qw(len itemInfo)]],
 		'01EF' => ['cart_items_stackable', 'v a*', [qw(len itemInfo)]],
 		'01F0' => ['storage_items_stackable', 'v a*', [qw(len itemInfo)]],
@@ -335,14 +333,6 @@ sub new {
 		'02D7' => ['show_eq', 'v Z24 v7 C a*', [qw(len name type hair_style tophead midhead lowhead hair_color clothes_color sex equips_info)]], #type is job
 		'02D9' => ['show_eq_msg_other', 'V2', [qw(unknown flag)]],
 		'02DA' => ['show_eq_msg_self', 'C', [qw(type)]],
-		'02DC' => ['battleground_message', 'v a4 Z24 Z*', [qw(len ID name message)]],
-		'02DD' => ['battleground_emblem', 'a4 Z24 v', [qw(emblemID name ID)]],
-		'02DE' => ['battleground_score', 'v2', [qw(score_lion score_eagle)]],
-		'02DF' => ['battleground_position', 'a4 Z24 v3', [qw(ID name job x y)]],
-		'02E0' => ['battleground_hp', 'a4 Z24 v2', [qw(ID name hp max_hp)]],
-		# 02E1 packet unsure of dual_wield_damage needs more testing
-		# a4 a4 a4 V3 v C V ?
-		#'02E1' => ['actor_action', 'a4 a4 a4 V2 v x2 v x2 C v', [qw(sourceID targetID tick src_speed dst_speed damage div type dual_wield_damage)]],
 		'02E1' => ['actor_action', 'a4 a4 a4 V3 v C V', [qw(sourceID targetID tick src_speed dst_speed damage div type dual_wield_damage)]],
 		'02E7' => ['map_property', 'v2 a*', [qw(len type info_table)]],
 		'02E8' => ['inventory_items_stackable', 'v a*', [qw(len itemInfo)]],
@@ -380,7 +370,6 @@ sub new {
 		'07FB' => ['skill_cast', 'a4 a4 v5 V C', [qw(sourceID targetID x y skillID unknown type wait dispose)]],
 		'07FC' => ['party_leader', 'V2', [qw(old new)]],
 		'07FD' => ['special_item_obtain', 'v C v c/Z a*', [qw(len type nameID holder etc)]],
-		'07FE' => ['sound_effect', 'Z24', [qw(name)]],
 		'07FF' => ['define_check', 'v V', [qw(len result)]], #TODO: PACKET_ZC_DEFINE_CHECK
 		'080E' => ['party_hp_info', 'a4 V2', [qw(ID hp hp_max)]],
 		'080F' => ['deal_add_other', 'v C V C3 a8', [qw(nameID type amount identified broken upgrade cards)]], # 0x080F,20
@@ -460,6 +449,11 @@ sub new {
 		'01EC' => ['del_packet'],
 		'01F2' => ['del_packet'],
 		'0839' => ['del_packet'],
+		# sound_effect
+		'01D3' => ['del_packet'],
+		'07FE' => ['del_packet'],
+		# married
+		'01EA' => ['del_packet'],
 		# friend
 		'0201' => ['del_packet'],
 		'0206' => ['del_packet'],
@@ -470,6 +464,12 @@ sub new {
 		'021A' => ['del_packet'],
 		'0226' => ['del_packet'],
 		'0238' => ['del_packet'],
+		# battle
+		'02DC' => ['battleground_message', 'v a4 Z24 Z*', [qw(len ID name message)]],
+		'02DD' => ['battleground_emblem', 'a4 Z24 v', [qw(emblemID name ID)]],
+		'02DE' => ['battleground_score', 'v2', [qw(score_lion score_eagle)]],
+		'02DF' => ['battleground_position', 'a4 Z24 v3', [qw(ID name job x y)]],
+		'02E0' => ['battleground_hp', 'a4 Z24 v2', [qw(ID name hp max_hp)]],
 		# captcha
 		'07E8' => ['del_packet'],
 		'07E9' => ['del_packet'],
@@ -1880,8 +1880,7 @@ sub errors {
 	} elsif ($args->{type} == 5) {
 		error T("Error: You are underaged and cannot join this server.\n"), "connection";
 	} elsif ($args->{type} == 6) {
-		$interface->errorDialog(T("Critical Error: You must pay to play this account!\n"));
-		$quit = 1 unless ($net->version == 1);
+		error T("错误: 你服务器蛋疼错误!\n"), "connection";
 	} elsif ($args->{type} == 8) {
 		error T("Error: The server still recognizes your last connection\n"), "connection";
 	} elsif ($args->{type} == 9) {
@@ -1894,6 +1893,8 @@ sub errors {
 		error T("Error: Your account has been suspended until the next maintenance period for possible use of 3rd party programs\n"), "connection";
 	} elsif ($args->{type} == 102) {
 		error T("Error: For an hour, more than 10 connections having same IP address, have made. Please check this matter.\n"), "connection";
+	} elsif ($args->{type} == 114) {
+		error T("错误: 认证服务器无应答.\n"), "connection";
 	} else {
 		error TF("Unknown error %s\n", $args->{type}), "connection";
 	}
@@ -2307,13 +2308,6 @@ sub item_used {
 		message TF("%s used Item: %s - %s left\n", $actor, $itemDisplay, $remaining), "useItem", 2;
 	}
 	Plugins::callHook('packet_useitem', \%hook_args);
-}
-
-sub married {
-	my ($self, $args) = @_;
-
-	my $actor = Actor::get($args->{ID});
-	message TF("%s got married!\n", $actor);
 }
 
 sub inventory_items_nonstackable {
@@ -5720,26 +5714,6 @@ sub battleground_hp {
 sub font {
 	my ($self, $args) = @_;
 	debug "Account: $args->{ID} is using fontID: $args->{fontID}\n", "info";
-}
-
-# 01D3
-# TODO
-sub sound_effect {
-	my ($self, $args) = @_;
-	# $args->{type} seems like 0 => once, 1 => start, 2 => stop
-	# $args->{term} seems like duration or repeat count
-	# continuous sound effects can be implemented as actor statuses
-
-	my $actor = exists $args->{ID} && Actor::get($args->{ID});
-	message sprintf(
-		$actor
-			? $args->{type} == 0
-				? $actor->verb(T("%2\$s play: %s\n"), T("%2\$s plays: %s\n"))
-				: $args->{type} == 1
-					? $actor->verb(T("%2\$s are now playing: %s\n"), T("%2\$s is now playing: %s\n"))
-					: $actor->verb(T("%2\$s stopped playing: %s\n"), T("%2\$s stopped playing: %s\n"))
-			: T("Now playing: %s\n"),
-		$args->{name}, $actor), 'effect'
 }
 
 # 019E
