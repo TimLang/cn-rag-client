@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-20 16:28+0800\n"
+"PO-Revision-Date: 2013-04-20 18:47+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3177,32 +3177,32 @@ msgstr "避开正在咏唱的技能 - 移动位置至 : %s,%s\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:5750
 #: ../Network/Receive/ServerType0.pm:5655
 msgid "Basic"
-msgstr "Basic"
+msgstr "不足基本要求"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5751
 #: ../Network/Receive/ServerType0.pm:5656
 msgid "Insufficient SP"
-msgstr "不足SP"
+msgstr "SP不够"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5752
 #: ../Network/Receive/ServerType0.pm:5657
 msgid "Insufficient HP"
-msgstr "不足HP"
+msgstr "HP不够"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5753
 #: ../Network/Receive/ServerType0.pm:5658
 msgid "No Memo"
-msgstr "没有记录"
+msgstr "没有Memo记录点"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5754
 #: ../Network/Receive/ServerType0.pm:5659
 msgid "Mid-Delay"
-msgstr "延迟中"
+msgstr "动作延迟"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5755
 #: ../Network/Receive/ServerType0.pm:5660
 msgid "No Zeny"
-msgstr "没有Zeny"
+msgstr "Zeny不足"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5756
 #: ../Network/Receive/ServerType0.pm:5661
@@ -3212,23 +3212,26 @@ msgstr "错误的武器类型"
 #: ../Network/Receive/kRO/Sakexe_0.pm:5757
 #: ../Network/Receive/ServerType0.pm:5662
 msgid "Red Gem Needed"
-msgstr "Red Gem Needed"
+msgstr "需要红魔力"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5758
 #: ../Network/Receive/ServerType0.pm:5663
 msgid "Blue Gem Needed"
-msgstr "Blue Gem Needed"
+msgstr "需要蓝魔力"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5760
 #: ../Network/Receive/ServerType0.pm:5665
 msgid "Requirement"
-msgstr "Requirement"
+msgstr "不满足施放要求"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5762
 #: ../Network/Receive/ServerType0.pm:5667
 #, perl-format
 msgid "Skill %s failed (%s)\n"
 msgstr "技能 %s 失败 (%s)\n"
+
+msgid "Skill %s failed: %s (error number %s)\n"
+msgstr "技能 %s 使用失败: %s (错误代码 %s)\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5977
 #: ../Network/Receive/ServerType0.pm:5860
@@ -3238,7 +3241,7 @@ msgstr "没有足够的素质点数可增加\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:6074
 #: ../Network/Receive/ServerType0.pm:5957
 msgid "Mute period expired.\n"
-msgstr "禁言期间已过.\n"
+msgstr "禁言时间已过.\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:6080
 #: ../Network/Receive/ServerType0.pm:5963
