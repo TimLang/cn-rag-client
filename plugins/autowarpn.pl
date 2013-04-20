@@ -46,7 +46,7 @@ sub cHook {
    
    if ($message =~ /计算路径至坐标/ && $warpoff == 0 &&
      existsInList($config{autoWarp_from}, $field->baseName) &&
-     $char->{skills}{AL_WARP} && $char->{skills}{AL_WARP}{lv} > 0 && !$char->statusActive(EFST_POSTDELAY) ) {
+     $char->{skills}{AL_WARP} && $char->{skills}{AL_WARP}{lv} > 0 && !$char->statusActive('EFST_POSTDELAY') ) {
       AI::queue("autowarp");
       AI::args->{timeout} = 1;
       AI::args->{time} = time;
