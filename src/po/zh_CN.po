@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-20 00:11+0800\n"
+"PO-Revision-Date: 2013-04-20 16:28+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -541,7 +541,7 @@ msgstr "收集无主物品 %s (%s) 失败: 超时\n"
 
 #: ../AI/CoreLogic.pm:2867
 msgid "Teleporting to avoid all players\n"
-msgstr "正在瞬移以避免所有的玩家\n"
+msgstr "正在瞬移以避开所有的玩家\n"
 
 #: ../AI/CoreLogic.pm:2907
 msgid "Teleporting due to insufficient HP/SP or too many aggressives\n"
@@ -559,11 +559,11 @@ msgstr "因怪物太靠近而瞬移 %s\n"
 
 #: ../AI/CoreLogic.pm:2948
 msgid "Teleporting due to idle\n"
-msgstr "因发呆而瞬移\n"
+msgstr "瞬移 - 原地发呆太久或开启了瞬移寻怪\n"
 
 #: ../AI/CoreLogic.pm:2960
 msgid "Teleporting to avoid portal\n"
-msgstr "正在瞬移以避免传送点\n"
+msgstr "正在瞬移以避开传送点\n"
 
 #: ../AI/CoreLogic.pm:2982 ../Misc.pm:1259
 #, perl-format

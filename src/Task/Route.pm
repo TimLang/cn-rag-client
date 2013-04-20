@@ -37,6 +37,7 @@ use Utils qw(timeOut distance calcPosition);
 use Utils::Exceptions;
 use Utils::Set;
 use Utils::PathFinding;
+use encoding 'utf8';
 
 # Error code constants.
 use enum qw(
@@ -175,7 +176,7 @@ sub iterate {
 
 		} else {
 			debug "Something's wrong; there is no path to " . $field->baseName . "($self->{dest}{pos}{x},$self->{dest}{pos}{y}).\n", "debug";
-			$self->setError(CANNOT_CALCULATE_ROUTE, "Unable to calculate a route.");
+			$self->setError(CANNOT_CALCULATE_ROUTE, "未知路径 - 无法计算路径");
 		}
 
 	} elsif ($self->{stage} eq 'Route Solution Ready') {
