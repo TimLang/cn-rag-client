@@ -32,6 +32,7 @@ use Network::Send ();
 use Skill;
 use Utils;
 use Utils::PathFinding;
+use encoding 'utf8';
 
 
 sub process {
@@ -426,7 +427,7 @@ sub main {
 		}
 
 		# Move to the closest spot
-		my $msg = "No LOS from ($realMyPos->{x}, $realMyPos->{y}) to target ($realMonsterPos->{x}, $realMonsterPos->{y})";
+		my $msg = "从($realMyPos->{x}, $realMyPos->{y})到($realMonsterPos->{x}, $realMonsterPos->{y})没有LOS";
 		if ($best_spot) {
 			message TF("%s; moving to (%s, %s)\n", $msg, $best_spot->{x}, $best_spot->{y});
 			if ($config{attackChangeTarget} == 1) {
