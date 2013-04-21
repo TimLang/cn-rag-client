@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-20 18:47+0800\n"
+"PO-Revision-Date: 2013-04-22 01:37+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,9 @@ msgstr "planLockMapWalk锁定地图路径点插件是空白的路径点设置; �
 
 msgid "All files were loaded\n"
 msgstr "所有文件已加载完毕\n"
+
+msgid "New target was choosen\n"
+msgstr "已选择更好的目标\n"
 
 msgid "Do plan walking route to: %s: %s, %s\n"
 msgstr "自定义路径点到: %s: %s, %s\n"
