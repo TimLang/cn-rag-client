@@ -563,7 +563,10 @@ sub main {
 		} elsif ($args->{attackMethod}{type} eq "skill") {
 			my $slot = $args->{attackMethod}{skillSlot};
 			delete $args->{attackMethod};
-
+			if (Actor::Item::scanConfigAndCheck("attackEquip")) {
+				#使用技能前检查身上是否有东西需要装备
+				Actor::Item::scanConfigAndEquip("attackEquip");
+			}
 			$ai_v{"attackSkillSlot_${slot}_time"} = time;
 			$ai_v{"attackSkillSlot_${slot}_target_time"}{$ID} = time;
 
