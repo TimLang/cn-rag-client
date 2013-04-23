@@ -205,10 +205,6 @@ autoResponse 0
 # 使用例子：autoSpell 火箭術
 autoSpell
 
-avoidGM_near 0
-# 是否啟動防GM功能 [ 0: 不會  1: 會 ]
-avoidGM_near_inTown 0
-# 是否在城鎮內使用防GM功能 [ 0: 不會  1: 會 ]
 avoidGM_talk 0
 # 是否啟動防GM對話功能 [ 0: 不會  1: 會 ]
 avoidGM_reconnect 1800
