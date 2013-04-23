@@ -2223,8 +2223,8 @@ sub inventory_item_added {
 		}
 
 		$itemChange{$item->{name}} += $amount;
-		my $disp = TF("Item added to inventory: %s (%d) x %d - %s",
-			$item->{name}, $item->{invIndex}, $amount, $itemTypes_lut{$item->{type}});
+		my $disp = TF("Item added to inventory: %s (%d)",
+			$item->{name}, $item->{invIndex});
 		message "$disp\n", "drop";
 		$disp .= " (". $field->baseName . ")\n";
 		itemLog($disp);
