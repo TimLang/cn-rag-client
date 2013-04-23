@@ -4399,7 +4399,8 @@ sub skill_use_failed {
 		29 => T('Must have at least 1% of base XP'),
 		83 => T('Location not allowed to create market')
 		);
-	
+
+	setSkillUseTimer($skillID) if ($skillID == 50 && $type == 10);
 	my $errorMessage;
 	if (exists $failtype{$type}) {
 		$errorMessage = $failtype{$type};
