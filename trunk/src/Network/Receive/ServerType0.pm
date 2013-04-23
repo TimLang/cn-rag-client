@@ -241,10 +241,6 @@ sub new {
 		'01DE' => ['skill_use', 'v a4 a4 V4 v2 C', [qw(skillID sourceID targetID tick src_speed dst_speed damage level option type)]],
 		'01E0' => ['GM_req_acc_name', 'a4 Z24', [qw(targetID accountName)]],
 		'01E1' => ['revolving_entity', 'a4 v', [qw(sourceID entity)]],
-		#'01E2' => ['marriage_unknown'], clif_parse_ReqMarriage
-		#'01E4' => ['marriage_unknown'], clif_marriage_process
-		##
-		'01E6' => ['marriage_partner_name', 'Z24', [qw(name)]],
 		'01E9' => ['party_join', 'a4 V v2 C Z24 Z24 Z16 v C2', [qw(ID role x y type name user map lv item_pickup item_share)]],
 		'01EE' => ['inventory_items_stackable', 'v a*', [qw(len itemInfo)]],
 		'01EF' => ['cart_items_stackable', 'v a*', [qw(len itemInfo)]],
@@ -453,6 +449,7 @@ sub new {
 		'01D3' => ['del_packet'],
 		'07FE' => ['del_packet'],
 		# married
+		'01E6' => ['del_packet'],
 		'01EA' => ['del_packet'],
 		# friend
 		'0201' => ['del_packet'],

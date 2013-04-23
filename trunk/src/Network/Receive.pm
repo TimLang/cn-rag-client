@@ -1200,10 +1200,6 @@ sub account_payment_info {
 	message  T("-------------------------------------------------------\n"), "info";
 }
 
-# TODO
-sub reconstruct_minimap_indicator {
-}
-
 ##
 # minimap_indicator({bool show, Actor actor, int x, int y, int red, int green, int blue, int alpha [, int effect]})
 # show: whether indicator is shown or cleared
@@ -1512,16 +1508,6 @@ sub account_id {
 	# So lets not fuckup the $accountID since we need that later... someone will prolly have to fix this later on
 	my $accountID = $args->{accountID};
 	debug sprintf("Account ID: %s (%s)\n", unpack('V',$accountID), getHex($accountID));
-}
-
-##
-# marriage_partner_name({String name})
-#
-# Name of the partner character, sent to everyone around right before casting "I miss you".
-sub marriage_partner_name {
-	#my ($self, $args) = @_;
-	# TODO save and display with the next skill use message?
-	#... = $args->{name};
 }
 
 1;
