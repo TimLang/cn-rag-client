@@ -1,4 +1,4 @@
-#########################################################################
+﻿#########################################################################
 #  OpenKore - Default error handler
 #
 #  Copyright (c) 2006 OpenKore Development Team
@@ -30,7 +30,7 @@ sub showError {
 	$net->serverDisconnect() if ($net);
 
 	if (!$Globals::interface || UNIVERSAL::isa($Globals::interface, "Interface::Startup")) {
-		print TF("%s\nPress ENTER to exit this program.\n", $_[0]);
+		print TF("%s\n请按下 ENTER 键以结束本程式.\n", $_[0]);
 		<STDIN>;
 	} else {
 		$Globals::interface->errorDialog($_[0]);
@@ -56,16 +56,12 @@ sub errorHandler {
 	$errorMessage =~ s/[\r\n]+$//s;
 
 	# Create the message to be displayed to the user.
-	my $display = TF("This program has encountered an unexpected problem. This is probably because\n" .
-	                 "of a recent server update, a bug in this program, or in one of the plugins.\n" .
-	                 "We apologize for this problem. You may get support from IRC or the forums.\n\n" .
-	                 "A detailed error report has been saved to errors.txt. Before posting a bug\n" . 
-	                 "report, please try out the SVN version first. If you are already using the SVN\n" . 
-	                 "version, search the forums first to see if your problem had already been solved,\n" . 
-	                 "or has already been reported. If you truly believe you have encountered a bug in\n" .
-	                 "the program, please include the contents of the errors.txt in your bug report,\n" .
-	                 "or we may not be able to help you!\n\n" .
-	                 "The error message is:\n" .
+	my $display = TF("本程式已遭遇一个未预期的问题. 这可能是因为服务器有更新, 或本程式有 bug,\n" .
+	                 "或是其中一个 plugin 有点问题. 对此问题我们深感抱歉. 您可由 IRC 或论坛中寻求支援.\n\n" .
+	                 "更多的错误报告已存于 errors.txt 中. 在回报一个 bug 之前, 请尝试先使用 SVN 的版本.\n" .
+	                 "假如您已在使用 SVN 版本, 请先在论坛中找找看是否相同的问题已有解答, 或者已经有人回报了.\n" . 
+	                 "假如您真的认为您在程式中遭遇到了一个 bug, 请在报告中包含该档案的 errors.txt 的内容, \n" . 
+	                 "否则我们可能无法帮助您!\n\n错误的讯息为:\n" . 
 	                 "%s",
 	                 $errorMessage);
 
@@ -80,19 +76,19 @@ sub errorHandler {
 		$log .= "Loaded plugins:\n";
 		foreach my $plugin (@Plugins::plugins) {
 			next if (!defined $plugin);
-			$log .= "  $plugin->{filename} ($plugin->{name}; description: $plugin->{description})\n";
+			$log .= "  $plugin->{filename} ($plugin->{name}; 描述: $plugin->{description})\n";
 		}
 	} else {
-		$log .= "No loaded plugins.\n";
+		$log .= "没有加载plugins.\n";
 	}
-	$log .= "\nError message:\n$errorMessage\n\n";
+	$log .= "\n错误信息:\n$errorMessage\n\n";
 
 	# Add stack trace to errors.txt.
 	if (UNIVERSAL::isa($e, 'Exception::Class::Base')) {
-		$log .= "Stack trace:\n";
+		$log .= "堆栈轨迹:\n";
 		$log .= $e->trace();
 	} elsif (defined &Carp::longmess) {
-		$log .= "Stack trace:\n";
+		$log .= "堆栈轨迹:\n";
 		my $e = $errorMessage;
 		$log .= Carp::longmess("$e\n");
 	}
@@ -108,7 +104,7 @@ sub errorHandler {
 		$msg .= "* $lines[$line-1]";
 		$msg .= "  $lines[$line]" if (@lines > $line);
 		$msg .= "\n" unless $msg =~ /\n$/s;
-		$log .= TF("\n\nDied at this line:\n%s\n", $msg);
+		$log .= TF("\n\n这行有错误:\n%s\n", $msg);
 	}
 
 	if (open(F, ">:utf8", "errors.txt")) {
