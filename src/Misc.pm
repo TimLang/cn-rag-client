@@ -180,8 +180,7 @@ our @EXPORT = (
 	percent_weight/,
 
 	# Misc Functions
-	qw/avoidGM_near
-	avoidList_near
+	qw/avoidList_near
 	compilePortals
 	compilePortals_check
 	portalExists
@@ -3360,57 +3359,6 @@ sub percent_weight {
 ###CATEGORY: Misc Functions
 #######################################
 #######################################
-
-sub avoidGM_near {
-	my $players = $playersList->getItems();
-	foreach my $player (@{$players}) {
-		# skip this person if we dont know the name
-		next if (!defined $player->{name});
-
-		# Check whether this "GM" is on the ignore list
-		# in order to prevent false matches
-		last if (existsInList($config{avoidGM_ignoreList}, $player->{name}));
-
-		# check if this name matches the GM filter
-		last unless ($config{avoidGM_namePattern} ? $player->{name} =~ /$config{avoidGM_namePattern}/ : $player->{name} =~ /^([a-z]?ro)?-?(Sub)?-?\[?GM\]?/i);
-
-		my %args = (
-			name => $player->{name},
-			ID => $player->{ID}
-		);
-		Plugins::callHook('avoidGM_near', \%args);
-		return 1 if ($args{return});
-
-		my $msg;
-		if ($config{avoidGM_near} == 1) {
-			# Mode 1: teleport & disconnect
-			useTeleport(1);
-			$msg = TF("GM %s is nearby, teleport & disconnect for %d seconds", $player->{name}, $config{avoidGM_reconnect});
-			relog($config{avoidGM_reconnect}, 1);
-
-		} elsif ($config{avoidGM_near} == 2) {
-			# Mode 2: disconnect
-			$msg = TF("GM %s is nearby, disconnect for %s seconds", $player->{name}, $config{avoidGM_reconnect});
-			relog($config{avoidGM_reconnect}, 1);
-
-		} elsif ($config{avoidGM_near} == 3) {
-			# Mode 3: teleport
-			useTeleport(1);
-			$msg = TF("GM %s is nearby, teleporting", $player->{name});
-
-		} elsif ($config{avoidGM_near} >= 4) {
-			# Mode 4: respawn
-			useTeleport(2);
-			$msg = TF("GM %s is nearby, respawning", $player->{name});
-		}
-
-		warning "$msg\n";
-		chatLog("k", "*** $msg ***\n");
-
-		return 1;
-	}
-	return 0;
-}
 
 ##
 # avoidList_near()
