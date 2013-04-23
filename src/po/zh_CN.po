@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-22 01:37+0800\n"
+"PO-Revision-Date: 2013-04-24 00:37+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2397,8 +2397,8 @@ msgstr "已对玩家开启私聊\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:3388
 #: ../Network/Receive/ServerType0.pm:3293
 #, perl-format
-msgid "Item added to inventory: %s (%d) x %d - %s"
-msgstr "获得物品: %s (%d) x %d - %s"
+msgid "Item added to inventory: %s (%d)"
+msgstr "获得物品: %s (%d)"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:3408
 #: ../Network/Receive/ServerType0.pm:3313
