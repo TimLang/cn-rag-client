@@ -102,9 +102,13 @@ if (0) {
 
 
 if ($PerlApp::TOOL eq "PerlApp") {
-	$ENV{INTERPRETER} = PerlApp::exe();
 	if (PerlApp::exe() =~ /CNKore_UI\.exe$/i) {
+		$ENV{INTERPRETER} = PerlApp::exe();
 		$ENV{OPENKORE_DEFAULT_INTERFACE} = 'Wx';
+	} else {
+		print "Cannot RUN! Your CNKore_UI.exe name is changed!\n";
+		<STDIN>;
+		exit 1;
 	}
 } else {
 	print "Do not run start.pl directly! If you're using Perl then run openkore.pl instead!\n";

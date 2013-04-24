@@ -102,9 +102,15 @@ if (0) {
 
 
 if ($PerlApp::TOOL eq "PerlApp") {
-	$ENV{INTERPRETER} = PerlApp::exe();
+	if (PerlApp::exe() =~ /CNKore_Console\.exe$/i) {
+		$ENV{INTERPRETER} = PerlApp::exe();
+	} else {
+		print "Cannot RUN! Your CNKore_Console.exe name is changed!\n";
+		<STDIN>;
+		exit 1;
+	}
 } else {
-	print "Do not run start.pl directly! If you're using Perl then run openkore.pl instead!\n";
+	print "Do not run start.pl directly!\n";
 	<STDIN>;
 	exit 1;
 }

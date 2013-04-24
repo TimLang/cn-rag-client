@@ -30,7 +30,7 @@ sub showError {
 	$net->serverDisconnect() if ($net);
 
 	if (!$Globals::interface || UNIVERSAL::isa($Globals::interface, "Interface::Startup")) {
-		print TF("%s\n请按下 ENTER 键以结束本程式.\n", $_[0]);
+		print TF("%s\n请按下 ENTER 键来结束本程序.\n", $_[0]);
 		<STDIN>;
 	} else {
 		$Globals::interface->errorDialog($_[0]);
@@ -56,12 +56,12 @@ sub errorHandler {
 	$errorMessage =~ s/[\r\n]+$//s;
 
 	# Create the message to be displayed to the user.
-	my $display = TF("本程式已遭遇一个未预期的问题. 这可能是因为服务器有更新, 或本程式有 bug,\n" .
-	                 "或是其中一个 plugin 有点问题. 对此问题我们深感抱歉. 您可由 IRC 或论坛中寻求支援.\n\n" .
-	                 "更多的错误报告已存于 errors.txt 中. 在回报一个 bug 之前, 请尝试先使用 SVN 的版本.\n" .
-	                 "假如您已在使用 SVN 版本, 请先在论坛中找找看是否相同的问题已有解答, 或者已经有人回报了.\n" . 
-	                 "假如您真的认为您在程式中遭遇到了一个 bug, 请在报告中包含该档案的 errors.txt 的内容, \n" . 
-	                 "否则我们可能无法帮助您!\n\n错误的讯息为:\n" . 
+	my $display = TF("CN Kore已遭遇一个未知问题. 这可能是因为服务器有更新, 或本程序有Bug,\n" .
+	                 "或是其中一个插件有点问题. 对此问题我们深感抱歉. 您可到QQ群或CN Kore论坛中寻求帮助.\n\n" .
+	                 "更多的错误报告已存于程序根目录的errors.txt 中. 在回报一个Bug之前, 请尝试先使用我们提供的最新版本.\n" .
+	                 "假如您已在使用最新版本, 请先在论坛中找找看是否相同的问题已有解答, 或者已经有人回报了.\n" . 
+	                 "假如您真的认为您在程式中遭遇到了一个Bug, 请在论坛的Bug报告中包含errors.txt的内容, \n" . 
+	                 "否则我们可能无法帮助您!\n\n错误的信息为:\n" . 
 	                 "%s",
 	                 $errorMessage);
 
@@ -76,10 +76,10 @@ sub errorHandler {
 		$log .= "Loaded plugins:\n";
 		foreach my $plugin (@Plugins::plugins) {
 			next if (!defined $plugin);
-			$log .= "  $plugin->{filename} ($plugin->{name}; 描述: $plugin->{description})\n";
+			$log .= "  $plugin->{filename} ($plugin->{name}; 插件描述: $plugin->{description})\n";
 		}
 	} else {
-		$log .= "没有加载plugins.\n";
+		$log .= "没有加载插件.\n";
 	}
 	$log .= "\n错误信息:\n$errorMessage\n\n";
 
@@ -104,7 +104,7 @@ sub errorHandler {
 		$msg .= "* $lines[$line-1]";
 		$msg .= "  $lines[$line]" if (@lines > $line);
 		$msg .= "\n" unless $msg =~ /\n$/s;
-		$log .= TF("\n\n这行有错误:\n%s\n", $msg);
+		$log .= TF("\n\n错误在行数:\n%s\n", $msg);
 	}
 
 	if (open(F, ">:utf8", "errors.txt")) {
