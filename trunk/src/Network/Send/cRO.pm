@@ -19,49 +19,61 @@ use base qw(Network::Send::ServerType0);
 use Math::BigInt;
 use Digest::MD5;
 use I18N qw(bytesToString stringToBytes);
+#modify by jackywei 20130420
+use Utils::RSK;
 
 sub new {
 	my ($class) = @_;
 	my $self = $class->SUPER::new(@_);
+	my $ID1 = uc(sprintf("%04x",RSK::GetSendID(1)));
+	my $ID2 = uc(sprintf("%04x",RSK::GetSendID(2)));
+	my $ID3 = uc(sprintf("%04x",RSK::GetSendID(3)));
+	my $ID4 = uc(sprintf("%04x",RSK::GetSendID(4)));
+	my $ID5 = uc(sprintf("%04x",RSK::GetSendID(5)));
+	my $ID6 = uc(sprintf("%04x",RSK::GetSendID(6)));
+	my $ID7 = uc(sprintf("%04x",RSK::GetSendID(7)));
+	my $ID8 = uc(sprintf("%04x",RSK::GetSendID(8)));
+	my $ID9 = uc(sprintf("%04x",RSK::GetSendID(9)));
+	my $ID10 = uc(sprintf("%04x",RSK::GetSendID(10)));
+	my $ID11 = uc(sprintf("%04x",RSK::GetSendID(11)));
+	my $ID12 = uc(sprintf("%04x",RSK::GetSendID(12)));
+	my $ID13 = uc(sprintf("%04x",RSK::GetSendID(13)));
 	$self->{char_create_version} = 1;
 
-
 	my %packets = (
-
-		'091B' => ['actor_action', 'a4 C', [qw(targetID type)]],
-		'092B' => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
-		'0884' => ['character_move','a3', [qw(coords)]],
-		'095D' => ['sync', 'V', [qw(time)]],
-		'0897' => ['actor_look_at', 'v C', [qw(head body)]],
-		'0938' => ['item_take', 'a4', [qw(ID)]],
-		'0879' => ['item_drop', 'v2', [qw(index amount)]],
-		'0968' => ['storage_item_add', 'v V', [qw(index amount)]],
-		'088E' => ['storage_item_remove', 'v V', [qw(index amount)]],
-		'08AB' => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
-		'0860' => ['actor_info_request', 'a4', [qw(ID)]],
-		'0965' => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
-		'0898' => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
+		"$ID1" => ['actor_action', 'a4 C', [qw(targetID type)]],
+		"$ID2" => ['skill_use', 'v2 a4', [qw(lv skillID targetID)]],
+		"$ID3" => ['character_move','a3', [qw(coords)]],
+		"$ID4" => ['sync', 'V', [qw(time)]],
+		"$ID5" => ['actor_look_at', 'v C', [qw(head body)]],
+		"$ID6" => ['item_take', 'a4', [qw(ID)]],
+		"$ID7" => ['item_drop', 'v2', [qw(index amount)]],
+		"$ID8" => ['storage_item_add', 'v V', [qw(index amount)]],
+		"$ID9" => ['storage_item_remove', 'v V', [qw(index amount)]],
+		"$ID10" => ['skill_use_location', 'v4', [qw(lv skillID x y)]],
+		"$ID11" => ['actor_info_request', 'a4', [qw(ID)]],
+		"$ID12" => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
+		"$ID13" => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 	);
 	
 	$self->{packet_list}{$_} = $packets{$_} for keys %packets;
 	
-	my %handlers = qw(
-		
-		actor_action 091B
-		skill_use 092B
-		character_move 0884
-		sync 095D
-		actor_look_at 0897
-		item_take 0938
-		item_drop 0879
-		storage_item_add 0968
-		storage_item_remove 088E
-		skill_use_location 08AB
-		actor_info_request 0860
-		map_login 0965
-		homunculus_command 0898
-		party_setting 07D7
+	my %handlers = (
+		'actor_action' => "$ID1",
+		'skill_use' => "$ID2",
+		'character_move' => "$ID3",
+		'sync' => "$ID4",
+		'actor_look_at' => "$ID5",
+		'item_take' => "$ID6",
+		'item_drop' => "$ID7",
+		'storage_item_add' => "$ID8",
+		'storage_item_remove' => "$ID9",
+		'skill_use_location' => "$ID10",
+		'actor_info_request' => "$ID11",
+		'map_login' => "$ID12",
+		'homunculus_command' => "$ID13",
+		'party_setting' => '07D7'
 	);
 	
 	$self->{packet_lut}{$_} = $handlers{$_} for keys %handlers;
@@ -91,12 +103,14 @@ sub encryptMessageID {
 }
 
 sub PrepareKeys() {
-	# K
-	$enc_val1 = Math::BigInt->new('0x4990701c');
+	#modify by jackywei 20130420
+	#K
+	$enc_val1 = Math::BigInt->new(sprintf("0x%08x",RSK::GetEncVal(1)));
 	# M
-	$enc_val3 = Math::BigInt->new('0x65307aaf');
+	$enc_val3 = Math::BigInt->new(sprintf("0x%08x",RSK::GetEncVal(3)));
 	# A
-	$enc_val2 = Math::BigInt->new('0x4e6547cf');
+	$enc_val2 = Math::BigInt->new(sprintf("0x%08x",RSK::GetEncVal(2)));
+	#modify end
 }
 
 sub sendMasterLogin {

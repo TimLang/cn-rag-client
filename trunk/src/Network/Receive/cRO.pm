@@ -18,6 +18,7 @@ use Globals;
 use Translation;
 use Misc;
 use log qw(debug message);
+use Utils::RSK;
 use Data::Dumper;
 
 sub new {
@@ -130,112 +131,14 @@ sub sync_request_ex {
 	
 	# Computing Sync Ex - By Fr3DBr
 	my $PacketID = $args->{switch};
-	
-	# Sync Ex Reply Array
-	my %sync_ex_question_reply = (
-		'0893' => '0969',
-		'0923' => '0867',
-		'093B' => '0896',
-		'0881' => '0889',
-		'0963' => '0948',
-		'0202' => '0933',
-		'0887' => '0886',
-		'0873' => '0941',
-		'0802' => '086D',
-		'0882' => '0367',
-		'095E' => '088F',
-		'086E' => '0966',
-		'0877' => '02C4',
-		'0924' => '07E4',
-		'0817' => '0876',
-		'07EC' => '0895',
-		'0943' => '0883',
-		'092D' => '0961',
-		'092A' => '0835',
-		'085E' => '0363',
-		'08A4' => '0891',
-		'08AC' => '0945',
-		'0899' => '08A6',
-		'0365' => '0949',
-		'0957' => '089F',
-		'0944' => '0922',
-		'0437' => '0954',
-		'0870' => '0890',
-		'08A8' => '093A',
-		'0952' => '089B',
-		'035F' => '0364',
-		'095B' => '0863',
-		'0927' => '0366',
-		'092C' => '0878',
-		'0436' => '091E',
-		'08A3' => '094E',
-		'085B' => '0953',
-		'023B' => '0815',
-		'0931' => '087C',
-		'0939' => '087B',
-		'0920' => '0934',
-		'0362' => '0947',
-		'087A' => '0955',
-		'08A0' => '093F',
-		'0926' => '08A2',
-		'086B' => '0960',
-		'0929' => '08A5',
-		'086F' => '0892',
-		'089E' => '08AA',
-		'0925' => '086A',
-		'087D' => '096A',
-		'0932' => '089D',
-		'0868' => '0942',
-		'0874' => '0962',
-		'088D' => '08A9',
-		'0866' => '092E',
-		'0838' => '0959',
-		'0928' => '091F',
-		'0360' => '0862',
-		'0956' => '087F',
-		'0918' => '085D',
-		'0885' => '0937',
-		'085C' => '0361',
-		'0894' => '0875',
-		'08A1' => '08A7',
-		'094C' => '088A',
-		'0861' => '091C',
-		'0917' => '095C',
-		'0281' => '022D',
-		'0964' => '0871',
-		'0819' => '0368',
-		'0935' => '094B',
-		'0919' => '094A',
-		'094D' => '088B',
-		'0921' => '0369',
-		'093C' => '0865',
-		'088C' => '085A',
-		'092F' => '094F',
-		'0946' => '0872',
-		'091A' => '0438',
-		'089C' => '089A',
-		'0940' => '0936',
-		'095F' => '0888',
-		'0967' => '0869',
-	);
-	
-	# Getting Sync Ex Reply ID from Table
-	my $SyncID = $sync_ex_question_reply{$PacketID};
-	
-	# Cleaning Leading Zeros
-	$PacketID =~ s/^0+//;	
-	
-	# Cleaning Leading Zeros	
-	$SyncID =~ s/^0+//;
-	
-	# Debug Log
-	# print sprintf("Received Ex Packet ID : 0x%s => 0x%s\n", $PacketID, $SyncID);
 
-	# Converting ID to Hex Number
-	$SyncID = hex($SyncID);
-
+	my $tempValues = RSK::GetReply(hex($PacketID));
+	$tempValues = sprintf("0x%04x\n",$tempValues);
+	$tempValues =~ s/^0+//;
+	$tempValues = hex($tempValues);
+	
 	# Dispatching Sync Ex Reply
-	$messageSender->sendReplySyncRequestEx($SyncID);
+	$messageSender->sendReplySyncRequestEx($tempValues);
 }
 
 1;
