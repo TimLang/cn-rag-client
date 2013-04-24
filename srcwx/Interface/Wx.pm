@@ -39,7 +39,7 @@ use Wx::Event qw(EVT_CLOSE EVT_MENU EVT_MENU_OPEN EVT_LISTBOX_DCLICK
 use Time::HiRes qw(time sleep);
 use File::Spec;
 use FindBin qw($RealBin);
-
+use encoding 'utf8';
 
 use Globals;
 use Interface;
@@ -89,6 +89,8 @@ sub OnInit {
 		['packet_selfChat',                     $onChat],
 		['packet_privMsg',                      $onChat],
 		['packet_sentPM',                       $onChat],
+		['packet_partyMsg',                      $onChat],
+		['packet_guildMsg',                      $onChat],
 		['mainLoop_pre',                        sub { $self->onUpdateUI(); }],
 		['packet/minimap_indicator',            sub { $self->onMapIndicator (@_); }],
 		
@@ -1277,6 +1279,10 @@ sub onChatAdd {
 		$self->{chatLog}->add("([$tmpdate[2]:$tmpdate[1]] From: $params->{privMsgUser}): $params->{privMsg}\n", "pm");
 	} elsif ($hook eq "packet_sentPM") {
 		$self->{chatLog}->add("([$tmpdate[2]:$tmpdate[1]] To: $params->{to}): $params->{msg}\n", "pm");
+	} elsif ($hook eq "packet_partyMsg") {
+		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [队伍] $params->{MsgUser}: $params->{Msg}\n", "p");
+	} elsif ($hook eq "packet_guildMsg") {
+		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [公会] $params->{MsgUser}: $params->{Msg}\n", "g");
 	}
 }
 
