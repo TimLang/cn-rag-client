@@ -17,7 +17,6 @@ use base 'Network::Receive::ServerType0';
 use Globals;
 use Translation;
 use Misc;
-use log qw(debug message);
 use Utils::RSK;
 use Data::Dumper;
 
