@@ -677,18 +677,10 @@ sub processTake {
 			stand();
 
 		} elsif ($dist > 1) {
-			if (!$config{itemsTakeAuto_new}) {
 				my (%vec, %pos);
 				getVector(\%vec, $item->{pos}, $myPos);
 				moveAlongVector(\%pos, $myPos, \%vec, $dist - 1);
 				$char->move(@pos{qw(x y)});
-			} else {
-				if ($char->{pos} != $item->{pos}) {
-				my $pos = $item->{pos};
-				message TF("Routing to (%s, %s) to take %s (%s), distance %s\n", $pos->{x}, $pos->{y}, $item->{name}, $item->{binID}, $dist);
-				ai_route($field->baseName, $pos->{x}, $pos->{y}, maxRouteDistance => $config{'attackMaxRouteDistance'});
-				}
-			}
 
 		} elsif (timeOut($timeout{ai_take})) {
 			my %vec;
