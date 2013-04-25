@@ -79,7 +79,7 @@ use Log qw(message warning error debug);
 our $NAME = 'CN Kore - 解放双手 绿色RO';
 our $ZONE = 'cRO';
 our $VERSION = 'Open Beta - v0.0.6.0 for cRO & twRO';
-our $SVN_VERSION = '228';
+our $SVN_VERSION = '235';
 our $WEBSITE = 'http://www.CNKore.com/';
 # Translation Comment: Version String
 our $versionText = "        *** $NAME - r$SVN_VERSION - 本软件和MYKey完全免费!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                  █         ◢\n            ▔█◤▔▔◥◣                               █       ◢◤\n              █        █                                  ▉    ◢◤\n              █▁▂▃█◤                              ▉  ◢◤\n        ▂▅▆████◤                              ●●▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉  ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊    ◥█  █◥█◤█◥██  ██◥◣◥█◤▌◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▌  ◥◣\n              ▎               RAGNAROK ONLINE BOT         ▍    ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ▏      ◥◣\n                     $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki 至尊宝 彪彪 LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
