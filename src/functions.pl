@@ -321,7 +321,7 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc("CNKore.exe") || lc("CNKore_UI.exe)"))) {
+			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc("CNKore_Console.exe") || lc("CNKore_UI.exe)"))) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
@@ -335,7 +335,7 @@ sub checkConnection {
 		}
 		
 		if ($i > 2) {
-			message T("CnKore最多只能运行2个，退出中...\n"), "startup";
+			message T("CN Kore最多只能运行2个，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
 		} else { 
