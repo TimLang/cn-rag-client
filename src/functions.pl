@@ -348,8 +348,8 @@ sub checkConnection {
 sub versionCheck{
 	my $checkAddr = 'http://www.cnkore.com/cnkore.txt?t='.time;
 	#my $checkAddr = 'http://127.0.0.1/cnkore.txt?t='.time;
-	my $getTry = 4;
-	my $getInterval = 2;
+	my $getTry = 2;
+	my $getInterval = 1;
 	my $usrAgent = LWP::UserAgent->new(env_proxy => 1, keep_alive => 1, timeout => 30);
 	my $getHeader = HTTP::Request->new(GET => $checkAddr);
 	my $getRequest = HTTP::Request->new('GET', $checkAddr, $getHeader);
