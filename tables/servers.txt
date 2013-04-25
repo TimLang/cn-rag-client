@@ -1,4 +1,4 @@
-[cRO - 电信区 - (Fenril)]
+﻿[cRO - 电信区 - (Fenril)]
 ip 114.112.39.71
 port 6900
 master_version 4
@@ -182,3 +182,14 @@ storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x
 PINEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
 recvpackets recvpackets_sakray.txt
 addTableFolders twRO
+
+[Kunlun Test Server]
+ip 114.112.56.246
+port 6900
+master_version 4
+version 4
+serverType cRO
+addTableFolders cRO
+serverEncoding Simplified Chinese
+charBlockSize 144
+addTableFolders cRO
