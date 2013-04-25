@@ -3807,13 +3807,11 @@ sub received_characters {
 	# gradeA says it's supposed to send this packet here, but
 	# it doesn't work...
 	# 30 Dec 2005: it didn't work before because it wasn't sending the accountiD -> fixed (kaliwanagan)
-	$messageSender->sendBanCheck($accountID) if (!$net->clientAlive && $config{serverType} == 2);
-	if ($args->{switch} ne '099D') {
-		if (charSelectScreen(1) == 1) {
-			$firstLoginMap = 1;
-			$startingzeny = $chars[$config{'char'}]{'zeny'} unless defined $startingzeny;
-			$sentWelcomeMessage = 1;
-		}
+	return if ($args->{switch} eq '099D' && $config{serverType} eq 'twRO');
+	if (charSelectScreen(1) == 1) {
+		$firstLoginMap = 1;
+		$startingzeny = $chars[$config{'char'}]{'zeny'} unless defined $startingzeny;
+		$sentWelcomeMessage = 1;
 	}
 }
 
