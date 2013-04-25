@@ -321,7 +321,7 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc("CNKore_Console.exe") || lc("CNKore_UI.exe)"))) {
+			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc($_->{'exe'}) eq lc("CNKore_Console.exe") || lc($_->{'exe'}) eq lc("CNKore_UI.exe)"))) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
