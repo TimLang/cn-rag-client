@@ -76,8 +76,9 @@ sub mainLoop {
 
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
-		sleep(5);
-		versionCheck($Settings::SVN_VERSION);
+ 		sleep(5);
+		checkConnection();
+ 		versionCheck($Settings::SVN_VERSION);
 		loadPlugins();
 		Log::message("\n");
 		Plugins::callHook('start');
@@ -308,6 +309,40 @@ sub loadDataFiles {
 	}
 }
 
+sub checkConnection {
+	my $self = shift;
+	my $pid;
+
+	my $loop = 1;
+	my @list;
+
+	while ($loop) {
+		undef @list;
+		my @z = Utils::Win32::listProcesses();
+
+		foreach (@z) {
+			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc("CNKore.exe") || lc("CNKore_UI.exe)"))) {
+				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
+			}
+		}
+
+		my $qr;
+		my $i = 0;
+
+		foreach (@list) {
+			$qr = $qr . TF("[%i] pid = %i (%s)\n", $i, $_->{'pid'}, $_->{'exe'});
+			$i++;
+		}
+		
+		if ($i > 2) {
+			message T("CnKore最多只能运行2个，退出中...\n"), "startup";
+			sleep(6);
+			exit 1;			
+		} else { 
+			last;
+		}
+	}
+}
 
 # Maple Start
 # 在logo下方使用 versionCheck($Settings::SVN_VERSION); 来检查版本
