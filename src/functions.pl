@@ -321,16 +321,14 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (lc($_->{'exe'}) eq (lc("perl.exe") || lc($_->{'exe'}) eq lc("CNKore_Console.exe") || lc($_->{'exe'}) eq lc("CNKore_UI.exe)"))) {
+			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
 
-		my $qr;
 		my $i = 0;
 
 		foreach (@list) {
-			$qr = $qr . TF("[%i] pid = %i (%s)\n", $i, $_->{'pid'}, $_->{'exe'});
 			$i++;
 		}
 		
