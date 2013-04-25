@@ -30,7 +30,7 @@ use encoding 'utf8';
 use Carp::Assert;
 use Digest::MD5;
 
-use Globals qw(%config $encryptVal $bytesSent $conState %packetDescriptions $enc_val1 $enc_val2 $char $masterServer $syncSync $accountID %timeout);
+use Globals qw(%config $encryptVal $bytesSent $conState %packetDescriptions $enc_val1 $enc_val2 $char $masterServer $syncSync @lastpm %lastpm @privMsgUsers $accountID %timeout);
 use I18N qw(bytesToString stringToBytes);
 use Utils qw(existsInList getHex getTickCount getCoordString makeCoordsDir);
 use Misc;
@@ -461,6 +461,10 @@ sub sendMapLogin {
 	debug "Sent sendMapLogin\n", "sendPacket", 2;
 }
 
+# Small Necessary Control
+my $cl_players = {};
+my $cl_timer = 0;
+
 sub sendMapLoaded {
 	my $self = shift;
 	$syncSync = pack("V", getTickCount());
@@ -561,7 +565,22 @@ sub reconstruct_private_message {
 sub sendPrivateMsg
 {
 	my ($self, $user, $message) = @_;
-	Misc::validate($user)?$self->sendToServer($self->reconstruct({ switch => 'private_message', privMsg => $message, privMsgUser => $user, })):return;
+#	Misc::validate($user)?$self->sendToServer($self->reconstruct({ switch => 'private_message', privMsg => $message, privMsgUser => $user, })):return;
+
+	if ( !$cl_players->{$user} ) { $cl_players->{$user} = 0; }
+	my $size =  keys(%$cl_players);
+	if ( $size > (3+3) && $cl_timer == 0 ) { $cl_timer = time; }
+	if ( $cl_timer != 0 && (time - $cl_timer) > (30+30) ) { $cl_timer = 0; $cl_players = {}; }
+
+	if ( $cl_timer == 0 ) 
+	{
+		$self->sendToServer($self->reconstruct({
+			switch => 'private_message',
+			privMsg => $message,
+			privMsgUser => $user,
+		}));	
+	}
+	else { shift @lastpm; }
 }
 
 sub sendLook {
