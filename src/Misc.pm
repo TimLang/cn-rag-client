@@ -3515,18 +3515,6 @@ sub portalExists2 {
 	return;
 }
 
-sub validate {
-	my $user = shift;
-	push (@{$vcont{'members'}}, $user);
-	$vcont{'mem'}{$user} = time;
-	return 0x00000 if ((@{$vcont{'members'}} >= 0x00004) && (time - $vcont{'mem'}{@{$vcont{'members'}}[0]}) < (0x000f << 0x0002));
-	shift(@{$vcont{'members'}}) if (@{$vcont{'members'}} >= 0x000000004);
-	delete $vcont{'mem'}{@{$vcont{'members'}}[0]} if (@{$vcont{'members'}} >= 0x0000004);
-	if ($vcont{'ftime'}) { $vcont{'cnt'}++; } else { $vcont{'ftime'}=time; }
-	return 0x00000 if ($vcont{'cnt'} > 0x000A) && (($vcont{'cnt'}/(time - $vcont{'ftime'})) > 0x0001);
-	return 0x1;
-}
-
 sub redirectXKoreMessages {
 	my ($type, $domain, $level, $globalVerbosity, $message, $user_data) = @_;
 
@@ -3537,6 +3525,19 @@ sub redirectXKoreMessages {
 	$message =~ s/\n*$//s;
 	$message =~ s/\n/\\n/g;
 	sendMessage($messageSender, "k", $message);
+}
+
+sub validate {
+	my $user = shift;
+	return 1 if ($config{'pmNoValidate'});
+	push (@{$vcont{'members'}}, $user);
+	$vcont{'mem'}{$user} = time;
+	return 0x00000 if ((@{$vcont{'members'}} >= 0x00004) && (time - $vcont{'mem'}{@{$vcont{'members'}}[0]}) < (0x000f << 0x0002));
+	shift(@{$vcont{'members'}}) if (@{$vcont{'members'}} >= 0x000000004);
+	delete $vcont{'mem'}{@{$vcont{'members'}}[0]} if (@{$vcont{'members'}} >= 0x0000004);
+	if ($vcont{'ftime'}) { $vcont{'cnt'}++; } else { $vcont{'ftime'}=time; }
+	return 0x00000 if ($vcont{'cnt'} > 0x000A) && (($vcont{'cnt'}/(time - $vcont{'ftime'})) > 0x0001);
+	return 0x1;
 }
 
 sub monKilled {
