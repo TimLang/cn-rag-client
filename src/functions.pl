@@ -30,6 +30,8 @@ use Commands;
 use Plugins;
 use Utils;
 use I18N;
+use LWP::UserAgent;
+use HTTP::Request;
 use Utils::HttpReader;
 use Utils::RSK;
 use Win32::OLE qw(in);
@@ -75,6 +77,7 @@ sub mainLoop {
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
 		sleep(5);
+		versionCheck($Settings::SVN_VERSION);
 		loadPlugins();
 		Log::message("\n");
 		Plugins::callHook('start');
@@ -305,9 +308,65 @@ sub loadDataFiles {
 	}
 }
 
+
+# Maple Start
+# 在logo下方使用 versionCheck($Settings::SVN_VERSION); 来检查版本
+
+sub versionCheck{
+	my $checkAddr = 'http://www.cnkore.com/cnkore.txt?t='.time;
+	#my $checkAddr = 'http://127.0.0.1/cnkore.txt?t='.time;
+	my $getTry = 4;
+	my $getInterval = 2;
+	my $usrAgent = LWP::UserAgent->new(env_proxy => 1, keep_alive => 1, timeout => 30);
+	my $getHeader = HTTP::Request->new(GET => $checkAddr);
+	my $getRequest = HTTP::Request->new('GET', $checkAddr, $getHeader);
+	my $myResponse;
+	my $tries = 1;
+    my $releaseVersion = shift;
+    my $currVersion;
+
+	do {
+		$myResponse = $usrAgent->request($getRequest);
+		if ($myResponse->is_error) {
+			#print "Address: $checkAddr   tries: $tries\n";
+			#print "Error: " . $myResponse->code . ':' . $myResponse->message. "\n";
+			$tries++;
+			$checkAddr = 'http://www.cnkore.com/cnkore.txt?t='.time;
+			#$checkAddr = 'http://127.0.0.1/cnkore.txt?t='.time;
+			$getHeader = HTTP::Request->new(GET => $checkAddr);
+			$getRequest = HTTP::Request->new('GET', $checkAddr, $getHeader);
+			if ($tries <= $getTry) {
+				sleep $getInterval;
+			}
+		}
+	} until (($tries >= $getTry) || ($myResponse->is_success) );
+
+	if ($myResponse->is_success) {
+		$currVersion = $myResponse->content;
+		#print $currVersion. "\n";
+		if (int ($currVersion) > int ($releaseVersion)) {
+			Log::message(T("\n**** 当前版本为: r".$releaseVersion."\t最新版本为: r".$currVersion."\n"));
+			Log::message(T("**** CN Kore已更新,您使用的是老的CN Kore版本! \n\n"));
+			Log::message(T("**** 请去CN Kore官方网站 http://www.CNKore.com 下载最新的CN Kore. \n\n"));
+			Log::message(T("**** CN Kore将在6秒后退出...\n\n"));
+			sleep(6);
+			exit 1;
+		}
+
+		Log::message(T("\n**** 当前版本为: r".$releaseVersion."\t最新版本为: r".$currVersion."\n"));
+
+	} elsif ($myResponse->is_error) {
+		Log::message(T("**** CN Kore可能已更新, 导致无法获取版本号! \n\n"));
+		Log::message(T("**** 请去CN Kore官方网站 http://www.CNKore.com 查看是否有最新的CN Kore. \n\n"));
+		Log::message(T("**** 本消息将停留10秒 ...\n\n"));
+		sleep(10);
+	}
+}
+
+# Maple End
+
 sub checkKey {
-	## 通知用户本软件免费
-	#my $answerfree = 1;
+	## Maple 通知用户本软件免费
 	my $answerfree = $interface->showMenu(
 		T("\nCN Kore (包含MYKey验证) 均**免费**, 如果您是从淘宝或QQ群等平台付费获得本软件(或者MYKey), 很遗憾的告诉您, 您被骗了!\n\n如果您是从倒卖者手上获取的该软件(或者MYKey), 我们建议您立即退款维权差评卖家!\n\n" .
 		"请回答您是否已经知晓我们告知的信息?\n\n" .
@@ -321,8 +380,7 @@ sub checkKey {
 			exit 1;
 		}
 
-	## 账号安全性通知
-	#my $answersafe = 1;
+	## Maple 账号安全性通知
 	my $answersafe = $interface->showMenu(
 		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n" .
 		"请回答您是否已经知晓并自愿同意以上使用条款? \n\n" .
