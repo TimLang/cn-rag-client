@@ -4331,10 +4331,13 @@ sub skill_use {
 		$args->{damage} = intToSignedInt($args->{damage});
 	}
 	updateDamageTables($args->{sourceID}, $args->{targetID}, $args->{damage}) if ($args->{damage} != -30000);
-	setSkillUseTimer($args->{skillID}, $args->{targetID}) if (
+	# 反击斩优化
+	if ($args->{skillID} != 2028) {
+		setSkillUseTimer($args->{skillID}, $args->{targetID}) if (
 		$args->{sourceID} eq $accountID
 		or $char->{slaves} && $char->{slaves}{$args->{sourceID}}
-	);
+		);
+	}
 	setPartySkillTimer($args->{skillID}, $args->{targetID}) if (
 		$args->{sourceID} eq $accountID
 		or $char->{slaves} && $char->{slaves}{$args->{sourceID}}
@@ -4483,8 +4486,15 @@ sub skill_used_no_damage {
 
 	# Perform trigger actions
 	# FIXME: setSkillUseTimer does many different things, so which of them "screw up monk comboing"?
-	setSkillUseTimer($args->{skillID}, $args->{targetID}) if ($args->{sourceID} eq $accountID
-		&& $skillsArea{$args->{skillHandle}} != 2); # ignore these skills because they screw up monk comboing
+	if ($args->{sourceID} eq $accountID && $skillsArea{$args->{skillHandle}} != 2) { # ignore these skills because they screw up monk comboing
+		if ($args->{skillID} == 2028) { # 修复武器防御状态 GC_WEAPONBLOCKING
+			if ($args->{amount} == 1) {
+				setSkillUseTimer($args->{skillID}, $args->{targetID});
+			}
+		} else {
+			setSkillUseTimer($args->{skillID}, $args->{targetID});
+		}
+	}
 	setPartySkillTimer($args->{skillID}, $args->{targetID}) if
 			$args->{sourceID} eq $accountID or $args->{sourceID} eq $args->{targetID};
 	countCastOn($args->{sourceID}, $args->{targetID}, $args->{skillID});
