@@ -572,16 +572,75 @@ sub main {
 
 			ai_setSuspend(0);
 			my $skill = new Skill(auto => $config{"attackSkillSlot_$slot"});
-			ai_skillUse2(
-				$skill,
-				$config{"attackSkillSlot_${slot}_lvl"} || $char->getSkillLevel($skill),
-				$config{"attackSkillSlot_${slot}_maxCastTime"},
-				$config{"attackSkillSlot_${slot}_minCastTime"},
-				$config{"attackSkillSlot_${slot}_isSelfSkill"} ? $char : $target,
-				"attackSkillSlot_${slot}",
-				undef,
-				"attackSkill",
-			);
+			my $relsHack = 0;
+			if($config{'CNKoreTeam'} && $config{'releaseHack'} && $char->{skills}{WL_RELEASE}{lv} >= 1) {
+				if($skill eq "WZ_STORMGUST") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6192);
+				} elsif($skill eq "WZ_VERMILION") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6193);
+				} elsif($skill eq "WZ_METEOR") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6194);
+				} elsif($skill eq "WL_COMET") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6195);
+				} elsif($skill eq "WL_TETRAVORTEX") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6196);
+				} elsif($skill eq "MG_THUNDERSTORM") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6197);
+				} elsif($skill eq "WZ_JUPITEL") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6198);
+				} elsif($skill eq "WZ_WATERBALL") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6199);
+				} elsif($skill eq "WZ_HEAVENDRIVE") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6200);
+				} elsif($skill eq "WZ_EARTHSPIKE") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6201);
+				} elsif($skill eq "WL_EARTHSTRAIN") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6202);
+				} elsif($skill eq "WL_CHAINLIGHTNING") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6203);
+				} elsif($skill eq "WL_CRIMSONROCK") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6204);
+				} elsif($skill eq "WL_DRAINLIFE") {
+					$relsHack = 1;
+					sendRSB($messageSender, 6205);
+				}
+			}
+			if(!$relsHack) {
+				ai_skillUse2(
+					$skill,
+					$config{"attackSkillSlot_${slot}_lvl"} || $char->getSkillLevel($skill),
+					$config{"attackSkillSlot_${slot}_maxCastTime"},
+					$config{"attackSkillSlot_${slot}_minCastTime"},
+					$config{"attackSkillSlot_${slot}_isSelfSkill"} ? $char : $target,
+					"attackSkillSlot_${slot}",
+					undef,
+					"attackSkill",
+				);
+			} else {
+				ai_skillUse2(
+					"WL_RELEASE",
+					1,
+					1,
+					0,
+					$target,
+					"解放",
+					undef,
+					"attackSkill",	
+				);
+			}
 			$args->{monsterID} = $ID;
 			my $skill_lvl = $config{"attackSkillSlot_${slot}_lvl"} || $char->getSkillLevel($skill);
 			debug "Auto-skill on monster ".getActorName($ID).": ".qq~$config{"attackSkillSlot_$slot"} (lvl $skill_lvl)\n~, "ai_attack";

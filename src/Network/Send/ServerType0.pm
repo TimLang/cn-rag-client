@@ -125,6 +125,13 @@ sub sendArrowCraft {
 	debug "Sent Arrowmake: $index\n", "sendPacket", 2;
 }
 
+sub sendRSB {
+	my ($self, $index) = @_;
+	my $msg = pack("C*", 0xAE, 0x01) . pack("v*", $index);
+	$self->sendToServer($msg);
+	debug "Sent RSB: $index\n", "sendPacket", 2;
+}
+
 # 0x0089,7,actionrequest,2:6
 
 sub sendAttackStop {
