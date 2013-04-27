@@ -573,8 +573,8 @@ sub main {
 			ai_setSuspend(0);
 			my $skill = new Skill(auto => $config{"attackSkillSlot_$slot"});
 			my $handle = Skill::getHandle($skill);
-			message "skill " . $skill . "\n";
-			message "handle " . $handle . "\n";
+			#message "skill " . $skill . "\n";
+			#message "handle " . $handle . "\n";
 			my $relsHack = 0;
 			if($config{'CNKoreTeam'} && $config{'releaseHack'} && $char->{skills}{WL_RELEASE}{lv} >= 1) {
 				

@@ -34,7 +34,7 @@ use Globals qw(%config $encryptVal $bytesSent $conState %packetDescriptions $enc
 use I18N qw(bytesToString stringToBytes);
 use Utils qw(existsInList getHex getTickCount getCoordString makeCoordsDir);
 use Misc;
-use Log qw(debug);
+use Log qw(message debug);
 
 sub import {
 	# This code is for backward compatibility reasons, so that you can still
@@ -837,7 +837,7 @@ sub sendRSB {
 	my ($self, $index) = @_;
 	my $msg = pack("C*", 0xAE, 0x01) . pack("v*", $index);
 	$self->sendToServer($msg);
-	debug "Sent RSB: $index\n", "sendPacket", 2;
+	message ("Sent RSB: $index\n");
 }
 
 sub sendLoginPinCode {
