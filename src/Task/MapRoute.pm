@@ -160,6 +160,15 @@ sub iterate {
 
 	} elsif ( $self->{mapSolution}[0]{steps} ) {
 		# If current solution has conversation steps specified
+		my ($from, $to) = split /=/, $self->{mapSolution}[0]{portal};
+		my $distNPC = 0;
+		if ($portals_lut{$from}{dest}{$to}{cost} < 0) {
+			$distNPC = -($portals_lut{$from}{dest}{$to}{cost} + 1);
+			$talk{toNPC}{x} = $self->{mapSolution}[0]{pos}{x};
+			$talk{toNPC}{y} = $self->{mapSolution}[0]{pos}{y};
+		} else {
+			$distNPC = ($config{MapWrapNPCMaxDistance} ? $config{MapWrapNPCMaxDistance} : 7);
+		}
 		if ( $self->{substage} eq 'Waiting for Warp' ) {
 			$self->{timeout} = time unless $self->{timeout};
 			if (timeOut($self->{timeout}, $timeout{ai_route_npcTalk}{timeout} || 10)) #|| $ai_v{npc_talk}{talk} eq 'close')
@@ -176,7 +185,7 @@ sub iterate {
 				}
 			}
 
-		} elsif (distance($self->{actor}{pos_to}, $self->{mapSolution}[0]{pos}) <= 10) {
+		} elsif (distance($self->{actor}{pos_to}, $self->{mapSolution}[0]{pos}) <= $distNPC) {
 			my ($from,$to) = split /=/, $self->{mapSolution}[0]{portal};
 			if (($self->{actor}{zeny} >= $portals_lut{$from}{dest}{$to}{cost}) || ($char->inventory->getByNameID(7060) && $portals_lut{$from}{dest}{$to}{allow_ticket})) {
 				# We have enough money for this service.
@@ -186,7 +195,8 @@ sub iterate {
 				my $task = new Task::TalkNPC(
 					x => $self->{mapSolution}[0]{pos}{x},
 					y => $self->{mapSolution}[0]{pos}{y},
-					sequence => $self->{mapSolution}[0]{steps});
+					sequence => $self->{mapSolution}[0]{steps},
+					cost => $portals_lut{$from}{dest}{$to}{cost});
 				$self->setSubtask($task);
 			} else {
 				error TF("You need %sz to pay for warp service at %s (%s,%s), you have %sz.\n",
@@ -206,12 +216,13 @@ sub iterate {
 			# NPC is reachable from current position
 			# >> Then "route" to it
 			debug "Walking towards the NPC\n", "route";
+			$talk{active} = 1;
 			my $task = new Task::Route(
 				actor => $self->{actor},
 				x => $self->{mapSolution}[0]{pos}{x},
 				y => $self->{mapSolution}[0]{pos}{y},
 				maxTime => $self->{maxTime},
-				distFromGoal => 10 - distance($self->{mapSolution}[0]{pos}, $solution[-1]),
+				distFromGoal => ($distNPC > 1) ? $distNPC - 1 : $distNPC,
 				avoidWalls => $self->{avoidWalls},
 				solution => \@solution
 			);

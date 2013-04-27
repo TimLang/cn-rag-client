@@ -73,6 +73,7 @@ sub new {
 	$self->{y} = $args{y};
 	$self->{sequence} = $args{sequence};
 	$self->{sequence} =~ s/^ +| +$//g;
+	$self->{cost} = (defined $args{cost}) ? $args{cost} : 0;
 
 	# Watch for map change events. Pass a weak reference to ourselves in order
 	# to avoid circular references (memory leaks).
@@ -128,10 +129,16 @@ sub iterate {
 				$self->{target} = $target;
 				$self->{ID} = $target->{ID};
 				$self->{stage} = 'Talking to NPC';
-				$self->{steps} = [parseArgs("x $self->{sequence}")];
 				$self->{time} = time;
-				undef $ai_v{npc_talk}{time};
-				undef $ai_v{npc_talk}{talk};
+				if ($self->{cost} < 0) {
+					$self->{steps} = [parseArgs("w1 $self->{sequence}")];
+					$ai_v{npc_talk}{time} = time;
+				} else {
+					$self->{steps} = [parseArgs("x $self->{sequence}")];
+					undef $ai_v{npc_talk}{ID};
+					undef $ai_v{npc_talk}{time};
+					undef $ai_v{npc_talk}{talk};
+				}
 				lookAtPosition($self);
 			}
 		}
@@ -141,7 +148,12 @@ sub iterate {
 		# we could get disconnected.
 		#$messageSender->sendTalkCancel($self->{ID}) if ($npcsList->getByID($self->{ID}));
 		$self->setDone();
-		message TF("Done talking with %s.\n", $self->{target}->name), "ai_npcTalk";
+		if ($self->{target}) {
+			message TF("Done talking with %s.\n", $self->{target}->name), "ai_npcTalk";
+		} else {
+			message TF("已完成对话\n"), "ai_npcTalk";
+		}
+		undef $ai_v{npc_talk}{ID};
 
 	} elsif (timeOut($self->{time}, $timeResponse)) {
 		# If NPC does not respond before timing out, then by default, it's
@@ -169,6 +181,7 @@ sub iterate {
 		
 		my @bulkitemlist;
 		my $step = $self->{steps}[0];
+		my $npcID = $ai_v{npc_talk}{ID} ? $ai_v{npc_talk}{ID} : $self->{ID};
 		my $npcTalkType = $ai_v{npc_talk}{talk};
 
 		if ($step =~ /^w(\d+)/i) {
@@ -179,7 +192,7 @@ sub iterate {
 
 		} elsif ( $step =~ /^t=(.*)/i ) {
 			# Send NPC talk text.
-			$messageSender->sendTalkText($talk{ID}, $1);
+			$messageSender->sendTalkText($npcID, $1);
 
 		} elsif ( $step =~ /^a=(.*)/i ) {
 			# Run a command.
@@ -190,7 +203,7 @@ sub iterate {
 
 		} elsif ( $step =~ /d(\d+)/i ) {
 			# Send NPC talk number.
-			$messageSender->sendTalkNumber($talk{ID}, $1);
+			$messageSender->sendTalkNumber($npcID, $1);
 
 		} elsif ( $step =~ /x/i ) {
 			# Initiate NPC conversation.
@@ -202,15 +215,16 @@ sub iterate {
 				getVector(\%vec, $myPos, $self->{pos});
 				$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
 				$messageSender->sendLook($direction, 0);
-				$messageSender->sendTalk($self->{ID});
+				$talk{active} = 1;
+				$messageSender->sendTalk($npcID);
 			} else {
-				$messageSender->sendAction($self->{ID}, 0);
+				$messageSender->sendAction($npcID, 0);
 			}
 
 		} elsif ( $step =~ /c/i ) {
 			# Click Next.
 			if ($npcTalkType eq 'next') {
-				$messageSender->sendTalkContinue($talk{ID});
+				$messageSender->sendTalkContinue($npcID);
 			} else {
 				$self->setError(WRONG_NPC_INSTRUCTIONS,
 					T("According to the given NPC instructions, the Next button " .
@@ -223,7 +237,7 @@ sub iterate {
 			my $choice = $1;
 			if ($npcTalkType eq 'select') {
 				if ($choice < @{$talk{responses}} - 1) {
-					$messageSender->sendTalkResponse($talk{ID}, $choice + 1);
+					$messageSender->sendTalkResponse($npcID, $choice + 1);
 				} else {
 					$self->setError(WRONG_NPC_INSTRUCTIONS,
 						TF("According to the given NPC instructions, menu item %d must " .
@@ -247,7 +261,7 @@ sub iterate {
 		} elsif ( $step =~ /b.*/i ) {
 			# Get the shop's item list.
 			if ($step =~ /^b$/i) {
-				$messageSender->sendNPCBuySellList($talk{ID}, 0);
+				$messageSender->sendNPCBuySellList($npcID, 0);
 			# Bulk buy solution.
 			} elsif ($step =~ /^b(\d+),(\d+)/i) {
 				while ($self->{steps}[0] =~ /^b(\d+),(\d+)/i){
@@ -276,7 +290,7 @@ sub iterate {
 
 		} elsif ( $step =~ /s/i ) {
 			# Get the sell list in a shop.
-			$messageSender->sendNPCBuySellList($talk{ID}, 1);
+			$messageSender->sendNPCBuySellList($npcID, 1);
 
 		} elsif ( $step =~ /e/i ) {
 			# ? Pretend like the conversation was stopped by the NPC?
