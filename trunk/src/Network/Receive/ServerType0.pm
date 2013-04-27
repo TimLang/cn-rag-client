@@ -2238,6 +2238,7 @@ sub inventory_item_added {
 
 			$ai_v{'npc_talk'}{'talk'} = 'buy';
 			$ai_v{'npc_talk'}{'time'} = time;
+			undef $ai_v{npc_talk}{ID};
 		}
 
 		if ($AI == AI::AUTO) {
@@ -3151,6 +3152,8 @@ sub npc_talk_number {
 	message TF("%s: Type 'talk num <number #>' to input a number.\n", $name), "input";
 	$ai_v{'npc_talk'}{'talk'} = 'num';
 	$ai_v{'npc_talk'}{'time'} = time;
+	$ai_v{'npc_talk'}{'ID'} = $ID;
+	$talk{'ID'} = $ID;
 }
 
 sub npc_talk_responses {
@@ -3184,6 +3187,7 @@ sub npc_talk_responses {
 
 	$ai_v{'npc_talk'}{'talk'} = 'select';
 	$ai_v{'npc_talk'}{'time'} = time;
+	$ai_v{'npc_talk'}{'ID'} = $ID;
 
 	my $list = T("----------Responses-----------\n" .
 		"#  Response\n");
@@ -3201,6 +3205,24 @@ sub npc_talk_responses {
 						responses => $talk{responses},
 						});
 	message TF("%s: Type 'talk resp #' to choose a response.\n", $name), "npc";
+
+	my $the_x = 0;
+	my $the_y = 0;
+	my $actor;
+	$actor = $npcsList->getByID($ID);
+	if (!defined $actor) {
+		$actor = $portalsList->getByID($ID);
+		if (defined $actor) {
+			$the_x = $actor->{pos}{x};
+			$the_y = $actor->{pos}{y};
+		}
+	} else {
+		$the_x = $actor->{pos}{x};
+		$the_y = $actor->{pos}{y};
+	}
+	if (defined $actor && $talk{toNPC}) {
+		$talk{active} = 1 if ($the_x == $talk{toNPC}{x} && $the_y == $talk{toNPC}{y});
+	}
 }
 
 sub npc_talk_text {
