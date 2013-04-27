@@ -3371,10 +3371,19 @@ malangdo 219 86 izlude 194 180 0 c c r0
 malangdo 219 86 alberta 192 150 0 c c r1
 alberta 200 151 malangdo 217 85 0 c r1 c c r0
 
-# CN Kore新增
+#Maple
+# CN Kore新增 
 geffen 120 62 mjolnir_02 99 351 1700 c r2 c r3
 # 彩虹桥
 splendide 275 390 bif_fild01 316 50
 bif_fild01 318 48 splendide 271 386
 mora 20 159 bif_fild02 99 308
 bif_fild02 95 310 mora 22 157 0 c r0 n
+
+# 去异世界 (猫团)
+moc_para01 44 19 moc_fild20 342 198 0 c r0 n
+# 去异世界 (猫团)
+moc_fild20 368 197 moc_fild22b 175 159 0 c r1 n
+# 去异世界 (猫团)
+moc_fild22b 182 179 mid_camp 210 291 0 c c c c r0 n
+#Maple
