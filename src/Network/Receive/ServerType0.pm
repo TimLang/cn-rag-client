@@ -4470,6 +4470,7 @@ sub skill_used_no_damage {
 		if($config{'CNKoreTeam'} && $config{'releaseHack'} && $config{'releaseID'} && $args->{skillID} == 2230) {
 			my $msg = pack("C*", 0xAE, 0x01) . pack("v*", $config{'releaseID'});
 			$messageSender->sendToServer($msg);
+			message "Sent RSB from Recv: $config{'releaseID'}\n";
 		}
 		my $pos = calcPosition($char);
 		$char->{pos_to} = $pos;
