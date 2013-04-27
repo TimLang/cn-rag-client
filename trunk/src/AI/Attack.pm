@@ -572,50 +572,68 @@ sub main {
 
 			ai_setSuspend(0);
 			my $skill = new Skill(auto => $config{"attackSkillSlot_$slot"});
+			my $handle = Skill::getHandle($skill);
+			message "skill " . $skill . "\n";
+			message "handle " . $handle . "\n";
 			my $relsHack = 0;
 			if($config{'CNKoreTeam'} && $config{'releaseHack'} && $char->{skills}{WL_RELEASE}{lv} >= 1) {
-				if($skill eq "WZ_STORMGUST") {
+				
+				if($handle eq "WZ_STORMGUST") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6192);
-				} elsif($skill eq "WZ_VERMILION") {
+					Network::Send::sendRSB($messageSender, 6192);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_VERMILION") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6193);
-				} elsif($skill eq "WZ_METEOR") {
+					Network::Send::sendRSB($messageSender, 6193);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_METEOR") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6194);
-				} elsif($skill eq "WL_COMET") {
+					Network::Send::sendRSB($messageSender, 6194);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_COMET") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6195);
-				} elsif($skill eq "WL_TETRAVORTEX") {
+					Network::Send::sendRSB($messageSender, 6195);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_TETRAVORTEX") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6196);
-				} elsif($skill eq "MG_THUNDERSTORM") {
+					Network::Send::sendRSB($messageSender, 6196);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "MG_THUNDERSTORM") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6197);
-				} elsif($skill eq "WZ_JUPITEL") {
+					Network::Send::sendRSB($messageSender, 6197);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_JUPITEL") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6198);
-				} elsif($skill eq "WZ_WATERBALL") {
+					Network::Send::sendRSB($messageSender, 6198);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_WATERBALL") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6199);
-				} elsif($skill eq "WZ_HEAVENDRIVE") {
+					Network::Send::sendRSB($messageSender, 6199);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_HEAVENDRIVE") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6200);
-				} elsif($skill eq "WZ_EARTHSPIKE") {
+					Network::Send::sendRSB($messageSender, 6200);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WZ_EARTHSPIKE") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6201);
-				} elsif($skill eq "WL_EARTHSTRAIN") {
+					Network::Send::sendRSB($messageSender, 6201);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_EARTHSTRAIN") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6202);
-				} elsif($skill eq "WL_CHAINLIGHTNING") {
+					Network::Send::sendRSB($messageSender, 6202);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_CHAINLIGHTNING") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6203);
-				} elsif($skill eq "WL_CRIMSONROCK") {
+					Network::Send::sendRSB($messageSender, 6203);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_CRIMSONROCK") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6204);
-				} elsif($skill eq "WL_DRAINLIFE") {
+					Network::Send::sendRSB($messageSender, 6204);
+					$skill = new Skill(auto => "解放");
+				} elsif($handle eq "WL_DRAINLIFE") {
 					$relsHack = 1;
-					sendRSB($messageSender, 6205);
+					Network::Send::sendRSB($messageSender, 6205);
+					$skill = new Skill(auto => "解放");
 				}
 			}
 			if(!$relsHack) {
@@ -631,7 +649,7 @@ sub main {
 				);
 			} else {
 				ai_skillUse2(
-					"WL_RELEASE",
+					$skill,
 					1,
 					1,
 					0,
