@@ -4467,7 +4467,7 @@ sub skill_used_no_damage {
 			$args->{sourceID} eq $accountID or $args->{sourceID} eq $args->{targetID};
 	countCastOn($args->{sourceID}, $args->{targetID}, $args->{skillID});
 	if ($args->{sourceID} eq $accountID) {
-		if($config{'CNKoreTeam'} && $config{'releaseHack'} && $config{'releaseID'} && $self_skill{ID} eq "WL_RELEASE") {
+		if($config{'CNKoreTeam'} && $config{'releaseHack'} && $config{'releaseID'} && $args->{skillID} == 2230) {
 			my $msg = pack("C*", 0xAE, 0x01) . pack("v*", $config{'releaseID'});
 			$messageSender->sendToServer($msg);
 		}
