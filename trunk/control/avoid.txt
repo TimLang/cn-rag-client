@@ -1,4 +1,4 @@
-﻿# avoid.txt：回避特定玩家设定档
+# avoid.txt：回避特定玩家设定档
 
 # 要让本档案运作，config.txt 里的 avoidList 请设为 1 (默认值）
 

@@ -1,4 +1,4 @@
-﻿NV_BASIC#
+NV_BASIC#
 基本技能(Basic Skill)
 MAX Lv : 9
 ^777777可以使用基本接口之相关技能.^000000
