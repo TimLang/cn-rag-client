@@ -1,88 +1,88 @@
-%$cmd_user
+ï»¿%$cmd_user
 
-dateS ²»ÒªÍæÁË %$cmd_user, ÏÖÔÚÊÇ %$date
-dateS ÎÒÊÇÊ²Ã´? ÖÓÂð?? (²»¹ýÏÖÔÚÊÇ %$date)
+dateS ä¸è¦çŽ©äº† %$cmd_user, çŽ°åœ¨æ˜¯ %$date
+dateS æˆ‘æ˜¯ä»€ä¹ˆ? é’Ÿå—?? (ä¸è¿‡çŽ°åœ¨æ˜¯ %$date)
 
-authS ÄúÏÖÔÚÒÑ¾­ÊÇÎÒµÄÖ÷ÈËÁË %$cmd_user, À´°É! ^^
-authF ÄúÒÑ¾­ÊÇÎÒµÄÖ÷ÈËÁË %$cmd_user!
+authS æ‚¨çŽ°åœ¨å·²ç»æ˜¯æˆ‘çš„ä¸»äººäº† %$cmd_user, æ¥å§! ^^
+authF æ‚¨å·²ç»æ˜¯æˆ‘çš„ä¸»äººäº† %$cmd_user!
 
-relogS ÎÒÉÔºò»ØÀ´
-relogS àÅ, µÈÒ»ÏÂ...
+relogS æˆ‘ç¨å€™å›žæ¥
+relogS å—¯, ç­‰ä¸€ä¸‹...
 
-reloadS ßÙ
-reloadS àÅ
-reloadS ÍêÃÀ°¡
+reloadS å“”
+reloadS å—¯
+reloadS å®Œç¾Žå•Š
 
-confS1 Õâ¸ö %$key ÊÇ... %$value
-confS2 ßÙ
-confS2 àÅ
-confS2 Íê³É
-confF1 àÄ?
-confF2 ÎÒÃ»¿´µ½ÓÐÕâ¸ö¶«Î÷
-confF3 ÎÒ²»ÕâÃ´ÈÏÎªÒ®
+confS1 è¿™ä¸ª %$key æ˜¯... %$value
+confS2 å“”
+confS2 å—¯
+confS2 å®Œæˆ
+confF1 å—„?
+confF2 æˆ‘æ²¡çœ‹åˆ°æœ‰è¿™ä¸ªä¸œè¥¿
+confF3 æˆ‘ä¸è¿™ä¹ˆè®¤ä¸ºè€¶
 
-timeoutS1 ÎÒÏë %$key µÄÊ±¼äÓ¦¸ÃÊÇ %$value °É...
-timeoutS2 ßÙ
-timeoutS2 àÅ
-timeoutS2 Íê³É
-timeoutF1 àÄ?
-timeoutF2 ÎÒÃ»¿´¹ýÕâ¸ö¶«Î÷
+timeoutS1 æˆ‘æƒ³ %$key çš„æ—¶é—´åº”è¯¥æ˜¯ %$value å§...
+timeoutS2 å“”
+timeoutS2 å—¯
+timeoutS2 å®Œæˆ
+timeoutF1 å—„?
+timeoutF2 æˆ‘æ²¡çœ‹è¿‡è¿™ä¸ªä¸œè¥¿
 
-quitS ÔÙ¼ûÀ²
-quitS ÎÒÒªÀë¿ªÁË, êþêþ
-quitS ÎÒ×ßÀ²!
+quitS å†è§å•¦
+quitS æˆ‘è¦ç¦»å¼€äº†, æŽ°æŽ°
+quitS æˆ‘èµ°å•¦!
 
 sitS *boof*
 sitS *plop*
 
-standS ºÃµÄ ^^
-standS ÊÇ
-standS àÅ %$cmd_user, ºÃÏñÕâÑù?
+standS å¥½çš„ ^^
+standS æ˜¯
+standS å—¯ %$cmd_user, å¥½åƒè¿™æ ·?
 
 tankS Leecher
-tankF àÄ?
+tankF å—„?
 
-tankStopS ¼¸ºÃÐ¦...
-tankStopF ÎÒÏñÒ»¸ö¶ÜÂð?
+tankStopS å‡ å¥½ç¬‘...
+tankStopF æˆ‘åƒä¸€ä¸ªç›¾å—?
 
-moveS ºÃ, ÏÖÔÚ¾ÍÈ¥!
-moveS ÎÒÒª×ÔÓÉ°¡!
-moveS ÀÏ×ÓÃ÷°×ÁË!
-moveF ÎÒ²»Ã÷°×ÄúÔÚËµÊ²Ã´°¡ %$user
-moveF ÕâÎÒ²»ÖªµÀ ><
+moveS å¥½, çŽ°åœ¨å°±åŽ»!
+moveS æˆ‘è¦è‡ªç”±å•Š!
+moveS è€å­æ˜Žç™½äº†!
+moveF æˆ‘ä¸æ˜Žç™½æ‚¨åœ¨è¯´ä»€ä¹ˆå•Š %$user
+moveF è¿™æˆ‘ä¸çŸ¥é“ ><
 
-followS ºÃ, ÏÖÔÚ¾ÍÀ´!
-followS ÎÒÒª×ÔÓÉ°¡!
-followS ÀÏ×ÓÃ÷°×ÁË!
-followF ÎÒ²»Ã÷°×ÄúÔÚËµÊ²Ã´°¡ %$user
-followF ÕâÎÒ²»ÖªµÀ ><
+followS å¥½, çŽ°åœ¨å°±æ¥!
+followS æˆ‘è¦è‡ªç”±å•Š!
+followS è€å­æ˜Žç™½äº†!
+followF æˆ‘ä¸æ˜Žç™½æ‚¨åœ¨è¯´ä»€ä¹ˆå•Š %$user
+followF è¿™æˆ‘ä¸çŸ¥é“ ><
 
-followStopS ÎÒÃ÷°×...
-followStopS ÎÒºÜ·³Âð?
-followStopF ÄúÊÇÆ«Ö´¿ñ...
-followStopF ÎÒÍ¼Ä±²»¹ìµØ¶¢×ÅÄú
+followStopS æˆ‘æ˜Žç™½...
+followStopS æˆ‘å¾ˆçƒ¦å—?
+followStopF æ‚¨æ˜¯åæ‰§ç‹‚...
+followStopF æˆ‘å›¾è°‹ä¸è½¨åœ°ç›¯ç€æ‚¨
 
 statusS HP: %$char_hp / %$char_hp_max   SP: %$char_sp / %$char_sp_max\nBase: %$char_lv  |  %$char_exp / %$char_exp_max\nJob: %$char_lv_job  |  %$char_exp_job / %$char_exp_job_max\nWeight: %$char_weight / %$char_weight_max   zeny: %$zeny
 
-thankS Ã»ÎÊÌâ ^^
-thankS Ã»ÓÐÎÊÌâ
-thankS ºÃ¸ßÐË°¡, Ö÷ÈË %$cmd_user
+thankS æ²¡é—®é¢˜ ^^
+thankS æ²¡æœ‰é—®é¢˜
+thankS å¥½é«˜å…´å•Š, ä¸»äºº %$cmd_user
 thankS ^^
 
-verboseOnS °¡, ×îÓÚ.
-verboseOnS °¦... Ð»Ð»Ö÷ÈË... ÄúÀÏ×Ó...
-verboseOnF ÎÒºÃÏñ²»Ì«»áËµ»°Âð?
-verboseOnF ÄúÓÞÅªÎÒÂð? ÎÒËµ»°¼¼ÇÉ²»Ì«ºÃ...
+verboseOnS å•Š, æœ€äºŽ.
+verboseOnS å”‰... è°¢è°¢ä¸»äºº... æ‚¨è€å­...
+verboseOnF æˆ‘å¥½åƒä¸å¤ªä¼šè¯´è¯å—?
+verboseOnF æ‚¨æ„šå¼„æˆ‘å—? æˆ‘è¯´è¯æŠ€å·§ä¸å¤ªå¥½...
 
-verboseOffS ÄúÀÏ×Ó...ºÃ...
-verboseOffS ÎÒµÄÌì...
-verboseOffF ºÃ...ÎÒ»á¾²¾²µÈ´ý
-verboseOffF àÅàÅ... ÎÒÖªµÀÁË
+verboseOffS æ‚¨è€å­...å¥½...
+verboseOffS æˆ‘çš„å¤©...
+verboseOffF å¥½...æˆ‘ä¼šé™é™ç­‰å¾…
+verboseOffF å—¯å—¯... æˆ‘çŸ¥é“äº†
 
-whereS ²»¼ûÁËÎÒÂð? ÎÒÔÚ %$map: %$x, %$y
-whereS ÎÒÔÚÕâ! %$map: %$x, %$y
+whereS ä¸è§äº†æˆ‘å—? æˆ‘åœ¨ %$map: %$x, %$y
+whereS æˆ‘åœ¨è¿™! %$map: %$x, %$y
 
-healS ºÃÁËµã°É!
-healF1 °¡? ÎÒ²»ÖªµÀÒª²¹Ë­
-healF2 °¡, ÎÒ SP Ö»Ê£ %$char_sp ... ÎÒÒª SP °¡...T_T
-healF3 ÎÒÃ»ÓÐÕâ¼¼ÄÜÀ²
+healS å¥½äº†ç‚¹å§!
+healF1 å•Š? æˆ‘ä¸çŸ¥é“è¦è¡¥è°
+healF2 å•Š, æˆ‘ SP åªå‰© %$char_sp ... æˆ‘è¦ SP å•Š...T_T
+healF3 æˆ‘æ²¡æœ‰è¿™æŠ€èƒ½å•¦
