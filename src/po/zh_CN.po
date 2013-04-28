@@ -5732,7 +5732,7 @@ msgid ""
 "Usage: exp [<report | monster | item | reset>]\n"
 msgstr ""
 "'exp' 功能语法错误 (经验值报告)\n"
-"使用方法: exp [<report | monster | item | reset>]\n"
+"使用方法: exp [<r | m | i | reset>]\n"
 
 #: ../Commands.pm:1699
 msgid "Your falcon is active\n"
