@@ -1,4 +1,4 @@
-﻿//------------- New Tutorial
+//------------- New Tutorial
 prt_fild08d.rsw#普隆德拉 区域#
 prt_fild08c.rsw#普隆德拉 区域#
 prt_fild08b.rsw#普隆德拉 区域#
