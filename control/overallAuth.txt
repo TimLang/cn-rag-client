@@ -1,4 +1,4 @@
-﻿# overallAuth.txt：远程遥控授权设定档
+# overallAuth.txt：远程遥控授权设定档
 #
 #
 # 

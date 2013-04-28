@@ -1,4 +1,4 @@
-﻿[cRO - 电信区 - (Fenril)]
+[cRO - 电信区 - (Fenril)]
 ip 114.112.39.71
 port 6900
 master_version 4

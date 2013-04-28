@@ -1,4 +1,4 @@
-﻿#飞空艇(国内线)
+#飞空艇(国内线)
 airplane 208 53 airplane 245 160
 airplane 245 160 airplane 208 53
 airplane 254 54 airplane 87 67

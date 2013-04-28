@@ -1,4 +1,4 @@
-﻿# macros.txt：插件 macros 「脚本」设定文件
+# macros.txt：插件 macros 「脚本」设定文件
 #
 # 请注意此档只能是 UTF-8 编码，DOS 断行格式，无 BOM，否则宏会加载失败。
 # 若要编辑此文件，请使用支持转换文字编码的文书编辑器，例如：MadEidt。

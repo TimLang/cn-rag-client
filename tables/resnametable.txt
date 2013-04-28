@@ -1,4 +1,4 @@
-﻿//康旷狼如利
+//康旷狼如利
 dali02.gnd#dali.gnd#
 dali02.gat#dali.gat#
 dali02.rsw#dali.rsw#

@@ -1,4 +1,4 @@
-﻿%$cmd_user
+%$cmd_user
 
 dateS 不要玩了 %$cmd_user, 现在是 %$date
 dateS 我是什么? 钟吗?? (不过现在是 %$date)
