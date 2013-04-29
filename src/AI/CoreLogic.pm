@@ -2651,12 +2651,12 @@ sub processAutoTeleport {
 			next unless $_;
 			my $teleAuto = mon_control($monsters{$_}{name},$monsters{$_}{nameID})->{teleport_auto};
 			# TODO: check for dead should actually be for the whole autoteleport logic
-			if (($teleAuto == 1)&& !$char->{dead}) {
+			if ($teleAuto == 1 && !$char->{dead}) {
 				message TF("Teleporting to avoid %s\n", $monsters{$_}{name}), "teleport";
 				$ai_v{temp}{clear_aiQueue} = 1 if (useTeleport(1));
 				$timeout{ai_teleport_away}{time} = time;
 				return;
-			} elsif ($teleAuto < 0) {
+			} elsif ($teleAuto < 0 && !$char->{dead}) {
 				my $pos = calcPosition($monsters{$_});
 				my $myPos = calcPosition($char);
 				my $dist = distance($pos, $myPos);
@@ -2672,6 +2672,21 @@ sub processAutoTeleport {
 		}
 		$timeout{ai_teleport_away}{time} = time;
 	}
+
+
+	##### TELEPORT SEARCH MONSTER #####
+	if ($safe && timeOut($timeout{ai_teleport_search}) && $config{teleportAuto_search} && !$char->{dead}) {
+		foreach (@monstersID) {
+			next unless $_;
+			my $teleport_search = mon_control($monsters{$_}{name},$monsters{$_}{nameID})->{teleport_search};
+			return if $teleport_search == 1;
+		}
+		message TF("瞬移 - 瞬移寻怪\n"), "teleport";
+		$ai_v{temp}{clear_aiQueue} = 1 if (useTeleport(1));
+		$timeout{ai_teleport_search}{time} = time;
+		return;
+	}
+
 
 
 	##### TELEPORT IDLE / PORTAL #####
