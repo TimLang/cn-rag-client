@@ -63,6 +63,7 @@ use Misc;
 use Commands;
 use Utils;
 use Translation qw/T TF/;
+use Utils::Win32;
 
 our $CVS;
 our ($iterationTime, $updateUITime, $updateUITime2);
@@ -1277,6 +1278,7 @@ sub onChatAdd {
 		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] $params->{user}: $params->{msg}\n", "selfchat") if ($params->{user});
 	} elsif ($hook eq "packet_privMsg") {
 		$self->{chatLog}->add("([$tmpdate[2]:$tmpdate[1]] From: $params->{privMsgUser}): $params->{privMsg}\n", "pm");
+		Utils::Win32::playSound('sound/PM.wav');
 	} elsif ($hook eq "packet_sentPM") {
 		$self->{chatLog}->add("([$tmpdate[2]:$tmpdate[1]] To: $params->{to}): $params->{msg}\n", "pm");
 	} elsif ($hook eq "packet_partyMsg") {
