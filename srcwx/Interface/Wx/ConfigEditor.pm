@@ -5,6 +5,7 @@ use Wx ':everything';
 use Wx::Event qw(EVT_LISTBOX);
 use base qw(Wx::Panel);
 use Interface::Wx::ConfigEditor;
+use encoding 'utf8';
 
 use Translation qw/T TF/;
 
@@ -160,8 +161,8 @@ sub new {
 	$grid->CreateGrid(0, 2);
 	$grid->SetRowLabelSize(0);
 	$grid->SetColLabelSize(22);
-	$grid->SetColLabelValue(0, T("Option"));
-	$grid->SetColLabelValue(1, T("Value"));
+	$grid->SetColLabelValue(0, T("设置"));
+	$grid->SetColLabelValue(1, T("值"));
 	$grid->EnableDragRowSize(0);
 	EVT_GRID_CELL_LEFT_CLICK($grid, sub { $self->_onClick(@_, $parent); }); # the $parent is added for downloadManual
 	EVT_GRID_CELL_CHANGE($grid, sub { $self->_changed(@_); });
@@ -193,9 +194,9 @@ sub downloadManual {
 		$manual = <$f>;
 		close $f;
 	} else {
-		my $dialog = new Wx::Dialog($parent->GetGrandParent, wxID_ANY, T("Downloading"));
+		my $dialog = new Wx::Dialog($parent->GetGrandParent, wxID_ANY, T("下载中"));
 		my $sizer = new Wx::BoxSizer(wxVERTICAL);
-		my $label = new Wx::StaticText($dialog, wxID_ANY, TF("Downloading help for '%s', please wait...",$name));
+		my $label = new Wx::StaticText($dialog, wxID_ANY, TF("正在下载 '%s' 的说明...",$name));
 		$sizer->Add($label, 1, wxGROW | wxALL, 8);
 		my $gauge = new Wx::Gauge($dialog, wxID_ANY, 100, wxDefaultPosition,
 			[0, 16], wxGA_SMOOTH | wxGA_HORIZONTAL);
