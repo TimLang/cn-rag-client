@@ -685,12 +685,27 @@ sub processTake {
 		} elsif (timeOut($timeout{ai_take})) {
 			my %vec;
 			my $direction;
-			getVector(\%vec, $item->{pos}, $myPos);
-			$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
-			$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); 删除掉
-			# TODO: 转头和转身的计算
-			$messageSender->sendTake($item->{ID});
-			$timeout{ai_take}{time} = time;
+			if($config{'itemsTakeGreed'} && $char->{skills}{BS_GREED}{lv} >= 1) {
+				my $greed = new Skill(auto => "贪婪");
+				ai_skillUse2(
+					$greed,
+					1,
+					1,
+					0,
+					$char,
+					"贪婪",
+					undef,
+					"drop",	
+				);
+				$timeout{ai_take}{time} = time;
+			} else {
+				getVector(\%vec, $item->{pos}, $myPos);
+				$direction = int(sprintf("%.0f", (360 - vectorToDegree(\%vec)) / 45)) % 8;
+				$messageSender->sendLook($direction, 0);# if ($direction != $char->{look}{body}); 删除掉
+				# TODO: 转头和转身的计算
+				$messageSender->sendTake($item->{ID});
+				$timeout{ai_take}{time} = time;
+			}
 		}
 	}
 }
