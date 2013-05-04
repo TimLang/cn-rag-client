@@ -318,3 +318,7 @@ pvp_y_6-5.rsw#PvP : #梦罗克#
 pvp_y_7-5.rsw#PvP : #梦罗克#
 pvp_y_8-5.rsw#PvP : #梦罗克#
 pvp_2vs2.rsw#特别竞技场#
+mora.rsw#草精族穆拉村#
+malangdo.rsw#绵绵岛#
+mal_in01.rsw#绵绵岛 室内#
+mal_in02.rsw#绵绵岛 内部#
