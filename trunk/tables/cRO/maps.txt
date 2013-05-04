@@ -42,7 +42,15 @@ bif_fild01.rsw#彩虹桥南部#
 bif_fild02.rsw#彩虹桥北部#
 1@mist.rsw#霧林迷宮#
 mora.rsw#草精族穆拉村#
-
+malangdo.rsw#绵绵岛#
+mal_in01.rsw#绵绵岛 室内#
+mal_in02.rsw#绵绵岛 内部#
+malaya.rsw#马来亚港口#
+ma_fild01.rsw#马来亚森林#
+ma_fild02.rsw#马来亚森林#
+ma_scene01.rsw#食月者湖#
+ma_in01.rsw#马来亚 内部#
+ma_dun01.rsw#恶梦医院 一楼#
 
 //-20100421
 dicastes01.rsw#沙帕首都埃迪斯特斯#

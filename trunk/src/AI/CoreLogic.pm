@@ -2688,7 +2688,7 @@ sub processAutoTeleport {
 		$timeout{ai_teleport_away}{time} = time;
 	}
 
-
+=maple
 	##### TELEPORT SEARCH MONSTER #####
 	my $teleport_search_time = $timeout{ai_teleport_search} || 6;
 	if ($safe && timeOut($teleport_search_time) && $config{teleportAuto_search} && !$char->{dead} && $config{lockMap} eq $field->baseName) {
@@ -2702,7 +2702,7 @@ sub processAutoTeleport {
 		$timeout{ai_teleport_search}{time} = time;
 		return;
 	}
-
+=cut
 
 
 	##### TELEPORT IDLE / PORTAL #####
