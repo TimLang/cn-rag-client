@@ -1,0 +1,1996 @@
+#######################################
+# DarkKore English language pack
+# Version 1.6 for DarkKore Bata
+# Original by mKore 2.06.02Fix_S
+# Translate by Valkyrie
+#######################################
+#---------------------------------------------------------------------------
+# General 
+#---------------------------------------------------------------------------
+title		%$char{name} [%$char{percent_hp}/%$char{percent_sp}] (B%$char{lv}:%$arg0{base} J%$char{lv_job}:%$arg0{job}) w%$char{percent_weight}% %$map{name} : %$char{pos_x},%$char{pos_y}
+titleGUI		%$char{name}: 基本Lv-%$char{lv} 职业Lv-%$char{lv_job} 负重-%$char{percent_weight}%
+sysLog				[%$time{now}][%$char{name}][%$arg0] %$arg1
+sysLog_undef			[%$time{now}] %$1
+sysLog_message		[%$time{now}] %$0
+
+char_monster			怪物 %$arg0{name} (%$arg0{binID})
+char_homun			生命体 %$arg0{name}
+char_you			你
+char_your_homun		您的生命体
+char_player			玩家 %$arg0{name}
+char_party			队员 %$arg0{name} (%$arg0{binID})
+char_pet			宠物 %$arg0{name_given}
+
+monoster_self			它自己
+homun_self			它
+you_self			你自己
+player_self			他自己
+
+unknown_item			未知物品 %$arg0
+unknown_param		未知状态 %$arg0
+unknown_inStatus		变成未知状态 %$arg0
+unknown_outStatus		解除未知状态 %$arg0
+unknown_emotion		未知表情 %$arg0
+unknown_skill			未知技能 %$arg0
+unknown_target		未知目标
+unknown_player		未知玩家
+unknown_monster		未知怪物 %$arg0
+unknown_homun		未知生命体 %$arg0
+unknown_npc			未知NPC %$arg0
+unknown_pet			未知宠物
+unknown_petType		未知类型 %$arg0
+unknown_mode		未知模式 %$arg0
+unknown_portal		未知传送点 %$arg0
+unknown_type			未知形态 %$arg0
+unknown_job			未知职业 %$arg0
+unknown_map			未知地图 %$arg0
+unknown_itemTypes		未知物品形态 %$arg0
+unknown_equipTypes		未知装备形态 %$arg0
+unknown_sex			未知性別 %$arg0
+
+param1_1			[特殊状态 1] %$0\n
+param2_1			[特殊状态 2] %$0\n
+param3_1			[特殊状态 3] %$0\n
+status_1			[持续状态] %$arg0\n
+
+param1_2			[特殊状态 1] %$1 %$0\n
+param1_2_color		status
+param2_2			[特殊状态 2] %$1 %$0\n
+param2_2_color		status
+param3_2			[特殊状态 3] %$1 %$0\n
+param3_2_color		status
+inStatus			[status] %$1 Turned into status %$0\n
+inStatus_color			status
+outStaus			[status] %$1 Relieves status %$0\n
+outStaus_color			status
+status_2			[status] %$1 %$0\n
+status_2_color			status
+
+getUsername			请输入游戏账号:\n
+getPassword			请输入游戏密码:\n
+getServer			请选择服务器, 并输入编号:\n
+getChar			请选择您的人物资料, 并输入编号:\n
+skillLV				\ (Lv %$arg0)
+recoverHP			\ - Recover %$formatNumber{%$arg0} HP
+recoverSP			\ - Recover %$formatNumber{%$arg0} SP
+skillSteal			\ - Steals to 1 Item
+location			坐标 (%$arg0{x}, %$arg0{y})
+mode_PVP			PvP Display Mode
+mode_GVG			GVG Display Mode
+mode_PK			PK Display Mode
+on				Moves 
+off				Closure 
+pet_named			Is loved\s
+itemFix_identified		\ -- 物品未鉴定
+itemFix_pet			\ -- 已孵化
+itemFix_named		\ -- 已命名
+itemFix_broken		\ -- 已损坏
+itemFix_maker			\ -- 由 %$arg0 制造
+itemFix_makerNone		\ -- 没有人制造
+
+#---------------------------------------------------------------------------
+# parseInput (table)
+#---------------------------------------------------------------------------
+list_arrow_head		-------------May manufacture the arrow arrow Item detailed list-------------\n
+list_arrow_head		#Item name\n
+list_arrow			%3d %s\n
+list_arrow_arg			%$arg0
+list_arrow_arg			%$arg1
+list_arrow_end			---------------------------------------------------------------------------------------------------------\n
+list_arrow_end			Please input 'arrow <May manufacture the arrow arrow item number>' Choice\n
+
+list_petCall_head		-------May hatch TOMAGOTCH to tabulate-------\n
+list_petCall			%-4d %s\n
+list_petCall_arg		%$arg0
+list_petCall_arg		%$arg1
+list_petCall_end		------------------------------------------------------------------------\n
+list_petCall_end		Please input'pet call <May hatch TOMAGOTCH to number>'Choice\n
+
+list_identify_head		---------But Item decides the goods detailed list--------\n
+list_identify_head		#Item name\n
+list_identify			%3d %s\n
+list_identify_arg		%$arg0
+list_identify_arg		%$arg1
+list_identify_end		------------------------------------------------------------------------------\n
+list_identify_end		Please input'identify <But Item decides the item number>' Choice\n
+
+list_talkResp_head		----------Responses-----------\n
+list_talkResp_head		NPC: %$arg0\n
+list_talkResp_head		# Option \n
+list_talkResp			%2d %s\n
+list_talkResp_arg		%$arg0
+list_talkResp_arg		%$arg1
+list_talkResp_end		------------------------------\n
+list_talkResp_end		%$arg0 :Input 'talk resp' And choice response\n
+
+list_make_head		----------- Forge/Mixture list -----------\n
+list_make_head		#  Item name\n
+list_make			%-2d %s\n
+list_make_arg			%$arg0
+list_make_arg			%$arg1
+list_make_end			------------------------------------------\n
+list_make_end			Input 'make <Forge #> <Attribute> <Star quantity>' to forges weapon\n
+list_make_end			(Attribute: 0 = NONE, 1= Fire, 2= Water, 3= Wind, 4= Earth)\n
+list_make_end			Input 'make <Mixture #>' to mixture potion\n
+
+list_itemEquip_head		-- 装备类 --\n
+list_itemEquip			%-4d %s\n
+list_itemEquip_arg		%$arg0
+list_itemEquip_arg		%$arg1
+list_itemEquip_end
+
+list_itemEtc_head		-- 其他 --\n
+list_itemEtc			%-4d %s\n
+list_itemEtc_arg		%$arg0
+list_itemEtc_arg		%$arg1 x %$arg2
+list_itemEtc_end
+
+list_itemUseable_head		-- 可使用 --\n
+list_itemUseable		%-4d %s\n
+list_itemUseable_arg		%$arg0
+list_itemUseable_arg		%$arg1 x %$arg2
+list_itemUseable_end
+
+list_warp_head			---------- %$arg0 -----------\n
+list_warp			%$arg0 %$arg1{name} - %$arg1{alias}\n
+list_warp_end			----------------------------------\n
+list_warp_end			使用方法: warp <warp # | to | open | cancel> <Map name>\n
+warp_random			随机地点
+warp_cancel			取消
+
+npcTalk_cancel		取消对话
+
+list_buy_head			----------NPC Store List-----------\n
+list_buy_head			# Name                    Type           Price\n
+list_buy				%2d %-23s %-14s %8sz\n
+list_buy_arg			%$0
+list_buy_arg			%$1{name}
+list_buy_arg			%$itemTypes{%$1{type}}
+list_buy_arg			%$formatNumber{%$1{DCprice}}
+list_buy_end			------------------------------------------\n
+
+list_sell_head			----------Sell List-----------\n
+list_sell_head			#  Name                    Price\n
+list_sell				%2d %-23s %8sz\n
+list_sell_arg			%$0
+list_sell_arg			%$1{name}
+list_sell_arg			%$formatNumber{%$2{OCprice}}
+list_sell_end			--------------------------------\n
+
+list_exclude_head		----------拒绝密语名单----------\n
+list_exclude			%s\n
+list_exclude_arg		%$1
+list_exclude_end		------------------------------------------------------------------\n
+
+#---------------------------------------------------------------------------
+# aiModule.pm
+#---------------------------------------------------------------------------
+attack				锁定攻击目标: %$arg0{name} (%$arg0{binID}) -  距离: %$arg1\n
+attack_color			attackmons
+attack_verbose		3
+
+lost_account			Kore does not have enough account information, so AI has been disabled. Relog to enable AI.\n
+
+#---------------------------------------------------------------------------
+# fileParser.pm
+#---------------------------------------------------------------------------
+parseFile			正在读取 %$arg0...\n
+parseFileError			错误: 无法读取 %$arg0\n
+getFieldError			\n!! 无法读取地图文档 %$arg0 - 您必须安装Kore系列地图文档!\n\n
+npcDual			NPC 编号 %$arg0 重复\n
+
+#---------------------------------------------------------------------------
+# miscFunctions.pm
+#---------------------------------------------------------------------------						
+setting				%$arg0 '%$arg1' 设定成 %$arg2\n
+setting_color			setting
+input_a_error			发生错误 'a' (Attack Monster)\n
+input_a_error			Monster %$arg0 does not exist.\n
+input_a_syntax			语法错误 'a' (Attack Monster)\n
+input_a_syntax			使用方法: attack <monster # | none | no | yes >\n
+input_aiOn			AI turned on\n
+input_aiOff			AI turned off\n
+input_aiClear			取消路径AI\n
+input_ai_syntax		语法错误 'ai' (AI state)\n
+input_ai_syntax		使用方法: ai [<on|off|clear>]\n
+input_arror_error		发生错误 'arrow' (Make Arrow)\n
+input_arror_error		Wants to manufacture the arrow arrow Item %$arg0 Does not exist.\n
+input_arror_syntax		语法错误 'arrow' (Make Arrow)\n
+input_arror_syntax		使用方法: arrow [<May manufacture the arrow arrow item number>]\n
+input_bestow_error_1		发生错误 'bestow' (Bestow Admin in Chat)\n
+input_bestow_error_1		You are not in a Chat Room.\n
+input_bestow_error_2		发生错误 'bestow' (Bestow Admin in Chat)\n
+input_bestow_error_2		Chat Room User %$arg0 doesn't exist\n
+input_bestow_syntax		语法错误 'bestow' (Bestow Admin in Chat)\n
+input_bestow_syntax		使用方法: bestow <user #>\n
+input_buy_error		发生错误 'buy' (Buy Store Item)\n
+input_buy_error		Store Item %$arg0 does not exist.\n
+input_buy_error_2		发生错误 'buy' (Buy NPC Store Item)\n
+input_buy_error_2		You also not with any NPC Conversation.\n
+input_buy_syntax		语法错误 'buy' (Buy Store Item)\n
+input_buy_syntax		使用方法: buy <item #> [<amount>]\n
+input_c_syntax			语法错误 'c' (Chat)\n
+input_c_syntax			使用方法: c <message>\n
+input_chat_error		发生错误 'chat' (Create Chat Room)\n
+input_chat_error		You are already in a chat room.\n
+input_chat_syntax		语法错误 'chat' (Create Chat Room)\n
+input_chat_syntax		使用方法: chat "<title>" [<limit #> <public flag> <password>]\n
+input_chatmod_syntax	语法错误 'chatmod' (Modify Chat Room)\n
+input_chatmod_syntax	使用方法: chatmod "<title>" [<limit #> <public flag> <password>]\n
+input_cl			All log cleared\n
+input_conf			Config '%$arg0' is %$arg1\n
+input_conf_error		Config variable '%$arg0' doesn't exist\n
+input_conf_syntax		语法错误 'conf' (Config Modify)\n
+input_conf_syntax		使用方法: conf <variable> [<value>]\n
+chatroom_admin		(Admin)
+chatroom_public		Public
+chatroom_private		Personal
+input_cri_error			There is no chat room info - you are not in a chat room\n
+input_cri_head			----------- Chatroom information -----------\n
+input_cri_head			Name                                 Population male/private \n
+input_cri_head			%-36s %2d/%2d %-5s\n
+input_cri_head			-- Users --\n
+input_cri_head_arg		%$arg0{title}
+input_cri_head_arg		%$arg0{num_users}
+input_cri_head_arg		%$arg0{limit}
+input_cri_head_arg		%$arg1
+input_cri			%-3d %-23s %-10s\n
+input_cri_arg			%$arg0
+input_cri_arg			%$arg1
+input_cri_arg			%$arg2
+input_cri_end			------------------------------------\n
+input_crl_head			----------- The chatroom tabulates -----------\n
+input_crl_head			#   Title                       having                  Population male/private \n
+input_crl			%-3d %-36s %-23s %2d/%2d %-5s\n
+input_crl_arg			%$arg0
+input_crl_arg			%$arg1{title}
+input_crl_arg			%$arg2
+input_crl_arg			%$arg1{num_users}
+input_crl_arg			%$arg1{limit}
+input_crl_arg			%$arg3
+input_crl_end			------------------------------------\n
+input_deal_error_1		发生错误 'deal' (Deal a Player)\n
+input_deal_error_1		You are already in a deal\n
+input_deal_error_2		发生错误 'deal' (Deal a Player)\n
+input_deal_error_2		You must first cancel the incoming deal\n
+input_deal_error_3		发生错误 'deal' (Deal a Player)\n
+input_deal_error_3		Player %$arg0 does not exist\n
+input_deal_error_4		发生错误 'deal' (Deal a Player)\n
+input_deal_error_4		There is no deal to accept\n
+input_deal_error_5		发生错误 'deal' (Deal a Player)\n
+input_deal_error_5		Cannot make the trade - %$arg0 has not finalized\n
+input_deal_error_6		发生错误 'deal' (Deal a Player)\n
+input_deal_error_6		You already accepted the final deal\n
+input_dealNo_error		发生错误 'deal' (Deal a Player)\n
+input_dealNo_error		There is no incoming/current deal to cancel\n
+input_deal			You accepted the final Deal\n
+input_dealAdd_error_1	发生错误 'deal_add' (Add Item to Deal)\n
+input_dealAdd_error_1	No deal in progress\n
+input_dealAdd_error_2	发生错误 'deal_add' (Add Item to Deal)\n
+input_dealAdd_error_2	Can't add any Items - You already finalized the deal\n
+input_dealAdd_error_3	发生错误 'deal_add' (Add Item to Deal)\n
+input_dealAdd_error_3	Inventory Item %$arg0 does not exist.\n
+input_dealAdd_error_4	发生错误 'deal_add' (Add Item to Deal)\n
+input_dealAdd_error_4	Amount must either be a number, or not specified.\n
+input_dealAdd_error_5	You can't add any more items to the deal\n
+input_dealAdd			You put forward %$arg0 z to Deal\n
+input_deal_syntax		Syntax error 'deal' (Deal a player)\n
+input_deal_syntax		使用方法: deal [<Player # | no | add>] [<item #>] [<amount>]\n
+deal_finalize			Finalized
+input_dl_error			There is no deal list - You are not in a deal\n
+input_dl_head			-----------Current Deal-----------\n
+input_dl_head			%-30s   %-30s\n
+input_dl_head_arg		%$arg0
+input_dl_head_arg		%$arg1
+input_dl_one			%$arg0 x %$arg1
+input_dl			%-30s   %-30s\n
+input_dl_arg			%$arg0
+input_dl_arg			%$arg1
+input_dl_end			Zenny: %-14s            Zenny: %-14s\n
+input_dl_end			----------------------------------\n
+input_dl_end_arg		%$arg2
+input_dl_end_arg		%$arg3
+input_drop_error		发生错误'drop' (Drop Inventory Item)\n
+input_drop_error		Inventory Item %$arg0 does not exist.\n
+input_drop_syntax		语法错误 'drop' (Drop Inventory Item)\n
+input_drop_syntax		使用方法: drop <item #> [<amount>]\n
+input_e_syntax_head		语法错误 'e' (Emotion)\n
+input_e_syntax_head		使用方法: e <emotion # (0-47)>\n
+input_e_syntax_head		-------------- Extra explanation --------------\n
+input_e_syntax_head		#                       #                       #\n
+input_e_syntax_one		%-3d %-19s
+input_e_syntax_one_arg	%$arg0
+input_e_syntax_one_arg	%$arg1
+input_e_syntax			%$arg0 %$arg1 %$arg2\n
+input_e_syntax_end		--------------------------------------\n
+input_eq_posDesc		Head (top)#Head (mid)#Head (low)#Body#RightHand#LeftHand#Robe#Foot#Acc#Acc (left)#
+input_eq_arrowDesc		Arrow
+input_eq_head			------------------- 装备栏清单 -------------------\n
+input_eq_head			Position # name \n
+input_eq			%-8s %-3d %-60s\n
+input_eq_arg			%$arg0
+input_eq_arg			%$arg1
+input_eq_arg			%$arg2
+input_eq_empty		%$arg0\n
+input_eq_arrow		%-8s %-3d %-60s\n
+input_eq_arrow_arg		%$arg0
+input_eq_arrow_arg		%$arg1
+input_eq_arrow_arg		%$arg2 x %$arg3
+input_eq_end			-------------------------------------------------------------\n
+input_eq_end			使用方法: eq [<Item number >] [<left=Left hand position>]\n
+input_eq_error_1		发生错误 'equip' (Equip Inventory Item)\n
+input_eq_error_1		Inventory Item %$arg0 does not exist.\n
+input_eq_error_2		发生错误 'equip' (Equip Inventory Item)\n
+input_eq_error_2		Inventory Item %$arg0 can't be equipped.\n
+input_follow_syntax		语法错误 'follow' (Follow Player)\n
+input_follow_syntax		使用方法: follow <player #>\n
+input_follow_error		发生错误 'follow' (Follow Player)\n
+input_follow_error		Player %$arg0 does not exist.\n
+input_g_syntax		语法错误 'g' (Guild Chat)\n
+input_g_syntax		使用方法: g <message>\n
+input_iDesc_error		发生错误 'i desc' (Iventory Item Description)\n
+input_iDesc_error		Wants to inspect the goods %$arg0 Does not exist.\n
+input_iDesc			================== 物品说明 ==================\n
+input_iDesc			Item name: %$arg0\n
+input_iDesc			\n%$arg1
+input_iDesc			==============================================\n
+input_i_syntax			语法错误 'i' (Iventory List)\n
+input_i_syntax			使用方法: i [<u | eq | nu | desc>] [<Item number>]\n
+input_i_head			------------- 物品栏 -------------\n
+input_i_end			---------------------------------\n
+input_identify_error		发生错误 'identify' (Identify Item)\n
+input_identify_error		Identify Item %$arg0 does not exist\n
+input_identify_syntax		语法错误 'identify' (Identify Item)\n
+input_identify_syntax		使用方法: identify [<identify #>]\n
+input_ignore_syntax		语法错误 'ignore' (Ignore Player/Everyone)\n
+input_ignore_syntax		使用方法: ignore <flag> <name | all>\n
+input_il_head			-----------物品清单-----------\n
+input_il_head			ID    名称\n
+input_il				%-5d %-30s\n
+input_il_arg			%$0
+input_il_arg			%$1{name} x %$1{amount}
+input_il_end			-------------------------------\n
+input_im_syntax		语法错误 'im' (Use Item on Monster)\n
+input_im_syntax		使用方法: im <item #> <monster #>\n
+input_im_error_1		发生错误 'im' (Use Item on Monster)
+input_im_error_1		物品栏物品 %$arg0 does not exist.\n
+input_im_error_2		发生错误 'im' (Use Item on Monster)\n
+input_im_error_2		物品栏物品 %$arg0 is not of type Usable.\n
+input_im_error_3		发生错误 'im' (Use Item on Monster)\n
+input_im_error_3		Monster %$arg1 does not exist.\n
+input_ip_syntax		语法错误 'ip' (Use Item on Player)\n
+input_ip_syntax		使用方法: ip <item #> <player #>\n
+input_ip_error_1		发生错误 'ip' (Use Item on Player)\n
+input_ip_error_1		物品栏物品 %$arg0 does not exist.\n
+input_ip_error_2		发生错误 'ip' (Use Item on Player)\n
+input_ip_error_2		物品栏物品 %$arg0 is not of type Usable.\n
+input_ip_error_3		发生错误 'ip' (Use Item on Player)\n
+input_ip_error_3		Player %$arg1 does not exist.\n
+input_is_syntax		语法错误 'is' (Use Item on Self)\n
+input_is_syntax		使用方法: is <item #>\n
+input_is_error_1		发生错误 'is' (Use Item on Self)\n
+input_is_error_1		I物品栏物品 %$arg0 does not exist.\n
+input_is_error_2		发生错误 'is' (Use Item on Self)\n
+input_is_error_2		物品栏物品 %$arg0 is not of type Usable.\n
+input_join_syntax		语法错误 'join' (Join Chat Room)\n
+input_join_syntax		使用方法: join <chat room #> [<password>]\n
+input_join_error_1		发生错误 'join' (Join Chat Room)\n
+input_join_error_1		You are already in a chat room.\n
+input_join_error_2		发生错误 'join' (Join Chat Room)\n
+input_join_error_2		Chat Room %$arg0 does not exist.\n
+input_kick_syntax		语法错误 'kick' (Kick from Chat)\n
+input_kick_syntax		使用方法: kick <user #>\n
+input_kick_error_1		发生错误 'kick' (Kick from Chat)\n
+input_kick_error_1		You are not in a Chat Room.\n
+input_kick_error_2		发生错误 'kick' (Kick from Chat)\n
+input_kick_error_2		Chat Room User %$arg0 doesn't exist\n
+input_leave_error		发生错误 'leave' (Leave Chat Room)\n
+input_leave_error		You are not in a Chat Room.\n
+input_log_result		Instruction '%$arg0' The output result reads in %$arg1\n
+input_log_syntax		语法错误 'log' (Log Command)\n
+input_log_syntax		使用方法: log "<command>" <output filename>\n
+input_look_syntax		语法错误 'look' (Look a Direction)\n
+input_look_syntax		使用方法: look <Body> [<Forehead>]\n
+input_look_syntax		------------ 额外说明 --------------\n
+input_look_syntax		\身体:１  ０  ７       头部: 0=正前方\n
+input_look_syntax		\       ↖↑↗\n
+input_look_syntax		\     ２←♀→６              1=右前方\n
+input_look_syntax		\       ↙↓↘\n
+input_look_syntax		\     ３  ４  ５              2=左前方\n
+input_look_syntax		------------------------------------\n
+input_make_error_1		发生错误 'make' (Smithery and Pharmacy)\n
+input_make_error_1		Wants to forge the goods/to compound the medicine bottle %$arg0 Does not exist.\n
+input_make_error_2		发生错误 'make <May forge Item number> <Attribute> <Star angle quantity>' (Smithery and Pharmacy)\n
+input_make_error_2		Please inspect on the body Attribute Stone as well as star angle quantity.\n
+input_make_error_3		发生错误 'make <May forgeItem number> <Attribute> <Star angle quantity>' (Smithery and Pharmacy)\n
+input_make_error_3		Please inspect inputs <Attribute> ?? <Star angle quantity> Whether has harms.\n
+input_make_syntax		语法错误 'make' (Smithery and Pharmacy)\n
+input_make_syntax		使用方法: make [<May forgeItem/configuration medicine bottle serial number>] [<Attribute>] [<Star angle quantity>]\n
+input_make_syntax		\          make <desc> <May forgeItem/configuration medicine bottle serial number>\n
+input_makeDesc_error	发生错误 'make desc' (Smithery Material Description)\n
+input_makeDesc_error	Wants to inspect the material %$arg0 Does not exist.\n
+input_makeDesc		================== Material explanation ==================\n
+input_makeDesc		Item name: %$arg0\n
+input_makeDesc		\n%$arg1
+input_makeDesc		==============================================\n
+input_ml_head			-----------怪物清单 (当前坐标: %$char{pos_x}, %$char{pos_y} ) -----------\n
+input_ml_head			ID    名称                     DmgTo    DmgFrom  (x,y)\n
+input_ml			%-5d %-24s %-5d    %-5d    %-11s %s\n
+input_ml_arg			%$arg0
+input_ml_arg			%$arg1{name}
+input_ml_arg			%$arg1{dmgTo}
+input_ml_arg			%$arg1{dmgFrom}
+input_ml_arg			(%$arg1{pos_x},%$arg1{pos_y})
+input_ml_end			-------------------------------------------------------------\n
+input_move_syntax		语法错误 'move' (Move Player)\n
+input_move_syntax		使用方法: move <x> <y> &| <map>\n
+input_move_error		Map %$arg0 does not exist\n
+input_moveStop		Stopped all movement\n
+input_move_1			计算路径到 %$0{alias} (%$0{name}) - %$1{x},%$1{y}\n
+input_move_1_color		route
+input_move_2			计算路径到 %$0{alias} (%$0{name})\n
+input_nl_head			-----------NPC 列表-----------\n
+input_nl_head			#   ID         名称                          坐   标\n
+input_nl			%-3d %-10d %-28s (%3d,%3d)\n
+input_nl_arg			%$arg0
+input_nl_arg			%$arg1{nameID}
+input_nl_arg			%$arg1{name}
+input_nl_arg			%$arg1{pos_x}
+input_nl_arg			%$arg1{pos_y}
+input_nl_end			---------------------------------\n
+input_p_syntax		语法错误 'p' (Party Chat)\n
+input_p_syntax		使用方法: p <message>\n
+party_online			Yes
+party_offline			No
+party_admin			(A)
+input_party_error		发生错误 'party' (Party Functions)\n
+input_party_error		Can't list party - you're not in a party.\n
+input_party_head		----------队伍-----------\n
+input_party_head		队伍名称: %$arg0\n
+input_party_head		#      名称                    地图                   是否在线 HP\n
+input_party			%2d %-3s %-23s %-11s (%3d,%3d) %-6s %5d/%-5d (%d%)\n
+input_party_arg		%$arg0
+input_party_arg		%$arg2
+input_party_arg		%$arg1{name}
+input_party_arg		%$arg1{map}
+input_party_arg		%$arg1{pos_x}
+input_party_arg		%$arg1{pos_y}
+input_party_arg		%$arg3
+input_party_arg		%$arg1{hp}
+input_party_arg		%$arg1{hp_max}
+input_party_arg		%$arg1{percent_hp}
+input_party_end		--------------------------\n
+input_partyCre_syntax		语法错误 'party create' (Organize Party)\n
+input_partyCre_syntax		使用方法: party create "<party name>"\n
+input_partyJoin_syntax	语法错误 'party join' (Accept/Deny Party Join Request)\n
+input_partyJoin_syntax	使用方法: party join <flag>\n
+input_partyJoin_error		发生错误 'party join' (Join/Request to Join Party)\n
+input_partyJoin_error		Can't accept/deny party request - no incoming request.\n
+input_partyReq_error_1	发生错误 'party request' (Request to Join Party
+input_partyReq_error_1	Can't request a join - you're not in a party.\n
+input_partyReq_error_2	发生错误 'party request' (Request to Join Party)\n
+input_partyReq_error_2	Can't request to join party - player %$arg0 does not exist.\n
+input_partyLeave_error	发生错误 'party leave' (Leave Party)\n
+input_partyLeave_error	Can't leave party - you're not in a party.\n
+input_partyShare_error	发生错误 'party share' (Set Party Share EXP)\n
+input_partyShare_error	Can't set share - you're not in a party.\n
+input_partyShare_syntax	语法错误 'party share' (Set Party Share EXP)\n
+input_partyShare_syntax	使用方法: party share <flag>\n
+input_partyKick_error_1	发生错误 'party kick' (Kick Party Member)\n
+input_partyKick_error_1	Can't kick member - you're not in a party.\n
+input_partyKick_syntax	语法错误 'party kick' (Kick Party Member)\n
+input_partyKick_syntax	使用方法: party kick <party member #>\n
+input_partyKick_error_2	发生错误 'party kick' (Kick Party Member)\n
+input_partyKick_error_2	Can't kick member - member %$arg0 doesn't exist.\n
+input_pet			----- Pet information -----\n
+input_pet			Name : %-10s    Rank : %-2d\n
+input_pet			Full food : %-10d  Kisses the density : %-4d\n
+input_pet			Pet ID : %s\n
+input_pet			--------------------\n
+input_pet_arg			%$arg0{name}
+input_pet_arg			%$arg0{level}
+input_pet_arg			%$arg0{hungry}
+input_pet_arg			%$arg0{friendly}
+input_pet_arg			%$arg0{nameID}
+input_petFeed			Your oral administration pet\n
+input_petPlay			You are directing the pet to make the movement\n
+input_petBack			Your pet replies the egg the condition\n
+input_petCall_error		发生错误 'pet call' (Pet Call)\n
+input_petCall_error		Must hatch TOMAGOTCH Does not exist\n
+input_petCall_syntax		语法错误 'pet call' (Pet Call)\n
+input_petCall_syntax		请输入 'pet call <可孵化宠物蛋编号>' 选择\n
+input_pet_error		发生错误 'pet' ( Q'pet command )\n
+input_pet_error		You do not have already the pet which hatches
+input_pet_syntax		语法错误 'pet' ( Q'pet command )\n
+input_pet_syntax		使用方法 : pet < info | feed | play | back | call> [<可孵化宠物蛋编号>]\n
+input_petl_head		-----------宠物 列表-----------\n
+input_petl_head		#    Type                     Name\n
+input_petl			%-4d %-24s %-25s\n
+input_petl_arg			%$arg0
+input_petl_arg			%$arg1{name}
+input_petl_arg			%$arg1{name_given}
+input_petl_end			----------------------------------\n
+input_pm_syntax		语法错误 'pm' (Private Message)\n
+input_pm_syntax		使用方法: pm ("<username>" | <pm #>) <message>\n
+input_pm_error		发生错误 'pm' (Private Message)\n
+input_pm_error		Quick look-up %$arg0 does not exist\n
+input_pmcl			已将发送密语时重复显示的话删除\n
+input_pml_head		-----------PM 列表-----------\n
+input_pml			%-4d %-24s\n
+input_pml_arg			%$arg0
+input_pml_arg			%$arg1
+input_pml_end			-----------------------------\n
+input_pl_head			----------- 附近玩家列表 (当前坐标: %3d,%3d) -----------\n
+input_pl_head			#   Lv  名称                    性别   职业                  ( x , y )\n
+input_pl_head_arg		%$char{pos_x}
+input_pl_head_arg		%$char{pos_y}
+input_pl			%-3d %3d %-24s %-5s %-20s (%3d,%3d)\n
+input_pl_arg			%$arg0
+input_pl_arg			%$arg1{level}
+input_pl_arg			%$arg1{name}
+input_pl_arg			%$arg2
+input_pl_arg			%$arg3
+input_pl_arg			%$arg1{pos_x}
+input_pl_arg			%$arg1{pos_y}
+input_pl_end			----------------------------------------------------------\n
+input_player_i_head		----------- 玩家信息 (%24s) -----------\n
+input_player_i_head_arg	%$arg0
+input_player_i			Account ID: %s (Hex: %s)\n
+input_player_i			Party: %s\n
+input_player_i			Guild: %s\n
+input_player_i			Position: %3d,%3d (%s of you: %s degrees)\n
+input_player_i			Level: %-7d Distance: %-17s\n
+input_player_i			性别: %-6s    Class: %s\n
+input_player_i			--------------------------------------------------------------\n
+input_player_i			Body direction: %-19s Head direction:  %-19s\n
+input_player_i			Weapon: %s\n
+input_player_i			Shield: %s\n
+input_player_i			头发颜色:      %-19s\n
+input_player_i			移动速度: %s secs per block\n
+input_player_i_arg		%$arg0{nameID}
+input_player_i_arg		%$getHex{%$arg0{ID}}
+input_player_i_arg		%$arg1
+input_player_i_arg		%$arg2
+input_player_i_arg		%$arg3{x}
+input_player_i_arg		%$arg3{y}
+input_player_i_arg		%$arg4
+input_player_i_arg		%$arg5
+input_player_i_arg		%$arg0{level}
+input_player_i_arg		%$arg6
+input_player_i_arg		%$sex{%$arg0{sex}}
+input_player_i_arg		%$job{%$arg0{jobID}}
+input_player_i_arg		%$direction{%$arg7} (%$arg7)
+input_player_i_arg		%$direction{%$arg8} (%$arg8)
+input_player_i_arg		%$item{%$arg0{weapon}}
+input_player_i_arg		%$item{%$arg0{shield}}
+input_player_i_arg		%$haircolor{%$arg0{hair_c}}
+input_player_i_arg		%$arg0{walk_speed}
+input_player_i_end		--------------------------------------------------------------\n
+input_player_i_error		Player %$arg0 do not exist\n
+input_portals_head		-----------Portal List-----------\n
+input_portals_head		#   Name                                PlaceSign      Scope\n
+input_portals			%-3d %-35s (%3d,%3d) %d\n
+input_portals_arg		%$arg0
+input_portals_arg		%$arg1{name}
+input_portals_arg		%$arg1{pos_x}
+input_portals_arg		%$arg1{pos_y}
+input_portals_arg		%$arg1{dist}
+input_portals_end		---------------------------------\n
+input_remain			----------- Airtime Remaining -----------\n
+input_remain			Login at: %$arg0\n
+input_remain			Botting time : %$arg1{hour} Hours %$arg1{min} Minutes %$arg1{sec} Seconds\n
+input_remain			Now Remain : %$arg2{day} Days %$arg2{hour} Hours %$arg2{min} Minutes %$arg2{sec} Seconds\n
+input_remain			-----------------------------------------\n
+input_s_head			------------ 基本状态 (AID:%$char{aid} CID:%$char{cid}) -------------\n
+input_s				%-25s HP: %s\n
+input_s				%-25s SP: %s\n
+input_s				基本等级: %-3d %s\n
+input_s				职业等级: %-3d %s\n
+input_s				负重: %-17s 金钱: %s\n
+input_s_arg			%$char{name}
+input_s_arg			%$char{hp}/%$char{hp_max} (%$char{percent_hp}%)
+input_s_arg			%$char{job} %$char{sex}
+input_s_arg			%$char{sp}/%$char{sp_max} (%$char{percent_sp}%)
+input_s_arg			%$char{lv}
+input_s_arg			%$char{exp}/%$char{exp_max}/%$arg2{base} (%$arg1{base}%)
+input_s_arg			%$char{lv_job}
+input_s_arg			%$char{exp_job}/%$char{exp_job_max}/%$arg2{job} (%$arg1{job}%)
+input_s_arg			%$char{weight}/%$char{weight_max} (%$char{percent_weight}%)
+input_s_arg			%$char{zenny}
+input_s_end			-----------------------------------------------\n
+input_sell_syntax		语法错误 'sell' (Sell Inventory Item)\n
+input_sell_syntax		使用方法: sell <item #> [<amount>]\n
+input_sell_error		发生错误 'sell' (Sell Inventory Item)\n
+input_sell_error		Inventory Item %$arg0 does not exist.\n
+input_sell_error_2		发生错误 'sell' (Sell Inventory Item)\n
+input_sell_error_2		You also not with any NPC Conversation.\n
+input_skills_head		----------Skill List-----------\n
+input_skills_head		#  Skill Name                     Lv  SP\n
+input_skills			%-2d %-29s %3s %3s %5s %2s\n
+input_skills_arg		%$arg0
+input_skills_arg		%$arg2
+input_skills_arg		%$arg1{lv}
+input_skills_arg		%$arg1{sp}
+input_skills_end		\nSkill Points: %$arg0\n
+input_skills_end		-------------------------------\n
+input_skillsAdd_error_1	发生错误 'skills add' (Assignment skill points)\n
+input_skillsAdd_error_1	Has not discovered this skill %$arg0.\n
+input_skillsAdd_error_2	发生错误 'skills add' (Assignment skill points)\n
+input_skillsAdd_error_2	Not fully the points may assign %$arg0.\n
+input_skillsDesc_error		发生错误 'skills desc' (Skills Description)\n
+input_skillsDesc_error		Wants to inspect the skill %$arg0 Does not exist.\n
+input_skillsDesc		================== Skill explanation ==================\n
+input_skillsDesc		Skill Name: %$arg0\n
+input_skillsDesc		\n%$arg1
+input_skillsDesc		==============================================\n
+input_skills_syntax		语法错误 'skills' (Skills Functions)\n
+input_skills_syntax		使用方法: skills [<add>] [<skill #>]\n
+input_sl_head			------------- Spell List (Coordinate : %$char{pos_x},%$char{pos_y}) -------------\n	
+input_sl_head			ID    Type Name          Shi chuche                         Place   Sign  From\n
+input_sl			%-5d %-4s %-13s %-29s (%3d,%3d) %s\n
+input_sl_arg			%$arg0
+input_sl_arg			%$arg1{type}
+input_sl_arg			%$arg2
+input_sl_arg			%$arg3
+input_sl_arg			%$arg1{pos_x}
+input_sl_arg			%$arg1{pos_y}
+input_sl_arg			%$arg4
+input_sl_end			--------------------------------------------------------------\n
+input_sg_syntax		语法错误 'sg' (Use Skill on Location)\n
+input_sg_syntax		使用方法: sg <skill #> <x> <y> [<skill lvl>]\n
+input_sg_error_1		发生错误 'sg' (Use Skill on Ground)\n
+input_sg_error_1		Skill %$arg0 does not exist.\n
+input_sg_error_2		发生错误 'sg' (Use Skill on Ground)\n
+input_sg_error_2		Skill Position does not exist.\n
+input_sm_syntax		语法错误 'sm' (Use Skill on Monster)\n
+input_sm_syntax		使用方法: sm <skill #> <monster #> [<skill lvl>]\n
+input_sm_error_1		发生错误 'sm' (Use Skill on Monster)\n
+input_sm_error_1		Monster %$arg1 does not exist.\n
+input_sm_error_2		发生错误 'sm' (Use Skill on Monster)\n
+input_sm_error_2		Skill %$arg0 does not exist.\n
+input_sp_syntax		语法错误 'sp' (Use Skill on Player)\n
+input_sp_syntax		使用方法: sp <skill #> <player #> [<skill lvl>]\n
+input_sp_error_1		发生错误 'sp' (Use Skill on Player)\n
+input_sp_error_1		Player %$arg1 does not exist.\n
+input_sp_error_2		发生错误 'sp' (Use Skill on Player)\n
+input_sp_error_2		Skill %$arg0 does not exist.\n
+input_ss_syntax		语法错误 'ss' (Use Skill on Self)\n
+input_ss_syntax		使用方法: ss <skill #> [<skill lvl>]\n
+input_ss_error			发生错误 'ss' (Use Skill on Self)\n
+input_ss_error			Skill %$arg0 does not exist.\n
+input_st			----------------------- 人 物 状 态 -----------------------\n
+input_st			力量:%3d+%3d #%2d 攻击力:    %3d+%3d 防御力:    %3d+%3d\n
+input_st			敏捷:%3d+%3d #%2d 魔法攻击力:%3d-%3d 魔法防御力:%3d+%3d\n
+input_st			体力:%3d+%3d #%2d 命中率:      %3d   回避率:      %3d+%3d\n
+input_st			智力:%3d+%3d #%2d 必杀攻击率:%3d     攻击速度:    %3d\n
+input_st			灵巧:%3d+%3d #%2d 属性点:     %3d\n
+input_st			幸运:%3d+%3d #%2d 工会: %s\n
+input_st			-----------------------------------------------------------\n
+input_st_arg			%$arg0{str}
+input_st_arg			%$arg0{str_bonus}
+input_st_arg			%$arg0{points_str}
+input_st_arg			%$arg0{attack}
+input_st_arg			%$arg0{attack_bonus}
+input_st_arg			%$arg0{def}
+input_st_arg			%$arg0{def_bonus}
+input_st_arg			%$arg0{agi}
+input_st_arg			%$arg0{agi_bonus}
+input_st_arg			%$arg0{points_agi}
+input_st_arg			%$arg0{attack_magic_min}
+input_st_arg			%$arg0{attack_magic_max}
+input_st_arg			%$arg0{def_magic}
+input_st_arg			%$arg0{def_magic_bonus}
+input_st_arg			%$arg0{vit}
+input_st_arg			%$arg0{vit_bonus}
+input_st_arg			%$arg0{points_vit}
+input_st_arg			%$arg0{hit}
+input_st_arg			%$arg0{flee}
+input_st_arg			%$arg0{flee_bonus}
+input_st_arg			%$arg0{int}
+input_st_arg			%$arg0{int_bonus}
+input_st_arg			%$arg0{points_int}
+input_st_arg			%$arg0{critical}
+input_st_arg			%$arg0{attack_speed}
+input_st_arg			%$arg0{dex}
+input_st_arg			%$arg0{dex_bonus}
+input_st_arg			%$arg0{points_dex}
+input_st_arg			%$arg0{points_free}
+input_st_arg			%$arg0{luk}
+input_st_arg			%$arg0{luk_bonus}
+input_st_arg			%$arg0{points_luk}
+input_st_arg			%$char{guild}
+input_statAdd_syntax		语法错误 'stat_add' (Add Status Point)\n
+input_statAdd_syntax		使用方法: stat_add <str | agi | vit | int | dex | luk>\n
+input_statAdd_error_1	发生错误 'stat_add' (Assignment quality points)\n
+input_statAdd_error_1	Not fully the points may increase %$arg0\n
+input_statAdd_error_2	This quality already arrived high (99)\n
+input_storage_head		-------------Storage-------------\n
+input_storage_end		\nCapacity: %$arg0{items}/%$arg0{items_max}\n
+input_storage_end		------------------------------\n
+input_storageAdd_error	发生错误 'storage add' (Add Item to Storage)\n
+input_storageAdd_error	Inventory Item %$arg0 does not exist\n
+input_storageAdd_error2	发生错误 'storage add' (Add Item to Storage)\n
+input_storageAdd_error2	Items %$0 Has equipped\n
+input_storageAdd_error3	发生错误 'storage add' (Add Item to Storage)\n
+input_storageAdd_error3	Items %$0 Hatched\n
+input_storageAdd_syntax	语法错误 'storage add' (Add Item to Storage)\n
+input_storageAdd_syntax	使用方法: storage add <Item number> [<Quantity>]\n
+input_storageGet_error	发生错误 'storage get' (Get Item from Storage)\n
+input_storageGet_error	Storage Item %$arg0 does not exist\n
+input_storageGet_syntax	语法错误 'storage get' (Get Item from Storage)\n
+input_storageGet_syntax	使用方法: storage get <StorageItem number> [<Quantity>]\n
+input_storageDesc_error	发生错误 'storage desc' (Storage Item Description)\n
+input_storageDesc_error	Wants to inspect the goods %$arg0 Does not exist.\n
+input_storageDesc		================== Item description ==================\n
+input_storageDesc		Item name: %$arg0\n
+input_storageDesc		\n%$arg1
+input_storageDesc		==============================================\n
+input_storage_syntax		语法错误 'storage' (Storage Functions)\n
+input_storage_syntax		使用方法: storage [u | eq | nu | desc>] [<Item number>]\n
+input_take_syntax		语法错误 'take' (Take Item)\n
+input_take_syntax		使用方法: take <item #>\n
+input_take_error		发生错误 'take' (Take Item)\n
+input_take_error		Item %$arg0 does not exist.\n
+input_talk_error		发生错误 'talk' (Talk to NPC)\n
+input_talk_error		NPC %$arg0 Does not exist\n
+input_talkAns_error		发生错误 'talk answer' (Answer to NPC)\n
+input_talkAns_error		You also not with any NPC Conversation.\n
+input_talkAns_syntax		语法错误 'talk answer' (Answer to NPC)\n
+input_talkAns_syntax		使用方法: talk answer (<Quantity>|"<Writing>")\n
+input_talkResp_error_1	发生错误 'talk resp' (Respond to NPC)\n
+input_talkResp_error_1	You are not talking to any NPC.\n
+input_talkResp_error_2	发生错误 'talk resp' (Respond to NPC)\n
+input_talkResp_error_2	Response %$arg0 does not exist.\n
+input_talkCont_error		发生错误 'talk cont' (Continue Talking to NPC)\n
+input_talkCont_error		You are not talking to any NPC.\n
+input_talkNo_error		发生错误 'talk no' (Talk to NPC)\n
+input_talkNo_error		You also not with any NPC Conversation.\n
+input_talk_syntax		语法错误 'talk' (Talk to NPC)\n
+input_talk_syntax		使用方法: talk (<NPC #>|<cont | resp | answer | no>) [<response #>|<Quantity>|"<Writing>"]\n
+input_tank_syntax		语法错误 'tank' (Tank for a Player)\n
+input_tank_syntax		使用方法: tank <player #>\n
+input_tank_error		发生错误 'tank' (Tank for a Player)\n
+input_tank_error		Player %$arg0 does not exist.\n
+input_timeout_syntax		语法错误 'timeout' (set a timeout)\n
+input_timeout_syntax		使用方法: timeout <type> [<seconds>]\n
+input_timeout_error		发生错误 'timeout' (set a timeout)\n
+input_timeout_error		Timeout %$arg0 doesn't exist\n
+input_timeout			Timeout '%$arg0' is %$arg1\n
+input_uneq_syntax		语法错误 'unequip' (Unequip Inventory Item)\n
+input_uneq_syntax		使用方法: unequip <item #>\n
+input_uneq_error_1		发生错误 'unequip' (Unequip Inventory Item)\n
+input_uneq_error_1		Inventory Item %$arg0 does not exist.\n
+input_uneq_error_2		发生错误 'unequip' (Unequip Inventory Item)\n
+input_uneq_error_2		Inventory Item %$arg0 is not equipped.\n
+input_where			------------------------------------\n
+input_where			目前位于 %$arg0{alias}(%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
+input_where			------------------------------------\n
+unknown_input		What is %$arg0?\n
+
+connectMaster		正在连接主服务器...\n
+connectEncryptKey		Secure Login : Sending Request Key \n
+connectSecure		Secure Login : Encrypt password\n
+connectMaster_error		连接主服务器连接超时, 重新连接...\n
+connectMaster_error_color	default
+connectServer			正在连接游戏服务器...\n
+connectServer_error		连接游戏服务器超时, 重新连接...\n
+connectChar			正在连接角色服务器...\n
+connectChar_error		连接角色服务器超时, 重新连接...\n
+connectMap			正在连接地图服务器...\n
+connectMap_error_1		连接地图服务器超时, 重新连接...\n
+connectMap_error_2		连接地图服务器超时, 重新连接主服务器...\n
+connection			连接 (%$arg0:%$arg1)... 
+connectionSucc		已连接\n
+connectionSucc_color		connected
+connectionFail			无法连接\n
+connectionFail_color		无法连接
+killConnection			与 (%$arg0:%$arg1) 断开连接...
+killConnectionSucc		已断开\n
+killConnectionSucc_color	disconnected
+killConnectionFail		无法断开连接\n
+quit				再见\n
+relog				等待 %$arg0 秒后自动连接...\n
+teleport_error_2		Can't teleport or respawn - need wing or skill\n
+teleport_error_3		[Danger] You already quilt GM Endures the word (%$arg0 Minute),Is unable to use SkillWithItems\n
+teleport_error_3_log		Alert.txt
+teleport_error_4		[Danger] Moves failed  - You already %$0 !\n
+teleport_error_4_log		Alert.txt
+
+#---------------------------------------------------------------------------
+# Main
+#---------------------------------------------------------------------------
+createInjectSocket		Local inject server started (%$arg0:%$arg1)\n
+
+masterServer_head		------------- 主 服 务 器 ------------\n
+masterServer_head		#   名称\n
+masterServer			%-3d %-43s\n
+masterServer_arg		%$arg0
+masterServer_arg		%$arg1
+masterServer_end		-----------------------------------------\n
+masterServer_end		选择主服务器, 请输入编号:\n
+
+waitProcess			错误: 无法找到 %$arg0\n
+waitProcess			Waiting you start the game Windows...
+foundProcess			Process found.\n
+waitInjectConnect		Waiting for InjectDLL to connect...\n
+injectConnected		InjectDLL Socket connected - Ready to start botting\n
+
+
+#---------------------------------------------------------------------------
+# PacketParser
+#---------------------------------------------------------------------------
+mapLoaded			地图信息读取完成\n
+unparsePacket_1		%$arg2 > %$arg0 (%$arg1): Caught unparsed packet error, potential loss of data.\n
+unparsePacket_2		解析封包 - %$arg0\n
+
+accountInfo_head		------ 账号信息 -------\n
+accountInfo_head_color	group
+accountInfo			Account ID: %$arg0\n
+accountInfo			Sex:        %$arg1\n
+accountInfo			Session ID: %$arg2\n
+accountInfo			\            %$arg3\n
+accountInfo_end		-----------------------\n
+accountInfo_end_color	group
+
+server_head			------------------ 服 务 器 信 息 -------------------\n
+server_head_color		group
+server_head2			#   名称                  玩家   IP              端口\n
+server_head2_color		head
+server				%-3d %-21s %-6d %-15s %-6d\n
+server_arg			%$arg0
+server_arg			%$arg1{name}
+server_arg			%$arg1{users}
+server_arg			%$arg1{ip}
+server_arg			%$arg1{port}
+server_end			-----------------------------------------------------\n
+server_end_color		group
+
+closeMasterConnect		正关闭与主服务器的连接...\n
+charServerConnect		连接到服务器并连接到端口 %$arg0:%$arg1\n
+selectServer			已选择 %$arg0 服务器\n
+incorrectAccount		◆严重错误: 游戏账号不存在!\n
+incorrectPassword		◆严重错误: 游戏密码错误!\n
+loginError_3			服务器拒绝你的连接\n
+loginError_4			错误: 服务器拒绝你的账号连接游戏\n
+loginError_5			版本 %$arg0 错误...正在尝试帮你找到正确的版本\n
+loginError_6			The server is temporarily blocking your connection\n
+loginError_7			Server can't service now,Please try again later.\n
+loginError_unknow		登录错误. 错误代码 %$arg0\n
+recvCharData			正从服务器读取你的人物信息\n
+characterData			------------- 角 色 %2d -------------\n
+characterData			名字:  %-23s\n
+characterData			职业:  %-10s  Str: %-8s\n
+characterData			Lv:    %-10s  Agi: %-8s\n
+characterData			J.Lv:  %-10s  Vit: %-8s\n
+characterData			Exp:   %-10s  Int: %-8s\n
+characterData			J.Exp: %-10s  Dex: %-8s\n
+characterData			HP:  %5s/%-5s   Luk: %-8s\n
+characterData			SP: %5s/%-5s    Zenny: %-12s\n
+characterData			-------------------------------------\n
+characterData_arg		%$arg0
+characterData_arg		%$arg1{name}
+characterData_arg		%$arg2
+characterData_arg		%$arg1{str}
+characterData_arg		%$arg1{lv}
+characterData_arg		%$arg1{agi}
+characterData_arg		%$arg1{lv_job}
+characterData_arg		%$arg1{vit}
+characterData_arg		%$arg1{exp}
+characterData_arg		%$arg1{int}
+characterData_arg		%$arg1{exp_job}
+characterData_arg		%$arg1{dex}
+characterData_arg		%$arg1{hp}
+characterData_arg		%$arg1{hp_max}
+characterData_arg		%$arg1{luk}
+characterData_arg		%$arg1{sp}
+characterData_arg		%$arg1{sp_max}
+characterData_arg		%$arg3
+selectChar			人物信息 %$arg0 已选择\n
+invalidChar			游戏服务器资料读取错误 (invalid character specified)...\n
+recvMapServerData		正从服务器读取人物信息与地图服务器位置\n
+welcomeInGame		*** 欢迎您使用Kore 您已进入游戏 ***\n
+welcomeInGame_verbose	0
+nowMap			**您目前所在地图: %$arg0{name}\n
+nowMap_log			Alert.txt
+nowMap_verbose		0
+gameInfo			-------- 游 戏 信 息 --------\n
+gameInfo			Char ID  : %$arg0\n
+gameInfo			MAP Name : %$arg1\n
+gameInfo			MAP IP   : %$arg2\n
+gameInfo			MAP Port : %$arg3\n
+gameInfo			-----------------------------\n
+closeServerConnect		关闭连接到游戏登陆服务器\n
+enteringGame			\n█▆▄▂▁你已进入游戏▁▂▄▆█\n
+enteringGame			你出现在 %$arg0{alias} (%$arg0{name}) %$arg1{x},%$arg1{y}\n
+mapLoading			读取地图中, 请稍后...\n
+ignoredPm_all			Forcing Ignored-All...\n
+existPortal			出现传送点: %$arg0{name} - (%$arg0{binID})\n
+dead_you			你已死亡! (%$arg0{name})\n
+dead_you_log			Alert.txt
+dead_player			玩家死亡: %$arg0{name} (%$arg0{binID}) %$arg2 %$arg1\n
+loginFailure_0			Server shutting down\n
+loginFailure_2			Critical Error: Dual login prohibited - Someone trying to login!\n
+loginFailure_2_log		Alert.txt
+loginFailure_3			错误: 与服务器脱离同步\n
+loginFailure_5			错误: 你未成年所以无法加入这个服务器\n
+loginFailure_6			错误: RO服务器蛋疼错误!!\n
+loginFailure_8			错误: 服务器中仍有你上一次的连线记录\n
+loginFailure_15		错误: 你已被管理人员强制结束游戏\n
+loginFailure_101		错误: 你的账号因为可能使用了第三方的程序进行游戏而被冻结!\n
+loginFailure_106		错误: Your IP has been limited by server (3 id / 1 ip)!\n
+loginFailure_114		错误: 认证服务器无应答.\n
+loginFailure_other		错误: 未知登录错误 %$arg0\n
+dcOnDualLogin_1		立即断线!\n
+dcOnDualLogin_2		断线等待 %$arg0 秒...\n
+
+youAttackMonster		[%3d|%3d] ○你攻击怪物 %s (%s) (合计 %$formatNumber{%$arg2}/%$formatNumber{%$arg3}) - 造成伤害: %s\n
+youAttackMonster_arg	%$char{percent_hp}
+youAttackMonster_arg	%$char{percent_sp}
+youAttackMonster_arg	%$arg0{name}
+youAttackMonster_arg	%$arg0{binID}
+youAttackMonster_arg	%$formatNumber{%$arg1}
+youAttackMonster_color	attacked
+
+youAttackMonMiss		[%3d|%3d] ○你攻击怪物 %s (%s) (合计 %$formatNumber{%$arg2}/%$formatNumber{%$arg3}) - 造成伤害: %s\n
+youAttackMonMiss_arg	%$char{percent_hp}
+youAttackMonMiss_arg	%$char{percent_sp}
+youAttackMonMiss_arg	%$arg0{name}
+youAttackMonMiss_arg	%$arg0{binID}
+youAttackMonMiss_arg	%$arg1
+youAttackMonMiss_color	attackedMiss
+
+youStand			你站了起來\n
+youStand_color		stand
+youSit				你坐下来了\n
+youSit_color			sit
+
+monsterAttackYou		[%3d|%3d] ●怪物攻击你 %s (%s) 攻击你 - 造成伤害: %s\n
+monsterAttackYou_arg	%$char{percent_hp}
+monsterAttackYou_arg	%$char{percent_sp}
+monsterAttackYou_arg	%$arg0{name}
+monsterAttackYou_arg	%$arg0{binID}
+monsterAttackYou_arg	%$formatNumber{%$arg1}
+monsterAttackYou_color	attacking
+
+monAttackYouMiss		[%3d|%3d] ●怪物攻击你 %s (%s) 攻击你 - 造成伤害: %s\n
+monAttackYouMiss_arg	%$char{percent_hp}
+monAttackYouMiss_arg	%$char{percent_sp}
+monAttackYouMiss_arg	%$arg0{name}
+monAttackYouMiss_arg	%$arg0{binID}
+monAttackYouMiss_arg	%$arg1
+monAttackYouMiss_color	attackingMiss
+
+playerAttackMonster		玩家 %$arg0{name} 攻击怪物 %$arg1{name} (%$arg1{binID}) - 造成伤害: %$arg2\n
+playerKSMonster		玩家 %$arg0{name} 攻击怪物 %$arg1{name} (%$arg1{binID}) - 造成伤害: %$arg2\n
+playerKSMonster_color	killsteal
+
+mapChange			地图改变到: %$arg0{name} (%$arg1{x}, %$arg1{y})\n
+mapChange_color		mapChange
+mapInfo			------------ 地 图 信 息 ------------\n
+mapInfo			地图名称: %$arg0\n
+mapInfo			地图   IP: %$arg1\n
+mapInfo			地图端口: %$arg2\n
+mapInfo			-----------------------------------------\n
+closeMapConnect		关闭连接到地图服务器\n
+existItem			发现物品: %$arg0{name} (%$arg0{binID}) x %$arg0{amount}\n
+appearItem			出现物品: %$arg0{name} (%$arg0{binID}) x %$arg0{amount}\n
+inventoryAdd			物品添加到物品栏: %$arg0{name} (%$arg1) x %$arg2 - %$arg3 (%$arg0{type})\n
+inventoryAdd_color		inventoryAdd
+storageOpen			仓库开启\n
+eruipFail			你无法装备 %$arg0 (%$arg1)\n
+eruip				你装备 %$arg0{name} (%$arg1) - %$arg2 (%$arg0{equipped})\n
+unequipFail			你无法卸下 %$arg0 (%$arg1)\n
+unequip			你卸下 %$arg0{name} (%$arg1) - %$arg2 (%$arg0{equipped})\n
+inventoryRemoveFail_1	The equipment arrow certainly must first dismount\n
+inventoryRemoveFail_2	Equipment Items Certainly must first dismount\n
+inventoryRemove		物品栏物品移除: %$arg0{name} (%$arg1) x %$arg2\n
+inventoryRemove_color	inventoryRemove
+ban_period_0			Your Endures the word Limit AlreadyRelieves!\n
+ban_period_1			Your Endures the word Limit Also is left over %$arg0 Minute\n
+npcTalk			%$arg0 : %$arg1\n
+npcTalk_next			%$arg0 : 输入 'talk cont' 继续对话\n
+npcTalk_close			%$arg0 : 完成对话\n
+npcTalk_number		%$arg0 : 输入 'talk num <number #>' 输入一个数字.\n
+npcTalk_text			%$arg0 : 请输入 'talk answer "<文字>"' 输入欲回应文字, 或输入 'talk no' 取消对话\n
+statAddFail			没有足够的属性点可以增加\n
+statAddSucc			剩下: %$arg0\n
+npcBuySellSelect		%$arg0 : 输入 'store' 开始购买, 或输入 'sell' 开始贩卖\n
+npcBuySelect			%$arg0 : 检查你的购物清单通过输入 'buy' 来完成购买\n
+npcSellSelect			准备开始贩卖物品\n
+buyFail_1			购买失败 (金钱不足)\n
+buyFail_2			购买失败 (超过负重量)\n
+sellFail_1			交易失败\n
+gmKick			**GM将你强制下线\n
+gmKick_log			Alert.txt
+gmKick_sound			sound/gm.wav
+
+acceptPlayerPm		接受玩家密语\n
+acceptPlayerPmFail		接受玩家密语失败\n
+denyPlayerPm			拒绝玩家密语\n
+denyPlayerPmFail		拒绝玩家密语失败\n
+excludeAll			拒绝所有玩家密语\n
+excludeAllFail			拒绝所有玩家密语失败\n
+includeAll			接受所有玩家密语\n
+includeAllFail			接受所有玩家密语失败\n
+dealRequest_1			%$arg0 Request and your transaction\n
+dealRequest_1			Please input 'deal' Accepts the transaction Or Input 'deal no' Refusal to deal\n
+dealRequest_2			%$arg0 (CID:%$arg1 LV:%$arg2) Request and your transaction\n
+dealRequest_2			Please input 'deal' Accepts the transaction, OrInput 'deal no' Refusal to deal\n
+dealRespone_error_1		Surpasses may the transaction From\n
+dealRespone_error_2		You have not assigned character\n
+dealRespone_error_3		In this character With other character transactions\n
+dealRespone_1		Accepts with %$arg0 Transaction\n
+dealRespone_2		Accepts with %$arg0 (CID:%$arg1 LV:%$arg2) Transaction\n
+dealAddItem_player		%$arg0 added Item to Deal: %$arg1 x %$arg2\n
+dealAddZeny_player		%$arg0 added %$arg1 z to Deal\n
+dealAddItem			You added Item to Deal: %$arg0 x %$arg1\n
+dealAddZeny			You added %$arg0 z to Deal\n
+dealAddItem_error		Opposite party character Surpasses the maximum negative weight - Is unable to take takes\n
+dealFinalize_player		%$arg0 finalized the Deal\n
+dealFinalize			You finalized the Deal\n
+dealCancel			Transaction Cancellation\n
+dealComplete			Transaction Completes\n
+storageAdd			Storage Item Added: %$arg0{name} (%$arg1) x %$arg2\n
+storageAdd_color		storageAdd
+storageRemove		Storage Item Removed: %$arg0{name} (%$arg1) x %$arg2\n
+storageRemove_color		storageRemove
+storageClose			Storage closed\n
+partyCreate_error		Can't organize party - party name exists\n
+partyJoinReq_error_1		Join request failed: %$arg0 is already in a party\n
+partyJoinReq_error_2		Join request failed: %$arg0 denied request\n
+partyJoinReq			%$arg0 accepted your request\n
+partyRequest			Incoming Request to join %$arg1 party '%$arg0'\n
+partyShare_1			Party EXP set to Individual Take\n
+partyShare_2			Party EXP set to Even Share\n
+partyShare_error		Is unable to change Experience value pattern\n
+partyJoin			You already Joins Party '%$arg0'\n
+partyJoin_player		%$arg1 Already Joins Your Party '%$arg0'\n
+partyLeave			You left the party\n
+partyLeave_player		%$arg0 left the party\n
+
+mvpItem			You obtain MVP Items : %$arg0\n
+mvpItem_log			Chat.txt
+
+mvpExp			You obtain MVP!!! Obtain special experience value: %$arg0\n
+mvpExp_log			Chat.txt
+
+mvp				%$arg0 Obtains MVP!\n
+mvp_log			Chat.txt
+
+skillFail				你使用技能 %$arg0 失败! - %$arg1\n
+skillAttack			★%$arg0的 %$arg1%$arg2 对%$arg3 - 造成伤害: %$arg4\n
+skillAttack_color		skillsAttack
+skillonLocation			★%$arg0 使用技能 %$arg1 → %$arg2\n
+skillonLocation_color		skillsAttack
+skillRestore			★%$arg0 向%$arg1 使用技能 %$arg2%$arg3\n
+skillRestore_color		skillRestore
+skillArea			★%$arg0 向%$arg2 使用技能 %$arg1 - 距离: %$arg3\n
+skillCast			★%$arg0 向%$arg3 使用技能 %$arg1 %$arg2 - 耗时 %$arg4 秒.\n
+skillCast_color			casting
+skillUse			现在使用技能 %$arg0, 等级 %$arg1\n
+skillInterupt			%$arg0 使用技能失败\n
+memoSucc			Memo Succeeded\n
+memoFail			Memo Failed\n
+cartAdd			Cart Items Increase: %$arg0{name} (%$arg1) x %$arg2\n
+cartAdd_color			cartAdd
+cartRemove			Cart Items Remove: %$arg0{name} (%$arg1) x %$arg2\n
+cartRemove_color		cartRemove
+cartFail_1			Cart The Carrying capacity exceeded limit\n
+cartFail_2			Cart The Items Quantity Exceeded limit\n
+shopItemNumber		You can sell %$arg0 items!\n
+
+vender_head			---------- Open shop: %-36s ----------\n
+vender_head			Player : %-24s PlaceSign : (%3d,%3d)\n
+vender_head			#  Name                          Type       Amount     Price\n
+vender_head_arg		%$arg0
+vender_head_arg		%$arg1{name}
+vender_head_arg		%$arg1{pos_x}
+vender_head_arg		%$arg1{pos_y}
+vender				%2d %-29s %-10s %5s %10sz\n
+vender_arg			%$0
+vender_arg			%$fixItemName{%$1}
+vender_arg			%$itemTypes{%$1{type}}
+vender_arg			%$1{amount}
+vender_arg			%$formatNumber{%$1{price}}
+vender_end			--------------------------------------------------\n
+
+shopParam			[Open shop] %$0\n
+
+venderYou_head		------------------ My Shop : %$arg0 ------------------\n
+venderYou_head		#  Name                          Category    Quantity        Prices\n
+venderYou			%-2d %-29s %-10s %6s %15sz\n
+venderYou_arg		%$0
+venderYou_arg		%$fixItemName{%$1}
+venderYou_arg		%$itemTypes{%$1{type}}
+venderYou_arg		%$1{amount}
+venderYou_arg		%$formatNumber{%$1{price}}
+venderYou_end		--------------------------------------------------------\n
+
+shopSold			Sold: %$arg0{name} x %$arg1 - %$arg2 z\n
+shopSold_color		soldItem
+shopSold_log			Shop.txt
+shopSold_sound		sound/pick.wav
+
+shopSoldOut			Already sold all Items^^, Is In Closure Your Open shop\n
+emptyArrow			Please equip arrow first.\n
+equipArror			Arrow equipped: %$arg0{name} (%$arg1)\n
+resurrected			You have been resurrected\n
+guildJoinRequest		自动拒绝加入公会 '%$arg0' 的请求\n
+identifyItem			Item Identified: %$arg0\n
+slot_head			---------Card Merge Candidates--------\n
+slot_head			#	Item name\n
+slot				%-2d 	%-60s\n
+slot_arg			%$arg0
+slot_arg			%$arg1
+slot_end			-----------------------------------------------------\n
+equipRefine			Your Weapon changed to : +%$arg0\n
+equipRefineFail		Failed Refine!!\n
+makeSucc_1			You successfully refined a %$arg0\n
+makeSucc_2			Refine %$arg0 Defeat!\n
+makeFail_1			Configuration %$arg0 Succeeds!\n
+makeFail_2			Configuration %$arg0 Defeat!\n
+mode				[%$time{now}] You Enters %$arg0!\n
+mode_color			important
+rank_1				Your PvP rank is: %$arg0 / %$arg1\n
+rank_2				Now Field %$arg0 Victory, %$arg1 Defeat, PVPPoints are %$arg2\n
+lvup_1				%$arg0 升级了!\n
+lvup_2				%$arg0 职业等级提升了!\n
+lvup_3				%$arg0 failed to refine a weapon!\n
+lvup_4				%$arg0 successfully refined a weapon!\n
+lvup_5				%$arg0 The dispensing is successful!!\n
+lvup_6				%$arg0 Dispensing Defeat!!\n
+lvup_7				%$arg0 What happened %$arg1 !!\n
+petFeedFail			You can't give a food (%$arg0), auto return to egg\n
+petAutoReturn			Pet Kisses the density Higher than %$arg0 Automatic Pet Resume into eggs Condition\n
+petAutoProtect_1		PetKisses the density Is lower than 100 Automatic Pet Resume into eggs Condition\n
+petFeed			Automatic feeding Pet\n
+petAutoProtect_2		Pet Satisfies the feeling Is lower than10 Automatic Pet Resume into eggs Condition\n
+banMinute			%$arg0 is muted for %$arg1 Minutes!\n
+
+airTime_head			--------------- Account payment information ---------------\n
+airTime_head_color		group
+airTime			Pay per day  : %$arg0{d_day} day(s) %$arg0{d_hour} hour(s) and %$arg0{d_min} minute(s)\n
+airTime			Pay per hour : %$arg0{h_day} day(s) %$arg0{h_hour} hour(s) and %$arg0{h_min} minute(s)\n
+airTime_end			-----------------------------------------------------------\n
+airTime_end_color		group
+
+useItemFail			你无法使用物品: %$arg0{name} (%$arg1)\n
+useItemFail_color		chatroomUserOut
+useItemYou			你使用物品: %$arg0{name} (%$arg1) x %$arg2 - 剩余数量: %$arg3\n
+useItemYou_color		useItem
+useItem			%$arg0 Use %$arg1{name} - 剩余数量: %$arg3\n
+spirit				目前拥有 %$arg0 个气球\n
+friendJoinRequest		%$arg0 wants to be your friend\n
+dump				Message Dumped into DUMP.txt!\n
+emotionYou			[Emotion]You Has made Emotion : %$arg0\n
+emotionYou_color		emotion
+emotionPetYou		[Emotion] YourPet: %$arg0\n
+emotionPetYou_color		emotion
+emotion			[Emotion] %$arg1: %$arg0\n
+emotion_color			emotion
+
+message_chat			[Dis:%2d Lv:%2d %s] : %s\n
+message_chat_sound		sound/note.wav
+message_chat_arg		%$arg4
+message_chat_arg		%$arg3
+message_chat_arg		%$arg0
+message_chat_arg		%$arg1
+message_chat_color		chat
+message_chat_log		Chat.txt
+
+message_youChat		%$arg0\n
+message_youChat_color	chat
+message_youChat_log		Chat.txt
+
+message_pm			(From: %$arg0) : %$arg1\n
+message_pm_color		pm
+message_pm_log		PM.txt
+message_pm_sound		sound/note.wav
+message_youPm		(To: %$arg0) : %$arg1\n
+message_youPm_color	pm
+message_youPm_log		Chat.txt
+
+message_youPm_error_1	%$arg0 并不在线\n
+message_youPm_error_1_color	pm
+
+message_youPm_error_2	Player ignored your message\n
+message_youPm_error_2_color	pm
+
+message_youPm_error_3	Player doesn't want to receive messages\n
+message_youPm_error_3_color	pm
+
+message_gm			%$arg0\n
+message_gm_color		GMnotice
+message_gm_log		GMMessage.txt
+message_gm_sound		sound/shop.wav
+
+message_party		%$arg0 : %$arg1\n
+message_party_color		party
+message_party_log		Party Chat.txt
+message_party_sound		sound/chat.wav
+
+message_guild			%$arg0 : %$arg1\n
+message_guild_color		guild
+message_guild_log		Guild Chat.txt
+
+message_npc			[NPC] %$0\n
+message_npc_color		npc
+message_npc_log		Chat.txt
+message_npc_sound		sound/chat.wav
+
+#---------------------------------------------------------------------------
+# Plugins.pm
+#---------------------------------------------------------------------------
+plugins_loadall_error		无法读取plugins 从文件夹 %$arg1 (%$arg0)\n
+plugins_load			读取plugin %$arg0...\n
+plugins_load_error		无法读取plugin %$arg1: %$arg0\n
+
+#---------------------------------------------------------------------------
+# Plugins\autoDeal.pm
+#---------------------------------------------------------------------------
+venderLog_shop		Player:%-24s Map:%-11s (%3d,%3d) Shop:%s
+venderLog_shop_arg		%$arg1{name}
+venderLog_shop_arg		%$map{name}
+venderLog_shop_arg		%$arg1{pos_x}
+venderLog_shop_arg		%$arg1{pos_y}
+venderLog_shop_arg		%$arg0
+venderLog_item		%-35s %10sz %s\n
+venderLog_item_arg		%$arg0
+venderLog_item_arg		%$arg1
+venderLog_item_arg		%$arg2
+
+#---------------------------------------------------------------------------
+# Plugins\avoidGM.pm
+#---------------------------------------------------------------------------
+avoid_1			[Avoid] Teleport/Respawn Success, Temporarily Disconnect %$arg0 Second\n
+avoid_1_color			avoid
+avoid_1_log			Alert.txt
+
+avoid_2			[Act] Avoiding %$arg0{name} (%$arg0{nameID}) Distance: %$arg1 , use teleport lv %$arg2\n
+avoid_2_color			avoid
+avoid_2_log			Alert.txt
+
+avoid_3			[Act] Avoiding %$arg0{name} (%$arg0{nameID}) Distance: %$arg1 , Temporarily Disconnect %$arg2 Second\n
+avoid_3_color			avoid
+avoid_3_log			Alert.txt
+
+avoid_4			[Act] Avoiding %$arg0{name} (%$arg0{nameID}) Distance: %$arg1 , Stand Still ...\n
+avoid_4_color			avoid
+avoid_4_log			Alert.txt
+avoid_4_sound			sound/GM.wav
+
+avoid_5			[Act] Force Exclusive Avoid : %$arg0{name} (%$arg0{nameID}) [%$arg1]\n
+avoid_5_color			avoid
+avoid_5_log			Alert.txt
+
+avoid_pm			[Danger] Pm to detect a key channel [%$arg0]: [%$arg1], Temporarily Disconnect %$arg2 Second\n
+avoid_pm_color		avoid
+avoid_pm_log			Alert.txt
+
+avoid_pm_name		[Avoid] Avoiding pm message by: %$arg0, Temporarily Disconnect %$arg1 Second\n
+avoid_pm_name_color	avoid
+avoid_pm_name_log		Alert.txt
+avoid_pm_name_sound	sound/gm.wav
+
+avoid_chat			[Danger]Chats channels to detect a keyword[%$arg0]: [%$arg1], Temporarily Desconnect %$arg2 Second\n
+avoid_chat_color		avoid
+avoid_chat_log			Alert.txt
+
+avoid_sys			[Danger]Notice to detect a key channel[%$arg0]: [%$arg1], Temporarily Disconnect %$arg2 Second\n
+avoid_sys_color		avoid
+avoid_sys_log			Alert.txt
+
+avoid_ban			[Danger]Possibly encounters the evil intention Endures the word, Start dcOnSkillBan ?Immediately Published!\n
+avoid_ban_color		avoid
+avoid_ban_log			Alert.txt
+
+avoid_paranoia		DiscoveryGM: %$arg0 %$arg1, %$arg2\n
+avoid_paranoia_color		avoid
+avoid_paranoia_log		Alert.txt
+
+avoid_paranoia_chat		In Public frequency channel speech
+avoid_paranoia_party		InParty Frequency channel speech
+avoid_paranoia_guild		InGuild Frequency channel speech
+avoid_paranoia_near		Appeared in position %$arg0{x},%$arg0{y} (Dist: %$arg1)
+avoid_paranoia_near2		Appeared In Near
+avoid_paranoia_chatroom	In Near Opens Chatroom
+avoid_paranoia_tele		Instantaneous migration
+avoid_paranoia_respawn	Returns to the storage spot
+avoid_paranoia_reconn	TemporarilyOff-line %$arg0 Second
+avoid_paranoia_still		Holds Party
+avoid_setDirectory		Automatically again supposes Hypothesis With Table of contents\n
+
+#---------------------------------------------------------------------------
+# Plugins\cart.pm
+#---------------------------------------------------------------------------
+shopAutoClose			Fixed time Closure Time already, IsIn Closure Your Open shop\n
+shopSoldClose			Single item Has sold, IsIn Closure Your Open shop\n
+shopOpen			You Opens shop ( %$arg0 )\n
+shopOpen_error_1		Is unable Open shop - Does not have Open shop Skill Or Does not have Hypothesis Shop Name\n
+shopOpen_error_2		Is unable Open shop - You already quilt GM Endures the word %$arg0 Minute\n
+shopOpen_error_3		Is unable Open shop - Does not have May sell Items\n
+shopOpen_error_4		Is unable Open shop - ItemsQuantity Surpasses the upper limit\n
+input_cart_head		------------Cart------------\n
+input_cart_end		\nCapacity: %$arg0{items}/%$arg0{items_max}  Weight: %$arg0{weight}/%$arg0{weight_max}\n
+input_cart_end		-------------------------------\n
+input_cartDesc_error		发生错误 'cart desc' (Cart Item Description)\n
+input_cartDesc_error		Wants to inspect the goods %$arg0 Does not exist.\n
+input_cartDesc		================== Item description ==================\n
+input_cartDesc		Item name: %$arg0\n
+input_cartDesc		\n%$arg1
+input_cartDesc		==============================================\n
+input_cart_error_1		发生错误 'cart' (Cart Functions)\n
+input_cart_error_1		Does not have Cart Condition Next Is unable to useCart Related instruction.\n
+input_cart_error_2		发生错误 'cart' (Cart Functions)\n
+input_cart_error_2		In Opens shop ConditionIs unable From Cart Takes out Or Puts in Items.\n
+input_cartAdd_error		发生错误 'cart add' (Add Item to Cart)\n
+input_cartAdd_error		Inventory Item %$arg0 does not exist.\n
+input_cartAdd_error2		发生错误 'cart add' (Add Item to Cart)\n
+input_cartAdd_error2		Items %$0 Has equipped\n
+input_cartAdd_error3		发生错误 'cart add' (Add Item to Cart)\n
+input_cartAdd_error3		Items %$0 Hatched\n
+input_cartAdd_syntax		语法错误 'cart add' (Add Item to Cart)\n
+input_cartAdd_syntax		使用方法: cart add <item #>\n
+input_cartGet_error		发生错误 'cart get' (Get Item from Cart)\n
+input_cartGet_error		Cart Item %$arg0 does not exist.\n
+input_cartGet_syntax		语法错误 'cart get' (Get Item from Cart)\n
+input_cartGet_syntax		使用方法: cart get <cart item #>\n
+input_cart_syntax		语法错误 'cart' (Cart Functions)\n
+input_cart_syntax		使用方法: cart [<u | eq | nu | desc>] [<CartItem number>]\n
+input_shop_error_1		发生错误 'shop' (Show Shop Detail)\n
+input_shop_error_1		You Still Not Open shop\n
+input_shop_error_2		发生错误 'shop open' (Open Shop)\n
+input_shop_error_2		You Must Leaves Chatroom first\n
+input_shop_error_3		发生错误 'shop open' (Open Shop)\n
+input_shop_error_3		You already Open shop\n
+input_shop_error_4		发生错误 'shop' (Show Shop Detail)\n
+input_shop_error_4		YouStillNotOpensOpen shop\n
+input_shop_syntax		语法错误 'shop' (Show Shop Detail)\n
+input_shop_syntax		使用方法: shop [<open|close>]\n
+input_shopClose		IsInClosureYourShop\n
+input_shop_head		---------- %$arg0 -------------\n
+input_shop_head		#  Name                          Category         Quantity        Prices\n
+input_shop			%-2d %-29s %-10s %6s %10sz\n
+input_shop_arg		%$arg0
+input_shop_arg		%$arg1{name}
+input_shop_arg		%$arg2
+input_shop_arg		%$arg1{amount}
+input_shop_arg		%$arg3
+input_shop_end		-------------------------\n
+input_shop_end		Altogether gains to at present : %$arg1 z.\n
+input_shop_end		-------------------------\n
+
+#---------------------------------------------------------------------------
+# Plugins\chatAuto.pm
+#---------------------------------------------------------------------------
+attackStop			[Rep]Stop Attack : %$arg0{name} (%$arg0{binID})\n
+
+antiSkillonMonster		%$arg0 Displays %$arg2 Assaults You Is Attack The Monster\n
+antiSkillonMonster_color	danger
+antiSkillonMonster_log		Alert.txt
+
+pplControl_teleport		Avoiding %$arg0 (%$arg1), use teleport lv %$arg2 ...\n
+pplControl_teleport_color	danger
+pplControl_teleport_log	Alert.txt
+pplControl_teleport_sound	sound/gm.wav
+
+pplControl_reconnect		Avoiding %$arg0 (%$arg1), Disconnect...\n
+pplControl_reconnect_color	avoid
+pplControl_reconnect_log	Alert.txt
+pplControl_reconnect_sound	sound/gm.wav
+
+autoThanks			%$arg0 To Your display %$arg2\n
+autoThanks_log		Alert.txt
+autoThanks_sound		SystemDefault
+
+tryingtoWarpYou		%$arg0 Trying to Warp You\n
+tryingtoWarpYou_color	danger
+tryingtoWarpYou_log		Alert.txt
+tryingtoWarpYou_sound	SystemDefault
+
+tryingtoUseSafetyWall	%$arg0 Trying to use Safety Wall on Your Attack Monster\n
+tryingtoUseSafetyWall_color	avoid
+tryingtoUseSafetyWall_log	Alert.txt
+tryingtoUseSafetyWall_sound	SystemDefault
+
+#---------------------------------------------------------------------------
+# Plugins\mainAI.pm
+#---------------------------------------------------------------------------
+checkPortals			检查是否有新传送点信息... 
+checkPortals_found		找到新传送点信息!\n
+checkPortals_found		将在 %$arg0 秒后自动编译传送点信息...\n
+checkPortals_found		是否现在马上编译传送点路径信息? (y/n)\n
+checkPortals_none		无新传送点信息\n\n
+compilePortals			正在编译中, 请稍后!\n\n
+compilePortals_error		发现错误, 忽略编译!\n\n
+compilePortals_process	正在处理地图 %$arg0...\n
+compilePortals_path		计算传送点路径 %$arg0 -> %$arg1\n
+compilePortals_write		将传送点信息写入 '%$arg0'\n
+autoDrop			Auto-Drop Item : %$arg0{name} (%$arg1) x %$arg2\n
+autoDrop_color		inventory Remove
+
+sysLog_items			%$arg0{name} x %$arg2\n
+sysLog_items_log		items.txt
+sysLog_items_verbose	0
+
+importantItemsFound_1	发现重要物品: %$arg0{name} (%$arg0{binID}) - Dist: %$arg1\n
+importantItemsFound_1_color	important
+importantItemsFound_1_log	items.txt
+
+importantItemsFound_2	出现重要物品: %$arg0{name} (%$arg0{binID}) - Dist: %$arg1\n
+importantItemsFound_2_color	important
+importantItemsFound_2_log	items.txt
+
+importantItemsGet		获得重要物品: %$arg0{name} x %$arg1\n
+importantItemsGet_color	important
+importantItemsGet_log	items.txt
+
+importantItemsPlayer		重要物品 %$arg0{name} 被 %$arg1{name} 捡取了\n
+importantItemsPlayer_color	important
+importantItemsPlayer_log	items.txt
+
+autoTalk_broken		检测到物品栏装备损坏, 启动不给任务!\n
+autoTalk_broken_verbose	3
+
+autoTalk_error			[Warn] Automatic conversation warning: Finds Serial number %$arg0 TheNPC\n
+autoTalk_error			[Hint] Please first inspects npcs.txt In file it NPC Serial number\n
+
+autoTalk_route			The computation way goes to the auto-talk place: %$arg0{alias}(%$arg0{name}): %$arg1{x}, %$arg1{y}\n
+autoTalk_route_verbose	3
+
+autoStorage_error		[Warn] Automatic saves the StorageAuto warning: Finds Serial number %$arg0 The NPC\n
+autoStorage_error		[Hint] Please first inspects npcs.txt In file it NPC Serial number\n
+
+autoStorage_route		Calculating StorageAuto routes to %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
+autoStorage_route_color	route
+autoStorage_route_verbose	3
+
+autoStorage_max		[Warn] Storage is maximum size\n
+autoStorage_max_log		Alert.txt
+
+autoSell_error			[Warn] Automatically selling warning: Finds Serial number %$arg0 The NPC\n
+autoSell_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
+
+autoSell_route			Calculating SellAuto routes to %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
+autoSell_route_color		route
+autoSell_route_verbose	3
+
+autoBuy_route			Calculating BuyAuto routes to %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
+autoBuy_route_color		route
+autoBuy_route_verbose	3
+
+autoBuy_error			[Warn] Automatically buying warning: Finds Serial number %$arg0 The NPC\n
+autoBuy_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
+
+save_route			Calculating SaveAuto routes to %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
+save_route_color		route
+save_route_verbose		3
+
+save_error			[Warn] saveAuto warning: Can't find NPC\n
+save_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
+
+lockMap_switch_0		Switch lockmap to : %$arg0\n
+lockMap_switch_0_color	important
+
+saveMap_error			Invalid map specified for saveMap - map %$arg0 doesn't exist\n
+saveMap_error_verbose	3
+
+lockMap_error			Invalid map specified for lockMap - map %$arg0 doesn't exist\n
+lockMap_error_verbose	3
+
+lockMap_route_1		Calculating lockmap routes to %$arg0{alias} (%$arg0{name})\n
+lockMap_route_1_color	route
+lockMap_route_1_verbose	3
+
+lockMap_route_2		Calculating routes to lock locations %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
+lockMap_route_2_color	route
+lockMap_route_2_verbose	3
+
+randomWalk_route		计算路径前往随机路径 %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
+randomWalk_route_color	route
+randomWalk_route_verbose	3
+
+dcOnDeath			Disconnecting on death!\n
+dcOnDeath_verbose		3
+
+follow_noTarget		Not Hypothesis Follows Sign, Cancellation Follows the pattern\n
+
+follow_dead			Master died. I Will In Waiting Here.\n
+follow_dead_verbose		3
+
+follow_disconnect		I With has lose the master. Master Already Disconnect\n
+follow_disconnect_verbose	3
+
+follow_try			I With has lose the master. Try to find The Master\n
+follow_try_verbose		3
+
+follow_unknow			I With has lose the master, Don't know what happened to Master\n
+follow_unknow_verbose	3
+
+follow_route_1			Calculation follow trails: %$arg0{alias}(%$arg0{name})\n
+follow_route_1_verbose	3
+
+follow_route_2			Calculation follow trails: %$arg0{alias}(%$arg0{name}): %$arg1{x}, %$arg1{y}\n
+follow_route_2_verbose	3
+
+followLost_lost			Follows Sign Disappear\n
+followLost_lost_verbose	3
+
+followLost_disconnect	Follows Sign Disconnect\n
+followLost_disconnect_verbose 3
+
+followLost_found		Find Follows Sign!\n
+followLost_verbose		3
+
+attack_giveup		Giving up Attack Target Sign. Must spend the too long time to approach Target Sign\n
+attack_giveup_verbose	3
+
+attack_die			目标死亡: %$arg0{name} (%$arg0{binID}) - 合计伤害: %$formatNumber{%$arg1}/%$formatNumber{%$arg3} (%$arg2)\n
+attack_die_color		targetDie
+
+attack_lost			攻击目标消失\n
+attack_lost_verbose		3
+
+attack_clear			放弃攻击目标 - 已被抢先攻击\n
+attack_clear_verbose		3
+
+attack_stealsp			放弃攻击目标 - StealSP completed\n
+attack_stealsp_verbose	3
+
+attack_fail			放弃攻击目标 - 无法到达目标\n
+attack_fail_verbose		3
+
+attack_fail_1			放弃攻击目标 - 发现目标附近有传送点\n
+attack_fail_1_verbose		3
+
+teleRoute_0			▲路径瞬移 - 无法步行到传送点(%$arg2{x},%$arg2{y})\n
+teleRoute_1			▲路径瞬移 - 瞬移寻找传送点(%$arg2{x},%$arg2{y}) - 距离: %$arg0 (%$arg1)\n
+teleRoute_2			▲开始步行 - 离传送点(%$arg2{x},%$arg2{y}) - 距离: %$arg0\n
+teleRoute_3			▲路径瞬移 - 不在(%$arg0{x},%$arg0{y}) - (%$arg1{x},%$arg1{y})的区域内, 距离传送点 %$arg2 格\n
+teleRoute_4			▲开始步行 - 已在(%$arg0{x},%$arg0{y}) - (%$arg1{x},%$arg1{y})的区域内, 距离传送点 %$arg2 格\n
+route_error			[Warn] 路径移动: 找不到编号为 %$arg0 的NPC\n
+route_error			[Hint] 请检查 npcs.txt 文档内NPC编号\n
+
+take_giveup			捡取物品失败 %$arg0{name} (%$arg0{binID})\n
+take_giveup_verbose		3
+
+take_fail			捡取物品失败 %$arg0{name} (%$arg0{binID}) - 需花费太长时间移动\n
+take_fail_verbose		3
+
+itemGather_timeout		捡取无主之物失败 %$arg0{name} (%$arg0{binID}) : 超时\n
+itemGather_timeout_verbose	3
+
+itemGather_noLoot		捡取无主之物失败 %$arg0{name} (%$arg0{binID}) : No looting!\n
+itemGather_noLoot_verbose	3
+
+itemGather_fail		捡取无主之物失败 %$arg0{name} (%$arg0{binID}) - 需花费太长时间移动\n
+itemGather_fail_verbose	3
+
+unstuck_1			Cannot find destination, trying to unstuck ...\n
+unstuck_2			Invalid original position, trying to unstuck ...\n
+unstuck_3			Keep trying to move to same spot, teleporting to unstuck ...\n
+unstuck_4			Keep trying to move from same spot, teleport to unstuck ...\n
+unstuck_5			Route failed, trying to unstuck ...\n
+clearRouteAI_1		Keep trying to move to same spot, clearing route AI to unstuck ...\n
+clearRouteAI_2		Keep trying to move from same spot, clearing route AI to unstuck ...\n
+clearRouteAI_3		Route failed, clearing route AI to unstuck ...\n
+
+respawnUnstuck		Is unable Arrives locking PlaceSign. Returns to the storage spot ...\n
+respawnUnstuck_log		Alert.txt
+
+attackStop_1			☉停止攻击目标: %$arg0{name} (%$arg0{binID})\n
+attackPickupMonster		※主动攻击捡宝怪物 %$arg0{name} (%$arg0{binID})\n
+
+#---------------------------------------------------------------------------
+# Plugins\misc.pm
+#---------------------------------------------------------------------------
+portalTrace			Write portal %$arg1{map} (%$arg1{pos_x},%$arg1{pos_y}) -> %$arg2{map} (%$arg2{pos_x},%$arg2{pos_y}) into '%$arg0'.\n
+preferRoute_error		Map %$arg0 Does not haveFind. Please confirm the MapNameOrMap files.\n
+calculatePreferRoute		Computation by chance way: %$arg0{alias} (%$arg0{name})\n
+waypoint			move to (%$arg0{x},%$arg0{y})\n
+waypoint_error			\n!!Is unableReads takesTransmission spotInformation - Please check Transmission spot Material files Or Map files!!\n\n
+autoAddStatus		Automatic Increase Stats Point : %$arg0\n
+autoAddSkill			Automatic Increase Skill Point : %$arg0\n
+petPlay				Automatic Pet Performance\n
+makeArrowAuto		Automatic Manufactures the arrow\n
+autoSkillCancel_1		[AssignsAttack] Monster Casting skill on you- Attack : %$arg1{name} (%$arg1{binID})\n
+autoSkillCancel_2		[Act] Avoid casting Skill - switch position to : %$arg0{x},%$arg0{y}\n
+input_automake		AutomaticForging/Drugs manufacture - %$arg0\n
+input_automake_off		ClosureAutomaticForging/Drugs manufacture\n
+input_automake_on	?	AutomaticForging/Drugs manufacture\n
+input_automake_error_1	AutomaticForging/Drugs manufactureDefeat - Or is blacksmiths became division vocational No.\n
+input_automake_error_2	AutomaticForging/Drugs manufactureDefeat - Consumes the material ItemsNo foot\n
+input_automake_error_3	MakeAuto Failed!! - Not Receives the manufacture detailed list Or detailed list blank\n
+input_automake_error_4	AutomaticForging/Drugs manufactureDefeat - Detailed list Does not have Assigns Manufacture The Items\n
+input_automake_error_5	AutomaticForging/Drugs manufactureDefeat ?NotAssigns Consumes the material Items\n
+input_automake_error_6	AutomaticForging/Drugs manufactureDefeat ?Not Assigns Manufacture Items\n
+input_warp			Opens warp on Location (%$arg0{x},%$arg0{y})\n
+input_warp_error		Does not have Skill, Is unable to use\n
+input_warp_open_error	发生错误 'warp' (Respond to warp)\n
+input_warp_open_error	Does not have Hypothesis Item Sign MapName\n
+input_warp_to_error		发生错误 'warp' (Respond to warp)\n
+input_warp_to_error		Does not haveHypothesisItem Sign MapName\n
+input_warp_error_2		发生错误 'warp' (Respond to warp)\n
+input_warp_error_2		YouDoes not have Blue Gamstone.\n
+input_warp_error_3		发生错误 'warp' (Respond to warp)\n
+input_warp_error_3		Place Serial number Wrong. No In Transmission Tabulate\n
+input_warp_error_4		发生错误 'warp' (Respond to warp)\n
+input_warp_error_4		This is Instantaneous migrationTabulates. Is unable to use\n
+input_warp_syntax		语法错误 'warp' (Respond to warp)\n
+input_warp_syntax		使用方法: warp <warp # | to | open | cancel> <MapName>\n
+input_warp_cancel		Cancellation Use Warp Portal\n
+warp_error			Does not have Warp Portals Skill. Is unable to use\n
+warp_useSkill			Is In Warp Portals: %$arg1{alias}(%$arg1{name})\n
+warp_move			Move to Warp spot (%$arg0{x}, %$arg0{y})\n
+warp_error_2			Place No In Warp Portals List\n
+warp_error_3			Cannot find warp position!!\n
+settingLimit			%$arg0 '%$arg1' Is lower thanLimit. Again supposes Becomes %$arg2\n
+settingLimit_color		setting
+
+#---------------------------------------------------------------------------
+# Plugins\record.pm
+#---------------------------------------------------------------------------
+updateNPC_1			◆重要信息: 改变被覆盖\该NPC编号 %$arg0 -> %$arg1\n
+updateNPC_1_color		setting
+updateNPC_1_log		Alert.txt
+
+updateNPC_2			◆重要信息: 自动更新NPC编号 %$arg0 -> %$arg1\n
+updateNPC_2_color		setting
+updateNPC_2_log		Alert.txt
+
+input_exp_syntax		发生错误 'exp' (Exp Report)\n
+input_exp_syntax		使用方法: exp [reset]\n
+getExp				[获得经验] Exp: %$arg0 %$arg1 | JobExp: %$arg2 %$arg3\n
+getExp_color			exp
+expReport_head		-------------经验值效率------------\n
+expReport			已开始游戏: %$arg0{hour} hour %$arg0{min} min %$arg0{sec} sec.\n
+expReport			获得基本经验值: %$arg1{base}\n
+expReport			获得职业经验值: %$arg1{job}\n
+expReport			每小时获得基本经验值: %$arg2{base}\n
+expReport			每小时获得职业经验值: %$arg2{job}\n
+expReport_3 			到下一级需要: %$arg0 天 %$arg1 小时 %$arg2 分钟 %$arg3 秒\n
+expReport_1_head		---------------------- 杀怪清单 ----------------------\n
+expReport_1			%-23s x %-3d\n
+expReport_1_arg		%$arg0
+expReport_1_arg		%$arg1
+expReport_2_head		------------------------ 获得物品清单 -----------------------\n
+expReport_2			%-23s x %-3d\n
+expReport_2_arg		%$arg0
+expReport_2_arg		%$arg1
+expReport_end		--------------------------------------------------------------\n
+expLog_head			[时间: %$time{start} -> %$time{now}]\n
+expLog_head			[服务器: %$server{name} - 人物名称: %$char{name}]\n
+storageLog_head		----------仓库 [%$time{now}] -----------\n
+storageLog_end		\n物品数量: %$arg0{items}/%$arg0{items_max}\n
+storageLog_end		--------------------------------------------------------\n
+
+#---------------------------------------------------------------------------
+# Plugins\teleport.pm
+#---------------------------------------------------------------------------
+connectRestart		\nHeavy immediately. Auto Restart!!\n\n
+restart_setDirectory		Automatically again supposesHypothesisWithTable of contents\n
+
+connectWaitingTime		\nWaitingTime : %$arg0 to %$arg1\n\n
+connectWaitingTime_log	Alert.txt
+
+setRestartTime		Hypothesis Automatic Restart %$arg0 Second\n
+
+allowMap			You already Out of Assigns Map. At present is located : %$arg0{alias} (%$arg0{name})\n
+allowMap_log			Alert.txt
+
+allowMap_respawn		Respawn to Save point\n
+allowMap_respawn_log	Alert.txt
+
+allowMap_disconnect		Disconnected\n
+allowMap_disconnect_log	Alert.txt
+
+teleport_monster_1		[Act] Teleport avoids monster: %$arg0{name}\n
+teleport_monster_2		[Act] Teleport due to monster %$arg0{name} attack\n
+teleport_monster_3		[Act] Teleport avoids monster: %$arg0{name}\n
+teleport_monster_4		[Act] Teleport avoids monster %$arg0{name} in distance: %$arg1\n
+teleport_monster_5_1		[Act] Teleport avoids monster %$arg0{name} agressive in more than: %$arg1\n
+teleport_monster_5_2		[Act] Teleport avoids monster %$arg0{name} Total agressive is more than: %$arg1\n
+teleport_hp			[Act] Auto Teleport ?HP Is lower than %$arg0% (%$arg1)\n
+teleport_sp			[Act] Auto Teleport ?SP Is lower than %$arg0% (%$arg1)\n
+teleport_minAggress		[Act] Auto Teleport - Agressive in more than %$arg1 (%$arg0)\n
+
+teleport_atkMiss		You attack miss %$arg0 times or more, then teleport..\n
+teleport_atkMiss_log		Alert.txt
+
+dcOnAtkMiss			You attack miss %$arg0 times or more, then disconnect...\n
+dcOnAtkMiss_log		Alert.txt
+
+dcOnZeny			You Zeny below than %$arg0 z (%$arg1 z) - Disconnected...\n
+dcOnZeny_log			Alert.txt
+
+teleport_skill_0			[Act] AvoidSkill: %$arg0 use %$arg2 to %$arg1 - Switch position to: (%$arg3,%$arg4)\n
+teleport_skill_1			[Act] AvoidSkill: %$arg0 use %$arg2 to %$arg1 - Teleport...\n
+teleport_skill_2			[Act] AvoidSkill: %$arg0 use %$arg1 to %$arg2 - Use %$arg3 to couter attack\n
+teleport_spell_0		[Act] Avoid Area effect: %$arg0 use %$arg1 distance %$arg2 - Switch position to: (%$arg3{x},%$arg3{y})\n
+teleport_spell_1		[Act] Avoid Area effect: %$arg0 use %$arg1 distance %$arg2 - Teleport...\n
+
+teleport_auto			[Act] Teleport due to %$arg0{name} (%$arg0{binID}) attack\n
+teleport_deadly		[Act] Next %$arg0 dmg could kill you. Teleporting...\n
+teleport_maxDmg		[Act] %$arg0{name} (%$arg0{binID}) attack you more than %$arg1 dmg. Teleporting...\n
+teleport_maxDmginlock	[Act] %$arg0{name} hit you for more than %$arg1 dmg in lockMap. Teleporting...\n
+teleport_totalDmg		[Act] %$arg0{name} (%$arg0{binID}) attack you total %$arg1 dmg. Teleporting...\n
+teleport_totalDmgInLock	[Act] %$arg0{name} hit you for total %$arg1 dmg in lockMap. Teleporting...\n
+teleport_search		Auto Teleport - Search Monster (%$0 Second)\n
+teleport_idle			Auto Teleport - Is in a daze surpasses the time (%$arg0 Second)\n
+
+#---------------------------------------------------------------------------
+# die
+#---------------------------------------------------------------------------
+die_findFile			Could not locate %$arg1
+die_callFunc			发生错误, Finds Letter type %$arg1
+die_writeFile			Could not write file: %$arg1\n
+die_loadFile			Is unableWrites down %$arg1
+die_createInjectSocket	Error creating local inject server: %$arg0
+die_injectDLL			Could not inject DLL
+die_injectLocalhost		Inject Socket must be connected from localhost
+die_initConsole		Could not init Console Attribute
+die_createInputSocket	Error creating local input server: %$arg0
+die_connectInputSocket	Error creating connection to local server: %$arg0
+die_inputLocalhost		Input Socket must be connected from localhost
+die_forkInputProcess		Unable to fork input server process
+die_invalidSign			Invalid digital signature\n
+die_invalidBootupkey		And the key TheStart \n
+die_invalidRule			Invalid redistribution rule\n
+die_invalidFile			Invalid File\n
+
+#---------------------------------------------------------------------------
+# Creation
+#---------------------------------------------------------------------------
+
+input_automake_retry		MakeAuto Failed - Not Receives Manufacture Detailed list. AgainUseSkillOrItems\n
+
+passwordStatus_0		请输入一个新的仓库密码:\n
+passwordStatus_1		请输入你的仓库密码:\n
+passwordStatus_other		密码未知状态 %$0\n
+
+passwordResult_4		仓库密码变更成功.\n
+passwordResult_5		Error: Incorrect storage password.\n
+passwordResult_6		Successfully entered storage password.\n
+passwordResult_7		Password Wrong\n
+passwordResult_8		Password Continuously 3Input Wrong\n
+passwordResult_other		Password Not Knows the result %$0 %$1\n
+
+xmode_storagePassword	StoragePassword - %$0\n
+useArrowAuto			Automatic Use Jianshi cylinders\n
+
+#---------------------------------------------------------------------------
+# Add on
+#---------------------------------------------------------------------------
+#mainAI
+dcOnCheckStorage		Item %$arg0 In storage has below than %$arg1 - Quit...\n
+dcOnCheckStorage_log	Alert.txt
+
+dcOnCheckItems		Item %$arg0 In inventory has below than %$arg1 - Exiting...\n
+dcOnCheckItems_log		Alert.txt
+
+dunTele_fail_1			Dungeon teleport failed!! - Map %$arg0 do not exist\n
+
+#packetParser
+YourHomunAttackMonster	[%3d|%3d] HomunAttack %s (%s) - Damage: %s\n
+YourHomunAttackMonster_arg	%$arg2
+YourHomunAttackMonster_arg	%$arg3
+YourHomunAttackMonster_arg	%$arg0{name}
+YourHomunAttackMonster_arg	%$arg0{binID}
+YourHomunAttackMonster_arg	%$formatNumber{%$arg1}
+YourHomunAttackMonster_color	storageAdd
+YourHomunAttackMonster_verbose	3
+
+YourHomunAttackMonMiss		[%3d|%3d] HomunAttack: %s (%s) - Damage: %s\n
+YourHomunAttackMonMiss_arg	%$arg2
+YourHomunAttackMonMiss_arg	%$arg3
+YourHomunAttackMonMiss_arg	%$arg0{name}
+YourHomunAttackMonMiss_arg	%$arg0{binID}
+YourHomunAttackMonMiss_arg	%$arg1
+YourHomunAttackMonMiss_color	attackedMiss
+
+monsterAttackYourHomun		[%3d|%3d] Monster %s (%s) attack homun - Damage: %s\n
+monsterAttackYourHomun_arg	%$arg2
+monsterAttackYourHomun_arg	%$arg3
+monsterAttackYourHomun_arg	%$arg0{name}
+monsterAttackYourHomun_arg	%$arg0{binID}
+monsterAttackYourHomun_arg	%$formatNumber{%$arg1}
+monsterAttackYourHomun_color	attacking
+
+monAttackYourHomunMiss		[%3d|%3d] Monster attacks homun : %s (%s) - Damage: %s\n
+monAttackYourHomunMiss_arg	%$arg2
+monAttackYourHomunMiss_arg	%$arg3
+monAttackYourHomunMiss_arg	%$arg0{name}
+monAttackYourHomunMiss_arg	%$arg0{binID}
+monAttackYourHomunMiss_arg	%$arg1
+monAttackYourHomunMiss_color	attackingMiss
+
+HomunAttackMonster			Homun %$arg0{name} Attack %$arg1{name} (%$arg1{binID}) - Dmg: %$formatNumber{%$arg2}\n
+
+creatParty				Automatical creat party: %$arg0\n
+RetryCreatParty			Retry to creat party: %$arg0\n
+stopCreatParty			Config variable %$arg0 do not exist. - Stop creat party\nConfig variable partyAuto_organize change to 0
+
+homunFeedFail			You can't give a food (%$arg0)\n
+
+cash_dealer_group			--------------- Cash Dealer (Point : %-6d) ---------------\n
+cash_dealer_group_arg		%$arg0
+cash_dealer_group_color		group
+cash_dealer_head			#  Name                       Type              Price\n
+cash_dealer_head_color		head
+cash_dealer				%-2d %-26s %-14s %8spts\n
+cash_dealer_arg			%$arg0
+cash_dealer_arg			%$arg1{name}
+cash_dealer_arg			%$itemTypes{%$arg1{type}}
+cash_dealer_arg			%$formatNumber{%$arg1{DCprice}}
+cash_dealer_end			------------------------------------------------------------\n
+cash_dealer_end_color		group
+cash_dealer_error_0			Insufficient kafrashop's point to buy this item\n
+
+message_megaphone			%$arg0\n
+message_megaphone_log		Megaphone.txt
+
+repair_group				------------- Repair List -------------\n
+repair_group_color			group
+repair_item				%$arg0{name}\n
+repair_end				---------------------------------------\n
+repair_end_color			group
+
+proxy_http_error			HTTP Proxy connection error : %$arg0\n
+
+list_dteleResp_head			----------Responses-----------\n
+list_dteleResp_head			# Option\n
+list_dteleResp				%-2d %s\n
+list_dteleResp_arg			%$arg0
+list_dteleResp_arg			%$arg1
+list_dteleResp_end			------------------------------\n
+
+homunFeed				Feeding Homun: %$arg0\n
+
+#TRO - Satan Morocc
+allow_party_invite_yes			允许其他玩家的组队邀请.\n
+allow_party_invite_no			不允许其他玩家的组队邀请.\n
+allow_view_equip_yes			允许其他玩家查看装备.\n
+allow_view_equip_no			不允许其他玩家查看装备.\n
+
+# teleport
+teleport_autoDamage			[Act] Monster %$arg0{name} (%$arg0{binID}) attack you more than 0 (%$arg1) - Teleporting...\n
+teleportAuto_AtkCount		[Act] Teleporting after attacking a monster %$arg0 times\n
+teleport_minAggressInlock		[Act] Agressive in more than %$arg1 (%$arg0) In lockmap - Teleporting...\n
+teleport_moninsighn			[Act] Auto Teleport - Danger Pos There Have Many Monster (%$arg0)\n
+teleport_follow				[Act] Auto Teleport search master - Dist: %$arg1\n
+teleportAuto_attackedWhenSitting	%$arg0{name} attacks you while you are sitting. Teleporting...\n
+
+#autodeal
+tradeautostart				Begin Trade Auto\n
+tradeautostart_color			important
+acceptrade				Sent deal accept, begin trading\n
+canceldeal				Other person didn't add any items, cancelling...\n
+otheradd				Add %$arg0 z x %$arg1 to deal\n
+cancel2				Other person added item which is not in buy list, cancelling...\n
+addzany				Trading %$arg0 zeny and confirming\n
+canceldeal3				Other person didn't accept the final trade, cancelling...\n
+tradecomplete				Accepting final trade\n
+trade_zany_Insufficient		Your zeny Insufficient to buy this item (Current: %$arg0 z, Need: %$arg1) - cancelling...\n
+tradeauto_complete			Trade Auto completed. Exiting...\n
+tradeauto_complete_log		Alert.txt
+
+input_tradeAuto_head			------------- Trade Auto Info -------------\n
+input_tradeAuto_head			#  Name                     Price     Total\n
+input_tradeAuto			%-2d %-24s %-9d %-d/%-d\n
+input_tradeAuto_arg			%$arg0
+input_tradeAuto_arg			%$arg1
+input_tradeAuto_arg			%$arg2{price}
+input_tradeAuto_arg			%$arg2{total}
+input_tradeAuto_arg			%$arg2{limit}
+input_tradeAuto_end			-------------------------------------------\n
+
+#miscFunctions
+input_homun_error00			Input Error: You don't hanve Homun or Homunculus is in Vaporize state\n
+input_homun_info_head		----------- Homunculus (Coordinate: %$arg0{x},%$arg0{y}) -----------\n
+input_homun_info			Name    : %$arg0{name} (%$arg0{nameID})\n
+input_homun_info			Level   : %$arg0{lvl}\n
+input_homun_info			Hunger  : %$arg0{hungry} / 100\n
+input_homun_info			Intimacy: %$formatNumber{%$arg0{intimate}} / 1,000\n
+input_homun_info			Exp     : %$formatNumber{%$arg0{exp}} / %$formatNumber{%$arg0{exp_max}}\n
+input_homun_info_end		-------------------------------------------------------\n
+input_homun_status_head		----------------- Homunculus Status -----------------\n
+input_homun_status			HP      : %$formatNumber{%$arg0{hp}} / %$formatNumber{%$arg0{hp_max}} (%$arg0{percent_hp}%)\n
+input_homun_status			SP      : %$formatNumber{%$arg0{sp}} / %$formatNumber{%$arg0{sp_max}} (%$arg0{percent_sp}%)\n
+input_homun_status			Atk     : %$arg0{atk}\n
+input_homun_status			Matk    : %$arg0{matk}\n
+input_homun_status			Hit     : %$arg0{hit}\n
+input_homun_status			Critical: %$arg0{critical}\n
+input_homun_status			Def     : %$arg0{def}\n
+input_homun_status			Mdef    : %$arg0{mdef}\n
+input_homun_status			Flee    : %$arg0{flee}\n
+input_homun_status			Apsd    : %$arg0{aspd}\n
+input_homun_status_end		-----------------------------------------------------\n
+input_homun_syntag			Format: homun <i | st | feed>
+input_hl_head				------------- Homunculus List (Coordinate: %$char{pos_x}, %$char{pos_y}) -------------\n
+input_hl_head				#    Name                     Type      (x, y)\n
+input_hl				%-4d %-24s %-9s %s\n
+input_hl_arg				%$arg0
+input_hl_arg				%$arg1{name}
+input_hl_arg				%$arg2
+input_hl_arg				(%$arg1{pos_x}, %$arg1{pos_y})
+input_hl_end				-----------------------------------------------------------------\n
+input_homun_skills_head		------------- Homunculus Skill -------------\n
+input_homun_skills_head		#    Name                     Level  SP\n
+input_homun_skill			%-4d %-26s %-4d %-4d\n
+input_homun_skill_arg			%$arg0
+input_homun_skill_arg			%$arg1
+input_homun_skill_arg			%$arg2
+input_homun_skill_arg			%$arg3
+input_homun_skills_end		Skill point: %$arg0\n
+input_homun_skills_end		--------------------------------------------\n
+
+input_buycash_error_0		Input buycash error. You must enter item's index\n
+input_buycash_error_1		Input buycash error. You must enter amount of item to buy\n
+input_buycash_error_2		Input buycash error. Item index %$arg0 do not exist\n
+
+deadLog_head				--------------------------------- [%$time{now}] ---------------------------------\n
+deadLog_head				--------------------------- [General] --------------------------\n
+deadLog				Map : %$map{name} - %$char{pos_x},%$char{pos_y} (%$map{alias})\n
+deadLog				AI : %$arg1\n
+deadLog				Last Damage : %$formatNumber{%$arg0{dmg}} by %$arg2\n
+deadLog				--------------------------------------------------------------------\n
+deadLog				-------------------------- [Char Info] --------------------------\n
+deadLog				Name : %$char{name} (%$char{job})\n
+deadLog				Level : %$char{lv} (%$char{lv_job})\n
+deadLog				Weight : %$formatNumber{%$char{weight}}/%$formatNumber{%$char{weight_max}} (%$char{percent_weight}%)\n
+deadLog				HP Before dead : %$formatNumber{%$arg0{hp}}/%$formatNumber{%$arg0{hp_max}} (%$arg0{percent_hp}%)\n
+deadLog				SP Before dead : %$formatNumber{%$arg0{sp}}/%$formatNumber{%$arg0{sp_max}} (%$arg0{percent_sp}%)\n
+deadLog				--------------------------------------------------------------------\n
+deadLog				--------------------- [Char Conditions] --------------------\n
+deadLog				Status : %$arg4\n
+deadLog				Param1 : %$arg5\n
+deadLog				Param2 : %$arg6\n
+deadLog				Param3 : %$arg7\n
+deadLog				--------------------------------------------------------------------\n
+deadLog				------------------------ [Exp Report] ------------------------\n
+deadLog				Base before dead : %$formatNumber{%$arg0{exp}}/%$formatNumber{%$arg0{exp_max}} (%$arg0{percent_exp}%)\n
+deadLog				Job before dead : %$formatNumber{%$arg0{exp_job}}/%$formatNumber{%$arg0{exp_job_max}} (%$arg0{percent_exp_job}%)\n
+deadLog				Base after dead : %$formatNumber{%$char{exp}}/%$formatNumber{%$char{exp_max}} (%$char{percent_exp}%)\n
+deadLog				Job after dead : %$formatNumber{%$char{exp_job}}/%$formatNumber{%$char{exp_job_max}} (%$char{percent_exp_job}%)\n
+deadLog				Lost (Base/Job) : %$formatNumber{%$arg8}/%$formatNumber{%$arg9}\n
+deadLog				--------------------------------------------------------------------\n
+deadLog				------------------ [Monsters in screen] ------------------\n
+deadLog				%$arg3\n
+deadLog				--------------------------------------------------------------------\n
+deadLog_end				--------------------------------------------------------------------------------------------------\n
+deadLog_monsList			%$arg0{name} (%$arg0{typeID}) - DmgToYou : %$arg1
+
+wait_dc_count				Disconnected from server over %$arg0 time(s) - Wait %$arg1 second(s) to reconnect\n
+dori_dori				Dori-Dori \n
+
+#Homun/mainAI
+homun_attack				Homun Attacking: %$arg0{name} (%$arg0{binID}) -  Distance: %$arg1\n
+homun_attack_color			attackmons
+homun_attack_verbose		3
+
+#---------------------------------------------------------------------------
+# DEBUG
+#---------------------------------------------------------------------------
+debugRecv				Recieve %$arg0 - Size: %$arg1\n
+debugSend				Packet SENT_BY_CLIENT: %$arg0\n
+rsk 1234567890 %$arg0\n

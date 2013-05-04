@@ -1,0 +1,261 @@
+#######################################
+# ThaiKoreEx GUI English language pack.
+# Version 1.7 for ThaiKoreEx 2.5
+# Writen by Valkyrie
+#######################################
+#--------------------------------------------------------------------------------------------
+# TITLE
+#--------------------------------------------------------------------------------------------
+title_0		未连接
+title_1		连接中...
+title_2		读取文件...
+title_3		正在初始化...
+
+#--------------------------------------------------------------------------------------------
+# MENU
+#--------------------------------------------------------------------------------------------
+menu_0		&主菜单
+menu_0_0		Minisize to &Tray
+menu_0_1		Save &ConsoleLog
+menu_0_2		Save &P聊天记录
+menu_0_5		Save G&M Notice
+menu_0_8		Save &EtcLog
+menu_0_9		&Free Memory
+menu_0_10	Re&log
+menu_0_11	&E退出
+
+menu_1		&显示
+menu_1_0		&Map
+menu_1_1		&Status
+menu_1_2		S&tat
+menu_1_3		&Monster List
+menu_1_4		&Player List
+menu_1_5		&NPC List
+menu_1_6		P&ortal List
+menu_1_7		P&et List
+menu_1_8		&Airtime Remain
+menu_1_9		&Vender List
+menu_1_10	&Cart
+menu_1_11	S&hop
+menu_1_12	Pa&rty
+menu_1_13	&Member List
+menu_1_14	&Set ShareExp
+menu_1_15	&Unset ShareExp
+menu_1_16	&LeaveParty
+menu_1_17	&Guild
+menu_1_18	&Info
+menu_1_19	&Member
+menu_1_20	&Position
+menu_1_21	Pet
+menu_1_22	&Info
+menu_1_23	&Feed
+menu_1_24	&Play
+menu_1_25	&BackToEgg
+
+menu_2		&重新读取
+menu_2_0		&autotrade
+menu_2_1		&cart_control
+menu_2_2		c&hatAuto
+menu_2_3		c&onfig
+menu_2_4		&equip_control
+menu_2_5		&intown_control
+menu_2_6		i&tem_control
+menu_2_7		&mon_control
+menu_2_8		&pfroute
+menu_2_9		pic&kupitems
+menu_2_10	p&lus_control
+menu_2_11	sh&op
+menu_2_12	skill&_control
+menu_2_13	tele&Route_control
+menu_2_14	ti&meouts
+menu_2_15	All
+
+menu_3		&命令
+menu_3_0		&RandomTeleport
+menu_3_1		&Sit
+menu_3_2		S&tand
+menu_3_3		&Where
+menu_3_4		&IgnoreAll
+menu_3_5		&UnIgnoreAll
+menu_3_6		W&arpToSavePoint
+menu_3_7		AI &Command
+menu_3_8		&AI On / Off
+menu_3_9		Go&Buy
+menu_3_10	Go&Sell
+menu_3_11	GoS&torage
+menu_3_12	S&hop
+menu_3_13	&OpenShop
+menu_3_14	&CloseShop
+
+menu_4		&S设置
+menu_4_0		&Auto Scroll
+
+menu_5		&H帮助
+menu_5_0		Online Ma&nual for SirensLove
+menu_5_1		Online Ma&nual for Thaikore
+menu_5_2		&SirensLove Official Site
+menu_5_3		&ThaiKore Official Site
+menu_5_4		&KoreExII Official Site
+menu_5_5		&OpenKore Official Site
+
+
+menu_6		Popup菜单
+menu_6_0		使用
+menu_6_1		丢弃 1个
+menu_6_2		丢弃 5个
+menu_6_3		丢弃 10个
+menu_6_4		丢弃 50个
+menu_6_5		丢弃所有
+
+#--------------------------------------------------------------------------------------------
+# WINDOW
+#--------------------------------------------------------------------------------------------
+charname		角色名称
+job		职业
+sex		性别
+
+base_level	基本Lv.
+job_level	职业Lv.
+
+ignore_all		Ignore
+share_exp		Share
+map_btn		&Map &View
+
+#--------------------------------------------------------------------------------------------
+# TABSTRIP
+#--------------------------------------------------------------------------------------------
+tab_0		控制台
+
+tab_1		角色Log
+
+tab_2		重要Log
+
+tab_3		角色
+tab_3_0		技能 + 物品栏
+tab_3_0_0		可使用
+tab_3_0_1		无法使用
+tab_3_0_2		装备
+tab_3_0_3		技能
+tab_3_1		状态 + 经验
+tab_3_1_0		经验报告
+tab_3_1_1		MonsterDefeated
+tab_3_1_2		稀有物品
+tab_3_1_3		状态
+
+#--------------------------------------------------------------------------------------------
+# LISTVIEW
+#--------------------------------------------------------------------------------------------
+listview_0_0	名称
+listview_0_1	数量
+
+listview_1_0	名称
+listview_1_1	数量
+
+listview_2_0	名称
+listview_2_1	已装备
+
+listview_3_0	名称
+listview_3_1	Lv
+listview_3_2	SP
+
+listview_4_0	名称
+listview_4_1	数量
+
+listview_5_0	名称
+listview_5_1	数量
+
+listview_6_0	#
+listview_6_1	名称
+
+#--------------------------------------------------------------------------------------------
+# GROUPBOX
+#--------------------------------------------------------------------------------------------
+exp_group	经验
+desc_group	描述
+
+#--------------------------------------------------------------------------------------------
+# COMBOBOX
+#--------------------------------------------------------------------------------------------
+combo_0_0	控制台
+combo_0_1	聊天栏
+combo_0_2	组队聊天
+combo_0_3	公会聊天
+
+#--------------------------------------------------------------------------------------------
+# STATUSBAR
+#--------------------------------------------------------------------------------------------
+statusbar_0	AI 状态
+statusbar_1	未连接
+statusbar_2	On Map :
+statusbar_3	LockMap :
+statusbar_4	连接中...
+statusbar_5	读取文件...
+statusbar_6	正在初始化...
+
+#--------------------------------------------------------------------------------------------
+# MESSAGEBOX
+#--------------------------------------------------------------------------------------------
+msgbox_0		您是否要退出?
+
+#--------------------------------------------------------------------------------------------
+# SYSTEM TRAY
+#--------------------------------------------------------------------------------------------
+systray_0		名称:
+systray_1		bLevel:
+systray_2		jLevel:
+systray_3		Weight:
+systray_4		OnMap:
+
+#--------------------------------------------------------------------------------------------
+# OTHER
+#--------------------------------------------------------------------------------------------
+exp_tab_0		登录时间.
+exp_tab_1		运行时间.
+exp_tab_2		连接保持.
+exp_tab_3		Base 经验值.
+exp_tab_4		Job 经验值.
+exp_tab_5		每小时Base经验值.
+exp_tab_6		每小时Job经验值.
+exp_tab_7		预计下次Base升级所需时间.
+exp_tab_8		预计下次Job升级所需时间.
+
+equiped		Yes
+notequiped	No
+
+skillpoint		技能点数:
+
+################################################
+################################################
+# CART WINDOW
+################################################
+################################################
+cart_title_0	[TkEx] Cart
+cart_tab_0		可使用
+cart_tab_1		无法使用
+cart_tab_2		装备
+cart_listview_0_0	名称
+cart_listview_0_1	Num
+cart_listview_1_0	名称
+cart_listview_1_1	Num
+cart_listview_2_0	名称
+cart_listview_2_1	类型
+cart_statusbar_0	负重:
+cart_statusbar_1	容量:
+
+################################################
+################################################
+# MAP WINDOW
+################################################
+################################################
+mapwnd_title_0	[TkEx] OnMap :
+mapwnd_listview_0	名称
+mapwnd_listview_1	类型
+mapwnd_listview_2	距离
+mapwnd_type_p	玩家
+mapwnd_type_m	怪物
+mapwnd_type_i	物品
+mapwnd_type_n	NPC
+mapwnd_type_h	生命体
+mapwnd_sb_0	您当前鼠标的坐标是:
+mapwnd_sb_1	您当前的坐标是:
+mapwnd_msgbox	该坐标无法走到!! :
