@@ -2,6 +2,7 @@
 # ThaiKoreEx GUI English language pack.
 # Version 1.7 for ThaiKoreEx 2.5
 # Writen by Valkyrie
+# zh_CN by CoCo & Maple
 #######################################
 #--------------------------------------------------------------------------------------------
 # TITLE
@@ -15,80 +16,80 @@ title_3		正在初始化...
 # MENU
 #--------------------------------------------------------------------------------------------
 menu_0		&主菜单
-menu_0_0		Minisize to &Tray
-menu_0_1		Save &ConsoleLog
-menu_0_2		Save &P聊天记录
-menu_0_5		Save G&M Notice
-menu_0_8		Save &EtcLog
-menu_0_9		&Free Memory
-menu_0_10	Re&log
-menu_0_11	&E退出
+menu_0_0		最小化到&T工具栏
+menu_0_1		保存&C控制台记录
+menu_0_2		保存&P聊天记录
+menu_0_5		保存&GM报警
+menu_0_8		保存&E其他记录
+menu_0_9		&F释放内存
+menu_0_10	&L重登
+menu_0_11	&X退出
 
 menu_1		&显示
-menu_1_0		&Map
-menu_1_1		&Status
-menu_1_2		S&tat
-menu_1_3		&Monster List
-menu_1_4		&Player List
-menu_1_5		&NPC List
-menu_1_6		P&ortal List
-menu_1_7		P&et List
+menu_1_0		&M地图
+menu_1_1		&S状态
+menu_1_2		&T属性点
+menu_1_3		&M怪物列表
+menu_1_4		&P玩家列表
+menu_1_5		&NPC列表
+menu_1_6		&O传送点
+menu_1_7		&E宠物列表
 menu_1_8		&Airtime Remain
-menu_1_9		&Vender List
-menu_1_10	&Cart
-menu_1_11	S&hop
-menu_1_12	Pa&rty
-menu_1_13	&Member List
-menu_1_14	&Set ShareExp
-menu_1_15	&Unset ShareExp
-menu_1_16	&LeaveParty
-menu_1_17	&Guild
-menu_1_18	&Info
-menu_1_19	&Member
-menu_1_20	&Position
-menu_1_21	Pet
-menu_1_22	&Info
-menu_1_23	&Feed
-menu_1_24	&Play
-menu_1_25	&BackToEgg
+menu_1_9		&V商店列表
+menu_1_10	&C手推车
+menu_1_11	&H商店
+menu_1_12	&R队伍
+menu_1_13	&M成员列表
+menu_1_14	&S经验分享
+menu_1_15	&U经验各自获得
+menu_1_16	&L离开队伍
+menu_1_17	&G公会
+menu_1_18	&I信息
+menu_1_19	&M成员
+menu_1_20	&P位置
+menu_1_21	宠物
+menu_1_22	&I信息
+menu_1_23	&F喂养
+menu_1_24	&P放出
+menu_1_25	&B收回
 
 menu_2		&重新读取
-menu_2_0		&autotrade
-menu_2_1		&cart_control
-menu_2_2		c&hatAuto
-menu_2_3		c&onfig
-menu_2_4		&equip_control
-menu_2_5		&intown_control
-menu_2_6		i&tem_control
-menu_2_7		&mon_control
-menu_2_8		&pfroute
-menu_2_9		pic&kupitems
-menu_2_10	p&lus_control
-menu_2_11	sh&op
-menu_2_12	skill&_control
-menu_2_13	tele&Route_control
-menu_2_14	ti&meouts
-menu_2_15	All
+menu_2_0		&a自动交易
+menu_2_1		&c手推车设置
+menu_2_2		&h自动对话
+menu_2_3		&o主要设置
+menu_2_4		&e装备设置
+menu_2_5		&i城内设置
+menu_2_6		&t物品设置
+menu_2_7		&m怪物设置
+menu_2_8		&p寻路设置
+menu_2_9		&k拾取设置
+menu_2_10	&l其它设置
+menu_2_11	&o商店设置
+menu_2_12	&_技能设置
+menu_2_13	&R瞬移设置
+menu_2_14	&m延迟设置
+menu_2_15	所有设置
 
 menu_3		&命令
-menu_3_0		&RandomTeleport
-menu_3_1		&Sit
-menu_3_2		S&tand
-menu_3_3		&Where
-menu_3_4		&IgnoreAll
-menu_3_5		&UnIgnoreAll
-menu_3_6		W&arpToSavePoint
-menu_3_7		AI &Command
-menu_3_8		&AI On / Off
-menu_3_9		Go&Buy
-menu_3_10	Go&Sell
-menu_3_11	GoS&torage
-menu_3_12	S&hop
-menu_3_13	&OpenShop
-menu_3_14	&CloseShop
+menu_3_0		&R瞬移
+menu_3_1		&S坐下
+menu_3_2		&t站起
+menu_3_3		&W当前位置
+menu_3_4		&I屏蔽密语
+menu_3_5		&U开启密语
+menu_3_6		&a回城
+menu_3_7		&CAI
+menu_3_8		&AI开关
+menu_3_9		&B回城买物
+menu_3_10	&S回城卖物
+menu_3_11	&t回城仓库
+menu_3_12	&h商店
+menu_3_13	&O开启商店
+menu_3_14	&C关闭商店
 
 menu_4		&S设置
-menu_4_0		&Auto Scroll
+menu_4_0		&A自动滚屏
 
 menu_5		&H帮助
 menu_5_0		Online Ma&nual for SirensLove
@@ -117,8 +118,8 @@ sex		性别
 base_level	基本Lv.
 job_level	职业Lv.
 
-ignore_all		Ignore
-share_exp		Share
+ignore_all		屏蔽
+share_exp		分享
 map_btn		&Map &View
 
 #--------------------------------------------------------------------------------------------
@@ -126,9 +127,9 @@ map_btn		&Map &View
 #--------------------------------------------------------------------------------------------
 tab_0		控制台
 
-tab_1		角色Log
+tab_1		角色记录
 
-tab_2		重要Log
+tab_2		重要记录
 
 tab_3		角色
 tab_3_0		技能 + 物品栏
@@ -138,7 +139,7 @@ tab_3_0_2		装备
 tab_3_0_3		技能
 tab_3_1		状态 + 经验
 tab_3_1_0		经验报告
-tab_3_1_1		MonsterDefeated
+tab_3_1_1		杀死怪物
 tab_3_1_2		稀有物品
 tab_3_1_3		状态
 
@@ -186,8 +187,8 @@ combo_0_3	公会聊天
 #--------------------------------------------------------------------------------------------
 statusbar_0	AI 状态
 statusbar_1	未连接
-statusbar_2	On Map :
-statusbar_3	LockMap :
+statusbar_2	所在地图:
+statusbar_3	锁定地图:
 statusbar_4	连接中...
 statusbar_5	读取文件...
 statusbar_6	正在初始化...
@@ -195,32 +196,32 @@ statusbar_6	正在初始化...
 #--------------------------------------------------------------------------------------------
 # MESSAGEBOX
 #--------------------------------------------------------------------------------------------
-msgbox_0		您是否要退出?
+msgbox_0		请问是否要退出?
 
 #--------------------------------------------------------------------------------------------
 # SYSTEM TRAY
 #--------------------------------------------------------------------------------------------
 systray_0		名称:
-systray_1		bLevel:
-systray_2		jLevel:
-systray_3		Weight:
-systray_4		OnMap:
+systray_1		基础等级:
+systray_2		职业等级:
+systray_3		负重:
+systray_4		所在地图:
 
 #--------------------------------------------------------------------------------------------
 # OTHER
 #--------------------------------------------------------------------------------------------
-exp_tab_0		登录时间.
-exp_tab_1		运行时间.
-exp_tab_2		连接保持.
-exp_tab_3		Base 经验值.
-exp_tab_4		Job 经验值.
-exp_tab_5		每小时Base经验值.
-exp_tab_6		每小时Job经验值.
-exp_tab_7		预计下次Base升级所需时间.
-exp_tab_8		预计下次Job升级所需时间.
+exp_tab_0		登录时间
+exp_tab_1		运行时间
+exp_tab_2		连接保持
+exp_tab_3		基础经验值
+exp_tab_4		职业经验值
+exp_tab_5		每小时基础经验值
+exp_tab_6		每小时职业经验值
+exp_tab_7		预计下次基础升级所需时间
+exp_tab_8		预计下次职业升级所需时间
 
-equiped		Yes
-notequiped	No
+equiped		是
+notequiped	否
 
 skillpoint		技能点数:
 
@@ -229,14 +230,14 @@ skillpoint		技能点数:
 # CART WINDOW
 ################################################
 ################################################
-cart_title_0	[TkEx] Cart
+cart_title_0	手推车
 cart_tab_0		可使用
 cart_tab_1		无法使用
 cart_tab_2		装备
 cart_listview_0_0	名称
-cart_listview_0_1	Num
+cart_listview_0_1	序号
 cart_listview_1_0	名称
-cart_listview_1_1	Num
+cart_listview_1_1	序号
 cart_listview_2_0	名称
 cart_listview_2_1	类型
 cart_statusbar_0	负重:
@@ -247,7 +248,7 @@ cart_statusbar_1	容量:
 # MAP WINDOW
 ################################################
 ################################################
-mapwnd_title_0	[TkEx] OnMap :
+mapwnd_title_0	所在地图 :
 mapwnd_listview_0	名称
 mapwnd_listview_1	类型
 mapwnd_listview_2	距离
