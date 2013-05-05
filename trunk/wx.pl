@@ -102,7 +102,7 @@ if (0) {
 
 
 if ($PerlApp::TOOL eq "PerlApp") {
-	if (PerlApp::exe() =~ /^CNKore_UI\.exe$/) {
+	if (PerlApp::exe() =~ /\\CNKore_UI\.exe$/) {
 		$ENV{INTERPRETER} = PerlApp::exe();
 		$ENV{OPENKORE_DEFAULT_INTERFACE} = 'Wx';
 	} else {
