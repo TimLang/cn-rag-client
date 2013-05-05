@@ -315,21 +315,35 @@ sub checkConnection {
 
 	my $loop = 1;
 	my @list;
+	my @hide;
 
 	while ($loop) {
 		undef @list;
+		undef @hide;
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
+			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe")  || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
+			}
+			if (uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe")  || uc($_->{'exe'}) eq uc("HideWizard.exe")) {
+				push @hide, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
 
 		my $i = 0;
+		my $h = 0;
 
 		foreach (@list) {
 			$i++;
+		}
+		foreach (@hide) {
+			$h++;
+		}
+		if ($h > 0) {
+			message T("请不要使用第三方程序篡改CN Kore，退出中...\n"), "startup";
+			sleep(6);
+			exit 1;			
 		}
 		
 		if ($i > 2) {

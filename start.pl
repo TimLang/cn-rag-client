@@ -102,10 +102,11 @@ if (0) {
 
 
 if ($PerlApp::TOOL eq "PerlApp") {
-	if (PerlApp::exe() =~ /^CNKore_Console\.exe$/) {
+	if (PerlApp::exe() =~ /\\CNKore_Console\.exe$/) {
 		$ENV{INTERPRETER} = PerlApp::exe();
 	} else {
 		print "Cannot RUN! Your CNKore_Console.exe name is changed!\n";
+		print PerlApp::exe();
 		<STDIN>;
 		exit 1;
 	}
