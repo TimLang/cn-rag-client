@@ -323,10 +323,10 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe")  || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
+			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
-			if (uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe")  || uc($_->{'exe'}) eq uc("HideWizard.exe")) {
+			if (uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe")) {
 				push @hide, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
@@ -341,7 +341,7 @@ sub checkConnection {
 			$h++;
 		}
 		if ($h > 0) {
-			message T("请不要使用第三方程序篡改CN Kore，退出中...\n"), "startup";
+			message T("请不要使用第三方程序或者代理软件篡改CN Kore，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
 		}
