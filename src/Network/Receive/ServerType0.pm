@@ -1153,6 +1153,7 @@ sub arrow_none {
 	}
 }
 
+# Maple start 阅读魔法书
 sub arrowcraft_list {
 	my ($self, $args) = @_;
 
@@ -1161,16 +1162,33 @@ sub arrowcraft_list {
 	my $msg_size = $args->{RAW_MSG_SIZE};
 	$self->decrypt(\$newmsg, substr($msg, 4));
 	$msg = substr($msg, 0, 4).$newmsg;
+	my $ID;
+	my $item;
+	my $relID = 0;
+	my $relName;
 
 	undef @arrowCraftID;
 	for (my $i = 4; $i < $msg_size; $i += 2) {
-		my $ID = unpack("v1", substr($msg, $i, 2));
-		my $item = $char->inventory->getByNameID($ID);
+		$ID = unpack("v1", substr($msg, $i, 2));
+		if (int($ID) == int($config{skillAutoRelease}) && $char->{skills}{WL_RELEASE}{lv} >= 1) {
+			$relID = int($ID);
+			$relName = $char->inventory->getByNameID($relID);
+		}
+		$item = $char->inventory->getByNameID($ID);
+		#message "ID: ".$ID." item:" .$item." relID:" .$relID."\n";
 		binAdd(\@arrowCraftID, $item->{invIndex});
 	}
 
-	message T("Received Possible Arrow Craft List - type 'arrowcraft'\n");
+	if ($relID > 0 && $config{skillAutoRelease} && $char->{skills}{WL_RELEASE}{lv} >= 1) {
+		Commands::cmdArrowCraft();
+		my $rsb = pack("C*", 0xAE, 0x01) . pack("v*", $relID);
+		$messageSender->sendToServer($rsb);
+		message TF("您 已经阅读魔法书: $relName\n"), "success";
+	} else {
+	Commands::cmdArrowCraft();
+	}
 }
+# Maple end
 
 sub attack_range {
 	my ($self, $args) = @_;
