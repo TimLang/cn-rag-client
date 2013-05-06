@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-04-24 00:37+0800\n"
+"PO-Revision-Date: 2013-05-07 01:38+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -4951,7 +4951,7 @@ msgstr "你必须已登入游戏中才能使用本指令 (%s)\n"
 
 #: ../Commands.pm:547
 msgid "----------------- Item To Craft -----------------\n"
-msgstr "----------------- 物品至手推车 -----------------\n"
+msgstr "----------------- 可用道具 -----------------\n"
 
 #: ../Commands.pm:557
 msgid ""
