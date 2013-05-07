@@ -1,4 +1,4 @@
-[cRO - 电信区 - (Fenril)]
+﻿[klRO - 电信区 - (Fenril)]
 ip 114.112.39.71
 port 6900
 master_version 4
@@ -8,7 +8,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 电信区 - (Sakray)]
+[klRO - 电信区 - (Sakray)]
 ip 118.186.39.235
 port 6900
 master_version 4
@@ -18,7 +18,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 电信区 - (Thor)]
+[klRO - 电信区 - (Thor)]
 ip 118.186.39.233
 port 6900
 master_version 4
@@ -28,7 +28,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 电信区 - (Chaos)]
+[klRO - 电信区 - (Chaos)]
 ip 118.186.39.232
 port 6900
 master_version 4
@@ -38,7 +38,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 电信区 - (Loki)]
+[klRO - 电信区 - (Loki)]
 ip 118.186.39.231
 port 6900
 master_version 4
@@ -48,7 +48,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 电信区 - (Iris)]
+[klRO - 电信区 - (Iris)]
 ip 114.112.39.98
 port 6900
 master_version 4
@@ -58,7 +58,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 联通区 - (Sara)]
+[klRO - 联通区 - (Sara)]
 ip 118.186.66.114
 port 6900
 master_version 4
@@ -68,7 +68,7 @@ addTableFolders cRO
 serverEncoding Simplified Chinese
 charBlockSize 144
 
-[cRO - 复活区 - (Odin)]
+[klRO - 复活区 - (Odin)]
 ip 114.112.39.52
 port 6900
 master_version 4
@@ -183,7 +183,7 @@ PINEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x0597
 recvpackets recvpackets_sakray.txt
 addTableFolders twRO
 
-[Kunlun Test Server]
+[klRO - 测试服 - (Test)]
 ip 114.112.56.246
 port 6900
 master_version 4
