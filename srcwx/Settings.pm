@@ -1,44 +1,4 @@
-﻿#########################################################################
-#  OpenKore - Settings
-#  Copyright (c) 2007 OpenKore Developers
-#
-#  This software is open source, licensed under the GNU General Public
-#  License, version 2.
-#  Basically, this means that you're allowed to modify and distribute
-#  this software. However, if you distribute modified versions, you MUST
-#  also distribute the source code.
-#  See http://www.gnu.org/licenses/gpl.html for the full license.
-#
-#  $Revision: 8259 $
-#  $Id: Settings.pm 8259 2012-10-29 19:57:24Z farrainbow $
-#
-#########################################################################
-##
-# MODULE DESCRIPTION: Settings and configuration files management.
-#
-# Core OpenKore settings, such as OpenKore's program name and version number,
-# are stored by this module.
-#
-# OpenKore uses two kinds of data files:
-# `l
-# - Control files. These configuration files define character-specific
-#   behavior and can be changed at any time.
-# - Table files. These files contain character-independent, but server-specific
-#   information that OpenKore needs. These files are read-mostly (don't change
-#   often).
-# `l`
-# This module is also responsible for data file management. It allows one to:
-# `l
-# - Register control or table files by name.
-# - Locate control or table files from multiple possible locations.
-# - (Re)load control or table files based on some search criteria.
-# `l`
-# Most of the functions for parsing configuration files are located in
-# FileParsers.pm, while the variables which contain the configuration data are
-# in Globals.pm.
-#
-# Finally, the Settings module provides support functions for commandline
-# argument parsing.
+﻿
 package Settings;
 
 use strict;
@@ -61,28 +21,13 @@ use encoding 'utf8';
 use Log qw(message warning error debug);
 
 
-###################################
-### CATEGORY: Constants
-###################################
 
-##
-# String $Settings::NAME
-#
-# The name of this program, usually "OpenKore".
-
-##
-# String $Settings::VERSION
-#
-# The version number of this program.
-
-# Translation Comment: Strings for the name and version of the application
-our $NAME = 'CN Kore - 解放双手 绿色游戏';
-our $ZONE = 'cRO';
-our $VERSION = 'Open Beta - v0.0.5.6b for cRO & twRO';
-our $SVN_VERSION = '170';
+our $NAME = 'CN Kore - 解放双手 绿色RO';
+our $ZONE = 'klRO';
+our $VERSION = 'Open Beta - v0.0.6.8 for klRO 仅供学习研究';
+our $SVN_VERSION = '265';
 our $WEBSITE = 'http://www.CNKore.com/';
-# Translation Comment: Version String
-our $versionText = "        *** $NAME - r$SVN_VERSION - 拒绝盗版Key, 从我做起!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                                █               ◢\n            ▔█◤▔▔◥◣                                               █           ◢◤\n              █            █                                                ▉       ◢◤\n              █▁▂▃█◤                                                ▉    ◢◤\n        ▂▅▆████◤                                         ●●   ▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉   ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊      ◥█  █◥█◤█◥██  ██◥◣◥█◤▌ ◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  ▌    ◥◣\n              ▎               RAGNAROK ONLINE BOT            ▍       ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔  ▏          ◥◣\n                     $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki 至尊宝 彪彪 LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
+our $versionText = "        *** $NAME - r$SVN_VERSION - 本软件和MYKey完全免费!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                                █               ◢\n            ▔█◤▔▔◥◣                                               █           ◢◤\n              █            █                                                ▉       ◢◤\n              █▁▂▃█◤                                                ▉    ◢◤\n        ▂▅▆████◤                                         ●●   ▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉   ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊      ◥█  █◥█◤█◥██  ██◥◣◥█◤▌ ◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  ▌    ◥◣\n              ▎               RAGNAROK ONLINE BOT            ▍       ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔  ▏          ◥◣\n                     $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki 至尊宝 彪彪 LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
 our $welcomeText = TF("Welcome to %s.", $NAME);
 
 # Log::message("$Settings::versionText\n");
