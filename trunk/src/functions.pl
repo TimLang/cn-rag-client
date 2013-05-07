@@ -429,7 +429,7 @@ sub checkKey {
 
 	## Maple 账号安全性通知
 	my $answersafe = $interface->showMenu(
-		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能并受到CC BY-NC-ND协议保护.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n本软件为开源绿色免费软件, 发布目的仅为个人技术研究学习使用.\n根据Creative Commons 3.0 BY-NC-ND协议(署名-非商业性使用-禁止演绎), 任何人不得私自修改,散布,商业化本软件.\n如果您认为使用本软件存在违反当地发法律行为, 请在下载后24小时内删除本软件.\nCC BY-NC-ND的相关法律文本请参阅 http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode" .
+		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能并受到CC BY-NC-ND协议保护.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n本软件为开源绿色免费软件, 发布目的仅为个人技术研究学习使用.\n根据Creative Commons 3.0 BY-NC-ND协议(署名-非商业性使用-禁止演绎), 任何人不得私自修改,散布,商业化本软件.\n如果您认为使用本软件存在违反当地发法律行为, 请在下载后24小时内删除本软件.\nCC BY-NC-ND的相关法律文本请参阅 http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode\n\n" .
 		"请回答您是否已经知晓并自愿同意以上使用条款? \n\n" .
 		"请选择或在控制台窗口输入:\n【0 不同意 1 同意】\n\n"),
 		[T("不同意"), T("同意")],
