@@ -5288,7 +5288,7 @@ sub system_chat {
 	stripLanguageCode(\$message);
 	chatLog("s", "$message\n") if ($config{logSystemChat});
 	# Translation Comment: System/GM chat
-	message TF("[GM] %s\n", $message), "schat";
+	message TF("[系统] %s\n", $message), "schat";
 
 	Plugins::callHook('packet_sysMsg', {
 	Msg => $message
