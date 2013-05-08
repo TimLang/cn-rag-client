@@ -649,7 +649,7 @@ sub createSplitterContent {
 	$chatLog->addColor("p", 164, 0, 143);
 	$chatLog->addColor("g", 0, 177, 108);
 	$chatLog->addColor("warning", 214, 93, 0);
-
+	$chatLog->addColor("syschat", 254, 215, 0);
 
 	## Parallel to the notebook is another sub-splitter
 	my $subSplitter = new Wx::SplitterWindow($splitter, 583,
@@ -1087,7 +1087,7 @@ sub onChatLogToggle {
 		$chatLog->addColor("p", 164, 0, 143);
 		$chatLog->addColor("g", 0, 177, 108);
 		$chatLog->addColor("warning", 214, 93, 0);
-		$chatLog->addColor("sys", 255, 215, 0);
+		$chatLog->addColor("syschat", 254, 215, 0);
 		$page->set($chatLog);
 
 	} else {
@@ -1288,7 +1288,7 @@ sub onChatAdd {
 	} elsif ($hook eq "packet_guildMsg") {
 		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [公会] $params->{MsgUser}: $params->{Msg}\n", "g");
 	} elsif ($hook eq "packet_sysMsg") {
-		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [系统] $params->{Msg}\n", "sys");
+		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [系统] $params->{Msg}\n", "syschat");
 	}
 }
 
