@@ -92,6 +92,7 @@ sub OnInit {
 		['packet_sentPM',                       $onChat],
 		['packet_partyMsg',                      $onChat],
 		['packet_guildMsg',                      $onChat],
+		['packet_sysMsg',                      $onChat],
 		['mainLoop_pre',                        sub { $self->onUpdateUI(); }],
 		['packet/minimap_indicator',            sub { $self->onMapIndicator (@_); }],
 		
@@ -1086,6 +1087,7 @@ sub onChatLogToggle {
 		$chatLog->addColor("p", 164, 0, 143);
 		$chatLog->addColor("g", 0, 177, 108);
 		$chatLog->addColor("warning", 214, 93, 0);
+		$chatLog->addColor("sys", 255, 215, 0);
 		$page->set($chatLog);
 
 	} else {
@@ -1285,6 +1287,8 @@ sub onChatAdd {
 		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [队伍] $params->{MsgUser}: $params->{Msg}\n", "p");
 	} elsif ($hook eq "packet_guildMsg") {
 		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [公会] $params->{MsgUser}: $params->{Msg}\n", "g");
+	} elsif ($hook eq "packet_sysMsg") {
+		$self->{chatLog}->add("[$tmpdate[2]:$tmpdate[1]] [系统] $params->{Msg}\n", "sys");
 	}
 }
 
