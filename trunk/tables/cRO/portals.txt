@@ -1,4 +1,4 @@
-#飞空艇(国内线)
+﻿#飞空艇(国内线)
 airplane 208 53 airplane 245 160
 airplane 245 160 airplane 208 53
 airplane 254 54 airplane 87 67
@@ -30,9 +30,9 @@ yuno 47 240 y_airport 143 54
 y_airport 145 63 yuno 59 244 0 c r0
 yuno 59 240 y_airport 143 54
 #毁葛 Maple
-hugel 178 142 airplane 244 58 -1 r0
+hugel 178 142 airplane 244 58 -1 r0 n
 #拉赫 Maple
-ra_fild12 295 208 airplane_01 245 60 -1 r0
+ra_fild12 295 208 airplane_01 245 60 -1 r0 n
 #艾音布罗克 机场
 einbroch 64 207 airport 143 14
 airport 143 14 einbroch 64 207
@@ -2270,7 +2270,7 @@ que_thor 69 56 thor_v02 146 84
 thor_v03 30 262 thor_v02 192 60
 ########################################
 #莫斯科比亚
-moscovia 136 46 mosk_fild01 95 93 -5 r0 n
+moscovia 136 46 mosk_fild01 95 93 -5 c r0 n
 # 码头自动对话程序已默认支持
 moscovia 256 179 mosk_in 211 111
 moscovia 223 174 mosk_in 11 246
@@ -2445,7 +2445,7 @@ spl_fild02 293 379 spl_fild01 289 28
 spl_fild03 306 379 spl_fild02 310 10
 spl_fild03 99 373 spl_fild02 103 30
 #粗暴者的伤口
-spl_fild01 375 109 nyd_dun01 72 125 -1 r0
+spl_fild01 375 109 nyd_dun01 72 125 -1 r0 n
 nyd_dun01 62 233 spl_fild01 376 65 0 c r0 n
 nyd_dun01 255 142 nyd_dun02 61 265
 nyd_dun02 56 264 nyd_dun01 249 143
