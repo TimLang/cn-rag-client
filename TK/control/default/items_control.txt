@@ -1,0 +1,104 @@
+#------------------------------------------------------------------------------------------
+# DarkKore item_control Version 0.8
+#------------------------------------------------------------------------------------------
+#---------------------[คำอธิบาย]---------------------
+#เป็นไฟล์สำหรับควบคุมการเก็บไอเท็มเข้าคลัง,ขาย,หยิบออกจากคลัง,เอาจากรถเข็นใส่คลัง,เอาจากคลังใส่รถเข็น
+#การกำหนด NPC ตัวที่จะขายของ กำหนดได้จาก config.txt
+#----------------------[รูปแบบ]---------------------
+#[item]
+#key=value
+#-------------------[คำอธิบายรูปแบบ]-------------------
+#item	:ใส่ชื่อ Item ที่จะกำหนดการทำงาน ดูได้จาก tables\items.txt
+#key	:คีย์ที่จะกำหนดการกระทำกับไอเท็มดังกล่าว คีย์ที่มีชื่อต่างกันก็จะใช้กำหนดการทำงานแตกต่างกันออกไป รายชื่อคีย์ทั้งหมดสามารถดูได้จากด้านล่าง
+#value	:ค่าที่จะกำหนดให้กับคีย์ ถ้าคีย์ไหนเป็นสวิทปิดกับเปิดสามารถใช้ 0 หรือ no หรือ false เพื่อปิด และใช้ 1 หรือ yes หรือ true เพื่อเปิด
+#----------------------[คีย์]-----------------------
+#invKeep		:จำนวนที่จะเหลือไว้ที่ตัว หลังจากเก็บของเข้าคาฟา หรือขาย จะคงจำนวนนี้ไว้ {0...999}
+#invMinAmount		:กลับมาหยิบไอเท็มชิ้นนี้เมื่อจำนวนในตัวเหลือน้อยกว่าหรือเท่ากับเท่าไหร่ {0...999}
+#invPassive		:หากเปิดไว้  เมื่อไอเท็มชิ้นนี้มีจำนวนน้อยกว่าหรือเท่ากับ invMinAmount จะยังไม่กลับมาหยิบทันที จะรอจนกว่าจะกลับมาที่คาฟราโดยเงื่อนใขอื่นก่อน {true,yes,1|false,no,0}
+#invToStorage		:หากเปิดไว้ จะทำการเก็บ Item ชิ้นนี้เข้าคาฟรา (กำหนดตำแหน่งคาฟราที่จะเก็บของได้ที่ config.txt) {true,yes,1|false,no,0}
+#invToCart		:หากเปิดไว้ หากเปิดไว้ จะทำการเก็บ Item ชิ้นนี้เข้ารถเข็นเท่ากับ cartKeep {true,yes,1|false,no,0}
+#cartKeep		:จำนวนที่จะเหลือไว้ที่รถเข็น หลังจากเก็บของเข้าคาฟา หรือขาย จะคงจำนวนนี้ไว้{0..999}
+#cartMinAmount		:กลับมาหยิบไอเท็มชิ้นนี้เมื่อจำนวนในรถเข็นเหลือน้อยกว่าหรือเท่ากับเท่าไหร่ {0..999}
+#cartPassive		:หากเปิดไว้ เมื่อไอเท็มชิ้นนี้ในรถเข็นมีจำนวนน้อยกว่าหรือเท่ากับ cartMinAmount จะยังไม่กลับมาหยิบทันที จะรอจนกว่าจะกลับมาที่คาฟราโดยเงื่อนใขอื่นก่อน {true,yes,1|false,no,0}
+#cartToStorage		:หากเปิดไว้ จะนำไอเท็มชิ้นนี้ในรถเข็นใส่คาฟรา {true,yes,1|false,no,0}
+#cartToInv		:หากเปิดไว้ จะหยิบไอเท็มชิ้นนี้ในรถเข็นออกมาเก็บในตัวเท่ากับ invKeep {true,yes,1|false,no,0}
+#storageToInv		:หากเปิดไว้ จะหยิบไอเท็มชิ้นนี้ออกจากคาฟรา โดยจะทำการหยิบออกมาให้ในตัวมีจำนวนเท่ากับ invKeep {true,yes,1|false,no,0}
+#storageToCart		:หากเปิดไว้ จะหยิบไอเท็มชิ้นนี้ออกจากคาฟราใส่รถเข็น โดยจะทำการหยิบออกมาให้ในรถเข็นมีจำนวนเท่ากับ cartKeep {true,yes,1|false,no,0}
+#sell			:หากเปิดไว้ จะทำการขาย Item ชิ้นนี้กับ NPC (กำหนด NPC ที่จะขายได้ที่ config.txt) {true,yes,1|false,no,0}
+#buyToInv		:ลำดับของ NPC ที่กำหนดไว้ใน Config.txt ในส่วนของการซื้อของ โดยบอทจะไปซื้อของจาก NPC ให้เท่ากับจำนวนที่กำหนดไว้ที่ invKeep {ไม่ซื้อ =false ซื้อ  =1,2,3,4...} 
+#------------------------------------------------------------------------------------------
+# ไอเทมกลุ่ม all จะทำการเก็บเข้าคาฟาสถานเดียว
+[all]
+invKeep=0
+invMinAmount=0
+invPassive=false
+invToStorage=true
+invToCart=false
+cartKeep=0
+cartMinAmount=0
+cartPassive=false
+cartToStorage=true
+cartToInv=false
+storageToInv=false
+storageToCart=false
+sell=false
+buyToInv=false
+
+# ซื้อ Fly Wing 20 ea จาก npc ลำดับที่ 1 ของ config.txt กลุ่ม buy
+[Fly Wing]
+invKeep=20
+invMinAmount=0
+invPassive=false
+invToStorage=false
+invToCart=false
+cartKeep=0
+cartMinAmount=0
+cartPassive=false
+cartToStorage=false
+cartToInv=false
+storageToInv=false
+storageToCart=false
+sell=false
+buyToInv=1
+
+[Butterfly Wing]
+invKeep=10
+invMinAmount=0
+invPassive=false
+invToStorage=false
+invToCart=false
+cartKeep=0
+cartMinAmount=0
+cartPassive=false
+cartToStorage=false
+cartToInv=false
+storageToInv=false
+storageToCart=false
+sell=false
+buyToInv=1
+
+# เบิกของจากคาฟา 
+[God Oridecon]
+invKeep=200
+invMinAmount=0
+invPassive=false
+invToStorage=false
+invToCart=false
+cartKeep=0
+cartMinAmount=0
+cartPassive=false
+cartToStorage=false
+cartToInv=false
+storageToInv=true
+storageToCart=false
+sell=false
+buyToInv=false
+
+# ขาย
+[Jellopy,Tree Root]
+sell=false
+
+#Special Item ไอเทมกลุ่มนี้จะไม่ ขาย ไม่ทิ้ง ไม่เก็บ 
+[Wedding Ring,The Sign,Novice Adventurer's Suit[1],Novice Fly Wing,Novice Butterfly Wing]
+invToStorage=no
+

@@ -1,0 +1,23 @@
+#--------------------------------------------------------------------------------------------------
+# ThaiKoreEx shop Version 2.5
+#--------------------------------------------------------------------------------------------------
+shop_title OBB / ยาวิ่ง
+
+shop_autoStart 0
+shop_start_idle 5
+shop_start_wait 1
+shop_close_time 0
+shop_close_sold_out 0
+shop_look 4
+
+#------------------------------------------------------
+#Shop Details
+#------------------------------------------------------
+
+name_0 Old Blue Box
+quantity_0 1
+price_0 130000
+
+name_1 Authoritative Badge
+quantity_1 2200
+price_1 3500

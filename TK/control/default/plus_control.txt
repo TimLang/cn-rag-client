@@ -1,0 +1,104 @@
+#-------------------------------------------------------------------------------------------------------
+# ThaiKoreEx plus_control Version 2.5
+#-------------------------------------------------------------------------------------------------------
+#--------------------------------------[Proxy Configuration]-----------------------------------------
+proxy_host 
+proxy_port 
+proxy_type 0
+#1 = Connect to Master Server and Send Master Login
+#2 = Connect to Character Server and Send Game Login
+#3 = Send Char Login
+#4 = Connect to Map Server and Send Map Login
+#5 = You are now in the game
+proxy_exCon 2,4
+proxy_username 
+proxy_password 
+
+#-------------------------------------------[ตั้งค่าการเทเลพอร์ท]-------------------------------------------
+teleportAuto_AtkMiss 12
+teleportAuto_AtkCount 0
+teleportAuto_deadly 1
+teleportAuto_hp 10
+teleportAuto_sp 0
+teleportAuto_idle 0
+teleportAuto_maxDmg 500
+teleportAuto_maxDmgInLock 300
+teleportAuto_totalDmg 0
+teleportAuto_totalDmgLock 0
+teleportAuto_minAggressives 4
+teleportAuto_minAggressivesInLock 4
+teleportAuto_onlyWhenSafe 0
+teleportAuto_search 1
+teleportAuto_dist 5
+teleportAuto_minAgNotorious 3
+teleportAuto_minAgWithAgNM 3
+teleportAuto_attackedWhenSitting 1
+teleportAuto_ban 1
+teleportAuto_param1 1
+teleportAuto_MonsterInSign 20
+teleportAuto_HealOnAtkTarget 0
+
+#------------------------------------------[ตั้งค่าการหลบหลีกสกิล]------------------------------------------
+avoidSkill Hammer Fall {
+	castBy 2
+	castOn 16
+	dist 8
+	inCity 0
+	method 0
+	useSkill 
+	useSkill_lvl 10
+	useSkill_maxCastTime 1
+	useSkill_useSelf 0
+}
+
+#--------------------------------------[ตั้งค่าการหลบหลีกแอเรียเอฟเฟค]--------------------------------------
+avoidSpell {
+	castBy 4,8
+	dist 4
+	inCity 0
+	randomWalk 3,5
+}
+
+#-------------------------------------------------[การเลี้ยงโฮมุน]------------------------------------------------
+homunAutoFeedRate 25
+
+homun_pitcher_hp 70
+homun_pitcher_level 2
+homun_follow_maxdist 4
+
+#------------------------------------------------[ตั้งค่าเสียงเตือน]------------------------------------------------
+alertSound 0
+
+#--------------------------------------------[การขอ Sp จากคู่แต่งงาน]------------------------------------------
+AutoRequest 0
+AutoRequest_sp_lower 80
+AutoRequest_partnerName 
+
+#--------------------------------------------[การช่วยเหลือผู้เล่นในปาร์ตี้]-----------------------------------------
+recueParty 0
+recueParty_Target 
+recueParty_AttackSkill Double Strafe
+recueParty_AttackSkill_Level 10
+recueParty_StopSkillWhenSpBelow 10
+
+#---------------------------------------------------[การตั้งค่าปาร์ตี้]-----------------------------------------------
+partyAuto_organize 0
+partyAuto_organize_itemshare1 0
+partyAuto_organize_itemshare2 0
+partyAuto_ShareExp 1
+partyAuto_ShareitemPickup 1
+partyAuto_ShareitemDivision 1
+
+partyAuto_invite 0
+partyAuto_inviteTarget 
+
+#------------------------------------------[ตั้งค่าการดูด SP ของ Monk]---------------------------------------
+stealSp 0
+stealSp_upper 79
+stealSp_monster Injustice,Wind Ghost,Ghoul,Evil Druid,Hunter Fly,Sage Worm
+stealSp_stealAndDrop 1
+
+#---------------------------------------[ตั้งค่าการใช้สกิลคอมโบของ Monk]------------------------------------
+AutoCombo 0
+AutoCombo_Monster Wind Ghost,Ghoul,Evil Druid,Zombie Prisoner,Hunter Fly,Injustice,Rideword,Carat
+AutoCombo_sp 31<100

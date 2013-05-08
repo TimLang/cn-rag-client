@@ -1,0 +1,83 @@
+#-------------------------------------------------------------------------------------------------------
+# ThaiKoreEx skill_control Version 2.5
+#-------------------------------------------------------------------------------------------------------
+#--------------------------------------------[ตั้งค่าการใช้สกิลโจมตี]--------------------------------------------
+attackSkillSlot  {
+	smartEquip 
+	magicScroll 
+	dist 3
+	lvl 10
+	hp 0<100
+	sp 0<100
+	maxAggressives 0
+	minAggressives 0
+	maxCastTime 10
+	minCastTime 0
+	maxUses 0
+	spirits 0<0
+	stopWhenHit 0
+	stopWhenSteal 0
+	stopWhenTotalDmg 0
+	monsters 
+	monRace 
+	timeout 0
+	useSelf 0
+	monInStatus 
+	monOutStatus 
+	inStatus 
+	outStatus 
+	prevSkill 
+	delayTime 0.1
+}
+
+#-----------------------------[ตั้งค่าการใช้สกิลสำหรับตัวเอง]-------------------------------
+useSelf_skill_smartHeal 0
+
+useSelf_skill  {
+	smartEquip 
+	hp 0<100
+	sp 0<100
+	lvl 10
+	inLockOnly 1
+	maxAggressives 0
+	minAggressives 0
+	maxCastTime 10
+	minCastTime 0
+	spirits 0<0
+	stopWhenHit 0
+	timeout 0
+	inStatus 0
+	outStatus 0
+	whileSitting 0
+	notWhileSitting 1
+	waitAfterKill 0
+	whenAI 
+	notWhenAI 
+}
+
+#------------------------------------[การใช้สกิลสำหรับปาร์ตี้]------------------------------------
+partyAutoResurrect 0
+partyAutoResurrectTime 5
+
+partySkill_smartHeal 1
+partySkill_distance 5
+partySkill_checkWall 1
+
+partySkill {
+smartEquip
+lvl 10
+target
+targetJob 
+targetHp 0<100
+maxCastTime 10
+minCastTime 0
+sp 0<100
+timeout 0
+whileSitting 0
+targetInStatus 0
+targetOutStatus 0
+statusTimeout 0
+stopWhenHit 0
+stopWhenHitTarget 0
+useSelf 0
+}

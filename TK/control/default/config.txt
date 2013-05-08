@@ -1,0 +1,405 @@
+#--------------------------------------------------------------------------------------------------------
+# ThaiKoreEx config Version 2.5 #การตั้งค่าหลักของบอท
+#--------------------------------------------------------------------------------------------------------
+#-------------------------------[Command prefix X-Kore]----------------------------------
+commandPrefix ;
+
+#----------------------------------------[ตั้งค่าการล็อกอิน]------------------------------------------
+password_hide 0
+master 
+server 
+username 
+password 
+char 
+sex 
+
+#--------------------------------------[ตั้งค่าเวล?LogOut]-----------------------------------------
+#waitingTimeStart 23:39:00
+#waitingTimeStop 23:55:00
+
+#---------------------------------------[ตั้งค่าการปิดตัวเอง]-------------------------------------------
+dcOnAtkMiss 0
+dcOnDeath 0
+dcOnDualLogin 0
+dcOnEmptyArrow 0
+dcOnShopClosed 0
+dcOnIPLimit 0
+
+dcOnZenyBelow 0
+dcOnZenyBelow_NotInMaps tur_dun01
+
+dcOnStorageItem 0
+dcOnStorageItem Stone Arrow {
+	below 2000
+}
+
+dcOnInventory 0
+dcOnInventory Fly Wing {
+	below 5
+}
+
+autoRestart 0
+deadRespawn 1
+
+waitDcCount 4
+waitDcCount_reConnect 300,600
+
+#-----------------------------------------[ตั้งค่าข้อความ]------------------------------------------------
+verbose 1
+debug 0
+message_length_max 80
+
+#-----------------------------------------[ตั้งค่าการโจมตี]------------------------------------------------
+attackAuto 2
+attackAuto_followTarget 1
+attackAuto_inLockOnly 0
+attackAuto_party 0
+attackAuto_CouterOnMove 1
+
+attackMaxRouteDistance 50
+attackMaxRouteTime 15
+attackUseWeapon 1
+attackDistance auto
+
+NotAttackDistance 0
+NotAttackNearSpell 1
+NotAttackAfterWall 1
+NotAttackMoveToTarget 0
+NotAttackPortalFound 1
+
+attackPickupMonsters Poring,Porcellio
+
+runFromTarget 0
+runFromTarget_minDist 6
+runFromTarget_maxDist auto
+runFromTarget_MaxRouteDistance 30
+runFromTarget_teleWhenFailed 1
+
+modifiedAttack 1
+modifiedSearch 1
+
+#------------------------------------[ตั้งค่าการสวนกลับการโจมตี]----------------------------------------
+exteraDetect 1
+AutoCouterAgMonster 2
+
+#----------------------------------------[ตั้งค่าเกี่ยวกันแผนที่]---------------------------------------------
+lockMap  {
+	warpTo 
+	dunTele 
+	x 
+	y 
+	randx 
+	randy 
+
+	level 
+	jobLevel 
+
+	item_0 
+	item_0_minAmount 
+	item_0_maxAmount 
+
+	saveMap 
+	saveMapWarp 1
+
+	save 0
+	save_npc 
+	save_npc_steps c r0 n
+	save_distance 6
+
+	talk 0
+	talk_single 1
+	talk_0_npc 
+	talk_0_distance 4
+	talk_0_npc_steps c c c r0 c c c n
+	talk_0_hp 0<100
+	talk_0_sp 0<100
+	talk_0_inLockOnly 0
+	talk_0_inStatus 0
+	talk_0_outStatus 0
+	talk_0_whileSitting 0
+	talk_0_notWhileSitting 0
+	talk_0_prevSkill 0
+	talk_0_weight 0
+	talk_0_brokenOnly 0
+	talk_0_supplyOnly 0
+
+	storage 0
+	storage_npc 
+	storage_npc_steps c r1 n
+	storage_distance 6
+	storage_stopfollow 
+
+# เปิดใช้ ฟังค์ชั่นซื้อของเมื่อกลับเมืองหรือไม่  0 ไม่ 1 เปิด
+	buy 0
+# รายการ NPC ที่จะไปซื้อของ ใช้ในกรณีที่ต้องการซื้อของจากหลายๆ NPC
+# โดย item ที่จะซื้อ ที่ NPC ลำดับที่เท่าไหร่ให้ไปใส่ใน item_control.txt
+
+	buy_1_npc 
+	buy_1_distance 6
+	buy_1_talkMode 0
+	buy_1_npc_steps c r1 n
+	buy_1_passive 0
+
+	buy_2_npc 
+	buy_2_distance 6
+	buy_2_talkMode 0
+	buy_2_npc_steps c r1 n
+	buy_2_passive 0
+
+	buy_3_npc 
+	buy_3_distance 6
+	buy_3_talkMode 0
+	buy_3_npc_steps c r1 n
+	buy_3_passive 0
+
+	sell 0
+	sell_npc 
+	sell_distance 6
+}
+
+useWaypoint 0
+preferRoute 0
+
+#--------------------------------------------[คำสั่งแบบตั้งเอง]---------------------------------------------------
+doCommand {
+    hp 0<100
+    sp 0<100
+    spirits 0<0
+    inLockOnly 0
+    maxAggressives 0
+    minAggressives 0        
+    stopWhenHit 0
+    stopWhenSteal 0
+    stopWhenTotalDmg 0
+    monsters
+    monRace
+    monInStatus 0
+    monOutStatus 0
+    timeout 60
+    inStatus 0
+    outStatus 0
+    whileSitting 0
+    notWhileSitting 0
+    waitAfterKill 0
+    whenAI
+    notWhenAI
+    prevSkill
+    inMap 
+    inMsg 
+}
+#--------------------------------------------[ตั้งค่าการเดิน]---------------------------------------------------
+modifiedRoute 1
+modifiedRoute_NPC 300
+modifiedRoute_diffPortal 50
+modifiedRoute_samePortal 150
+modifiedRoute_undef 999
+modifiedRoute_changeMap 150
+
+route_randomWalk 1
+route_randomWalk_maxRouteTime 15
+route_step 10
+
+route_randomWalk_inCity 0
+route_randomWalk_upLeft 
+route_randomWalk_bottomRight 
+route_NPC_distance 12
+
+route_skill 
+route_skill_outStatus 
+route_skill_clearStatus 
+route_skill_stopWhenSp 20
+route_skill_notInTown 1
+route_skill_whenMonInScrn 0
+route_skill_stopWhenMonScrn 5
+route_skill_notInMap 0
+
+teleRoute 1
+teleRouteDist 240
+
+#----------------------------------------[ตั้งค่าการนั่งอัตโนมัติ]----------------------------------------------
+sitAuto_hp 40<45
+sitAuto_sp 0<0
+
+sitAuto_idle 0
+
+#--------------------------------------------[การใช้ไอเท็ม]---------------------------------------------------
+useSelf_item ณ๕ังี฿ืจำราฉหฎ,Meat,Apple,Banana,Sweet Potato,Potato,Carrot,Red Potion,Orange Potion,Yellow Potion,White Potion {
+	hp 0<60
+	sp 0<100
+	maxAggressives 0
+	minAggressives 0
+	stopWhenHit 0
+	inLockOnly 0
+	repeat 1
+	timeout 0
+	inStatus 0
+	outStatus 0
+	checkSupplyFirst 0
+}
+
+useSelf_item Awakening Potion {
+	hp 0<100
+	sp 0<100
+	maxAggressives 0
+	minAggressives 0
+	stopWhenHit 0
+	inLockOnly 1
+	repeat 1
+	timeout 3
+	inStatus 0
+	outStatus Awakening Potion
+	checkSupplyFirst 0
+}
+
+#--------------------------------------[การเก็บไอเท็ม]------------------------------------------
+itemsTakeAuto 2
+itemsTakeParty 0
+itemsGatherAuto 0
+itemsMaxWeight 50
+itemsGreedyMode 1
+itemsGatherInLockOnly 1
+itemsGatherCheckWall 1
+itemsGatherDistance 2
+itemsGatherDistanceFromYou 20
+
+importantItemDistance 20
+importantItemFirst 1
+importantItemSequence 1
+
+takeMaxRouteDistance 50
+takeMaxRouteTime 15
+
+#----------------------------------[ตั้งค่าการคุยกับ NPC]------------------------------------------
+searchNPC_distance 12
+searchNPC_restartWhenFail 1
+modifiedTalk 0
+
+#----------------------------------------[ตั้งค่ารถเข็น]------------------------------------------------
+cartAuto 0
+cartMaxWeight 95
+cartSmartWeight 0
+
+#---------------------------------------[การติดตามผู้อื่น]----------------------------------------------
+follow 0
+followTarget 
+followDistanceMax 6
+followDistanceMin 4
+followLostStep 12
+followTeleRoute 140
+followTeleRouteTime 1
+
+#------------------------------------------[การแทงค์]--------------------------------------------------
+tankMode 0
+tankModeTarget 
+
+#-------------------------------------[การยกเลิกเมื่อมีคนมา?]------------------------------------------
+partyAuto 0
+friendAuto 0
+ignoredAll 0
+
+#-------------------------------------------[SYSTEM]-----------------------------------------------
+sleepTime 50000
+
+#-------------------------------------------[การเลี้ยงสัตว์]-----------------------------------------------
+petAutoFeedRate 25
+petAuto_return 1000
+petAuto_protect 0
+petAutoPlay 1
+
+#----------------------------------------[แมพที่จะให้บอทอยู่ได้]-------------------------------------------
+allowableMap 
+reactallowableMap 0
+
+#------------------------------------------[การหลบหลีก GM]----------------------------------------------
+avoidGM 4
+avoidGM_paranoia 1
+avoidGM_activeDetect 2
+avoidGM_AID 1768499,2336238
+avoid_namePattern ^GM,^Gm
+avoid_onPM 2
+avoid_reConnect 7200,10000
+reconnect_after_forcing 36000
+
+WatchdogMode 1
+WatchdogRelog 3600
+WatchdogRelogRandom 10
+
+#0 - ไม่ทำงาน
+#1 - relog ตามเวลาที่กำหนด
+#2 - กลับเมือง แล้ว relog ตามเวลา
+#3 - กลับเมือง แล้ว ปิดโปรแกรม
+#4 - ปิดโปรแกรม
+
+
+dcOnChatWord
+dcOnSysWord 
+dcOnSkillBan 1
+
+#---------------------------------------------[การบันทึกข้อมูล]------------------------------------------------
+sysLog_emotions 0
+sysLog_monster 0
+sysLog_items 0
+recordStorage 1
+recordExp 2
+
+#-------------------------------------------[การปิดข้อความต่างๆ]---------------------------------------------
+hideMsg_otherUseItem 1
+hideMsg_OtherHomunAttackmon 0
+hideMsg_killsteal 1
+hideMsg_unequip 1
+hideMsg_expDisplay 0
+hideMsg_itemExists 1
+hideMsg_itemAppeared 0
+hideMsg_emotions all
+hideMsg_arrowRemove 1
+hideMsg_groundEffect 134
+hideMsg_groundEffect_timeout 0
+hideMsg_make 1
+
+hideMsg_param1 all {
+	source 4,8,16
+}
+
+hideMsg_param2 all {
+	source 4,8,16
+}
+
+hideMsg_param3 all {
+	source 4,8,16
+}
+
+hideMsg_status all {
+	source 4,8,16
+}
+
+hideMsg_skill all {
+	source 4,8,16
+	target 2,4,8,16
+}
+
+#----------------------------------[การเพิ่มสเตตัสและสกิลอัตโนมัติ]-------------------------------------
+autoAddSkill {
+	limit 
+}
+
+autoAddStatus {
+	limit 
+}
+
+#-------------------------------------------[การสร้างลูกธนู]------------------------------------------------
+makeArrowAuto 0
+
+makeArrowAuto {
+	checkItem 
+	minAmount 10
+}
+
+
+doCommand autobuy {
+timeout 2
+inMsg need wing or skill
+}
+doCommand respawn {
+timeout 1
+inMsg autoDS: start.
+}

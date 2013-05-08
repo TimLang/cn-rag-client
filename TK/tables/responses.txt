@@ -1,0 +1,108 @@
+dateS รับทราบ เจ้านาย %$cmd_user - ขณะนี้เป็นเวลา %$date
+
+authS ท่าน %$cmd_user สามารถสั่งงานข้าได้แล้ว เชิญออกคำสั่งมาได้เลย!
+authF ท่าน %$cmd_user สามารถสั่งงานข้าได้อยู่แล้ว
+
+relogS เดวมา สักประเดียวน่ออ~*
+
+reloadS เรียบร้อยแล้ว
+
+confS1 ค่าคอนฟิก %$key ในขณะนี้คือ %$value
+confS2 เรียบร้อยแล้ว
+confF1 หา??
+confF2 หาค่าไม่เจอวะ ดูดีๆดิ บอกถูกอะป่าว
+confF3 เอ่อ..คอนฟิกตัวนี้ ข้าไม่สามารถบอกเจ้าได้
+
+timeoutS1 ค่าไทม์เอาท์ %$key ในขณะนี้คือ %$value
+timeoutS2 เรียบร้อยแล้ว
+timeoutF1 หา??
+timeoutF2 หาม้ายยเจอออ~*
+
+quitS - -"
+quitS ไปก็ดะ
+quitS ไปละน้าาา แง้ๆ T T
+
+sitS นั่งแล้ว ไงต่อ??
+
+standS ยืนแล้ว ให้ทำไร ว่ามาๆๆ
+
+tankS แง้ๆ โดนปลิงเกาะ
+tankF เฮ้ออ
+
+tankStopS ดูเหมือนมันจะสนุกดีนะ
+tankStopF ตูเหมือนข้าจะกลายเป็นตัวแทงค์ไปซะแล้ว เฮ้อ
+
+moveS เฮ้ๆ ทางนี้ๆ
+moveS เยสสเซออร์!!
+moveF ฟังไม่ออก พูดใหม่ดิ บัก%$user
+
+followS เฮ้ๆ ทางนี้ๆ
+followS เยสสเซออร์!!
+followF ฟังไม่ออก พูดใหม่ดิ บัก%$user
+
+followStopS รู้แล้วๆ
+
+
+
+
+#statusS เลือด:%$char_hp/%$char_hp_maxพลังเวท:%$char_sp/%$char_sp_max เลเวล:%$char_lvค่าประสบการณ์เลเวล%$char_exp/%$char_exp_max จ๊อบ:%$char_lv_jobค่าประสบการณ์จ๊อบ%$char_exp_job/%$char_exp_job_max น้ำหนัก:%$char_weight/%$char_weight_max เงิน:%$zenny
+
+
+statusS0 ====================================
+statusS1 HP: %$char_hp%   SP: %$char_sp%
+statusS2 เลเวล: %$char_lv(%$char_exp%)
+statusS3 จ๊อบ: %$char_lv_job(%$char_exp_job%)
+statusS4 น้ำหนัก: %$char_weight%   เงิน: %$zenny Zenny
+statusS5 ====================================
+
+statS Str: %$char_str\nAgi: %$char_agi\nVit: %$char_vit\nInt: %$char_int\nDex: %$char_dex\nLuk: %$char_luk\nStatus Point: %$char_point
+
+thankS ^^
+thankS ม่ายยมีปัญหา
+thankS รูปจักขอบคุณเป็นเหมือนกันนะ เรา 555+
+
+verboseOnS ฮ่าา กว่าจะพูดได้ Y-Y
+verboseOnF ชอบที่ข้าพูดมากใช่มะ ด้ายยย s7s7
+
+verboseOffS รำคาญข้าแล้วสิ 555+
+verboseOffS OMG!!!
+verboseOffF เงียบแล้ววว พอใจยางง
+
+whereS อ่าวกรรม หลงไปอยู่ขั้วโลกไหนนั่น ตอนนี้ข้าอยู่ที่ %$map: %$x, %$y
+whereS อยู่นี่ๆๆ %$map: %$x, %$y
+
+healS รับทราบ
+healF1 วอทซับแมนนน??
+healF2 หมดหลอดๆ ตอนนี้เหลือแค่ %$char_sp เอง T_T
+healF3 เอ่อ..แบบว่า แบบๆๆ แบ้บๆๆๆ ไม่มีสกิลหงะ Y_Y
+healF3 ใครขโมยสกิลช้านไป!!
+
+speedS Goooo!! ไปโลดๆๆ ไปชิ่ววๆๆ gg
+blessS เอาไปเลยยยย ว่าแต่..เจ้าคงไม่ใช่ Undead นะ ฮี้ๆ
+kyrieS โอมมม..raser ma scir ma gister! บาเรียศักศิทธิ์มิลเลอฟอร์ซ!!
+
+warpF1 หยุดแว้ววววววว
+warpF1 STOPGA!!
+warpF1 หยุดนิ่ง ทุกการเคลื่อนไหว~*
+warpF2 แมพไรฟ่ะ ไม่รู้จัก - -'
+warpF3 เอ่อ..ข้ายังไม่ได้วาร์ปเลยนะ แล้วเจ้ามาสั่งให้ข้าหยุด จะให้ข้าหยุดอะไร??
+warpF3 แสดด ยังไม่ได้วาร์ปเลยนะ มาบอกให้หยุด เวง - -'
+warpF4 ขอแสดงความเสียใจด้วย แมพที่จะให้วาร์ป มันไม่มี - -' ตอนนี้มีแค่...
+
+warpS OK. แมพที่สั่งให้วาร์ปคือแมพ %$map นะ? ถ้าไม่ใช่ ก็สั่งอีกทีละกาน
+
+memoF1 รหัสลับไม่ถูกต้อง กรุณาสั่งมาใหม่!
+memoF1 สั่งผิดแล้ว ถ้าจำรายการคำสั่งไม่ได้ก็ลองใช้คำสั่งนี้ดู memo list
+memoF2 แมพอะไรหว่า ไม่รู้จัก -*-
+
+memoS1 รอสักครู่น่ออ พอไปถึงเดวบอกเอง~*
+memoS1 Plz wait. จนกว่าข้าจะไปถึง ณ จุดเป้าหมาย
+memoS2 ถึงจุดหมายปลายทางแว้วว จะเมมวาร์ปละน้าา
+memoS2 ถึงจุดหมายแระ รอสักครู่น่อ
+memoS3 รายการคำสั่งสำหรับเมโมวาร์ป: %$memolist
+
+sancS รับทราบ! ว่าแต่..เจ้าคงถอดเสื้อ Evil Druid ออกแล้วนะ ^^
+sancS โอมม แซงๆๆๆ แง้งงๆแง่งงๆๆ....
+
+sancF1 Okieeee!
+sancF2 มีตัวช่วยให้คุณ 2 ตัวช่วย ข้อ 1. ตอบว่า sanc start หรือ ข้อ 2 ตอบว่า sanc stop จับเวลา!

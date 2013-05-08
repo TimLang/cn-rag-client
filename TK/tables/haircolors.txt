@@ -1,0 +1,9 @@
+0 Red0_สีแดง
+1 Blond1_สีเหลือง
+2 Purple2_สีม่วง
+3 Light Brown3_สีน้ำตาลอ่อน
+4 Green4_สีเขียว
+5 Blue5_สีน้ำเงิน
+6 White6_สีขาว
+7 Dark Brown7_สีน้ำตาล
+8 Red8_สีแดง

@@ -1,0 +1,38 @@
+#-------------------------------------------------------------------------------------------------------
+# ThaiKoreEx equip_control Version 2.5
+#-------------------------------------------------------------------------------------------------------
+#------------------------------------[การติดตั้งอุปกรณ์เมื่อโจมตี]------------------------------------
+autoSwitch_default_0 
+
+autoSwitch  {
+	hp 0<100
+	sp 0<100
+	maxAggressives 0
+	minAggressives 0
+	spirits 0<0
+	inLockOnly 0
+	monsters 0
+	monRace 0
+	monElem 0
+	monInStatus 0
+	monOutStatus 0
+	inStatus 0
+	outStatus 0
+	prevSkill 0
+	weight 0
+}
+
+#---------------------------------------[การติดตั้งอุปกรณ์อื่นๆ]-----------------------------------------
+equipAuto_teleport 
+equipAuto_def_0 
+
+equipAuto_0_0 
+equipAuto_0_useWeapon 1
+equipAuto_0_attackDistance 
+equipAuto_0_hp 0<100
+equipAuto_0_sp 0<100
+equipAuto_0_maxAggressives 0
+equipAuto_0_minAggressives 0
+equipAuto_0_monsters 
+equipAuto_0_weight 0
+equipAuto_0_whileSitting 0

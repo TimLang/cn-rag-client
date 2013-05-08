@@ -1,0 +1,757 @@
+[00A0]
+2 Cannot pickup item (inventory full)
+4 Already Surpasses time may take takes Quantity - Is unable to take again takes any stage prop
+5 Identical kind Items Is unable to obtain above 3 ten thousand
+6 Can't loot item...wait...
+
+[0110_A]
+0 You don't have an ability to Trade
+1 You don't have an ability to show Emotion
+2 You don't have an ability to Sit
+3 You don't have an ability to create Chat Room
+4 You don't have an ability to create Party
+5 You don't have an ability to Shout
+6 You don't have an ability to PK
+7 You haven't learned enough skills for aligning
+
+[0110_B]
+1 SP不足
+2 HP不足
+3 尚无空间移动场所储存资料
+4 技能使用量不足
+5 金钱不足无法使用此技能
+6 用这武器无法使用此技能
+7 需要红色魔力矿石
+8 需要蓝色魔力矿石
+9 负重量过大无法使用技能
+10 Requirement
+11 使用技能失败
+
+[0135]
+0 交易成功
+1 金钱不足
+2 超过负重量
+3 交易失败
+4 库存数量不足
+
+[0119_A]
+1 Petrified
+2 Frozen
+3 Stunned
+4 Sleeping
+5 Immunity Param1
+6 Petrifying
+
+[0119_B]
+1 Poisoned
+2 Cursed
+4 Silenced
+8 Signum Crusis
+16 Blinded
+32 Angelus
+64 Unknown 64
+128 Deadly Poison
+
+[0119_C]
+1 Sight
+2 Hiding
+4 Cloaking
+8 Level 1 Cart
+16 Falcon
+32 Riding
+64 GM Perfect Hide
+128 Level 2 Cart
+256 Level 3 Cart
+512 Level 4 Cart
+1024 Level 5 Cart
+2048 Orc Head
+4096 Wedding Sprites
+8192 Ruwach
+16384 Stealth
+32768 Flying
+65536 Santa Sprites
+131072 Unknown 131072
+262144 Summer
+
+[011F]
+126 Safety Wall
+127 Fire Wall
+128 Warp Portal Opening
+129 Warp Portal
+130 Holy Communion?
+131 Santuary
+132 Magnus Exorcismus
+133 Pneuma
+134 Big Magic
+135 Fire Pillar
+136 Fire Pillar
+140 Talkie Box
+141 Ice Wall
+142 Quagmire
+143 Blast Mine
+144 Skid Trap
+145 Ankle Snare
+146 Venom Dust
+147 Land Mine
+148 Shockwave Trap
+149 Sandman
+150 Flasher
+151 Freezing Trap
+152 Claymore Trap
+153 Talkie Box
+154 Volcano
+155 Deluge
+156 Violent Gale
+157 Land Protector
+158 Lullaby
+159 Mr. Kim Is A Rich Man
+160 Eternal Chaos
+161 The Sound Of a Drum On the Battlefield
+162 The Ring of Nibelungen
+163 Loki's Wail
+164 Into the Abyss
+165 Invulnerable Siegfried
+166 Dissonance
+167 Whistle
+168 Assassin Cross at Sunset
+169 A Poem of Bragi
+170 The Apple of Idun
+171 Ugly Dance
+172 Humming
+173 Please Don't Forget Me
+174 Fortune's Kiss
+175 Service For You
+176 Graffiti
+177 Demonstration
+178 Romantic Rendezvous
+179 Battle Chant
+180 Basilica
+181 Sheltering Bliss
+182 Blinding Mist
+183 Fiber Lock
+184 Gravitation Field
+185 Wand of Hermode
+186 JT_KAENSIN
+187 Watery Evasion
+189 Blaze Shield
+190 Ground Drift
+191 JT_BLIND_S
+192 Death Poison Slash
+193 Death Freezer
+194 Gunslinger Mine
+195 Death Wave
+196 Dead Water Attack
+197 Dead Storm Attack
+198 Earth Quake
+199 Evil Land
+200 Dark Runner
+201 Dark Transfer
+202 Epiclesis
+203 Earth Strain
+204 Man Hole
+205 Dimension Door
+206 Chaos Panic
+207 Maelstrom
+208 Blood Lust
+209 Feint Bomb
+210 Magenta Trap
+211 Cobalt Trap
+212 Maze Trap
+213 Verdure Trap
+214 Fire Trap
+215 Ice Trap
+216 Electric Shock
+217 Bomb Cluster
+218 Reverberation
+219 Severe Rainstorm
+220 Fire Walk
+221 Electric Walk
+222 Poem of the Netherworld
+223 Psychic Wave
+224 Cloud Kill
+225 Poison Smoke
+226 Neutral Barrier
+227 Stealth Field
+228 Warmer
+229 Thorn Trap
+230 Wall of Thorns
+231 Demonic Fire
+232 Fire Expansion Smoke Powder
+233 Fire Expansion Tear Gas
+234 Hell's Plant  
+235 Vacuum Extreme
+
+
+[043F]
+0 Provoke
+1 Endure
+2 Twohand Quicken
+3 Improve Concentration
+4 Hiding
+5 Cloaking
+6 Enchant Poison
+7 Poison React
+8 Quagmire
+9 Angelus
+10 Blessing
+11 Signum Crucis
+12 Increase AGI
+13 Decrease AGI
+14 Slow Poison
+15 Impositio Manus
+16 Suffragium
+17 Aspersio
+18 B.S. Sacramenti
+19 Kyrie Eleison
+20 Magnificat
+21 Gloria
+22 Lex Aeterna
+23 Adrenaline Rush
+24 Weapon Perfection
+25 Power-Thrust
+26 Power Maximize
+27 Peco Peco Ride
+28 Falcon
+29 Trickdead
+30 Crazy Uproar
+31 Energy Coat
+32 Armor Damaged
+33 Weapon Damaged
+34 Hallucination
+35 Owg 50%
+36 Owg 90%
+37 Concentration Potion
+38 Awakening Potion
+39 Berserk Potion
+40 Unknown 41
+41 Walking Speed Up
+42 Speed Up
+43 Counter Attack
+44 Venom Splasher
+45 Ankle Snare
+46 Action Delay
+47 Unknown 47
+48 Unknown 48
+49 Barrier
+50 Strip Weapon
+51 Strip Shield
+52 Strip Armor
+53 Strip Helm
+54 Chemical Protection Weapon
+55 Chemical Protection Shield
+56 Chemical Protection Armor
+57 Chemical Protection Helm
+58 Auto Guard
+59 Reflect Shield
+60 Devotion
+61 Providence
+62 Defender
+63 Magic Rod
+64 Arm Enchanted
+65 Auto Cast
+66 Unknown 66
+67 Orc Head
+68 Spear Quicken
+69 Unknown 69
+70 Whistle
+71 Assassin Cross of Sunset
+72 A Poem of Bragi
+73 The Apple of Idun
+74 Humming
+75 Please Don't Forget Me
+76 Fortune's Kiss
+77 Service For you
+78 Mr. Kim Is A Rich Man
+79 Eternal Chaos
+80 The Sound Of a Drum On the Battlefield
+81 The Ring of Nibelungen
+82 Loki's Wail
+83 Into The Abyss
+84 Invulnerable Siegfried
+85 Blade Stop
+86 Explosion of Spirit
+87 Steel Body
+88 Asura Strike
+89 Combo Attack
+90 Flame Launcher
+91 Frost Weapon
+92 Lightning Loader
+93 Seismic Weapon
+94 Unknown 94
+95 Stop
+96 Break weapon
+97 Undead
+98 Powerup
+99 AGI Up
+100 Muted
+101 Invisible
+102 Unknown 102
+103 Aura Blade
+104 Parry
+105 Spear Dynamo
+106 Relax
+107 Frenzy
+108 Fury
+109 Battle Chant
+110 Assumptio
+111 Basilica
+112 Land Change
+113 Mystical Amplification
+114 Enchant Deadly Poison
+115 Falcon Eyes
+116 Wind Walker
+117 Shattering Strike
+118 Cart Boost
+119 Stealth
+120 Counter Instinct
+121 Marionette Control
+122 Marionette Control
+123 Sheltering Bliss
+124 Traumatic Blow
+125 Vital Strike
+126 Mind Breaker
+127 Foresight
+128 Blinding Mist
+129 Fiber Lock
+130 Mom, Dad, I love you!
+131 Magnum Break
+132 Auto Berserk
+133 Run
+134 Bump
+135 Ready Storm
+136 Unknown 136
+137 Ready Down
+138 Unknown 138
+139 Ready Turn
+140 Unknown 140
+141 Ready Counter
+142 Unknown 142
+143 Dodge
+144 Unknown 144
+145 Spurt
+146 Dark Weapon
+147 Adrenaline All
+148 Ghost Weapon
+149 Night
+150 Increase Str
+151 Increase Atk/Matk
+152 Devil of Sun, Moon and Star
+153 Kaite
+154 Eswoo
+155 Unknown 155
+156 Kaizel
+157 Kaahi
+158 Kaupe
+159 Esma
+160 Miracle of Sun, Moon and Star
+161 Sword Quicken
+162 Friend of Sun, Moon and Star
+163 Unknown 163
+164 Warmth
+165 Warmth of Sun
+166 Warmth of Moon
+167 Warmth of Star
+168 Show Emotion
+169 Comfort of Sun
+170 Comfort of Moon
+171 Comfort of Star
+172 Unknown 172
+173 Battle Command
+174 Regeneration
+175 Unknown 175
+176 Unknown 176
+177 Unknown 177
+178 Unknown 178
+179 Amistr Bulwark
+180 Unknown 180
+181 Preserve
+182 Battle Command
+183 Not Asura Strike
+184 Invisible Detect
+185 Walking Speed Down
+186 Lucky Cast
+187 Gravitation Field
+188 Power Thrust Max
+189 Longing for Freedom
+190 Hermod's Staff
+191 Tarot Card of Fate
+192 Urgent Escape
+193 Flitting
+194 Accelerated Flight
+195 Mental Charge
+196 Blood Lust
+197 Shrink
+198 Sight Blaster
+199 Wink of Charm
+200 Close Confine
+201 Close Confine
+202 Unknown 202
+203 Last Stand
+204 Gatling Fever
+205 Happy Break
+206 Cicada Skin Shed
+207 Mirror Image
+208 Ninja Aura
+209 Gunslinger's Panic
+210 Increase Accuracy
+211 Watery Evasion
+212 Unknown 212
+213 Mental Delivery
+214 Unknown 214
+215 Unknown 215
+216 Bongun Gain or Munak Gain
+217 Unknown 217
+218 Bongun Drift
+219 Bongun Wall Shift
+220 Munak Reincarnation
+221 Death Attack Passive
+222 Death Speed Passive
+223 Death Defense Passive
+224 Death Critical Passive
+225 Death Ranking Passive
+226 Death Triple Passive
+227 Death Energy
+228 Unknown 228
+229 Unknown 229
+230 Unknown 230
+231 Unknown 231
+232 Death Aura
+233 Death Freezer
+234 Death Punish
+235 Death Instant Barrier
+236 Death Warning
+237 Unknown 237
+238 Mighty Gauge
+239 Dead Acceleration
+240 Unknown 240
+241 Steamed Tongue
+242 Steamed Scorpion
+243 Stew Of Immortality
+244 Hwergelmir's Tonic
+245 Dragon Breath Cocktail
+246 Cooked Nine Tail's Tails
+247 Honey Pastry
+248 Sesame Pastry
+249 Abrasive
+250 Field Manual
+251 Life Insurance
+252 Bubble Gum
+253 Convex Mirror
+254 Dark Energy
+255 Dark First Fantasy
+256 Dark Head Defense
+257 Dark Twilight
+258 Dark Transformation
+259 Dark Item Rebuild
+260 Dark Illusion
+261 Dark Soul Power
+262 Dark Earplug
+263 Black Gemstone Contrac
+264 Black Gemstone Magic
+265 Colloector Magic Cart
+266 Colloector Crystal
+267 Colloector Human Rebuild
+268 Colloector Emperium Darknes
+269 Colloector Emperium Guardian
+270 Colloector Time Out
+271 FOOD STR CASH
+272 FOOD AGI CASH
+273 FOOD VIT CASH
+274 FOOD DEX CASH
+275 FOOD INT CASH
+276 FOOD LUK CASH
+277 Mercenary Increase Flee
+278 Mercenary Increase Atk
+279 Mercenary Increase Hp
+280 Mercenary Increase Sp
+281 Mercenary Increase Hit
+282 Slow Cast
+283 Magic Mirror
+284 Stone Skin
+285 Anti magic
+286 Critical Wound
+287 Defender
+288 NOACTION WAIT
+289 MOVHASTE HORSE
+290 Defense Rate
+291 Magic Defense Rate
+292 Increase Heal Rate
+293 Small Life Potion
+294 Medium Life Potion
+295 Increase Critical
+296 PLUSAVOIDVALUE
+297 Attacker aspd
+298 Target aspd
+299 Attacker aspd
+300 Attacker Blood
+301 Target Blood
+302 Armor Property
+303 REUSE LIMIT A
+304 Hellpower
+305 STEAMPACK
+306 REUSE LIMIT B
+307 REUSE LIMIT C
+308 REUSE LIMIT D
+309 REUSE LIMIT E
+310 REUSE LIMIT F
+311 Invincible
+312 Job Manual
+313 Increase Party Flee
+314 Thank You
+315 Endure Mdef
+316 Enchant Blade
+317 Death Bound
+318 Nauthiz Rune
+319 Giant Growth
+320 Stone Hard Skin
+321 Vitality Activation
+322 Fighting Spirit
+323 Abundance
+324 Reuse Berkana Rune
+325 Reuse Raido Rune
+326 Reuse Nauthiz Rune
+327 Reuse Wyrd Rune
+328 Venom Impress
+329 Epiclesis
+330 Oratio
+331 Lauda Agnus
+332 Lauda Ramus
+333 Cloaking Exceed
+334 Hallucination Walk
+335 Hallucination Walk Postdelay
+336 Renovatio
+337 Weapon Blocking
+338 Weapon Blocking Postdelay
+339 Rolling Cutter
+340 Expiatio
+341 Poisoning Weapon
+342 Toxin
+343 Paralyse
+344 Venom Bleed
+345 Magic Mushroom
+346 Death Hurt
+347 Pyrexia
+348 Oblivioncurse
+349 Leeches End
+350 Duple Light
+351 Frost Misty
+352 Fear Breeze
+353 Electric Shocker
+354 Marsh Of Abyss
+355 Recognized Spell
+356 Stasis
+357 Warg Rider
+358 Warg Dash
+359 Warg Bite
+360 Camouflage
+361 Acceleration
+362 Hover
+363 SPHERE 1
+364 SPHERE 2
+365 SPHERE 3
+366 SPHERE 4
+367 SPHERE 5
+368 MVP Card Tao Gunka
+369 MVP Card Mistress
+370 MVP Card Orc Hero
+371 MVP Card Orc Lord
+372 Overheat Limitpoint
+373 Overheat
+374 Shape Shift
+375 Infra Red Scan
+376 Magnetic Field
+377 Neutral Barrier
+378 Neutral Barrier Master
+379 Stealth Field
+380 Stealth Field Master
+381 Manu Atk
+382 Manu Def
+383 Spl Atk
+384 Spl Def
+385 Reproduce
+386 Manu Matk
+387 Spl Matk
+388 Str Scroll
+389 Int Scroll
+390 Reflect Damage
+391 Vanguard Force
+392 BUCHEDENOEL
+393 Auto Shadow Spell
+394 Shadow Formation
+395 Raid
+396 Shield Spell Def
+397 Shield Spell Mdef
+398 Shield Spell Ref
+399 Divest Accessory
+400 Exceed Break
+401 Adoramus
+402 Prestige
+403 Invisibility
+404 Deadly Infect
+405 Banding
+406 Earth Drive
+407 Inspiration
+408 Masquerade Enervation
+409 Masquerade Groomy
+410 Raising Dragon
+411 Masquerade Ignorance
+412 Masquerade Laziness
+413 Lightning Walk
+414 Acaraje 
+415 Masquerade Unlucky
+416 Cursed Circle Attacker
+417 Cursed Circle Target
+418 Masquerade Weakness
+419 Crescent Elbow
+420 Noequip Accessory
+421 Masquerade Weakness
+422 Manhole
+423 Deadly Infect
+424 Fallen Empire
+425 Gentle Touch-Save
+426 Gentle Touch-Opposite
+427 Gentle Touch-Alive
+428 Bloody Lust
+429 Swing Dance
+430 Lover Symphony
+431 Swing Dance
+432 Fist Spell
+433 Netherworld
+434 Voice of Siren
+435 Lullaby
+436 Circling Nature
+437 Cold
+438 Gloomy Shyness
+439 Song Of Mana
+440 Killing Cloud
+441 Dance With Wug
+442 Rush To Windmill
+443 Echo Song
+444 Harmonize
+445 Striking
+446 Warmer
+447 Moonlight Serenade
+448 Saturday Night Fever
+449 Sit Down Force
+450 Analyze
+451 Lerad's Dew
+452 Sinking Melody
+453 Beyound Cry
+454 Infinite Humming Voice
+455 Spellbook 1
+456 Spellbook 2
+457 Spellbook 3
+458 Freeze Spell
+459 Sword Mastery
+460 Cart Remodeling
+461 Cart Boost
+462 Fixed CastingTM Reduce
+463 Thorn Trap
+464 Blood Sucker
+465 Spore Explosion
+466 Demonic Fire
+467 Fire Expansion Smoke Powder
+468 Fire Expansion Tear Gas
+469 Blocking Play
+470 Mandragora Howling
+471 Activate
+472 Secrament
+473 Assumptio2
+474 Seven Wind
+475 Odins Recall Delay
+476 Stomach Ache
+477 Unknown 477
+478 Unknown 478
+479 Unknown 479
+480 Unknown 480
+481 Unknown 481
+482 Unknown 482
+483 Unknown 483
+484 Unknown 484
+485 Unknown 485
+486 Unknown 486
+487 Unknown 487
+488 Unknown 488
+489 Unknown 489
+490 Vacuum Extreme
+491 Unknown 491
+492 Unknown 492
+493 Unknown 493
+494 Unknown 494
+495 Unknown 495
+496 Unknown 496
+497 Unknown 497
+498 Summon Agni
+499 Unknown 499
+500 Unknown 500
+501 Unknown 501
+502 Unknown 502
+503 Unknown 503
+504 Unknown 504
+505 Unknown 505
+506 Unknown 506
+507 Unknown 507
+508 Unknown 508
+509 Unknown 509
+510 Unknown 510
+511 Unknown 511
+512 Unknown 512
+513 Unknown 513
+514 Unknown 514
+515 Unknown 515
+516 Unknown 516
+517 Unknown 517
+518 Unknown 518
+519 Unknown 519
+520 Unknown 520
+521 Unknown 521
+522 Unknown 522
+523 Unknown 523
+524 Unknown 524
+525 Unknown 525
+526 Unknown 526
+527 Unknown 527
+528 Unknown 528
+529 Unknown 529
+530 Unknown 530
+531 Unknown 531
+532 Unknown 532
+533 Unknown 533
+534 Unknown 534
+535 Unknown 535
+536 Unknown 536
+537 Unknown 537
+538 Unknown 538
+539 Unknown 539
+540 Unknown 540
+541 Unknown 541
+542 Unknown 542
+543 Unknown 543
+544 Unknown 544
+545 Unknown 545
+546 Unknown 546
+547 Unknown 547
+548 Unknown 548
+549 Unknown 549
+550 Unknown 550
+551 Unknown 551
+552 Unknown 552
+553 Unknown 553
+554 Unknown 554
+555 Unknown 555
+556 Unknown 556
+557 Unknown 557
+558 Unknown 558
+559 Unknown 559
+560 Unknown 560
+561 Unknown 561
+562 Unknown 562
+563 Unknown 563
+564 Unknown 564
+565 Unknown 565
+566 Unknown 566
+567 Unknown 567
+568 Unknown 568
+569 Unknown 569
+570 Unknown 570
+622 Sit

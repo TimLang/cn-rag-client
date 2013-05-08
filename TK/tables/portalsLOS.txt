@@ -1,0 +1,1912 @@
+1@cata 281 12 1@cata 100 224 815
+1@tower 12 222 1@tower 52 183 89
+1@tower 12 309 1@tower 52 270 87
+1@tower 12 394 1@tower 12 393 3
+1@tower 12 51 1@tower 52 12 87
+1@tower 136 183 1@tower 96 222 89
+1@tower 136 354 1@tower 96 394 88 1@tower 96 393 87
+1@tower 184 393 1@tower 184 394 3
+1@tower 184 51 1@tower 224 12 87
+1@tower 224 183 1@tower 184 222 89
+1@tower 224 270 1@tower 184 309 87
+1@tower 224 354 1@tower 184 393 87 1@tower 184 394 88
+1@tower 224 99 1@tower 184 138 89
+1@tower 270 222 1@tower 310 183 89
+1@tower 270 394 1@tower 270 393 3
+1@tower 310 12 1@tower 270 51 87
+1@tower 310 270 1@tower 270 309 87
+1@tower 310 354 1@tower 270 393 87 1@tower 270 394 88
+1@tower 310 99 1@tower 270 138 89
+1@tower 355 222 1@tower 395 183 91
+1@tower 355 309 1@tower 395 270 89
+1@tower 355 393 1@tower 395 354 89 1@tower 355 394 3
+1@tower 355 394 1@tower 395 354 90
+1@tower 395 12 1@tower 355 51 89
+1@tower 395 99 1@tower 355 138 91
+1@tower 50 355 1@tower 12 394 87 1@tower 12 393 86
+1@tower 52 99 1@tower 12 138 89
+1@tower 96 138 1@tower 136 99 89
+1@tower 96 309 1@tower 136 270 87
+1@tower 96 393 1@tower 96 394 3
+1@tower 96 51 1@tower 136 12 87
+2@tower 12 222 2@tower 52 183 89
+2@tower 12 309 2@tower 52 270 87
+2@tower 12 393 2@tower 12 394 3 2@tower 52 354 87
+2@tower 12 394 2@tower 52 354 88
+2@tower 12 51 2@tower 52 12 87
+2@tower 136 12 2@tower 96 51 87
+2@tower 136 99 2@tower 96 138 89
+2@tower 184 138 2@tower 224 99 89
+2@tower 184 222 2@tower 224 183 89
+2@tower 184 309 2@tower 224 270 87
+2@tower 184 393 2@tower 224 354 87
+2@tower 184 394 2@tower 184 393 3 2@tower 224 354 88
+2@tower 224 12 2@tower 184 51 87
+2@tower 270 138 2@tower 310 99 89
+2@tower 270 394 2@tower 310 354 88 2@tower 270 393 3
+2@tower 270 51 2@tower 310 12 87
+2@tower 310 183 2@tower 270 222 89
+2@tower 310 270 2@tower 270 309 87
+2@tower 310 354 2@tower 270 393 87
+2@tower 355 138 2@tower 395 99 91
+2@tower 355 309 2@tower 395 270 89
+2@tower 355 393 2@tower 395 354 89
+2@tower 355 394 2@tower 355 393 3 2@tower 395 354 90
+2@tower 355 51 2@tower 395 12 89
+2@tower 395 183 2@tower 355 222 91
+2@tower 52 99 2@tower 12 138 89
+2@tower 96 222 2@tower 136 183 89
+2@tower 96 309 2@tower 136 270 87
+2@tower 96 393 2@tower 136 354 87
+2@tower 96 394 2@tower 136 354 88 2@tower 96 393 3
+3@tower 12 222 3@tower 52 183 89
+3@tower 12 394 3@tower 12 393 3
+3@tower 136 270 3@tower 96 309 87
+3@tower 136 354 3@tower 96 393 87
+3@tower 184 393 3@tower 224 354 87
+3@tower 184 394 3@tower 224 354 88 3@tower 184 393 3
+3@tower 184 51 3@tower 224 12 87
+3@tower 224 183 3@tower 184 222 89
+3@tower 224 270 3@tower 184 309 87
+3@tower 224 99 3@tower 184 138 89
+3@tower 270 222 3@tower 310 183 89
+3@tower 270 309 3@tower 310 270 87
+3@tower 270 393 3@tower 270 394 3 3@tower 310 354 87
+3@tower 270 394 3@tower 310 354 88
+3@tower 270 51 3@tower 310 12 87
+3@tower 310 99 3@tower 270 138 89
+3@tower 355 222 3@tower 395 183 91
+3@tower 355 394 3@tower 355 393 3
+3@tower 355 51 3@tower 395 12 89
+3@tower 395 270 3@tower 355 309 89
+3@tower 395 354 3@tower 355 393 89 3@tower 355 394 90
+3@tower 395 99 3@tower 355 138 91
+3@tower 52 12 3@tower 12 51 87
+3@tower 52 270 3@tower 12 309 87
+3@tower 52 354 3@tower 12 393 87 3@tower 12 394 88
+3@tower 52 99 3@tower 12 138 89
+3@tower 96 138 3@tower 136 99 89
+3@tower 96 222 3@tower 136 183 89
+3@tower 96 394 3@tower 136 354 88 3@tower 96 393 3
+3@tower 96 51 3@tower 136 12 87
+4@tower 12 138 4@tower 52 99 89
+4@tower 12 222 4@tower 52 183 89
+4@tower 12 309 4@tower 52 270 87
+4@tower 12 393 4@tower 12 394 3
+4@tower 136 12 4@tower 96 51 87
+4@tower 136 354 4@tower 96 394 88
+4@tower 184 138 4@tower 224 99 89
+4@tower 184 222 4@tower 224 183 89
+4@tower 184 393 4@tower 224 354 87 4@tower 184 394 3
+4@tower 184 51 4@tower 224 12 87
+4@tower 224 270 4@tower 184 309 87
+4@tower 224 354 4@tower 184 394 88
+4@tower 270 138 4@tower 310 99 89
+4@tower 270 222 4@tower 310 183 89
+4@tower 270 393 4@tower 310 354 87 4@tower 270 394 3
+4@tower 309 12 4@tower 271 51 85
+4@tower 310 270 4@tower 270 309 87
+4@tower 310 354 4@tower 270 394 88
+4@tower 355 222 4@tower 395 183 91
+4@tower 355 394 4@tower 355 393 3
+4@tower 395 270 4@tower 355 309 89
+4@tower 395 354 4@tower 355 394 90 4@tower 355 393 89
+4@tower 395 99 4@tower 355 138 91
+4@tower 52 12 4@tower 12 51 87
+4@tower 52 354 4@tower 12 393 87 4@tower 12 394 88
+4@tower 96 138 4@tower 136 99 89
+4@tower 96 222 4@tower 136 183 89
+4@tower 96 309 4@tower 136 270 87
+4@tower 96 393 4@tower 136 354 87 4@tower 96 394 3
+6@tower 155 64
+6@tower 32 100
+abbey01 12 205 abbey01 322 101 760
+abbey01 51 10 abbey01 87 122 216
+abbey02 149 290 abbey02 149 7 491
+abyss_01 25 24 abyss_01 265 274 726
+abyss_02 277 270 abyss_02 145 280 826
+airplane 224 64 airplane 208 53 47
+airplane 243 29 airplane 254 54 38 airplane 224 64 56 airplane 208 53 61
+airplane 243 73 airplane 243 29 46 airplane 254 54 32 airplane 224 64 36 airplane 208 53 71
+airplane 245 160
+airplane 254 54 airplane 224 64 42 airplane 208 53 63
+airplane 87 67
+airplane_01 208 53 airplane_01 254 54 63
+airplane_01 243 29 airplane_01 250 54 34 airplane_01 243 73 46 airplane_01 208 53 61 airplane_01 254 54 38
+airplane_01 243 73 airplane_01 208 53 71 airplane_01 254 54 32
+airplane_01 245 160
+airplane_01 250 54 airplane_01 243 73 28 airplane_01 208 53 59 airplane_01 254 54 6
+airplane_01 88 68 airplane_01 87 67 4
+airport 124 13 airport 161 13 77 airport 143 43 55
+airport 143 14 airport 124 13 50 airport 161 13 49 airport 143 43 47
+airport 143 49 airport 142 61 15
+airport 161 13 airport 143 43 54
+airport 19 18 airport 47 18 46
+alb2trea 39 51 alb2trea 62 69 43 alb2trea 88 111 113
+alb2trea 62 69 alb2trea 88 111 72
+alb_ship 160 171
+alb_ship 26 166 alb_ship 41 163 32
+alb_ship 37 174 alb_ship 26 166 21 alb_ship 41 163 29
+alb_ship 68 99
+alberta 113 60 alberta 65 233 251 alberta 241 115 227
+alberta 117 38 alberta 93 205 209 alberta 178 165 262 alberta 189 151 231 alberta 243 67 191 alberta 192 169 252 alberta 195 164 250 alberta 245 66 196 alberta 170 170 293 alberta 209 173 273 alberta 45 145 181 alberta 245 42 172 alberta 117 56 20 alberta 99 221 221 alberta 243 91 215 alberta 223 36 156 alberta 247 122 250 alberta 243 45 169 alberta 235 45 161 alberta 33 42 100 alberta 98 153 151 alberta 214 77 180 alberta 15 234 300 alberta 243 92 216 alberta 113 60 28 alberta 65 233 271 alberta 241 115 237
+alberta 117 56 alberta 235 45 143 alberta 33 42 100 alberta 98 153 133 alberta 243 92 198 alberta 214 77 162 alberta 15 234 282 alberta 99 221 203 alberta 223 36 138 alberta 243 91 197 alberta 113 60 10 alberta 243 45 151 alberta 247 122 232 alberta 65 233 253 alberta 241 115 219
+alberta 15 234 alberta 243 92 372 alberta 113 60 280 alberta 65 233 53 alberta 241 115 361
+alberta 170 170 alberta 209 173 56 alberta 45 145 286 alberta 245 42 227 alberta 117 56 275 alberta 99 221 266 alberta 243 91 172 alberta 223 36 211 alberta 247 122 173 alberta 243 45 224 alberta 235 45 216 alberta 33 42 329 alberta 98 153 196 alberta 214 77 169 alberta 15 234 361 alberta 243 92 171 alberta 113 60 273 alberta 65 233 326 alberta 241 115 160
+alberta 178 165 alberta 189 151 33 alberta 243 67 165 alberta 192 169 20 alberta 195 164 20 alberta 245 66 168 alberta 170 170 47 alberta 209 173 41 alberta 45 145 255 alberta 245 42 196 alberta 117 56 244 alberta 99 221 235 alberta 243 91 141 alberta 223 36 180 alberta 247 122 142 alberta 243 45 193 alberta 235 45 185 alberta 33 42 298 alberta 98 153 165 alberta 214 77 138 alberta 15 234 330 alberta 243 92 140 alberta 113 60 242 alberta 65 233 295 alberta 241 115 129
+alberta 189 151 alberta 243 67 140 alberta 192 169 23 alberta 195 164 21 alberta 245 66 143 alberta 170 170 64 alberta 209 173 44 alberta 45 145 224 alberta 245 42 171 alberta 117 56 213 alberta 99 221 204 alberta 243 91 116 alberta 223 36 155 alberta 247 122 117 alberta 243 45 168 alberta 235 45 160 alberta 33 42 267 alberta 98 153 134 alberta 214 77 113 alberta 15 234 299 alberta 243 92 115 alberta 113 60 211 alberta 65 233 264 alberta 241 115 104
+alberta 192 169 alberta 195 164 10 alberta 245 66 158 alberta 170 170 43 alberta 209 173 23 alberta 45 145 245 alberta 245 42 186 alberta 117 56 234 alberta 99 221 225 alberta 243 91 131 alberta 223 36 170 alberta 247 122 132 alberta 243 45 183 alberta 235 45 175 alberta 33 42 288 alberta 98 153 155 alberta 214 77 128 alberta 15 234 320 alberta 243 92 130 alberta 113 60 232 alberta 65 233 285 alberta 241 115 119
+alberta 195 164 alberta 245 66 156 alberta 170 170 51 alberta 209 173 25 alberta 45 145 243 alberta 245 42 184 alberta 117 56 232 alberta 99 221 223 alberta 243 91 129 alberta 223 36 168 alberta 247 122 130 alberta 243 45 181 alberta 235 45 173 alberta 33 42 286 alberta 98 153 153 alberta 243 92 128 alberta 214 77 126 alberta 15 234 318 alberta 113 60 230 alberta 65 233 283 alberta 241 115 117
+alberta 209 173 alberta 45 145 266 alberta 245 42 207 alberta 117 56 255 alberta 99 221 246 alberta 243 91 152 alberta 223 36 191 alberta 247 122 153 alberta 243 45 204 alberta 235 45 196 alberta 33 42 309 alberta 98 153 176 alberta 214 77 149 alberta 15 234 341 alberta 243 92 151 alberta 113 60 253 alberta 65 233 306 alberta 241 115 140
+alberta 214 77 alberta 15 234 370 alberta 243 92 46 alberta 113 60 170 alberta 65 233 335 alberta 241 115 67
+alberta 223 36 alberta 235 45 27 alberta 33 42 236 alberta 98 153 247 alberta 214 77 52 alberta 15 234 412 alberta 243 92 88 alberta 113 60 146 alberta 247 122 122 alberta 243 45 35 alberta 65 233 377 alberta 241 115 109
+alberta 235 44 alberta 117 38 160 alberta 93 205 309 alberta 178 165 186 alberta 189 151 159 alberta 243 67 55 alberta 192 169 174 alberta 195 164 172 alberta 245 66 60 alberta 170 170 217 alberta 209 173 195 alberta 45 145 303 alberta 245 42 14 alberta 117 56 142 alberta 99 221 321 alberta 243 91 91 alberta 223 36 26 alberta 247 122 126 alberta 243 45 11 alberta 235 45 3 alberta 33 42 240 alberta 98 153 251 alberta 214 77 56 alberta 15 234 416 alberta 243 92 92 alberta 113 60 150 alberta 65 233 383 alberta 241 115 113
+alberta 235 45 alberta 33 42 241 alberta 98 153 252 alberta 214 77 57 alberta 15 234 417 alberta 243 92 93 alberta 113 60 151 alberta 65 233 382 alberta 241 115 114
+alberta 240 47 alberta 117 38 168 alberta 93 205 317 alberta 178 165 194 alberta 189 151 167 alberta 243 67 63 alberta 192 169 182 alberta 195 164 180 alberta 245 66 68 alberta 170 170 225 alberta 209 173 203 alberta 45 145 311 alberta 245 42 12 alberta 117 56 150 alberta 99 221 329 alberta 243 91 99 alberta 223 36 34 alberta 247 122 134 alberta 243 45 7 alberta 235 44 10 alberta 235 45 9 alberta 33 42 248 alberta 98 153 259 alberta 214 77 64 alberta 15 234 424 alberta 243 92 100 alberta 113 60 158 alberta 65 233 389 alberta 241 115 121
+alberta 243 45 alberta 235 45 12 alberta 33 42 249 alberta 98 153 260 alberta 214 77 65 alberta 15 234 425 alberta 243 92 101 alberta 113 60 159 alberta 65 233 390 alberta 241 115 122
+alberta 243 67 alberta 192 169 155 alberta 195 164 153 alberta 245 66 5 alberta 170 170 198 alberta 209 173 176 alberta 45 145 322 alberta 245 42 67 alberta 117 56 173 alberta 99 221 302 alberta 243 91 66 alberta 223 36 57 alberta 247 122 101 alberta 243 45 64 alberta 235 45 56 alberta 33 42 271 alberta 98 153 232 alberta 214 77 41 alberta 15 234 397 alberta 243 92 67 alberta 113 60 181 alberta 65 233 362 alberta 241 115 88
+alberta 243 91 alberta 235 45 92 alberta 33 42 341 alberta 98 153 208 alberta 243 92 3 alberta 214 77 45 alberta 15 234 373 alberta 113 60 205 alberta 223 36 87 alberta 243 45 100 alberta 247 122 67 alberta 65 233 340 alberta 241 115 54
+alberta 243 92 alberta 113 60 206 alberta 65 233 337 alberta 241 115 53
+alberta 245 42 alberta 235 45 15 alberta 33 42 252 alberta 98 153 263 alberta 243 92 104 alberta 214 77 68 alberta 15 234 428 alberta 117 56 154 alberta 99 221 333 alberta 223 36 38 alberta 243 91 103 alberta 113 60 162 alberta 243 45 7 alberta 247 122 138 alberta 65 233 393 alberta 241 115 125
+alberta 245 66 alberta 170 170 201 alberta 209 173 179 alberta 45 145 325 alberta 245 42 72 alberta 117 56 178 alberta 99 221 305 alberta 243 91 69 alberta 223 36 62 alberta 247 122 104 alberta 243 45 69 alberta 235 45 61 alberta 33 42 276 alberta 98 153 235 alberta 214 77 44 alberta 15 234 400 alberta 243 92 70 alberta 113 60 186 alberta 65 233 365 alberta 241 115 91
+alberta 247 122 alberta 235 45 127 alberta 33 42 342 alberta 98 153 209 alberta 214 77 80 alberta 15 234 374 alberta 243 92 66 alberta 113 60 240 alberta 241 115 15 alberta 65 233 339 alberta 243 45 135
+alberta 33 42 alberta 98 153 187 alberta 214 77 260 alberta 15 234 254 alberta 243 92 340 alberta 113 60 100 alberta 65 233 225 alberta 241 115 329
+alberta 45 145 alberta 245 42 315 alberta 117 56 163 alberta 99 221 142 alberta 243 91 298 alberta 223 36 299 alberta 247 122 299 alberta 243 45 312 alberta 235 45 304 alberta 33 42 129 alberta 98 153 100 alberta 214 77 295 alberta 15 234 139 alberta 243 92 297 alberta 113 60 161 alberta 65 233 110 alberta 241 115 286
+alberta 65 233 alberta 241 115 326
+alberta 93 205 alberta 178 165 223 alberta 189 151 192 alberta 243 67 290 alberta 192 169 213 alberta 195 164 211 alberta 245 66 293 alberta 170 170 254 alberta 209 173 234 alberta 45 145 130 alberta 245 42 321 alberta 117 56 191 alberta 99 221 44 alberta 243 91 266 alberta 223 36 305 alberta 247 122 267 alberta 243 45 318 alberta 235 45 310 alberta 33 42 245 alberta 98 153 68 alberta 214 77 263 alberta 15 234 203 alberta 243 92 265 alberta 113 60 189 alberta 65 233 168 alberta 241 115 254
+alberta 98 153 alberta 214 77 205 alberta 15 234 175 alberta 243 92 207 alberta 113 60 131 alberta 65 233 140 alberta 241 115 196
+alberta 99 221 alberta 235 45 322 alberta 33 42 257 alberta 98 153 80 alberta 243 92 277 alberta 214 77 275 alberta 15 234 215 alberta 113 60 201 alberta 243 91 278 alberta 223 36 317 alberta 243 45 330 alberta 247 122 279 alberta 65 233 180 alberta 241 115 266
+alberta_in 114 130 alberta_in 114 183 65
+alberta_in 114 49
+alberta_in 114 97
+alberta_in 125 160 alberta_in 114 130 43 alberta_in 114 183 46
+alberta_in 152 186 alberta_in 159 153 52 alberta_in 159 175 30
+alberta_in 159 153 alberta_in 159 175 42
+alberta_in 180 34
+alberta_in 189 89
+alberta_in 22 153 alberta_in 14 141 22
+alberta_in 22 170
+alberta_in 24 33
+alberta_in 24 54
+alberta_in 64 31 alberta_in 78 44 29
+alberta_in 64 57 alberta_in 64 31 32 alberta_in 78 44 29
+alberta_in 66 113
+alberta_in 66 130 alberta_in 73 141 22 alberta_in 66 153 27
+alberta_in 66 170
+alberta_in 73 141 alberta_in 66 153 23
+alde_alche 114 183
+alde_alche 13 184 alde_alche 19 171 21
+alde_alche 133 103 alde_alche 46 77 115 alde_alche 46 104 94 alde_alche 88 117 65 alde_alche 133 77 66
+alde_alche 158 107
+alde_alche 158 163
+alde_alche 160 17
+alde_alche 17 29
+alde_alche 41 186 alde_alche 13 184 52 alde_alche 19 171 45
+alde_alche 42 171 alde_alche 41 186 18 alde_alche 13 184 50 alde_alche 19 171 43
+alde_alche 46 104 alde_alche 133 77 116
+alde_alche 46 77 alde_alche 46 104 63 alde_alche 133 77 95
+alde_alche 88 117 alde_alche 46 77 84 alde_alche 46 104 63 alde_alche 133 77 87
+alde_alche 89 62 alde_alche 133 103 87 alde_alche 46 77 66 alde_alche 46 104 87 alde_alche 88 117 58 alde_alche 133 77 67
+alde_alche 93 17
+alde_dun01 167 158 alde_dun01 292 306 1261
+alde_dun01 302 25 alde_dun01 167 158 478 alde_dun01 292 306 1713
+alde_dun02 122 169 alde_dun02 43 20 502 alde_dun02 279 250 444
+alde_dun02 43 20 alde_dun02 279 250 874
+alde_dun03 12 267 alde_dun03 276 48 873 alde_dun03 171 127 705 alde_dun03 263 15 1113 alde_dun03 277 183 703
+alde_dun03 130 125 alde_dun03 12 267 296 alde_dun03 276 48 759 alde_dun03 171 127 589 alde_dun03 263 15 997 alde_dun03 277 183 589
+alde_dun03 171 127 alde_dun03 263 15 532 alde_dun03 277 183 234
+alde_dun03 191 31 alde_dun03 130 125 509 alde_dun03 12 267 591 alde_dun03 276 48 504 alde_dun03 171 127 364 alde_dun03 263 15 746 alde_dun03 277 183 496
+alde_dun03 263 15 alde_dun03 277 183 470
+alde_dun03 276 48 alde_dun03 171 127 296 alde_dun03 263 15 308 alde_dun03 277 183 226
+alde_dun03 276 53 alde_dun03 191 31 499 alde_dun03 130 125 752 alde_dun03 12 267 870 alde_dun03 276 48 7 alde_dun03 171 127 289 alde_dun03 263 15 303 alde_dun03 277 183 221
+alde_dun04 207 225 alde_dun04 215 192 397
+alde_dun04 272 74 alde_dun04 80 273 525 alde_dun04 207 225 358 alde_dun04 215 192 271
+alde_dun04 79 267 alde_dun04 272 74 516 alde_dun04 80 273 9 alde_dun04 207 225 390 alde_dun04 215 192 559
+alde_dun04 80 273 alde_dun04 207 225 397 alde_dun04 215 192 566
+alde_gld 142 81 alde_gld 99 251 291 alde_gld 284 160 227
+alde_gld 243 242 alde_gld 95 253 209 alde_gld 99 244 202 alde_gld 142 81 322 alde_gld 99 251 203 alde_gld 284 160 209
+alde_gld 259 90 alde_gld 243 242 272 alde_gld 95 253 353 alde_gld 99 244 346 alde_gld 142 81 254 alde_gld 99 251 347 alde_gld 284 160 177
+alde_gld 48 79 alde_gld 259 90 388 alde_gld 243 242 460 alde_gld 95 253 291 alde_gld 99 244 284 alde_gld 142 81 152 alde_gld 99 251 291 alde_gld 284 160 365
+alde_gld 95 253 alde_gld 99 244 15 alde_gld 142 81 297 alde_gld 99 251 8 alde_gld 284 160 326
+alde_gld 99 244 alde_gld 142 81 290 alde_gld 99 251 9 alde_gld 284 160 319
+alde_gld 99 251 alde_gld 284 160 320
+aldeba_in 103 157 aldeba_in 64 157 55 aldeba_in 83 191 56
+aldeba_in 134 237 aldeba_in 148 224 29
+aldeba_in 149 123 aldeba_in 144 92 38
+aldeba_in 149 55
+aldeba_in 157 193
+aldeba_in 208 117 aldeba_in 218 104 25
+aldeba_in 217 131 aldeba_in 208 117 25 aldeba_in 218 104 30
+aldeba_in 217 160
+aldeba_in 217 71
+aldeba_in 24 224 aldeba_in 37 238 29
+aldeba_in 245 237
+aldeba_in 27 102
+aldeba_in 27 71 aldeba_in 27 34 61
+aldeba_in 64 157 aldeba_in 83 191 55
+aldeba_in 83 224
+aldeba_in 94 38 aldeba_in 103 61 34
+aldeba_in 97 102
+aldebaran 117 56 aldebaran 170 166 197 aldebaran 118 63 16 aldebaran 53 65 97 aldebaran 168 112 115 aldebaran 140 234 291 aldebaran 143 119 95 aldebaran 225 54 154 aldebaran 139 135 111 aldebaran 65 53 87
+aldebaran 118 63 aldebaran 168 112 129 aldebaran 140 234 305 aldebaran 143 119 109 aldebaran 225 54 220 aldebaran 139 135 125 aldebaran 53 65 91 aldebaran 65 53 81
+aldebaran 138 34 aldebaran 117 56 47 aldebaran 170 166 192 aldebaran 118 63 113 aldebaran 53 65 138 aldebaran 168 112 112 aldebaran 140 234 288 aldebaran 143 119 92 aldebaran 225 54 121 aldebaran 139 135 108 aldebaran 65 53 108
+aldebaran 139 135 aldebaran 65 53 202
+aldebaran 140 234 aldebaran 143 119 194 aldebaran 225 54 327 aldebaran 139 135 176 aldebaran 65 53 360
+aldebaran 140 243 aldebaran 197 70 324 aldebaran 51 218 130 aldebaran 138 34 297 aldebaran 117 56 300 aldebaran 170 166 143 aldebaran 118 63 316 aldebaran 53 65 329 aldebaran 168 112 211 aldebaran 140 234 11 aldebaran 143 119 203 aldebaran 225 54 326 aldebaran 139 135 185 aldebaran 65 53 359
+aldebaran 143 119 aldebaran 225 54 195 aldebaran 139 135 22 aldebaran 65 53 186
+aldebaran 168 112 aldebaran 140 234 202 aldebaran 143 119 56 aldebaran 225 54 215 aldebaran 139 135 76 aldebaran 65 53 206
+aldebaran 170 166 aldebaran 118 63 209 aldebaran 53 65 316 aldebaran 168 112 82 aldebaran 140 234 134 aldebaran 143 119 94 aldebaran 225 54 201 aldebaran 139 135 78 aldebaran 65 53 286
+aldebaran 197 70 aldebaran 51 218 424 aldebaran 138 34 107 aldebaran 117 56 142 aldebaran 170 166 201 aldebaran 118 63 208 aldebaran 53 65 233 aldebaran 168 112 203 aldebaran 140 234 329 aldebaran 143 119 183 aldebaran 225 54 48 aldebaran 139 135 199 aldebaran 65 53 203
+aldebaran 225 54 aldebaran 139 135 211 aldebaran 65 53 215
+aldebaran 233 105 aldebaran 140 243 267 aldebaran 197 70 87 aldebaran 51 218 389 aldebaran 138 34 182 aldebaran 117 56 217 aldebaran 170 166 144 aldebaran 118 63 283 aldebaran 53 65 308 aldebaran 168 112 182 aldebaran 140 234 272 aldebaran 143 119 194 aldebaran 72 197 431 aldebaran 225 54 87 aldebaran 139 135 178 aldebaran 65 53 278
+aldebaran 35 140 aldebaran 89 234 166 aldebaran 233 105 389 aldebaran 72 197 98 aldebaran 140 243 230 aldebaran 197 70 320 aldebaran 51 218 110 aldebaran 138 34 227 aldebaran 117 56 186 aldebaran 170 166 229 aldebaran 118 63 180 aldebaran 53 65 107 aldebaran 168 112 239 aldebaran 140 234 233 aldebaran 143 119 177 aldebaran 225 54 334 aldebaran 139 135 159 aldebaran 65 53 135
+aldebaran 51 218 aldebaran 138 34 331 aldebaran 117 56 290 aldebaran 170 166 201 aldebaran 118 63 284 aldebaran 53 65 209 aldebaran 168 112 269 aldebaran 140 234 131 aldebaran 143 119 259 aldebaran 225 54 438 aldebaran 139 135 241 aldebaran 65 53 239
+aldebaran 53 65 aldebaran 168 112 234 aldebaran 140 234 332 aldebaran 143 119 214 aldebaran 225 54 245 aldebaran 139 135 230 aldebaran 65 53 46
+aldebaran 61 229 aldebaran 35 140 123 aldebaran 89 234 51 aldebaran 233 105 376 aldebaran 72 197 69 aldebaran 140 243 115 aldebaran 197 70 441 aldebaran 51 218 23 aldebaran 138 34 348 aldebaran 117 56 307 aldebaran 170 166 188 aldebaran 118 63 301 aldebaran 53 65 222 aldebaran 168 112 256 aldebaran 140 234 118 aldebaran 143 119 246 aldebaran 225 54 433 aldebaran 139 135 228 aldebaran 65 53 256
+aldebaran 72 197 aldebaran 140 243 170 aldebaran 197 70 410 aldebaran 51 218 52 aldebaran 138 34 317 aldebaran 117 56 276 aldebaran 170 166 245 aldebaran 118 63 270 aldebaran 53 65 197 aldebaran 168 112 271 aldebaran 140 234 173 aldebaran 143 119 209 aldebaran 225 54 424 aldebaran 139 135 191 aldebaran 65 53 225
+aldebaran 89 234 aldebaran 140 243 90 aldebaran 197 70 408 aldebaran 51 218 64 aldebaran 138 34 385 aldebaran 117 56 344 aldebaran 170 166 165 aldebaran 118 63 338 aldebaran 233 105 353 aldebaran 53 65 263 aldebaran 168 112 233 aldebaran 140 234 93 aldebaran 143 119 223 aldebaran 72 197 106 aldebaran 225 54 410 aldebaran 139 135 205 aldebaran 65 53 293
+aldeg_cas01 207 128
+aldeg_cas01 26 188 aldeg_cas01 34 252 174
+aldeg_cas01 46 70 aldeg_cas01 89 23 198
+aldeg_cas02 121 88 aldeg_cas02 88 9 244 aldeg_cas02 84 74 105
+aldeg_cas02 177 131 aldeg_cas02 206 196 216
+aldeg_cas02 192 196 aldeg_cas02 177 131 112 aldeg_cas02 206 196 178
+aldeg_cas02 194 136 aldeg_cas02 192 196 92 aldeg_cas02 177 131 130 aldeg_cas02 206 196 110
+aldeg_cas02 197 9
+aldeg_cas02 50 185
+aldeg_cas02 88 159 aldeg_cas02 22 194 232
+aldeg_cas02 88 9 aldeg_cas02 84 74 171
+aldeg_cas03 114 290 aldeg_cas03 60 241 207
+aldeg_cas03 201 145
+aldeg_cas03 91 57 aldeg_cas03 79 130 131
+aldeg_cas04 132 209
+aldeg_cas04 132 231
+aldeg_cas04 145 17 aldeg_cas04 196 86 295
+aldeg_cas04 17 196
+aldeg_cas04 49 53
+aldeg_cas05 14 88
+aldeg_cas05 15 227
+aldeg_cas05 156 231
+aldeg_cas05 216 107 aldeg_cas05 195 42 238
+ama_dun01 228 9 ama_dun01 235 144 1740
+ama_dun02 30 40 ama_dun02 196 123 353
+ama_fild01 174 328 ama_fild01 75 30 473 ama_fild01 174 331 5
+ama_fild01 75 30 ama_fild01 174 331 476
+ama_fild01 75 33 ama_fild01 174 328 470 ama_fild01 75 30 5 ama_fild01 174 331 473
+ama_in01 157 25
+ama_in01 175 174 ama_in01 175 171 5
+ama_in01 33 24
+ama_in01 34 96
+ama_in01 76 178
+ama_in01 86 23
+ama_in01 88 94
+ama_in02 118 180 ama_in02 126 164 42
+ama_in02 222 161 ama_in02 215 149 25
+ama_in02 226 45 ama_in02 195 44 48
+ama_in02 56 44 ama_in02 65 37 30
+ama_in02 59 160 ama_in02 59 141 21
+amatsu 132 117 amatsu 217 116 150 amatsu 248 160 227 amatsu 168 182 126 amatsu 94 117 39 amatsu 248 289 314
+amatsu 168 182 amatsu 94 117 141 amatsu 248 289 230
+amatsu 194 82 amatsu 85 235 362 amatsu 197 79 8 amatsu 52 148 220 amatsu 132 117 125 amatsu 217 116 59 amatsu 248 160 134 amatsu 168 182 129 amatsu 94 117 142 amatsu 248 289 263
+amatsu 197 79 amatsu 217 116 59 amatsu 248 160 134 amatsu 168 182 133 amatsu 52 148 226 amatsu 94 117 148 amatsu 248 289 263 amatsu 132 117 131
+amatsu 217 116 amatsu 248 160 101 amatsu 168 182 116 amatsu 94 117 167 amatsu 248 289 246
+amatsu 248 160 amatsu 168 182 143 amatsu 94 117 242 amatsu 248 289 143
+amatsu 248 292 amatsu 194 82 266 amatsu 85 235 280 amatsu 197 79 266 amatsu 52 148 402 amatsu 132 117 317 amatsu 217 116 249 amatsu 248 160 146 amatsu 168 182 233 amatsu 94 117 332 amatsu 248 289 5
+amatsu 52 148 amatsu 217 116 245 amatsu 248 160 312 amatsu 168 182 211 amatsu 94 117 130 amatsu 248 289 399 amatsu 132 117 145
+amatsu 85 235 amatsu 197 79 362 amatsu 52 148 386 amatsu 132 117 413 amatsu 217 116 345 amatsu 248 160 334 amatsu 168 182 329 amatsu 94 117 316 amatsu 248 289 277
+amatsu 94 117 amatsu 248 289 329
+anthell01 253 32 anthell01 35 267 621 anthell01 253 33 3 anthell01 35 263 617
+anthell01 253 33 anthell01 35 263 616
+anthell01 35 267 anthell01 253 33 618 anthell01 35 263 6
+anthell02 168 170 anthell02 171 171 6 anthell02 33 267 920 anthell02 32 267 921
+anthell02 171 171 anthell02 33 267 924 anthell02 32 267 925
+anthell02 33 267 anthell02 32 267 5
+arug_cas02 43 256 arug_cas02 139 25 947
+ayo_dun01 24 279 ayo_dun01 274 14 1529
+ayo_dun01 24 283 ayo_dun01 24 279 6 ayo_dun01 274 14 1533
+ayo_dun02 276 22 ayo_dun02 24 22 330
+ayo_fild01 32 240 ayo_fild01 129 197 142
+ayo_fild02 285 149 ayo_fild02 25 154 391
+ayo_in01 10 94 ayo_in01 48 107 53 ayo_in01 48 82 52
+ayo_in01 13 107 ayo_in01 48 107 43 ayo_in01 31 111 28 ayo_in01 31 78 55 ayo_in01 13 82 55 ayo_in01 10 94 40 ayo_in01 48 82 68
+ayo_in01 13 82 ayo_in01 48 107 68 ayo_in01 10 94 39 ayo_in01 48 82 41
+ayo_in01 135 27
+ayo_in01 137 195
+ayo_in01 177 129
+ayo_in01 194 183
+ayo_in01 21 14
+ayo_in01 23 176 ayo_in01 46 183 32 ayo_in01 17 153 31
+ayo_in01 31 111 ayo_in01 48 107 27 ayo_in01 31 78 51 ayo_in01 13 82 53 ayo_in01 10 94 40 ayo_in01 48 82 54
+ayo_in01 31 78 ayo_in01 48 107 54 ayo_in01 13 82 28 ayo_in01 10 94 39 ayo_in01 48 82 27
+ayo_in01 46 183 ayo_in01 17 153 61
+ayo_in01 48 107 ayo_in01 48 82 55
+ayo_in01 85 149 ayo_in01 98 175 41 ayo_in01 73 174 39
+ayo_in01 98 175 ayo_in01 73 174 28
+ayothaya 111 109 ayothaya 208 283 295 ayothaya 129 86 73 ayothaya 173 77 258 ayothaya 202 140 174 ayothaya 62 104 82 ayothaya 130 97 35 ayothaya 202 161 177 ayothaya 192 150 152 ayothaya 152 68 84 ayothaya 165 90 91 ayothaya 211 150 215
+ayothaya 129 86 ayothaya 173 77 241 ayothaya 202 140 157 ayothaya 62 104 229 ayothaya 130 97 44 ayothaya 202 161 160 ayothaya 192 150 135 ayothaya 152 68 43 ayothaya 165 90 74 ayothaya 211 150 198
+ayothaya 130 75
+ayothaya 130 97 ayothaya 202 161 148 ayothaya 192 150 123 ayothaya 152 68 55 ayothaya 165 90 62 ayothaya 211 150 186
+ayothaya 152 68 ayothaya 165 90 37 ayothaya 211 150 203
+ayothaya 165 90 ayothaya 211 150 188
+ayothaya 173 77 ayothaya 202 140 110 ayothaya 62 104 318 ayothaya 130 97 229 ayothaya 202 161 167 ayothaya 192 150 166 ayothaya 152 68 246 ayothaya 165 90 231 ayothaya 211 150 133
+ayothaya 177 90 ayothaya 111 109 235 ayothaya 208 283 250 ayothaya 129 86 218 ayothaya 173 77 39 ayothaya 202 140 87 ayothaya 62 104 295 ayothaya 130 97 206 ayothaya 202 161 144 ayothaya 192 150 143 ayothaya 152 68 223 ayothaya 165 90 208 ayothaya 211 150 110
+ayothaya 192 150 ayothaya 152 68 138 ayothaya 165 90 123 ayothaya 211 150 77
+ayothaya 202 140 ayothaya 62 104 234 ayothaya 130 97 145 ayothaya 202 161 67 ayothaya 192 150 82 ayothaya 152 68 162 ayothaya 165 90 147 ayothaya 211 150 33
+ayothaya 202 161 ayothaya 192 150 39 ayothaya 152 68 165 ayothaya 165 90 150 ayothaya 211 150 48
+ayothaya 208 283 ayothaya 129 86 278 ayothaya 173 77 273 ayothaya 202 140 173 ayothaya 62 104 351 ayothaya 130 97 266 ayothaya 202 161 136 ayothaya 192 150 159 ayothaya 152 68 283 ayothaya 165 90 268 ayothaya 211 150 154
+ayothaya 229 69 ayothaya 177 90 107 ayothaya 111 109 252 ayothaya 208 283 265 ayothaya 129 86 235 ayothaya 173 77 130 ayothaya 202 140 104 ayothaya 202 161 159 ayothaya 62 104 312 ayothaya 130 97 223 ayothaya 192 150 160 ayothaya 152 68 240 ayothaya 165 90 225 ayothaya 211 150 125
+ayothaya 276 176 ayothaya 229 69 202 ayothaya 177 90 189 ayothaya 111 109 258 ayothaya 208 283 177 ayothaya 129 86 241 ayothaya 173 77 212 ayothaya 202 140 112 ayothaya 62 104 314 ayothaya 130 97 229 ayothaya 202 161 91 ayothaya 192 150 120 ayothaya 152 68 246 ayothaya 165 90 231 ayothaya 211 150 93
+ayothaya 62 104 ayothaya 130 97 107 ayothaya 202 161 233 ayothaya 192 150 212 ayothaya 152 68 236 ayothaya 165 90 221 ayothaya 211 150 271
+bat_room 113 211
+bat_room 113 220
+bat_room 141 211
+bat_room 141 220
+bat_room 154 150 bat_room 148 150 24
+bat_room 164 121
+bat_room 169 207 bat_room 169 211 6
+bat_room 169 220
+bat_room 57 211
+bat_room 57 220
+bat_room 85 211
+bat_room 85 220
+beach_dun2 154 13 beach_dun2 258 244 513
+beach_dun3 17 265 beach_dun3 286 57 521
+bra_in01 50 171 bra_in01 17 134 92
+bra_in01 79 169
+c_tower1 123 22 c_tower1 200 157 782 c_tower1 235 226 810
+c_tower1 200 157 c_tower1 235 226 106
+c_tower2 13 288 c_tower2 24 24 415 c_tower2 223 267 659 c_tower2 273 26 666
+c_tower2 142 283 c_tower2 13 288 380 c_tower2 24 24 625 c_tower2 223 267 467 c_tower2 273 26 578
+c_tower2 223 267 c_tower2 273 26 779
+c_tower2 24 24 c_tower2 223 267 826 c_tower2 273 26 475
+c_tower3 10 249 c_tower3 60 147 370 c_tower3 42 41 306 c_tower3 212 159 508
+c_tower3 213 159 c_tower3 10 249 507 c_tower3 60 147 349 c_tower3 42 41 375 c_tower3 212 159 3
+c_tower3 42 41 c_tower3 212 159 380
+c_tower3 60 147 c_tower3 42 41 348 c_tower3 212 159 350
+cmd_fild01 222 24 cmd_fild01 362 263 427 cmd_fild01 77 366 567 cmd_fild01 362 73 235
+cmd_fild01 26 318 cmd_fild01 222 24 512 cmd_fild01 362 263 593 cmd_fild01 77 366 101 cmd_fild01 362 73 629
+cmd_fild01 362 263 cmd_fild01 77 366 652 cmd_fild01 362 73 250
+cmd_fild01 77 366 cmd_fild01 362 73 688
+cmd_fild02 222 376 cmd_fild02 382 269 291 cmd_fild02 358 95 585
+cmd_fild02 382 269 cmd_fild02 358 95 412
+cmd_fild03 181 17 cmd_fild03 23 269 430
+cmd_fild03 23 68 cmd_fild03 181 17 283 cmd_fild03 23 269 329
+cmd_fild04 21 275 cmd_fild04 180 372 428
+cmd_fild04 31 92 cmd_fild04 21 275 361 cmd_fild04 180 372 679
+cmd_fild04 376 287 cmd_fild04 31 92 842 cmd_fild04 21 275 587 cmd_fild04 180 372 293
+cmd_fild06 21 285 cmd_fild06 368 96 638 cmd_fild06 151 27 408
+cmd_fild06 368 96 cmd_fild06 151 27 514
+cmd_fild06 372 359 cmd_fild06 21 285 813 cmd_fild06 368 96 613 cmd_fild06 151 27 693
+cmd_fild06 379 174
+cmd_fild07 127 134 cmd_fild07 389 186 564 cmd_fild07 149 379 361 cmd_fild07 136 134 23
+cmd_fild07 149 379 cmd_fild07 136 134 360
+cmd_fild07 389 186 cmd_fild07 149 379 435 cmd_fild07 136 134 563
+cmd_fild08 15 102 cmd_fild08 76 31 168 cmd_fild08 25 170 122 cmd_fild08 309 48 1212 cmd_fild08 348 82 1163
+cmd_fild08 25 170 cmd_fild08 309 48 1180 cmd_fild08 348 82 1131
+cmd_fild08 25 355 cmd_fild08 354 324 738 cmd_fild08 334 355 807 cmd_fild08 331 319 768 cmd_fild08 330 355 801 cmd_fild08 344 82 680 cmd_fild08 15 102 669 cmd_fild08 76 31 693 cmd_fild08 25 170 637 cmd_fild08 309 48 733 cmd_fild08 348 82 684
+cmd_fild08 309 48 cmd_fild08 348 82 81
+cmd_fild08 330 355 cmd_fild08 344 82 365 cmd_fild08 15 102 1276 cmd_fild08 76 31 1300 cmd_fild08 25 170 1244 cmd_fild08 309 48 418 cmd_fild08 348 82 369
+cmd_fild08 331 319 cmd_fild08 330 355 53 cmd_fild08 344 82 330 cmd_fild08 15 102 1241 cmd_fild08 76 31 1265 cmd_fild08 25 170 1209 cmd_fild08 309 48 383 cmd_fild08 348 82 334
+cmd_fild08 334 355 cmd_fild08 330 355 6 cmd_fild08 344 82 369 cmd_fild08 15 102 1280 cmd_fild08 76 31 1304 cmd_fild08 25 170 1248 cmd_fild08 309 48 422 cmd_fild08 331 319 57 cmd_fild08 348 82 373
+cmd_fild08 335 355 cmd_fild08 25 355 804 cmd_fild08 354 324 76 cmd_fild08 334 355 3 cmd_fild08 331 319 58 cmd_fild08 330 355 7 cmd_fild08 344 82 370 cmd_fild08 15 102 1281 cmd_fild08 76 31 1305 cmd_fild08 25 170 1249 cmd_fild08 309 48 423 cmd_fild08 348 82 374
+cmd_fild08 344 82 cmd_fild08 15 102 1157 cmd_fild08 76 31 1181 cmd_fild08 25 170 1125 cmd_fild08 309 48 77 cmd_fild08 348 82 6
+cmd_fild08 354 324 cmd_fild08 334 355 75 cmd_fild08 331 319 66 cmd_fild08 330 355 71 cmd_fild08 344 82 302 cmd_fild08 15 102 1213 cmd_fild08 76 31 1237 cmd_fild08 25 170 1181 cmd_fild08 309 48 355 cmd_fild08 348 82 306
+cmd_fild08 76 31 cmd_fild08 25 170 194 cmd_fild08 309 48 1236 cmd_fild08 348 82 1187
+cmd_fild09 12 170 cmd_fild09 309 381 740 cmd_fild09 75 382 643
+cmd_fild09 309 381 cmd_fild09 75 382 677
+cmd_fild09 369 164 cmd_fild09 12 170 577 cmd_fild09 309 381 327 cmd_fild09 75 382 514
+cmd_in01 109 125
+cmd_in01 120 67
+cmd_in01 123 186
+cmd_in01 183 123
+cmd_in01 183 81
+cmd_in01 90 174
+cmd_in02 139 169 cmd_in02 208 206 114
+cmd_in02 139 97 cmd_in02 168 113 47 cmd_in02 187 78 73
+cmd_in02 168 113 cmd_in02 187 78 58
+cmd_in02 178 136 cmd_in02 139 97 84 cmd_in02 168 113 45 cmd_in02 187 78 73
+cmd_in02 216 97 cmd_in02 178 136 85 cmd_in02 139 97 93 cmd_in02 168 113 72 cmd_in02 187 78 54
+cmd_in02 58 74 cmd_in02 74 21 73
+cmd_in02 69 129
+cmd_in02 90 37 cmd_in02 58 74 73 cmd_in02 74 21 38
+cmd_in02 98 216
+comodo 115 291 comodo 130 195 127 comodo 271 271 258 comodo 126 98 270 comodo 176 358 160 comodo 333 175 400
+comodo 126 98 comodo 176 358 398 comodo 333 175 396
+comodo 130 195 comodo 271 271 335 comodo 126 98 183 comodo 176 358 255 comodo 333 175 291
+comodo 140 111 comodo 92 128 77 comodo 195 150 102 comodo 192 294 365 comodo 24 214 237 comodo 115 291 227 comodo 153 97 239 comodo 265 74 250 comodo 271 271 321 comodo 130 195 118 comodo 236 298 343 comodo 209 143 123 comodo 126 98 151 comodo 176 358 357 comodo 333 175 277
+comodo 140 90
+comodo 145 328 comodo 140 111 312 comodo 92 128 281 comodo 195 150 310 comodo 192 294 111 comodo 24 214 255 comodo 115 291 115 comodo 153 97 447 comodo 265 74 458 comodo 236 298 149 comodo 130 195 210 comodo 271 271 199 comodo 209 143 331 comodo 126 98 353 comodo 176 358 75 comodo 333 175 357
+comodo 153 97 comodo 92 128 288 comodo 195 150 139 comodo 115 291 364 comodo 265 74 163 comodo 236 298 350 comodo 130 195 255 comodo 271 271 332 comodo 209 143 132 comodo 126 98 360 comodo 176 358 466 comodo 333 175 288
+comodo 176 358 comodo 333 175 342
+comodo 192 294 comodo 92 128 334 comodo 195 150 273 comodo 24 214 308 comodo 115 291 170 comodo 153 97 386 comodo 265 74 395 comodo 271 271 104 comodo 130 195 263 comodo 236 298 58 comodo 209 143 256 comodo 126 98 406 comodo 176 358 96 comodo 333 175 262
+comodo 195 150 comodo 130 195 118 comodo 271 271 219 comodo 126 98 223 comodo 176 358 353 comodo 333 175 175 comodo 115 291 227
+comodo 209 143 comodo 130 195 139 comodo 271 271 202 comodo 92 128 172 comodo 195 150 23 comodo 126 98 244 comodo 176 358 336 comodo 333 175 158 comodo 115 291 248
+comodo 236 298 comodo 92 128 386 comodo 195 150 237 comodo 115 291 208 comodo 130 195 353 comodo 271 271 72 comodo 209 143 220 comodo 126 98 458 comodo 176 358 134 comodo 333 175 230
+comodo 24 214 comodo 92 128 176 comodo 195 150 249 comodo 115 291 172 comodo 153 97 386 comodo 265 74 397 comodo 271 271 396 comodo 236 298 346 comodo 130 195 151 comodo 209 143 270 comodo 126 98 248 comodo 176 358 300 comodo 333 175 422
+comodo 265 74 comodo 92 128 299 comodo 195 150 150 comodo 115 291 375 comodo 236 298 361 comodo 130 195 266 comodo 271 271 339 comodo 176 358 475 comodo 209 143 141 comodo 126 98 371 comodo 333 175 295
+comodo 271 271 comodo 126 98 440 comodo 176 358 184 comodo 333 175 188
+comodo 92 128 comodo 130 195 111 comodo 271 271 368 comodo 195 150 151 comodo 126 98 88 comodo 176 358 326 comodo 333 175 324 comodo 115 291 198
+dewata 229 49 dewata 232 53 9
+dic_fild01 149 279 dic_fild01 69 24 441 dic_fild01 153 281 8
+dic_fild01 69 24 dic_fild01 153 281 439
+dic_fild01 69 25 dic_fild01 149 279 440 dic_fild01 69 24 3 dic_fild01 153 281 438
+dic_fild02 70 373 dic_fild02 71 374 4
+dicastes01 199 41 dicastes01 200 35 9
+e_tower 81 105 e_tower 70 114 22
+ein_dun01 22 11 ein_dun01 261 255 1023
+ein_fild01 234 34
+ein_fild01 349 369 ein_fild01 106 34 582
+ein_fild02 108 364 ein_fild02 257 350 351 ein_fild02 357 251 402 ein_fild02 170 29 508
+ein_fild02 257 350 ein_fild02 357 251 201 ein_fild02 170 29 681
+ein_fild02 357 251 ein_fild02 170 29 560
+ein_fild03 142 31 ein_fild03 361 219 424 ein_fild03 361 204 409
+ein_fild03 361 219 ein_fild03 361 204 45
+ein_fild03 363 257 ein_fild03 142 31 738 ein_fild03 361 219 552 ein_fild03 361 204 567
+ein_fild04 14 205 ein_fild04 14 215 210 ein_fild04 184 26 351 ein_fild04 60 323 296 ein_fild04 343 293 453
+ein_fild04 14 215 ein_fild04 184 26 361 ein_fild04 60 323 286 ein_fild04 343 293 443
+ein_fild04 184 26 ein_fild04 60 323 439 ein_fild04 343 293 460
+ein_fild04 20 250 ein_fild04 14 205 369 ein_fild04 14 215 359 ein_fild04 184 26 512 ein_fild04 60 323 135 ein_fild04 343 293 502
+ein_fild04 60 323 ein_fild04 343 293 429
+ein_fild05 172 371 ein_fild05 76 294 771 ein_fild05 376 183 416
+ein_fild05 76 294 ein_fild05 376 183 483
+ein_fild06 251 365 ein_fild06 135 36 705
+ein_fild06 335 176 ein_fild06 251 365 277 ein_fild06 135 36 908
+ein_fild06 355 95 ein_fild06 335 176 981 ein_fild06 251 365 776 ein_fild06 135 36 287
+ein_fild06 42 171 ein_fild06 355 95 451 ein_fild06 335 176 622 ein_fild06 251 365 417 ein_fild06 135 36 378
+ein_fild07 144 362 ein_fild07 381 264 355
+ein_fild08 23 275 ein_fild08 164 380 248
+ein_in01 108 13
+ein_in01 11 147
+ein_in01 13 213 ein_in01 81 198 85
+ein_in01 14 14 ein_in01 39 36 49
+ein_in01 180 277
+ein_in01 190 38
+ein_in01 211 216 ein_in01 195 224 26
+ein_in01 211 232 ein_in01 195 224 26 ein_in01 211 216 42
+ein_in01 231 273
+ein_in01 232 176
+ein_in01 264 203 ein_in01 274 203 26 ein_in01 284 224 43 ein_in01 271 232 52
+ein_in01 264 246 ein_in01 264 203 73 ein_in01 274 203 63 ein_in01 284 224 44 ein_in01 271 232 33
+ein_in01 271 218 ein_in01 264 246 49 ein_in01 274 246 41 ein_in01 264 203 38 ein_in01 274 203 28 ein_in01 284 224 21 ein_in01 271 232 28
+ein_in01 271 232 ein_in01 274 203 42
+ein_in01 273 273
+ein_in01 274 176
+ein_in01 274 246 ein_in01 264 246 28 ein_in01 264 203 65 ein_in01 274 203 55 ein_in01 284 224 36 ein_in01 271 232 23
+ein_in01 284 224 ein_in01 274 203 33 ein_in01 271 232 23
+ein_in01 39 85
+einbech 177 136 einbech 62 29 252 einbech 39 215 237 einbech 138 252 203
+einbech 39 215 einbech 138 252 174
+einbech 62 29 einbech 39 215 315 einbech 138 252 303
+einbroch 129 229 einbroch 250 263 165 einbroch 137 199 48 einbroch 218 198 212 einbroch 132 79 203 einbroch 216 214 212 einbroch 257 199 212 einbroch 157 331 140 einbroch 173 229 86 einbroch 214 263 129 einbroch 64 207 129
+einbroch 132 79 einbroch 157 331 333 einbroch 173 229 279 einbroch 214 263 404 einbroch 64 207 242 einbroch 216 214 345 einbroch 257 199 335
+einbroch 137 199 einbroch 218 198 250 einbroch 132 79 179 einbroch 216 214 250 einbroch 257 199 250 einbroch 157 331 178 einbroch 173 229 124 einbroch 214 263 167 einbroch 64 207 107
+einbroch 150 25 einbroch 129 229 277 einbroch 232 272 353 einbroch 250 263 352 einbroch 137 199 253 einbroch 218 198 285 einbroch 132 79 82 einbroch 216 214 303 einbroch 257 199 293 einbroch 157 331 487 einbroch 173 229 413 einbroch 214 263 362 einbroch 255 107 207 einbroch 64 207 314 einbroch 170 229 416 einbroch 176 172 263
+einbroch 157 331 einbroch 173 229 120 einbroch 214 263 149 einbroch 64 207 237
+einbroch 170 229 einbroch 129 229 83 einbroch 250 263 116 einbroch 137 199 121 einbroch 218 198 163 einbroch 132 79 276 einbroch 216 214 163 einbroch 257 199 163 einbroch 157 331 117 einbroch 173 229 5 einbroch 214 263 80 einbroch 64 207 180
+einbroch 173 229 einbroch 214 263 77 einbroch 64 207 183
+einbroch 175 196 einbroch 181 196 14
+einbroch 176 172 einbroch 129 229 210 einbroch 250 263 247 einbroch 137 199 186 einbroch 218 198 180 einbroch 132 79 191 einbroch 216 214 198 einbroch 257 199 188 einbroch 157 331 382 einbroch 173 229 308 einbroch 214 263 257 einbroch 64 207 255 einbroch 170 229 311
+einbroch 179 204 einbroch 181 196 18 einbroch 175 196 26
+einbroch 179 73 einbroch 150 25 79 einbroch 232 272 334 einbroch 255 107 188 einbroch 176 172 282 einbroch 170 229 397 einbroch 129 229 316 einbroch 250 263 333 einbroch 137 199 292 einbroch 218 198 266 einbroch 132 79 121 einbroch 216 214 284 einbroch 257 199 274 einbroch 157 331 468 einbroch 173 229 394 einbroch 214 263 343 einbroch 64 207 353
+einbroch 214 263 einbroch 64 207 226
+einbroch 216 214 einbroch 157 331 234 einbroch 173 229 160 einbroch 214 263 109 einbroch 64 207 309 einbroch 257 199 58
+einbroch 218 198 einbroch 157 331 234 einbroch 173 229 160 einbroch 214 263 109 einbroch 64 207 309 einbroch 132 79 327 einbroch 216 214 20 einbroch 257 199 42
+einbroch 232 272 einbroch 129 229 156 einbroch 250 263 53 einbroch 137 199 194 einbroch 218 198 100 einbroch 132 79 395 einbroch 216 214 100 einbroch 257 199 100 einbroch 157 331 178 einbroch 173 229 104 einbroch 214 263 53 einbroch 255 107 198 einbroch 64 207 253 einbroch 170 229 107 einbroch 176 172 248
+einbroch 250 263 einbroch 137 199 203 einbroch 218 198 99 einbroch 132 79 394 einbroch 216 214 99 einbroch 257 199 97 einbroch 157 331 187 einbroch 173 229 113 einbroch 214 263 62 einbroch 64 207 262
+einbroch 255 107 einbroch 129 229 310 einbroch 250 263 197 einbroch 137 199 240 einbroch 218 198 130 einbroch 132 79 249 einbroch 216 214 148 einbroch 257 199 136 einbroch 157 331 332 einbroch 173 229 258 einbroch 214 263 207 einbroch 64 207 407 einbroch 170 229 261 einbroch 176 172 146
+einbroch 257 199 einbroch 157 331 234 einbroch 173 229 160 einbroch 214 263 109 einbroch 64 207 309
+einbroch 269 312 einbroch 233 312 58
+einbroch 92 281 einbroch 64 234 123
+gef_dun00 104 103 gef_dun00 107 169 404
+gef_dun01 115 240 gef_dun01 197 38 354
+gef_fild00 267 382 gef_fild00 381 137 469 gef_fild00 40 199 424
+gef_fild00 381 137 gef_fild00 40 199 695
+gef_fild01 16 102 gef_fild01 382 111 421
+gef_fild01 69 17 gef_fild01 16 102 140 gef_fild01 382 111 451
+gef_fild02 14 78 gef_fild02 266 18 746 gef_fild02 380 156 596 gef_fild02 380 68 834 gef_fild02 380 289 833
+gef_fild02 16 275 gef_fild02 14 78 289 gef_fild02 266 18 725 gef_fild02 380 156 579 gef_fild02 380 68 813 gef_fild02 380 289 816
+gef_fild02 266 18 gef_fild02 380 156 654 gef_fild02 380 68 208 gef_fild02 380 289 915
+gef_fild02 380 156 gef_fild02 380 68 744 gef_fild02 380 289 689
+gef_fild02 380 68 gef_fild02 380 289 1005
+gef_fild03 18 52 gef_fild03 382 277 637
+gef_fild03 312 16 gef_fild03 382 77 563 gef_fild03 66 382 886 gef_fild03 18 52 504 gef_fild03 382 277 565
+gef_fild03 382 77 gef_fild03 66 382 825 gef_fild03 18 52 633 gef_fild03 382 277 286
+gef_fild03 66 382 gef_fild03 18 52 956 gef_fild03 382 277 623
+gef_fild04 16 309 gef_fild04 187 39 453
+gef_fild04 261 362 gef_fild04 362 322 173 gef_fild04 16 309 312 gef_fild04 187 39 665
+gef_fild04 362 322 gef_fild04 16 309 405 gef_fild04 187 39 758
+gef_fild05 364 309 gef_fild05 15 201 517
+gef_fild05 64 15 gef_fild05 364 309 606 gef_fild05 15 201 309
+gef_fild06 18 304 gef_fild06 218 17 491
+gef_fild06 382 211 gef_fild06 18 304 573 gef_fild06 218 17 364
+gef_fild07 18 191 gef_fild07 64 363 220 gef_fild07 339 187 327
+gef_fild07 40 19 gef_fild07 18 191 258 gef_fild07 64 363 398 gef_fild07 339 187 471
+gef_fild07 64 363 gef_fild07 339 187 467
+gef_fild08 200 355 gef_fild08 360 187 330
+gef_fild09 23 56 gef_fild09 368 95 418 gef_fild09 225 25 241
+gef_fild09 368 95 gef_fild09 225 25 225
+gef_fild10 104 21 gef_fild10 215 51 195 gef_fild10 136 331 350 gef_fild10 370 56 585 gef_fild10 223 205 307 gef_fild10 63 337 387 gef_fild10 52 326 383 gef_fild10 138 284 309 gef_fild10 251 371 501
+gef_fild10 136 331 gef_fild10 52 326 117 gef_fild10 138 284 51 gef_fild10 251 371 211
+gef_fild10 138 284 gef_fild10 251 371 202
+gef_fild10 215 51 gef_fild10 136 331 387 gef_fild10 52 326 440 gef_fild10 138 284 350 gef_fild10 251 371 542
+gef_fild10 223 205 gef_fild10 215 51 168 gef_fild10 136 331 317 gef_fild10 63 337 370 gef_fild10 52 326 370 gef_fild10 138 284 280 gef_fild10 251 371 472
+gef_fild10 370 56 gef_fild10 215 51 446 gef_fild10 136 331 597 gef_fild10 223 205 314 gef_fild10 63 337 650 gef_fild10 52 326 650 gef_fild10 138 284 560 gef_fild10 251 371 486
+gef_fild10 52 326 gef_fild10 138 284 130 gef_fild10 251 371 304
+gef_fild10 63 337 gef_fild10 215 51 440 gef_fild10 136 331 97 gef_fild10 52 326 28 gef_fild10 138 284 130 gef_fild10 251 371 290
+gef_fild11 377 293 gef_fild11 111 364 483
+gef_fild13 112 269 gef_fild13 77 284 118 gef_fild13 41 373 199 gef_fild13 150 54 537 gef_fild13 196 281 118 gef_fild13 139 240 106 gef_fild13 380 56 633
+gef_fild13 139 240 gef_fild13 41 373 253 gef_fild13 150 54 455 gef_fild13 380 56 551
+gef_fild13 150 54 gef_fild13 380 56 378
+gef_fild13 196 281 gef_fild13 41 373 265 gef_fild13 150 54 443 gef_fild13 139 240 100 gef_fild13 380 56 539
+gef_fild13 210 75 gef_fild13 308 244 289 gef_fild13 302 87 170 gef_fild13 83 185 479 gef_fild13 112 269 454 gef_fild13 77 284 520 gef_fild13 196 281 360 gef_fild13 139 240 372 gef_fild13 41 373 601 gef_fild13 150 54 95 gef_fild13 380 56 295
+gef_fild13 256 57 gef_fild13 305 83 91 gef_fild13 210 75 228 gef_fild13 308 244 417 gef_fild13 302 87 86 gef_fild13 83 185 609 gef_fild13 112 269 584 gef_fild13 77 284 650 gef_fild13 196 281 490 gef_fild13 139 240 502 gef_fild13 41 373 731 gef_fild13 150 54 159 gef_fild13 380 56 275
+gef_fild13 302 87 gef_fild13 83 185 527 gef_fild13 112 269 502 gef_fild13 77 284 568 gef_fild13 196 281 408 gef_fild13 139 240 420 gef_fild13 41 373 649 gef_fild13 150 54 251 gef_fild13 380 56 193
+gef_fild13 305 83 gef_fild13 210 75 165 gef_fild13 308 244 332 gef_fild13 302 87 9 gef_fild13 83 185 524 gef_fild13 112 269 499 gef_fild13 77 284 565 gef_fild13 196 281 405 gef_fild13 139 240 417 gef_fild13 41 373 646 gef_fild13 150 54 248 gef_fild13 380 56 190
+gef_fild13 308 244 gef_fild13 302 87 337 gef_fild13 83 185 296 gef_fild13 112 269 271 gef_fild13 77 284 337 gef_fild13 196 281 177 gef_fild13 139 240 189 gef_fild13 41 373 418 gef_fild13 150 54 370 gef_fild13 380 56 464
+gef_fild13 41 373 gef_fild13 150 54 684 gef_fild13 380 56 780
+gef_fild13 77 284 gef_fild13 41 373 133 gef_fild13 150 54 601 gef_fild13 196 281 182 gef_fild13 139 240 170 gef_fild13 380 56 697
+gef_fild13 83 185 gef_fild13 112 269 229 gef_fild13 77 284 295 gef_fild13 41 373 376 gef_fild13 150 54 562 gef_fild13 196 281 221 gef_fild13 139 240 139 gef_fild13 380 56 658
+gef_tower 106 115 gef_tower 118 114 27
+gef_tower 116 31
+gef_tower 118 68 gef_tower 106 69 23
+gef_tower 120 158 gef_tower 106 158 32
+gef_tower 153 28 gef_tower 156 93 74
+gef_tower 158 128 gef_tower 158 104 25
+gef_tower 158 150 gef_tower 158 174 25
+gef_tower 38 160 gef_tower 66 156 76
+gef_tower 44 36 gef_tower 60 34 82
+gef_tower 52 135 gef_tower 52 181 47 gef_tower 66 156 52 gef_tower 38 160 82
+gef_tower 52 181 gef_tower 66 156 41 gef_tower 38 160 63
+gef_tower 62 87 gef_tower 42 86 43
+geffen 119 213 geffen 138 138 106 geffen 120 62 200 geffen 182 59 245 geffen 168 122 182 geffen 203 123 182 geffen 217 119 194
+geffen 120 114 geffen 43 85 148 geffen 120 39 115 geffen 172 174 172 geffen 98 141 83 geffen 61 180 177 geffen 119 213 174 geffen 138 138 72 geffen 120 62 54 geffen 182 59 123 geffen 168 122 84 geffen 203 123 120 geffen 217 119 130
+geffen 120 39 geffen 172 174 231 geffen 98 141 164 geffen 61 180 236 geffen 119 213 317 geffen 138 138 159 geffen 120 62 61 geffen 182 59 94 geffen 168 122 179 geffen 203 123 179 geffen 217 119 189
+geffen 120 62 geffen 182 59 83 geffen 168 122 110 geffen 203 123 168 geffen 217 119 178
+geffen 121 62 geffen 26 119 162 geffen 120 114 55 geffen 43 85 115 geffen 120 39 62 geffen 172 174 219 geffen 98 141 106 geffen 61 180 212 geffen 119 213 201 geffen 138 138 99 geffen 120 62 3 geffen 182 59 82 geffen 168 122 111 geffen 203 123 167 geffen 217 119 177
+geffen 138 138 geffen 120 62 98 geffen 182 59 149 geffen 168 122 52 geffen 203 123 88 geffen 217 119 100
+geffen 168 122 geffen 203 123 42 geffen 217 119 54
+geffen 172 174 geffen 98 141 143 geffen 61 180 145 geffen 119 213 98 geffen 138 138 136 geffen 120 62 220 geffen 182 59 155 geffen 168 122 94 geffen 203 123 94 geffen 217 119 106
+geffen 182 59 geffen 168 122 105 geffen 203 123 103 geffen 217 119 113
+geffen 203 123 geffen 217 119 20
+geffen 26 119 geffen 120 114 129 geffen 43 85 59 geffen 120 39 184 geffen 172 174 235 geffen 98 141 102 geffen 61 180 106 geffen 119 213 189 geffen 138 138 135 geffen 120 62 163 geffen 182 59 232 geffen 168 122 185 geffen 203 123 221 geffen 217 119 231
+geffen 43 85 geffen 120 39 137 geffen 172 174 252 geffen 98 141 119 geffen 61 180 121 geffen 119 213 206 geffen 138 138 152 geffen 120 62 116 geffen 182 59 185 geffen 168 122 202 geffen 203 123 238 geffen 217 119 250
+geffen 61 180 geffen 138 138 139 geffen 120 62 215 geffen 182 59 290 geffen 168 122 229 geffen 119 213 99 geffen 203 123 229 geffen 217 119 241
+geffen 98 141 geffen 61 180 144 geffen 119 213 109 geffen 138 138 47 geffen 120 62 107 geffen 182 59 196 geffen 168 122 99 geffen 203 123 135 geffen 217 119 147
+geffen_in 104 109
+geffen_in 113 163 geffen_in 106 181 33
+geffen_in 114 37
+geffen_in 114 60 geffen_in 100 67 27
+geffen_in 136 169 geffen_in 138 162 17
+geffen_in 138 149
+geffen_in 163 94
+geffen_in 26 37
+geffen_in 28 106
+geffen_in 28 156
+geffen_in 41 67 geffen_in 26 60 28
+geffen_in 70 132 geffen_in 70 149 21
+geffen_in 70 146 geffen_in 70 149 5 geffen_in 70 132 18
+geffen_in 70 161 geffen_in 70 158 5
+geffen_in 70 48 geffen_in 52 65 37 geffen_in 70 83 47
+geffen_in 70 83 geffen_in 52 65 38
+geffen_in 79 107 geffen_in 72 98 18
+geffen_in 87 65 geffen_in 52 65 37 geffen_in 70 83 37 geffen_in 70 48 36
+gefg_cas01 34 136 gefg_cas01 99 178 111 gefg_cas01 39 196 159
+gefg_cas01 62 9
+gefg_cas01 99 178 gefg_cas01 39 196 230
+gefg_cas02 174 11
+gefg_cas02 70 147 gefg_cas02 35 173 227
+gefg_cas02 80 42 gefg_cas02 25 13 124
+gefg_cas03 103 283 gefg_cas03 68 290 50 gefg_cas03 93 159 232
+gefg_cas03 106 217
+gefg_cas03 130 250 gefg_cas03 103 283 150 gefg_cas03 68 290 186 gefg_cas03 93 159 194
+gefg_cas03 135 15 gefg_cas03 154 16 144 gefg_cas03 152 92 150
+gefg_cas03 154 16 gefg_cas03 152 92 98
+gefg_cas03 256 11
+gefg_cas03 58 232
+gefg_cas03 65 215
+gefg_cas03 66 223 gefg_cas03 103 283 251 gefg_cas03 68 290 241 gefg_cas03 93 159 341 gefg_cas03 130 250 337
+gefg_cas03 68 290 gefg_cas03 93 159 268
+gefg_cas03 92 53 gefg_cas03 135 15 95 gefg_cas03 154 16 153 gefg_cas03 152 92 157
+gefg_cas04 18 82
+gefg_cas04 34 211 gefg_cas04 24 145 138
+gefg_cas05 61 52 gefg_cas05 66 76 33 gefg_cas05 64 22 36
+gefg_cas05 66 76 gefg_cas05 64 22 63
+gefg_cas05 7 134 gefg_cas05 83 152 134 gefg_cas05 99 204 174
+gefg_cas05 83 152 gefg_cas05 99 204 150
+gl_cas01 135 40 gl_cas01 185 236 344 gl_cas01 234 192 407 gl_cas01 200 165 290 gl_cas01 200 18 271 gl_cas01 167 191 265 gl_cas01 149 314 528 gl_cas01 215 236 478 gl_cas01 371 301 615
+gl_cas01 149 314 gl_cas01 215 236 288 gl_cas01 371 301 511
+gl_cas01 167 191 gl_cas01 185 236 133 gl_cas01 149 314 307 gl_cas01 215 236 257 gl_cas01 371 301 394
+gl_cas01 185 236 gl_cas01 149 314 196 gl_cas01 215 236 248 gl_cas01 371 301 443
+gl_cas01 200 165 gl_cas01 185 236 270 gl_cas01 200 18 227 gl_cas01 167 191 189 gl_cas01 149 314 454 gl_cas01 215 236 292 gl_cas01 371 301 427
+gl_cas01 200 18 gl_cas01 185 236 373 gl_cas01 167 191 292 gl_cas01 149 314 559 gl_cas01 215 236 391 gl_cas01 371 301 526
+gl_cas01 215 236 gl_cas01 371 301 241
+gl_cas01 234 192 gl_cas01 185 236 239 gl_cas01 200 165 187 gl_cas01 200 18 286 gl_cas01 167 191 186 gl_cas01 149 314 311 gl_cas01 215 236 149 gl_cas01 371 301 286
+gl_cas02 104 15 gl_cas02 104 193 466
+gl_church 156 4 gl_church 301 46 261
+gl_church 16 299 gl_church 156 4 553 gl_church 301 46 610
+gl_chyard 12 149 gl_chyard 147 12 278 gl_chyard 147 287 279
+gl_chyard 147 12 gl_chyard 147 287 463
+gl_dun01 133 277 gl_dun01 225 18 625
+gl_in01 106 125
+gl_in01 118 59
+gl_in01 81 68
+gl_in01 83 174
+gl_knt01 12 148 gl_knt01 150 291 291 gl_knt01 128 292 350 gl_knt01 287 144 543 gl_knt01 150 6 338
+gl_knt01 128 292 gl_knt01 287 144 577 gl_knt01 150 6 548
+gl_knt01 150 291 gl_knt01 128 292 375 gl_knt01 287 144 302 gl_knt01 150 6 489
+gl_knt01 231 197 gl_knt01 104 204 188
+gl_knt01 287 144 gl_knt01 150 6 335
+gl_knt02 157 292 gl_knt02 289 138 360 gl_knt02 10 138 351
+gl_knt02 289 138 gl_knt02 10 138 369
+gl_prison 149 183 gl_prison 11 70 283
+gl_prison1 150 10 gl_prison1 62 187 517
+gl_sew01 19 21 gl_sew01 258 258 500
+gl_sew02 109 294 gl_sew02 290 156 1014 gl_sew02 296 18 948 gl_sew02 299 294 1231
+gl_sew02 290 156 gl_sew02 296 18 272 gl_sew02 299 294 353
+gl_sew02 296 18 gl_sew02 299 294 485
+gl_sew02 30 273 gl_sew02 109 294 243 gl_sew02 290 156 921 gl_sew02 296 18 855 gl_sew02 299 294 1138
+gl_sew03 171 286 gl_sew03 64 10 705
+gl_sew04 68 280 gl_sew04 104 78 362
+gl_step 8 7 gl_step 120 124 1372
+glast_01 162 330 glast_01 77 193 762 glast_01 380 304 930 glast_01 179 360 69
+glast_01 199 322 glast_01 200 137 462 glast_01 200 297 74 glast_01 237 330 48 glast_01 51 108 678 glast_01 162 330 47 glast_01 77 193 755 glast_01 380 304 923 glast_01 179 360 60
+glast_01 200 137 glast_01 200 297 394 glast_01 237 330 470 glast_01 51 108 302 glast_01 162 330 469 glast_01 77 193 379 glast_01 380 304 551 glast_01 179 360 488
+glast_01 200 297 glast_01 237 330 78 glast_01 51 108 612 glast_01 162 330 81 glast_01 77 193 689 glast_01 380 304 855 glast_01 179 360 100
+glast_01 220 360 glast_01 199 322 61 glast_01 200 137 485 glast_01 200 297 95 glast_01 237 330 69 glast_01 51 108 703 glast_01 162 330 90 glast_01 77 193 780 glast_01 380 304 946 glast_01 179 360 83
+glast_01 237 330 glast_01 51 108 686 glast_01 162 330 77 glast_01 77 193 763 glast_01 380 304 929 glast_01 179 360 90
+glast_01 380 304 glast_01 179 360 953
+glast_01 51 108 glast_01 162 330 685 glast_01 77 193 143 glast_01 380 304 671 glast_01 179 360 704
+glast_01 77 193 glast_01 380 304 748 glast_01 179 360 781
+gon_dun01 153 45 gon_dun01 162 273 337
+gon_dun02 145 66
+gon_dun02 148 236 gon_dun02 171 258 47
+gon_dun02 170 161
+gon_dun02 180 189
+gon_dun02 196 20
+gon_dun02 251 268 gon_dun02 234 191 102
+gon_dun02 44 213 gon_dun02 44 166 55
+gon_dun02 56 119 gon_dun02 14 113 70
+gon_dun02 76 100
+gon_dun02 86 44
+gon_dun02 92 190 gon_dun02 44 213 75 gon_dun02 44 166 92
+gon_dun02 94 118
+gon_fild01 258 82 gon_fild01 192 265 527
+gon_in 109 98
+gon_in 149 24 gon_in 184 36 49
+gon_in 184 11 gon_in 149 24 50 gon_in 184 36 33
+gon_in 186 107 gon_in 186 85 26
+gon_in 31 97
+gon_in 47 24 gon_in 42 35 40
+gon_in 72 67
+gon_in 95 26
+gonryun 107 184 gonryun 161 8 232 gonryun 109 131 125 gonryun 215 114 180 gonryun 159 201 127
+gonryun 109 131 gonryun 215 114 133 gonryun 159 201 128
+gonryun 161 8 gonryun 109 131 177 gonryun 215 114 186 gonryun 159 201 221
+gonryun 195 93 gonryun 221 162 97 gonryun 107 184 189 gonryun 161 8 145 gonryun 109 131 142 gonryun 215 114 43 gonryun 159 201 160
+gonryun 215 114 gonryun 159 201 153
+gonryun 221 162 gonryun 107 184 160 gonryun 161 8 220 gonryun 109 131 145 gonryun 215 114 70 gonryun 159 201 125
+hu_fild01 140 163 hu_fild01 225 115 269
+hu_fild01 141 36 hu_fild01 140 163 438 hu_fild01 225 115 175
+hu_fild01 366 185 hu_fild01 141 36 428 hu_fild01 140 163 338 hu_fild01 225 115 261
+hu_fild02 17 168 hu_fild02 40 22 413 hu_fild02 283 28 442
+hu_fild02 40 22 hu_fild02 283 28 445
+hu_fild04 122 27 hu_fild04 294 379 682
+hu_fild04 27 126 hu_fild04 122 27 196 hu_fild04 294 379 522
+hu_fild04 380 183 hu_fild04 47 372 844 hu_fild04 27 126 578 hu_fild04 122 27 738 hu_fild04 294 379 284
+hu_fild04 47 372 hu_fild04 27 126 294 hu_fild04 122 27 482 hu_fild04 294 379 786
+hu_fild05 184 204 hu_fild05 177 211 16
+hu_fild05 196 210 hu_fild05 184 204 20 hu_fild05 177 211 30
+hu_fild05 33 198 hu_fild05 353 126 550 hu_fild05 89 43 229 hu_fild05 168 304 257
+hu_fild05 353 126 hu_fild05 89 43 415 hu_fild05 168 304 391
+hu_fild05 89 43 hu_fild05 168 304 404
+hu_fild06 200 372 hu_fild06 28 119 439
+hu_fild07 36 352 hu_fild07 57 37 760 hu_fild07 81 370 73 hu_fild07 226 38 702
+hu_fild07 57 37 hu_fild07 81 370 735 hu_fild07 226 38 338
+hu_fild07 81 370 hu_fild07 226 38 673
+hu_in01 110 369 hu_in01 108 390 35 hu_in01 110 373 6
+hu_in01 110 373 hu_in01 108 390 31
+hu_in01 114 322
+hu_in01 15 151
+hu_in01 15 29
+hu_in01 15 70 hu_in01 15 108 40 hu_in01 37 90 44
+hu_in01 162 168
+hu_in01 162 228
+hu_in01 168 315 hu_in01 168 307 20
+hu_in01 168 379
+hu_in01 195 192 hu_in01 195 219 39 hu_in01 211 173 37
+hu_in01 195 219 hu_in01 211 173 64
+hu_in01 229 313 hu_in01 244 315 43
+hu_in01 24 362
+hu_in01 248 388 hu_in01 246 359 47
+hu_in01 263 252 hu_in01 287 227 51
+hu_in01 265 42
+hu_in01 268 123 hu_in01 231 107 55
+hu_in01 301 379 hu_in01 314 386 22
+hu_in01 307 322
+hu_in01 34 246
+hu_in01 34 318 hu_in01 30 299 25
+hu_in01 365 253
+hu_in01 37 90 hu_in01 15 108 42
+hu_in01 379 178
+hu_in01 381 118 hu_in01 345 107 49
+hugel 104 79 hugel 70 157 114
+hugel 129 66 hugel 153 153 151 hugel 206 109 126 hugel 80 230 267 hugel 209 109 129 hugel 91 104 88 hugel 55 208 237 hugel 92 167 150 hugel 52 90 128 hugel 153 216 256 hugel 95 33 77 hugel 155 114 110 hugel 178 142 233 hugel 104 79 50 hugel 70 157 162
+hugel 153 153 hugel 206 109 99 hugel 80 230 176 hugel 209 109 102 hugel 91 104 133 hugel 55 208 180 hugel 92 167 93 hugel 52 90 203 hugel 153 216 135 hugel 95 33 200 hugel 155 114 57 hugel 178 142 108 hugel 104 79 161 hugel 70 157 119
+hugel 153 216 hugel 95 33 247 hugel 155 114 174 hugel 178 142 225 hugel 104 79 208 hugel 70 157 166
+hugel 155 114 hugel 178 142 139 hugel 104 79 136 hugel 70 157 158
+hugel 178 142 hugel 104 79 251 hugel 70 157 209
+hugel 206 109 hugel 80 230 257 hugel 209 109 5 hugel 91 104 190 hugel 55 208 261 hugel 92 167 174 hugel 52 90 230 hugel 153 216 216 hugel 95 33 189 hugel 155 114 58 hugel 178 142 181 hugel 104 79 152 hugel 70 157 200
+hugel 209 109 hugel 91 104 193 hugel 55 208 264 hugel 92 167 177 hugel 52 90 233 hugel 153 216 219 hugel 95 33 192 hugel 155 114 61 hugel 178 142 184 hugel 104 79 155 hugel 70 157 203
+hugel 52 90 hugel 153 216 252 hugel 95 33 119 hugel 155 114 216 hugel 178 142 295 hugel 104 79 80 hugel 70 157 158
+hugel 55 208 hugel 92 167 97 hugel 52 90 231 hugel 153 216 173 hugel 95 33 228 hugel 155 114 219 hugel 178 142 270 hugel 104 79 189 hugel 70 157 103
+hugel 80 230 hugel 209 109 260 hugel 91 104 191 hugel 55 208 152 hugel 92 167 131 hugel 52 90 261 hugel 153 216 141 hugel 95 33 258 hugel 155 114 215 hugel 178 142 266 hugel 104 79 219 hugel 70 157 181
+hugel 91 104 hugel 55 208 161 hugel 92 167 74 hugel 52 90 80 hugel 153 216 180 hugel 95 33 79 hugel 155 114 174 hugel 178 142 223 hugel 104 79 40 hugel 70 157 84
+hugel 92 167 hugel 52 90 144 hugel 153 216 140 hugel 95 33 141 hugel 155 114 132 hugel 178 142 183 hugel 104 79 102 hugel 70 157 38
+hugel 95 33 hugel 155 114 173 hugel 178 142 290 hugel 104 79 57 hugel 70 157 153
+ice_dun01 157 10 ice_dun01 146 161 926
+ice_dun02 151 145 ice_dun02 150 285 663
+ice_dun03 149 19 ice_dun03 149 30 13 ice_dun03 150 137 201
+ice_dun03 149 30 ice_dun03 150 137 190
+ice_dun04 33 140 ice_dun04 33 144 6
+in_moc_16 168 116
+in_moc_16 18 8
+in_moc_16 182 169 in_moc_16 182 187 20
+in_moc_16 20 140 in_moc_16 20 169 31
+in_moc_16 20 94 in_moc_16 20 72 24
+in_moc_16 88 105 in_moc_16 88 46 71
+in_moc_16 88 136 in_moc_16 66 148 82
+in_orcs01 108 86 in_orcs01 108 114 30
+in_orcs01 124 171
+in_orcs01 162 55
+in_orcs01 29 116
+in_orcs01 30 154 in_orcs01 30 182 30
+in_sphinx1 288 6 in_sphinx1 80 191 1427
+in_sphinx2 149 77 in_sphinx2 276 272 1126
+in_sphinx3 35 227 in_sphinx3 12 69 183
+in_sphinx3 70 111 in_sphinx3 60 227 780
+in_sphinx3 70 83 in_sphinx3 210 57 218
+in_sphinx4 120 113 in_sphinx4 10 224 633
+iz_dun00 352 342 iz_dun00 39 41 1680 iz_dun00 168 173 829
+iz_dun00 39 41 iz_dun00 168 173 869
+iz_dun01 118 170 iz_dun01 253 258 805
+iz_dun01 41 32 iz_dun01 118 170 621 iz_dun01 253 258 530
+iz_dun02 339 331 iz_dun02 236 198 338
+iz_dun03 29 63 iz_dun03 264 245 937
+izlu2dun 108 29 izlu2dun 108 83 290 izlu2dun 107 50 24
+izlu2dun 108 83 izlu2dun 107 50 268
+izlude 109 151 izlude 30 78 206 izlude 148 148 50 izlude 216 129 131 izlude 198 180 124 izlude 134 88 92
+izlude 134 88 izlude 30 78 132 izlude 148 148 80 izlude 216 129 129
+izlude 148 148 izlude 216 129 93
+izlude 149 39 izlude 176 182 224 izlude 52 140 200 izlude 209 143 208 izlude 91 105 142 izlude 182 186 236 izlude 109 151 156 izlude 198 180 244 izlude 134 88 78 izlude 30 78 160 izlude 148 148 152 izlude 216 129 201
+izlude 176 182 izlude 52 140 188 izlude 209 143 138 izlude 91 105 178 izlude 182 186 14 izlude 109 151 104 izlude 198 180 26 izlude 134 88 152 izlude 30 78 278 izlude 148 148 88 izlude 216 129 133
+izlude 176 56 izlude 200 56 26
+izlude 182 186 izlude 30 78 290 izlude 148 148 100 izlude 109 151 116 izlude 216 129 145 izlude 198 180 38 izlude 134 88 164
+izlude 198 180 izlude 30 78 298 izlude 148 148 108 izlude 216 129 153 izlude 134 88 172
+izlude 20 98 izlude 176 56 200 izlude 148 148 180 izlude 91 105 79 izlude 109 151 176 izlude 134 88 126
+izlude 209 143 izlude 91 105 162 izlude 182 186 150 izlude 109 151 136 izlude 198 180 158 izlude 134 88 136 izlude 30 78 262 izlude 148 148 98 izlude 216 129 25
+izlude 30 78 izlude 148 148 206 izlude 216 129 255
+izlude 52 140 izlude 209 143 214 izlude 91 105 84 izlude 182 186 200 izlude 109 151 94 izlude 198 180 208 izlude 134 88 136 izlude 30 78 250 izlude 148 148 132 izlude 216 129 209
+izlude 91 105 izlude 30 78 192 izlude 148 148 104 izlude 182 186 188 izlude 109 151 70 izlude 216 129 153 izlude 198 180 196 izlude 134 88 78
+izlude_in 108 169
+izlude_in 116 46
+izlude_in 148 127 izlude_in 172 116 37
+izlude_in 171 97
+izlude_in 172 139 izlude_in 148 127 38 izlude_in 172 116 29
+izlude_in 172 158
+izlude_in 65 84
+izlude_in 74 158 izlude_in 87 169 26
+jupe_cave 143 52 jupe_cave 147 52 6 jupe_cave 29 52 116
+jupe_cave 147 52 jupe_cave 29 52 120
+jupe_gate 28 14
+jupe_gate 49 167 jupe_gate 28 145 45
+jupe_gate 71 144 jupe_gate 49 167 47 jupe_gate 28 145 46
+juperos_01 100 92 juperos_01 51 249 394
+juperos_01 120 112 juperos_01 100 92 308 juperos_01 51 249 280
+juperos_02 131 150 juperos_02 127 275 777
+juperos_02 33 59 juperos_02 131 150 515 juperos_02 127 275 364
+kh_dun01 13 12 kh_dun01 41 206 252 kh_dun01 3 234 260
+kh_dun01 227 176 kh_dun01 13 12 382 kh_dun01 41 206 278 kh_dun01 3 230 314 kh_dun01 3 234 318
+kh_dun01 232 176 kh_dun01 13 12 387 kh_dun01 41 206 283 kh_dun01 63 7 340 kh_dun01 227 176 7 kh_dun01 3 230 319 kh_dun01 3 234 323
+kh_dun01 232 226
+kh_dun01 3 230 kh_dun01 13 12 254 kh_dun01 41 206 80 kh_dun01 3 234 6
+kh_dun01 41 206 kh_dun01 3 234 84
+kh_dun01 63 7 kh_dun01 13 12 229 kh_dun01 41 206 305 kh_dun01 227 176 335 kh_dun01 3 230 309 kh_dun01 3 234 313
+kh_kiehl01 10 31 kh_kiehl01 43 33 41
+kh_kiehl01 166 186
+kh_kiehl01 173 39
+kh_kiehl01 41 178
+kh_kiehl01 78 107
+kh_kiehl02 49 56 kh_kiehl02 49 7 51
+kh_mansion 21 11 kh_mansion 27 27 26
+kh_mansion 72 49 kh_mansion 78 54 13 kh_mansion 88 50 19
+kh_mansion 78 54 kh_mansion 88 50 16
+kh_rossi 148 190
+kh_rossi 148 279
+kh_rossi 168 34
+kh_rossi 188 231 kh_rossi 188 238 9 kh_rossi 220 238 41 kh_rossi 220 231 40 kh_rossi 228 234 45 kh_rossi 204 238 25
+kh_rossi 188 238 kh_rossi 220 238 40 kh_rossi 220 231 41 kh_rossi 204 238 24
+kh_rossi 204 190
+kh_rossi 204 231 kh_rossi 188 231 24 kh_rossi 188 238 25 kh_rossi 220 238 25 kh_rossi 220 231 24 kh_rossi 228 234 29 kh_rossi 204 238 9
+kh_rossi 204 238 kh_rossi 220 231 25
+kh_rossi 204 279
+kh_rossi 22 222
+kh_rossi 22 273
+kh_rossi 220 238 kh_rossi 220 231 9 kh_rossi 204 238 24
+kh_rossi 222 25 kh_rossi 248 68 107 kh_rossi 248 25 34
+kh_rossi 222 68 kh_rossi 248 68 36 kh_rossi 248 25 107 kh_rossi 222 25 133
+kh_rossi 228 234 kh_rossi 188 238 46 kh_rossi 220 238 14 kh_rossi 220 231 13 kh_rossi 204 238 30
+kh_rossi 248 68 kh_rossi 248 25 81
+kh_rossi 259 46 kh_rossi 248 68 47 kh_rossi 248 25 48 kh_rossi 222 68 75 kh_rossi 222 25 74
+kh_rossi 260 190
+kh_rossi 260 279
+kh_rossi 27 143
+kh_rossi 27 42 kh_rossi 42 26 33
+kh_rossi 282 60 kh_rossi 259 46 47 kh_rossi 248 68 44 kh_rossi 248 25 81 kh_rossi 222 68 72 kh_rossi 222 25 107
+kh_rossi 35 87 kh_rossi 15 92 33 kh_rossi 35 98 13 kh_rossi 90 87 69
+kh_rossi 35 98 kh_rossi 15 92 32 kh_rossi 90 87 70
+kh_rossi 63 87 kh_rossi 90 101 43 kh_rossi 15 92 61 kh_rossi 35 87 42 kh_rossi 35 98 43 kh_rossi 90 87 39
+kh_rossi 88 222
+kh_rossi 88 273
+kh_rossi 90 101 kh_rossi 15 92 92 kh_rossi 35 87 73 kh_rossi 35 98 72 kh_rossi 90 87 32
+kh_rossi 90 87 kh_rossi 15 92 90
+kh_rossi 99 42 kh_rossi 87 25 31
+kh_school 153 16 kh_school 153 56 56
+kh_school 186 117
+kh_school 30 125 kh_school 35 176 86 kh_school 30 185 102
+kh_school 30 155 kh_school 76 156 69 kh_school 30 125 56 kh_school 35 176 40 kh_school 35 133 41 kh_school 30 185 56
+kh_school 35 133 kh_school 76 156 66 kh_school 30 125 27 kh_school 35 176 71 kh_school 30 185 87
+kh_school 35 176 kh_school 30 185 28
+kh_school 71 74 kh_school 71 14 76
+kh_school 76 156 kh_school 30 125 79 kh_school 35 176 63 kh_school 30 185 77
+kh_vila 115 47 kh_vila 126 75 41
+kh_vila 175 71
+kh_vila 180 171
+kh_vila 191 18
+kh_vila 22 167
+kh_vila 32 128 kh_vila 20 103 49 kh_vila 44 103 41
+kh_vila 44 103 kh_vila 20 103 34
+kh_vila 46 38 kh_vila 34 66 52
+kh_vila 46 54 kh_vila 34 66 26 kh_vila 46 38 52
+kh_vila 71 38 kh_vila 71 54 28
+kh_vila 79 11 kh_vila 90 47 49 kh_vila 71 38 37 kh_vila 71 54 53
+kh_vila 84 66 kh_vila 79 11 62 kh_vila 90 47 31 kh_vila 71 38 43 kh_vila 71 54 27
+kh_vila 90 47 kh_vila 71 38 30 kh_vila 71 54 28
+lhz_airport 142 13 lhz_airport 125 13 51
+lhz_airport 142 60
+lhz_airport 19 18
+lhz_cube 231 17 lhz_cube 231 12 7
+lhz_cube 231 96 lhz_cube 231 17 81 lhz_cube 231 12 86
+lhz_cube 241 100
+lhz_dun01 149 285 lhz_dun01 149 291 8 lhz_dun01 281 150 355 lhz_dun01 149 9 550 lhz_dun01 18 145 469
+lhz_dun01 149 291 lhz_dun01 281 150 361 lhz_dun01 149 9 556 lhz_dun01 18 145 475
+lhz_dun01 149 9 lhz_dun01 18 145 429
+lhz_dun01 281 150 lhz_dun01 149 9 397 lhz_dun01 18 145 634
+lhz_dun02 149 142 lhz_dun02 282 161 210 lhz_dun02 146 19 280
+lhz_dun02 149 144 lhz_dun02 149 147 5 lhz_dun02 149 142 4 lhz_dun02 282 161 212 lhz_dun02 146 19 282
+lhz_dun02 149 147 lhz_dun02 149 142 7 lhz_dun02 282 161 215 lhz_dun02 146 19 285
+lhz_dun02 17 156 lhz_dun02 149 144 272 lhz_dun02 149 147 269 lhz_dun02 149 142 348 lhz_dun02 282 161 502 lhz_dun02 146 19 324
+lhz_dun02 224 6 lhz_dun02 17 156 667 lhz_dun02 149 144 377 lhz_dun02 149 147 380 lhz_dun02 149 142 375 lhz_dun02 282 161 257 lhz_dun02 146 19 573
+lhz_dun02 282 161 lhz_dun02 146 19 412
+lhz_dun03 139 137 lhz_dun03 140 137 3
+lhz_fild01 210 18 lhz_fild01 367 222 363
+lhz_fild02 166 366 lhz_fild02 164 37 383
+lhz_fild02 29 219 lhz_fild02 166 366 286 lhz_fild02 164 37 475
+lhz_fild03 364 282 lhz_fild03 158 350 416
+lhz_in01 106 15 lhz_in01 98 55 52
+lhz_in01 11 24 lhz_in01 15 24 6
+lhz_in01 111 121 lhz_in01 35 223 184 lhz_in01 88 215 133 lhz_in01 149 179 98
+lhz_in01 116 121 lhz_in01 76 254 197 lhz_in01 111 121 23 lhz_in01 35 223 189 lhz_in01 88 215 138 lhz_in01 140 215 132 lhz_in01 149 179 93
+lhz_in01 140 215 lhz_in01 76 254 211 lhz_in01 111 121 137 lhz_in01 35 223 227 lhz_in01 88 215 172 lhz_in01 149 179 51
+lhz_in01 15 129 lhz_in01 24 138 20 lhz_in01 43 114 45 lhz_in01 19 129 6 lhz_in01 43 144 81
+lhz_in01 158 15 lhz_in01 194 55 80 lhz_in01 106 15 64 lhz_in01 98 55 106
+lhz_in01 188 254 lhz_in01 76 254 164 lhz_in01 111 121 236 lhz_in01 35 223 300 lhz_in01 88 215 249 lhz_in01 116 121 231 lhz_in01 140 215 223 lhz_in01 149 179 184
+lhz_in01 19 129 lhz_in01 24 138 16 lhz_in01 43 114 41
+lhz_in01 191 127
+lhz_in01 194 55 lhz_in01 106 15 134 lhz_in01 98 55 176
+lhz_in01 231 226 lhz_in01 35 223 315 lhz_in01 188 254 73 lhz_in01 116 121 246 lhz_in01 140 215 238 lhz_in01 76 254 185 lhz_in01 111 121 251 lhz_in01 88 215 264 lhz_in01 149 179 199
+lhz_in01 251 226
+lhz_in01 278 132
+lhz_in01 278 157
+lhz_in01 35 223 lhz_in01 149 179 184
+lhz_in01 35 226 lhz_in01 35 223 5 lhz_in01 231 226 326 lhz_in01 188 254 311 lhz_in01 116 121 200 lhz_in01 140 215 234 lhz_in01 76 254 249 lhz_in01 111 121 195 lhz_in01 88 215 104 lhz_in01 149 179 195
+lhz_in01 40 224
+lhz_in01 43 114 lhz_in01 24 138 47
+lhz_in01 43 144 lhz_in01 24 138 27 lhz_in01 43 114 46 lhz_in01 19 129 77
+lhz_in01 58 129 lhz_in01 24 138 69 lhz_in01 43 114 32 lhz_in01 19 129 63 lhz_in01 15 129 67 lhz_in01 43 144 32
+lhz_in01 76 254 lhz_in01 111 121 194 lhz_in01 35 223 238 lhz_in01 88 215 187 lhz_in01 149 179 172
+lhz_in01 88 215 lhz_in01 35 223 93 lhz_in01 149 179 133
+lhz_in02 129 199
+lhz_in02 13 155 lhz_in02 49 154 45 lhz_in02 36 136 56
+lhz_in02 21 191 lhz_in02 39 204 33
+lhz_in02 27 265
+lhz_in02 282 79 lhz_in02 274 82 49
+lhz_in02 288 30 lhz_in02 265 14 41
+lhz_in02 44 28
+lhz_in02 49 154 lhz_in02 36 136 37
+lhz_in02 79 223 lhz_in02 94 212 28
+lhz_in02 89 144 lhz_in02 103 155 27
+lhz_in03 10 216
+lhz_in03 120 90
+lhz_in03 180 90 lhz_in03 190 100 28
+lhz_in03 191 35 lhz_in03 188 11 29
+lhz_in03 237 100
+lhz_in03 93 21 lhz_in03 134 14 50
+lighthalzen 101 248 lighthalzen 251 299 387 lighthalzen 106 248 15 lighthalzen 236 276 349 lighthalzen 197 35 311 lighthalzen 238 220 295
+lighthalzen 106 248 lighthalzen 236 276 348 lighthalzen 238 220 294
+lighthalzen 188 204 lighthalzen 267 200 99 lighthalzen 267 75 210 lighthalzen 198 257 113 lighthalzen 198 163 93 lighthalzen 101 248 277 lighthalzen 197 35 248 lighthalzen 251 299 182 lighthalzen 214 329 175 lighthalzen 195 45 234 lighthalzen 260 199 91 lighthalzen 106 248 276 lighthalzen 236 276 144 lighthalzen 265 200 97 lighthalzen 238 220 90
+lighthalzen 195 45 lighthalzen 267 200 263 lighthalzen 267 75 152 lighthalzen 198 257 277 lighthalzen 101 248 299 lighthalzen 197 35 54 lighthalzen 251 299 346 lighthalzen 236 276 308 lighthalzen 106 248 298 lighthalzen 260 199 255 lighthalzen 265 200 261 lighthalzen 238 220 254
+lighthalzen 197 35 lighthalzen 251 299 360 lighthalzen 106 248 310 lighthalzen 236 276 322 lighthalzen 238 220 268
+lighthalzen 198 163 lighthalzen 267 200 122 lighthalzen 267 75 159 lighthalzen 198 257 136 lighthalzen 101 248 198 lighthalzen 197 35 195 lighthalzen 251 299 205 lighthalzen 214 329 198 lighthalzen 195 45 181 lighthalzen 260 199 114 lighthalzen 106 248 197 lighthalzen 236 276 167 lighthalzen 265 200 120 lighthalzen 238 220 113
+lighthalzen 198 257 lighthalzen 251 299 97 lighthalzen 106 248 319 lighthalzen 236 276 59 lighthalzen 101 248 320 lighthalzen 197 35 291 lighthalzen 238 220 113
+lighthalzen 214 329 lighthalzen 267 200 184 lighthalzen 267 75 309 lighthalzen 198 257 90 lighthalzen 101 248 382 lighthalzen 197 35 353 lighthalzen 251 299 81 lighthalzen 195 45 339 lighthalzen 260 199 178 lighthalzen 106 248 381 lighthalzen 236 276 77 lighthalzen 265 200 182 lighthalzen 238 220 169
+lighthalzen 236 276 lighthalzen 238 220 134
+lighthalzen 251 299 lighthalzen 106 248 388 lighthalzen 236 276 74 lighthalzen 238 220 172
+lighthalzen 260 199 lighthalzen 267 200 10 lighthalzen 267 75 221 lighthalzen 198 257 122 lighthalzen 101 248 298 lighthalzen 197 35 269 lighthalzen 251 299 181 lighthalzen 236 276 143 lighthalzen 106 248 297 lighthalzen 265 200 8 lighthalzen 238 220 53
+lighthalzen 265 200 lighthalzen 267 200 4 lighthalzen 267 75 227 lighthalzen 198 257 126 lighthalzen 101 248 304 lighthalzen 197 35 277 lighthalzen 251 299 185 lighthalzen 106 248 303 lighthalzen 236 276 147 lighthalzen 238 220 57
+lighthalzen 267 200 lighthalzen 251 299 187 lighthalzen 267 75 229 lighthalzen 198 257 128 lighthalzen 106 248 305 lighthalzen 236 276 149 lighthalzen 101 248 306 lighthalzen 197 35 277 lighthalzen 238 220 59
+lighthalzen 267 75 lighthalzen 251 299 312 lighthalzen 198 257 253 lighthalzen 106 248 340 lighthalzen 236 276 274 lighthalzen 101 248 341 lighthalzen 197 35 166 lighthalzen 238 220 220
+lighthalzen 294 223 lighthalzen 324 301 132 lighthalzen 303 229 17 lighthalzen 345 231 93 lighthalzen 347 261 92 lighthalzen 340 240 75
+lighthalzen 303 229 lighthalzen 345 231 80 lighthalzen 347 261 79 lighthalzen 340 240 62
+lighthalzen 308 76 lighthalzen 294 76 16
+lighthalzen 313 301 lighthalzen 324 301 77 lighthalzen 303 229 98 lighthalzen 345 231 170 lighthalzen 294 223 113 lighthalzen 347 261 89 lighthalzen 340 240 152
+lighthalzen 324 301 lighthalzen 303 229 117 lighthalzen 345 231 111 lighthalzen 347 261 66 lighthalzen 340 240 85
+lighthalzen 340 240 lighthalzen 345 231 54 lighthalzen 347 261 45
+lighthalzen 345 231 lighthalzen 347 261 71
+lou_dun01 221 195 lou_dun01 40 201 571
+lou_dun02 165 269 lou_dun02 288 18 1484
+lou_fild01 190 100 lou_fild01 191 104 7 lou_fild01 233 356 325
+lou_fild01 191 104 lou_fild01 233 356 320
+lou_in01 79 141 lou_in01 101 119 46
+lou_in02 126 165
+lou_in02 176 46
+lou_in02 201 94
+lou_in02 242 59
+lou_in02 249 173
+lou_in02 35 190 lou_in02 80 190 73 lou_in02 58 170 45
+lou_in02 44 138
+lou_in02 71 140
+lou_in02 72 28
+lou_in02 80 190 lou_in02 58 170 44
+louyang 130 63 louyang 280 167 274 louyang 263 93 183
+louyang 136 97 louyang 145 174 112 louyang 37 271 485 louyang 130 63 178 louyang 280 167 226 louyang 263 93 141
+louyang 145 174 louyang 37 271 555 louyang 130 63 248 louyang 280 167 212 louyang 263 93 211
+louyang 218 19 louyang 218 255 272 louyang 145 174 240 louyang 37 271 439 louyang 136 97 170 louyang 130 63 134 louyang 280 167 212 louyang 263 93 121
+louyang 218 255 louyang 145 174 204 louyang 37 271 631 louyang 136 97 252 louyang 130 63 324 louyang 280 167 220 louyang 263 93 221
+louyang 280 167 louyang 263 93 109
+louyang 37 271 louyang 130 63 327 louyang 280 167 581 louyang 263 93 490
+mag_dun01 243 240 mag_dun01 125 67 543
+man_fild01 103 55 man_fild01 35 232 569 man_fild01 36 232 570 man_fild01 36 235 567
+man_fild01 35 232 man_fild01 36 232 3 man_fild01 36 235 6
+man_fild01 36 232 man_fild01 36 235 5
+man_fild03 84 369 man_fild03 84 366 5
+mid_camp 13 143 mid_camp 9 215 118 mid_camp 341 176 569 mid_camp 336 171 559
+mid_camp 341 176 mid_camp 336 171 12
+mid_camp 9 215 mid_camp 341 176 617 mid_camp 336 171 607
+mjo_dun01 14 283 mjo_dun01 52 14 867
+mjo_dun02 31 21 mjo_dun02 39 21 282 mjo_dun02 384 343 1673
+mjo_dun02 39 21 mjo_dun02 384 343 1645
+mjo_dun03 302 264 mjo_dun03 308 264 8
+mjolnir_01 284 18 mjolnir_01 381 256 2029
+mjolnir_02 28 258 mjolnir_02 326 289 1663 mjolnir_02 361 18 649 mjolnir_02 99 351 1198
+mjolnir_02 326 289 mjolnir_02 361 18 1254 mjolnir_02 99 351 849
+mjolnir_02 361 18 mjolnir_02 99 351 793
+mjolnir_02 79 365 mjolnir_02 28 258 1232 mjolnir_02 326 289 883 mjolnir_02 361 18 827 mjolnir_02 99 351 46
+mjolnir_03 212 17 mjolnir_03 21 258 435
+mjolnir_03 242 204 mjolnir_03 212 17 846 mjolnir_03 21 258 1115
+mjolnir_04 160 46 mjolnir_04 387 174 1402 mjolnir_04 122 208 1410
+mjolnir_04 387 174 mjolnir_04 122 208 2734
+mjolnir_05 16 171 mjolnir_05 220 382 493 mjolnir_05 235 16 376
+mjolnir_05 220 382 mjolnir_05 235 16 471
+mjolnir_06 18 331 mjolnir_06 383 74 626 mjolnir_06 265 29 595 mjolnir_06 382 377 628 mjolnir_06 366 383 618
+mjolnir_06 265 29 mjolnir_06 382 377 469 mjolnir_06 366 383 459
+mjolnir_06 382 377 mjolnir_06 366 383 24
+mjolnir_06 383 74 mjolnir_06 265 29 171 mjolnir_06 382 377 434 mjolnir_06 366 383 424
+mjolnir_07 156 16 mjolnir_07 214 383 765
+mjolnir_07 16 377 mjolnir_07 156 16 987 mjolnir_07 214 383 274
+mjolnir_07 17 77 mjolnir_07 383 362 745 mjolnir_07 16 377 1069 mjolnir_07 156 16 204 mjolnir_07 214 383 847
+mjolnir_07 383 233 mjolnir_07 17 77 554 mjolnir_07 383 362 219 mjolnir_07 16 377 543 mjolnir_07 156 16 472 mjolnir_07 214 383 321
+mjolnir_07 383 362 mjolnir_07 16 377 474 mjolnir_07 156 16 665 mjolnir_07 214 383 252
+mjolnir_08 159 373 mjolnir_08 185 28 433 mjolnir_08 30 234 288 mjolnir_08 369 257 472 mjolnir_08 29 346 213
+mjolnir_08 185 28 mjolnir_08 30 234 421 mjolnir_08 369 257 655 mjolnir_08 29 346 534
+mjolnir_08 30 234 mjolnir_08 369 257 644 mjolnir_08 29 346 165
+mjolnir_08 369 257 mjolnir_08 29 346 589
+mjolnir_09 106 28 mjolnir_09 30 249 355 mjolnir_09 373 288 609
+mjolnir_09 194 367 mjolnir_09 106 28 811 mjolnir_09 30 249 682 mjolnir_09 373 288 880
+mjolnir_09 30 249 mjolnir_09 373 288 820
+mjolnir_09 300 28 mjolnir_09 194 367 633 mjolnir_09 106 28 302 mjolnir_09 30 249 567 mjolnir_09 373 288 365
+mjolnir_10 15 258 mjolnir_10 235 381 411 mjolnir_10 265 13 711 mjolnir_10 66 15 676
+mjolnir_10 235 381 mjolnir_10 265 13 570 mjolnir_10 66 15 781
+mjolnir_10 265 13 mjolnir_10 66 15 339
+mjolnir_10 384 220 mjolnir_10 15 258 669 mjolnir_10 235 381 390 mjolnir_10 265 13 364 mjolnir_10 66 15 599
+mjolnir_11 20 220 mjolnir_11 174 20 362
+mjolnir_12 199 378 mjolnir_12 220 26 445 mjolnir_12 44 17 592
+mjolnir_12 220 26 mjolnir_12 44 17 215
+moc_fild01 239 382 moc_fild01 56 384 257 moc_fild01 321 16 450 moc_fild01 379 162 362 moc_fild01 22 242 359
+moc_fild01 321 16 moc_fild01 379 162 206 moc_fild01 22 242 527
+moc_fild01 379 162 moc_fild01 22 242 439
+moc_fild01 56 384 moc_fild01 321 16 637 moc_fild01 379 162 549 moc_fild01 22 242 210
+moc_fild01 84 19 moc_fild01 239 382 520 moc_fild01 56 384 403 moc_fild01 321 16 394 moc_fild01 379 162 444 moc_fild01 22 242 293
+moc_fild02 228 29 moc_fild02 67 342 974 moc_fild02 378 272 413 moc_fild02 332 19 178
+moc_fild02 350 339 moc_fild02 71 18 620 moc_fild02 228 29 472 moc_fild02 67 342 658 moc_fild02 378 272 107 moc_fild02 332 19 564
+moc_fild02 378 272 moc_fild02 332 19 507
+moc_fild02 67 342 moc_fild02 378 272 625 moc_fild02 332 19 1068
+moc_fild02 71 18 moc_fild02 228 29 934 moc_fild02 67 342 394 moc_fild02 378 272 585 moc_fild02 332 19 1026
+moc_fild03 17 37 moc_fild03 303 170 471 moc_fild03 70 341 461
+moc_fild03 303 170 moc_fild03 70 341 810
+moc_fild07 380 202 moc_fild07 198 21 365
+moc_fild11 189 360 moc_fild11 379 197 355 moc_fild11 26 161 818
+moc_fild11 212 29 moc_fild11 189 360 524 moc_fild11 379 197 369 moc_fild11 26 161 344
+moc_fild11 379 197 moc_fild11 26 161 663
+moc_fild12 118 30 moc_fild12 289 168 319 moc_fild12 159 381 586
+moc_fild12 26 305 moc_fild12 35 303 13 moc_fild12 118 30 447 moc_fild12 289 168 420 moc_fild12 159 381 211
+moc_fild12 289 168 moc_fild12 159 381 559
+moc_fild12 35 303 moc_fild12 118 30 436 moc_fild12 289 168 409 moc_fild12 159 381 204
+moc_fild13 146 368 moc_fild13 32 171 313 moc_fild13 308 49 603
+moc_fild13 298 370 moc_fild13 146 368 634 moc_fild13 32 171 667 moc_fild13 308 49 375
+moc_fild13 32 171 moc_fild13 308 49 636
+moc_fild16 124 381 moc_fild16 333 380 884 moc_fild16 205 296 602 moc_fild16 16 179 312
+moc_fild16 205 296 moc_fild16 16 179 678
+moc_fild16 206 297 moc_fild16 124 381 601 moc_fild16 333 380 603 moc_fild16 205 296 3 moc_fild16 16 179 679
+moc_fild16 333 380 moc_fild16 205 296 604 moc_fild16 16 179 960
+moc_fild17 218 369 moc_fild17 30 300 303
+moc_fild17 369 272 moc_fild17 218 369 250 moc_fild17 30 300 403
+moc_fild18 158 382 moc_fild18 382 305 327
+moc_fild18 51 170 moc_fild18 158 382 323 moc_fild18 382 305 500
+moc_fild19 169 107 moc_fild19 71 170 163 moc_fild19 98 99 81
+moc_fild19 71 170 moc_fild19 98 99 198
+moc_fild20 189 21 moc_fild20 36 177 367 moc_fild20 215 336 363 moc_fild20 38 183 371 moc_fild20 203 336 371 moc_fild20 38 174 362 moc_fild20 354 174 328 moc_fild20 354 183 337 moc_fild20 200 21 19
+moc_fild20 203 336 moc_fild20 38 174 331 moc_fild20 354 174 315 moc_fild20 354 183 306 moc_fild20 200 21 360
+moc_fild20 208 207 moc_fild20 189 21 237 moc_fild20 36 177 204 moc_fild20 215 336 144 moc_fild20 38 183 198 moc_fild20 203 336 140 moc_fild20 38 174 205 moc_fild20 354 174 181 moc_fild20 354 183 172 moc_fild20 200 21 226
+moc_fild20 215 336 moc_fild20 38 174 341 moc_fild20 354 174 307 moc_fild20 354 183 298 moc_fild20 200 21 352 moc_fild20 38 183 336 moc_fild20 203 336 14
+moc_fild20 354 174 moc_fild20 354 183 13 moc_fild20 200 21 317
+moc_fild20 354 183 moc_fild20 200 21 326
+moc_fild20 36 177 moc_fild20 38 174 7 moc_fild20 354 174 339 moc_fild20 354 183 348 moc_fild20 215 336 340 moc_fild20 200 21 356 moc_fild20 38 183 10 moc_fild20 203 336 332
+moc_fild20 38 174 moc_fild20 354 174 340 moc_fild20 354 183 349 moc_fild20 200 21 351
+moc_fild20 38 183 moc_fild20 38 174 11 moc_fild20 354 174 335 moc_fild20 354 183 342 moc_fild20 200 21 360 moc_fild20 203 336 326
+moc_para01 100 27 moc_para01 113 32 20
+moc_para01 102 92
+moc_para01 107 12 moc_para01 100 27 24 moc_para01 113 32 34
+moc_para01 49 86
+moc_para01 57 27 moc_para01 30 10 46
+moc_pryd01 10 195 moc_pryd01 195 9 487 moc_pryd01 90 109 224
+moc_pryd01 195 9 moc_pryd01 90 109 245
+moc_pryd02 100 99 moc_pryd02 10 195 262
+moc_pryd03 100 97 moc_pryd03 184 11 172
+moc_pryd03 12 15 moc_pryd03 188 184 355 moc_pryd03 100 97 180 moc_pryd03 184 11 340
+moc_pryd03 15 187 moc_pryd03 12 15 339 moc_pryd03 188 184 340 moc_pryd03 100 97 197 moc_pryd03 184 11 357
+moc_pryd03 188 184 moc_pryd03 100 97 187 moc_pryd03 184 11 341
+moc_pryd04 12 15 moc_pryd04 15 187 185 moc_pryd04 188 184 347
+moc_pryd04 15 187 moc_pryd04 188 184 186
+moc_pryd04 184 11 moc_pryd04 12 15 186 moc_pryd04 15 187 347 moc_pryd04 188 184 187
+moc_pryd05 223 9 moc_pryd05 94 98 1320
+moc_prydb1 100 104 moc_prydb1 111 115 24 moc_prydb1 100 191 89 moc_prydb1 87 115 25
+moc_prydb1 100 55 moc_prydb1 100 77 24
+moc_prydb1 111 115 moc_prydb1 100 191 89
+moc_prydb1 142 115
+moc_prydb1 59 115
+moc_prydb1 87 115 moc_prydb1 111 115 25 moc_prydb1 100 191 90
+moc_ruins 137 89 moc_ruins 71 16 141
+moc_ruins 159 37 moc_ruins 54 161 233 moc_ruins 137 89 76 moc_ruins 71 16 123
+moc_ruins 54 161 moc_ruins 137 89 165 moc_ruins 71 16 178
+monk_test 259 115
+monk_test 306 151
+monk_test 329 47 monk_test 329 76 31
+morocc 155 97 morocc 25 294 371 morocc 160 297 353 morocc 299 207 290
+morocc 156 46 morocc 160 61 21 morocc 160 17 35 morocc 160 258 416 morocc 52 259 329 morocc 197 66 65 morocc 182 92 74 morocc 85 55 90 morocc 189 283 422 morocc 284 170 266 morocc 155 97 62 morocc 25 294 389 morocc 160 297 447 morocc 46 46 120 morocc 299 207 306 morocc 24 164 258
+morocc 156 97 morocc 190 283 404 morocc 156 46 61 morocc 46 46 179 morocc 24 164 241 morocc 160 61 42 morocc 160 17 86 morocc 160 258 323 morocc 52 259 268 morocc 197 66 112 morocc 182 92 33 morocc 85 55 145 morocc 189 283 405 morocc 284 170 249 morocc 155 97 3 morocc 25 294 372 morocc 160 297 354 morocc 299 207 289
+morocc 160 17 morocc 160 258 449 morocc 52 259 362 morocc 197 66 92 morocc 182 92 101 morocc 85 55 123 morocc 189 283 447 morocc 284 170 291 morocc 155 97 89 morocc 25 294 422 morocc 160 297 480 morocc 299 207 331
+morocc 160 183
+morocc 160 258 morocc 52 259 131 morocc 197 66 369 morocc 182 92 378 morocc 85 55 332 morocc 189 283 56 morocc 284 170 220 morocc 155 97 322 morocc 25 294 181 morocc 160 297 41 morocc 299 207 198
+morocc 160 297 morocc 299 207 231
+morocc 160 61 morocc 160 17 46 morocc 160 258 409 morocc 52 259 344 morocc 197 66 74 morocc 182 92 55 morocc 85 55 105 morocc 189 283 407 morocc 284 170 251 morocc 155 97 43 morocc 25 294 404 morocc 160 297 444 morocc 299 207 291
+morocc 182 92 morocc 25 294 399 morocc 160 297 411 morocc 85 55 158 morocc 189 283 374 morocc 284 170 218 morocc 299 207 258 morocc 155 97 34
+morocc 189 283 morocc 25 294 199 morocc 160 297 45 morocc 284 170 216 morocc 299 207 194 morocc 155 97 406
+morocc 190 283 morocc 160 61 406 morocc 160 17 446 morocc 160 258 57 morocc 52 259 178 morocc 197 66 364 morocc 182 92 373 morocc 85 55 379 morocc 189 283 3 morocc 284 170 215 morocc 155 97 405 morocc 25 294 200 morocc 160 297 46 morocc 46 46 383 morocc 156 46 421 morocc 299 207 193 morocc 24 164 287
+morocc 197 66 morocc 182 92 67 morocc 85 55 149 morocc 189 283 363 morocc 284 170 207 morocc 155 97 113 morocc 25 294 448 morocc 160 297 400 morocc 299 207 247
+morocc 24 164 morocc 160 61 273 morocc 160 17 289 morocc 160 258 240 morocc 52 259 151 morocc 197 66 317 morocc 182 92 268 morocc 85 55 174 morocc 189 283 286 morocc 284 170 458 morocc 155 97 240 morocc 25 294 167 morocc 160 297 271 morocc 299 207 436
+morocc 25 294 morocc 160 297 178 morocc 299 207 377
+morocc 253 56 morocc 98 68 189 morocc 274 269 238 morocc 156 97 140 morocc 190 283 316 morocc 156 46 111 morocc 46 46 227 morocc 24 164 363 morocc 160 61 118 morocc 160 17 136 morocc 160 258 319 morocc 52 259 434 morocc 197 66 68 morocc 182 92 109 morocc 85 55 195 morocc 189 283 317 morocc 284 170 161 morocc 155 97 141 morocc 25 294 494 morocc 160 297 354 morocc 299 207 201
+morocc 274 269 morocc 156 97 326 morocc 190 283 106 morocc 156 46 343 morocc 46 46 459 morocc 24 164 377 morocc 160 61 328 morocc 160 17 368 morocc 160 258 137 morocc 52 259 266 morocc 197 66 286 morocc 182 92 295 morocc 85 55 427 morocc 189 283 107 morocc 284 170 123 morocc 155 97 327 morocc 25 294 316 morocc 160 297 150 morocc 299 207 101
+morocc 284 170 morocc 25 294 397 morocc 160 297 253 morocc 299 207 54 morocc 155 97 250
+morocc 46 46 morocc 160 61 139 morocc 160 17 153 morocc 160 258 336 morocc 52 259 249 morocc 197 66 185 morocc 182 92 192 morocc 85 55 50 morocc 189 283 382 morocc 284 170 384 morocc 155 97 166 morocc 25 294 309 morocc 160 297 367 morocc 299 207 424 morocc 24 164 164
+morocc 52 259 morocc 197 66 390 morocc 182 92 341 morocc 85 55 247 morocc 189 283 177 morocc 284 170 349 morocc 155 97 269 morocc 25 294 74 morocc 160 297 162 morocc 299 207 327
+morocc 85 55 morocc 25 294 305 morocc 160 297 363 morocc 189 283 378 morocc 284 170 350 morocc 299 207 390 morocc 155 97 146
+morocc 98 68 morocc 274 269 409 morocc 156 97 89 morocc 190 283 379 morocc 156 46 84 morocc 46 46 100 morocc 24 164 174 morocc 160 61 95 morocc 160 17 117 morocc 160 258 332 morocc 52 259 245 morocc 197 66 143 morocc 182 92 116 morocc 85 55 74 morocc 189 283 378 morocc 284 170 332 morocc 155 97 88 morocc 25 294 305 morocc 160 297 363 morocc 299 207 372
+morocc_in 105 95
+morocc_in 106 123
+morocc_in 108 179
+morocc_in 134 77
+morocc_in 136 136 morocc_in 144 151 25 morocc_in 149 129 22
+morocc_in 144 109
+morocc_in 144 122 morocc_in 144 151 37 morocc_in 136 136 24 morocc_in 149 129 16
+morocc_in 144 166
+morocc_in 149 129 morocc_in 144 151 33
+morocc_in 166 130 morocc_in 174 151 31
+morocc_in 171 37
+morocc_in 171 50 morocc_in 183 65 29
+morocc_in 174 109
+morocc_in 174 122 morocc_in 166 130 18 morocc_in 174 151 35
+morocc_in 174 166
+morocc_in 23 161
+morocc_in 34 161 morocc_in 57 161 25 morocc_in 44 146 27 morocc_in 44 178 28
+morocc_in 44 146 morocc_in 57 161 30 morocc_in 44 178 33
+morocc_in 44 178 morocc_in 57 161 31
+morocc_in 55 123
+morocc_in 55 95
+morocc_in 68 42
+morocc_in 68 62 morocc_in 68 75 15
+morocc_in 68 95 morocc_in 83 90 22 morocc_in 86 101 28 morocc_in 93 95 29
+morocc_in 70 161
+morocc_in 83 90 morocc_in 93 95 17
+morocc_in 86 101 morocc_in 83 90 16 morocc_in 93 95 15
+morocc_in 86 117 morocc_in 68 123 25
+morocc_in 93 123 morocc_in 86 117 14 morocc_in 68 123 27
+moscovia 163 55 moscovia 203 171 420 moscovia 166 53 7 moscovia 185 188 401 moscovia 229 208 393 moscovia 256 138 482 moscovia 205 98 103
+moscovia 166 53 moscovia 185 188 406 moscovia 229 208 398
+moscovia 185 188 moscovia 229 208 68
+moscovia 203 171 moscovia 166 53 425 moscovia 185 188 87 moscovia 229 208 69
+moscovia 205 98 moscovia 203 171 389 moscovia 166 53 108 moscovia 185 188 370 moscovia 229 208 360
+moscovia 223 174 moscovia 256 179 48 moscovia 163 55 413 moscovia 256 138 85 moscovia 205 98 382 moscovia 203 171 31 moscovia 166 53 418 moscovia 185 188 80 moscovia 229 208 44
+moscovia 256 138 moscovia 203 171 110 moscovia 166 53 487 moscovia 185 188 149 moscovia 229 208 103 moscovia 205 98 451
+moscovia 256 179 moscovia 203 171 73 moscovia 166 53 446 moscovia 185 188 108 moscovia 229 208 62 moscovia 163 55 441 moscovia 256 138 53 moscovia 205 98 410
+mosk_dun01 201 269 mosk_dun01 257 190 305 mosk_dun01 264 191 312 mosk_dun01 189 42 449
+mosk_dun01 207 276 mosk_dun01 201 269 13 mosk_dun01 257 190 306 mosk_dun01 264 191 313 mosk_dun01 189 42 452
+mosk_dun01 257 190 mosk_dun01 264 191 9 mosk_dun01 189 42 418
+mosk_dun01 264 191 mosk_dun01 189 42 425
+mosk_dun02 168 28 mosk_dun02 262 118 211 mosk_dun02 268 117 217 mosk_dun02 165 30 6
+mosk_dun02 262 118 mosk_dun02 268 117 8 mosk_dun02 165 30 207
+mosk_dun02 268 117 mosk_dun02 165 30 213
+mosk_dun03 119 46 mosk_dun03 117 36 54
+mosk_dun03 27 131
+mosk_dun03 32 135 mosk_dun03 119 46 184 mosk_dun03 117 36 188
+mosk_in 11 246
+mosk_in 12 179
+mosk_in 142 175 mosk_in 150 192 27
+mosk_in 152 272
+mosk_in 202 188
+mosk_in 21 113
+mosk_in 214 252 mosk_in 220 273 29
+mosk_in 222 128 mosk_in 211 111 30
+mosk_in 288 116
+mosk_in 89 180
+mosk_in 99 126 mosk_in 93 61 107
+nameless_n 157 184 nameless_n 259 218 154 nameless_n 257 217 151
+nameless_n 259 218 nameless_n 257 217 5
+new_1-2 126 106 new_1-2 73 106 57
+new_1-2 156 171
+new_1-2 24 188 new_1-2 46 172 42 new_1-2 38 182 34
+new_1-2 46 172 new_1-2 38 182 22
+new_1-3 95 30 new_1-3 96 21 12
+new_1-3 96 30 new_1-3 95 30 3 new_1-3 96 21 11
+new_2-3 95 30 new_2-3 96 21 12
+new_3-3 96 21 new_3-3 95 30 12
+new_4-3 96 21 new_4-3 95 30 12
+new_5-3 95 30 new_5-3 96 21 12
+nif_fild02 378 235 nif_fild02 22 311 556
+nif_in 11 88
+nif_in 135 13
+nif_in 140 171
+nif_in 169 82 nif_in 154 78 25
+nif_in 18 154 nif_in 65 174 89
+nif_in 186 106
+nif_in 34 30 nif_in 23 11 32
+nif_in 88 29 nif_in 68 14 37
+niflheim 146 245 niflheim 19 154 294 niflheim 255 194 378 niflheim 219 169 153 niflheim 166 162 137 niflheim 219 198 130
+niflheim 166 162 niflheim 219 198 101
+niflheim 189 207 niflheim 146 245 93 niflheim 19 154 249 niflheim 255 194 381 niflheim 219 169 70 niflheim 166 162 80 niflheim 219 198 47
+niflheim 19 154 niflheim 255 194 612 niflheim 219 169 267 niflheim 166 162 197 niflheim 219 198 268
+niflheim 219 169 niflheim 166 162 70 niflheim 219 198 49
+niflheim 255 194 niflheim 219 169 403 niflheim 166 162 443 niflheim 219 198 370
+odin_tem01 100 146 odin_tem01 93 146 9 odin_tem01 383 334 537
+odin_tem01 377 182 odin_tem01 100 146 377 odin_tem01 93 146 384 odin_tem01 383 334 256
+odin_tem01 93 146 odin_tem01 383 334 544
+odin_tem02 153 349 odin_tem02 21 180 615 odin_tem02 261 377 762
+odin_tem02 21 180 odin_tem02 261 377 801
+odin_tem02 21 334 odin_tem02 153 349 725 odin_tem02 21 180 276 odin_tem02 261 377 911
+odin_tem03 121 49 odin_tem03 247 34 987
+orcsdun01 183 8 orcsdun01 32 172 361
+orcsdun02 21 188 orcsdun02 180 15 564
+pay_arche 145 165 pay_arche 92 170 80 pay_arche 36 131 229 pay_arche 71 156 257
+pay_arche 36 131 pay_arche 71 156 62
+pay_arche 81 17 pay_arche 145 165 214 pay_arche 92 170 238 pay_arche 36 131 161 pay_arche 71 156 189
+pay_arche 92 170 pay_arche 36 131 253 pay_arche 71 156 281
+pay_dun00 184 33 pay_dun00 21 186 408
+pay_dun01 15 33 pay_dun01 286 25 1141
+pay_dun02 16 63 pay_dun02 137 128 1124
+pay_dun03 155 161 pay_dun03 127 62 309
+pay_dun04 40 37 pay_dun04 202 206 335
+pay_fild01 13 152 pay_fild01 379 201 976 pay_fild01 278 14 608
+pay_fild01 333 361 pay_fild01 13 152 1114 pay_fild01 379 201 222 pay_fild01 278 14 686
+pay_fild01 353 14 pay_fild01 333 361 481 pay_fild01 13 152 1175 pay_fild01 379 201 345 pay_fild01 278 14 747
+pay_fild01 379 201 pay_fild01 278 14 548
+pay_fild02 167 390 pay_fild02 284 108 676 pay_fild02 83 386 315
+pay_fild02 284 108 pay_fild02 83 386 553
+pay_fild03 172 281 pay_fild03 15 110 422
+pay_fild03 313 16 pay_fild03 392 63 222 pay_fild03 172 281 432 pay_fild03 15 110 520
+pay_fild03 392 63 pay_fild03 172 281 480 pay_fild03 15 110 568
+pay_fild04 17 165 pay_fild04 194 17 1103
+pay_fild07 16 200 pay_fild07 382 290 530 pay_fild07 280 382 454 pay_fild07 164 17 375 pay_fild07 163 17 376
+pay_fild07 164 17 pay_fild07 163 17 3
+pay_fild07 280 382 pay_fild07 164 17 569 pay_fild07 163 17 570
+pay_fild07 382 290 pay_fild07 280 382 198 pay_fild07 164 17 493 pay_fild07 163 17 494
+pay_fild08 17 75 pay_fild08 262 91 297 pay_fild08 160 16 214
+pay_fild08 262 91 pay_fild08 160 16 183
+pay_fild09 16 91 pay_fild09 112 16 175
+pay_fild10 112 382 pay_fild10 16 290 192
+pay_gld 121 238 pay_gld 374 149 474 pay_gld 291 116 494 pay_gld 16 276 247 pay_gld 321 293 393 pay_gld 323 293 394 pay_gld 204 270 192
+pay_gld 140 156 pay_gld 121 238 131 pay_gld 374 149 291 pay_gld 291 116 307 pay_gld 16 276 246 pay_gld 321 293 346 pay_gld 323 293 347 pay_gld 204 270 313
+pay_gld 16 276 pay_gld 321 293 630 pay_gld 323 293 631 pay_gld 204 270 429
+pay_gld 291 116 pay_gld 16 276 519 pay_gld 321 293 245 pay_gld 323 293 248 pay_gld 204 270 312
+pay_gld 321 293 pay_gld 323 293 3 pay_gld 204 270 237
+pay_gld 323 293 pay_gld 204 270 238
+pay_gld 374 149 pay_gld 291 116 118 pay_gld 16 276 503 pay_gld 321 293 227 pay_gld 323 293 226 pay_gld 204 270 292
+payg_cas01 11 115 payg_cas01 53 111 170
+payg_cas01 115 151
+payg_cas01 134 43 payg_cas01 84 15 150
+payg_cas01 222 130 payg_cas01 214 44 156
+payg_cas02 13 42
+payg_cas02 222 26
+payg_cas02 254 241 payg_cas02 280 291 182
+payg_cas02 276 61 payg_cas02 215 31 189
+payg_cas02 47 223 payg_cas02 65 292 239
+payg_cas03 226 22 payg_cas03 262 71 173
+payg_cas03 245 41
+payg_cas03 272 68
+payg_cas03 29 246 payg_cas03 29 245 3
+payg_cas03 29 269 payg_cas03 29 245 106 payg_cas03 29 246 105
+payg_cas03 39 5 payg_cas03 39 80 185
+payg_cas03 39 84 payg_cas03 39 5 189 payg_cas03 39 80 6
+payg_cas04 252 275 payg_cas04 232 189 190
+payg_cas04 254 45
+payg_cas04 260 212
+payg_cas04 28 31 payg_cas04 59 30 88
+payg_cas04 7 261 payg_cas04 74 240 116 payg_cas04 78 261 137
+payg_cas04 78 261 payg_cas04 74 240 71
+payg_cas05 14 14
+payg_cas05 283 256 payg_cas05 219 256 130
+payg_cas05 290 43 payg_cas05 242 41 150
+payg_cas05 56 255 payg_cas05 62 223 170
+payon 107 326 payon 130 169 286 payon 16 143 288 payon 17 143 287 payon 161 58 344 payon 228 329 348
+payon 122 27 payon 180 104 137 payon 151 127 165 payon 267 89 217 payon 223 117 193 payon 107 326 360 payon 130 169 254 payon 16 143 226 payon 17 143 225 payon 161 58 72 payon 228 329 424
+payon 130 169 payon 16 143 416 payon 17 143 415 payon 161 58 180 payon 228 329 322
+payon 136 158 payon 156 247 111 payon 122 27 211 payon 180 104 100 payon 151 127 78 payon 267 89 226 payon 223 117 134 payon 107 326 243 payon 17 143 374 payon 130 169 63 payon 16 143 375 payon 161 58 141 payon 228 329 279
+payon 141 85 payon 189 233 224 payon 181 104 61 payon 136 158 134 payon 156 247 203 payon 122 27 127 payon 180 104 60 payon 151 127 88 payon 267 89 188 payon 223 117 116 payon 107 326 337 payon 130 169 173 payon 16 143 291 payon 17 143 290 payon 161 58 57 payon 228 329 347
+payon 151 127 payon 267 89 180 payon 223 117 88 payon 107 326 281 payon 130 169 119 payon 16 143 329 payon 17 143 328 payon 161 58 95 payon 228 329 305
+payon 156 247 payon 122 27 280 payon 180 104 169 payon 151 127 147 payon 267 89 295 payon 223 117 203 payon 107 326 180 payon 17 143 251 payon 130 169 152 payon 16 143 252 payon 161 58 210 payon 228 329 212
+payon 16 143 payon 17 143 3 payon 161 58 236 payon 228 329 420
+payon 161 58 payon 228 329 354
+payon 17 143 payon 161 58 235 payon 228 329 419
+payon 180 104 payon 267 89 128 payon 223 117 62 payon 107 326 303 payon 130 169 141 payon 16 143 301 payon 17 143 300 payon 161 58 67 payon 228 329 293 payon 151 127 54
+payon 181 104 payon 136 158 101 payon 156 247 170 payon 122 27 138 payon 180 104 3 payon 151 127 55 payon 267 89 127 payon 223 117 61 payon 107 326 304 payon 130 169 144 payon 16 143 302 payon 17 143 301 payon 161 58 68 payon 228 329 294
+payon 189 233 payon 181 104 189 payon 136 158 130 payon 156 247 63 payon 122 27 299 payon 180 104 188 payon 151 127 168 payon 267 89 314 payon 223 117 222 payon 107 326 199 payon 130 169 171 payon 16 143 271 payon 17 143 270 payon 161 58 229 payon 228 329 161
+payon 220 117 payon 141 85 113 payon 189 233 219 payon 181 104 58 payon 156 247 200 payon 122 27 190 payon 136 158 131 payon 180 104 59 payon 151 127 85 payon 267 89 115 payon 223 117 5 payon 107 326 334 payon 17 143 353 payon 130 169 172 payon 16 143 354 payon 161 58 120 payon 228 329 274
+payon 222 117 payon 181 104 60 payon 122 27 192 payon 136 158 133 payon 180 104 61 payon 151 127 87 payon 267 89 117 payon 130 169 176 payon 16 143 358 payon 228 329 276 payon 141 85 115 payon 220 117 4 payon 189 233 221 payon 156 247 202 payon 107 326 336 payon 223 117 3 payon 17 143 357 payon 161 58 122
+payon 223 117 payon 107 326 337 payon 130 169 177 payon 16 143 359 payon 17 143 358 payon 161 58 123 payon 228 329 277
+payon 267 89 payon 223 117 118 payon 107 326 431 payon 130 169 271 payon 16 143 381 payon 17 143 380 payon 161 58 149 payon 228 329 369
+payon_in01 10 17
+payon_in01 10 38 payon_in01 10 59 25
+payon_in01 10 80
+payon_in01 133 18 payon_in01 133 21 5
+payon_in01 133 42 payon_in01 146 61 36 payon_in01 133 45 5
+payon_in01 133 45 payon_in01 146 61 33
+payon_in01 143 61 payon_in01 133 42 33 payon_in01 146 61 5 payon_in01 133 45 30
+payon_in01 17 51 payon_in01 10 38 24 payon_in01 10 59 17
+payon_in01 175 11 payon_in01 181 43 40 payon_in01 172 11 5
+payon_in01 181 40 payon_in01 181 43 5 payon_in01 175 11 37 payon_in01 172 11 40
+payon_in01 181 43 payon_in01 172 11 43
+payon_in01 181 71 payon_in01 193 92 35 payon_in01 193 89 32 payon_in01 181 70 3 payon_in01 181 73 4
+payon_in01 181 73 payon_in01 193 92 33 payon_in01 193 89 30 payon_in01 181 70 5
+payon_in01 193 89 payon_in01 193 92 5 payon_in01 181 70 33
+payon_in01 193 92 payon_in01 181 70 36
+payon_in01 23 129 payon_in01 13 139 22
+payon_in01 56 50
+payon_in02 50 4
+payon_in02 64 56
+payon_in02 82 45
+payon_in03 107 124 payon_in03 98 114 21
+payon_in03 114 124
+payon_in03 12 131 payon_in03 28 131 28
+payon_in03 12 142 payon_in03 12 161 33 payon_in03 28 161 37
+payon_in03 12 161 payon_in03 28 161 24
+payon_in03 146 39 payon_in03 186 32 51
+payon_in03 160 17
+payon_in03 172 32 payon_in03 146 39 37 payon_in03 186 32 24
+payon_in03 190 17
+payon_in03 20 118 payon_in03 12 131 23 payon_in03 28 131 23
+payon_in03 20 60 payon_in03 20 73 15
+payon_in03 20 86 payon_in03 20 103 19
+payon_in03 28 142 payon_in03 12 142 24 payon_in03 12 161 37 payon_in03 28 161 23
+payon_in03 28 172 payon_in03 12 172 28
+payon_in03 83 124
+payon_in03 90 124 payon_in03 99 133 20 payon_in03 107 124 29 payon_in03 98 114 20
+payon_in03 99 133 payon_in03 107 124 19 payon_in03 98 114 32
+payon_in03 99 148
+prontera 107 215 prontera 237 317 276 prontera 29 207 102 prontera 156 360 220 prontera 84 89 209 prontera 192 267 149 prontera 156 22 254
+prontera 116 72 prontera 151 29 80 prontera 177 221 214 prontera 146 89 53 prontera 74 90 120 prontera 133 183 178 prontera 179 184 183 prontera 42 67 99 prontera 208 154 230 prontera 282 200 298 prontera 45 346 391 prontera 132 222 211 prontera 22 203 235 prontera 107 215 240 prontera 237 317 406 prontera 29 207 232 prontera 156 360 370 prontera 84 89 69 prontera 192 267 295 prontera 156 22 92
+prontera 123 83 prontera 116 72 20 prontera 151 29 90 prontera 177 221 204 prontera 146 89 37 prontera 74 90 110 prontera 133 183 168 prontera 179 184 173 prontera 42 67 133 prontera 208 154 220 prontera 282 200 288 prontera 45 346 381 prontera 132 222 201 prontera 22 203 225 prontera 107 215 230 prontera 237 317 396 prontera 29 207 222 prontera 156 360 360 prontera 84 89 59 prontera 192 267 285 prontera 156 22 102
+prontera 132 222 prontera 107 215 49 prontera 237 317 237 prontera 29 207 131 prontera 156 360 181 prontera 84 89 224 prontera 192 267 110 prontera 156 22 225 prontera 22 203 136
+prontera 133 183 prontera 179 184 53 prontera 42 67 271 prontera 208 154 126 prontera 282 200 174 prontera 45 346 313 prontera 132 222 47 prontera 22 203 139 prontera 107 215 76 prontera 237 317 272 prontera 29 207 136 prontera 156 360 216 prontera 84 89 191 prontera 192 267 145 prontera 156 22 192
+prontera 146 89 prontera 133 183 129 prontera 179 184 134 prontera 42 67 152 prontera 208 154 181 prontera 282 200 249 prontera 45 346 404 prontera 132 222 162 prontera 22 203 248 prontera 107 215 191 prontera 237 317 357 prontera 29 207 245 prontera 156 360 321 prontera 84 89 124 prontera 74 90 133 prontera 192 267 246 prontera 156 22 79
+prontera 151 29 prontera 177 221 220 prontera 146 89 67 prontera 74 90 190 prontera 133 183 184 prontera 179 184 189 prontera 42 67 153 prontera 208 154 236 prontera 282 200 304 prontera 45 346 461 prontera 132 222 217 prontera 22 203 305 prontera 107 215 246 prontera 237 317 412 prontera 29 207 302 prontera 156 360 376 prontera 84 89 181 prontera 192 267 301 prontera 156 22 14
+prontera 156 360 prontera 84 89 385 prontera 192 267 165 prontera 156 22 382
+prontera 177 221 prontera 146 89 165 prontera 74 90 236 prontera 133 183 84 prontera 179 184 47 prontera 42 67 307 prontera 208 154 106 prontera 282 200 134 prontera 45 346 281 prontera 132 222 51 prontera 22 203 175 prontera 107 215 88 prontera 237 317 236 prontera 29 207 170 prontera 156 360 180 prontera 84 89 227 prontera 192 267 101 prontera 156 22 222
+prontera 179 184 prontera 42 67 276 prontera 208 154 83 prontera 282 200 131 prontera 45 346 316 prontera 132 222 86 prontera 22 203 178 prontera 107 215 115 prontera 237 317 269 prontera 29 207 175 prontera 156 360 215 prontera 84 89 196 prontera 192 267 120 prontera 156 22 191
+prontera 192 267 prontera 156 22 303
+prontera 204 192 prontera 123 83 213 prontera 116 72 223 prontera 151 29 229 prontera 177 221 73 prontera 146 89 174 prontera 74 90 245 prontera 133 183 93 prontera 179 184 50 prontera 42 67 316 prontera 208 154 43 prontera 282 200 103 prontera 45 346 342 prontera 132 222 112 prontera 22 203 212 prontera 107 215 149 prontera 237 317 205 prontera 29 207 209 prontera 156 360 241 prontera 84 89 236 prontera 192 267 126 prontera 156 22 231
+prontera 208 154 prontera 282 200 132 prontera 45 346 375 prontera 132 222 145 prontera 22 203 245 prontera 107 215 182 prontera 237 317 234 prontera 29 207 242 prontera 156 360 274 prontera 84 89 243 prontera 192 267 155 prontera 156 22 238
+prontera 22 203 prontera 107 215 107 prontera 237 317 349 prontera 29 207 13 prontera 156 360 293 prontera 84 89 206 prontera 192 267 236 prontera 156 22 317
+prontera 237 317 prontera 29 207 340 prontera 156 360 140 prontera 84 89 419 prontera 192 267 219 prontera 156 22 414
+prontera 282 200 prontera 45 346 387 prontera 132 222 173 prontera 22 203 293 prontera 107 215 208 prontera 237 317 194 prontera 29 207 290 prontera 156 360 288 prontera 84 89 311 prontera 192 267 159 prontera 156 22 306
+prontera 289 203 prontera 204 192 107 prontera 123 83 298 prontera 116 72 308 prontera 151 29 314 prontera 177 221 138 prontera 146 89 259 prontera 74 90 330 prontera 133 183 178 prontera 179 184 135 prontera 42 67 401 prontera 208 154 136 prontera 282 200 12 prontera 45 346 391 prontera 132 222 177 prontera 22 203 297 prontera 107 215 212 prontera 237 317 198 prontera 29 207 294 prontera 156 360 292 prontera 84 89 321 prontera 192 267 163 prontera 156 22 316
+prontera 29 207 prontera 156 360 282 prontera 84 89 203 prontera 192 267 231 prontera 156 22 314
+prontera 42 67 prontera 208 154 323 prontera 282 200 391 prontera 45 346 358 prontera 132 222 258 prontera 22 203 182 prontera 107 215 229 prontera 237 317 471 prontera 29 207 179 prontera 156 360 415 prontera 84 89 108 prontera 192 267 388 prontera 156 22 165
+prontera 45 346 prontera 132 222 278 prontera 22 203 220 prontera 107 215 261 prontera 237 317 239 prontera 29 207 209 prontera 156 360 181 prontera 84 89 362 prontera 192 267 264 prontera 156 22 473
+prontera 73 100 prontera 289 203 321 prontera 204 192 236 prontera 123 83 101 prontera 116 72 111 prontera 151 29 181 prontera 177 221 227 prontera 146 89 124 prontera 74 90 21 prontera 133 183 191 prontera 179 184 196 prontera 42 67 88 prontera 208 154 243 prontera 282 200 311 prontera 45 346 362 prontera 132 222 224 prontera 22 203 206 prontera 107 215 209 prontera 237 317 419 prontera 29 207 203 prontera 156 360 383 prontera 84 89 24 prontera 192 267 308 prontera 156 22 193
+prontera 74 90 prontera 133 183 200 prontera 179 184 205 prontera 42 67 109 prontera 208 154 252 prontera 282 200 320 prontera 45 346 371 prontera 132 222 233 prontera 22 203 215 prontera 107 215 218 prontera 237 317 428 prontera 29 207 212 prontera 156 360 392 prontera 84 89 23 prontera 192 267 317 prontera 156 22 202
+prontera 84 89 prontera 192 267 308 prontera 156 22 193
+prt_castle 102 140 prt_castle 135 153 48 prt_castle 102 181 61 prt_castle 68 153 49
+prt_castle 102 16 prt_castle 102 73 59
+prt_castle 102 88 prt_castle 113 107 32 prt_castle 102 129 43
+prt_castle 113 107 prt_castle 102 129 35
+prt_castle 121 29 prt_castle 102 16 34 prt_castle 102 73 65
+prt_castle 135 153 prt_castle 102 181 63 prt_castle 68 153 83
+prt_castle 144 29
+prt_castle 149 113 prt_castle 130 107 27
+prt_castle 164 145 prt_castle 170 138 15
+prt_castle 176 121 prt_castle 172 113 18
+prt_castle 28 121 prt_castle 31 113 19
+prt_castle 45 145 prt_castle 40 138 16
+prt_castle 54 113 prt_castle 75 107 29
+prt_castle 59 29
+prt_castle 68 153 prt_castle 102 181 64
+prt_castle 82 29 prt_castle 121 29 43 prt_castle 102 16 35 prt_castle 102 73 66
+prt_castle 92 107 prt_castle 102 88 31 prt_castle 113 107 23 prt_castle 102 129 34
+prt_church 109 81 prt_church 90 81 21 prt_church 100 56 36
+prt_church 168 19
+prt_church 31 19
+prt_church 90 81 prt_church 100 56 37
+prt_fild00 159 383 prt_fild00 165 18 511
+prt_fild00 18 129 prt_fild00 317 18 844 prt_fild00 159 383 463 prt_fild00 165 18 670
+prt_fild00 317 18 prt_fild00 159 383 671 prt_fild00 165 18 806
+prt_fild00 383 249 prt_fild00 18 129 585 prt_fild00 317 18 327 prt_fild00 159 383 398 prt_fild00 165 18 545
+prt_fild01 136 373 prt_fild01 66 373 148 prt_fild01 20 292 205
+prt_fild01 199 24 prt_fild01 136 373 496 prt_fild01 66 373 630 prt_fild01 261 373 547 prt_fild01 380 243 418 prt_fild01 20 292 557
+prt_fild01 261 373 prt_fild01 136 373 201 prt_fild01 66 373 283 prt_fild01 380 243 351 prt_fild01 20 292 356
+prt_fild01 380 243 prt_fild01 136 373 498 prt_fild01 66 373 580 prt_fild01 20 292 609
+prt_fild01 382 304 prt_fild01 136 373 553 prt_fild01 199 24 473 prt_fild01 66 373 635 prt_fild01 261 373 406 prt_fild01 380 243 127 prt_fild01 20 292 664
+prt_fild01 382 351 prt_fild01 136 373 338 prt_fild01 382 304 421 prt_fild01 199 24 564 prt_fild01 66 373 420 prt_fild01 261 373 191 prt_fild01 380 243 366 prt_fild01 20 292 477
+prt_fild01 66 373 prt_fild01 20 292 129
+prt_fild02 17 242 prt_fild02 173 382 792 prt_fild02 17 305 161 prt_fild02 305 17 675 prt_fild02 380 347 862 prt_fild02 17 350 962
+prt_fild02 17 305 prt_fild02 305 17 718 prt_fild02 380 347 847 prt_fild02 17 350 947
+prt_fild02 173 382 prt_fild02 17 305 779 prt_fild02 305 17 821 prt_fild02 380 347 406 prt_fild02 17 350 208
+prt_fild02 305 17 prt_fild02 380 347 745 prt_fild02 17 350 987
+prt_fild02 380 347 prt_fild02 17 350 574
+prt_fild03 371 255 prt_fild03 16 249 783
+prt_fild04 160 387 prt_fild04 384 334 423
+prt_fild04 17 114 prt_fild04 378 72 517
+prt_fild04 323 387 prt_fild04 160 387 473 prt_fild04 384 334 124
+prt_fild04 384 155 prt_fild04 17 114 928 prt_fild04 378 72 491
+prt_fild05 105 381 prt_fild05 292 385 411 prt_fild05 270 212 434 prt_fild05 15 333 188 prt_fild05 255 14 693
+prt_fild05 13 63 prt_fild05 373 205 538 prt_fild05 105 381 838 prt_fild05 292 385 635 prt_fild05 270 212 408 prt_fild05 15 333 860 prt_fild05 255 14 481
+prt_fild05 134 14 prt_fild05 13 63 232 prt_fild05 373 205 568 prt_fild05 105 381 866 prt_fild05 292 385 665 prt_fild05 270 212 438 prt_fild05 15 333 888 prt_fild05 255 14 511
+prt_fild05 14 141 prt_fild05 273 212 380 prt_fild05 134 14 275 prt_fild05 13 63 193 prt_fild05 373 205 507 prt_fild05 105 381 807 prt_fild05 292 385 604 prt_fild05 270 212 377 prt_fild05 15 333 829 prt_fild05 255 14 452
+prt_fild05 15 333 prt_fild05 255 14 715
+prt_fild05 270 212 prt_fild05 15 333 454 prt_fild05 255 14 261
+prt_fild05 273 212 prt_fild05 134 14 439 prt_fild05 13 63 411 prt_fild05 373 205 129 prt_fild05 105 381 429 prt_fild05 292 385 226 prt_fild05 270 212 5 prt_fild05 15 333 451 prt_fild05 255 14 264
+prt_fild05 292 385 prt_fild05 270 212 229 prt_fild05 15 333 431 prt_fild05 255 14 488
+prt_fild05 373 205 prt_fild05 105 381 522 prt_fild05 292 385 263 prt_fild05 270 212 132 prt_fild05 15 333 544 prt_fild05 255 14 351
+prt_fild06 23 193 prt_fild06 277 320 687
+prt_fild07 13 64 prt_fild07 132 381 930 prt_fild07 206 12 247
+prt_fild07 132 381 prt_fild07 206 12 791
+prt_fild07 14 289 prt_fild07 248 376 553 prt_fild07 385 186 646 prt_fild07 13 64 892 prt_fild07 132 381 252 prt_fild07 84 13 856 prt_fild07 206 12 749
+prt_fild07 17 145 prt_fild07 248 376 570 prt_fild07 385 186 597 prt_fild07 13 64 475 prt_fild07 132 381 813 prt_fild07 14 289 773 prt_fild07 84 13 439 prt_fild07 206 12 334
+prt_fild07 248 376 prt_fild07 385 186 329 prt_fild07 13 64 687 prt_fild07 132 381 593 prt_fild07 206 12 544
+prt_fild07 383 239 prt_fild07 17 145 606 prt_fild07 14 289 591 prt_fild07 84 13 535 prt_fild07 248 376 274 prt_fild07 385 186 167 prt_fild07 13 64 571 prt_fild07 132 381 631 prt_fild07 206 12 412
+prt_fild07 385 186 prt_fild07 13 64 520 prt_fild07 132 381 686 prt_fild07 206 12 361
+prt_fild07 84 13 prt_fild07 248 376 649 prt_fild07 385 186 484 prt_fild07 13 64 156 prt_fild07 132 381 894 prt_fild07 206 12 211
+prt_fild08 16 187 prt_fild08 371 212 462 prt_fild08 170 378 362 prt_fild08 233 16 404
+prt_fild08 16 239 prt_fild08 16 187 206 prt_fild08 371 212 418 prt_fild08 170 378 294 prt_fild08 233 16 472
+prt_fild08 170 378 prt_fild08 233 16 434
+prt_fild08 371 212 prt_fild08 170 378 368 prt_fild08 233 16 382
+prt_fild08 55 21
+prt_fild09 14 139 prt_fild09 87 380 362
+prt_fild09 224 380 prt_fild09 246 17 471 prt_fild09 383 223 318 prt_fild09 14 139 453 prt_fild09 87 380 215
+prt_fild09 246 17 prt_fild09 383 223 345 prt_fild09 14 139 396 prt_fild09 87 380 568
+prt_fild09 383 223 prt_fild09 14 139 491 prt_fild09 87 380 459
+prt_fild09 95 19 prt_fild09 224 380 492 prt_fild09 246 17 263 prt_fild09 383 223 498 prt_fild09 14 139 203 prt_fild09 87 380 411
+prt_fild10 20 122 prt_fild10 20 196 230 prt_fild10 339 126 359
+prt_fild10 20 196 prt_fild10 339 126 421
+prt_fild10 227 299 prt_fild10 263 23 408 prt_fild10 20 122 394 prt_fild10 20 196 348 prt_fild10 339 126 319
+prt_fild10 263 23 prt_fild10 20 122 356 prt_fild10 20 196 420 prt_fild10 339 126 191
+prt_fild11 17 281 prt_fild11 361 184 815 prt_fild11 302 301 417
+prt_fild11 361 184 prt_fild11 302 301 716
+prt_fild11 362 111 prt_fild11 17 281 779 prt_fild11 361 184 302 prt_fild11 302 301 680
+prt_gld 107 240 prt_gld 240 124 251 prt_gld 129 65 243 prt_gld 159 25 277
+prt_gld 129 65 prt_gld 159 25 72
+prt_gld 153 141 prt_gld 107 240 165 prt_gld 240 124 106 prt_gld 129 65 106 prt_gld 159 25 136
+prt_gld 159 298 prt_gld 212 240 165 prt_gld 153 141 235 prt_gld 107 240 166 prt_gld 240 124 257 prt_gld 129 65 313 prt_gld 159 25 347
+prt_gld 212 240 prt_gld 153 141 212 prt_gld 107 240 167 prt_gld 240 124 184 prt_gld 129 65 306 prt_gld 159 25 312
+prt_gld 240 124 prt_gld 129 65 200 prt_gld 159 25 206
+prt_in 135 71
+prt_in 168 124
+prt_in 172 33
+prt_in 181 55
+prt_in 217 163 prt_in 208 179 29
+prt_in 234 163 prt_in 263 163 35 prt_in 248 173 30
+prt_in 240 141 prt_in 256 131 40
+prt_in 254 113
+prt_in 263 163 prt_in 248 173 31
+prt_in 274 163 prt_in 282 179 26
+prt_in 37 65
+prt_in 47 29
+prt_in 48 65 prt_in 60 77 26 prt_in 69 65 25
+prt_in 53 105
+prt_in 68 130 prt_in 70 143 17
+prt_in 69 65 prt_in 60 77 23
+prt_in 70 162
+prt_in 80 113
+prt_in 82 65
+prt_maze01 104 74 prt_maze01 85 56 39 prt_maze01 96 45 47 prt_maze01 114 56 30
+prt_maze01 114 145 prt_maze01 98 154 27 prt_maze01 85 146 32
+prt_maze01 114 22 prt_maze01 99 34 29 prt_maze01 85 13 40
+prt_maze01 114 95 prt_maze01 85 97 33 prt_maze01 105 114 34
+prt_maze01 137 125 prt_maze01 154 134 38
+prt_maze01 137 74 prt_maze01 139 45 37
+prt_maze01 14 74 prt_maze01 14 45 35
+prt_maze01 142 114 prt_maze01 125 105 38
+prt_maze01 154 181 prt_maze01 125 171 43
+prt_maze01 154 22
+prt_maze01 165 22 prt_maze01 176 34 27 prt_maze01 194 15 44 prt_maze01 176 5 30
+prt_maze01 166 139 prt_maze01 194 139 34
+prt_maze01 168 94 prt_maze01 182 85 25 prt_maze01 194 94 30
+prt_maze01 17 114 prt_maze01 22 85 36
+prt_maze01 17 115 prt_maze01 17 114 3 prt_maze01 22 85 37
+prt_maze01 175 165 prt_maze01 194 175 31
+prt_maze01 176 34 prt_maze01 194 15 39
+prt_maze01 176 5 prt_maze01 176 34 37 prt_maze01 194 15 30
+prt_maze01 177 74 prt_maze01 175 45 35 prt_maze01 194 54 45
+prt_maze01 182 85 prt_maze01 194 94 23
+prt_maze01 194 54 prt_maze01 175 45 30
+prt_maze01 23 125 prt_maze01 18 154 38
+prt_maze01 23 5 prt_maze01 16 34 38
+prt_maze01 45 21 prt_maze01 74 12 44
+prt_maze01 5 140 prt_maze01 23 125 35 prt_maze01 18 154 29
+prt_maze01 5 186 prt_maze01 22 194 39
+prt_maze01 5 58 prt_maze01 14 74 27 prt_maze01 14 45 24
+prt_maze01 54 154 prt_maze01 63 125 40
+prt_maze01 54 5 prt_maze01 74 12 31 prt_maze01 45 21 37
+prt_maze01 58 194
+prt_maze01 63 114 prt_maze01 63 85 41 prt_maze01 74 97 30 prt_maze01 45 104 30
+prt_maze01 63 85 prt_maze01 74 97 25 prt_maze01 45 104 39
+prt_maze01 74 74 prt_maze01 52 45 55
+prt_maze01 74 97 prt_maze01 45 104 42
+prt_maze01 85 13 prt_maze01 99 34 37
+prt_maze01 85 146 prt_maze01 98 154 23
+prt_maze01 85 174 prt_maze01 102 165 28
+prt_maze01 85 56 prt_maze01 114 56 41
+prt_maze01 85 97 prt_maze01 105 114 39
+prt_maze01 96 45 prt_maze01 85 56 24 prt_maze01 114 56 31
+prt_maze02 100 182 prt_maze02 93 16 185
+prt_maze03 102 165 prt_maze03 85 174 28
+prt_maze03 104 74 prt_maze03 114 56 30
+prt_maze03 105 114 prt_maze03 85 97 39
+prt_maze03 114 145 prt_maze03 85 146 34 prt_maze03 98 154 27
+prt_maze03 114 95 prt_maze03 105 114 34 prt_maze03 85 97 33
+prt_maze03 125 105 prt_maze03 142 114 38
+prt_maze03 125 171 prt_maze03 154 181 43
+prt_maze03 137 74 prt_maze03 139 45 33
+prt_maze03 14 45 prt_maze03 14 74 35
+prt_maze03 154 134 prt_maze03 137 125 38
+prt_maze03 154 22
+prt_maze03 165 22 prt_maze03 194 15 40 prt_maze03 176 5 30
+prt_maze03 175 45 prt_maze03 177 74 35
+prt_maze03 176 34 prt_maze03 194 15 39 prt_maze03 165 22 25 prt_maze03 176 5 35
+prt_maze03 176 5 prt_maze03 194 15 32
+prt_maze03 18 154 prt_maze03 5 140 29
+prt_maze03 182 85 prt_maze03 168 94 25
+prt_maze03 194 139 prt_maze03 166 139 36
+prt_maze03 194 175
+prt_maze03 194 54 prt_maze03 177 74 45 prt_maze03 175 45 30
+prt_maze03 194 94 prt_maze03 182 85 23 prt_maze03 168 94 28
+prt_maze03 22 194 prt_maze03 5 186 39
+prt_maze03 22 85 prt_maze03 17 114 36
+prt_maze03 23 125 prt_maze03 18 154 38 prt_maze03 5 140 35
+prt_maze03 23 5 prt_maze03 16 34 38
+prt_maze03 45 104 prt_maze03 71 97 41 prt_maze03 63 85 39 prt_maze03 63 114 30
+prt_maze03 45 21 prt_maze03 54 5 37
+prt_maze03 5 58 prt_maze03 14 45 24 prt_maze03 14 74 27
+prt_maze03 52 45 prt_maze03 74 74 57
+prt_maze03 54 154 prt_maze03 63 125 40
+prt_maze03 63 85 prt_maze03 71 97 22 prt_maze03 63 114 41
+prt_maze03 71 97 prt_maze03 63 114 27
+prt_maze03 85 13 prt_maze03 99 34 37 prt_maze03 114 22 40
+prt_maze03 85 56 prt_maze03 104 74 39 prt_maze03 114 56 41
+prt_maze03 96 45 prt_maze03 85 56 24 prt_maze03 104 74 47 prt_maze03 114 56 31
+prt_maze03 98 154 prt_maze03 85 146 25
+prt_maze03 99 34 prt_maze03 114 22 29
+prt_monk 192 172 prt_monk 22 248 366
+prt_sewb1 135 248 prt_sewb1 188 247 1034
+prt_sewb2 100 176 prt_sewb2 60 24 194
+prt_sewb2 140 24 prt_sewb2 180 24 244
+prt_sewb2 19 175 prt_sewb2 19 12 165
+prt_sewb3 180 173 prt_sewb3 20 185 672
+prtg_cas01 103 32 prtg_cas01 51 70 210
+prtg_cas01 192 65 prtg_cas01 206 92 59 prtg_cas01 196 65 6 prtg_cas01 147 120 102
+prtg_cas01 196 65 prtg_cas01 147 120 106
+prtg_cas01 206 92 prtg_cas01 196 65 63 prtg_cas01 147 120 139
+prtg_cas01 71 54 prtg_cas01 84 49 20
+prtg_cas01 75 183 prtg_cas01 109 163 178
+prtg_cas01 84 19 prtg_cas01 57 19 29
+prtg_cas02 157 135
+prtg_cas02 184 44
+prtg_cas02 35 183 prtg_cas02 43 233 240
+prtg_cas02 71 86
+prtg_cas03 165 59 prtg_cas03 168 8 184
+prtg_cas03 45 43
+prtg_cas04 238 257
+prtg_cas04 34 290 prtg_cas04 34 225 95
+prtg_cas04 86 9 prtg_cas04 63 30 214
+prtg_cas05 244 3 prtg_cas05 228 96 201
+prtg_cas05 26 3
+prtg_cas05 260 96 prtg_cas05 244 3 199 prtg_cas05 228 96 72
+prtg_cas05 38 250 prtg_cas05 17 231 238
+prtg_cas05 66 225
+que_bingo 34 105
+que_bingo 39 34 que_bingo 49 7 51
+que_bingo 48 66
+que_bingo 53 34 que_bingo 39 34 26 que_bingo 49 7 37
+que_ng 130 166 que_ng 165 137 106
+que_ng 170 85
+que_ng 172 42
+que_ng 178 162 que_ng 130 166 102 que_ng 165 137 58
+que_rachel 169 18 que_rachel 130 93 116
+que_rachel 206 93 que_rachel 169 18 116 que_rachel 130 93 156
+que_rachel 239 253 que_rachel 312 253 195 que_rachel 275 332 139
+que_rachel 27 299
+que_rachel 312 253 que_rachel 275 332 138
+ra_fild01 306 38 ra_fild01 233 333 382
+ra_fild04 263 54 ra_fild04 23 176 366
+ra_fild04 322 378 ra_fild04 263 54 429 ra_fild04 23 176 503
+ra_fild04 362 351 ra_fild04 322 378 69 ra_fild04 263 54 424 ra_fild04 23 176 516
+ra_fild08 165 29 ra_fild08 287 370 601
+ra_fild12 149 374 ra_fild12 36 225 264
+ra_in01 109 385
+ra_in01 126 334
+ra_in01 135 286
+ra_in01 136 189
+ra_in01 165 369 ra_in01 171 355 22 ra_in01 172 392 38 ra_in01 178 370 16
+ra_in01 171 355 ra_in01 178 370 26
+ra_in01 172 392 ra_in01 171 355 46 ra_in01 178 370 38
+ra_in01 175 189 ra_in01 188 189 17 ra_in01 181 202 21
+ra_in01 183 31
+ra_in01 185 303 ra_in01 197 312 23
+ra_in01 188 189 ra_in01 181 202 24
+ra_in01 192 152
+ra_in01 194 245
+ra_in01 213 79
+ra_in01 221 380
+ra_in01 231 189 ra_in01 244 189 17 ra_in01 237 202 23
+ra_in01 235 21 ra_in01 250 38 34
+ra_in01 237 202 ra_in01 244 189 22
+ra_in01 241 299 ra_in01 249 262 51
+ra_in01 287 189
+ra_in01 295 348 ra_in01 291 371 49 ra_in01 312 374 45
+ra_in01 296 144 ra_in01 259 144 41
+ra_in01 309 70 ra_in01 314 62 17 ra_in01 297 59 25
+ra_in01 312 374 ra_in01 291 371 36
+ra_in01 314 62 ra_in01 297 59 28
+ra_in01 330 296 ra_in01 319 303 20
+ra_in01 339 120 ra_in01 375 109 65
+ra_in01 355 374
+ra_in01 381 200 ra_in01 339 193 85
+ra_in01 381 268 ra_in01 367 255 31
+ra_in01 381 324
+ra_in01 386 39 ra_in01 357 61 53
+ra_san01 139 139 ra_san01 139 13 128
+ra_san02 213 275 ra_san02 289 149 204 ra_san02 30 21 439 ra_san02 213 280 7 ra_san02 213 4 273
+ra_san02 213 280 ra_san02 213 4 278
+ra_san02 289 149 ra_san02 30 21 389 ra_san02 213 280 209 ra_san02 213 4 223
+ra_san02 30 21 ra_san02 213 280 444 ra_san02 213 4 314
+ra_san03 119 283 ra_san03 123 283 6 ra_san03 279 21 546
+ra_san03 123 283 ra_san03 279 21 550
+ra_san03 5 149 ra_san03 85 15 216 ra_san03 119 283 250 ra_san03 123 283 254 ra_san03 279 21 462
+ra_san03 85 15 ra_san03 119 283 304 ra_san03 123 283 308 ra_san03 279 21 374
+ra_san04 119 104 ra_san04 119 110 8 ra_san04 203 221 205 ra_san04 120 48 189 ra_san04 35 221 205
+ra_san04 119 110 ra_san04 203 221 211 ra_san04 120 48 195 ra_san04 35 221 211
+ra_san04 120 48 ra_san04 35 221 390
+ra_san04 203 221 ra_san04 120 48 388 ra_san04 35 221 350
+ra_san05 14 149 ra_san05 150 282 353
+ra_san05 150 7 ra_san05 14 149 324 ra_san05 150 282 477
+ra_san05 282 149 ra_san05 150 7 318 ra_san05 14 149 510 ra_san05 150 282 349
+ra_temin 130 93 ra_temin 206 93 154 ra_temin 169 18 116
+ra_temin 134 131 ra_temin 130 93 182 ra_temin 206 93 240 ra_temin 169 18 212
+ra_temin 206 93 ra_temin 169 18 114
+ra_temin 239 253 ra_temin 275 332 139
+ra_temin 275 243 ra_temin 275 226 19
+ra_temin 28 319 ra_temin 27 299 23
+ra_temin 312 253 ra_temin 239 253 189 ra_temin 275 332 136
+ra_temple 119 153 ra_temple 120 22 184
+ra_temple 119 180 ra_temple 119 153 87 ra_temple 120 22 211
+ra_temsky 112 143 ra_temsky 99 135 25
+ra_temsky 137 139
+ra_temsky 62 139
+ra_temsky 87 143 ra_temsky 112 143 29 ra_temsky 99 135 24
+ra_temsky 99 8 ra_temsky 99 118 146
+rachel 103 240 rachel 42 87 227 rachel 83 78 253 rachel 150 249 117 rachel 105 171 146 rachel 216 160 202 rachel 179 220 121 rachel 217 55 332 rachel 61 33 262 rachel 115 149 188 rachel 42 109 197 rachel 275 125 295 rachel 90 189 111 rachel 109 138 189 rachel 108 200 132 rachel 81 33 278 rachel 130 21 285
+rachel 105 171 rachel 61 33 238 rachel 115 149 120 rachel 42 109 173 rachel 216 160 134 rachel 179 220 125 rachel 217 55 264 rachel 275 125 227 rachel 90 189 43 rachel 109 138 121 rachel 108 200 58 rachel 81 33 254 rachel 130 21 217
+rachel 108 200 rachel 81 33 240 rachel 130 21 233
+rachel 109 138 rachel 108 200 137 rachel 81 33 179 rachel 130 21 140
+rachel 115 149 rachel 275 125 185 rachel 90 189 171 rachel 109 138 19 rachel 42 109 115 rachel 108 200 136 rachel 81 33 196 rachel 130 21 145
+rachel 116 158
+rachel 150 249 rachel 61 33 319 rachel 115 149 157 rachel 42 109 254 rachel 105 171 127 rachel 216 160 157 rachel 179 220 72 rachel 217 55 301 rachel 275 125 264 rachel 90 189 156 rachel 109 138 158 rachel 108 200 143 rachel 81 33 293 rachel 130 21 254
+rachel 179 220 rachel 61 33 315 rachel 115 149 153 rachel 42 109 250 rachel 217 55 289 rachel 275 125 252 rachel 90 189 154 rachel 109 138 154 rachel 108 200 141 rachel 81 33 289 rachel 130 21 250
+rachel 216 160 rachel 61 33 306 rachel 115 149 144 rachel 42 109 241 rachel 179 220 145 rachel 217 55 280 rachel 275 125 121 rachel 90 189 163 rachel 109 138 145 rachel 108 200 150 rachel 81 33 280 rachel 130 21 241
+rachel 217 55 rachel 61 33 348 rachel 115 149 222 rachel 42 109 311 rachel 275 125 133 rachel 90 189 293 rachel 109 138 217 rachel 108 200 280 rachel 81 33 328 rachel 130 21 289
+rachel 275 125 rachel 90 189 256 rachel 109 138 180 rachel 108 200 243 rachel 81 33 291 rachel 130 21 252
+rachel 42 109 rachel 275 125 274 rachel 90 189 138 rachel 109 138 98 rachel 108 200 159 rachel 81 33 135 rachel 130 21 210
+rachel 42 87 rachel 61 33 79 rachel 115 149 145 rachel 42 109 84 rachel 83 78 70 rachel 150 249 286 rachel 105 171 203 rachel 216 160 271 rachel 179 220 280 rachel 217 55 343 rachel 275 125 304 rachel 90 189 168 rachel 109 138 128 rachel 108 200 189 rachel 81 33 95 rachel 130 21 160
+rachel 61 33 rachel 115 149 180 rachel 42 109 119 rachel 275 125 311 rachel 90 189 203 rachel 109 138 163 rachel 108 200 224 rachel 81 33 28 rachel 130 21 103
+rachel 81 33 rachel 130 21 83
+rachel 83 78 rachel 61 33 69 rachel 115 149 149 rachel 42 109 108 rachel 150 249 262 rachel 105 171 223 rachel 216 160 247 rachel 179 220 256 rachel 217 55 297 rachel 275 125 258 rachel 90 189 192 rachel 109 138 144 rachel 108 200 213 rachel 81 33 81 rachel 130 21 108
+rachel 90 189 rachel 109 138 152 rachel 108 200 31 rachel 81 33 219 rachel 130 21 266
+sch_gld 288 258 sch_gld 97 183 560 sch_gld 354 89 245 sch_gld 65 315 642
+sch_gld 354 89 sch_gld 65 315 579
+sch_gld 97 183 sch_gld 354 89 497 sch_gld 65 315 166
+schg_cas03 160 297
+schg_cas03 337 336
+spl_fild01 289 30 spl_fild01 288 28 5
+spl_fild02 292 378 spl_fild02 292 377 3
+spl_fild02 379 143 spl_fild02 292 378 348 spl_fild02 292 377 347
+spl_fild02 380 217 spl_fild02 379 143 161 spl_fild02 292 378 273 spl_fild02 292 377 272
+tha_scene01 144 198 tha_scene01 131 220 37
+tha_t01 150 150 tha_t01 149 38 1003
+thor_v01 21 224 thor_v01 201 37 615
+thor_v02 73 203 thor_v02 192 60 476
+treasure01 112 164 treasure01 125 161 18
+treasure01 142 161 treasure01 164 114 71
+treasure01 164 91
+treasure01 27 164
+treasure01 38 164 treasure01 69 177 84
+treasure01 41 111
+treasure01 41 37
+treasure01 58 37 treasure01 69 75 59 treasure01 79 37 25
+treasure01 69 102 treasure01 61 111 22
+treasure01 69 125 treasure01 76 111 22 treasure01 61 111 23 treasure01 69 102 31
+treasure01 69 140 treasure01 69 177 55 treasure01 99 164 56 treasure01 38 164 57
+treasure01 69 22 treasure01 69 75 67 treasure01 79 37 27 treasure01 58 37 28
+treasure01 69 75 treasure01 79 37 58
+treasure01 76 111 treasure01 61 111 15 treasure01 69 102 21
+treasure01 96 37
+treasure01 98 111
+treasure01 99 164 treasure01 69 177 85 treasure01 38 164 87
+treasure02 102 118
+treasure02 102 24 treasure02 102 103 85
+treasure02 123 72 treasure02 102 24 73 treasure02 102 103 54
+treasure02 138 72 treasure02 155 99 46
+treasure02 155 128
+treasure02 49 128
+treasure02 65 72 treasure02 49 99 45
+treasure02 80 72 treasure02 123 72 45 treasure02 102 24 72 treasure02 102 103 55
+tur_dun01 154 241 tur_dun01 157 39 383
+tur_dun01 163 32 tur_dun01 154 241 364 tur_dun01 157 39 15
+tur_dun02 148 268 tur_dun02 167 19 382
+tur_dun03 217 71 tur_dun03 132 193 211
+um_dun01 149 198 um_dun01 42 27 508
+um_dun02 103 208
+um_dun02 113 208 um_dun02 126 162 235 um_dun02 169 38 428 um_dun02 215 85 445 um_dun02 60 89 570 um_dun02 177 38 706 um_dun02 32 249 945 um_dun02 64 79 446 um_dun02 222 259 774
+um_dun02 126 162 um_dun02 169 38 553 um_dun02 215 85 570 um_dun02 60 89 695 um_dun02 177 38 831 um_dun02 32 249 1068 um_dun02 64 79 571 um_dun02 222 259 899
+um_dun02 169 38 um_dun02 215 85 279 um_dun02 60 89 338 um_dun02 177 38 538 um_dun02 32 249 713 um_dun02 64 79 164 um_dun02 222 259 542
+um_dun02 177 38 um_dun02 32 249 695 um_dun02 64 79 556 um_dun02 222 259 524
+um_dun02 215 77 um_dun02 55 19 286 um_dun02 113 208 385 um_dun02 126 162 510 um_dun02 169 38 221 um_dun02 215 85 120 um_dun02 60 89 371 um_dun02 177 38 383 um_dun02 32 249 552 um_dun02 64 79 239 um_dun02 222 259 381
+um_dun02 215 85 um_dun02 60 89 429 um_dun02 177 38 315 um_dun02 32 249 484 um_dun02 64 79 295 um_dun02 222 259 313
+um_dun02 231 255 um_dun02 26 244 783 um_dun02 215 77 350 um_dun02 55 19 572 um_dun02 113 208 675 um_dun02 126 162 800 um_dun02 169 38 507 um_dun02 215 85 284 um_dun02 60 89 659 um_dun02 177 38 387 um_dun02 32 249 664 um_dun02 64 79 525 um_dun02 222 259 493
+um_dun02 26 244 um_dun02 215 77 491 um_dun02 55 19 323 um_dun02 113 208 690 um_dun02 126 162 815 um_dun02 169 38 458 um_dun02 215 85 553 um_dun02 60 89 236 um_dun02 177 38 812 um_dun02 32 249 695 um_dun02 64 79 368 um_dun02 222 259 524
+um_dun02 32 249 um_dun02 64 79 729 um_dun02 222 259 281
+um_dun02 55 19 um_dun02 113 208 493 um_dun02 126 162 618 um_dun02 169 38 211 um_dun02 215 85 344 um_dun02 60 89 233 um_dun02 177 38 605 um_dun02 32 249 692 um_dun02 64 79 149 um_dun02 222 259 523
+um_dun02 60 89 um_dun02 177 38 690 um_dun02 32 249 577 um_dun02 64 79 356 um_dun02 222 259 404
+um_dun02 64 79 um_dun02 222 259 560
+um_fild01 31 274 um_fild01 369 277 807
+um_fild02 188 374 um_fild02 22 272 1642
+um_fild02 373 329
+um_fild03 19 334 um_fild03 114 50 381
+um_fild04 182 13 um_fild04 215 339 509
+um_in 155 111
+um_in 166 69 um_in 141 39 59
+um_in 29 71
+um_in 38 110
+um_in 99 111
+um_in 99 63
+umbala 100 154 umbala 107 130 76 umbala 140 197 155 umbala 87 160 21 umbala 94 186 44 umbala 125 157 62 umbala 100 203 75 umbala 138 129 67 umbala 68 253 139
+umbala 100 203 umbala 138 129 142 umbala 68 253 146
+umbala 106 285 umbala 220 189 213 umbala 130 79 392 umbala 100 154 307 umbala 107 130 385 umbala 140 197 174 umbala 87 160 306 umbala 94 186 265 umbala 138 129 374 umbala 125 157 345 umbala 100 203 238 umbala 68 253 376
+umbala 107 130 umbala 140 197 229 umbala 87 160 93 umbala 94 186 118 umbala 125 157 62 umbala 100 203 149 umbala 138 129 45 umbala 68 253 211
+umbala 125 157 umbala 100 203 135 umbala 138 129 51 umbala 68 253 197
+umbala 130 79 umbala 100 154 191 umbala 107 130 169 umbala 140 197 344 umbala 87 160 208 umbala 94 186 233 umbala 125 157 175 umbala 100 203 264 umbala 138 129 126 umbala 68 253 326
+umbala 138 129 umbala 68 253 202
+umbala 140 197 umbala 87 160 154 umbala 94 186 113 umbala 125 157 215 umbala 100 203 86 umbala 138 129 220 umbala 68 253 224
+umbala 220 189 umbala 130 79 247 umbala 100 154 240 umbala 107 130 240 umbala 140 197 185 umbala 87 160 257 umbala 94 186 282 umbala 138 129 229 umbala 125 157 200 umbala 100 203 249 umbala 68 253 375
+umbala 87 160 umbala 94 186 43 umbala 125 157 79 umbala 100 203 76 umbala 138 129 84 umbala 68 253 120
+umbala 94 186 umbala 125 157 106 umbala 100 203 35 umbala 138 129 111 umbala 68 253 113
+ve_fild01 184 20 ve_fild01 366 267 455
+ve_fild01 350 92 ve_fild01 184 20 240 ve_fild01 366 267 417
+ve_fild02 195 382 ve_fild02 31 263 323
+ve_fild02 73 133 ve_fild02 195 382 397 ve_fild02 31 263 288
+ve_fild03 222 43 ve_fild03 355 223 315 ve_fild03 168 240 449
+ve_fild03 355 223 ve_fild03 168 240 578
+ve_fild04 115 50 ve_fild04 44 249 278 ve_fild04 174 339 410
+ve_fild04 44 249 ve_fild04 174 339 222
+ve_fild05 200 330 ve_fild05 359 192 427 ve_fild05 354 191 421
+ve_fild05 359 192 ve_fild05 354 191 8
+ve_fild06 153 220 ve_fild06 81 177 157
+ve_fild07 127 128 ve_fild07 130 130 5 ve_fild07 147 371 553
+ve_fild07 130 130 ve_fild07 147 371 554
+ve_in 128 372
+ve_in 177 293
+ve_in 194 369
+ve_in 206 211 ve_in 183 203 93
+ve_in 256 127 ve_in 224 115 90
+ve_in 261 315 ve_in 251 283 44
+ve_in 286 223
+ve_in 309 114
+ve_in 347 250 ve_in 349 219 65
+ve_in 351 317
+ve_in 71 160
+ve_in 76 229 ve_in 99 215 53
+ve_in 77 291 ve_in 98 299 53
+veins 114 278 veins 143 25 366 veins 205 101 288 veins 218 361 199
+veins 128 270 veins 148 220 98 veins 88 173 317 veins 150 179 299 veins 130 238 42 veins 197 260 197 veins 267 230 391 veins 114 278 148 veins 143 25 502 veins 205 101 424 veins 218 361 205
+veins 130 238 veins 267 230 453 veins 114 278 196 veins 143 25 368 veins 197 260 227 veins 205 101 280 veins 218 361 235
+veins 143 25 veins 205 101 140 veins 218 361 537
+veins 148 220 veins 267 230 405 veins 88 173 153 veins 114 278 148 veins 143 25 320 veins 150 179 107 veins 130 238 66 veins 197 260 357 veins 205 101 232 veins 218 361 333
+veins 150 179 veins 267 230 308 veins 114 278 163 veins 143 25 275 veins 130 238 155 veins 197 260 374 veins 205 101 135 veins 218 361 350
+veins 197 260 veins 267 230 396 veins 114 278 223 veins 143 25 577 veins 205 101 499 veins 218 361 210
+veins 205 101 veins 218 361 399
+veins 208 128 veins 128 270 400 veins 148 220 208 veins 88 173 197 veins 150 179 111 veins 130 238 256 veins 197 260 475 veins 267 230 199 veins 114 278 264 veins 143 25 170 veins 205 101 32 veins 218 361 383
+veins 230 166 veins 208 128 106 veins 128 270 504 veins 148 220 312 veins 88 173 301 veins 150 179 215 veins 130 238 360 veins 197 260 223 veins 267 230 207 veins 114 278 368 veins 143 25 260 veins 205 101 122 veins 218 361 391
+veins 267 230 veins 114 278 385 veins 143 25 353 veins 205 101 215 veins 218 361 250
+veins 337 231 veins 230 166 256 veins 208 128 248 veins 128 270 434 veins 148 220 454 veins 88 173 443 veins 150 179 357 veins 130 238 502 veins 197 260 439 veins 267 230 115 veins 114 278 428 veins 143 25 402 veins 205 101 264 veins 218 361 293
+veins 88 173 veins 267 230 394 veins 114 278 181 veins 143 25 269 veins 150 179 108 veins 130 238 203 veins 197 260 392 veins 205 101 223 veins 218 361 368
+xmas 119 162 xmas 142 258 181 xmas 173 160 64
+xmas 120 131 xmas 119 162 46 xmas 142 258 207 xmas 173 160 84
+xmas 142 258 xmas 173 160 179
+xmas 143 314 xmas 120 131 242 xmas 119 162 216 xmas 142 258 59 xmas 173 160 214
+xmas 149 239 xmas 149 258 89 xmas 189 278 105 xmas 149 41 262 xmas 174 131 139 xmas 143 314 129 xmas 120 131 139 xmas 119 162 113 xmas 142 258 94 xmas 173 160 111
+xmas 149 258 xmas 189 278 84 xmas 149 41 325 xmas 174 131 202 xmas 143 314 64 xmas 120 131 202 xmas 119 162 176 xmas 142 258 17 xmas 173 160 174
+xmas 149 41 xmas 120 131 141 xmas 119 162 175 xmas 142 258 330 xmas 174 131 137 xmas 143 314 365 xmas 173 160 165
+xmas 174 131 xmas 120 131 56 xmas 119 162 88 xmas 142 258 207 xmas 143 314 242 xmas 173 160 42
+xmas 189 278 xmas 120 131 218 xmas 119 162 192 xmas 142 258 89 xmas 149 41 341 xmas 174 131 218 xmas 143 314 124 xmas 173 160 190
+xmas_dun01 129 130 xmas_dun01 205 13 233
+xmas_fild01 78 66 xmas_fild01 84 48 26 xmas_fild01 69 252 197
+xmas_fild01 84 48 xmas_fild01 69 252 221
+xmas_in 104 117 xmas_in 104 83 42 xmas_in 94 117 16
+xmas_in 104 83 xmas_in 94 117 56
+xmas_in 153 32
+xmas_in 163 93
+xmas_in 168 160
+xmas_in 38 89
+xmas_in 46 33
+y_airport 143 16
+y_airport 143 54
+yggdrasil01 248 259 yggdrasil01 27 195 303
+yggdrasil01 270 52 yggdrasil01 269 53 4
+yuno 117 135 yuno 284 366 436 yuno 273 141 196 yuno 277 221 394 yuno 196 138 91
+yuno 13 126 yuno 245 147 291 yuno 278 293 464 yuno 93 180 160 yuno 218 180 261 yuno 48 105 70 yuno 117 135 147 yuno 342 203 524 yuno 284 366 551 yuno 195 87 279 yuno 273 141 325 yuno 48 151 68 yuno 327 108 412 yuno 264 87 356 yuno 277 221 507 yuno 196 138 216
+yuno 152 187 yuno 87 321 219 yuno 158 125 70 yuno 53 214 134 yuno 158 13 210 yuno 157 322 150 yuno 13 126 204 yuno 48 105 188 yuno 342 203 406 yuno 195 87 157 yuno 327 108 270 yuno 48 151 148 yuno 264 87 214 yuno 245 147 151 yuno 278 293 272 yuno 93 180 78 yuno 218 180 81 yuno 117 135 89 yuno 284 366 357 yuno 273 141 185 yuno 277 221 315 yuno 196 138 94
+yuno 157 322 yuno 13 126 344 yuno 48 105 328 yuno 342 203 316 yuno 195 87 293 yuno 327 108 400 yuno 48 151 282 yuno 264 87 344 yuno 245 147 281 yuno 278 293 182 yuno 93 180 208 yuno 218 180 211 yuno 117 135 229 yuno 284 366 267 yuno 273 141 315 yuno 277 221 225 yuno 196 138 224
+yuno 158 125 yuno 53 214 196 yuno 158 13 142 yuno 157 322 208 yuno 13 126 192 yuno 48 105 176 yuno 342 203 326 yuno 195 87 89 yuno 327 108 212 yuno 48 151 150 yuno 264 87 158 yuno 245 147 127 yuno 278 293 330 yuno 93 180 140 yuno 218 180 117 yuno 117 135 61 yuno 284 366 413 yuno 273 141 163 yuno 277 221 371 yuno 196 138 52
+yuno 158 13 yuno 157 322 346 yuno 13 126 304 yuno 48 105 206 yuno 342 203 408 yuno 195 87 165 yuno 327 108 294 yuno 48 151 262 yuno 264 87 238 yuno 245 147 223 yuno 278 293 470 yuno 93 180 252 yuno 218 180 229 yuno 117 135 173 yuno 284 366 551 yuno 273 141 251 yuno 277 221 511 yuno 196 138 168
+yuno 195 87 yuno 245 147 112 yuno 278 293 413 yuno 93 180 227 yuno 218 180 120 yuno 117 135 148 yuno 284 366 496 yuno 273 141 140 yuno 327 108 169 yuno 48 151 237 yuno 277 221 342 yuno 264 87 97 yuno 196 138 85
+yuno 218 180 yuno 117 135 152 yuno 284 366 416 yuno 273 141 128 yuno 277 221 374 yuno 196 138 67
+yuno 245 147 yuno 278 293 401 yuno 93 180 221 yuno 218 180 94 yuno 117 135 164 yuno 284 366 484 yuno 273 141 48 yuno 277 221 332 yuno 196 138 79
+yuno 264 87 yuno 245 147 103 yuno 278 293 348 yuno 93 180 284 yuno 218 180 157 yuno 117 135 225 yuno 284 366 455 yuno 273 141 109 yuno 277 221 259 yuno 196 138 140
+yuno 273 141 yuno 277 221 280 yuno 196 138 113
+yuno 277 221 yuno 196 138 387
+yuno 278 293 yuno 117 135 355 yuno 284 366 133 yuno 273 141 437 yuno 93 180 334 yuno 218 180 335 yuno 277 221 85 yuno 196 138 348
+yuno 284 366 yuno 273 141 522 yuno 277 221 206 yuno 196 138 431
+yuno 327 108 yuno 245 147 159 yuno 278 293 264 yuno 93 180 340 yuno 218 180 213 yuno 117 135 281 yuno 284 366 381 yuno 273 141 107 yuno 48 151 370 yuno 277 221 175 yuno 264 87 86 yuno 196 138 196
+yuno 342 203 yuno 245 147 271 yuno 278 293 164 yuno 93 180 464 yuno 218 180 325 yuno 117 135 393 yuno 284 366 287 yuno 195 87 281 yuno 273 141 219 yuno 327 108 114 yuno 48 151 482 yuno 264 87 198 yuno 277 221 109 yuno 196 138 308
+yuno 47 240
+yuno 48 105 yuno 245 147 277 yuno 278 293 450 yuno 93 180 146 yuno 218 180 247 yuno 117 135 133 yuno 342 203 510 yuno 284 366 533 yuno 195 87 217 yuno 273 141 311 yuno 48 151 58 yuno 327 108 396 yuno 264 87 340 yuno 277 221 493 yuno 196 138 202
+yuno 48 151 yuno 245 147 249 yuno 278 293 404 yuno 93 180 100 yuno 218 180 207 yuno 117 135 107 yuno 284 366 489 yuno 273 141 285 yuno 277 221 447 yuno 264 87 314 yuno 196 138 176
+yuno 53 214 yuno 158 13 308 yuno 157 322 260 yuno 13 126 162 yuno 48 105 144 yuno 342 203 516 yuno 195 87 283 yuno 327 108 396 yuno 48 151 98 yuno 264 87 340 yuno 245 147 277 yuno 278 293 382 yuno 93 180 78 yuno 218 180 225 yuno 117 135 153 yuno 284 366 467 yuno 273 141 311 yuno 277 221 425 yuno 196 138 222
+yuno 87 321 yuno 158 125 277 yuno 53 214 329 yuno 158 13 417 yuno 157 322 129 yuno 13 126 413 yuno 48 105 397 yuno 342 203 385 yuno 195 87 362 yuno 327 108 469 yuno 48 151 351 yuno 264 87 413 yuno 245 147 350 yuno 278 293 253 yuno 93 180 277 yuno 218 180 280 yuno 117 135 298 yuno 284 366 334 yuno 273 141 384 yuno 277 221 294 yuno 196 138 293
+yuno 93 180 yuno 117 135 97 yuno 284 366 413 yuno 273 141 255 yuno 218 180 169 yuno 277 221 373 yuno 196 138 166
+yuno 96 261 yuno 59 240 82
+yuno_fild01 208 18 yuno_fild01 27 247 718 yuno_fild01 287 367 526
+yuno_fild01 27 247 yuno_fild01 287 367 428
+yuno_fild01 70 377 yuno_fild01 208 18 607 yuno_fild01 27 247 187 yuno_fild01 287 367 315
+yuno_fild02 117 375 yuno_fild02 287 16 1077 yuno_fild02 383 339 336 yuno_fild02 19 340 135 yuno_fild02 74 215 465 yuno_fild02 92 208 444
+yuno_fild02 19 340 yuno_fild02 74 215 572 yuno_fild02 92 208 551
+yuno_fild02 287 16 yuno_fild02 383 339 923 yuno_fild02 19 340 1184 yuno_fild02 74 215 822 yuno_fild02 92 208 801
+yuno_fild02 383 339 yuno_fild02 19 340 443 yuno_fild02 74 215 621 yuno_fild02 92 208 602
+yuno_fild02 69 23 yuno_fild02 117 375 922 yuno_fild02 287 16 383 yuno_fild02 383 339 768 yuno_fild02 19 340 1029 yuno_fild02 74 215 667 yuno_fild02 92 208 646
+yuno_fild02 74 215 yuno_fild02 92 208 27
+yuno_fild03 178 15 yuno_fild03 382 331 786 yuno_fild03 21 162 1342 yuno_fild03 20 79 244 yuno_fild03 215 382 1122 yuno_fild03 33 140 690
+yuno_fild03 20 79 yuno_fild03 215 382 1244 yuno_fild03 33 140 812
+yuno_fild03 21 162 yuno_fild03 20 79 1462 yuno_fild03 215 382 416 yuno_fild03 33 140 788
+yuno_fild03 215 382 yuno_fild03 33 140 570
+yuno_fild03 382 331 yuno_fild03 21 162 800 yuno_fild03 20 79 910 yuno_fild03 215 382 580 yuno_fild03 33 140 584
+yuno_fild04 231 288 yuno_fild04 374 82 385 yuno_fild04 249 22 466 yuno_fild04 33 279 563
+yuno_fild04 249 22 yuno_fild04 33 279 509
+yuno_fild04 374 149 yuno_fild04 42 370 712 yuno_fild04 231 288 368 yuno_fild04 374 82 203 yuno_fild04 249 22 284 yuno_fild04 33 279 617
+yuno_fild04 374 82 yuno_fild04 249 22 199 yuno_fild04 33 279 634
+yuno_fild04 42 370 yuno_fild04 231 288 658 yuno_fild04 374 82 729 yuno_fild04 249 22 602 yuno_fild04 33 279 339
+yuno_fild05 370 321 yuno_fild05 61 29 867 yuno_fild05 41 350 452
+yuno_fild05 61 29 yuno_fild05 41 350 555
+yuno_fild06 151 370 yuno_fild06 41 319 589 yuno_fild06 369 132 484
+yuno_fild06 214 27 yuno_fild06 151 370 636 yuno_fild06 41 319 749 yuno_fild06 369 132 270
+yuno_fild06 41 319 yuno_fild06 369 132 597
+yuno_fild07 179 354 yuno_fild07 208 175 460 yuno_fild07 212 175 456
+yuno_fild07 208 175 yuno_fild07 212 175 6
+yuno_fild07 352 292 yuno_fild07 57 79 680 yuno_fild07 179 354 321 yuno_fild07 208 175 265 yuno_fild07 212 175 261
+yuno_fild07 360 72 yuno_fild07 57 79 452 yuno_fild07 179 354 677 yuno_fild07 352 292 588 yuno_fild07 208 175 367 yuno_fild07 212 175 363
+yuno_fild07 57 79 yuno_fild07 179 354 425 yuno_fild07 208 175 369 yuno_fild07 212 175 365
+yuno_fild07 73 220 yuno_fild07 57 79 287 yuno_fild07 179 354 300 yuno_fild07 92 28 311 yuno_fild07 360 72 541 yuno_fild07 352 292 549 yuno_fild07 208 175 452 yuno_fild07 212 175 448
+yuno_fild07 92 28 yuno_fild07 57 79 96 yuno_fild07 179 354 451 yuno_fild07 360 72 478 yuno_fild07 352 292 700 yuno_fild07 208 175 395 yuno_fild07 212 175 391
+yuno_fild08 134 29 yuno_fild08 24 275 530 yuno_fild08 155 189 429 yuno_fild08 74 174 327
+yuno_fild08 155 189 yuno_fild08 74 174 348
+yuno_fild08 24 275 yuno_fild08 155 189 403 yuno_fild08 74 174 345
+yuno_fild08 285 385 yuno_fild08 134 29 601 yuno_fild08 24 275 469 yuno_fild08 155 189 328 yuno_fild08 74 174 424
+yuno_fild08 31 58 yuno_fild08 285 385 629 yuno_fild08 134 29 262 yuno_fild08 24 275 508 yuno_fild08 155 189 457 yuno_fild08 74 174 305
+yuno_fild08 375 194 yuno_fild08 285 385 307 yuno_fild08 31 58 674 yuno_fild08 134 29 536 yuno_fild08 24 275 670 yuno_fild08 155 189 349 yuno_fild08 74 174 541
+yuno_fild08 71 170 yuno_fild08 75 375 394 yuno_fild08 375 194 551 yuno_fild08 31 58 313 yuno_fild08 285 385 434 yuno_fild08 134 29 337 yuno_fild08 24 275 353 yuno_fild08 155 189 358 yuno_fild08 74 174 10
+yuno_fild08 75 375 yuno_fild08 285 385 490 yuno_fild08 375 194 691 yuno_fild08 31 58 549 yuno_fild08 134 29 571 yuno_fild08 24 275 175 yuno_fild08 155 189 444 yuno_fild08 74 174 386
+yuno_fild09 220 373 yuno_fild09 70 18 595 yuno_fild09 280 29 736 yuno_fild09 48 376 563 yuno_fild09 20 193 584
+yuno_fild09 280 29 yuno_fild09 48 376 833 yuno_fild09 20 193 854
+yuno_fild09 48 376 yuno_fild09 20 193 233
+yuno_fild09 70 18 yuno_fild09 280 29 585 yuno_fild09 48 376 692 yuno_fild09 20 193 713
+yuno_fild11 28 266 yuno_fild11 91 372 278 yuno_fild11 368 361 677
+yuno_fild11 364 218 yuno_fild11 28 266 670 yuno_fild11 91 372 488 yuno_fild11 368 361 407
+yuno_fild11 91 372 yuno_fild11 368 361 491
+yuno_fild12 193 372 yuno_fild12 23 339 321 yuno_fild12 23 226 402
+yuno_fild12 23 339 yuno_fild12 23 226 289
+yuno_fild12 369 244 yuno_fild12 193 372 306 yuno_fild12 23 339 473 yuno_fild12 23 226 494
+yuno_in01 101 85
+yuno_in01 116 40 yuno_in01 88 36 46
+yuno_in01 168 104
+yuno_in01 176 34
+yuno_in01 32 182 yuno_in01 40 176 26
+yuno_in01 32 36
+yuno_in01 34 100
+yuno_in01 82 164
+yuno_in02 172 61 yuno_in02 82 14 139
+yuno_in03 104 115
+yuno_in03 224 19 yuno_in03 219 50 52
+yuno_in03 231 62 yuno_in03 224 19 52 yuno_in03 219 50 34
+yuno_in03 235 91
+yuno_in03 239 141 yuno_in03 223 167 56
+yuno_in03 244 52 yuno_in03 231 62 37 yuno_in03 224 19 55 yuno_in03 219 50 37
+yuno_in03 25 11 yuno_in03 25 56 65
+yuno_in03 32 89
+yuno_in03 96 62
+yuno_in04 103 51 yuno_in04 115 51 20 yuno_in04 115 64 27 yuno_in04 95 58 17 yuno_in04 122 57 29
+yuno_in04 103 64 yuno_in04 115 51 27 yuno_in04 103 51 23 yuno_in04 115 64 20 yuno_in04 95 58 16 yuno_in04 122 57 34
+yuno_in04 103 93 yuno_in04 115 93 20
+yuno_in04 115 22 yuno_in04 103 22 16
+yuno_in04 115 51 yuno_in04 115 64 27 yuno_in04 122 57 15
+yuno_in04 115 64 yuno_in04 122 57 16
+yuno_in04 161 110
+yuno_in04 192 28
+yuno_in04 33 130
+yuno_in04 52 58 yuno_in04 29 58 39
+yuno_in04 95 58 yuno_in04 115 51 33 yuno_in04 115 64 32 yuno_in04 122 57 38

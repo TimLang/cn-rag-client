@@ -1,0 +1,8 @@
+ตัวอย่างการรับของ
+#buy_title รับ: รังผึ้ง
+#buy_price 90000000
+
+#name_0 Royal Jelly
+#quantity_0 200
+#price_0 20000
+

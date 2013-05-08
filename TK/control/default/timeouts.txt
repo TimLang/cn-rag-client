@@ -1,0 +1,128 @@
+#----------------------------------------------------------------------------------------------
+# ThaiKoreEx timeouts Version 2.5
+#----------------------------------------------------------------------------------------------
+master 20
+gamelogin 30
+charlogin 30
+maplogin 30
+reconnect 10
+play 40
+
+ai 1
+ai_move_giveup 2
+
+ai_attack 2
+ai_attack_auto 0.1
+ai_attack_giveup 5
+ai_attack_waitAfterKill 0.2
+
+ai_take 0.2
+ai_items_take_start 0.1
+ai_items_take_end 1
+ai_take_giveup 10
+
+ai_items_gather_start 0.1
+ai_items_gather_giveup 10
+ai_items_gather_auto 1
+
+ai_follow_lost_end 20
+ai_smart_follow 1
+ai_getInfo 1
+ai_thanks_set 8
+
+ai_partyAuto 2
+ai_guildAutoDeny 2
+ai_petPlay 120
+
+ai_dead_respawn 4
+ai_wipe_old 200
+ai_wipe_check 12
+
+ai_sit 1
+ai_sit_wait 1
+ai_stand_wait 1
+ai_sit_idle 10
+
+ai_skill_use_giveup 0.7
+ai_skill_waitAfterUse 0
+ai_item_use_auto 0.3
+ai_equip_auto 0.2
+ai_equip_waitAfterChange 0.2
+
+ai_teleport_hp 0.1
+ai_teleport_idle 3
+ai_teleport_away 0.1
+ai_teleport_event 0.1
+ai_teleport_search 20
+ai_teleport_spell 0.1
+ai_teleport_safe_force 120
+
+ai_route_npcTalk 1
+ai_route_calcRoute 1
+ai_route_calcRoute_cont 0.2
+
+ai_buyAuto 2
+ai_buyAuto_giveup 15
+ai_buyAuto_wait 2
+ai_buyAuto_wait_buy 5
+ai_sellAuto 2
+ai_sellAuto_giveup 15
+ai_storageAuto 2
+ai_storagegetAuto 4
+ai_storageAuto_giveup 15
+ai_cartAuto 5
+
+# อันตราย!! ห้ามแก้ใขค่านี้เด็ดขาด
+ai_sync 12
+
+compilePortals_auto 10
+
+injectSync 5
+injectKeepAlive 12
+welcomeText 4
+
+ai_look 0
+
+ai_skillAuto_add 2
+ai_statusAuto_add 2
+ai_teleRoute 0.5
+ai_makeArrow 2
+ai_friendAuto 2
+ai_makeAuto 1
+ai_makeAuto_giveup 5
+
+ai_resurrect 1
+ai_skill_party 1
+ai_attack_skillCancel 1
+ai_skill_use_waitAfterKill 1
+ai_takeImportant_giveup 10
+ai_talkAuto 2
+ai_talkAuto_wait 2
+ai_sitAuto_wait 1.5
+ai_smartEquip_waitAfterChange 0.3
+ai_modifiedTalk_giveup 20
+ai_partyAutoShare 300
+ai_AutoRequest 1.3
+ai_avoidcheck 0.5
+ai_avoidActive 1
+recordExp 3600
+
+#------------------------[mod Add-on]------------------------------
+ai_auto_creat_party 5
+ai_magicscroll 1.5
+ai_homun_pitcher 1
+
+ai_talkAuto_AfterAshura 3
+ai_checkLockmap 5
+ai_save 1
+ai_warpToSaveMap 10
+
+ai_dungeonTeleport 3
+ai_route_skillDelay 1
+ai_forceOnAfterTeleport 2
+
+ai_partyAuto_invite 1
+ai_partyAuto_invite_wait 7
+
+ai_makeElemcon 1
+ai_dcOnInventory 1
