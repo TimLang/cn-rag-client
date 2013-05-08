@@ -59,11 +59,11 @@ param2_2			[特殊状态 2] %$1 %$0\n
 param2_2_color		status
 param3_2			[特殊状态 3] %$1 %$0\n
 param3_2_color		status
-inStatus			[status] %$1 Turned into status %$0\n
+inStatus			[状态] %$1 变成状态 %$0\n
 inStatus_color			status
-outStaus			[status] %$1 Relieves status %$0\n
+outStaus			[状态] %$1 解除状态 %$0\n
 outStaus_color			status
-status_2			[status] %$1 %$0\n
+status_2			[状态] %$1 %$0\n
 status_2_color			status
 
 getUsername			请输入游戏账号:\n
@@ -114,14 +114,14 @@ list_identify_arg		%$arg1
 list_identify_end		------------------------------------------------------------------------------\n
 list_identify_end		Please input'identify <But Item decides the item number>' Choice\n
 
-list_talkResp_head		----------Responses-----------\n
+list_talkResp_head		----------回应清单-----------\n
 list_talkResp_head		NPC: %$arg0\n
-list_talkResp_head		# Option \n
+list_talkResp_head		# 选项\n
 list_talkResp			%2d %s\n
 list_talkResp_arg		%$arg0
 list_talkResp_arg		%$arg1
 list_talkResp_end		------------------------------\n
-list_talkResp_end		%$arg0 :Input 'talk resp' And choice response\n
+list_talkResp_end		%$arg0 :输入 'talk resp' 并选择回应\n
 
 list_make_head		----------- Forge/Mixture list -----------\n
 list_make_head		#  Item name\n
@@ -160,8 +160,8 @@ warp_cancel			取消
 
 npcTalk_cancel		取消对话
 
-list_buy_head			----------NPC Store List-----------\n
-list_buy_head			# Name                    Type           Price\n
+list_buy_head			----------NPC 贩卖清单-----------\n
+list_buy_head			#  名称                    类型           价值\n
 list_buy				%2d %-23s %-14s %8sz\n
 list_buy_arg			%$0
 list_buy_arg			%$1{name}
@@ -169,8 +169,8 @@ list_buy_arg			%$itemTypes{%$1{type}}
 list_buy_arg			%$formatNumber{%$1{DCprice}}
 list_buy_end			------------------------------------------\n
 
-list_sell_head			----------Sell List-----------\n
-list_sell_head			#  Name                    Price\n
+list_sell_head			----------可买物品清单-----------\n
+list_sell_head			#  名称                    价值\n
 list_sell				%2d %-23s %8sz\n
 list_sell_arg			%$0
 list_sell_arg			%$1{name}
@@ -185,7 +185,7 @@ list_exclude_end		--------------------------------------------------------------
 #---------------------------------------------------------------------------
 # aiModule.pm
 #---------------------------------------------------------------------------
-attack				锁定攻击目标: %$arg0{name} (%$arg0{binID}) -  距离: %$arg1\n
+attack				锁定攻击目标: %$arg0{name} (%$arg0{binID}) - 距离: %$arg1\n
 attack_color			attackmons
 attack_verbose		3
 
@@ -269,47 +269,6 @@ input_crl_arg			%$arg1{num_users}
 input_crl_arg			%$arg1{limit}
 input_crl_arg			%$arg3
 input_crl_end			------------------------------------\n
-input_deal_error_1		发生错误 'deal' (Deal a Player)\n
-input_deal_error_1		You are already in a deal\n
-input_deal_error_2		发生错误 'deal' (Deal a Player)\n
-input_deal_error_2		You must first cancel the incoming deal\n
-input_deal_error_3		发生错误 'deal' (Deal a Player)\n
-input_deal_error_3		Player %$arg0 does not exist\n
-input_deal_error_4		发生错误 'deal' (Deal a Player)\n
-input_deal_error_4		There is no deal to accept\n
-input_deal_error_5		发生错误 'deal' (Deal a Player)\n
-input_deal_error_5		Cannot make the trade - %$arg0 has not finalized\n
-input_deal_error_6		发生错误 'deal' (Deal a Player)\n
-input_deal_error_6		You already accepted the final deal\n
-input_dealNo_error		发生错误 'deal' (Deal a Player)\n
-input_dealNo_error		There is no incoming/current deal to cancel\n
-input_deal			You accepted the final Deal\n
-input_dealAdd_error_1	发生错误 'deal_add' (Add Item to Deal)\n
-input_dealAdd_error_1	No deal in progress\n
-input_dealAdd_error_2	发生错误 'deal_add' (Add Item to Deal)\n
-input_dealAdd_error_2	Can't add any Items - You already finalized the deal\n
-input_dealAdd_error_3	发生错误 'deal_add' (Add Item to Deal)\n
-input_dealAdd_error_3	Inventory Item %$arg0 does not exist.\n
-input_dealAdd_error_4	发生错误 'deal_add' (Add Item to Deal)\n
-input_dealAdd_error_4	Amount must either be a number, or not specified.\n
-input_dealAdd_error_5	You can't add any more items to the deal\n
-input_dealAdd			You put forward %$arg0 z to Deal\n
-input_deal_syntax		Syntax error 'deal' (Deal a player)\n
-input_deal_syntax		使用方法: deal [<Player # | no | add>] [<item #>] [<amount>]\n
-deal_finalize			Finalized
-input_dl_error			There is no deal list - You are not in a deal\n
-input_dl_head			-----------Current Deal-----------\n
-input_dl_head			%-30s   %-30s\n
-input_dl_head_arg		%$arg0
-input_dl_head_arg		%$arg1
-input_dl_one			%$arg0 x %$arg1
-input_dl			%-30s   %-30s\n
-input_dl_arg			%$arg0
-input_dl_arg			%$arg1
-input_dl_end			Zenny: %-14s            Zenny: %-14s\n
-input_dl_end			----------------------------------\n
-input_dl_end_arg		%$arg2
-input_dl_end_arg		%$arg3
 input_drop_error		发生错误'drop' (Drop Inventory Item)\n
 input_drop_error		Inventory Item %$arg0 does not exist.\n
 input_drop_syntax		语法错误 'drop' (Drop Inventory Item)\n
@@ -596,11 +555,6 @@ input_portals_arg		%$arg1{pos_x}
 input_portals_arg		%$arg1{pos_y}
 input_portals_arg		%$arg1{dist}
 input_portals_end		---------------------------------\n
-input_remain			----------- Airtime Remaining -----------\n
-input_remain			Login at: %$arg0\n
-input_remain			Botting time : %$arg1{hour} Hours %$arg1{min} Minutes %$arg1{sec} Seconds\n
-input_remain			Now Remain : %$arg2{day} Days %$arg2{hour} Hours %$arg2{min} Minutes %$arg2{sec} Seconds\n
-input_remain			-----------------------------------------\n
 input_s_head			------------ 基本状态 (AID:%$char{aid} CID:%$char{cid}) -------------\n
 input_s				%-25s HP: %s\n
 input_s				%-25s SP: %s\n
@@ -624,14 +578,14 @@ input_sell_error		发生错误 'sell' (Sell Inventory Item)\n
 input_sell_error		Inventory Item %$arg0 does not exist.\n
 input_sell_error_2		发生错误 'sell' (Sell Inventory Item)\n
 input_sell_error_2		You also not with any NPC Conversation.\n
-input_skills_head		----------Skill List-----------\n
-input_skills_head		#  Skill Name                     Lv  SP\n
+input_skills_head		----------技能列表-----------\n
+input_skills_head		#  技能名称                        等级  SP\n
 input_skills			%-2d %-29s %3s %3s %5s %2s\n
 input_skills_arg		%$arg0
 input_skills_arg		%$arg2
 input_skills_arg		%$arg1{lv}
 input_skills_arg		%$arg1{sp}
-input_skills_end		\nSkill Points: %$arg0\n
+input_skills_end		\n技能点数: %$arg0\n
 input_skills_end		-------------------------------\n
 input_skillsAdd_error_1	发生错误 'skills add' (Assignment skill points)\n
 input_skillsAdd_error_1	Has not discovered this skill %$arg0.\n
@@ -782,10 +736,10 @@ input_uneq_error_1		发生错误 'unequip' (Unequip Inventory Item)\n
 input_uneq_error_1		Inventory Item %$arg0 does not exist.\n
 input_uneq_error_2		发生错误 'unequip' (Unequip Inventory Item)\n
 input_uneq_error_2		Inventory Item %$arg0 is not equipped.\n
-input_where			------------------------------------\n
+input_where			----------------------------------------------\n
 input_where			目前位于 %$arg0{alias}(%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
-input_where			------------------------------------\n
-unknown_input		What is %$arg0?\n
+input_where			----------------------------------------------\n
+unknown_input		无效命令 %$arg0?\n
 
 connectMaster		正在连接主服务器...\n
 connectEncryptKey		Secure Login : Sending Request Key \n
@@ -810,7 +764,7 @@ killConnectionSucc_color	disconnected
 killConnectionFail		无法断开连接\n
 quit				再见\n
 relog				等待 %$arg0 秒后自动连接...\n
-teleport_error_2		Can't teleport or respawn - need wing or skill\n
+teleport_error_2		无法瞬移 - 需要翅膀或技能\n
 teleport_error_3		[Danger] You already quilt GM Endures the word (%$arg0 Minute),Is unable to use SkillWithItems\n
 teleport_error_3_log		Alert.txt
 teleport_error_4		[Danger] Moves failed  - You already %$0 !\n
@@ -840,7 +794,7 @@ injectConnected		InjectDLL Socket connected - Ready to start botting\n
 # PacketParser
 #---------------------------------------------------------------------------
 mapLoaded			地图信息读取完成\n
-unparsePacket_1		%$arg2 > %$arg0 (%$arg1): Caught unparsed packet error, potential loss of data.\n
+unparsePacket_1		%$arg2 > %$arg0 (%$arg1): 被解析数据包错误, 潜在的数据丢失.\n
 unparsePacket_2		解析封包 - %$arg0\n
 
 accountInfo_head		------ 账号信息 -------\n
@@ -1032,38 +986,27 @@ excludeAll			拒绝所有玩家密语\n
 excludeAllFail			拒绝所有玩家密语失败\n
 includeAll			接受所有玩家密语\n
 includeAllFail			接受所有玩家密语失败\n
-dealRequest_1			%$arg0 Request and your transaction\n
-dealRequest_1			Please input 'deal' Accepts the transaction Or Input 'deal no' Refusal to deal\n
-dealRequest_2			%$arg0 (CID:%$arg1 LV:%$arg2) Request and your transaction\n
-dealRequest_2			Please input 'deal' Accepts the transaction, OrInput 'deal no' Refusal to deal\n
-dealRespone_error_1		Surpasses may the transaction From\n
-dealRespone_error_2		You have not assigned character\n
-dealRespone_error_3		In this character With other character transactions\n
-dealRespone_1		Accepts with %$arg0 Transaction\n
-dealRespone_2		Accepts with %$arg0 (CID:%$arg1 LV:%$arg2) Transaction\n
-dealAddItem_player		%$arg0 added Item to Deal: %$arg1 x %$arg2\n
-dealAddZeny_player		%$arg0 added %$arg1 z to Deal\n
-dealAddItem			You added Item to Deal: %$arg0 x %$arg1\n
-dealAddZeny			You added %$arg0 z to Deal\n
-dealAddItem_error		Opposite party character Surpasses the maximum negative weight - Is unable to take takes\n
-dealFinalize_player		%$arg0 finalized the Deal\n
-dealFinalize			You finalized the Deal\n
-dealCancel			Transaction Cancellation\n
-dealComplete			Transaction Completes\n
 storageAdd			Storage Item Added: %$arg0{name} (%$arg1) x %$arg2\n
 storageAdd_color		storageAdd
 storageRemove		Storage Item Removed: %$arg0{name} (%$arg1) x %$arg2\n
 storageRemove_color		storageRemove
 storageClose			Storage closed\n
-partyCreate_error		Can't organize party - party name exists\n
+partyCreate_error		不能创建队伍 - 队伍名称已存在\n
 partyJoinReq_error_1		Join request failed: %$arg0 is already in a party\n
 partyJoinReq_error_2		Join request failed: %$arg0 denied request\n
 partyJoinReq			%$arg0 accepted your request\n
 partyRequest			Incoming Request to join %$arg1 party '%$arg0'\n
-partyShare_1			Party EXP set to Individual Take\n
-partyShare_2			Party EXP set to Even Share\n
-partyShare_error		Is unable to change Experience value pattern\n
-partyJoin			You already Joins Party '%$arg0'\n
+partyShare_1			组队经验值分配方式设定为[各自取得]\n
+partyShare_2			组队经验值分配方式设定为[平等分配]\n
+partyShare_error		无法设置组队经验值分配方式\n
+partyitemPickup_1	组队拾取权设定为[各自取得]\n
+partyitemPickup_2	组队拾取权设定为[组队队员全体拥有]\n
+partyitemPickup_error	无法设置组队拾取权设定\n
+partyitemDivision_1	组队掉落分配设定为[各自取得]\n
+partyitemDivision_2	组队掉落分配设定为[均等分配]\n
+partyitemDivision_error	无法设置组队掉落分配设定\n
+partyitem111	%$arg0 - %$arg1 - %$arg2
+partyJoin			你已经加入队伍 '%$arg0'\n
 partyJoin_player		%$arg1 Already Joins Your Party '%$arg0'\n
 partyLeave			You left the party\n
 partyLeave_player		%$arg0 left the party\n
@@ -1099,41 +1042,14 @@ cartFail_1			Cart The Carrying capacity exceeded limit\n
 cartFail_2			Cart The Items Quantity Exceeded limit\n
 shopItemNumber		You can sell %$arg0 items!\n
 
-vender_head			---------- Open shop: %-36s ----------\n
-vender_head			Player : %-24s PlaceSign : (%3d,%3d)\n
-vender_head			#  Name                          Type       Amount     Price\n
-vender_head_arg		%$arg0
-vender_head_arg		%$arg1{name}
-vender_head_arg		%$arg1{pos_x}
-vender_head_arg		%$arg1{pos_y}
-vender				%2d %-29s %-10s %5s %10sz\n
-vender_arg			%$0
-vender_arg			%$fixItemName{%$1}
-vender_arg			%$itemTypes{%$1{type}}
-vender_arg			%$1{amount}
-vender_arg			%$formatNumber{%$1{price}}
-vender_end			--------------------------------------------------\n
-
-shopParam			[Open shop] %$0\n
-
-venderYou_head		------------------ My Shop : %$arg0 ------------------\n
-venderYou_head		#  Name                          Category    Quantity        Prices\n
-venderYou			%-2d %-29s %-10s %6s %15sz\n
-venderYou_arg		%$0
-venderYou_arg		%$fixItemName{%$1}
-venderYou_arg		%$itemTypes{%$1{type}}
-venderYou_arg		%$1{amount}
-venderYou_arg		%$formatNumber{%$1{price}}
-venderYou_end		--------------------------------------------------------\n
-
 shopSold			Sold: %$arg0{name} x %$arg1 - %$arg2 z\n
 shopSold_color		soldItem
 shopSold_log			Shop.txt
 shopSold_sound		sound/pick.wav
 
 shopSoldOut			Already sold all Items^^, Is In Closure Your Open shop\n
-emptyArrow			Please equip arrow first.\n
-equipArror			Arrow equipped: %$arg0{name} (%$arg1)\n
+emptyArrow			你沒有装备箭矢, 攻击失败.\n
+equipArror			装备箭矢: %$arg0{name} (%$arg1)\n
 resurrected			You have been resurrected\n
 guildJoinRequest		自动拒绝加入公会 '%$arg0' 的请求\n
 identifyItem			Item Identified: %$arg0\n
@@ -1244,20 +1160,6 @@ message_npc_sound		sound/chat.wav
 plugins_loadall_error		无法读取plugins 从文件夹 %$arg1 (%$arg0)\n
 plugins_load			读取plugin %$arg0...\n
 plugins_load_error		无法读取plugin %$arg1: %$arg0\n
-
-#---------------------------------------------------------------------------
-# Plugins\autoDeal.pm
-#---------------------------------------------------------------------------
-venderLog_shop		Player:%-24s Map:%-11s (%3d,%3d) Shop:%s
-venderLog_shop_arg		%$arg1{name}
-venderLog_shop_arg		%$map{name}
-venderLog_shop_arg		%$arg1{pos_x}
-venderLog_shop_arg		%$arg1{pos_y}
-venderLog_shop_arg		%$arg0
-venderLog_item		%-35s %10sz %s\n
-venderLog_item_arg		%$arg0
-venderLog_item_arg		%$arg1
-venderLog_item_arg		%$arg2
 
 #---------------------------------------------------------------------------
 # Plugins\avoidGM.pm
@@ -1468,19 +1370,19 @@ autoStorage_route_verbose	3
 autoStorage_max		[Warn] Storage is maximum size\n
 autoStorage_max_log		Alert.txt
 
-autoSell_error			[Warn] Automatically selling warning: Finds Serial number %$arg0 The NPC\n
-autoSell_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
+autoSell_error			[Warn] 自动卖物警告: 找不到编号 %$arg0 的NPC\n
+autoSell_error			[Hint] 请检查 npcs.txt 档案内NPC编号\n
 
-autoSell_route			Calculating SellAuto routes to %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
+autoSell_route			计算路径前往自动卖物地点 %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
 autoSell_route_color		route
 autoSell_route_verbose	3
 
-autoBuy_route			Calculating BuyAuto routes to %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
+autoBuy_route			计算路径前往自动买物地点 %$arg0{alias} (%$arg0{name}) : %$arg1{x}, %$arg1{y}\n
 autoBuy_route_color		route
 autoBuy_route_verbose	3
 
-autoBuy_error			[Warn] Automatically buying warning: Finds Serial number %$arg0 The NPC\n
-autoBuy_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
+autoBuy_error			[Warn] 自动买物警告: 找不到编号 %$arg0 的NPC\n
+autoBuy_error			[Hint] 请检查 npcs.txt 档案内NPC编号\n
 
 save_route			Calculating SaveAuto routes to %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
 save_route_color		route
@@ -1492,17 +1394,17 @@ save_error			[Hint] Please check npcs.txt In file it NPC Serial number\n
 lockMap_switch_0		Switch lockmap to : %$arg0\n
 lockMap_switch_0_color	important
 
-saveMap_error			Invalid map specified for saveMap - map %$arg0 doesn't exist\n
+saveMap_error			储存地图指定的是无效的地图 - 地图 %$arg0 并不存在\n
 saveMap_error_verbose	3
 
-lockMap_error			Invalid map specified for lockMap - map %$arg0 doesn't exist\n
+lockMap_error			锁定地图指定的是无效的地图 - 地图 %$arg0 并不存在\n
 lockMap_error_verbose	3
 
-lockMap_route_1		Calculating lockmap routes to %$arg0{alias} (%$arg0{name})\n
+lockMap_route_1		计算路径前往锁定地图 %$arg0{alias} (%$arg0{name})\n
 lockMap_route_1_color	route
 lockMap_route_1_verbose	3
 
-lockMap_route_2		Calculating routes to lock locations %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
+lockMap_route_2		计算路径前往锁定位置 %$arg0{alias} (%$arg0{name}) %$arg1{x}, %$arg1{y}\n
 lockMap_route_2_color	route
 lockMap_route_2_verbose	3
 
@@ -1542,10 +1444,10 @@ followLost_disconnect_verbose 3
 followLost_found		Find Follows Sign!\n
 followLost_verbose		3
 
-attack_giveup		Giving up Attack Target Sign. Must spend the too long time to approach Target Sign\n
+attack_giveup		放弃攻击目标, 必须花费太长时间接近目标\n
 attack_giveup_verbose	3
 
-attack_die			目标死亡: %$arg0{name} (%$arg0{binID}) - 合计伤害: %$formatNumber{%$arg1}/%$formatNumber{%$arg3} (%$arg2)\n
+attack_die			目标死亡: %$arg0{name} (%$arg0{binID}) - 合计伤害: [%$formatNumber{%$arg1}]\n
 attack_die_color		targetDie
 
 attack_lost			攻击目标消失\n
@@ -1586,16 +1488,16 @@ itemGather_noLoot_verbose	3
 itemGather_fail		捡取无主之物失败 %$arg0{name} (%$arg0{binID}) - 需花费太长时间移动\n
 itemGather_fail_verbose	3
 
-unstuck_1			Cannot find destination, trying to unstuck ...\n
-unstuck_2			Invalid original position, trying to unstuck ...\n
-unstuck_3			Keep trying to move to same spot, teleporting to unstuck ...\n
-unstuck_4			Keep trying to move from same spot, teleport to unstuck ...\n
+unstuck_1			找不到目的地, 尝试失败...\n
+unstuck_2			无效的原始位置, 尝试失败...\n
+unstuck_3			Keep trying to move to same spot, 瞬移失败...\n
+unstuck_4			Keep trying to move from same spot, 瞬移失败...\n
 unstuck_5			Route failed, trying to unstuck ...\n
 clearRouteAI_1		Keep trying to move to same spot, clearing route AI to unstuck ...\n
 clearRouteAI_2		Keep trying to move from same spot, clearing route AI to unstuck ...\n
 clearRouteAI_3		Route failed, clearing route AI to unstuck ...\n
 
-respawnUnstuck		Is unable Arrives locking PlaceSign. Returns to the storage spot ...\n
+respawnUnstuck		无法到达锁定坐标, 瞬移回储存点......\n
 respawnUnstuck_log		Alert.txt
 
 attackStop_1			☉停止攻击目标: %$arg0{name} (%$arg0{binID})\n
@@ -1609,8 +1511,8 @@ preferRoute_error		Map %$arg0 Does not haveFind. Please confirm the MapNameOrMap
 calculatePreferRoute		Computation by chance way: %$arg0{alias} (%$arg0{name})\n
 waypoint			move to (%$arg0{x},%$arg0{y})\n
 waypoint_error			\n!!Is unableReads takesTransmission spotInformation - Please check Transmission spot Material files Or Map files!!\n\n
-autoAddStatus		Automatic Increase Stats Point : %$arg0\n
-autoAddSkill			Automatic Increase Skill Point : %$arg0\n
+autoAddStatus		自动增加属性点: %$arg0\n
+autoAddSkill			自动增加技能点: %$arg0\n
 petPlay				Automatic Pet Performance\n
 makeArrowAuto		Automatic Manufactures the arrow\n
 autoSkillCancel_1		[AssignsAttack] Monster Casting skill on you- Attack : %$arg1{name} (%$arg1{binID})\n
@@ -1660,7 +1562,7 @@ updateNPC_2_log		Alert.txt
 
 input_exp_syntax		发生错误 'exp' (Exp Report)\n
 input_exp_syntax		使用方法: exp [reset]\n
-getExp				[获得经验] Exp: %$arg0 %$arg1 | JobExp: %$arg2 %$arg3\n
+getExp				[获得经验] 基础经验: %$arg0 %$arg1 | 职业经验: %$arg2 %$arg3\n
 getExp_color			exp
 expReport_head		-------------经验值效率------------\n
 expReport			已开始游戏: %$arg0{hour} hour %$arg0{min} min %$arg0{sec} sec.\n
@@ -1828,23 +1730,9 @@ HomunAttackMonster			Homun %$arg0{name} Attack %$arg1{name} (%$arg1{binID}) - Dm
 
 creatParty				Automatical creat party: %$arg0\n
 RetryCreatParty			Retry to creat party: %$arg0\n
-stopCreatParty			Config variable %$arg0 do not exist. - Stop creat party\nConfig variable partyAuto_organize change to 0
+stopCreatParty			Config变量 %$arg0 不存在. - 停止创建队伍\nConfig变量 partyAuto_organize 变为 0
 
 homunFeedFail			You can't give a food (%$arg0)\n
-
-cash_dealer_group			--------------- Cash Dealer (Point : %-6d) ---------------\n
-cash_dealer_group_arg		%$arg0
-cash_dealer_group_color		group
-cash_dealer_head			#  Name                       Type              Price\n
-cash_dealer_head_color		head
-cash_dealer				%-2d %-26s %-14s %8spts\n
-cash_dealer_arg			%$arg0
-cash_dealer_arg			%$arg1{name}
-cash_dealer_arg			%$itemTypes{%$arg1{type}}
-cash_dealer_arg			%$formatNumber{%$arg1{DCprice}}
-cash_dealer_end			------------------------------------------------------------\n
-cash_dealer_end_color		group
-cash_dealer_error_0			Insufficient kafrashop's point to buy this item\n
 
 message_megaphone			%$arg0\n
 message_megaphone_log		Megaphone.txt
@@ -1879,30 +1767,6 @@ teleport_minAggressInlock		[Act] Agressive in more than %$arg1 (%$arg0) In lockm
 teleport_moninsighn			[Act] Auto Teleport - Danger Pos There Have Many Monster (%$arg0)\n
 teleport_follow				[Act] Auto Teleport search master - Dist: %$arg1\n
 teleportAuto_attackedWhenSitting	%$arg0{name} attacks you while you are sitting. Teleporting...\n
-
-#autodeal
-tradeautostart				Begin Trade Auto\n
-tradeautostart_color			important
-acceptrade				Sent deal accept, begin trading\n
-canceldeal				Other person didn't add any items, cancelling...\n
-otheradd				Add %$arg0 z x %$arg1 to deal\n
-cancel2				Other person added item which is not in buy list, cancelling...\n
-addzany				Trading %$arg0 zeny and confirming\n
-canceldeal3				Other person didn't accept the final trade, cancelling...\n
-tradecomplete				Accepting final trade\n
-trade_zany_Insufficient		Your zeny Insufficient to buy this item (Current: %$arg0 z, Need: %$arg1) - cancelling...\n
-tradeauto_complete			Trade Auto completed. Exiting...\n
-tradeauto_complete_log		Alert.txt
-
-input_tradeAuto_head			------------- Trade Auto Info -------------\n
-input_tradeAuto_head			#  Name                     Price     Total\n
-input_tradeAuto			%-2d %-24s %-9d %-d/%-d\n
-input_tradeAuto_arg			%$arg0
-input_tradeAuto_arg			%$arg1
-input_tradeAuto_arg			%$arg2{price}
-input_tradeAuto_arg			%$arg2{total}
-input_tradeAuto_arg			%$arg2{limit}
-input_tradeAuto_end			-------------------------------------------\n
 
 #miscFunctions
 input_homun_error00			Input Error: You don't hanve Homun or Homunculus is in Vaporize state\n
@@ -1943,10 +1807,6 @@ input_homun_skill_arg			%$arg2
 input_homun_skill_arg			%$arg3
 input_homun_skills_end		Skill point: %$arg0\n
 input_homun_skills_end		--------------------------------------------\n
-
-input_buycash_error_0		Input buycash error. You must enter item's index\n
-input_buycash_error_1		Input buycash error. You must enter amount of item to buy\n
-input_buycash_error_2		Input buycash error. Item index %$arg0 do not exist\n
 
 deadLog_head				--------------------------------- [%$time{now}] ---------------------------------\n
 deadLog_head				--------------------------- [General] --------------------------\n
