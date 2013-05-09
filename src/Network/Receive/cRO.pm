@@ -124,18 +124,18 @@ sub new {
 
 sub sync_request_ex {
 	my ($self, $args) = @_;
-	
-	# Debug Log
-	# message "Received Sync Ex : 0x" . $args->{switch} . "\n";
-	
-	# Computing Sync Ex - By Fr3DBr
+	# Debug Recv
+	message "Recv Ex : 0x" . $args->{switch} . "\n";
+
 	my $PacketID = $args->{switch};
 
 	my $tempValues = RSK::GetReply(hex($PacketID));
 	$tempValues = sprintf("0x%04x\n",$tempValues);
 	$tempValues =~ s/^0+//;
+	# Debug Send
+	message "Send Ex: 0x" . uc($tempValues) . "\n";
 	$tempValues = hex($tempValues);
-	
+	sleep(0.2);
 	# Dispatching Sync Ex Reply
 	$messageSender->sendReplySyncRequestEx($tempValues);
 }
