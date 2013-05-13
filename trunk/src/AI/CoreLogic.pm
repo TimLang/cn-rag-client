@@ -55,7 +55,8 @@ sub iterate {
 		$messageSender->injectAdminMessage($Settings::welcomeText) if ($config{'verbose'} && !$config{'XKore_silent'});
 		$sentWelcomeMessage = 1;
 	}
-
+	AI::clear(qw/move route/) if ($char->statusActive('EFST_ROLLINGCUTTER'));
+	# 保证回旋十字斩的时候不移动
 
 	##### MANUAL AI STARTS HERE #####
 
@@ -1720,7 +1721,7 @@ sub processLockMap {
 sub processRandomWalk {
 	if (AI::isIdle && (AI::SlaveManager::isIdle()) && $config{route_randomWalk} && !$ai_v{sitAuto_forcedBySitCommand}
 		&& (!$field->isCity || $config{route_randomWalk_inTown})
-		&& length($field->{rawMap}) 
+		&& length($field->{rawMap}) && !$char->statusActive('EFST_ROLLINGCUTTER') 
 		){
 		if($char->{pos}{x} == $config{'lockMap_x'} && !($config{'lockMap_randX'} > 0) && ($char->{pos}{y} == $config{'lockMap_y'} && !($config{'lockMap_randY'} >0))) {
 			error T("Coordinate lockmap is used; randomWalk disabled\n");
