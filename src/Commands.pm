@@ -3494,17 +3494,17 @@ sub cmdStatus {
 		TF("----------------------- 状态 -------------------------\n" .
 		"\@<<<<<<<<<<<<<<<<<<<<<<<         HP: \@>>>>>>>>>>>>>>>>>>\n" .
 		"\@<<<<<<<<<<<<<<<<<<<<<<<         SP: \@>>>>>>>>>>>>>>>>>>\n" .
-		"等级: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
+		"基础等级: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
 		"职业等级: \@<<    \@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" .
 		"金钱: \@<<<<<<<<<<<<<<<<<     负重: \@>>>>>>>>>>>>>>>>>>\n" .
 		"状态: %s\n" .
-		"气球数/硬币/护身符: %s\n" .
+		"气/硬币/护符/刀刃: %s\n" .
 		"--------------------------------------------------------\n" .
-		"对敌总伤害: \@>>>>>>>>>>>>> 伤害/秒: \@<<<<<<<<<<<<<<\n" .
-		"花费时间 (秒): \@>>>>>>>>\n" .
-		"打死最后一只魔物所花时间 (秒): \@>>>>>>>\n" .
+		"输出总伤害: \@>>>>>>>>>>>>> 每秒伤害: \@<<<<<<<<<<<<<<\n" .
+		"总花费时间 (秒): \@>>>>>>>>\n" .
+		"打死最后一只怪物所花时间 (秒): \@>>>>>>>\n" .
 		"--------------------------------------------------------",
-		$char->statusesString, (exists $char->{spirits} && $char->{spirits} != 0 ? ($char->{amuletType} ? $char->{spirits} . "\tType: " . $char->{amuletType} : $char->{spirits}) : 0)),
+		$char->statusesString, ((exists $char->{spirits} && $char->{spirits} != 0) ? ($char->{amuletType} ? $char->{spirits} . "\tType: " . $char->{amuletType} : $char->{spirits}) : ((exists $char->{rollcuts} && $char->{rollcuts} != 0) ? $char->{rollcuts} : 0))),
 		[$char->{'name'}, $hp_string, $job_name_string, $sp_string,
 		$char->{'lv'}, $base_string, $char->{'lv_job'}, $job_string, $zeny_string, $weight_string,
 		$totaldmg, $dmgpsec_string, $totalelasped_string, $elasped_string]);

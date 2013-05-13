@@ -584,6 +584,11 @@ sub setStatus {
 			$again = 'again' if $char->{party}{users}{$self->{ID}}{statuses}{$handle};
 			$char->{party}{users}{$self->{ID}}{statuses}{$handle} = {};
 		}
+		# EFST_ROLLINGCUTTER by Maple
+		if ($handle eq "EFST_ROLLINGCUTTER" && $self->{ID} eq $accountID) {
+                $self->{rollcuts} = $opt1;
+                message TF("您 现在有%d个回旋刀刃.\n", $self->{rollcuts});
+        }
 	} else {
 		# Skill de-activated (expired)
 		return unless ($self->{statuses} && $self->{statuses}{$handle}); # silent when "again no status"
@@ -592,6 +597,8 @@ sub setStatus {
 		delete $self->{statuses}{$handle};
 		delete $char->{party}{users}{$self->{ID}}{statuses}{$handle} if ($char->{party} && $char->{party}{users} && $char->{party}{users}{$self->{ID}} && $char->{party}{users}{$self->{ID}}{name});
 		# HashKey Maple
+		$self->{rollcuts} = 0 if ($handle eq "EFST_ROLLINGCUTTER" && $self->{ID} eq $accountID);
+		# EFST_ROLLINGCUTTER by Maple
 	}
 	message
 		Misc::status_string($self, defined $statusName{$handle} ? $statusName{$handle} : $handle, $again, $flag ? $tick/1000 : 0),

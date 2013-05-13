@@ -2891,7 +2891,7 @@ msgstr "(To %s) : %s\n"
 #: ../Network/Receive/ServerType0.pm:4908
 #, perl-format
 msgid "%s is not online\n"
-msgstr "%s 不在在线\n"
+msgstr "%s 不在线\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5015
 #: ../Network/Receive/ServerType0.pm:4910
