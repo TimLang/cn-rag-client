@@ -101,6 +101,8 @@ sub new {
 		# define it so deltaHp check may work immediately
 		# TODO: set it only for actors with actual hp (players, monsters)?
 		deltaHp => 0,
+		drop => 0,
+		# 残影怪物 Maple
 	);
 	return bless \%self, $class;
 }
