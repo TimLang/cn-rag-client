@@ -558,7 +558,10 @@ sub actor_display {
 					$actor->{name_given} = "Unknown";
 					$actor->{binType} = $args->{type};
 					$mustAdd = 1;
+				} else {
+					$actor->{drop} = 0;
 				}
+                # Maple 残影
 			}
 
 			# Why do monsters and pets use nameID as type?

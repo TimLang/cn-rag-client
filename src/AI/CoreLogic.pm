@@ -2473,6 +2473,8 @@ sub processAutoAttack {
 				my $monster = $monsters{$_};
 				next if $monster->{ignore};
 				# 组队时也忽略
+				next if ($monster->{drop} > 2);
+				# Maple 残影
 
 				OpenKoreMod::autoAttack($monster) if (defined &OpenKoreMod::autoAttack);
 

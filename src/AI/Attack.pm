@@ -141,7 +141,11 @@ sub shouldGiveUp {
 sub giveUp {
 	my $ID = AI::args->{ID};
 	my $target = Actor::get($ID);
-	$target->{attack_failed} = time if ($monsters{$ID});
+	if (defined $monstersList->getByID($ID)) {
+                $target->{attack_failed} = time;
+                $target->{drop}++;
+    }
+    # Maple 残影
 	AI::dequeue;
 	message T("Can't reach or damage target, dropping target\n"), "ai_attack";
 	if ($config{'teleportAuto_dropTarget'}) {
