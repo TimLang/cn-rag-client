@@ -34,6 +34,7 @@ use LWP::UserAgent;
 use HTTP::Request;
 use Utils::HttpReader;
 use Utils::RSK;
+use MIME::Base64;
 use Win32::OLE qw(in);
 use Digest::MD5;
 
@@ -80,6 +81,7 @@ sub mainLoop {
 		checkConnection();
  		versionCheck($Settings::SVN_VERSION);
 		loadPlugins();
+		return if $quit;
 		Log::message("\n");
 		Plugins::callHook('start');
 		$state = STATE_LOAD_DATA_FILES;
@@ -127,10 +129,10 @@ sub loadPlugins {
 			"The error message is:\n" .
 			"%s",
 			$Settings::NAME, $e->message));
-		exit 1;
+		$quit = 1;
 	} elsif (my $e = caught('Plugin::DeniedException')) {
 		$interface->errorDialog($e->message);
-		exit 1;
+		$quit = 1;
 	} elsif ($@) {
 		die $@;
 	}
@@ -289,13 +291,15 @@ sub loadDataFiles {
 		$interface->errorDialog(TF(
 			"The file %s must be in UTF-8 encoding.",
 			$e->textfile));
-		exit 1;
+		$quit = 1;
 	} elsif (my $e = caught('FileNotFoundException')) {
 		$interface->errorDialog(TF("Unable to load the file %s.", $e->filename));
-		exit 1;
+		$quit = 1;
 	} elsif ($@) {
 		die $@;
 	}
+	return if $quit;
+
 	Plugins::callHook('start3');
 
 	if ($config{'adminPassword'} eq 'x' x 10) {
@@ -547,7 +551,8 @@ sub initNetworking {
 	if ($@) {
 		# Problem with networking.
 		$interface->errorDialog($@);
-		exit 1;
+		$quit = 1;
+		return;
 	}
 }
 
@@ -587,15 +592,19 @@ sub promptFirstTimeInformation {
 		if (!$config{username}) {
 			$msg = $interface->query(T("Please enter your Ragnarok Online username."));
 			if (!defined($msg)) {
-				exit;
+				$quit = 1;
+				return;
 			}
 			configModify('username', $msg, 1);
 		}
 		if (!$config{password}) {
 			$msg = $interface->query(T("Please enter your Ragnarok Online password."), isPassword => 1);
 			if (!defined($msg)) {
-				exit;
+				$quit = 1;
+				return;
 			}
+			$msg = MIME::Base64::encode($msg);
+			chomp($msg);
 			configModify('password', $msg, 1);
 		}
 	}
@@ -609,12 +618,18 @@ sub processServerSettings {
 		my @servers = sort { lc($a) cmp lc($b) } keys(%masterServers);
 		my $choice = $interface->showMenu(
 			T("Please choose a master server to connect to."),
-			\@servers,
+			[map { $masterServers{$_}{title} || $_ } @servers],
 			title => T("Master servers"));
 		if ($choice == -1) {
-			exit;
+			$quit = 1;
+			return;
 		} else {
-			configModify('master', $servers[$choice], 1);
+			bulkConfigModify({
+				master => $servers[$choice],
+				# present server selection on master change
+				server => '',
+				char => '',
+			}, 1);
 		}
 	}
 
@@ -625,7 +640,8 @@ sub processServerSettings {
 
 	if (my @missingOptions = grep { $master->{$_} eq '' } qw(ip port master_version version serverType)) {
 		$interface->errorDialog(TF("Required server options are not set: %s\n", "@missingOptions"));
-		exit;
+		$quit = 1;
+		return;
 	}
 	
 	foreach my $serverOption ('serverType', 'chatLangCode', 'storageEncryptKey', 'charBlockSize',
@@ -758,6 +774,7 @@ sub initConnectVars {
 	initMapChangeVars();
 	if ($char) {
 		$char->{skills} = {};
+		delete $char->{spirits};
 		delete $char->{mute_period};
 		delete $char->{muted};
 		delete $char->{party};

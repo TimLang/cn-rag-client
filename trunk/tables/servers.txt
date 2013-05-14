@@ -1,4 +1,5 @@
 ﻿[klRO - 电信区 - (Fenril)]
+title klRO - Fenril
 ip 114.112.39.71
 port 6900
 master_version 4
@@ -9,6 +10,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 电信区 - (Sakray)]
+title klRO - Sakray
 ip 118.186.39.235
 port 6900
 master_version 4
@@ -19,6 +21,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 电信区 - (Thor)]
+title klRO - Thor
 ip 118.186.39.233
 port 6900
 master_version 4
@@ -29,6 +32,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 电信区 - (Chaos)]
+title klRO - Chaos
 ip 118.186.39.232
 port 6900
 master_version 4
@@ -39,6 +43,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 电信区 - (Loki)]
+title klRO - Loki
 ip 118.186.39.231
 port 6900
 master_version 4
@@ -49,6 +54,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 电信区 - (Iris)]
+title klRO - Iris
 ip 114.112.39.98
 port 6900
 master_version 4
@@ -59,6 +65,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 联通区 - (Sara)]
+title klRO - Sara
 ip 118.186.66.114
 port 6900
 master_version 4
@@ -69,6 +76,7 @@ serverEncoding Simplified Chinese
 charBlockSize 144
 
 [klRO - 复活区 - (Odin)]
+title klRO - Odin
 ip 114.112.39.52
 port 6900
 master_version 4
@@ -80,6 +88,7 @@ charBlockSize 144
 addTableFolders cRO
 
 [台灣 - 免費服 - (魔王波利、黃金波利)]
+title twRO - 免費服 - (魔王波利、黃金波利)
 ip 220.130.113.238
 port 6900
 master_version 5
@@ -93,6 +102,7 @@ recvpackets recvpackets_free.txt
 addTableFolders twRO
 
 [台灣 - 免費服 - (波利、巴風特、小雞、哥布靈、月夜貓)]
+title twRO - 免費服 - (波利、巴風特、小雞、哥布靈、月夜貓)
 ip 220.130.113.221
 port 6900
 master_version 5
@@ -106,6 +116,7 @@ recvpackets recvpackets_free.txt
 addTableFolders twRO
 
 [台灣 - 免費服 - (惡魔波利、天使波利、波利之王)]
+title twRO - 免費服 - (惡魔波利、天使波利、波利之王)
 ip 220.130.113.222
 port 6900
 master_version 5
@@ -119,6 +130,7 @@ recvpackets recvpackets_free.txt
 addTableFolders twRO
 
 [台灣 - 免費服 - (彩虹橋)]
+title twRO - 免費服 - (彩虹橋)
 ip 220.130.113.234
 port 6900
 master_version 5
@@ -132,6 +144,7 @@ recvpackets recvpackets_free.txt
 addTableFolders twRO
 
 [台灣 - 全區服 - (普隆德拉)]
+title twRO - 普隆德拉
 ip 220.130.113.208
 port 6900
 master_version 5
@@ -145,6 +158,7 @@ recvpackets recvpackets_free.txt
 addTableFolders twRO
 
 [台灣 - 月費服 - (查爾斯、愛麗絲)]
+title twRO - 查爾斯、愛麗絲
 ip 220.130.113.209
 port 6900
 master_version 5
@@ -158,6 +172,7 @@ recvpackets recvpackets_paid.txt
 addTableFolders twRO
 
 [台灣 - 老朋友服 - (免費查爾斯、免費愛麗絲)]
+title twRO - 免費查爾斯、免費愛麗絲
 ip 220.130.113.235
 port 6900
 master_version 5
@@ -170,7 +185,8 @@ PINEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x0597
 recvpackets recvpackets_free.txt
 addTableFolders twRO
 
-[台灣 - 測試服 - (Sakray)] 
+[台灣 - 測試服 - (Sakray)]
+title twRO - 測試服 - (Sakray)
 ip 61.220.62.26
 port 6900
 master_version 5
@@ -184,6 +200,7 @@ recvpackets recvpackets_sakray.txt
 addTableFolders twRO
 
 [klRO - 测试服 - (Test)]
+title klRO - 測試服
 ip 114.112.56.246
 port 6900
 master_version 4

@@ -13,23 +13,7 @@
 #  $Id: Network.pm 7069 2010-01-16 02:23:00Z klabmouse $
 #
 #########################################################################
-##
-# MODULE DESCRIPTION: Connection handling
-#
-# The Network module handles connections to the Ragnarok Online server.
-# This module only handles connection issues, and nothing else. It doesn't do
-# anything with the actual data. Network data handling is performed by
-# the @MODULE(Network::Receive) and Network::Receive::ServerTypeX classes.
-#
-# The submodule @MODULE(Network::Send) contains functions for sending all
-# kinds of messages to the RO server.
-#
-# Please also read <a href="http://wiki.openkore.com/index.php/Network_subsystem">the
-# network subsystem overview.</a>
-#
-# This implementation establishes a direct connection to the RO server.
-# Note that there are alternative implementations for this interface: @MODULE(Network::XKore),
-# @MODULE(Network::XKore2) and @MODULE(Network::XKoreProxy)
+
 
 package Network::DirectConnection;
 
@@ -51,6 +35,7 @@ use Network::Send ();
 use Plugins;
 use Settings;
 use Interface;
+use MIME::Base64;
 use Utils qw(dataWaiting timeOut);
 use Utils::Exceptions;
 use Translation;
@@ -381,7 +366,7 @@ sub checkConnection {
 
 		} elsif ($self->serverAlive) {
 			$messageSender->sendPreLoginCode($master->{preLoginCode}) if ($master->{preLoginCode});
-			$messageSender->sendMasterLogin($config{'username'}, $config{'password'},
+			$messageSender->sendMasterLogin($config{'username'}, MIME::Base64::decode($config{'password'}),
 				$master->{master_version}, $master->{version});
 		}
 
@@ -422,7 +407,7 @@ sub checkConnection {
 
 		} else {
 			$messageSender->sendPreLoginCode($master->{preLoginCode}) if ($master->{preLoginCode});
-			$messageSender->sendMasterLogin($config{'username'}, $config{'password'},
+			$messageSender->sendMasterLogin($config{'username'}, MIME::Base64::decode($config{'password'}),
 				$master->{master_version}, $master->{version});
 		}
 
@@ -432,7 +417,7 @@ sub checkConnection {
 		if($masterServer->{secureLogin} >= 1 && $secureLoginKey ne "" && !timeOut($timeout{'master'}) && $conState_tries) {
 			my $master = $masterServer;
 			message T("Sending encoded password...\n"), "connection";
-			$messageSender->sendMasterSecureLogin($config{'username'}, $config{'password'}, $secureLoginKey,
+			$messageSender->sendMasterSecureLogin($config{'username'}, MIME::Base64::decode($config{'password'}), $secureLoginKey,
 					$master->{version}, $master->{master_version},
 					$master->{secureLogin}, $master->{secureLogin_account});
 			undef $secureLoginKey;
