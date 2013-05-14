@@ -587,7 +587,10 @@ sub actor_display {
 			
 			# Why do monsters and pets use nameID as type?
 			$actor->{nameID} = $args->{type};
+		} else {
+			$actor->{drop} = 0;
 		}
+		# Maple 残影
 	} elsif ($object_class eq 'Actor::NPC') {
 		# Actor is an NPC
 		$actor = $npcsList->getByID($args->{ID});
