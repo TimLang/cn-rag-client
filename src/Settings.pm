@@ -440,6 +440,7 @@ sub loadByRegexp {	# FIXME: only hook those that match the regexp?
 		Plugins::callHook('loadfiles', {files => \@{$files->getItems}, current => $i});
 		if ($object->{name} =~ /$regexp/) {
 			loadByHandle($object->{index}, $progressHandler);
+			return if $Globals::quit;
 		}
 		$i++;
 	}

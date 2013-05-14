@@ -2886,31 +2886,35 @@ sub message_string {
 
 	if (@msgTable[$args->{msg_id}++]) { # show message from msgstringtable
 		warning T(@msgTable[$args->{msg_id}++]."\n");
-		$self->mercenary_off() if ($args->{msg_id} >= 0x04F2 && $args->{msg_id} <= 0x04F5);
+		$self->mercenary_off() if ($args->{msg_id} >= 1267 && $args->{msg_id} <= 1270);
 		
 	} else {
-		if ($args->{msg_id} == 0x04F2) {
+		if ($args->{msg_id} == 1267) {
 			message T("Mercenary soldier's duty hour is over.\n"), "info";
 			$self->mercenary_off ();
 	
-		} elsif ($args->{msg_id} == 0x04F3) {
+		} elsif ($args->{msg_id} == 1268) {
 			message T("Your mercenary soldier has been killed.\n"), "info";
 			$self->mercenary_off ();
 	
-		} elsif ($args->{msg_id} == 0x04F4) {
+		} elsif ($args->{msg_id} == 1269) {
 			message T("Your mercenary soldier has been fired.\n"), "info";
 			$self->mercenary_off ();
 	
-		} elsif ($args->{msg_id} == 0x04F5) {
+		} elsif ($args->{msg_id} == 1270) {
 			message T("Your mercenary soldier has ran away.\n"), "info";
 			$self->mercenary_off ();
 			
-		} elsif ($args->{msg_id} ==	0x054D) {
+		} elsif ($args->{msg_id} ==	1358) {
 			message T("View player equip request denied.\n"), "info";
-	
-		} elsif ($args->{msg_id} == 0x06AF) {
+		} elsif ($args->{msg_id} == 1712) {
 			message T("You need to be at least base level 10 to send private messages.\n"), "info";
-	
+		} elsif ($args->{msg_id} == 1924) {
+			warning T("错误1924: 请在本次操作前先完成其他动作.(例如: NPC对话, 选择技能列表等)\n"), "info";
+		} elsif ($args->{msg_id} == 1774) {
+			warning T("当前装备不符合装备的等级要求.\n"), "info";
+		} elsif ($args->{msg_id} == 1775) {
+			warning T("当前使用的道具不符合道具的等级要求.\n"), "info";
 		} else {
 			warning TF("msg_id: %s gave unknown results in: %s\n", $args->{msg_id}, $self->{packet_list}{$args->{switch}}->[0]);
 		}

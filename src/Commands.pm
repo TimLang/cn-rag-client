@@ -2441,7 +2441,16 @@ sub cmdOpenShop {
 			skill => $skill,
 			priority => Task::USER_PRIORITY
 		);
-		my $task = new Task::ErrorReport(task => $skillTask);
+		my $task = new Task::Chained(
+			name => 'openShop',
+			tasks => [
+				new Task::ErrorReport(task => $skillTask),
+				Task::Timeout->new(
+					function => sub {main::openShop()},
+					seconds => $timeout{ai_shop_useskill_delay}{timeout},
+				)
+			]
+		);
 		$taskManager->add($task);
 	} else {
 		# This method is responsible to uses a bug in which openkore opens the shop

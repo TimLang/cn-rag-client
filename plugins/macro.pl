@@ -47,7 +47,7 @@ my $macro_file;
 sub onconfigModify {
 	my (undef, $args) = @_;
 	if ($args->{key} eq 'macro_file') {
-		Settings::removeFile($cfID);
+		Settings::removeFile($cfID) if defined $cfID;
 		$cfID = Settings::addControlFile($args->{val}, loader => [ \&parseAndHook, \%macro]);
 		Settings::loadByHandle($cfID);
 	}
