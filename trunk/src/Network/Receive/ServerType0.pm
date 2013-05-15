@@ -24,7 +24,6 @@ use Log qw(message warning error debug);
 use Task::Wait;
 use Task::Function;
 use Task::Chained;
-use encoding 'utf8';
 use Carp::Assert;
 use Scalar::Util;
 use Exception::Class ('Network::Receive::InvalidServerType', 'Network::Receive::CreationError');
@@ -51,8 +50,9 @@ use Skill;
 use Utils::Assert;
 use Utils::Exceptions;
 use Utils::Crypton;
-use Translation;
+use Translation qw(T TF);
 use I18N qw(bytesToString stringToBytes);
+use encoding 'utf8';
 # from old receive.pm
 
 sub new {
@@ -1073,7 +1073,8 @@ sub actor_status_active {
 	my $status = defined $statusHandle{$type} ? $statusHandle{$type} : "UNKNOWN_STATUS_$type";
 	$cart{type} = $unknown1 if ($type == 673 && defined $unknown1 && ($ID eq $accountID)); # for Cart active
 	$args->{skillName} = defined $statusName{$status} ? $statusName{$status} : $status;
-	($args->{actor} = Actor::get($ID))->setStatus($status, $flag, $tick == 9999 ? undef : $tick);
+	($args->{actor} = Actor::get($ID))->setStatus($status, $flag, $tick == 9999 ? undef : $tick, $args->{unknown1});
+	# Maple 回旋十字斩
 }
 
 sub actor_trapped {
@@ -2495,8 +2496,13 @@ sub item_skill {
 	my $skill = new Skill(idn => $skillID, level => $skillLv);
 	message TF("Permitted to use %s (%d), level %d\n", $skill->getName, $skill->getIDN, $skill->getLevel);
 
-	unless ($config{noAutoSkill}) {
-		$messageSender->sendSkillUse($skillID, $skillLv, $accountID);
+	unless ($config{noAutoSkill} && $skillID != 26)  {
+		if ($skillID == 26) {
+			$timeout{ai_teleport_retry}{time} = time;
+			AI::queue('teleport', {item_lv => $skillLv});
+		} else {
+			$messageSender->sendSkillUse($skillID, $skillLv, $accountID);
+		}
 		undef $char->{permitSkill};
 	} else {
 		$char->{permitSkill} = $skill;
@@ -5402,11 +5408,6 @@ sub warp_portal_list {
 			"list");
 	}
 	message("--------------------------------------------------\n", "list");
-	if ($args->{type} == 26 && AI::action eq 'teleport') {
-		# We have already successfully used the Teleport skill.
-		$messageSender->sendWarpTele(26, AI::args->{lv} == 2 ? "$config{saveMap}.gat" : "Random");
-		AI::dequeue;
-	}
 }
 
 # 08CB
