@@ -20,6 +20,7 @@ use Commands;
 use Skill;
 use Log qw(debug message warning error);
 use Translation;
+use encoding 'utf8';
 
 Plugins::register('avoidSkill', 'React to skills.', \&on_unload, \&on_reload);
 
