@@ -557,7 +557,7 @@ sub onUpdate {
 #
 # Set or unset specified status. Display the corresponding message.
 sub setStatus {
-	my ($self, $handle, $flag, $tick) = @_;
+	my ($self, $handle, $flag, $tick, $opt1) = @_;
 
 	my $again;
 	if ($flag) {
@@ -588,7 +588,6 @@ sub setStatus {
 		}
 		# EFST_ROLLINGCUTTER by Maple
 		if ($handle eq "EFST_ROLLINGCUTTER" && $self->{ID} eq $accountID) {
-				my $opt1;
                 $self->{rollcuts} = $opt1;
                 message TF("您 现在有%d个回旋刀刃.\n", $self->{rollcuts});
         }

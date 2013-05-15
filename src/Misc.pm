@@ -2864,6 +2864,7 @@ sub useTeleport {
 		return 1;
 	}
 
+	return 1 if ($timeout{ai_teleport_retry}{time} && AI::action eq "teleport");
 	# for possible recursive calls
 	if (!defined $internal) {
 		$internal = $config{teleportAuto_useSkill};
@@ -2895,10 +2896,10 @@ sub useTeleport {
 				undef $char->{permitSkill};
 			}
 
-			if (!$emergency && $use_lvl == 1) {
+			if ($internal > 0) {
 				Plugins::callHook('teleport_sent', \%args);
 				$timeout{ai_teleport_retry}{time} = time;
-				AI::queue('teleport');
+				AI::queue('teleport', {lv => $use_lvl});
 				return 1;
 			}
 		}
