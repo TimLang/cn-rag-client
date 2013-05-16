@@ -1300,6 +1300,9 @@ sub card_merge_status {
 	undef $cardMergeIndex;
 }
 
+use encoding 'utf8';
+# 修复乱码问题
+
 sub cart_info {
 	my ($self, $args) = @_;
 
