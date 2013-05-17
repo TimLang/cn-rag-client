@@ -649,7 +649,7 @@ sub createSplitterContent {
 	$chatLog->addColor("p", 164, 0, 143);
 	$chatLog->addColor("g", 0, 177, 108);
 	$chatLog->addColor("warning", 214, 93, 0);
-	$chatLog->addColor("syschat", 254, 215, 0);
+	$chatLog->addColor("syschat", 255, 110, 180);
 
 	## Parallel to the notebook is another sub-splitter
 	my $subSplitter = new Wx::SplitterWindow($splitter, 583,
@@ -1087,7 +1087,7 @@ sub onChatLogToggle {
 		$chatLog->addColor("p", 164, 0, 143);
 		$chatLog->addColor("g", 0, 177, 108);
 		$chatLog->addColor("warning", 214, 93, 0);
-		$chatLog->addColor("syschat", 254, 215, 0);
+		$chatLog->addColor("syschat", 255, 110, 180);
 		$page->set($chatLog);
 
 	} else {
