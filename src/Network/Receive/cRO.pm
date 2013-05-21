@@ -125,7 +125,7 @@ sub new {
 sub sync_request_ex {
 	my ($self, $args) = @_;
 	# Debug Recv
-	message "Recv Ex : 0x" . $args->{switch} . "\n";
+	#message "Recv Ex : 0x" . $args->{switch} . "\n";
 
 	my $PacketID = $args->{switch};
 
@@ -133,7 +133,7 @@ sub sync_request_ex {
 	$tempValues = sprintf("0x%04x\n",$tempValues);
 	$tempValues =~ s/^0+//;
 	# Debug Send
-	message "Send Ex: 0x" . uc($tempValues) . "\n";
+	#message "Send Ex: 0x" . uc($tempValues) . "\n";
 	$tempValues = hex($tempValues);
 	sleep(0.2);
 	# Dispatching Sync Ex Reply
