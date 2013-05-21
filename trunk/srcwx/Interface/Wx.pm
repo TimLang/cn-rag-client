@@ -436,7 +436,7 @@ sub createMenuBar {
 	$self->{mResume} = $self->addMenu($opMenu, T('&Automatic Botting'), \&onEnableAI, T('Resume all automated botting activity'));
 	$opMenu->AppendSeparator;
 	$self->addMenu($opMenu, T('Copy Last 100 Lines of Text'), \&onCopyLastOutput);
-	$self->addMenu($opMenu, T('Minimize to &Tray'), \&onMinimizeToTray, T('Minimize to a small task bar tray icon'));
+	$self->addMenu($opMenu, T('Minimize to &Tray') . "\tAlt+R", \&onMinimizeToTray, T('Minimize to a small task bar tray icon'));
 	$opMenu->AppendSeparator;
 	$self->addMenu($opMenu, T('Respawn'), sub { Commands::run ("respawn") }, T('Teleport to save point'));
 	$self->addMenu($opMenu, T('&Relog'), sub { Commands::run ("relog") }, T('Disconnect and reconnect'));
@@ -473,7 +473,7 @@ sub createMenuBar {
 		$viewMenu, T('Chat &Log'), \&onChatLogToggle, T('Show or hide the chat log.')
 	);
 	$self->addMenu ($viewMenu, T('Status') . "\tAlt+A", sub { $self->openStats (1) });
-	$self->addMenu ($viewMenu, T('Homunculus') . "\tAlt+R", sub { $self->openHomunculus (1) });
+	$self->addMenu ($viewMenu, T('Homunculus'), sub { $self->openHomunculus (1) });
 	$self->addMenu ($viewMenu, T('Mercenary') . "\tCtrl+R", sub { $self->openMercenary (1) });
 	$self->addMenu ($viewMenu, T('Pet') . "\tAlt+J", sub { $self->openPet (1) });
 	
