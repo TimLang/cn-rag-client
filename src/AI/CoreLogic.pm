@@ -534,6 +534,7 @@ sub processEscapeUnknownMaps {
 ##### DELAYED-TELEPORT #####
 sub processDelayedTeleport {
 	if (AI::action eq 'teleport') {
+		return if (AI::args->{use_item});
 		if ($timeout{ai_teleport_delay}{time} && timeOut($timeout{ai_teleport_delay})) {
 			# We have already successfully used the Teleport skill,
 			# and the ai_teleport_delay timeout has elapsed
@@ -2132,7 +2133,7 @@ sub processAutoItemUse {
 			if ($config{"useSelf_item_$i"} && checkSelfCondition("useSelf_item_$i")) {
 				my $item = $char->inventory->getByNameList($config{"useSelf_item_$i"});
 				if ($item) {
-					$messageSender->sendItemUse($item->{index}, $accountID);
+					$item->use;
 					$ai_v{"useSelf_item_$i"."_time"} = time;
 					$timeout{ai_item_use_auto}{time} = time;
 					debug qq~Auto-item use: $item->{name}\n~, "ai";

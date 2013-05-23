@@ -2864,7 +2864,7 @@ sub useTeleport {
 		return 1;
 	}
 
-	return 1 if ($timeout{ai_teleport_retry}{time} && AI::action eq "teleport");
+	return 1 if (AI::action eq "teleport");
 	# for possible recursive calls
 	if (!defined $internal) {
 		$internal = $config{teleportAuto_useSkill};
@@ -2931,8 +2931,7 @@ sub useTeleport {
 		return if AI::inQueue('teleport');
 		debug "Equipping Accessory to teleport\n", "useTeleport";
 		AI::queue('teleport', {lv => $use_lvl});
-		if ($emergency ||
-		    !$config{teleportAuto_useSkill} ||
+		if (!$config{teleportAuto_useSkill} ||
 		    $config{teleportAuto_useSkill} == 3 ||
 		    $config{teleportAuto_useSkill} == 2 && isSafe()) {
 			$timeout{ai_teleport_delay}{time} = 1;
@@ -2979,7 +2978,7 @@ sub useTeleport {
 		# Don't spam the "use fly wing" packet, or we'll end up using too many wings.
 		if (timeOut($timeout{ai_teleport})) {
 			Plugins::callHook('teleport_sent', \%args);
-			$messageSender->sendItemUse($item->{index}, $accountID);
+			$item->use;
 			$timeout{ai_teleport}{time} = time;
 		}
 		return 1;
