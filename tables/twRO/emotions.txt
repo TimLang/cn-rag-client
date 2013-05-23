@@ -1,21 +1,21 @@
-1 1,? *？*
-2 2,happy *高興*
-3 3,love *愛心*
-4 4,sweat *流冷汗*
-5 5,idea *靈感*
-6 6,angry *生氣*
-7 7,boring *鬱悶*
-8 8,$ *金錢*
-9 9,... *無言*
-10 10,scissors *剪刀*
-11 11,stone *石頭*
+﻿1 1,? *问号* 
+2 2,happy *吹口哨* 
+3 3,love *爱心* 
+4 4,sweat *流汗* 
+5 5,idea *灯泡* 
+6 6,angry *生气* 
+7 7,boring *乌云* 
+8 8,$ *金钱* 
+9 9,... *沉默* 
+10 10,scissors *剪刀* 
+11 11,stone *石头* 
 12 12,paper *布*
-13 13,flag1,korea *韓國旗*
+13 13,flag1,korea *国旗*
 14 14,love2 *大愛心*
 15 15,thx *感謝*
 16 16,...2 *無奈*
 17 17,sry *抱歉*
-18 18,ha *歡笑*
+18 18,ha *愉快*
 19 19,sweat2 *噴汗*
 20 20,huh *迷惑*
 21 21,good *一級棒*
@@ -29,10 +29,10 @@
 29 29,hehe *奸笑*
 30 30,kiss *接吻*
 31 31,kiss2 *輕吻*
-32 32,sigh2 *呼*
-33 33,ok *嗯*
+32 32,sigh2 *神气*
+33 33,ok *点头*
 34 34,silence *禁言*
-35 35,flag2,indo *印尼旗*
+35 35,flag2,indo *摇旗*
 36 36,e1,angry2 *火大*
 37 37,e2,eat *嘴饞*
 38 38,e3,beauty *漂亮*
@@ -44,37 +44,37 @@
 44 44,e9,come *過來*
 45 45,e10,zz *好睏*
 46 46,e11,congrat *祝賀*
-47 37,e12,hp *補hp*
+47 37,e12,hp *補HP*
 48 48,flag3,phili *菲律賓旗*
 49 49,flag4,usa *美國旗*
 50 50,flg5,singa *新加坡旗*
 51 51,flg6,brazil *巴西旗*
-52 52,flash *FlashEyes(?!)*
-53 53,spin *SpinEyes(?!)*
-54 54,sigh *'o'(?!)*
-55 55,dumb *Dumb(?!)*
-56 56,crwd *( . )(?!)*
-57 57,down *Down(?!)*
+52 52,flash *电眼*
+53 53,spin *眼晕*
+54 54,sigh *叹口气*
+55 55,dumb *无知*
+56 56,crwd *心烦*
+57 57,down *鞠躬*
 58 58,dice1 *骰子#1*
 59 59,dice2 *骰子#2*
 60 60,dice3 *骰子#3*
 61 61,dice4 *骰子#4*
 62 62,dice5 *骰子#5*
 63 63,dice6 *骰子#6*
-64 64,flag7 *Flag 7*
-65 65,here *PointingHand*
-66 66,flg8 *Flag 8*
-67 67,flg9 *Flag 9*
-68 68,phone *CellPhone(?!)*
-69 69,mail *E-Mail(?!)*
-70 70,rh *Unknown(RedHieroglyphs)*
-71 71,signal1 *Cell signal power 1/3(?!)*
-72 72,signal2 *Cell signal power 2/3(?!)*
-73 73,signal3 *Cell signal power 3/3(?!)*
-74 74,e27,hum *Unknown(Face w/lines)*
-75 75,e28,fear *Fear!(?!)*
-76 76,e29,oops *Oops*
-77 77,e30,boring2 *Boooring(?!)*
-78 78,e31,bless *BlessingLight*
-79 79,e32,panic *Panic!*
-80 80,e33,whisp *Whisp*
+64 64,flag7 *尼日尔旗*
+65 65,here *点击*
+66 66,flg8 *斯洛文尼亚旗*
+67 67,flg9 *斯里兰卡旗*
+68 68,phone *电话*
+69 69,mail *短信*
+70 70,rh *圈外*
+71 71,signal1 *一格信号*
+72 72,signal2 *二格信号*
+73 73,signal3 *三格信号*
+74 74,e27,hum *侧汗*
+75 75,e28,fear *吊死*
+76 76,e29,oops *憋死*
+77 77,e30,boring2 *呕吐*
+78 78,e31,bless *瘴气*
+79 79,e32,panic *阴森*
+80 80,e33,whisp *变换*
