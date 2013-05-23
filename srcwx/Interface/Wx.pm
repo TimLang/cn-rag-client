@@ -455,7 +455,7 @@ sub createMenuBar {
 	$self->addMenu($infoMenu, T('S&kills'),		sub { Commands::run("skills"); });
 	$infoMenu->AppendSeparator;
 	$self->addMenu($infoMenu, T('&Players').'	Alt-P',	sub { Commands::run("pl"); });
-	$self->addMenu($infoMenu, T('&Monsters').'	Alt-M',	sub { Commands::run("ml"); });
+	$self->addMenu($infoMenu, T('&Monsters'),	sub { Commands::run("ml"); });
 	$self->addMenu($infoMenu, T('&NPCs'),		sub { Commands::run("nl"); });
 	$infoMenu->AppendSeparator;
 	$self->addMenu($infoMenu, T('&Experience Report'),	sub { Commands::run("exp"); });
@@ -473,8 +473,8 @@ sub createMenuBar {
 		$viewMenu, T('Chat &Log'), \&onChatLogToggle, T('Show or hide the chat log.')
 	);
 	$self->addMenu ($viewMenu, T('Status') . "\tAlt+A", sub { $self->openStats (1) });
-	$self->addMenu ($viewMenu, T('Homunculus'), sub { $self->openHomunculus (1) });
-	$self->addMenu ($viewMenu, T('Mercenary') . "\tCtrl+R", sub { $self->openMercenary (1) });
+	$self->addMenu ($viewMenu, T('Homunculus') . "\tCtrl+R", sub { $self->openHomunculus (1) });
+	$self->addMenu ($viewMenu, T('Mercenary') . "\tAlt+M", sub { $self->openMercenary (1) });
 	$self->addMenu ($viewMenu, T('Pet') . "\tAlt+J", sub { $self->openPet (1) });
 	
 	$viewMenu->AppendSeparator;
