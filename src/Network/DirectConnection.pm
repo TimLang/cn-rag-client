@@ -228,6 +228,7 @@ sub serverDisconnect {
 			message T("disconnected\n"), "connection" :
 			error T("couldn't disconnect\n"), "connection";
 	}
+	use encoding 'utf8'
 }
 
 sub getState {
