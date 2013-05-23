@@ -414,6 +414,15 @@ sub use {
 			"该物品不能被使用\n", $self->{name});
 		return 0;
 	}
+	
+	if ($self->{nameID} == 601 ||
+		$self->{nameID} == 602 ||
+		$self->{nameID} == 12323 ||
+		$self->{nameID} == 12324 ||
+		$self->{nameID} == 12887 ) {
+			AI::queue('teleport', {use_item => 1});
+	}
+
 	$messageSender->sendItemUse($self->{index}, !$target?$accountID:$target);
 	return 1;
 }
