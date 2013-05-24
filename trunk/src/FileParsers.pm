@@ -665,8 +665,9 @@ sub parsePortals {
 	my $file = shift;
 	my $r_hash = shift;
 	undef %{$r_hash};
-	open FILE, "<", $file;
-	while (my $line = <FILE>) {
+	my $reader = new Utils::TextReader($file);
+	while (!$reader->eof()) {
+		my $line = $reader->readLine();
 		next if $line =~ /^#/;
 		$line =~ s/\cM|\cJ//g;
 		$line =~ s/\s+/ /g;
