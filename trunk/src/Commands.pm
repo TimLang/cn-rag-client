@@ -127,6 +127,7 @@ sub initHandlers {
 	pm                 => \&cmdPrivateMessage,
 	pml                => \&cmdPMList,
 	portals            => \&cmdPortalList,
+	produce            => \&cmdProduce,
 	quit               => \&cmdQuit,
 	reload             => \&cmdReload,
 	relog              => \&cmdRelog,
@@ -3074,6 +3075,19 @@ sub cmdPrivateMessage {
 		sendMessage($messageSender, "pm", $msg, $user);
 	}
 }
+
+# Maple 制药
+sub cmdProduce {
+	if (!$net || $net->getState() != Network::IN_GAME) {
+		error TF("You must be logged in the game to use this command (%s)\n", shift);
+		return;
+	}
+	my ($cmd, $arg) = @_;
+	$messageSender->sendProduceMix($arg);
+	message TF("已发送制造药水 ID: %s .\n", $arg), "info";
+}
+# Maple 制药
+
 
 sub cmdQuit {
 	$messageSender->sendQuit();
