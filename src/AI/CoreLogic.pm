@@ -1677,6 +1677,29 @@ sub processLockMap {
 			|| ($config{'lockMap_y'} && ($char->{pos_to}{y} < $config{'lockMap_y'} - $config{'lockMap_randY'} || $char->{pos_to}{y} > $config{'lockMap_y'} + $config{'lockMap_randY'}))
 	)) {
 
+# GVG限制 Maple
+		if (!$config{'CNKoreTeam'} && 
+			($config{'lockMap'} eq 'gld_dun01_2'|| 
+			$config{'lockMap'} eq 'gld_dun02_2' || 
+			$config{'lockMap'} eq 'gld_dun03_2' || 
+			$config{'lockMap'} eq 'gld_dun04_2' || 
+			$config{'lockMap'} eq 'gld_dun01'   || 
+			$config{'lockMap'} eq 'gld_dun02'   || 
+			$config{'lockMap'} eq 'gld_dun03'   || 
+			$config{'lockMap'} eq 'gld_dun04'   || 
+			$config{'lockMap'} eq 'schg_dun01'  || 
+			$config{'lockMap'} eq 'arug_dun01'  || 
+			$config{'lockMap'} eq 'gld2_gef'    || 
+			$config{'lockMap'} eq 'gld2_pay'    || 
+			$config{'lockMap'} eq 'gld2_prt'    || 
+			$config{'lockMap'} eq 'gld2_ald'    ))
+		{
+			error TF("CNKore - %s 地图不在允许地图范围内. 自动修改锁定地图到普隆德拉\n", $config{'lockMap'});
+			$config{'lockMap'} = 'prontera';
+		}
+# GVG限制 Maple
+
+
 		unless ($maps_lut{$config{'lockMap'}.'.rsw'}) {
 			error TF("Invalid map specified for lockMap - map %s doesn't exist\n", $config{'lockMap'});
 			$config{'lockMap'} = '';
