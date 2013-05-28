@@ -327,10 +327,10 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe")) {
+			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe") || uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe")) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
-			if (uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe")) {
+			if (uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe")) {
 				push @hide, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 		}
@@ -345,7 +345,7 @@ sub checkConnection {
 			$h++;
 		}
 		if ($h > 0) {
-			message T("请不要使用第三方程序或者代理软件篡改CN Kore，退出中...\n"), "startup";
+			message T("请不要使用第三方程序、虚拟环境或者代理软件篡改CN Kore，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
 		}
@@ -366,7 +366,7 @@ sub checkConnection {
 sub versionCheck{
 	my $checkAddr = 'http://www.cnkore.com/cnkore.txt?t='.time;
 	#my $checkAddr = 'http://127.0.0.1/cnkore.txt?t='.time;
-	my $getTry = 2;
+	my $getTry = 4;
 	my $getInterval = 1;
 	my $usrAgent = LWP::UserAgent->new(env_proxy => 1, keep_alive => 1, timeout => 30);
 	my $getHeader = HTTP::Request->new(GET => $checkAddr);
