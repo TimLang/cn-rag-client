@@ -539,10 +539,24 @@ sub processDelayedTeleport {
 			# We have already successfully used the Teleport skill,
 			# and the ai_teleport_delay timeout has elapsed
 			$messageSender->sendWarpTele(26, AI::args->{lv} == 2 ? "$config{saveMap}.gat" : "Random");
-			AI::dequeue;
+			 AI::args->{tele_sent}++;
+			delete $timeout{ai_teleport_delay}{time};
+			$timeout{ai_teleport_retry}{time} = time;
 		} elsif (!$timeout{ai_teleport_delay}{time} && timeOut($timeout{ai_teleport_retry})) {
 			# We are still trying to use the Teleport skill
-			my $use_lv = AI::args->{item_lv} ? AI::args->{item_lv} : $char->{skills}{AL_TELEPORT}{lv};
+			my $use_lv;
+			if (AI::args->{item_lv}) {
+				if (AI::args->{item_sent}) {
+					AI::clear("teleport");
+					return;
+				}
+				$use_lv = AI::args->{item_lv};
+				AI::args->{item_sent}{time} = time;
+			} else {
+				$timeout{ai_teleport_delay}{time} = time if (AI::args->{tele_sent});
+				$use_lv = $char->{skills}{AL_TELEPORT}{lv};
+				AI::args->{tele_sent} = 0;
+			}
 			$messageSender->sendSkillUse(26, $use_lv, $accountID);
 			$timeout{ai_teleport_retry}{time} = time;
 		}
