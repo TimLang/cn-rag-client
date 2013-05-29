@@ -520,7 +520,7 @@ sub checkKey {
 			$_->add($MyKey);
 			$MyKey = uc($_->hexdigest);
 		keyModify('MYkey', "", 1);
-		Log::message(T("\n**** 使用KeyID 联系CN Kore官方人员可以免费得到本机授权码(一人一机一码)...\n\n"));
+		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机授权码(一人一机一码)...\n\n"));
 		Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
 		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CN Kore...\n"));
 		Log::message(T("**** CN Kore将在6秒后退出...\n"));
@@ -1031,7 +1031,57 @@ sub mainLoop_initialized {
 		$jobPercent = sprintf("%.2f", $char->{exp_job} / $char->{exp_job_max} * 100) if ($char->{exp_job_max});
 		$weight = int($char->{weight} / $char->{weight_max} * 100) . "%" if ($char->{weight_max});
 		$pos = " : $char->{pos_to}{x},$char->{pos_to}{y} " . $field->name if ($char->{pos_to} && $field);
-
+# GVG限制 Maple
+		if (!$config{'CNKoreTeam'} && 
+			($field->name eq 'arug_cas01' || 
+			$field->name eq 'arug_cas02'  || 
+			$field->name eq 'arug_cas03'  || 
+			$field->name eq 'arug_cas04'  || 
+			$field->name eq 'arug_cas05'  || 
+			$field->name eq 'schg_cas01'  || 
+			$field->name eq 'schg_cas02'  || 
+			$field->name eq 'schg_cas03'  || 
+			$field->name eq 'schg_cas04'  || 
+			$field->name eq 'schg_cas05'  || 
+			$field->name eq 'payg_cas05'  || 
+			$field->name eq 'payg_cas04'  || 
+			$field->name eq 'payg_cas03'  || 
+			$field->name eq 'payg_cas02'  || 
+			$field->name eq 'payg_cas01'  || 
+			$field->name eq 'aldeg_cas05' || 
+			$field->name eq 'aldeg_cas04' || 
+			$field->name eq 'aldeg_cas03' || 
+			$field->name eq 'aldeg_cas02' || 
+			$field->name eq 'aldeg_cas01' || 
+			$field->name eq 'gefg_cas05'  || 
+			$field->name eq 'gefg_cas04'  || 
+			$field->name eq 'gefg_cas03'  || 
+			$field->name eq 'gefg_cas02'  || 
+			$field->name eq 'gefg_cas01'  || 
+			$field->name eq 'prtg_cas05'  || 
+			$field->name eq 'prtg_cas04'  || 
+			$field->name eq 'prtg_cas03'  || 
+			$field->name eq 'prtg_cas02'  || 
+			$field->name eq 'prtg_cas01'  || 
+			$field->name eq 'gld_dun01_2' || 
+			$field->name eq 'gld_dun02_2' || 
+			$field->name eq 'gld_dun03_2' || 
+			$field->name eq 'gld_dun04_2' || 
+			$field->name eq 'gld_dun01'   || 
+			$field->name eq 'gld_dun02'   || 
+			$field->name eq 'gld_dun03'   || 
+			$field->name eq 'gld_dun04'   || 
+			$field->name eq 'schg_dun01'  || 
+			$field->name eq 'arug_dun01'  || 
+			$field->name eq 'gld2_gef'    || 
+			$field->name eq 'gld2_pay'    || 
+			$field->name eq 'gld2_prt'    || 
+			$field->name eq 'gld2_ald'    ))
+		{
+			error TF("CNKore - %s 地图不在允许地图范围内. 自动回城\n", $field->name);
+			main::useTeleport(2);
+		}
+# GVG限制 Maple
 		# Translation Comment: Interface Title with character status
 		$title = TF("%s B%s (%s), J%s (%s) : w%s%s - %s",
 			$charName, $char->{lv}, $basePercent . '%',
