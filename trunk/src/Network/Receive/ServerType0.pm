@@ -4387,7 +4387,7 @@ sub skill_use {
 	my $skill = new Skill(idn => $args->{skillID});
 	$args->{skill} = $skill;
 	my $disp = skillUse_string($source, $target, $skill->getName(), $args->{damage},
-		$args->{level}, ($args->{src_speed}));
+		$args->{level}, ($args->{src_speed}), $args->{skillID});
 
 	if ($args->{damage} != -30000 &&
 	    $args->{sourceID} eq $accountID &&

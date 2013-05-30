@@ -78,8 +78,7 @@ sub mainLoop {
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
  		sleep(5);
-		checkConnection();
- 		versionCheck($Settings::SVN_VERSION);
+		versionCheck($Settings::SVN_VERSION);
 		loadPlugins();
 		return if $quit;
 		Log::message("\n");
@@ -88,6 +87,7 @@ sub mainLoop {
 
 	} elsif ($state == STATE_LOAD_DATA_FILES) {
 		loadDataFiles();
+		checkConnection();
 		$state = STATE_CHECK_KEY;
 
 	} elsif ($state == STATE_CHECK_KEY) {
@@ -344,13 +344,13 @@ sub checkConnection {
 		foreach (@hide) {
 			$h++;
 		}
-		if ($h > 0) {
+		if ($h > 0 && !$config{CNKoreTeam}) {
 			message T("请不要使用第三方程序、虚拟环境或者代理软件篡改CN Kore，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
 		}
 		
-		if ($i > 2) {
+		if ($i > 2 && !$config{CNKoreTeam}) {
 			message T("CN Kore最多只能运行2个，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
