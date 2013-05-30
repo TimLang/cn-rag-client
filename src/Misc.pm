@@ -3239,14 +3239,14 @@ sub skillCast_string {
 }
 
 sub skillUse_string {
-	my ($source, $target, $skillName, $damage, $level, $delay) = @_;
+	my ($source, $target, $skillName, $damage, $level, $delay, $skillsID) = @_;
 	assert(UNIVERSAL::isa($source, 'Actor')) if DEBUG;
 	assert(UNIVERSAL::isa($target, 'Actor')) if DEBUG;
 
 	return sprintf("%s %s %s%s %s %s%s%s\n",
 		$source->nameString(),
 		$source->verb(T('use'), T('uses')),
-		$skillName,
+		$skillName . TF(" (ID: %s) ", $skillsID) ,
 		($level != 65535) ? ' ' . TF("(Lv: %s)", $level) : '',
 		T('on'),
 		$target->nameString($source),
