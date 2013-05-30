@@ -3226,16 +3226,26 @@ sub attack_string {
 }
 
 sub skillCast_string {
-	my ($source, $target, $x, $y, $skillName, $delay) = @_;
+	my ($source, $target, $x, $y, $skillName, $delay, $skillsID) = @_;
 	assert(UNIVERSAL::isa($source, 'Actor')) if DEBUG;
 	assert(UNIVERSAL::isa($target, 'Actor')) if DEBUG;
 	
-	return TF("%s %s %s on %s (Delay: %sms)\n",
+	if ($config{debug_skillsID}) {
+		return TF("%s %s %s 在 %s (Delay: %sms)\n",
+		$source->nameString(),
+		$source->verb(T('are casting'), T('is casting')),
+		$skillName . TF(" (ID %s) ", $skillsID) ,
+		($x != 0 || $y != 0) ? TF("location (%d, %d)", $x, $y) : $target->nameString($source),
+		$delay);
+	} else {
+		return TF("%s %s %s on %s (Delay: %sms)\n",
 		$source->nameString(),
 		$source->verb(T('are casting'), T('is casting')),
 		$skillName,
 		($x != 0 || $y != 0) ? TF("location (%d, %d)", $x, $y) : $target->nameString($source),
 		$delay);
+	}
+
 }
 
 sub skillUse_string {
@@ -3243,21 +3253,35 @@ sub skillUse_string {
 	assert(UNIVERSAL::isa($source, 'Actor')) if DEBUG;
 	assert(UNIVERSAL::isa($target, 'Actor')) if DEBUG;
 
-	return sprintf("%s %s %s%s %s %s%s%s\n",
+	if ($config{debug_skillsID}) {
+		return sprintf("%s %s %s%s %s %s%s%s\n",
 		$source->nameString(),
 		$source->verb(T('use'), T('uses')),
-		$skillName . TF(" (ID: %s) ", $skillsID) ,
+		$skillName . TF(" (ID %s) ", $skillsID) ,
 		($level != 65535) ? ' ' . TF("(Lv: %s)", $level) : '',
 		T('on'),
 		$target->nameString($source),
 		($damage != -30000) ? ' ' . TF("(Dmg: %s)", $damage || T('Miss')) : '',
 		($delay) ? ' ' . TF("(Delay: %sms)", $delay) : '');
+	} else {
+		return sprintf("%s %s %s%s %s %s%s%s\n",
+		$source->nameString(),
+		$source->verb(T('use'), T('uses')),
+		$skillName,
+		($level != 65535) ? ' ' . TF("(Lv: %s)", $level) : '',
+		T('on'),
+		$target->nameString($source),
+		($damage != -30000) ? ' ' . TF("(Dmg: %s)", $damage || T('Miss')) : '',
+		($delay) ? ' ' . TF("(Delay: %sms)", $delay) : '');
+	}
+
+
 }
 
 sub skillUseLocation_string {
 	my ($source, $skillName, $args) = @_;
 	assert(UNIVERSAL::isa($source, 'Actor')) if DEBUG;
-	
+
 	return sprintf("%s %s %s%s %s (%d, %d)\n",
 		$source->nameString(),
 		$source->verb(T('use'), T('uses')),
@@ -3270,17 +3294,27 @@ sub skillUseLocation_string {
 
 # TODO: maybe add other healing skill ID's?
 sub skillUseNoDamage_string {
-	my ($source, $target, $skillID, $skillName, $amount) = @_;
+	my ($source, $target, $skillID, $skillName, $amount, $skillsID) = @_;
 	assert(UNIVERSAL::isa($source, 'Actor')) if DEBUG;
 	assert(UNIVERSAL::isa($target, 'Actor')) if DEBUG;
 
-	return sprintf("%s %s %s %s %s%s\n",
+	if ($config{debug_skillsID}) {
+		return sprintf("%s %s %s %s %s%s\n",
+		$source->nameString(),
+		$source->verb(T('use'), T('uses')),
+		$skillName . TF(" (ID %s) ", $skillsID) ,
+		T('on'),
+		$target->nameString($source),
+		($skillID == 28) ? ' ' . TF("(Gained: %s hp)", $amount) : ($amount) ? ' ' . TF("(Lv: %s)", $amount) : '');
+	} else {
+		return sprintf("%s %s %s %s %s%s\n",
 		$source->nameString(),
 		$source->verb(T('use'), T('uses')),
 		$skillName,
 		T('on'),
 		$target->nameString($source),
 		($skillID == 28) ? ' ' . TF("(Gained: %s hp)", $amount) : ($amount) ? ' ' . TF("(Lv: %s)", $amount) : '');
+	}
 }
 
 sub status_string {
