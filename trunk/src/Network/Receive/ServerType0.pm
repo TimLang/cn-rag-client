@@ -4261,7 +4261,7 @@ sub skill_cast {
 	Misc::checkValidity("skill_cast part 2");
 
 	my $domain = ($sourceID eq $accountID) ? "selfSkill" : "skill";
-	my $disp = skillCast_string($source, $target, $x, $y, $skill->getName(), $wait);
+	my $disp = skillCast_string($source, $target, $x, $y, $skill->getName(), $wait, $skillID);
 	message $disp, $domain, 1;
 
 	Plugins::callHook('is_casting', {
@@ -4571,7 +4571,7 @@ sub skill_used_no_damage {
 
 	my $domain = ($args->{sourceID} eq $accountID) ? "selfSkill" : "skill";
 	my $skill = $args->{skill} = new Skill(idn => $args->{skillID});
-	my $disp = skillUseNoDamage_string($source, $target, $skill->getIDN(), $skill->getName(), $args->{amount});
+	my $disp = skillUseNoDamage_string($source, $target, $skill->getIDN(), $skill->getName(), $args->{amount}, $args->{skillID});
 	message $disp, $domain;
 
 	# Set teleport time

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenKore\n"
+"Project-Id-Version: CNKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-05-07 01:38+0800\n"
+"PO-Revision-Date: 2013-05-31 04:27+0800\n"
 "Last-Translator: Maple\n"
-"Language-Team: \n"
+"Language-Team: CNKore\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,6 +173,10 @@ msgstr "她自己"
 
 #: ../Actor/You.pm:82
 msgid "yourself"
+msgstr "你自己"
+
+#: ../Actor/You.pm:82
+msgid "自身"
 msgstr "你自己"
 
 #: ../Actor/You.pm:83
