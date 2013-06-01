@@ -139,7 +139,7 @@ sub serverConnect {
 			Timeout		=> 4);
 	($self->{remote_socket} && inet_aton($self->{remote_socket}->peerhost()) eq inet_aton($host)) ?
 		message T("connected\n"), "connection" :
-		error(TF("couldn't connect: %s (error code %d)\n", "$!", int($!)), "connection");
+		error(TF("couldn't connect: error code %d\n", int($!)), "connection");
 	if ($self->getState() != Network::NOT_CONNECTED) {
 		$incomingMessages->nextMessageMightBeAccountID();
 	}
@@ -208,13 +208,13 @@ sub serverDisconnect {
 	
 	if ($self->serverAlive) {
 		if ($incomingMessages && length(my $incoming = $incomingMessages->getBuffer)) {
-				warning TF("Incoming data left in the buffer:\n");
+				warning TF("收到不完整的封包:\n");
 				Misc::visualDump($incoming);
 				
 				if (defined(my $rplen = $incomingMessages->{rpackets}{my $switch = Network::MessageTokenizer::getMessageID($incoming)})) {
 					my $inlen = do { no encoding 'utf8'; use bytes; length $incoming };
 					if ($rplen > $inlen) {
-						warning TF("Only %d bytes in the buffer, when %s's packet length is supposed to be %d (wrong recvpackets?)\n", $inlen, $switch, $rplen);
+						warning TF("封包中只有 %d 字节, %s 的长度应该为 %d (用错了版本?)\n", $inlen, $switch, $rplen);
 					}
 				}
 		}
@@ -447,7 +447,7 @@ sub checkConnection {
 	} elsif ($self->getState() == Network::CONNECTED_TO_MASTER_SERVER) {
 		if(!$self->serverAlive() && ($config{'server'} ne "" || $masterServer->{charServer_ip}) && !$conState_tries) {
 			if ($config{pauseCharServer}) {
-				message "Pausing for $config{pauseCharServer} second(s)...\n", "system";
+				message "等待 $config{pauseCharServer} 秒...\n", "system";
 				sleep $config{pauseCharServer};
 			}
 			my $master = $masterServer;
@@ -521,7 +521,7 @@ sub checkConnection {
 	} elsif ($self->getState() == Network::CONNECTED_TO_CHAR_SERVER) {
 		if(!$self->serverAlive() && !$conState_tries) {
 			if ($config{pauseMapServer}) {
-				message "Pausing for $config{pauseMapServer} second(s)...\n", "system";
+				message "等待 $config{pauseMapServer} 秒...\n", "system";
 				sleep($config{pauseMapServer});
 			}
 			message T("Connecting to Map Server...\n"), "connection";
