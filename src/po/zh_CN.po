@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CNKore\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-19 01:59+0200\n"
-"PO-Revision-Date: 2013-05-31 04:27+0800\n"
+"PO-Revision-Date: 2013-06-02 04:18+0800\n"
 "Last-Translator: Maple\n"
 "Language-Team: CNKore\n"
 "MIME-Version: 1.0\n"
@@ -1527,7 +1527,7 @@ msgstr "选择登陆的服务器"
 #: ../Network/Receive/ServerType0.pm:613 ../Network/Receive/ServerType17.pm:95
 #, perl-format
 msgid "Forcing connect to char server %s: %s\n"
-msgstr "正在强迫联线至角色服务器 %s: %s\n"
+msgstr "正在强迫连接至角色服务器 %s: %s\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:696
 #: ../Network/Receive/ServerType0.pm:616 ../Network/Receive/ServerType17.pm:98
@@ -2054,7 +2054,7 @@ msgstr "严重错误: 你必须付费才能玩这个账号!\n"
 #: ../Network/Receive/kRO/Sakexe_0.pm:2633
 #: ../Network/Receive/ServerType0.pm:2495
 msgid "Error: The server still recognizes your last connection\n"
-msgstr "错误: 服务器中仍有你上一次的联线记录\n"
+msgstr "错误: 服务器中仍有你上一次的连接记录\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2635
 #: ../Network/Receive/ServerType0.pm:2497
@@ -2086,7 +2086,7 @@ msgid ""
 "Error: For an hour, more than 10 connections having same IP address, have "
 "made. Please check this matter.\n"
 msgstr ""
-"错误: 一小时内有超过 10 个拥有同一个 IP 地址的联线被建立，请检查这件事。\n"
+"错误: 一小时内有超过 10 个拥有同一个 IP 地址的连接被建立，请检查这件事。\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:2645
 #: ../Network/Receive/ServerType0.pm:2507
@@ -2577,7 +2577,7 @@ msgid ""
 "master_version: %s\n"
 "serverType: %s\n"
 msgstr ""
-"联线失败，某些登陆的设定有误:\n"
+"连接失败，某些登陆的设定有误:\n"
 "version: %s\n"
 "master_version: %s\n"
 "serverType: %s\n"
@@ -2938,7 +2938,7 @@ msgstr ""
 #: ../Network/Receive/kRO/Sakexe_0.pm:5155
 #: ../Network/Receive/ServerType0.pm:5043 ../Network/XKoreProxy.pm:488
 msgid "Closing connection to Character Server\n"
-msgstr "对角色服务器关闭联线\n"
+msgstr "对角色服务器关闭连接\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5169
 #: ../Network/Receive/ServerType0.pm:5057
@@ -2963,6 +2963,16 @@ msgstr "你成功地制造了药水 (ID %s)!\n"
 #, perl-format
 msgid "You failed to make a potion (ID %s)!\n"
 msgstr "你制造药水失败 (ID %s)!\n"
+
+#: ../Network/Receive/ServerType0.pm:6043
+#, fuzzy, perl-format
+msgid "%s successfully created a potion!\n"
+msgstr "%s 制造药水成功!\n"
+
+#: ../Network/Receive/ServerType0.pm:6045
+#, fuzzy, perl-format
+msgid "%s failed to create a potion!\n"
+msgstr "%s 制造药水失敗!\n"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:5177
 #: ../Network/Receive/ServerType0.pm:5065
@@ -3446,7 +3456,7 @@ msgstr "你输入的登入 PIN 码是不正确的.请重新输入你的登入 PI
 #: ../Network/Receive/ServerType0.pm:6455
 msgid ""
 "You have entered 3 incorrect login PIN codes in a row. Reconnecting...\n"
-msgstr "你已输入 3 次错误的登入 PIN 码.重新联线中\n"
+msgstr "你已输入 3 次错误的登入 PIN 码.重新连接中\n"
 
 #. Translation Comment: System/GM chat
 #: ../Network/Receive/kRO/Sakexe_0.pm:6654
@@ -4271,7 +4281,7 @@ msgstr "对方正在跟卡普拉存仓中.\n"
 #: ../Network/Receive/ServerType0.pm:3112
 #, perl-format
 msgid "%s use effect: %s\n"
-msgstr "%s 的使用效果: %s\n"
+msgstr "%s 使用效果: %s\n"
 
 #: ../Network/Receive/ServerType0.pm:4116
 msgid "You need to be at least base level 10 to send private messages.\n"
@@ -4365,16 +4375,16 @@ msgstr "Quest %s is now inactive.\n"
 #: ../Network/DirectConnection.pm:148
 #, perl-format
 msgid "Connecting (%s:%s)... "
-msgstr "联线中 (%s:%s) "
+msgstr "连接中 (%s:%s) "
 
 #: ../Network/DirectConnection.pm:156
 msgid "connected\n"
-msgstr "已联线\n"
+msgstr "已连接\n"
 
 #: ../Network/DirectConnection.pm:157
 #, perl-format
 msgid "couldn't connect: %s (error code %d)\n"
-msgstr "无法联线: %s (错误代码 %d)\n"
+msgstr "无法连接: %s (错误代码 %d)\n"
 
 #: ../Network/DirectConnection.pm:227
 #, perl-format
@@ -4391,7 +4401,7 @@ msgstr "无法断开连接\n"
 
 #: ../Network/DirectConnection.pm:317
 msgid "Connecting to Account Server...\n"
-msgstr "正在联线至账号服务器\n"
+msgstr "正在连接至账号服务器\n"
 
 #: ../Network/DirectConnection.pm:346
 msgid "Requesting permission to logon on account server...\n"
@@ -4411,7 +4421,7 @@ msgstr "账号服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:446
 msgid "Connecting to Character Server...\n"
-msgstr "正在联线至角色服务器\n"
+msgstr "正在连接至角色服务器\n"
 
 #: ../Network/DirectConnection.pm:455
 #, perl-format
@@ -4424,7 +4434,7 @@ msgstr "角色服务器连接超时，重新连接中\n"
 
 #: ../Network/DirectConnection.pm:506
 msgid "Connecting to Character Select Server...\n"
-msgstr "正在联线至角色选择服务器\n"
+msgstr "正在连接至角色选择服务器\n"
 
 #: ../Network/DirectConnection.pm:520
 msgid "Timeout on Character Select Server, reconnecting...\n"
@@ -4450,7 +4460,7 @@ msgstr "从地图服务器断开连接，结束中\n"
 #, perl-format
 msgid ""
 "Disconnected from Map Server, connecting to Account Server in %s seconds...\n"
-msgstr "从地图服务器断开连接 %s 秒后联线至账号服务器\n"
+msgstr "从地图服务器断开连接 %s 秒后连接至账号服务器\n"
 
 #: ../Network/DirectConnection.pm:581
 msgid "Timeout on Map Server, "
@@ -4463,7 +4473,7 @@ msgstr "正在退出...\n"
 #: ../Network/DirectConnection.pm:587
 #, perl-format
 msgid "connecting to Account Server in %s seconds...\n"
-msgstr "%s 秒后联线至账号服务器\n"
+msgstr "%s 秒后连接至账号服务器\n"
 
 #: ../Network/Receive.pm:83
 #, perl-format
@@ -4570,7 +4580,7 @@ msgstr "客户端已断开连接\n"
 #: ../Network/XKoreProxy.pm:322
 #, perl-format
 msgid "Waiting Ragnarok Client to connect on (%s:%s)\n"
-msgstr "正在等候 Ragnarok 客户端去联线在 (%s:%s)\n"
+msgstr "正在等候 Ragnarok 客户端去连接在 (%s:%s)\n"
 
 #: ../Network/XKoreProxy.pm:348
 #, perl-format
@@ -4600,7 +4610,7 @@ msgstr "登入授权 接收到两次! 请检查客户端.\n"
 
 #: ../Network/XKoreProxy.pm:559 ../functions.pl:406
 msgid "Please choose a master server to connect to."
-msgstr "请选择一个主服务器以联线."
+msgstr "请选择一个主服务器以连接."
 
 #: ../Network/XKoreProxy.pm:561 ../functions.pl:408
 msgid "Master servers"
@@ -8952,13 +8962,13 @@ msgstr "%s B%s (%s)，J%s (%s) : w%s%s - %s"
 #: ../functions.pl:865
 #, perl-format
 msgid "%sNot connected - %s"
-msgstr "%s尚未联线 - %s"
+msgstr "%s尚未连接 - %s"
 
 #. Translation Comment: Interface Title
 #: ../functions.pl:868
 #, perl-format
 msgid "%sConnecting - %s"
-msgstr "%s联线中 - %s"
+msgstr "%s连接中 - %s"
 
 #: ../functions.pl:1083
 msgid "Map loaded\n"
