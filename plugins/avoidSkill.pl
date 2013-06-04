@@ -1,10 +1,4 @@
-﻿# Updated by Snoopy
-# Updated by Windham Wong (DrKNa)
-# original code from Joseph
-# original code from MessyKoreXP
-# licensed under GPL
-
-package avoidSkill;
+﻿package avoidSkill;
 
 use strict;
 use Plugins;
@@ -39,7 +33,7 @@ sub on_reload {
 }
 
 sub avoidSkill {
-        return if (!$config{avoidSkill});
+        return if (!$config{autoAvoidSkill});
 
         my (undef, $args) = @_;
         my $hookName = shift;
@@ -50,7 +44,7 @@ sub avoidSkill {
         my $x = $args->{x};
         my $y = $args->{y};
         my $i = 0;
-        my $domain = ($config{"avoidSkill_domain"}) ? $config{"avoidSkill_domain"} : "info";
+        my $domain = ($config{"autoAvoidSkill_domain"}) ? $config{"autoAvoidSkill_domain"} : "info";
 
         my $skill = new Skill(idn => $skillID);
         my $skillName = $skill->getName();
