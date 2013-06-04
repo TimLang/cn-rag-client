@@ -1518,7 +1518,7 @@ showActorType 2
 #──────────────── 1 = 显示并加[]
 #──────────────── 2 = 隐藏
 
-squelchDomains attackedMiss, emotion, skill
+squelchDomains attackedMiss, emotion
 #──────────────── 设定想过滤的 [讯息域]，使其不显示在控制台上
 #──────────────── 参考资料：
 #──────────────── attackedMiss   被怪物攻击 MISS 讯息
@@ -1649,7 +1649,7 @@ commandPrefix ;
 #═══════ 远端遥控 ════════
 #╰═══════════════════╯
 
-adminPassword kihaicro
+adminPassword
 #──────────────── 授权密码，当对CN Kore密语输入此密码后，
 #──────────────── 即可取得CN Kore控制权，下 chat command 指令（远端遥控）。
 #──────────────── 说明：
