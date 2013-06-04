@@ -20,7 +20,7 @@ server
 username 
 #──────────────── 用户名(可不设置, 首次运行会让你填)
 password 
-#──────────────── 密码(可不设置, 首次运行会让你填)
+#──────────────── 密码(已加密,请通过程序的主窗口填写,此处填写明文会导致密码输错次数过多而封号)
 loginPinCode
 #──────────────── 登录PIN码
 char 
@@ -298,12 +298,14 @@ useSelf_item {
 #──────────────── SP多少％使用物品(sp <= 20%)
 }
 
-useSelf_item 集中药水 {
+useSelf_item 觉醒药水 {
 #──────────────── 自动使用加速物品名称 如:useSelf_item 集中药水 { 
-	whenStatusInactive 集中药水
+	whenStatusInactive 觉醒药水
 #──────────────── 在什么状态下不使用
 	timeout 10
 #──────────────── 使用时间间隔,以0.1为单位递增
+	inLockOnly 1
+#──────────────── 是否只在锁定地图使用
 }
 
 useSelf_item 绿色药草,绿色药水 {
@@ -316,7 +318,7 @@ useSelf_item 绿色药草,绿色药水 {
 
 useSelf_item 精灵箭矢筒 {
    inInventory 精灵箭矢 < 100
-#──────────────── (身上火箭矢少于100个自动使用火箭矢筒)
+#──────────────── (身上精灵箭矢少于100个自动使用精灵箭矢筒)
    timeout 10
 #──────────────── 使用检查时间间隔,以0.1为单位递增
 }
@@ -343,11 +345,11 @@ attackDistanceAuto 0
 #──────────────── 是否自动选择攻击距离，但打怪效率可能较差。 (0关闭,1开启)
 attackMaxRouteTime 2
 #──────────────── 计算攻击路径的最久时间(秒)
-attackMinPlayerDistance 2
+attackMinPlayerDistance 5
 #──────────────── 以怪物为中心多少格范围内有其它玩家时，放弃锁定(指尚未被攻击的怪物)
-attackMinPortalDistance 5
+attackMinPortalDistance 10
 #──────────────── 以怪物为中心多少格范围内有传点时，放弃锁定
-attackMaxRouteDistance 30
+attackMaxRouteDistance 40
 #──────────────── 攻击行走最大距离,狭窄、复杂地图可设定15~20;一般地图30;开阔的40;预设:100
 attackNoGiveup 0
 #──────────────── 从不放弃攻击目标(0关闭,1开启)
@@ -355,14 +357,14 @@ autoMakeArrows 0
 #──────────────── 是否自动制造箭矢 (要有此技能)
 autoSwitch_default_arrow 精灵箭矢
 #──────────────── 刷怪预设箭矢/子弹名称 (使用箭矢/子弹的职业必须填写否则可能不装备箭矢/子弹)
-dcOnZeny 5000
+dcOnZeny 1000
 #──────────────── 身上 Zeny 少于多少时自动断线结束程序, 设置0为关闭该功能
 dcOnDeath 0
 #──────────────── 角色死亡时的反应 -1 = 躺在原地等人救你 0 = 过一段时间后回城  1 = 直接断线结束程序
-portalRecord 1
+portalRecord 0
 #──────────────── 设定自动记录传点资讯的方法 0 = 关闭 1 = 自动记录 2 = 记录并猜测的反方向传送点
 missDamage 10
-#──────────────── 任何你伤害怪物的数值小于此设定值者将会视为 Miss
+#──────────────── 任何你输出伤害的数值小于此设定值者将会视为 Miss
 
 
 
@@ -419,7 +421,7 @@ autoMoveOnDeath_y
 #──────────────── 死亡回重生点后，自动移动至重生点地图的座标 Y
 autoMoveOnDeath_map
 #──────────────── 是否死亡回重生点后，自动移动至某地图？例如：移动至旅馆内，回血较快。
-route_escape_unknownMap 0
+route_escape_unknownMap 1
 #──────────────── 若处在不明地图，是否尝试脱困？
 route_escape_reachedNoPortal 0
 #──────────────── 是否不靠传送点脱困 ?
@@ -429,7 +431,7 @@ route_escape_shout
 #──────────────── 是否以公频说话来脱困（输入内容）
 route_randomWalk_maxRouteTime 100
 #──────────────── 随机走动到路径点的最大时间（秒）
-route_maxWarpFee 3000
+route_maxWarpFee
 #──────────────── 愿意付给 NPC 的最高传送费用 (Zeny)，留空白代表无上限
 #──────────────── 当 NPC 索取价格高于这个数目，会计算其它节省路径，例如用走路的
 
@@ -444,7 +446,7 @@ route_maxWarpFee 3000
 autoAvoidSkill 0
 #──────────────── 是否启动躲避技能功能  1为启动  0为关闭
 autoAvoidSkill_domain info
-#──────────────── 信息显示顏色，预设為 info (参照 control/consolecolors.txt)
+#──────────────── 信息显示顏色，预设 info (参照 control/consolecolors.txt)
 
 
 #╭═══════════════════╮
@@ -493,7 +495,7 @@ avoidSkill {
 
 itemsTakeAuto 2
 #──────────────── 0 - 不捡 1 - 打死攻击你的怪在捡 2 - 先拣再打
-itemsTakeAuto_party 0
+itemsTakeAuto_party 1
 #──────────────── 是否也捡取队友打死怪物后掉落的物品
 itemsMaxWeight 89
 #──────────────── 负重量到达此%数，便不再捡取物品 (超过 90% 无法攻击)
@@ -516,9 +518,9 @@ itemsTakeGreed 0
 #║                                                                        ║
 #╰════════════════════════════════════╯
 
-teleportAuto_search 0
+teleportAuto_search 1
 #──────────────── 是否开启瞬移找怪功能(必须要单独设置 mon_control.txt)
-teleportAuto_hp 10
+teleportAuto_hp 30
 #──────────────── HP 多少 % 百分比以下瞬移 
 teleportAuto_sp 0
 #──────────────── SP 多少 % 百分比以下瞬移 
@@ -530,9 +532,9 @@ teleportAuto_minAggressivesInLock 4
 #──────────────── 在锁定地图，被多少只以上的怪物围殴时瞬移
 teleportAuto_useSkill 0
 #──────────────── 瞬移方式 (0-使用翅膀瞬移 1- 使用技能瞬移)
-teleportAuto_maxDmg 1500
+teleportAuto_maxDmg 2500
 #──────────────── 被怪物打一下，损超过多少 HP 就飞走
-teleportAuto_maxDmgInLock 1500
+teleportAuto_maxDmgInLock 2500
 #──────────────── 在锁定地图，被怪物打一下，损超过多少 HP 就飞走
 teleportAuto_totalDmg 25000
 #──────────────── 被同一只怪物打，累积共损多少 HP 就飞走
@@ -544,7 +546,7 @@ teleportAuto_attackedWhenSitting 0
 #──────────────── 坐下休息时若被怪物攻击是否要飞走
 teleportAuto_atkCount
 #──────────────── 最多打怪多少下，超过次数不管怪有没有死都飞走
-teleportAuto_atkMiss 20
+teleportAuto_atkMiss 40
 #──────────────── 打怪 Miss 最多几下就飞走
 teleportAuto_lostTarget 0
 #──────────────── 是否失去攻击目标怪物时要瞬移？
@@ -552,7 +554,7 @@ teleportAuto_dropTarget 0
 #──────────────── 是否当放弃攻击目标怪物时要瞬移？
 teleportAuto_dropTargetKS 0
 #──────────────── 是否为了防止抢到他人的怪而放弃该怪飞走？
-teleportAuto_lostHomunculus
+teleportAuto_lostHomunculus 1
 #──────────────── 是否失去人工生命体时要瞬移？
 teleportAuto_onlyWhenSafe 0
 #──────────────── 是否只在没人看见时瞬移？
@@ -561,7 +563,7 @@ teleportAuto_allPlayers 0
 teleportAuto_unstuck 0
 #──────────────── 是否以瞬移尝试解决走路呆住问题？
 teleportAuto_idle 1
-#──────────────── 是否发呆时要瞬移？
+#──────────────── 是否发呆时要瞬移？(瞬移寻怪此处必须设置1,且随机行走必须设置0)
 teleportAuto_equip_leftAccessory
 #──────────────── 指定瞬移时左边装饰品的装备名称(全名)
 teleportAuto_equip_rightAccessory
@@ -578,14 +580,14 @@ teleportAuto_useItemForRespawn 1
 #║                                                                        ║
 #╰════════════════════════════════════╯
 
-partyAuto 1
+partyAuto 2
 #──────────────── 当有人邀你组队时要如何处理 0 = 不处理、1 = 自动拒绝、2 = 自动接受
 partyAutoShare 1
-#──────────────── 组队时经验值是否均分 (队长才有作用)
+#──────────────── 组队时经验值是否均分(达不到分经验要求会发错误封包) (队长才有作用)
 partyAutoShareItem 0
 #──────────────── 组队时的掉落是否共有拾取权 (队长才有作用)
 partyAutoShareItemDiv 0
-#──────────────── 组队时的掉落是否平均分配 (队长才有作用)
+#──────────────── 组队时的掉落是否平均分配(必须开启掉落共有) (队长才有作用)
 
 #╭═══════════════════╮
 #══════  组队跟随相关设置 ═════
@@ -852,6 +854,7 @@ partySkill {
 #╭════════════════════════════════════╮
 #║                                                                        ║
 #━━━━━━━━━━━━━━━ 贤者自动念咒 ━━━━━━━━━━━━━━━
+#━━━━━━━━━━━━━━━ 逐影自动影咒 ━━━━━━━━━━━━━━━
 #║                                                                        ║
 #╰════════════════════════════════════╯
 #──────────────── 假如你有贤者自动念咒技能的话，可使用这个选项来让他自动地施放的技能。
@@ -860,6 +863,7 @@ partySkill {
 autoSpell
 #──────────────── 自动念咒 <技能名称>
 #──────────────── 例如: autoSpell 冰箭术
+#──────────────── 逐影的自动影咒也是在这里设置
 
 
 #╭═══════════════════╮
@@ -1082,7 +1086,7 @@ attackEquip_rightAccessory
 #	inInventory
 #──────────────── 物品栏有此物品时更换装备
 #	manualAI
-#──────────────── 是否在AI为手动时才使用 (0=关、1=开
+#──────────────── 是否在AI为手动时才使用 (0=关、1=开)
 #	}
 
 
@@ -1101,31 +1105,31 @@ homunculus_attackAuto 2
 #──────────────── 攻击模式。0=不攻击、1=主动攻击、2=跟着主人攻击                                
 homunculus_attackAuto_party 1
 #──────────────── 生命体是否攻击队友的怪
-homunculus_attackAuto_notInTown 1
+homunculus_attackAuto_notInTown 0
 #──────────────── 生命体是否不在城镇中自动攻击
 homunculus_attackAuto_onlyWhenSafe 0
 #──────────────── 生命体只在没人看到的时候攻击
-homunculus_attackDistance
+homunculus_attackDistance 1.5
 #──────────────── 生命体最小攻击距离
-homunculus_attackMaxDistance
+homunculus_attackMaxDistance 2.5
 #──────────────── 生命体最大攻击距离
-homunculus_attackMaxRouteTime
+homunculus_attackMaxRouteTime 3
 #──────────────── 生命体离开主人去攻击的最大时间
 homunculus_attackCanSnipe 0
 #──────────────── 生命体攻击时是否允许跨墙或高低差打怪
-homunculus_attackCheckLOS 1
+homunculus_attackCheckLOS 0
 #──────────────── 生命体攻击时是否先侦测与魔物之间有无障碍物自动闪避
 homunculus_attackNoGiveup 1
 #──────────────── 生命体攻击时是否永不放弃模式
-homunculus_attackChangeTarget 2
+homunculus_attackChangeTarget 1
 #──────────────── 生命体攻击时是否会转移目标 (0=不转移、1=会转移、2=若出现LOS情况，寻找更佳目标)
-homunculus_followDistanceMin
-#──────────────── 生命体跟随最远距离
-homunculus_followDistanceMax
+homunculus_followDistanceMin 4
 #──────────────── 生命体跟随最短距离
-homunculus_route_step
+homunculus_followDistanceMax 100
+#──────────────── 生命体跟随最长距离
+homunculus_route_step 155
 #──────────────── 生命体每次计算移动路径的最大距离
-homunculus_tankMode
+homunculus_tankMode 0
 #──────────────── 生命体肉盾模式，0 = 关闭、1 = 开启
 homunculus_tankModeTarget
 #──────────────── 生命体肉盾目标 (玩家名字)
@@ -1137,23 +1141,23 @@ homunculus_tankModeTarget
 #──────────────── 以下为瞬移条件设定（台服免费服不行）。
 #──────────────── 瞬移的是炼金/创造主人，生命体会跟着瞬移。
 
-homunculus_teleportAuto_hp
+homunculus_teleportAuto_hp 20
 #──────────────── 生命体 HP 多少 % 百分比以下瞬移 
-homunculus_teleportAuto_maxDmg
+homunculus_teleportAuto_maxDmg 2500
 #──────────────── 生命体被怪物打一下，伤害超过多少 HP 就飞走
-homunculus_teleportAuto_maxDmgInLock
+homunculus_teleportAuto_maxDmgInLock 2500
 #──────────────── 生命体在锁定地图，被怪物打一下，伤害超过多少 HP 就飞走
-homunculus_teleportAuto_deadly
+homunculus_teleportAuto_deadly 0
 #──────────────── 生命体再被攻击一次会死亡的话就飞走
-homunculus_teleportAuto_unstuck
+homunculus_teleportAuto_unstuck 0
 #──────────────── 生命体是否以瞬移尝试解决走路呆住问题？
-homunculus_teleportAuto_dropTarget
+homunculus_teleportAuto_dropTarget 0
 #──────────────── 生命体是否当放弃攻击目标魔物时要瞬移
-homunculus_teleportAuto_dropTargetKS
+homunculus_teleportAuto_dropTargetKS 0
 #──────────────── 生命体是否为了防止抢到他人的怪而放弃该怪飞走？
-homunculus_teleportAuto_totalDmg
+homunculus_teleportAuto_totalDmg 25000
 #──────────────── 生命体被同一只怪物打，累积共损多少 HP 就飞走
-homunculus_teleportAuto_totalDmgInLock
+homunculus_teleportAuto_totalDmgInLock 25000
 #──────────────── 生命体在锁定地图，被同一只怪物打，累积共损多少 HP 就飞走 
 
 
@@ -1161,13 +1165,13 @@ homunculus_teleportAuto_totalDmgInLock
 #════════ 生命体 - 喂食 ═══════
 #╰═════════════════════╯
 
-homunculus_autoFeed
+homunculus_autoFeed 1
 #──────────────── 生命体是否自动喂食 0 = 关闭、1 = 开启
 homunculus_autoFeedAllowedMaps
 #──────────────── 哪张地图将喂食生命体（空白表示全部地图）
-homunculus_hungerMin
+homunculus_hungerMin 17
 #──────────────── 饱腹度低于此值开始喂食
-homunculus_hungerMax
+homunculus_hungerMax 23
 #──────────────── 饱腹度高于此值停止喂食
 homunculus_intimacyMin
 #──────────────── 亲密度低于此值才喂食
@@ -1186,9 +1190,9 @@ homunculus_hungerTimeoutMax
 #╰═════════════════════╯
 pet_autoFeed 1
 #──────────────── 宠物是否自动喂食 0 = 关闭、1 = 开启
-pet_hunger 25
+pet_hunger 12
 #──────────────── 在宠物饥饿值为多少时喂食宠物
-pet_return 20
+pet_return 9
 #──────────────── 当宠物饥饿值为多少时收回宠物
 
 
