@@ -304,12 +304,13 @@ sub loadDataFiles {
 
 	if ($config{'adminPassword'} eq 'x' x 10) {
 		Log::message(T("\nAuto-generating Admin Password due to default...\n"));
-		configModify("adminPassword", vocalString(10));
-	} elsif ($config{'secureAdminPassword'} eq '1') {
-		# This is where we induldge the paranoid and let them have session generated admin passwords
+		configModify("adminPassword", vocalString(20));
+	} else {
 		Log::message(T("\nGenerating session Admin Password...\n"));
-		configModify("adminPassword", vocalString(10));
-		Log::message(T("本次自动生成的adminPassword是:" . $config{'adminPassword'} ."\n"));
+		configModify("adminPassword", vocalString(20));
+		Log::message(T("本次运行生成的adminPassword是:" . $config{'adminPassword'} ."\n"));
+		Log::message(T("CNKore将在每次运行时随机生成20位远程密语控制密码\n"));
+	}
 	}
 }
 
