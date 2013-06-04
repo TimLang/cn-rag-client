@@ -1701,6 +1701,7 @@ wx_map_route 1
 #╰════════════════════════════════════╯
 
 debug 0
+debug_skillsID
 debugPacket_unparsed 0
 debugPacket_received 0
 debugPacket_ro_sent 0

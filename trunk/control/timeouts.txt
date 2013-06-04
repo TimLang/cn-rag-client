@@ -13,7 +13,7 @@ maplogin 60
 play 40
 reconnect 10
 #-------------------------AI控制设定-----------------------------------
-ai 4
+ai 2
 # 过地图启始 AI 等待时间
 # 加载地图数据后，等待几秒才开始其它 AI 动作，
 # 此设定和瞬移速度比较有关联，
@@ -198,10 +198,10 @@ ai_teleport_away 1
 # 每次「瞬移逃离怪物」的间隔时间
 # 瞬移逃离是指在 mon_control.txt 中，<瞬移模式> 设定为 2 的怪物。
 
-ai_teleport_idle 5
+ai_teleport_idle 6
 # 闲置时瞬移的间隔时间
 
-ai_teleport_search 7
+ai_teleport_search 5
 # 瞬移寻怪的间隔时间
 
 ai_teleport_portal 2
@@ -216,7 +216,7 @@ ai_teleport_safe_force 120
 # 只要超过这个时间，就算旁边有玩家也会强制瞬移。
 # 如没有设安全状态才瞬移，则此值可忽略。
 
-ai_teleport_retry 3
+ai_teleport_retry 1.5
 # 瞬移失败，下次再瞬移的间隔时间
 
 ai_teleport_delay 1.5
@@ -317,4 +317,4 @@ patchserver 120
 # (不明)
 
 #macro
-macro_delay 2
+macro_delay 1
