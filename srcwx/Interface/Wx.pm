@@ -1,31 +1,5 @@
-#########################################################################
-#  OpenKore - WxWidgets Interface
-#  You need:
-#  * WxPerl (the Perl bindings for WxWidgets) - http://wxperl.sourceforge.net/
-#
-#  More information about WxWidgets here: http://www.wxwidgets.org/
-#
-#  Copyright (c) 2004,2005,2006,2007 OpenKore development team
-#
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#
-#  $Revision: 8130 $
-#  $Id: Wx.pm 8130 2012-08-28 22:55:46Z keplerbr $
-#
-#########################################################################
+
 package Interface::Wx;
-
-# Note: don't use wxTimer for anything important. It's known to cause reentrancy issues!
-
-# Note: some wx constants are defined by Wx::Event only if corresponding events are imported
 
 BEGIN {
 	require Wx::Perl::Packager if ($^O eq 'MSWin32');
@@ -473,7 +447,7 @@ sub createMenuBar {
 		$viewMenu, T('Chat &Log'), \&onChatLogToggle, T('Show or hide the chat log.')
 	);
 	$self->addMenu ($viewMenu, T('Status') . "\tAlt+A", sub { $self->openStats (1) });
-	$self->addMenu ($viewMenu, T('Homunculus') . "\tCtrl+R", sub { $self->openHomunculus (1) });
+	$self->addMenu ($viewMenu, T('生命体') . "\tCtrl+R", sub { $self->openHomunculus (1) });
 	$self->addMenu ($viewMenu, T('Mercenary') . "\tAlt+M", sub { $self->openMercenary (1) });
 	$self->addMenu ($viewMenu, T('Pet') . "\tAlt+J", sub { $self->openPet (1) });
 	
@@ -495,7 +469,7 @@ sub createMenuBar {
 	
 	$viewMenu->AppendSeparator;
 	
-	$self->addMenu ($viewMenu, T('&Font...'), \&onFontChange, T('Change console font'));
+	# $self->addMenu ($viewMenu, T('&Font...'), \&onFontChange, T('Change console font'));
 	$self->addMenu($viewMenu, T('Clear Console'), sub {my $self = shift; $self->{console}->Remove(0, 40000)}, T('Clear content of console'));
 	
 	$menu->Append($viewMenu, T('&View'));
@@ -506,7 +480,7 @@ sub createMenuBar {
 	# Settings menu
 	my $settingsMenu = new Wx::Menu;
 	$self->createSettingsMenu($settingsMenu) if ($self->can('createSettingsMenu'));
-	$self->addMenu($settingsMenu, T('&Advanced...'), \&onAdvancedConfig, T('Edit advanced configuration options.'));
+	# $self->addMenu($settingsMenu, T('&Advanced...'), \&onAdvancedConfig, T('Edit advanced configuration options.'));
 	$menu->Append($settingsMenu, T('&Settings'));
 	$self->createSettingsMenu2($settingsMenu) if ($self->can('createSettingsMenu2'));
 	
