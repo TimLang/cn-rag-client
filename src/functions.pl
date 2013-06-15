@@ -311,7 +311,6 @@ sub loadDataFiles {
 		Log::message(T("本次运行生成的adminPassword是:" . $config{'adminPassword'} ."\n"));
 		Log::message(T("CNKore将在每次运行时随机生成20位远程密语控制密码\n"));
 	}
-	}
 }
 
 sub checkConnection {
