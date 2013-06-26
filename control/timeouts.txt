@@ -301,6 +301,11 @@ ai_shop_useskill_delay 5
 # 每次开店时, 使用开店技能的间隔时间
 # 建议使用默认5秒设置
 
+ai_npcRepairAuto 2
+# 每次修理的间隔
+ai_npcRepairAuto_giveup 15
+# 修理超时时间
+
 #-----------------------其他设置----------------------
 injectSync 5
 # 当使用 xkore 内挂模式时，

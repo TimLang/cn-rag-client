@@ -107,14 +107,17 @@ sub iterate {
 	processAutoMakeArrow();
 
 	Misc::checkValidity("AI part 2");
-	processAutoStorage();
-	Misc::checkValidity("AI (autostorage)");
 	processAutoSell();
 	Misc::checkValidity("AI (autosell)");
 	processAutoBuy();
 	Misc::checkValidity("AI (autobuy)");
+	processAutoStorage();
+	Misc::checkValidity("AI (autostorage)");
 	processAutoCart();
 	Misc::checkValidity("AI (autocart)");
+	# Maple 自动修理
+	processAutoRepair();
+	Misc::checkValidity("AI (autorepair)");
 
 	processLockMap();
 	processRandomWalk();
@@ -1680,6 +1683,142 @@ sub processAutoCart {
 		}
 		$AI::Timeouts::autoCart = time;
 	}
+}
+
+##### NPC AUTO REPAIR #####
+sub processAutoRepair {
+        # Maple 自动修理
+        if (AI::is("", "route", "sitAuto", "follow", "attack")
+          && $config{npcRepairAuto} && $config{npcRepairAuto_npc} ne ""
+          && !$ai_v{sitAuto_forcedBySitCommand}
+          && !AI::inQueue("npcRepairAuto") && time > $ai_v{'inventory_time'}) {
+                my $brokenEqup = checkBrokenEquipment();
+                return unless($brokenEqup);
+                # Initiate autorepair when the weight limit has been reached
+                my $routeIndex = AI::findAction("route");
+                my $attackOnRoute = 2;
+                $attackOnRoute = AI::args($routeIndex)->{attackOnRoute} if (defined $routeIndex);
+                # Only autorepair when we're on an route, or not moving
+                if ($attackOnRoute > 1) {
+                        message TF("Auto-repairing due to broken equipment: %s\n", $brokenEqup);
+                        AI::queue("npcRepairAuto");
+                }
+
+                $timeout{'ai_npcRepairAuto'}{'time'} = time;
+        }
+
+        if (AI::action eq "npcRepairAuto" && AI::args->{done}) {
+                # npcRepairAuto finished
+                AI::dequeue;
+
+                if ($config{storageAuto_AfterRepair} && $config{storageAuto}) {
+                        AI::queue("storageAuto", {forcedByRepair => 1});
+                }
+
+        } elsif (AI::action eq "npcRepairAuto" && timeOut($timeout{'ai_npcRepairAuto'})) {
+                # Main autorepair block
+                my $args = AI::args;
+
+                my $do_route;
+
+                # Stop if the specified NPC is invalid
+                $args->{npc} = {};
+                getNPCInfo($config{'npcRepairAuto_npc'}, $args->{npc});
+                if (!defined($args->{npc}{ok})) {
+                        $args->{done} = 1;
+                        return;
+                }
+                if (!AI::args->{distance}) {
+                        # Calculate variable or fixed (old) distance
+                        if ($config{'npcRepairAuto_minDistance'} && $config{'npcRepairAuto_maxDistance'}) {
+                                AI::args->{distance} = $config{'npcRepairAuto_minDistance'} + round(rand($config{'npcRepairAuto_maxDistance'} - $config{'npcRepairAuto_minDistance'}));
+                        } else {
+                                AI::args->{distance} = $config{'npcRepairAuto_distance'} ? $config{'npcRepairAuto_distance'} : 5;
+                        }
+                }
+                
+                # Determine whether we have to move to the NPC
+                if ($field->baseName ne $args->{npc}{map}) {
+                        $do_route = 1;
+                } else {
+                        my $distance_from_char = distance($args->{npc}{pos}, $char->{pos_to});
+                        if (($distance_from_char > AI::args->{distance}) && !defined($args->{sentRepair})) {
+                                $do_route = 1;
+                        }
+                }
+
+                if ($do_route) {
+                        if ($args->{warpedToSave} && !$args->{mapChanged} && !timeOut($args->{warpStart}, 8)) {
+                                undef $args->{warpedToSave};
+                        }
+
+                        # If warpToBuyOrSell is set, warp to saveMap if we haven't done so
+                        if ($config{'saveMap'} ne "" && $config{'saveMap_warpToBuyOrSell'} && !$args->{warpedToSave}
+                            && !$field->isCity && $config{'saveMap'} ne $field->baseName) {
+                                $args->{warpedToSave} = 1;
+                                # If we still haven't warped after a certain amount of time, fallback to walking
+                                $args->{warpStart} = time unless $args->{warpStart};
+                                message T("Teleporting to auto-repair\n"), "teleport";
+                                useTeleport(2);
+                                $timeout{'ai_npcRepairAuto'}{'time'} = time;
+                        } else {
+                                # warpToBuyOrSell is not set, or we've already warped, or timed out. Walk to the NPC
+                                message TF("Calculating auto-repair route to: %s(%s): %s, %s\n", $maps_lut{$args->{npc}{map}.'.rsw'}, $args->{npc}{map}, $args->{npc}{pos}{x}, $args->{npc}{pos}{y}), "route";
+                                ai_route($args->{npc}{map}, $args->{npc}{pos}{x}, $args->{npc}{pos}{y},
+                                         attackOnRoute => 1,
+                                         distFromGoal => AI::args->{distance});
+                        }
+                }
+
+                if (!$do_route) {
+                        # Talk to NPC if we haven't done so
+                        if (!defined($args->{sentRepair})) {
+                                if ($config{'npcRepairAuto_npc_type'} eq "" || $config{'npcRepairAuto_npc_type'} eq "1") {
+                                        warning T("Warning npcRepairAuto has changed. Please read News.txt\n") if ($config{'npcRepairAuto_npc_type'} eq "");
+                                        $config{'npcRepairAuto_npc_steps'} = "c r0 c r0 c n";
+                                        debug "Using standard iRO npc repair steps.\n", "npc";
+                                } elsif ($config{'npcRepairAuto_npc_type'} eq "2") {
+                                        $config{'npcRepairAuto_npc_steps'} = "c r0 c r0 c n";
+                                        debug "Using iRO comodo (location) npc repair steps.\n", "npc";
+                                } elsif ($config{'npcRepairAuto_npc_type'} eq "3") {
+                                        message T("Using repair steps defined in config.\n"), "info";
+                                        $config{'npcRepairAuto_npc_steps'} = "c r0 c r0 c n" unless($config{'npcRepairAuto_npc_steps'});
+                                } elsif ($config{'npcRepairAuto_npc_type'} ne "" && $config{'npcRepairAuto_npc_type'} ne "1" && $config{'npcRepairAuto_npc_type'} ne "2" && $config{'npcRepairAuto_npc_type'} ne "3") {
+                                        error T("Something is wrong with npcRepairAuto_npc_type in your config.\n");
+                                }
+
+                                ai_talkNPC($args->{npc}{pos}{x}, $args->{npc}{pos}{y}, $config{'npcRepairAuto_npc_steps'});
+
+                                $args->{sentRepair} = 1;
+
+                                # NPC talk retry
+                                $AI::Timeouts::repairStarting = time;
+                                $timeout{'ai_npcRepairAuto'}{'time'} = time;
+                                $timeout{'ai_npcRepairAuto_giveup'}{'time'} = time;
+                                return;
+                        }
+
+                        if (defined($args->{sentRepair}) && $args->{sentRepair}) {
+                                # NPC talk retry
+                                if (timeOut($AI::Timeouts::repairStarting, 10)) {
+                                        undef $args->{sentRepair};
+                                        debug "Retry talking to autorepair NPC.\n", "npc";
+
+                                        # Repair not yet start; stop and wait until it's ok
+                                        return;
+                                }
+                        }
+
+                        $args->{done} = 1 unless checkBrokenEquipment();
+
+                        if ($args->{done}) {
+                                my %hookArgs;
+                                Plugins::callHook("AI_repair_done", \%hookArgs);
+                                undef $args->{done} if ($hookArgs{return});
+                        }
+                        $args->{done} = 1 if (timeOut($timeout{'ai_npcRepairAuto_giveup'}));
+                }
+        }
 }
 
 ##### LOCKMAP #####

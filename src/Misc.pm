@@ -195,6 +195,7 @@ our @EXPORT = (
 	checkSelfCondition
 	checkPlayerCondition
 	checkMonsterCondition
+	checkBrokenEquipment
 	findCartItemInit
 	findCartItem
 	makeShop
@@ -4121,6 +4122,19 @@ sub checkMonsterCondition {
 	Plugins::callHook('checkMonsterCondition', \%args);
 	return $args{return};
 }
+
+# Maple损坏装备维修
+sub checkBrokenEquipment {
+        if ($config{minRepairZeny}) {
+                return if ($char->{zeny} < $config{minRepairZeny});
+        }
+        foreach my $item (@{$char->inventory->getItems()}) {
+                next unless ($item->equippable);
+                return $item->{name} if ($item->{broken});
+        }
+        return;
+}
+
 
 ##
 # findCartItemInit()
