@@ -1,4 +1,4 @@
-﻿#CnKore 更新时间 2013.6.5
+﻿#CnKore 更新时间 2013.7.3
 #本文本控制CnKore中各项AI动作时间设定，默认值即是符合多数情况的最佳化设定，无须更改，乱改有可能会造成外挂无法正常执行。
 #
 # 所有项目的单位皆是「秒」，允许小数点后两位。小数点前面的 0 可以省略，例如 0.3 ，可简写为 .3
@@ -13,7 +13,7 @@ maplogin 60
 play 40
 reconnect 10
 #-------------------------AI控制设定-----------------------------------
-ai 2
+ai 3
 # 过地图启始 AI 等待时间
 # 加载地图数据后，等待几秒才开始其它 AI 动作，
 # 此设定和瞬移速度比较有关联，
@@ -66,7 +66,7 @@ ai_attack_unfail 60
 # 直到超过这个时间前，都不会再去锁定同一只。
 
 
-ai_items_take_delay 1.5
+ai_items_take_delay 3
 
 ai_items_take_start 0.5
 # 捡取战利品延迟时间
@@ -219,7 +219,7 @@ ai_teleport_safe_force 120
 ai_teleport_retry 1.5
 # 瞬移失败，下次再瞬移的间隔时间
 
-ai_teleport_delay 1.5
+ai_teleport_delay 1
 # 每次「使用技能」瞬移的间隔时间
 
 ai_route_calcRoute 1
