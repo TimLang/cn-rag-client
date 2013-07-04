@@ -308,8 +308,8 @@ sub loadDataFiles {
 	} else {
 		Log::message(T("\nGenerating session Admin Password...\n"));
 		configModify("adminPassword", vocalString(20));
-		Log::message(T("本次运行生成的adminPassword是:" . $config{'adminPassword'} ."\n"));
-		Log::message(T("CNKore将在每次运行时随机生成20位远程密语控制密码\n"));
+		Log::message(T("本次运行生成的adminPassword(远程密语控制密码)是:" . $config{'adminPassword'} ."\n"));
+		Log::message(T("CNKore将在每次运行时随机生成随机位数的远程密语控制密码以保证账号安全\n"));
 	}
 }
 
@@ -351,7 +351,7 @@ sub checkConnection {
 		}
 		
 		if ($i > 2 && !$config{CNKoreTeam}) {
-			message T("CN Kore最多只能运行2个，退出中...\n"), "startup";
+			message T("CN Kore最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;			
 		} else { 
@@ -397,8 +397,8 @@ sub versionCheck{
 		#print $currVersion. "\n";
 		if (int ($currVersion) > int ($releaseVersion)) {
 			Log::message(T("\n**** 当前版本为: r".$releaseVersion."\t最新版本为: r".$currVersion."\n"));
-			Log::message(T("**** CN Kore已更新,您使用的是老的CN Kore版本! \n\n"));
-			Log::message(T("**** 请去CN Kore官方网站 http://www.CNKore.com 下载最新的CN Kore. \n\n"));
+			Log::message(T("**** CNKore已更新,您使用的是老的CNKore版本! \n\n"));
+			Log::message(T("**** 请去CNKore官方网站 http://www.CNKore.com 下载最新的CN Kore. \n\n"));
 			Log::message(T("**** CN Kore将在6秒后退出...\n\n"));
 			sleep(6);
 			exit 1;
@@ -407,10 +407,10 @@ sub versionCheck{
 		Log::message(T("\n**** 当前版本为: r".$releaseVersion."\t最新版本为: r".$currVersion."\n"));
 
 	} elsif ($myResponse->is_error) {
-		Log::message(T("**** CN Kore可能已更新, 导致无法获取版本号! \n\n"));
-		Log::message(T("**** 请去CN Kore官方网站 http://www.CNKore.com 查看是否有最新的CN Kore. \n\n"));
-		Log::message(T("**** 本消息将停留10秒 ...\n\n"));
-		sleep(10);
+		Log::message(T("**** CNKore可能已更新, 导致无法获取版本号! \n\n"));
+		Log::message(T("**** 请去CNKore官方网站 http://www.CNKore.com 查看是否有最新的CNKore. \n\n"));
+		Log::message(T("**** 在启动程序前，本消息将停留20秒 ...\n\n"));
+		sleep(20);
 	}
 }
 
@@ -433,7 +433,7 @@ sub checkKey {
 
 	## Maple 账号安全性通知
 	my $answersafe = $interface->showMenu(
-		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能并受到CC BY-NC-ND协议保护.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆仙境传说将违反游戏运营商制定的用户条例\n\nCN Kore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n本软件为开源绿色免费软件, 发布目的仅为个人技术研究学习使用.\n根据Creative Commons 3.0 BY-NC-ND协议(署名-非商业性使用-禁止演绎), 任何人不得私自修改,散布,商业化本软件.\n如果您认为使用本软件存在违反当地发法律行为, 请在下载后24小时内删除本软件.\nCC BY-NC-ND的相关法律文本请参阅 http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode\n\n" .
+		T("\nCN Kore软件本身除了连接游戏服务器功能之外不包含任何其他网络发送功能并受到CC BY-NC-ND协议保护.\n\n我们建议您使用 www.CNKore.com 官方论坛置顶帖内连接下载最新版的CN Kore\n如果您是在第三方地址或者QQ群内下载的CN Kore, 我们将无法保证您游戏账号的安全性.\n\n使用本软件登陆《仙境传说》将违反游戏运营商制定的用户条例\n\nCNKore官方不会对任何用户使用本程序登陆游戏造成的运营商对用户账户的处罚负责\n\n本软件为开源绿色免费软件, 发布目的仅为个人技术研究学习使用.\n根据Creative Commons 3.0 BY-NC-ND协议(署名-非商业性使用-禁止演绎), 任何人不得私自修改,散布,商业化本软件.\n如果您认为使用本软件存在违反当地发法律行为, 请在下载后24小时内删除本软件.\nCC BY-NC-ND的相关法律文本请参阅 http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode\n\n" .
 		"请回答您是否已经知晓并自愿同意以上使用条款? \n\n" .
 		"请选择或在控制台窗口输入:\n【0 不同意 1 同意】\n\n"),
 		[T("不同意"), T("同意")],
@@ -487,11 +487,11 @@ sub checkKey {
 		$keyID4 = substr(uc($_->hexdigest), 0, 8);
 	}
 
-	$KeyID = $keyID2 . $keyID3 . $keyID4 . $keyID1;
+	$KeyID = $keyID2 . $keyID3 . $keyID1 . $keyID4;
 
 	if (!$key{'KeyID'} || $key{'KeyID'} ne $KeyID) {
 	keyModify('KeyID', $KeyID, 1);
-	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到config.txt...\n"));
+	Log::message(T("\n**** 正在自动生成本机授权KeyID保存到key.txt...\n"));
 	Log::message(T("\n\n本机的KeyID 为: " . $KeyID . "\n"));
 	Log::message(T("您可以在key.txt文件中找到KeyID用以复制.\n"));
 	} else {
@@ -520,15 +520,15 @@ sub checkKey {
 			$_->add($MyKey);
 			$MyKey = uc($_->hexdigest);
 		keyModify('MYkey', "", 1);
-		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机授权码(一人一机一码)...\n\n"));
 		Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
-		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CN Kore...\n"));
+		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
+		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
 		Log::message(T("**** CN Kore将在6秒后退出...\n"));
 		}
 		sleep(6);
 		exit 1;
 	} else {
-		Log::message(T("\n**** 本机授权验证成功! CN Kore正在初始化中...\n\n"));
+		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
 	}
 }
 
