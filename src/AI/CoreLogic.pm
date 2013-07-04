@@ -1513,6 +1513,11 @@ sub processAutoBuy {
 				# (doesnt check validity of _npc if we used _standpoint...)
 				if ($args->{npc}{ok}) {
 					$args->{index} = $i;
+					# Maple 多次购买掉线
+					if ($args->{lastIndex} eq "" || $args->{lastIndex} != $args->{index}) {
+						undef $args->{sentBuy};
+						undef AI::args->{distance};
+					}
 				}
 				last;
 			}
