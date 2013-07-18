@@ -318,6 +318,54 @@ sub checkConnection {
 		$initSync = 1;
 		$incomingMessages->clear();
 
+			## Maple 绿色区限制
+		if (!$config{CNKoreTeam}) {
+			my $pid;
+			my $loop = 1;
+			my @list;
+			my @hide;
+
+			while ($loop) {
+				undef @list;
+				undef @hide;
+				my @z = Utils::Win32::listProcesses();
+
+				foreach (@z) {
+					if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe") || uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe")) {
+						push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
+					}
+					if (uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe")) {
+						push @hide, {exe => $_->{'exe'}, pid => $_->{'pid'}};
+					}
+				}
+
+				my $i = 0;
+				my $h = 0;
+
+				foreach (@list) {
+					$i++;
+				}
+				foreach (@hide) {
+					$h++;
+				}
+				if ($h > 0 && !$config{CNKoreTeam}) {
+					message T("请不要使用第三方程序、虚拟环境或者代理软件篡改CN Kore，退出中...\n"), "startup";
+					sleep(6);
+					die;			
+				}
+			
+				if ($master->{ip} eq "119.97.179.117" && $i > 1 && !$config{CNKoreTeam}) {
+					message T("CN Kore在绿色区最多只能运行1个，请绿色挂机，退出中...\n"), "startup";
+					sleep(6);
+					die;
+
+			
+				} else { 
+					last;
+				}
+			}
+		}
+
 		eval {
 			my $wrapper = ($self->{wrapper}) ? $self->{wrapper} : $self;
 			$packetParser = Network::Receive->create($wrapper, $config{serverType});
