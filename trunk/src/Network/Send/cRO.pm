@@ -131,6 +131,26 @@ sub sendMasterLogin {
 	debug "Sent sendMasterLogin\n", "sendPacket", 2;
 }
 
+sub sendGameLogin {
+	my ($self, $accountID, $sessionID, $sessionID2, $sex) = @_;
+	$self->sendToServer($self->reconstruct({
+		switch => 'game_login',
+		accountID => $accountID,
+		sessionID => $sessionID,
+	}));
+	debug "Sent sendGameLogin\n", "sendPacket", 2;
+}
+
+sub sendBancheck {
+	my ($self, $accountID) = @_;
+	$self->sendToServer($self->reconstruct({
+		switch => 'ban_check',
+		accountID => $accountID,
+	}));
+	debug "Sent sendBancheck\n", "sendPacket", 2;
+}
+
+
 sub sendMapLogin {
 	my ($self, $accountID, $charID, $sessionID, $sex) = @_;
 	my $msg;
