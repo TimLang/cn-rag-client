@@ -1028,7 +1028,7 @@ sub map_loaded {
 	$char->{pos_to} = {%{$char->{pos}}};
 	message(TF("Your Coordinates: %s, %s\n", $char->{pos}{x}, $char->{pos}{y}), undef, 1);
 
-	$messageSender->sendIgnoreAll("all") if ($config{ignoreAll});
+	$messageSender->sendIgnoreAll(0) if ($config{ignoreAll});
 }
 
 sub actor_look_at {
