@@ -1,4 +1,15 @@
-﻿[klRO - 电信区 - (Fenril)]
+﻿[klRO - 绿色区 - (Prontera)]
+title klRO - Prontera
+ip 119.97.179.117
+port 6900
+master_version 4
+version 4
+serverType cRO
+addTableFolders cRO
+serverEncoding Simplified Chinese
+charBlockSize 144
+
+[klRO - 电信区 - (Fenril)]
 title klRO - Fenril
 ip 114.112.39.71
 port 6900
