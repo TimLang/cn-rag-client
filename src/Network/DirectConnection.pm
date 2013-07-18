@@ -532,7 +532,7 @@ sub checkConnection {
 				$reconnectCount = 0;
 				return if ($conState == 1.5);
 			}
-				$messageSender->sendGameLogin($accountID, $sessionID, $sessionID2, $accountSex);
+				$messageSender->sendGameLogin($accountID, $sessionID);
 				$timeout{'gamelogin'}{'time'} = time;
 
 		} elsif (timeOut($timeout{'gamelogin'}) && ($config{'server'} ne "" || $masterServer->{'charServer_ip'})) {
@@ -554,7 +554,7 @@ sub checkConnection {
 				Plugins::callHook("Network::serverConnect/charselect");
 				return if ($conState == 1.5);
 			}
-					
+			$messageSender->sendBancheck($accountID);
 			$messageSender->sendCharLogin($config{'char'});
 			$timeout{'charlogin'}{'time'} = time;
 
