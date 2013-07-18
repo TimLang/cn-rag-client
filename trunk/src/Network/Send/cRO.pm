@@ -55,6 +55,7 @@ sub new {
 		"$ID12" => ['map_login', 'a4 a4 a4 V C', [qw(accountID charID sessionID tick sex)]],
 		"$ID13" => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
+		'0187' => ['ban_check', 'a4', [qw(accountID)]],
 	);
 	
 	$self->{packet_list}{$_} = $packets{$_} for keys %packets;
@@ -74,6 +75,7 @@ sub new {
 		'map_login' => "$ID12",
 		'homunculus_command' => "$ID13",
 		'party_setting' => '07D7'
+		'ban_check' => '0187'
 	);
 	
 	$self->{packet_lut}{$_} = $handlers{$_} for keys %handlers;
