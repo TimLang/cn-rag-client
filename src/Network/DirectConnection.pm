@@ -354,8 +354,9 @@ sub checkConnection {
 					die;			
 				}
 			
-				if ($master->{ip} eq "119.97.179.117" && $i > 1 && !$config{CNKoreTeam}) {
-					message T("CN Kore在绿色区最多只能运行1个，请绿色挂机，退出中...\n"), "startup";
+				#if ($master->{ip} eq "119.97.179.117" && $i > 0 && !$config{CNKoreTeam}) {
+				if ($master->{ip} eq "119.97.179.117" && !$config{CNKoreTeam}) {
+					message T("CN Kore在绿色区最多只能运行0个，请绿色挂机，退出中...\n"), "startup";
 					sleep(6);
 					die;
 
@@ -532,7 +533,7 @@ sub checkConnection {
 				$reconnectCount = 0;
 				return if ($conState == 1.5);
 			}
-				$messageSender->sendGameLogin($accountID, $sessionID);
+				$messageSender->sendGameLogin($accountID, $sessionID, $sessionID2, $accountSex);
 				$timeout{'gamelogin'}{'time'} = time;
 
 		} elsif (timeOut($timeout{'gamelogin'}) && ($config{'server'} ne "" || $masterServer->{'charServer_ip'})) {
@@ -554,7 +555,7 @@ sub checkConnection {
 				Plugins::callHook("Network::serverConnect/charselect");
 				return if ($conState == 1.5);
 			}
-			$messageSender->sendBancheck($accountID);
+			#$messageSender->sendBancheck($accountID);
 			$messageSender->sendCharLogin($config{'char'});
 			$timeout{'charlogin'}{'time'} = time;
 
