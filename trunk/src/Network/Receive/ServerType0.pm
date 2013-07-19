@@ -1010,11 +1010,11 @@ sub map_loaded {
 		ai_clientSuspend(0, 10);
 		main::initMapChangeVars();
 	} else {
+		$messageSender->sendSync();
 		$messageSender->sendGuildMasterMemberCheck();
-
 		# Replies 01B6 (Guild Info) and 014C (Guild Ally/Enemy List)
 		$messageSender->sendGuildRequestInfo(0);
-
+		$messageSender->sendGuildRequestInfo(0);
 		# Replies 0166 (Guild Member Titles List) and 0154 (Guild Members List)
 		$messageSender->sendGuildRequestInfo(1);
 		message(T("You are now in the game\n"), "connection");
