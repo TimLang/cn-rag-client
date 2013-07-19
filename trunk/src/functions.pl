@@ -665,12 +665,13 @@ sub processServerSettings {
 		configModify('serverEncoding', 'Western');
 	}
 
+	configModify('connectIP', $master->{ip});
+
 	## Maple 绿色区限制
-	if ($master->{ip} eq "119.97.179.117" && !$config{CNKoreTeam}) {
+	if ($config{connectIP} =~ /119.97.179/ && !$config{CNKoreGreen}) {
 		my $pid;
 		my $loop = 1;
 		my @list;
-		my @hide;
 
 		while ($loop) {
 			undef @list;
@@ -687,8 +688,9 @@ sub processServerSettings {
 			foreach (@list) {
 				$i++;
 			}
+
 			
-			if ($i > 0 && !$config{CNKoreTeam}) {
+			if ($i > 100 && !$config{CNKoreGreen}) {
 				message T("CN Kore在绿色区最多只能运行0个，请绿色挂机，退出中...\n"), "startup";
 				sleep(6);
 				exit 1;

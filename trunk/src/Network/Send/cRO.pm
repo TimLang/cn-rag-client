@@ -74,8 +74,8 @@ sub new {
 		'actor_info_request' => "$ID11",
 		'map_login' => "$ID12",
 		'homunculus_command' => "$ID13",
-		'party_setting' => '07D7'
-		'ban_check' => '0187'
+		'party_setting' => '07D7',
+		'ban_check' => '0187',
 	);
 	
 	$self->{packet_lut}{$_} = $handlers{$_} for keys %handlers;

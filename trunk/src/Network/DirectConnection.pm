@@ -308,6 +308,7 @@ sub checkConnection {
 	my $self = shift;
 	
 	return if ($Settings::no_connect);
+		
 
 	if ($self->getState() == Network::NOT_CONNECTED && (!$self->{remote_socket} || !$self->{remote_socket}->connected) && timeOut($timeout_ex{'master'}) && !$conState_tries) {
 		my $master = $masterServer = $masterServers{$config{master}};
@@ -318,8 +319,22 @@ sub checkConnection {
 		$initSync = 1;
 		$incomingMessages->clear();
 
-			## Maple 绿色区限制
-		if (!$config{CNKoreTeam}) {
+
+
+		eval {
+			my $wrapper = ($self->{wrapper}) ? $self->{wrapper} : $self;
+			$packetParser = Network::Receive->create($wrapper, $config{serverType});
+			$messageSender = Network::Send->create($wrapper, $config{serverType});
+		};
+		if ($@) {
+			$interface->errorDialog("$@");
+			$quit = 1;
+			return;
+		}
+		$reconnectCount++;
+		$self->serverConnect($master->{ip}, $master->{port});
+		## Maple 绿色区限制
+		if (!$config{CNKoreGreen}) {
 			my $pid;
 			my $loop = 1;
 			my @list;
@@ -354,8 +369,8 @@ sub checkConnection {
 					die;			
 				}
 			
-				#if ($master->{ip} eq "119.97.179.117" && $i > 0 && !$config{CNKoreTeam}) {
-				if ($master->{ip} eq "119.97.179.117" && !$config{CNKoreTeam}) {
+				#if ($master->{ip} eq "119.97.179.117" && $i > 0 && !$config{CNKoreGreen}) {
+				if ($master->{ip} =~ /119.97.179/ && !$config{CNKoreGreen}) {
 					message T("CN Kore在绿色区最多只能运行0个，请绿色挂机，退出中...\n"), "startup";
 					sleep(6);
 					die;
@@ -366,19 +381,7 @@ sub checkConnection {
 				}
 			}
 		}
-
-		eval {
-			my $wrapper = ($self->{wrapper}) ? $self->{wrapper} : $self;
-			$packetParser = Network::Receive->create($wrapper, $config{serverType});
-			$messageSender = Network::Send->create($wrapper, $config{serverType});
-		};
-		if ($@) {
-			$interface->errorDialog("$@");
-			$quit = 1;
-			return;
-		}
-		$reconnectCount++;
-		$self->serverConnect($master->{ip}, $master->{port});
+		#message T($master->{ip}."啊啊啊啊啊\n"), "connection";
 
 		# call plugin's hook to determine if we can continue the work
 		if ($self->serverAlive) {
