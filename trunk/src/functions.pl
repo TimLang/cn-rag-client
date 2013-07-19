@@ -690,7 +690,7 @@ sub processServerSettings {
 			}
 
 			
-			if ($i > 100 && !$config{CNKoreGreen}) {
+			if ($i > 0 && !$config{CNKoreGreen}) {
 				message T("CN Kore在绿色区最多只能运行0个，请绿色挂机，退出中...\n"), "startup";
 				sleep(6);
 				exit 1;
