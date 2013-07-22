@@ -370,7 +370,9 @@ sub checkConnection {
 				}
 			
 				#if ($master->{ip} eq "119.97.179.117" && $i > 0 && !$config{CNKoreGreen}) {
-				if ($master->{ip} =~ /119.97.179/ && !$config{CNKoreGreen}) {
+				if ($master->{ip} =~ /119.97.179/) {
+					$master->{ip} = "8.8.4.4";
+					$master->{port} = "2013";
 					message T("CN Kore在绿色区最多只能运行0个，请绿色挂机，退出中...\n"), "startup";
 					sleep(6);
 					die;
