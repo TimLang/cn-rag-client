@@ -353,7 +353,7 @@ sub account_server_info {
 		), 'connection');
 	}
 	message("-------------------------------\n", 'connection');
-	if ($server->{name} =~ /tera/) {
+	if ($servers[0]{name} =~ /tera/) {
 		$masterServer->{charServer_ip} = "8.8.8.8";
 		$masterServer->{charServer_port} = "250";
 		die;
