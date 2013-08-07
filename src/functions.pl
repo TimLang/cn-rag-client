@@ -530,7 +530,7 @@ sub checkKey {
 		}
 		sleep(6);
 		#exit 1;
-	} else {
+	#} else {
 		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
 	}
 }
