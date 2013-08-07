@@ -24,8 +24,8 @@ use Log qw(message warning error debug);
 
 our $NAME = 'CN Kore - 解放双手 绿色RO';
 our $ZONE = 'klRO';
-our $VERSION = 'Open Beta - v0.0.8.4 for klRO 仅供学习研究';
-our $SVN_VERSION = '355';
+our $VERSION = 'Open Beta - v0.0.8.5 for klRO 仅供学习研究';
+our $SVN_VERSION = '358';
 our $WEBSITE = 'http://www.CNKore.com/';
 our $versionText = "        *** $NAME - r$SVN_VERSION - 本软件和MYKey完全免费!***\n                                                             \n        ▁▂▄▃▂▁▁\n        ◥██████◣                                                █               ◢\n            ▔█◤▔▔◥◣                                               █           ◢◤\n              █            █                                                ▉       ◢◤\n              █▁▂▃█◤                                                ▉    ◢◤\n        ▂▅▆████◤                                         ●●   ▊◢◤\n              █◥◣  ◢█◣◢█◣█◣█◢█◣◢█◣◢█◣█◤\n              ▉   ◥◣█▃██  ▄████▃██▃◤█  ██◣\n              ▊      ◥█  █◥█◤█◥██  ██◥◣◥█◤▌ ◥◣\n              ▋     ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  ▌    ◥◣\n              ▎               RAGNAROK ONLINE BOT            ▍       ◥◣\n              ▏     ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔  ▏          ◥◣\n                     $VERSION\n\n      原作: OpenKore团队           中文网站: $WEBSITE \n\n      特别感谢: CoCo Yuki 至尊宝 彪彪 LKM Maple HowieYA Windham OpenKoreTW\n\n\n";
 our $welcomeText = TF("Welcome to %s.", $NAME);
