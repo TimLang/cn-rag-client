@@ -490,7 +490,7 @@ sub checkKey {
 		$keyID4 = substr(uc($_->hexdigest), 0, 8);
 	}
 
-	$KeyID = $keyID2 . $keyID3 . $keyID1 . $keyID4;
+	$KeyID = $keyID3 . $keyID2 . $keyID4 . $keyID1;
 
 	if (!$key{'KeyID'} || $key{'KeyID'} ne $KeyID) {
 	keyModify('KeyID', $KeyID, 1);
@@ -523,14 +523,14 @@ sub checkKey {
 			$_->add($MyKey);
 			$MyKey = uc($_->hexdigest);
 		keyModify('MYkey', "", 1);
-		#Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
-		#Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
-		#Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
-		#Log::message(T("**** CN Kore将在6秒后退出...\n"));
+		Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
+		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
+		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
+		Log::message(T("**** CN Kore将在6秒后退出...\n"));
 		}
 		sleep(6);
-		#exit 1;
-	#} else {
+		exit 1;
+	} else {
 		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
 	}
 }
