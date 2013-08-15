@@ -576,7 +576,12 @@ sub checkUserLevel {
 	my $loginSuccess = 0;
 	my $userLevel = 0;
 
+
 	do {
+		if (!$config{CNKoreName} || !$config{CNKorePass}) {
+			Log::message(T("**** 有项目输入为空,请重新填写CNKore论坛账号密码...\n"));
+			promptLoginInformation();
+		}
 		$loginresponse = $loginagent->request($loginrequest);
 		if ($loginresponse->is_success) {
 			my $temphash = $loginresponse->content;
@@ -643,7 +648,10 @@ sub checkUserLevel {
 
 	if ($logintries > $maxLogin || !$userLevel) {
 		Log::message(T("\n**** 登陆失败, 请检查是否账号密码错误或者因为密码错误过多被限制登陆...\n"));
+		Log::message(T("**** 请重新填写CNKore论坛账号密码...\n"));
 		Log::message(T("**** CN Kore将在6秒后退出...\n"));
+		configModify('CNKorePass', "", 1);
+		configModify('CNKoreName', "", 1);
 		sleep(6);
 		exit 1;
 	} elsif ($userLevel) {
@@ -820,7 +828,7 @@ sub processServerSettings {
 		configModify('serverEncoding', 'Western');
 	}
 
-	configModify('connectIP', $master->{ip});
+	configModify('connectIP', $master->{ip}, 1);
 
 	## Maple 绿色区限制
 	if ($config{connectIP} =~ /119.97.179/ && !$config{CNKoreGreen}) {
