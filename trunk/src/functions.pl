@@ -31,12 +31,17 @@ use Plugins;
 use Utils;
 use I18N;
 use LWP::UserAgent;
+use LWP::ConnCache;
 use HTTP::Request;
+use HTTP::Cookies::Microsoft;
 use Utils::HttpReader;
 use Utils::RSK;
 use MIME::Base64;
 use Win32::OLE qw(in);
+use Win32::TieRegistry(Delimiter => "/");
+use Encode;
 use Digest::MD5;
+
 
 
 #######################################
@@ -78,7 +83,7 @@ sub mainLoop {
 	} elsif ($state == STATE_LOAD_PLUGINS) {
 		Log::message("$Settings::versionText\n");
  		sleep(5);
-		versionCheck($Settings::SVN_VERSION);
+ 		versionCheck($Settings::SVN_VERSION);
 		loadPlugins();
 		return if $quit;
 		Log::message("\n");
@@ -91,7 +96,9 @@ sub mainLoop {
 		$state = STATE_CHECK_KEY;
 
 	} elsif ($state == STATE_CHECK_KEY) {
+		promptLoginInformation();
 		checkKey();
+		checkUserLevel();
 		$state = STATE_INIT_NETWORKING;
 
 	} elsif ($state == STATE_INIT_NETWORKING) {
@@ -523,6 +530,7 @@ sub checkKey {
 			$_->add($MyKey);
 			$MyKey = uc($_->hexdigest);
 		keyModify('MYkey', "", 1);
+= key啊
 		Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
 		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
 		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
@@ -531,7 +539,131 @@ sub checkKey {
 		sleep(6);
 		exit 1;
 	} else {
+=cut
 		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
+	}
+}
+
+# 网络验证Maple
+sub checkUserLevel {
+	my $loginURL = 'http://www.cnkore.com/member.php?mod=logging&action=login&mobile=1';
+	my $maxLogin = 3;
+	my $trySleep = 3;
+	my $cookies_dir = $Registry->{"CUser/Software/Microsoft/Windows/CurrentVersion/Explorer/Shell Folders/Cookies"};
+	my $cookie_jar = HTTP::Cookies::Microsoft->new(
+		file => "$cookies_dir\\index.dat",
+		'delayload' => 1,
+		ignore_discard => 1,
+		autosave => 1,
+	);
+
+	my $loginagent = LWP::UserAgent->new;
+	$loginagent->cookie_jar($cookie_jar);
+	$loginagent->timeout(10);
+	$loginagent->env_proxy(1);
+	$loginagent->conn_cache(LWP::ConnCache->new());
+	$loginagent->conn_cache->total_capacity(20);
+	$loginagent->agent('Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3');
+
+	my $loginrequest = HTTP::Request->new('GET', $loginURL);
+	my $loginresponse;
+	my $logintries = 1;
+	my $loginUsername = $config{CNKoreName};
+	my $loginPassword = MIME::Base64::decode($config{CNKorePass});
+	my $temphash;
+	my $loginhash;
+	my $formhash;
+	my $loginSuccess = 0;
+	my $userLevel = 0;
+
+	do {
+		$loginresponse = $loginagent->request($loginrequest);
+		if ($loginresponse->is_success) {
+			my $temphash = $loginresponse->content;
+			$temphash = encode("GBK", decode("utf-8", $temphash));
+			if ($temphash =~ /loginhash\=(.*)\&/) {
+				$loginhash = $1;
+			} else {
+				# print "\nNo login hash!";
+				Log::message(T("\n**** 可能已登陆成功, 正在尝试验证CNKore论坛账号权限...\n"));
+			}
+
+			if ($temphash =~ /formhash\" value=\"(.*)\"/) {
+				$formhash = $1;
+				print "\nForm Hash:".$formhash;
+
+			} else {
+				Log::message(T("\n**** 无法登陆CNKore论坛...Form Hash\n"));
+				Log::message(T("\n**** 请确认你的网络连接是否正常...\n"));
+				Log::message(T("**** CN Kore将在6秒后退出...\n"));
+				sleep(6);
+				exit 1;
+			}
+		
+			if ($temphash =~ /loginsubmit/) {
+				#print "\nNot login\n";
+				my $loginNow = $loginagent->post("http://www.cnkore.com/member.php?mod=logging&action=login&loginsubmit=yes&loginhash=$loginhash&mobile=2",
+				[
+				"formhash"=>$formhash,
+				"referer"=>"http://www.cnkore.com/./",
+				"fastloginfield"=>"username",
+				"username"=>$loginUsername,
+				"password"=>$loginPassword,
+				"submit"=>"登陆",
+				"questionid"=>"0",
+				"answer"=>"", 
+				"cookietime"=>"2592000",
+				]
+				);
+			} else {
+				$loginSuccess = 1;
+				$temphash =~ /font color=\"(.*)\"/;
+				my $realLevel = $1;
+				$userLevel = 8 if ($realLevel eq "#FF66CB");
+				$userLevel = 7 if ($realLevel eq "#66CC33");
+				$userLevel = 6 if ($realLevel eq "#6699FF");
+				$userLevel = 5 if ($realLevel eq "#CC0068");
+				$userLevel = 4 if ($realLevel eq "#0000CA");
+				$userLevel = 3 if ($realLevel eq "#0066CC");
+				$userLevel = 2 if ($realLevel eq "#FF9900");
+				$userLevel = 1 if ($realLevel eq "#FF0033");
+			}
+		} elsif ($loginresponse->is_error) {
+			Log::message(T("\n**** 无法登陆CNKore论坛...Response->is_error\n"));
+			Log::message(T("\n**** 请确认你的网络连接是否正常...\n"));
+			Log::message(T("**** CN Kore将在6秒后退出...\n"));
+			sleep(6);
+			exit 1;
+		}
+		$logintries++;
+		if ($logintries <= $maxLogin) {
+			sleep $trySleep;
+		}
+	} until ($logintries > $maxLogin) || ($loginSuccess > 0);
+
+	if ($logintries > $maxLogin || !$userLevel) {
+		Log::message(T("\n**** 登陆失败, 请检查是否账号密码错误或者因为密码错误过多被限制登陆...\n"));
+		Log::message(T("**** CN Kore将在6秒后退出...\n"));
+		sleep(6);
+		exit 1;
+	} elsif ($userLevel) {
+		my $levelURL = 'http://www.cnkore.com/forum.php?mod=viewthread&tid=71116';
+		my $levelrequest = HTTP::Request->new('GET', $levelURL);
+		my $levelresponse;
+		$levelresponse = $loginagent->request($levelrequest);
+		my $tempLevel = $levelresponse->content;
+		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
+		$tempLevel =~ /level=(.*)/;
+		my $nowLevel = int($1);
+
+		if ($nowLevel && $nowLevel <= $userLevel) {
+			Log::message(T("\n**** 分流用户组限制认证成功...\n"));
+		} else {
+			Log::message(T("\n**** 分流用户组仍处于限制状态...\n"));
+			Log::message(T("**** CN Kore将在6秒后退出...\n"));
+			sleep(6);
+			exit 1;
+		}
 	}
 }
 
@@ -611,6 +743,28 @@ sub promptFirstTimeInformation {
 			configModify('password', $msg, 1);
 		}
 	}
+}
+
+sub promptLoginInformation {
+		my $msg;
+		if (!$config{CNKoreName}) {
+			$msg = $interface->query(T("请输入CNKore论坛的账号."));
+			if (!defined($msg)) {
+				$quit = 1;
+				return;
+			}
+			configModify('CNKoreName', $msg, 1);
+		}
+		if (!$config{CNKorePass}) {
+			$msg = $interface->query(T("请输入CNKore论坛的密码."), isPassword => 1);
+			if (!defined($msg)) {
+				$quit = 1;
+				return;
+			}
+			$msg = MIME::Base64::encode($msg);
+			chomp($msg);
+			configModify('CNKorePass', $msg, 1);
+		}
 }
 
 sub processServerSettings {
