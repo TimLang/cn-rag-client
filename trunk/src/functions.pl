@@ -530,12 +530,12 @@ sub checkKey {
 			$_->add($MyKey);
 			$MyKey = uc($_->hexdigest);
 		keyModify('MYkey', "", 1);
-= key啊
-		Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
-		Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
-		Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
-		Log::message(T("**** CN Kore将在6秒后退出...\n"));
+		#Log::message(T("\n**** key.txt中的MYKey本机授权码不存在或错误...\n"));
+		#Log::message(T("\n**** 在 www.CNKore.com 可以免费兑换本机MYKey...\n\n"));
+		#Log::message(T("**** 请在key.txt中填入正确的MYKey才能使用CNKore...\n"));
+		#Log::message(T("**** CN Kore将在6秒后退出...\n"));
 		}
+=key
 		sleep(6);
 		exit 1;
 	} else {
@@ -590,11 +590,11 @@ sub checkUserLevel {
 
 			if ($temphash =~ /formhash\" value=\"(.*)\"/) {
 				$formhash = $1;
-				print "\nForm Hash:".$formhash;
+				Log::message(T("**** 本次验证Session的Hash值为:$formhash\n"));
 
 			} else {
-				Log::message(T("\n**** 无法登陆CNKore论坛...Form Hash\n"));
-				Log::message(T("\n**** 请确认你的网络连接是否正常...\n"));
+				Log::message(T("**** 无法登陆CNKore论坛...Form Hash\n"));
+				Log::message(T("**** 请确认你的网络连接是否正常...\n"));
 				Log::message(T("**** CN Kore将在6秒后退出...\n"));
 				sleep(6);
 				exit 1;
@@ -656,10 +656,10 @@ sub checkUserLevel {
 		$tempLevel =~ /level=(.*)/;
 		my $nowLevel = int($1);
 
-		if ($nowLevel && $nowLevel <= $userLevel) {
-			Log::message(T("\n**** 分流用户组限制认证成功...\n"));
+		if ($nowLevel && $nowLevel >= $userLevel) {
+			Log::message(T("\n**** 分流用户组限制认证成功..."));
 		} else {
-			Log::message(T("\n**** 分流用户组仍处于限制状态...\n"));
+			Log::message(T("\n**** 分流用户组仍处于限制状态..."));
 			Log::message(T("**** CN Kore将在6秒后退出...\n"));
 			sleep(6);
 			exit 1;
