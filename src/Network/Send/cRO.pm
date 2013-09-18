@@ -107,11 +107,11 @@ sub encryptMessageID {
 sub PrepareKeys() {
 	#modify by jackywei 20130420
 	#K
-	$enc_val1 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey6EncVal(1)));
+	$enc_val1 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey7EncVal(1)));
 	# M
-	$enc_val3 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey6EncVal(3)));
+	$enc_val3 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey7EncVal(3)));
 	# A
-	$enc_val2 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey6EncVal(2)));
+	$enc_val2 = Math::BigInt->new(sprintf("0x%08x",RSK::GetKey7EncVal(2)));
 	#modify end
 }
 
