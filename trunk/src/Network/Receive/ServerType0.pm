@@ -486,6 +486,7 @@ sub new {
 		'0816' => ['del_packet'],
 		'0818' => ['del_packet'],
 		'081C' => ['del_packet'],
+		'099B' => ['del_packet'],
 	};
 
 	# Item RECORD Struct's
