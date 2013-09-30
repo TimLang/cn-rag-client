@@ -1,0 +1,109 @@
+refineAuto_npc 
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤×Ô¶¯¾«Á¶µÄNPC±àºÅ£¨ÇëÔÚnpc_control.txtÀïÃæ²éÕÒ£©
+
+refineAuto_distance 4
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤×Ô¶¯¾«Á¶µÄNPC¶Ô»°¾àÀë
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ îø¼× ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_0 Ã«Æ¤´óÒÂ1¶´,ÌúÖÆîø¼×1¶´,¸ÖÌúËø×Ó¼×1¶´,¸ÖÌúîø¼×,Î÷×°ÍâÌ×1¶´,Ë¿ÖÊÍâÅÛ1¶´,Ê¥Ö°Ö®ÒÂ1¶´,½ôÉí±ãÒÂ1¶´
+refineAuto_0_steps_0 c r1 c r0 n
+refineAuto_0_steps_1 c r1 c r0 n
+refineAuto_0_steps_2 c r1 c r0 n
+refineAuto_0_steps_3 c r1 c r0 n
+refineAuto_0_steps_4 c r1 c r0 c c r0 c n
+refineAuto_0_steps_5 c r1 c r0 c c r0 c n
+refineAuto_0_steps_6 c r1 c r0 c c r0 c n
+refineAuto_0_steps_7 c r1 c r0 c c r0 c n
+refineAuto_0_steps_8 c r1 c r0 c c r0 c n
+refineAuto_0_steps_9 c r1 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ ¶ÜÅÆ ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_1 Ìú¶Ü1¶´,Ô²¶Ü1¶´,¸Õ¶Ü1¶´,¾µ¶Ü1¶´
+refineAuto_1_steps_0 c r2 c r0 n
+refineAuto_1_steps_1 c r2 c r0 n
+refineAuto_1_steps_2 c r2 c r0 n
+refineAuto_1_steps_3 c r2 c r0 n
+refineAuto_1_steps_4 c r2 c r0 c c r0 c n
+refineAuto_1_steps_5 c r2 c r0 c c r0 c n
+refineAuto_1_steps_6 c r2 c r0 c c r0 c n
+refineAuto_1_steps_7 c r2 c r0 c c r0 c n
+refineAuto_1_steps_8 c r2 c r0 c c r0 c n
+refineAuto_1_steps_9 c r2 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Åû¼ç ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_2 Á¬Ã±Åû¼ç1¶´,Åû¼ç1¶´,¶·Åñ,¶·Åñ1¶´,²®¾ô¶·Åñ,¿¹Ä§¶·Åñ
+refineAuto_2_steps_0 c r4 c r0 n
+refineAuto_2_steps_1 c r4 c r0 n
+refineAuto_2_steps_2 c r4 c r0 n
+refineAuto_2_steps_3 c r4 c r0 n
+refineAuto_2_steps_4 c r4 c r0 c c r0 c n
+refineAuto_2_steps_5 c r4 c r0 c c r0 c n
+refineAuto_2_steps_6 c r4 c r0 c c r0 c n
+refineAuto_2_steps_7 c r4 c r0 c c r0 c n
+refineAuto_2_steps_8 c r4 c r0 c c r0 c n
+refineAuto_2_steps_9 c r4 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Ð¬×Ó ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_3 Çá±ãÐ¬1¶´,³¤Ñ¥1¶´,Õ½Ê¿³¤Ñ¥1¶´,²£Á§Ð¬
+refineAuto_3_steps_0 c r5 c r0 n
+refineAuto_3_steps_1 c r5 c r0 n
+refineAuto_3_steps_2 c r5 c r0 n
+refineAuto_3_steps_3 c r5 c r0 n
+refineAuto_3_steps_4 c r5 c r0 c c r0 c n
+refineAuto_3_steps_5 c r5 c r0 c c r0 c n
+refineAuto_3_steps_6 c r5 c r0 c c r0 c n
+refineAuto_3_steps_7 c r5 c r0 c c r0 c n
+refineAuto_3_steps_8 c r5 c r0 c c r0 c n
+refineAuto_3_steps_9 c r5 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Í·¿ø ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_4 Ê¥Ö°Ö®Ã±1¶´,·À·çÆ¤¸ïÑÛ¾µ1¶´,ÎÞ±ßÃ±1¶´,½ðÊôÍ·¿ø,½ðÊôÍ·¿ø1¶´,±¦Ê¯Í·¿ø1¶´,Í·¹¿1¶´,Æ»¹ûÍ·ÊÎ,º£µÁÍ·½í,ÊÞÈËÍ·¿ø
+refineAuto_4_steps_0 c r8 c r0 n
+refineAuto_4_steps_1 c r8 c r0 n
+refineAuto_4_steps_2 c r8 c r0 n
+refineAuto_4_steps_3 c r8 c r0 n
+refineAuto_4_steps_4 c r8 c r0 c c r0 c n
+refineAuto_4_steps_5 c r8 c r0 c c r0 c n
+refineAuto_4_steps_6 c r8 c r0 c c r0 c n
+refineAuto_4_steps_7 c r8 c r0 c c r0 c n
+refineAuto_4_steps_8 c r8 c r0 c c r0 c n
+refineAuto_4_steps_9 c r8 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Ò»¼¶ÎäÆ÷ ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_5 ÎäÊ¿µ¶4¶´,±¿×¾¶Ì½£4¶´,¸«4¶´,²½±ø³¤Ã¬4¶´,Ìú´¸4¶´,¿²ÆÕ×È¹­4¶´
+refineAuto_5_steps_0 c r3 c r0 n
+refineAuto_5_steps_1 c r3 c r0 n
+refineAuto_5_steps_2 c r3 c r0 n
+refineAuto_5_steps_3 c r3 c r0 n
+refineAuto_5_steps_4 c r3 c r0 n
+refineAuto_5_steps_5 c r3 c r0 n
+refineAuto_5_steps_6 c r3 c r0 n
+refineAuto_5_steps_7 c r3 c r0 c c r0 c n
+refineAuto_5_steps_8 c r3 c r0 c c r0 c n
+refineAuto_5_steps_9 c r3 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ ¶þ¼¶ÎäÆ÷ ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_6 ÑÇ¶ûÌØ½£3¶´,Ë«ÈÐ¶Ì½£3¶´,È­ÈÐ3¶´,Á´´¸3¶´,Ê®×Ö¹­3¶´
+refineAuto_6_steps_0 c r3 c r0 n
+refineAuto_6_steps_1 c r3 c r0 n
+refineAuto_6_steps_2 c r3 c r0 n
+refineAuto_6_steps_3 c r3 c r0 n
+refineAuto_6_steps_4 c r3 c r0 n
+refineAuto_6_steps_5 c r3 c r0 n
+refineAuto_6_steps_6 c r3 c r0 c c r0 c n
+refineAuto_6_steps_7 c r3 c r0 c c r0 c n
+refineAuto_6_steps_8 c r3 c r0 c c r0 c n
+refineAuto_6_steps_9 c r3 c r0 c c r0 c n
+
+#©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Èý¼¶ÎäÆ÷ ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+refineAuto_7 ÈÕ±¾µ¶2¶´,Æï±øÖ®½£3¶´,Ë«ÊÖ¾Þ½£2¶´,³¤±ú¶Ì½£3¶´,Ë«ÊÖ¸«2¶´,°£²¼¶ûÀ×¹­2¶´,½Ç¹­2¶´
+refineAuto_7_steps_0 c r3 c r0 n
+refineAuto_7_steps_1 c r3 c r0 n
+refineAuto_7_steps_2 c r3 c r0 n
+refineAuto_7_steps_3 c r3 c r0 n
+refineAuto_7_steps_4 c r3 c r0 n
+refineAuto_7_steps_5 c r3 c r0 c c r0 c n
+refineAuto_7_steps_6 c r3 c r0 c c r0 c n
+refineAuto_7_steps_7 c r3 c r0 c c r0 c n
+refineAuto_7_steps_8 c r3 c r0 c c r0 c n
+refineAuto_7_steps_9 c r3 c r0 c c r0 c n

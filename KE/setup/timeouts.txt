@@ -1,0 +1,179 @@
+master 60
+gamelogin 10
+charlogin 10
+maplogin 10
+connect 1
+#以上都是重新连接服务器到进入游戏的延时 
+
+reconnect 5
+断线后重新连线间隔
+reconnect_auto 5
+#当用户或密码错误后，自动重新尝试时间
+
+play 40
+#进入游戏超时时间 
+
+ai 2
+#进入游戏后几秒后启动BOT功能
+
+ai_move_giveup 5
+#移动放弃时间
+
+ai_attack 0.3
+#武器攻击时发送攻击目标怪的延时 
+ai_attack_auto 0.2
+#检查怪物是否可以锁定延时
+ai_attack_giveup 5
+#锁定怪后作出攻击放弃时间，不能到达或伤害目标，放弃攻击其中一个条件 
+ai_attack_waitAfterKill 1
+#进行捡东西动作后（失败或成功）攻击怪物的延时 
+ai_items_take_start 0.5
+#杀死怪物后捡东西的时间 
+ai_items_take_end 0.5
+#杀死怪物后捡东西结束时间 
+ai_take 1
+#捡东西间隔时间
+ai_take_giveup 3
+#放弃捡物品时间 
+ai_items_gather_giveup 4
+#放弃该拾取无主物品时间 
+ai_items_gather_auto 2
+#搜索无主物品的间隔时间 
+ai_items_gather_start 0
+#发现无主物品后拾取的时间 
+ai_follow_lost_end 10
+#跟随时丢失目标的时间判断 
+ai_getInfo 2.5
+#检查游戏中玩家，怪物，NPC，宠物名字的间隔 
+
+ai_thanks_set 8
+#远程控制的感谢语延时 
+ai_dealAutoCancel 5
+#接收到请求交易信息后取消交易的时间 
+ai_partyAutoDeny 3
+#接收到邀请加入队伍信息后拒绝加入时间 
+ai_guildAutoDeny 3
+#接收到邀请加入公会信息后拒绝加入时间 
+ai_friendAutoDeny 3
+#接收到好友请求信息后拒绝时间 
+ai_dead_respawn 5
+#死后回城的间隔时间 
+
+ai_wipe_old 200
+#清除临时标记信息时间 
+ai_wipe_check 30
+#定时检查临时信息 
+
+ai_mount 5
+ai_mount_wait 0.1
+
+ai_sit 4
+ai_sit_idle 10
+#前提是设置了这功能，发呆坐下的时间 
+ai_stand_wait 1
+ai_sit_wait 1
+#坐下站立的时间 
+
+ai_skill_use 0.5
+#使用技能间隔时间
+ai_skill_use_giveup 1
+#放弃使用技能时间 
+ai_item_use_auto 0.5
+#使用物品的间隔时间
+
+ai_teleport_away 0.5
+#检查躲避怪物的时间间隔
+ai_teleport_search 1.5
+#瞬移寻怪的等待时间
+ai_teleport_idle 10
+#发呆瞬移的时间间隔 
+ai_teleport_portal 1
+#遇传送门后瞬移时间 
+ai_teleport_hp 0.5
+#HP到达危险线后瞬移时间 
+ai_teleport_safe_force 120
+#没人接近瞬移时间 
+ai_teleport_retry 1.5
+#瞬移重试间隔 
+
+ai_route_npcTalk 0.5
+#行走过程中与NPC说话的停顿时间 
+ai_route_calcRoute 1
+#计算可行路线延时 
+ai_route_calcRoute_cont 0.2
+#计算失败后继续的时间 
+
+ai_buyAuto 2
+#检查是否需要买东西的间隔时间 
+ai_buyAuto_giveup 15
+#买东西过程发呆放弃时间 
+ai_buyAuto_wait 2
+#买东西的间隔时间 
+ai_buyAuto_wait_buy 5
+#买东西的间隔时间 
+ai_sellAuto 0.5
+#检查是否需要卖东西的间隔时间 
+ai_sellAuto_giveup 15
+#卖东西时发呆放弃时间 
+ai_storageAuto 2
+#检查超载情况的间隔时间 
+ai_storageauto_giveup 15
+#存仓过程发呆放弃时间 
+
+ai_sync 12
+#同步逾时时间 
+compilePortals_auto 10
+#发现新的传送门载入时间
+
+ai_smart_attack 1
+#智能攻击检测时间
+ai_smart_follow 1
+#智能跟随检测时间
+ai_healAuto 0.3
+#孙燕姿加血时间间隔
+ai_resurrect 1
+#组队自动复活时间间隔
+ai_skill_party 0.5
+#组队辅助技能时间间隔
+ai_shopAuto 10
+开店延迟时间
+ai_shopAutoGet 2
+身上拿物品到车子的间隔
+ai_exp_log 600
+更新exp日志文件的间隔
+
+ai_refineAuto 1
+#精练间隔
+ai_refineAuto_talk 0.5
+#精练时谈话间隔
+ai_refineAuto_giveup 2
+#精练后超时检测
+
+ai_fixAuto 1
+#检查是否需要修理装备的间隔
+
+ai_saveAuto 0.3
+#存储时间间隔
+
+injectSync 5
+injectKeepAlive 12
+welcomeText 4
+
+ai_autoMake 1
+#自动做药异常检测间隔时间
+ai_useArrowBox 2
+#使用箭矢筒的检测间隔时间
+ai_autoAddStatus 4
+#自动加属性点的检查间隔时间
+ai_autoAddSkill 6
+#自动加技能点的检查间隔时间
+
+ai_autoChange 10
+#自动切换脚本的检查间隔时间
+
+ai_showStatus 3
+#标题栏显示状态数据更新间隔时间
+ai_writeStatus 3
+#信息刷新间隔时间
+
+ai_move_delay 0.4

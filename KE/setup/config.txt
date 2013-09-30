@@ -1,0 +1,556 @@
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			     KoreEasy 设置脚本
+#─────────────────────────────────────
+
+
+
+#━━━━━━━━━━━━━━━━ 使用说明 ━━━━━━━━━━━━━━━━
+
+#   1) 本脚本包含常用参数，其他参数已默认设置在plus_control.txt内，一般不需要修改
+
+#   2) 如果同一参数在config.txt和plus_control.txt内，参数以config.txt所设置的为准
+
+
+#━━━━━━━━━━━━━━━━ 帐号设置 ━━━━━━━━━━━━━━━━
+
+master_name_0 电信区(Chaos)
+master_host_0 118.186.39.232
+master_port_0 6900
+master_version_0 4
+
+master_name_1 电信区(Loki)
+master_host_1 118.186.39.231
+master_port_1 6900
+master_version_1 4
+
+master_name_2 电信区(Iris)
+master_host_2 114.112.39.98
+master_port_2 6900
+master_version_2 4
+
+master_name_3 联通区(Sara)
+master_host_3 118.186.66.114
+master_port_3 6900
+master_version_3 4
+
+master_name_4 复活区(Odin)
+master_host_4 114.112.39.52
+master_port_4 6900
+master_version_4 4
+
+master_name_5 电信区(Thor)
+master_host_5 118.186.39.233
+master_port_5 6900
+master_version_5 4
+
+master_name_6 电信区(Sakray)
+master_host_6 118.186.39.235
+master_port_6 6900
+master_version_6 4
+
+master_name_7 电信区(Fenril)
+master_host_7 114.112.39.71
+master_port_7 6900
+master_version_7 4
+
+CNKoreName 
+#──────────────── CNKore论坛的账号 (*必须先输入*)
+version 4
+#──────────────── 游戏版本			(游戏版本会自动高速搜索)
+master 
+#──────────────── 主服务器			(请根据上面的列表选择)
+server 
+#──────────────── 分服务器			(请根据主服务器括号内选择：0第一个 1第二个 2第三个)
+username 
+#──────────────── 用户名
+password 
+#──────────────── 密码
+char 
+#──────────────── 选择角色			(0第一个 1第二个 2第三个)
+
+XKore 0
+#──────────────── 游戏模式			(0外挂模式 1内挂模式 - 内挂模式更多设置请参考plus_control的系统设置部分)
+
+mode 1
+#──────────────── 显示模式			(0安静模式 1正常模式 2详细模式 3显示其他玩家)
+
+storageAuto_password 
+#──────────────── 仓库密码
+
+serverEncoding GBK
+#──────────────── 服务器语言			（Big5台服 GBK国服）
+
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+PINEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+
+
+#━━━━━━━━━━━━━━━━ 地图设置 ━━━━━━━━━━━━━━━━
+
+saveMap 
+#──────────────── 储存地图
+saveMap_warpToNotInMaps 
+#──────────────── 不在指地图返回记录点		(各地图用逗号分格，例如：aldebaran,xmas,xmas_dun01,xmas_dun02)
+
+lockMap prt_fild07
+#──────────────── 锁定地图
+lockMap_route 
+#──────────────── 自定义路线			(各地图用逗号分格，例如：aldebaran,xmas,xmas_dun01,xmas_dun02)
+lockMap_routeType 
+#──────────────── 自定义路线快速算路		(0不使用 1在非城市地图使用 2除室内地图都使用 此设置可以大量减少算路时间，必须配合lockMap_route使用)
+teleportAuto_maxRouteDistance 
+#──────────────── 行走时超过指定距离使用瞬移	(小飞代替行走减少路程，因为跨地图算路需要大量CPU时间，请配合lockMap_route功能使用)
+attackOnRouteSkipMonsters 
+#──────────────── 非锁定地图，忽略怪物的攻击	(请分别填上怪物名称，如果全部都忽略，请填1)
+
+lockMap_warpTo 
+#──────────────── 锁定地图前先传送去此地图	(牧师传送之阵，请设置购买必要的蓝色矿石)
+lockMap_warpToNotInMaps 
+#──────────────── 指定在以上地图不使用传送	(有些地图不能一次传送到达，你需要设置哪些地图不需要使用传送，例如：xmas,xmas_dun01,xmas_dun02)
+
+
+
+#━━━━━━━━━━━━━━━━ 回城脚本 ━━━━━━━━━━━━━━━━
+
+itemsMaxWeight 49
+#──────────────── 当负重大于指定百分比时，回城出售和存仓
+cartAuto 
+#──────────────── 全自动手推车			(0关闭 1开启 - 自动通过手推车买卖、捡物品、存仓)
+sellAuto 
+#──────────────── 回城时自动物品出售		(0关闭 1开启 - 请参考item_control.txt文件)
+storageAuto 
+#──────────────── 回城时自动物品存仓		(0关闭 1开启 - 请参考item_control.txt文件)
+fixAuto 
+#──────────────── 自动回城修理装备		(0关闭 1开启 - 在装备损坏并打完怪物后就会自动回城修理)
+
+buyAuto_0 
+#──────────────── 购买物品
+buyAuto_0_minAmount 
+#──────────────── 小于该数量时回城购买		(使用自动手推车时，少于此数量则从车子提取，车子没有则回城购买)
+buyAuto_0_maxAmount 
+#──────────────── 购买数量			(使用自动手推车时，每次提取或购买的数量)
+buyAuto_0_maxCartAmount 
+#──────────────── 放进手推车内最大数量		(购买时，会把物品放进手推车，直到满足此数量或车子负重到达cartMaxWeight的百分比)
+buyAuto_1 
+buyAuto_1_minAmount 
+buyAuto_1_maxAmount 
+buyAuto_1_maxCartAmount 
+
+getAuto_0 
+#──────────────── 仓库取物品
+getAuto_0_minAmount 
+#──────────────── 小于该数量时回城取物品	(使用自动手推车时，少于此数量则从车子提取，车子没有则回城取仓)
+getAuto_0_maxAmount 
+#──────────────── 取仓数量			(使用自动手推车时，每次提取或取仓的数量)
+getAuto_0_maxCartAmount 
+#──────────────── 放进手推车内最大数量		(提取时，会把物品放进手推车，直到满足此数量或车子负重到达cartMaxWeight的百分比)
+getAuto_1 
+getAuto_1_minAmount 
+getAuto_1_maxAmount 
+getAuto_1_maxCartAmount 
+
+getAuto_2 
+getAuto_2_minAmount 
+getAuto_2_maxAmount 
+getAuto_2_maxCartAmount 
+#━━━━━━━━━━━━━━━━ 战斗脚本 ━━━━━━━━━━━━━━━━
+
+attackAuto 2
+#──────────────── 攻击类型			(0不攻击 1被怪物攻击才反击 2主动攻击怪物)
+attackDistance 2
+#──────────────── 攻击距离			(2肉搏 7神光 10魔法 12弓箭)
+attackCheckRoute 
+#──────────────── 隔墙锁怪检测距离　　　　　　　(0关闭 1开启 - 是否先算路判断再攻击，建议在地形复杂的地图打开)
+attackUseWeapon 1
+#──────────────── 攻击方式			(0只使用技能攻击 1使用武器、技能攻击)
+attackTimeout 8
+#──────────────── 指定时间内不能攻击目标则放弃	(单位: 秒)
+stealOnly 
+#──────────────── 偷窃到物品后放弃目标		(1全部怪物 或 怪物列表 - 例如：stealOnly 幽灵剑士,幽灵弓箭手)
+itemsTakeAuto 1
+#──────────────── 捡取物品			(0不捡 1攻击后捡 2捡后攻击)
+
+teleportAuto_search 
+#──────────────── 瞬移寻怪			(0关闭 1开启 - 假如出现只飞不打的情况，请把timeout.txt里的ai_teleport_search设置为1.5或2)
+route_randomWalk 1
+#──────────────── 随机移动寻怪			(0关闭 1开启 - 使用瞬移寻怪时请关闭此功能)
+
+monstersAttackFirst 
+#──────────────── 优先攻击的怪物
+monstersAttackSkip 
+#──────────────── 不攻击的怪物
+monstersTeleportSee 
+#──────────────── 看见指定怪物即飞走
+monstersTeleportHit 
+#──────────────── 被指定怪物攻击飞走
+monstersTeleportDmg 
+#──────────────── 被指定怪物伤害飞走，Miss不算
+
+teleportAuto_hp 20
+#──────────────── 当HP小于％时飞走
+teleportAuto_sp 
+#──────────────── 当SP小于％时飞走
+teleportAuto_minAggressives 4
+#──────────────── 被指定数量的怪物围攻飞走
+teleportAuto_roundMonsters 10
+#──────────────── 附近有指定数量的怪物飞走	(默认范围为12格)
+teleportAuto_skills 
+#──────────────── 当怪物使用指定技能时飞走
+
+sitAuto_hp_lower 
+#──────────────── 当HP小于％时坐下
+sitAuto_hp_upper 0
+#──────────────── 当HP多于％时站立
+sitAuto_sp_lower 
+#──────────────── 当SP小于％时坐下
+sitAuto_sp_upper 0
+#──────────────── 当SP多于％时站立
+
+useSelf_item_0_hp_upper 50
+#──────────────── HP小于等于％吃药补HP		(-1不使用)
+useSelf_item_1_sp_upper 0
+#──────────────── SP小于等于％吃药补SP		(-1不使用)
+useSelf_item_5 
+#──────────────── 指定加速药水			(可多选，以半角逗号分隔：菠色克药水,觉醒药水,集中药水)
+
+
+#━━━━━━━━━━━━━━━ 自动加点设置 ━━━━━━━━━━━━━━━
+
+autoAdd_charName 
+#──────────────── 角色名字			(为了防止复制脚本导致错误的加点，请设置与您当前脚本匹配的游戏角色名称)
+autoAddStatus 0
+#──────────────── 自动加属性点开关		(0关闭 1开启)
+autoAddSkill 0
+#──────────────── 自动加技能点开关		(0关闭 1开启)
+
+autoAddStatus_0 
+#──────────────── 自动加属性点1			(str/agi/vit/int/dex/luk)
+autoAddStatus_0_limit 
+#──────────────── 自动加属性点1的上限		(范围1~99)
+autoAddStatus_1 
+#──────────────── 自动加属性点2			(str/agi/vit/int/dex/luk)
+autoAddStatus_1_limit 
+#──────────────── 自动加属性点2的上限		(范围1~99)
+autoAddStatus_2 
+#──────────────── 自动加属性点3			(str/agi/vit/int/dex/luk)
+autoAddStatus_2_limit 
+#──────────────── 自动加属性点3的上限		(范围1~99)
+
+autoAddSkill_0 
+#──────────────── 自动加技能点1			(技能中文名字,必须正确)
+autoAddSkill_0_limit 
+#──────────────── 自动加技能点1的上限		(范围1~10)
+autoAddSkill_1 
+#──────────────── 自动加技能点2			(技能中文名字,必须正确)
+autoAddSkill_1_limit 
+#──────────────── 自动加技能点2的上限		(范围1~10)
+autoAddSkill_2 
+#──────────────── 自动加技能点3			(技能中文名字,必须正确)
+autoAddSkill_2_limit 
+#──────────────── 自动加技能点3的上限		(范围1~10)
+
+
+#━━━━━━━━━━━━━━━━ 攻击技能 ━━━━━━━━━━━━━━━━
+
+attackSkillSlot_0_lvl 
+attackSkillSlot_0_monsters 
+#──────────────── 偷窃
+attackSkillSlot_1_lvl 
+attackSkillSlot_1_monsters 
+#──────────────── 挑衅				(骑士)
+attackSkillSlot_2_lvl 
+attackSkillSlot_2_monsters 
+#──────────────── 怒爆
+attackSkillSlot_3_lvl 
+attackSkillSlot_3_monsters 
+#──────────────── 连刺攻击
+attackSkillSlot_4_lvl 
+attackSkillSlot_4_monsters 
+#──────────────── 骑乘攻击
+attackSkillSlot_5_lvl 
+attackSkillSlot_5_monsters 
+#──────────────── 怪物互击
+attackSkillSlot_6_lvl 
+attackSkillSlot_6_monsters 
+#──────────────── 狂击
+attackSkillSlot_7_lvl 
+attackSkillSlot_7_monsters 
+#──────────────── 螺旋击刺			(骑士领主)
+attackSkillSlot_8_lvl 
+attackSkillSlot_8_monsters 
+#──────────────── 伤害增压
+attackSkillSlot_9_lvl 
+attackSkillSlot_9_monsters 
+#──────────────── 巧打
+attackSkillSlot_10_lvl 
+attackSkillSlot_10_monsters 
+#──────────────── 金钱攻击			(铁匠/神工匠)
+attackSkillSlot_11_lvl 
+attackSkillSlot_11_monsters 
+#──────────────── 手推车攻击
+attackSkillSlot_12_lvl 
+attackSkillSlot_12_monsters 
+#──────────────── 二连矢			(猎人)
+attackSkillSlot_13_lvl 
+attackSkillSlot_13_monsters 
+#──────────────── 箭雨
+attackSkillSlot_14_lvl 
+attackSkillSlot_14_monsters 
+#──────────────── 闪电冲击
+attackSkillSlot_15_lvl 
+attackSkillSlot_15_monsters 
+#──────────────── 冲锋箭
+attackSkillSlot_16_lvl 
+attackSkillSlot_16_monsters 
+#──────────────── 猎鹰突击			(神射手)
+attackSkillSlot_17_lvl 
+attackSkillSlot_17_monsters 
+#──────────────── 锐利射击
+attackSkillSlot_18_lvl 
+attackSkillSlot_18_monsters 
+#──────────────── 音速投掷			(刺客)
+attackSkillSlot_19_lvl 
+attackSkillSlot_19_monsters 
+#──────────────── 施毒
+attackSkillSlot_20_lvl 
+attackSkillSlot_20_monsters 
+#──────────────── 黑暗瞬间			(十字刺客)
+attackSkillSlot_21_lvl 
+attackSkillSlot_21_monsters 
+#──────────────── 心灵震波
+attackSkillSlot_22_lvl 
+attackSkillSlot_22_monsters 
+#──────────────── 天使之怒			(牧师/神官)
+attackSkillSlot_23_lvl 
+attackSkillSlot_23_monsters 
+#──────────────── 沉默之术
+attackSkillSlot_24_lvl 
+attackSkillSlot_24_monsters 
+#──────────────── 转生术，已对应不死怪
+attackSkillSlot_25_lvl 
+attackSkillSlot_25_monsters 
+#──────────────── 治愈术，已对应不死怪
+attackSkillSlot_26_lvl 
+attackSkillSlot_26_monsters 
+#──────────────── 神圣之光
+attackSkillSlot_27_lvl 
+attackSkillSlot_27_monsters 
+#──────────────── 圣之祈福
+attackSkillSlot_28_lvl 
+attackSkillSlot_28_monsters 
+#──────────────── 复活术
+attackSkillSlot_29_lvl 
+attackSkillSlot_29_monsters 
+#──────────────── 冰冻术			(巫师/贤者)
+attackSkillSlot_30_lvl 
+attackSkillSlot_30_monsters 
+#──────────────── 泥沼地
+attackSkillSlot_31_lvl 
+attackSkillSlot_31_monsters 
+#──────────────── 火焰之壁
+attackSkillSlot_32_lvl 
+attackSkillSlot_32_monsters 
+#──────────────── 暴风雪
+attackSkillSlot_33_lvl 
+attackSkillSlot_33_monsters 
+#──────────────── 心灵爆破
+attackSkillSlot_34_lvl 
+attackSkillSlot_34_monsters 
+#──────────────── 圣灵召唤
+attackSkillSlot_35_lvl 
+attackSkillSlot_35_monsters 
+#──────────────── 冰箭术
+attackSkillSlot_36_lvl 
+attackSkillSlot_36_monsters 
+#──────────────── 火箭术
+attackSkillSlot_37_lvl 
+attackSkillSlot_37_monsters 
+#──────────────── 雷击术
+attackSkillSlot_38_lvl 
+attackSkillSlot_38_monsters 
+#──────────────── 雷鸣术
+attackSkillSlot_39_lvl 
+attackSkillSlot_39_monsters 
+#──────────────── 崩裂术
+attackSkillSlot_40_lvl 
+attackSkillSlot_40_monsters 
+#──────────────── 地震术
+attackSkillSlot_41_lvl 
+attackSkillSlot_41_monsters 
+#──────────────── 水球术
+attackSkillSlot_42_lvl 
+attackSkillSlot_42_monsters 
+#──────────────── 魔击术			(超魔导师)
+attackSkillSlot_43_lvl 
+attackSkillSlot_43_monsters 
+#──────────────── 念力连击
+attackSkillSlot_44_lvl 
+attackSkillSlot_44_monsters 
+#──────────────── 浸透劲			(武僧/武术宗师)
+attackSkillSlot_45_lvl 
+attackSkillSlot_45_monsters 
+#──────────────── 弹指神通
+attackSkillSlot_46_lvl 
+attackSkillSlot_46_sp_upper 100
+attackSkillSlot_46_monsters 
+#──────────────── 吸气
+attackSkillSlot_47_lvl 
+attackSkillSlot_47_monsters 
+#──────────────── 盾击				(十字军)
+attackSkillSlot_48_lvl 
+attackSkillSlot_48_monsters 
+#──────────────── 回旋盾击
+attackSkillSlot_49_lvl 
+attackSkillSlot_49_monsters 
+#──────────────── 圣十字攻击
+attackSkillSlot_50_lvl 
+attackSkillSlot_50_monsters 
+#──────────────── 圣十字审判
+attackSkillSlot_51_lvl 
+attackSkillSlot_51_monsters 
+#──────────────── 神之威压			(圣殿十字军)
+attackSkillSlot_52_lvl 
+attackSkillSlot_52_monsters 
+#──────────────── 舍命攻击
+attackSkillSlot_53_lvl 
+attackSkillSlot_53_monsters 
+#──────────────── 偷钱				(流氓/神行太保)
+attackSkillSlot_54_lvl 
+attackSkillSlot_54_monsters 
+#──────────────── 火烟瓶投掷			(炼金术士/创造者)
+attackSkillSlot_55_lvl 
+attackSkillSlot_55_monsters 
+#──────────────── 强酸攻击
+attackSkillSlot_56_lvl 
+attackSkillSlot_56_monsters 
+#──────────────── 乐器攻击			(诗人/搞笑艺人)
+attackSkillSlot_57_lvl 
+attackSkillSlot_57_monsters 
+#──────────────── 缠箭投掷			(舞者/冷酷舞姬)
+attackSkillSlot_58_lvl 
+attackSkillSlot_58_monsters 
+#──────────────── 奥义箭乱舞			(搞笑艺人/冷酷舞姬)
+attackSkillSlot_59_lvl 
+attackSkillSlot_59_monsters 
+#──────────────── 精神撼动			(智者)
+attackSkillSlot_60_lvl 
+attackSkillSlot_60_monsters 
+#──────────────── 随机技能			(贤者)
+attackSkillSlot_61_lvl 
+attackSkillSlot_61_monsters 
+#──────────────── 解放				(大法师)
+
+randomSkillAuto 
+#──────────────── 贤者自动随机技能		(0关闭 1召唤BOSS 2宠物认养)
+
+
+#━━━━━━━━━━━━━━━━ 辅助技能 ━━━━━━━━━━━━━━━━
+
+useSelf_skill_0_lvl 
+useSelf_skill_0_hp_upper 75
+#──────────────── 治愈术，非战斗中使用		(全职业)
+useSelf_skill_1_lvl 
+useSelf_skill_1_hp_upper 50
+#──────────────── 治愈术，战斗中使用
+useSelf_skill_2_lvl 
+#──────────────── 双手剑攻击速度增加		(骑士)
+useSelf_skill_3_lvl 
+#──────────────── 狂暴状态
+useSelf_skill_4_lvl 
+#──────────────── 灵气剑			(骑士领主)
+useSelf_skill_5_lvl 
+#──────────────── 双剑挌挡
+useSelf_skill_6_lvl 
+#──────────────── 集中攻击
+useSelf_skill_7_lvl 
+#──────────────── 大声吶喊			(铁匠)
+useSelf_skill_8_lvl 
+#──────────────── 速度激发
+useSelf_skill_9_lvl 
+#──────────────── 凶砍
+useSelf_skill_10_lvl 
+#──────────────── 极限攻击
+useSelf_skill_11_lvl 
+#──────────────── 无视体型攻击
+useSelf_skill_12_lvl 
+#──────────────── 野蛮凶砍			(神工匠)
+useSelf_skill_13_lvl 
+#──────────────── 手推车加速
+useSelf_skill_14_lvl 
+#──────────────── 心神凝聚			(猎人)
+useSelf_skill_15_lvl 
+#──────────────── 狙杀瞄准			(神射手)
+useSelf_skill_16_lvl 
+#──────────────── 风之步
+useSelf_skill_17_lvl 
+#──────────────── 解毒				(刺客)
+useSelf_skill_18_lvl 
+#──────────────── 涂毒
+useSelf_skill_19_lvl 
+#──────────────── 加速术			(牧师)
+useSelf_skill_20_lvl 
+#──────────────── 天使之赐福，INT牧师
+useSelf_skill_21_lvl 
+#──────────────── 天使之赐福，暴力牧师
+useSelf_skill_22_lvl 
+#──────────────── 神威祈福
+useSelf_skill_23_lvl 
+#──────────────── 天使之障壁
+useSelf_skill_24_lvl 
+#──────────────── 霸邪之阵
+useSelf_skill_25_lvl 
+#──────────────── 圣母之颂歌
+useSelf_skill_26_lvl 
+#──────────────── 幸运之颂歌
+useSelf_skill_27_lvl 
+#──────────────── 光之障壁，已对应远程怪
+useSelf_skill_28_lvl 
+#──────────────── 暗之障壁
+useSelf_skill_29_lvl 
+useSelf_skill_29_monsters 
+#──────────────── 光猎
+useSelf_skill_30_lvl 
+#──────────────── 圣母之祈福			(神官)
+useSelf_skill_31_lvl 
+#──────────────── 能量外套			(巫师)
+useSelf_skill_32_lvl 
+useSelf_skill_32_monsters 
+#──────────────── 火狩
+useSelf_skill_33_lvl 
+#──────────────── 魔力增幅			(超魔导师)
+useSelf_skill_34_lvl 
+#──────────────── 蓄气				(武僧)
+useSelf_skill_35_lvl 
+#──────────────── 爆气
+useSelf_skill_36_lvl 
+#──────────────── 金刚不坏
+useSelf_skill_37_lvl 
+useSelf_skill_37_monsters 
+#──────────────── 连环全身掌
+useSelf_skill_38_lvl 
+useSelf_skill_38_monsters 
+#──────────────── 阿修罗霸凰拳
+useSelf_skill_39_lvl 
+useSelf_skill_39_monsters 
+#──────────────── 猛虎硬爬山			(武术宗师)
+useSelf_skill_40_lvl 
+#──────────────── 狂蓄气
+useSelf_skill_41_lvl 
+#──────────────── 自动防御			(十字军/圣殿十字军)
+useSelf_skill_42_lvl 
+#──────────────── 反射盾
+useSelf_skill_43_lvl 
+#──────────────── 神佑之光
+useSelf_skill_44_lvl 
+#──────────────── 光之盾,已对应远程怪
+useSelf_skill_45_lvl 
+#──────────────── 长矛加速术
+useSelf_skill_46_lvl 
+#──────────────── 霸王魂			(神行太保)
+useSelf_skill_47_lvl 
+useSelf_skill_47_hp_upper 50
+#──────────────── 药水投掷			(炼金术士/创造者)
+useSelf_skill_48_lvl 
+useSelf_skill_48_sp_upper 20
+#──────────────── HP转换			(智者)
+useSelf_skill_49_lvl 
+#──────────────── 凶砍最大值			(银匠)

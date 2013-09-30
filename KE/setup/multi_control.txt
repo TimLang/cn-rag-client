@@ -1,0 +1,194 @@
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			     KoreEasy 多脚本切换控制
+#─────────────────────────────────────
+
+
+#━━━━━━━━━━━━━━━━ 使用说明 ━━━━━━━━━━━━━━━━
+
+#   1) 切换的setup目录名称：请根据需要建立不同的setup文件夹并设置其中所有的文件到您满意为止。
+
+#   2) 是否需要重新登陆：如果您不是用当前的角色执行这个脚本的话，请选择为开启，否则为关闭。
+
+#   3) 默认脚本设置中不包含目录设置，为程序内部默认的setup目录。
+
+
+
+autoChange 0
+#──────────────── 自动切换脚本开关		(0关闭 1开启)
+
+
+
+#━━━━━━━━━━━━━━━ 默认脚本设置 ━━━━━━━━━━━━━━━
+
+
+autoChange_0_reLog 0
+#──────────────── 是否需要重新登陆		(0关闭 1开启，如果您是不同帐号或者同一帐号不同角色之间相互转换，则请设置为1)
+
+autoChange_0_save 0
+#──────────────── 是否需要存储
+
+autoChange_0_hp_lower 
+#──────────────── 当HP小于％时更换
+autoChange_0_hp_upper 
+#──────────────── 当HP大于％时更换
+autoChange_0_sp_lower 
+#──────────────── 当SP小于％时更换
+autoChange_0_sp_upper 
+#──────────────── 当SP大于％时更换
+
+autoChange_0_zeny_lower 
+#──────────────── 当金钱少于多少时更换
+autoChange_0_zeny_upper 
+#──────────────── 当金钱多于多少时更换
+
+autoChange_0_lv_upper 
+#──────────────── 当基本等级高于多少时更换
+autoChange_0_job_upper 
+#──────────────── 当职业等级高于多少时更换
+
+autoChange_0_pin_upper 
+#──────────────── 当PIN值高于多少时更换
+autoChange_0_pin_lower 
+#──────────────── 当PIN值低于多少时更换
+
+autoChange_0_in_maps 
+#──────────────── 在指定地图切换		(填写地图的名字，多个地图请用半角逗号,分开)
+
+autoChange_0_avoidGM_maxTimes 0
+#──────────────── 当遇到GM次数超过多少时更换	(0关闭 n次数)
+autoChange_0_avoidGM_dcTimes 0
+#──────────────── 当遇到GM下线次数超过多少时更换(0关闭 n次数)
+
+autoChange_0_storage_item 
+#──────────────── 当仓库里的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_0_storage_itemMaxAmount 
+#──────────────── 当仓库里指定物品超过多少时更换
+autoChange_0_storage_itemMinAmount 
+#──────────────── 当仓库里指定物品少于多少时更换
+
+autoChange_0_cart_item 
+#──────────────── 当小车内的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_0_cart_itemMaxAmount 
+#──────────────── 当小车内指定物品超过多少时更换
+autoChange_0_cart_itemMinAmount 
+#──────────────── 当小车内指定物品少于多少时更换
+
+
+
+#━━━━━━━━━━━━━━━ 1号 脚本设置 ━━━━━━━━━━━━━━━
+
+
+autoChange_1_dir setup1
+#──────────────── 欲切换的setup目录名称
+
+autoChange_1_reLog 0
+#──────────────── 是否需要重新登陆		(0关闭 1开启，如果您是不同帐号或者同一帐号不同角色之间相互转换，则请设置为1)
+
+autoChange_1_save 0
+#──────────────── 是否需要存储
+
+autoChange_1_hp_lower 
+#──────────────── 当HP小于％时更换
+autoChange_1_hp_upper 
+#──────────────── 当HP大于％时更换
+autoChange_1_sp_lower 
+#──────────────── 当SP小于％时更换
+autoChange_1_sp_upper 
+#──────────────── 当SP大于％时更换
+
+autoChange_1_zeny_lower 
+#──────────────── 当金钱少于多少时更换
+autoChange_1_zeny_upper 
+#──────────────── 当金钱多于多少时更换
+
+autoChange_1_lv_upper 
+#──────────────── 当基本等级高于多少时更换
+autoChange_1_job_upper 
+#──────────────── 当职业等级高于多少时更换
+
+autoChange_1_pin_upper 
+#──────────────── 当PIN值高于多少时更换
+autoChange_1_pin_lower 
+#──────────────── 当PIN值低于多少时更换
+
+autoChange_1_in_maps gef_fild00
+#──────────────── 在指定地图切换		(填写地图的名字，多个地图请用半角逗号,分开)
+
+autoChange_1_avoidGM_maxTimes 0
+#──────────────── 当遇到GM次数超过多少时更换	(0关闭 n次数)
+autoChange_1_avoidGM_dcTimes 0
+#──────────────── 当遇到GM下线次数超过多少时更换(0关闭 n次数)
+
+autoChange_1_storage_item 
+#──────────────── 当仓库里的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_1_storage_itemMaxAmount 
+#──────────────── 当仓库里指定物品超过多少时更换
+autoChange_1_storage_itemMinAmount 
+#──────────────── 当仓库里指定物品少于多少时更换
+
+autoChange_1_cart_item 
+#──────────────── 当小车内的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_1_cart_itemMaxAmount 
+#──────────────── 当小车内指定物品超过多少时更换
+autoChange_1_cart_itemMinAmount 
+#──────────────── 当小车内指定物品少于多少时更换
+
+
+
+#━━━━━━━━━━━━━━━ 2号 脚本设置 ━━━━━━━━━━━━━━━
+
+
+autoChange_2_dir setup2
+#──────────────── 欲切换的setup目录名称
+
+autoChange_2_reLog 0
+#──────────────── 是否需要重新登陆		(0关闭 1开启，如果您是不同帐号或者同一帐号不同角色之间相互转换，则请设置为1)
+
+autoChange_2_save 0
+#──────────────── 是否需要存储
+
+autoChange_2_hp_lower 
+#──────────────── 当HP小于％时更换
+autoChange_2_hp_upper 
+#──────────────── 当HP大于％时更换
+autoChange_2_sp_lower 
+#──────────────── 当SP小于％时更换
+autoChange_2_sp_upper 
+#──────────────── 当SP大于％时更换
+
+autoChange_2_zeny_lower 
+#──────────────── 当金钱少于多少时更换
+autoChange_2_zeny_upper 
+#──────────────── 当金钱多于多少时更换
+
+autoChange_2_lv_upper 
+#──────────────── 当基本等级高于多少时更换
+autoChange_2_job_upper 
+#──────────────── 当职业等级高于多少时更换
+
+autoChange_2_pin_upper 
+#──────────────── 当PIN值高于多少时更换
+autoChange_2_pin_lower 
+#──────────────── 当PIN值低于多少时更换
+
+autoChange_2_in_maps 
+#──────────────── 在指定地图切换		(填写地图的名字，多个地图请用半角逗号,分开)
+
+autoChange_2_avoidGM_maxTimes 0
+#──────────────── 当遇到GM次数超过多少时更换	(0关闭 n次数)
+autoChange_2_avoidGM_dcTimes 0
+#──────────────── 当遇到GM下线次数超过多少时更换(0关闭 n次数)
+
+autoChange_2_storage_item 
+#──────────────── 当仓库里的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_2_storage_itemMaxAmount 
+#──────────────── 当仓库里指定物品超过多少时更换
+autoChange_2_storage_itemMinAmount 
+#──────────────── 当仓库里指定物品少于多少时更换
+
+autoChange_2_cart_item 
+#──────────────── 当小车内的物品满足条件更换	(如果设置了物品请设置下面的参数)
+autoChange_2_cart_itemMaxAmount 
+#──────────────── 当小车内指定物品超过多少时更换
+autoChange_2_cart_itemMinAmount 
+#──────────────── 当小车内指定物品少于多少时更换

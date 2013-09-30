@@ -1,0 +1,80 @@
+
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			     KoreEasy 商店控制
+#─────────────────────────────────────
+
+
+#━━━━━━━━━━━━━━━━ 使用说明 ━━━━━━━━━━━━━━━━
+
+#   1) 定点开店请在config.txt里设置lockMap、lockMap_x、lockMap_y
+
+#   2) 注意开店名不要超过20个中文字
+
+#   3) 限制出售金额在1至1000W
+
+#　 4) 出售物品请写全名，如：二级强悍 火属性 十字巨剑。名字可以输入i指令查询
+
+
+chatAuto_open 0
+chatAuto_title
+chatAuto_num 
+chatAuto_public 0
+chatAuto_password
+
+#━━━━━━━━━━━━━━━━ 商店设置 ━━━━━━━━━━━━━━━━
+
+shopAuto_open 0
+#──────────────── 自动开店			(0关闭 1开启)
+shop_title 
+#──────────────── 商店名称
+
+name_0 
+#──────────────── 物品名称1
+quantity_0 0
+#──────────────── 出售数量1
+price_0 0 
+#──────────────── 出售价格1
+
+name_1 
+quantity_1 0
+price_1 0
+
+name_2 
+quantity_2 0
+price_2 0
+
+name_3 
+quantity_3 0
+price_3 0
+
+name_4 
+quantity_4 0
+price_4 0
+
+name_5 
+quantity_5 0
+price_5 0
+
+name_6 
+quantity_6 0
+price_6 0
+
+name_7 
+quantity_7 0
+price_7 0
+
+name_8 
+quantity_8 0
+price_8 0
+
+name_9 
+quantity_9 0
+price_9 0
+
+name_10 
+quantity_10 0
+price_10 0
+
+name_11 
+quantity_11 0
+price_11 0

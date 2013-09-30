@@ -1,0 +1,521 @@
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			      KoreEasy NPC控制
+#─────────────────────────────────────
+
+
+#━━━━━━━━━━━━━━━━ 自动设置 ━━━━━━━━━━━━━━━━
+saveMap_0 prontera
+#──────────────── 保存地图名
+saveMap_0_save 
+#──────────────── 存储NPC ID
+saveMap_0_save_distance 4
+#──────────────── 存储NPC对话距离
+saveMap_0_sell 
+#──────────────── 出售NPC ID
+saveMap_0_sell_distance 4
+#──────────────── 出售NPC对话距离
+saveMap_0_sell_steps s
+#──────────────── 出售NPC对话步骤
+saveMap_0_storage 
+#──────────────── 存仓NPC ID
+saveMap_0_storage_distance 4
+#──────────────── 存仓NPC对话距离
+saveMap_0_storage_steps c r1 n
+#──────────────── 存仓NPC对话步骤
+saveMap_0_fix 
+#──────────────── 修理NPC ID
+saveMap_0_fix_distance 4
+#──────────────── 修理NPC对话距离
+saveMap_0_fix_steps c r0 c r0 n
+#──────────────── 修理NPC对话步骤
+saveMap_0_heal 
+#──────────────── 恢复NPC ID
+saveMap_0_heal_distance 4
+#──────────────── 恢复NPC对话距离
+saveMap_0_npc_0 
+#──────────────── 购买NPC ID
+saveMap_0_npc_0_distance 4
+#──────────────── 购买NPC对话距离
+saveMap_0_npc_steps_0 b
+#──────────────── 购买NPC对话步骤
+saveMap_0_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+#──────────────── 购买NPC对话物品
+saveMap_0_npc_1 
+saveMap_0_npc_1_distance 4
+saveMap_0_npc_steps_1 b
+saveMap_0_item_1 
+
+saveMap_1 prt_fild05
+saveMap_1_save 
+saveMap_1_save_distance 4
+saveMap_1_sell 
+saveMap_1_sell_distance 4
+saveMap_1_sell_steps s
+saveMap_1_storage 
+saveMap_1_storage_distance 4
+saveMap_1_storage_steps c r1 n
+saveMap_1_fix 
+saveMap_1_fix_distance 4
+saveMap_1_fix_steps c r0 c r0 n
+saveMap_1_heal 
+saveMap_1_heal_distance 4
+saveMap_1_npc_0 
+saveMap_1_npc_0_distance 4
+saveMap_1_npc_steps_0 b
+saveMap_1_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,觉醒药水,集中药水,赤色药水,箭矢
+
+saveMap_2 payon
+saveMap_2_save 
+saveMap_2_save_distance 4
+saveMap_2_sell 
+saveMap_2_sell_distance 4
+saveMap_2_sell_steps s
+saveMap_2_storage 
+saveMap_2_storage_distance 4
+saveMap_2_storage_steps c r1 n
+saveMap_2_fix 
+saveMap_2_fix_distance 4
+saveMap_2_fix_steps c r0 c r0 n
+saveMap_2_heal 
+saveMap_2_heal_distance 4
+saveMap_2_npc_0 
+saveMap_2_npc_0_distance 4
+saveMap_2_npc_steps_0 b
+saveMap_2_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_3 geffen
+saveMap_3_save 
+saveMap_3_save_distance 4
+saveMap_3_sell 
+saveMap_3_sell_distance 4
+saveMap_3_sell_steps s
+saveMap_3_storage 
+saveMap_3_storage_distance 4
+saveMap_3_storage_steps c r1 n
+saveMap_3_fix 
+saveMap_3_fix_distance 4
+saveMap_3_fix_steps c r0 c r0 n
+saveMap_3_heal 
+saveMap_3_heal_distance 4
+saveMap_3_npc_0 
+saveMap_3_npc_0_distance 4
+saveMap_3_npc_steps_0 b
+saveMap_3_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_4 morocc
+saveMap_4_save 
+saveMap_4_save_distance 4
+saveMap_4_sell 
+saveMap_4_sell_distance 4
+saveMap_4_sell_steps s
+saveMap_4_storage 
+saveMap_4_storage_distance 4
+saveMap_4_storage_steps c r1 n
+saveMap_4_fix 
+saveMap_4_fix_distance 4
+saveMap_4_fix_steps c r0 c r0 n
+saveMap_4_heal 
+saveMap_4_heal_distance 4
+saveMap_4_npc_0 
+saveMap_4_npc_0_distance 4
+saveMap_4_npc_steps_0 b
+saveMap_4_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_5 aldebaran
+saveMap_5_save 
+saveMap_5_save_distance 4
+saveMap_5_sell 
+saveMap_5_sell_distance 4
+saveMap_5_sell_steps s
+saveMap_5_storage 
+saveMap_5_storage_distance 4
+saveMap_5_storage_steps c r1 n
+saveMap_5_fix 
+saveMap_5_fix_distance 4
+saveMap_5_fix_steps c r0 c r0 n
+saveMap_5_heal 
+saveMap_5_heal_distance 4
+saveMap_5_npc_0 
+saveMap_5_npc_0_distance 4
+saveMap_5_npc_steps_0 b
+saveMap_5_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_6 izlude
+saveMap_6_save 
+saveMap_6_save_distance 4
+saveMap_6_sell 
+saveMap_6_sell_distance 4
+saveMap_6_sell_steps s
+saveMap_6_storage 
+saveMap_6_storage_distance 4
+saveMap_6_storage_steps c r1 n
+saveMap_6_fix 
+saveMap_6_fix_distance 4
+saveMap_6_fix_steps c r0 c r0 n
+saveMap_6_heal 
+saveMap_6_heal_distance 4
+saveMap_6_npc_0 
+saveMap_6_npc_0_distance 4
+saveMap_6_npc_steps_0 b
+saveMap_6_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_7 izlu2dun
+saveMap_7_save 
+saveMap_7_save_distance 4
+saveMap_7_sell 
+saveMap_7_sell_distance 4
+saveMap_7_sell_steps s
+saveMap_7_storage 
+saveMap_7_storage_distance 4
+saveMap_7_storage_steps c r1 n
+saveMap_7_fix 
+saveMap_7_fix_distance 4
+saveMap_7_fix_steps c r0 c r0 n
+saveMap_7_heal 
+saveMap_7_heal_distance 4
+saveMap_7_npc_0 
+saveMap_7_npc_0_distance 4
+saveMap_7_npc_steps_0 b
+saveMap_7_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_8 alberta
+saveMap_8_save 
+saveMap_8_save_distance 4
+saveMap_8_sell 
+saveMap_8_sell_distance 4
+saveMap_8_sell_steps s
+saveMap_8_storage 
+saveMap_8_storage_distance 4
+saveMap_8_storage_steps c r1 n
+saveMap_8_fix 
+saveMap_8_fix_distance 4
+saveMap_8_fix_steps c r0 c r0 n
+saveMap_8_heal 
+saveMap_8_heal_distance 4
+saveMap_8_npc_0 
+saveMap_8_npc_0_distance 4
+saveMap_8_npc_steps_0 b
+saveMap_8_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_9 alb2trea
+saveMap_9_save 
+saveMap_9_save_distance 4
+saveMap_9_sell 
+saveMap_9_sell_distance 4
+saveMap_9_sell_steps s
+saveMap_9_storage 
+saveMap_9_storage_distance 4
+saveMap_9_storage_steps c r1 n
+saveMap_9_fix 
+saveMap_9_fix_distance 4
+saveMap_9_fix_steps c r0 c r0 n
+saveMap_9_heal 
+saveMap_9_heal_distance 4
+saveMap_9_npc_0 
+saveMap_9_npc_0_distance 4
+saveMap_9_npc_steps_0 b
+saveMap_9_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_10 comodo
+saveMap_10_save 
+saveMap_10_save_distance 4
+saveMap_10_sell 
+saveMap_10_sell_distance 4
+saveMap_10_sell_steps s
+saveMap_10_storage 
+saveMap_10_storage_distance 4
+saveMap_10_storage_steps c c r1 n
+saveMap_10_fix 
+saveMap_10_fix_distance 4
+saveMap_10_fix_steps c r0 c r0 n
+saveMap_10_heal 
+saveMap_10_heal_distance 4
+saveMap_10_npc_0 
+saveMap_10_npc_0_distance 4
+saveMap_10_npc_steps_0 b
+saveMap_10_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_11 mjolnir_02
+saveMap_11_save 
+saveMap_11_save_distance 4
+saveMap_11_sell 
+saveMap_11_sell_distance 4
+saveMap_11_sell_steps s
+saveMap_11_storage 
+saveMap_11_storage_distance 4
+saveMap_11_storage_steps c r1 n
+saveMap_11_fix 
+saveMap_11_fix_distance 4
+saveMap_11_fix_steps c r0 c r0 n
+saveMap_11_heal 
+saveMap_11_heal_distance 4
+saveMap_11_npc_0 
+saveMap_11_npc_0_distance 4
+saveMap_11_npc_steps_0 b
+saveMap_11_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_12 yuno
+saveMap_12_save 
+saveMap_12_save_distance 4
+saveMap_12_sell 
+saveMap_12_sell_distance 4
+saveMap_12_sell_steps s
+saveMap_12_storage 
+saveMap_12_storage_distance 4
+saveMap_12_storage_steps c r1 n
+saveMap_12_fix 
+saveMap_12_fix_distance 4
+saveMap_12_fix_steps c r0 c r0 n
+saveMap_12_heal 
+saveMap_12_heal_distance 4
+saveMap_12_npc_0 
+saveMap_12_npc_0_distance 4
+saveMap_12_npc_steps_0 b
+saveMap_12_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_13 gef_fild10
+saveMap_13_save 
+saveMap_13_save_distance 4
+saveMap_13_sell 
+saveMap_13_sell_distance 4
+saveMap_13_sell_steps s
+saveMap_13_storage 
+saveMap_13_storage_distance 4
+saveMap_13_storage_steps c r1 n
+saveMap_13_fix 
+saveMap_13_fix_distance 4
+saveMap_13_fix_steps c r0 c r0 n
+saveMap_13_heal 
+saveMap_13_heal_distance 4
+saveMap_13_npc_0 
+saveMap_13_npc_0_distance 4
+saveMap_13_npc_steps_0 b
+saveMap_13_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_14 amatsu
+saveMap_14_save 
+saveMap_14_save_distance 4
+saveMap_14_sell 
+saveMap_14_sell_distance 4
+saveMap_14_sell_steps s
+saveMap_14_storage 
+saveMap_14_storage_distance 4
+saveMap_14_storage_steps c r1 n
+saveMap_14_fix 
+saveMap_14_fix_distance 4
+saveMap_14_fix_steps c r0 c r0 n
+saveMap_14_heal 
+saveMap_14_heal_distance 4
+saveMap_14_npc_0 
+saveMap_14_npc_0_distance 4
+saveMap_14_npc_steps_0 b
+saveMap_14_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_15 gonryun
+saveMap_15_save 
+saveMap_15_save_distance 4
+saveMap_15_sell 
+saveMap_15_sell_distance 4
+saveMap_15_sell_steps s
+saveMap_15_storage 
+saveMap_15_storage_distance 4
+saveMap_15_storage_steps c r1 n
+saveMap_15_fix 
+saveMap_15_fix_distance 4
+saveMap_15_fix_steps c r0 c r0 n
+saveMap_15_heal 
+saveMap_15_heal_distance 4
+saveMap_15_npc_0 
+saveMap_15_npc_0_distance 4
+saveMap_15_npc_steps_0 b
+saveMap_15_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_16 umbala
+saveMap_16_save 
+saveMap_16_save_distance 4
+saveMap_16_sell 
+saveMap_16_sell_distance 4
+saveMap_16_sell_steps s
+saveMap_16_storage 
+saveMap_16_storage_distance 4
+saveMap_16_storage_steps c r1 n
+saveMap_16_fix 
+saveMap_16_fix_distance 4
+saveMap_16_fix_steps c r0 c r0 n
+saveMap_16_heal 
+saveMap_16_heal_distance 4
+saveMap_16_npc_0 
+saveMap_16_npc_0_distance 4
+saveMap_16_npc_steps_0 b
+saveMap_16_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_17 niflheim
+saveMap_17_save 
+saveMap_17_save_distance 4
+saveMap_17_sell 
+saveMap_17_sell_distance 4
+saveMap_17_sell_steps s
+saveMap_17_storage 
+saveMap_17_storage_distance 4
+saveMap_17_storage_steps c r1 n
+saveMap_17_fix 
+saveMap_17_fix_distance 4
+saveMap_17_fix_steps c r0 c r0 n
+saveMap_17_heal 
+saveMap_17_heal_distance 4
+saveMap_17_npc_0 
+saveMap_17_npc_0_distance 4
+saveMap_17_npc_steps_0 b
+saveMap_17_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_18 louyang
+saveMap_18_save 
+saveMap_18_save_distance 4
+saveMap_18_sell 
+saveMap_18_sell_distance 4
+saveMap_18_sell_steps s
+saveMap_18_storage 
+saveMap_18_storage_distance 4
+saveMap_18_storage_steps c r1 n
+saveMap_18_fix 
+saveMap_18_fix_distance 4
+saveMap_18_fix_steps c r0 c r0 n
+saveMap_18_heal 
+saveMap_18_heal_distance 4
+saveMap_18_npc_0 
+saveMap_18_npc_0_distance 4
+saveMap_18_npc_steps_0 b
+saveMap_18_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_19 ayothaya
+saveMap_19_save 
+saveMap_19_save_distance 4
+saveMap_19_sell 
+saveMap_19_sell_distance 4
+saveMap_19_sell_steps s
+saveMap_19_storage 
+saveMap_19_storage_distance 4
+saveMap_19_storage_steps c r1 n
+saveMap_19_fix 
+saveMap_19_fix_distance 4
+saveMap_19_fix_steps c r0 c r0 n
+saveMap_19_heal 
+saveMap_19_heal_distance 4
+saveMap_19_npc_0 
+saveMap_19_npc_0_distance 4
+saveMap_19_npc_steps_0 b
+saveMap_19_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_20 einbroch
+saveMap_20_save 
+saveMap_20_save_distance 4
+saveMap_20_sell 
+saveMap_20_sell_distance 4
+saveMap_20_sell_steps s
+saveMap_20_storage 
+saveMap_20_storage_distance 4
+saveMap_20_storage_steps c r1 n
+saveMap_20_fix 
+saveMap_20_fix_distance 4
+saveMap_20_fix_steps c r0 c r0 n
+saveMap_20_heal 
+saveMap_20_heal_distance 4
+saveMap_20_npc_0 
+saveMap_20_npc_0_distance 4
+saveMap_20_npc_steps_0 b
+saveMap_20_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_21 einbech
+saveMap_21_save 
+saveMap_21_save_distance 4
+saveMap_21_sell 
+saveMap_21_sell_distance 4
+saveMap_21_sell_steps s
+saveMap_21_storage 
+saveMap_21_storage_distance 4
+saveMap_21_storage_steps c r1 n
+saveMap_21_fix 
+saveMap_21_fix_distance 4
+saveMap_21_fix_steps c r0 c r0 n
+saveMap_21_heal 
+saveMap_21_heal_distance 4
+saveMap_21_npc_0 
+saveMap_21_npc_0_distance 4
+saveMap_21_npc_steps_0 b
+saveMap_21_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_22 lighthalzen
+saveMap_22_save 
+saveMap_22_save_distance 4
+saveMap_22_sell 
+saveMap_22_sell_distance 4
+saveMap_22_sell_steps s
+saveMap_22_storage 
+saveMap_22_storage_distance 4
+saveMap_22_storage_steps c r1 n
+saveMap_22_fix 
+saveMap_22_fix_distance 4
+saveMap_22_fix_steps c r0 c r0 n
+saveMap_22_heal 
+saveMap_22_heal_distance 4
+saveMap_22_npc_0 
+saveMap_22_npc_0_distance 4
+saveMap_22_npc_steps_0 b
+saveMap_22_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_23 hugel
+saveMap_23_save 
+saveMap_23_save_distance 4
+saveMap_23_sell 
+saveMap_23_sell_distance 4
+saveMap_23_sell_steps s
+saveMap_23_storage 
+saveMap_23_storage_distance 4
+saveMap_23_storage_steps c r1 n
+saveMap_23_fix 
+saveMap_23_fix_distance 4
+saveMap_23_fix_steps c r0 c r0 n
+saveMap_23_heal 
+saveMap_23_heal_distance 4
+saveMap_23_npc_0 
+saveMap_23_npc_0_distance 4
+saveMap_23_npc_steps_0 b
+saveMap_23_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_24 rachel
+saveMap_24_save 
+saveMap_24_save_distance 4
+saveMap_24_sell 
+saveMap_24_sell_distance 4
+saveMap_24_sell_steps s
+saveMap_24_storage 
+saveMap_24_storage_distance 4
+saveMap_24_storage_steps c r1 n
+saveMap_24_fix 
+saveMap_24_fix_distance 4
+saveMap_24_fix_steps c r0 c r0 n
+saveMap_24_heal 
+saveMap_24_heal_distance 4
+saveMap_24_npc_0 
+saveMap_24_npc_0_distance 4
+saveMap_24_npc_steps_0 b
+saveMap_24_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石
+
+saveMap_25 veins
+saveMap_25_save 
+saveMap_25_save_distance 4
+saveMap_25_sell 
+saveMap_25_sell_distance 4
+saveMap_25_sell_steps s
+saveMap_25_storage 
+saveMap_25_storage_distance 4
+saveMap_25_storage_steps c r1 n
+saveMap_25_fix 
+saveMap_25_fix_distance 4
+saveMap_25_fix_steps c r0 c r0 n
+saveMap_25_heal 
+saveMap_25_heal_distance 4
+saveMap_25_npc_0 
+saveMap_25_npc_0_distance 4
+saveMap_25_npc_steps_0 b
+saveMap_25_item_0 苍蝇翅膀,蝴蝶翅膀,红色药水,赤色药水,黄色药水,觉醒药水,集中药水,白色药水,箭矢,蓝色魔力矿石

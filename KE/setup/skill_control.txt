@@ -1,0 +1,2548 @@
+
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			     KoreEasy 技能控制
+#─────────────────────────────────────
+
+
+#━━━━━━━━━━━━━━━━ 使用说明 ━━━━━━━━━━━━━━━━
+
+#   1) 每个技能对应于一系列的条件，只有当全部条件满足，才会使用该技能
+
+#   2) 下面已经设置好各技能的默认参数，如无必要，请勿更改
+
+
+
+#━━━━━━━━━━━━━━━━ 攻击技能 ━━━━━━━━━━━━━━━━
+
+attackSkillSlot_0 偷窃
+#──────────────── 技能名称
+attackSkillSlot_0_lvl 
+#──────────────── 使用技能级数
+attackSkillSlot_0_monsters 
+#──────────────── 当敌人是指定怪物时使用	(可多选，例如：波利,土波利,波波利)
+attackSkillSlot_0_dist 2
+#──────────────── 与攻击目标的距离
+attackSkillSlot_0_hp_lower 0
+attackSkillSlot_0_hp_upper 100
+#──────────────── 当HP％在lower至upper范围时，使用技能
+attackSkillSlot_0_sp_lower 0
+attackSkillSlot_0_sp_upper 100
+#──────────────── 当SP％在lower至upper范围时，使用技能
+attackSkillSlot_0_maxCastTime 0.3
+#──────────────── 最长施法时间
+attackSkillSlot_0_minCastTime 0
+#──────────────── 最短施法时间
+attackSkillSlot_0_stopWhenHit 0
+#──────────────── 当受到攻击时终止使用		(0关闭 1开启)
+attackSkillSlot_0_maxSpirits 0
+#──────────────── 当气弹少于该数量时使用	(0关闭 1-5开启)
+attackSkillSlot_0_minSpirits 0
+#──────────────── 当气弹多于该数量时使用	(0关闭 1-5开启)
+attackSkillSlot_0_maxAggressives 0
+#──────────────── 当敌人少于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+attackSkillSlot_0_minAggressives 0
+#──────────────── 当敌人多于等于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+attackSkillSlot_0_roundMonstersDist 0
+#──────────────── 检测附近怪物的距离		(0关闭 1-20距离)
+attackSkillSlot_0_minRoundMonsters 0
+#──────────────── 当附近怪物少于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+attackSkillSlot_0_maxRoundMonsters 0
+#──────────────── 当附近怪物多于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+attackSkillSlot_0_attackRoundMonster 0
+#──────────────── 自动向最密集的地方使用	(0关闭 1开启 - 打开此功能需配合上面三个参数)
+attackSkillSlot_0_maxTrys 20
+#──────────────── 最大尝试次数			(配合偷窃，设置偷窃尝试的最大次数)
+attackSkillSlot_0_maxUses 1
+#──────────────── 对应于同一目标所使用的次数
+attackSkillSlot_0_inState 
+#──────────────── 当怪物在这状态时使用		(可多选，请参考statusnametable.txt和msgstrings.txt)
+attackSkillSlot_0_noState 
+#──────────────── 当怪物不在这状态时使用	(可多选，请参考statusnametable.txt和msgstrings.txt)
+
+attackSkillSlot_1 挑衅
+attackSkillSlot_1_lvl 
+attackSkillSlot_1_monsters 
+attackSkillSlot_1_dist 2
+attackSkillSlot_1_hp_lower 0
+attackSkillSlot_1_hp_upper 100
+attackSkillSlot_1_sp_lower 0
+attackSkillSlot_1_sp_upper 100
+attackSkillSlot_1_maxCastTime 1
+attackSkillSlot_1_minCastTime 0
+attackSkillSlot_1_stopWhenHit 0
+attackSkillSlot_1_maxAggressives 0
+attackSkillSlot_1_minAggressives 0
+attackSkillSlot_1_maxUses 0
+attackSkillSlot_1_inState 
+attackSkillSlot_1_noState 挑衅
+
+attackSkillSlot_2 怒爆
+attackSkillSlot_2_lvl 
+attackSkillSlot_2_monsters 
+attackSkillSlot_2_dist 2
+attackSkillSlot_2_hp_lower 0
+attackSkillSlot_2_hp_upper 100
+attackSkillSlot_2_sp_lower 0
+attackSkillSlot_2_sp_upper 100
+attackSkillSlot_2_maxCastTime 1
+attackSkillSlot_2_minCastTime 0
+attackSkillSlot_2_stopWhenHit 0
+attackSkillSlot_2_maxAggressives 0
+attackSkillSlot_2_minAggressives 0
+attackSkillSlot_2_maxUses 0
+attackSkillSlot_2_inState 
+attackSkillSlot_2_noState 
+
+attackSkillSlot_3 连刺攻击
+attackSkillSlot_3_lvl 
+attackSkillSlot_3_monsters 
+attackSkillSlot_3_dist 2
+attackSkillSlot_3_hp_lower 0
+attackSkillSlot_3_hp_upper 100
+attackSkillSlot_3_sp_lower 0
+attackSkillSlot_3_sp_upper 100
+attackSkillSlot_3_maxCastTime 0.3
+attackSkillSlot_3_minCastTime 0
+attackSkillSlot_3_stopWhenHit 0
+attackSkillSlot_3_maxAggressives 0
+attackSkillSlot_3_minAggressives 0
+attackSkillSlot_3_maxUses 0
+attackSkillSlot_3_inState 
+attackSkillSlot_3_noState 暗之障壁
+
+attackSkillSlot_4 骑乘攻击
+attackSkillSlot_4_lvl 
+attackSkillSlot_4_monsters 
+attackSkillSlot_4_dist 2
+attackSkillSlot_4_hp_lower 0
+attackSkillSlot_4_hp_upper 100
+attackSkillSlot_4_sp_lower 0
+attackSkillSlot_4_sp_upper 100
+attackSkillSlot_4_maxCastTime 0.5
+attackSkillSlot_4_minCastTime 0
+attackSkillSlot_4_stopWhenHit 0
+attackSkillSlot_4_maxAggressives 0
+attackSkillSlot_4_minAggressives 0
+attackSkillSlot_4_maxUses 0
+attackSkillSlot_4_inState 
+attackSkillSlot_4_noState 暗之障壁
+
+attackSkillSlot_5 怪物互击
+attackSkillSlot_5_lvl 
+attackSkillSlot_5_monsters 
+attackSkillSlot_5_dist 2
+attackSkillSlot_5_hp_lower 0
+attackSkillSlot_5_hp_upper 100
+attackSkillSlot_5_sp_lower 0
+attackSkillSlot_5_sp_upper 100
+attackSkillSlot_5_maxCastTime 0.5
+attackSkillSlot_5_minCastTime 0
+attackSkillSlot_5_stopWhenHit 0
+attackSkillSlot_5_maxAggressives 0
+attackSkillSlot_5_minAggressives 0
+attackSkillSlot_5_maxUses 0
+attackSkillSlot_5_inState 
+attackSkillSlot_5_noState 暗之障壁
+
+attackSkillSlot_6 狂击
+attackSkillSlot_6_lvl 
+attackSkillSlot_6_monsters 
+attackSkillSlot_6_dist 1
+attackSkillSlot_6_hp_lower 0
+attackSkillSlot_6_hp_upper 100
+attackSkillSlot_6_sp_lower 0
+attackSkillSlot_6_sp_upper 100
+attackSkillSlot_6_maxCastTime 0.3
+attackSkillSlot_6_minCastTime 0
+attackSkillSlot_6_stopWhenHit 0
+attackSkillSlot_6_maxAggressives 0
+attackSkillSlot_6_minAggressives 0
+attackSkillSlot_6_maxUses 0
+attackSkillSlot_6_inState 
+attackSkillSlot_6_noState 暗之障壁
+
+attackSkillSlot_7 螺旋击刺
+attackSkillSlot_7_lvl 
+attackSkillSlot_7_monsters 
+attackSkillSlot_7_dist 2
+attackSkillSlot_7_hp_lower 0
+attackSkillSlot_7_hp_upper 100
+attackSkillSlot_7_sp_lower 0
+attackSkillSlot_7_sp_upper 100
+attackSkillSlot_7_maxCastTime 0.5
+attackSkillSlot_7_minCastTime 0
+attackSkillSlot_7_stopWhenHit 0
+attackSkillSlot_7_maxAggressives 0
+attackSkillSlot_7_minAggressives 0
+attackSkillSlot_7_maxUses 0
+attackSkillSlot_7_inState 
+attackSkillSlot_7_noState 暗之障壁
+
+attackSkillSlot_8 伤害增压
+attackSkillSlot_8_lvl 
+attackSkillSlot_8_monsters 
+attackSkillSlot_8_dist 2
+attackSkillSlot_8_hp_lower 0
+attackSkillSlot_8_hp_upper 100
+attackSkillSlot_8_sp_lower 0
+attackSkillSlot_8_sp_upper 100
+attackSkillSlot_8_maxCastTime 0.5
+attackSkillSlot_8_minCastTime 0
+attackSkillSlot_8_stopWhenHit 0
+attackSkillSlot_8_maxAggressives 0
+attackSkillSlot_8_minAggressives 0
+attackSkillSlot_8_maxUses 0
+attackSkillSlot_8_inState 
+attackSkillSlot_8_noState 暗之障壁
+
+attackSkillSlot_9 巧打
+attackSkillSlot_9_lvl 
+attackSkillSlot_9_monsters 
+attackSkillSlot_9_dist 2
+attackSkillSlot_9_hp_lower 0
+attackSkillSlot_9_hp_upper 100
+attackSkillSlot_9_sp_lower 0
+attackSkillSlot_9_sp_upper 100
+attackSkillSlot_9_maxCastTime 0.5
+attackSkillSlot_9_minCastTime 0
+attackSkillSlot_9_stopWhenHit 0
+attackSkillSlot_9_maxAggressives 0
+attackSkillSlot_9_minAggressives 0
+attackSkillSlot_9_maxUses 0
+attackSkillSlot_9_inState 
+attackSkillSlot_9_noState 暗之障壁,昏迷状态,睡眠状态,黑暗状态,中毒状态
+
+attackSkillSlot_10 金钱攻击
+attackSkillSlot_10_lvl 
+attackSkillSlot_10_monsters 
+attackSkillSlot_10_dist 2
+attackSkillSlot_10_hp_lower 0
+attackSkillSlot_10_hp_upper 100
+attackSkillSlot_10_sp_lower 0
+attackSkillSlot_10_sp_upper 100
+attackSkillSlot_10_maxCastTime 0.3
+attackSkillSlot_10_minCastTime 0
+attackSkillSlot_10_stopWhenHit 0
+attackSkillSlot_10_maxAggressives 0
+attackSkillSlot_10_minAggressives 0
+attackSkillSlot_10_maxUses 0
+attackSkillSlot_10_inState 
+attackSkillSlot_10_noState 暗之障壁
+
+attackSkillSlot_11 手推车攻击
+attackSkillSlot_11_lvl 
+attackSkillSlot_11_monsters 
+attackSkillSlot_11_dist 2
+attackSkillSlot_11_hp_lower 0
+attackSkillSlot_11_hp_upper 100
+attackSkillSlot_11_sp_lower 0
+attackSkillSlot_11_sp_upper 100
+attackSkillSlot_11_maxCastTime 0.5
+attackSkillSlot_11_minCastTime 0
+attackSkillSlot_11_stopWhenHit 0
+attackSkillSlot_11_maxAggressives 0
+attackSkillSlot_11_minAggressives 0
+attackSkillSlot_11_maxUses 0
+attackSkillSlot_11_inState 
+attackSkillSlot_11_noState 暗之障壁
+
+attackSkillSlot_12 二连矢
+attackSkillSlot_12_lvl 
+attackSkillSlot_12_monsters 
+attackSkillSlot_12_dist 12
+attackSkillSlot_12_hp_lower 0
+attackSkillSlot_12_hp_upper 100
+attackSkillSlot_12_sp_lower 0
+attackSkillSlot_12_sp_upper 100
+attackSkillSlot_12_maxCastTime 0.3
+attackSkillSlot_12_minCastTime 0
+attackSkillSlot_12_stopWhenHit 0
+attackSkillSlot_12_maxAggressives 0
+attackSkillSlot_12_minAggressives 0
+attackSkillSlot_12_maxUses 0
+attackSkillSlot_12_inState 
+attackSkillSlot_12_noState 光之障壁
+
+attackSkillSlot_13 箭雨
+attackSkillSlot_13_lvl 
+attackSkillSlot_13_monsters 
+attackSkillSlot_13_dist 12
+attackSkillSlot_13_hp_lower 0
+attackSkillSlot_13_hp_upper 100
+attackSkillSlot_13_sp_lower 0
+attackSkillSlot_13_sp_upper 100
+attackSkillSlot_13_maxCastTime 1
+attackSkillSlot_13_minCastTime 0
+attackSkillSlot_13_stopWhenHit 0
+attackSkillSlot_13_maxAggressives 0
+attackSkillSlot_13_minAggressives 0
+attackSkillSlot_13_maxUses 0
+attackSkillSlot_13_inState 
+attackSkillSlot_13_noState 光之障壁
+
+attackSkillSlot_14 闪电冲击
+attackSkillSlot_14_lvl 
+attackSkillSlot_14_monsters 
+attackSkillSlot_14_dist 12
+attackSkillSlot_14_hp_lower 0
+attackSkillSlot_14_hp_upper 100
+attackSkillSlot_14_sp_lower 0
+attackSkillSlot_14_sp_upper 100
+attackSkillSlot_14_maxCastTime 1
+attackSkillSlot_14_minCastTime 0
+attackSkillSlot_14_stopWhenHit 0
+attackSkillSlot_14_maxAggressives 0
+attackSkillSlot_14_minAggressives 0
+attackSkillSlot_14_maxUses 0
+attackSkillSlot_14_inState 
+attackSkillSlot_14_noState 光之障壁
+
+attackSkillSlot_15 冲锋箭
+attackSkillSlot_15_lvl 
+attackSkillSlot_15_monsters 
+attackSkillSlot_15_dist 12
+attackSkillSlot_15_hp_lower 0
+attackSkillSlot_15_hp_upper 100
+attackSkillSlot_15_sp_lower 0
+attackSkillSlot_15_sp_upper 100
+attackSkillSlot_15_maxCastTime 1
+attackSkillSlot_15_minCastTime 0
+attackSkillSlot_15_stopWhenHit 0
+attackSkillSlot_15_maxAggressives 0
+attackSkillSlot_15_minAggressives 0
+attackSkillSlot_15_maxUses 0
+attackSkillSlot_15_inState 
+attackSkillSlot_15_noState 光之障壁
+
+attackSkillSlot_16 猎鹰突击
+attackSkillSlot_16_lvl 
+attackSkillSlot_16_monsters 
+attackSkillSlot_16_dist 12
+attackSkillSlot_16_hp_lower 0
+attackSkillSlot_16_hp_upper 100
+attackSkillSlot_16_sp_lower 0
+attackSkillSlot_16_sp_upper 100
+attackSkillSlot_16_maxCastTime 0.5
+attackSkillSlot_16_minCastTime 0
+attackSkillSlot_16_stopWhenHit 0
+attackSkillSlot_16_maxAggressives 0
+attackSkillSlot_16_minAggressives 0
+attackSkillSlot_16_maxUses 0
+attackSkillSlot_16_inState 
+attackSkillSlot_16_noState 光之障壁
+
+attackSkillSlot_17 锐利射击
+attackSkillSlot_17_lvl 
+attackSkillSlot_17_monsters 
+attackSkillSlot_17_dist 12
+attackSkillSlot_17_hp_lower 0
+attackSkillSlot_17_hp_upper 100
+attackSkillSlot_17_sp_lower 0
+attackSkillSlot_17_sp_upper 100
+attackSkillSlot_17_maxCastTime 0.5
+attackSkillSlot_17_minCastTime 0
+attackSkillSlot_17_stopWhenHit 0
+attackSkillSlot_17_maxAggressives 0
+attackSkillSlot_17_minAggressives 0
+attackSkillSlot_17_maxUses 0
+attackSkillSlot_17_inState 
+attackSkillSlot_17_noState 光之障壁
+
+attackSkillSlot_18 音速投掷
+attackSkillSlot_18_lvl 
+attackSkillSlot_18_monsters 
+attackSkillSlot_18_dist 2
+attackSkillSlot_18_hp_lower 0
+attackSkillSlot_18_hp_upper 100
+attackSkillSlot_18_sp_lower 0
+attackSkillSlot_18_sp_upper 100
+attackSkillSlot_18_maxCastTime 1
+attackSkillSlot_18_minCastTime 0
+attackSkillSlot_18_stopWhenHit 0
+attackSkillSlot_18_maxAggressives 0
+attackSkillSlot_18_minAggressives 0
+attackSkillSlot_18_maxUses 0
+attackSkillSlot_18_inState 
+attackSkillSlot_18_noState 暗之障壁
+
+attackSkillSlot_19 施毒
+attackSkillSlot_19_lvl 
+attackSkillSlot_19_monsters 
+attackSkillSlot_19_dist 2
+attackSkillSlot_19_hp_lower 0
+attackSkillSlot_19_hp_upper 100
+attackSkillSlot_19_sp_lower 0
+attackSkillSlot_19_sp_upper 100
+attackSkillSlot_19_maxCastTime 1
+attackSkillSlot_19_minCastTime 0
+attackSkillSlot_19_stopWhenHit 0
+attackSkillSlot_19_maxAggressives 0
+attackSkillSlot_19_minAggressives 0
+attackSkillSlot_19_maxUses 0
+attackSkillSlot_19_inState 
+attackSkillSlot_19_noState 中毒状态
+
+attackSkillSlot_20 黑暗瞬间
+attackSkillSlot_20_lvl 
+attackSkillSlot_20_monsters 
+attackSkillSlot_20_dist 2
+attackSkillSlot_20_hp_lower 0
+attackSkillSlot_20_hp_upper 100
+attackSkillSlot_20_sp_lower 0
+attackSkillSlot_20_sp_upper 100
+attackSkillSlot_20_maxCastTime 1
+attackSkillSlot_20_minCastTime 0
+attackSkillSlot_20_stopWhenHit 0
+attackSkillSlot_20_maxAggressives 0
+attackSkillSlot_20_minAggressives 0
+attackSkillSlot_20_maxUses 0
+attackSkillSlot_20_inState 
+attackSkillSlot_20_noState 暗之障壁
+
+attackSkillSlot_21 心灵震波
+attackSkillSlot_21_lvl 
+attackSkillSlot_21_monsters 
+attackSkillSlot_21_dist 2
+attackSkillSlot_21_hp_lower 0
+attackSkillSlot_21_hp_upper 100
+attackSkillSlot_21_sp_lower 0
+attackSkillSlot_21_sp_upper 100
+attackSkillSlot_21_maxCastTime 1
+attackSkillSlot_21_minCastTime 0
+attackSkillSlot_21_stopWhenHit 0
+attackSkillSlot_21_maxAggressives 0
+attackSkillSlot_21_minAggressives 0
+attackSkillSlot_21_maxUses 0
+attackSkillSlot_21_inState 
+attackSkillSlot_21_noState 暗之障壁
+
+attackSkillSlot_22 天使之怒
+attackSkillSlot_22_lvl 
+attackSkillSlot_22_monsters 
+attackSkillSlot_22_dist 10
+attackSkillSlot_22_hp_lower 0
+attackSkillSlot_22_hp_upper 100
+attackSkillSlot_22_sp_lower 0
+attackSkillSlot_22_sp_upper 100
+attackSkillSlot_22_maxCastTime 1
+attackSkillSlot_22_minCastTime 0
+attackSkillSlot_22_stopWhenHit 0
+attackSkillSlot_22_maxAggressives 0
+attackSkillSlot_22_minAggressives 0
+attackSkillSlot_22_maxUses 0
+attackSkillSlot_22_inState 
+attackSkillSlot_22_noState 天使之怒,冰冻状态,石化状态
+
+attackSkillSlot_23 沉默之术
+attackSkillSlot_23_lvl 
+attackSkillSlot_23_monsters 
+attackSkillSlot_23_dist 10
+attackSkillSlot_23_hp_lower 0
+attackSkillSlot_23_hp_upper 100
+attackSkillSlot_23_sp_lower 0
+attackSkillSlot_23_sp_upper 100
+attackSkillSlot_23_maxCastTime 0.3
+attackSkillSlot_23_minCastTime 0
+attackSkillSlot_23_stopWhenHit 0
+attackSkillSlot_23_maxAggressives 0
+attackSkillSlot_23_minAggressives 0
+attackSkillSlot_23_maxUses 0
+attackSkillSlot_23_inState 
+attackSkillSlot_23_noState 沉默状态
+
+attackSkillSlot_24 转生术
+attackSkillSlot_24_lvl 
+attackSkillSlot_24_monsters 
+attackSkillSlot_24_dist 10
+attackSkillSlot_24_hp_lower 0
+attackSkillSlot_24_hp_upper 100
+attackSkillSlot_24_sp_lower 0
+attackSkillSlot_24_sp_upper 100
+attackSkillSlot_24_maxCastTime 0.3
+attackSkillSlot_24_minCastTime 0
+attackSkillSlot_24_stopWhenHit 0
+attackSkillSlot_24_maxAggressives 0
+attackSkillSlot_24_minAggressives 0
+attackSkillSlot_24_maxUses 0
+attackSkillSlot_24_inState 
+attackSkillSlot_24_noState 
+
+attackSkillSlot_25 治愈术
+attackSkillSlot_25_lvl 
+attackSkillSlot_25_monsters 
+attackSkillSlot_25_dist 10
+attackSkillSlot_25_hp_lower 0
+attackSkillSlot_25_hp_upper 100
+attackSkillSlot_25_sp_lower 0
+attackSkillSlot_25_sp_upper 100
+attackSkillSlot_25_maxCastTime 0.3
+attackSkillSlot_25_minCastTime 0
+attackSkillSlot_25_stopWhenHit 0
+attackSkillSlot_25_maxAggressives 0
+attackSkillSlot_25_minAggressives 0
+attackSkillSlot_25_maxUses 0
+attackSkillSlot_25_inState 
+attackSkillSlot_25_noState 
+
+attackSkillSlot_26 神圣之光
+attackSkillSlot_26_lvl 
+attackSkillSlot_26_monsters 
+attackSkillSlot_26_dist 7
+attackSkillSlot_26_hp_lower 0
+attackSkillSlot_26_hp_upper 100
+attackSkillSlot_26_sp_lower 0
+attackSkillSlot_26_sp_upper 100
+attackSkillSlot_26_maxCastTime 0.3
+attackSkillSlot_26_minCastTime 0
+attackSkillSlot_26_stopWhenHit 0
+attackSkillSlot_26_maxAggressives 0
+attackSkillSlot_26_minAggressives 0
+attackSkillSlot_26_maxUses 0
+attackSkillSlot_26_inState 
+attackSkillSlot_26_noState 
+
+attackSkillSlot_27 圣之祈福
+attackSkillSlot_27_lvl 
+attackSkillSlot_27_monsters 
+attackSkillSlot_27_dist 10
+attackSkillSlot_27_hp_lower 0
+attackSkillSlot_27_hp_upper 100
+attackSkillSlot_27_sp_lower 0
+attackSkillSlot_27_sp_upper 100
+attackSkillSlot_27_maxCastTime 0.3
+attackSkillSlot_27_minCastTime 0
+attackSkillSlot_27_stopWhenHit 0
+attackSkillSlot_27_maxAggressives 0
+attackSkillSlot_27_minAggressives 0
+attackSkillSlot_27_maxUses 0
+attackSkillSlot_27_inState 
+attackSkillSlot_27_noState 
+
+attackSkillSlot_28 复活术
+attackSkillSlot_28_lvl 
+attackSkillSlot_28_monsters 
+attackSkillSlot_28_dist 10
+attackSkillSlot_28_hp_lower 0
+attackSkillSlot_28_hp_upper 100
+attackSkillSlot_28_sp_lower 0
+attackSkillSlot_28_sp_upper 100
+attackSkillSlot_28_maxCastTime 0.3
+attackSkillSlot_28_minCastTime 0
+attackSkillSlot_28_stopWhenHit 0
+attackSkillSlot_28_maxAggressives 0
+attackSkillSlot_28_minAggressives 0
+attackSkillSlot_28_maxUses 0
+attackSkillSlot_28_inState 
+attackSkillSlot_28_noState 
+
+attackSkillSlot_29 冰冻术
+attackSkillSlot_29_lvl 
+attackSkillSlot_29_monsters 
+attackSkillSlot_29_dist 10
+attackSkillSlot_29_hp_lower 0
+attackSkillSlot_29_hp_upper 100
+attackSkillSlot_29_sp_lower 0
+attackSkillSlot_29_sp_upper 100
+attackSkillSlot_29_maxCastTime 1
+attackSkillSlot_29_minCastTime 0
+attackSkillSlot_29_stopWhenHit 0
+attackSkillSlot_29_maxAggressives 0
+attackSkillSlot_29_minAggressives 0
+attackSkillSlot_29_maxUses 2
+attackSkillSlot_29_inState 
+attackSkillSlot_29_noState 冰冻状态,石化状态
+
+attackSkillSlot_30 泥沼地
+attackSkillSlot_30_lvl 
+attackSkillSlot_30_monsters 
+attackSkillSlot_30_dist 5
+attackSkillSlot_30_hp_lower 0
+attackSkillSlot_30_hp_upper 100
+attackSkillSlot_30_sp_lower 0
+attackSkillSlot_30_sp_upper 100
+attackSkillSlot_30_maxCastTime 1
+attackSkillSlot_30_minCastTime 0
+attackSkillSlot_30_stopWhenHit 0
+attackSkillSlot_30_maxAggressives 0
+attackSkillSlot_30_minAggressives 0
+attackSkillSlot_30_maxUses 2
+attackSkillSlot_30_inState 
+attackSkillSlot_30_noState 泥沼地,石化状态,冰冻状态
+
+attackSkillSlot_31 火焰之壁
+attackSkillSlot_31_lvl 
+attackSkillSlot_31_monsters 
+attackSkillSlot_31_dist 10
+attackSkillSlot_31_hp_lower 0
+attackSkillSlot_31_hp_upper 100
+attackSkillSlot_31_sp_lower 0
+attackSkillSlot_31_sp_upper 100
+attackSkillSlot_31_maxCastTime 1
+attackSkillSlot_31_minCastTime 0
+attackSkillSlot_31_stopWhenHit 0
+attackSkillSlot_31_maxAggressives 0
+attackSkillSlot_31_minAggressives 0
+attackSkillSlot_31_maxUses 0
+attackSkillSlot_31_inState 
+attackSkillSlot_31_noState 
+
+attackSkillSlot_32 暴风雪
+attackSkillSlot_32_lvl 
+attackSkillSlot_32_monsters 
+attackSkillSlot_32_dist 10
+attackSkillSlot_32_hp_lower 0
+attackSkillSlot_32_hp_upper 100
+attackSkillSlot_32_sp_lower 0
+attackSkillSlot_32_sp_upper 100
+attackSkillSlot_32_maxCastTime 5
+attackSkillSlot_32_minCastTime 0
+attackSkillSlot_32_stopWhenHit 0
+attackSkillSlot_32_maxAggressives 0
+attackSkillSlot_32_minAggressives 0
+attackSkillSlot_32_maxUses 0
+attackSkillSlot_32_inState 
+attackSkillSlot_32_noState 冰冻状态,石化状态
+
+attackSkillSlot_33 心灵爆破
+attackSkillSlot_33_lvl 
+attackSkillSlot_33_monsters 
+attackSkillSlot_33_dist 10
+attackSkillSlot_33_hp_lower 0
+attackSkillSlot_33_hp_upper 100
+attackSkillSlot_33_sp_lower 0
+attackSkillSlot_33_sp_upper 100
+attackSkillSlot_33_maxCastTime 1
+attackSkillSlot_33_minCastTime 0
+attackSkillSlot_33_stopWhenHit 0
+attackSkillSlot_33_maxAggressives 0
+attackSkillSlot_33_minAggressives 0
+attackSkillSlot_33_maxUses 0
+attackSkillSlot_33_inState 
+attackSkillSlot_33_noState 
+
+attackSkillSlot_34 圣灵召唤
+attackSkillSlot_34_lvl 
+attackSkillSlot_34_monsters 
+attackSkillSlot_34_dist 10
+attackSkillSlot_34_hp_lower 0
+attackSkillSlot_34_hp_upper 100
+attackSkillSlot_34_sp_lower 0
+attackSkillSlot_34_sp_upper 100
+attackSkillSlot_34_maxCastTime 1
+attackSkillSlot_34_minCastTime 0
+attackSkillSlot_34_stopWhenHit 0
+attackSkillSlot_34_maxAggressives 0
+attackSkillSlot_34_minAggressives 0
+attackSkillSlot_34_maxUses 0
+attackSkillSlot_34_inState 
+attackSkillSlot_34_noState 
+
+attackSkillSlot_35 冰箭术
+attackSkillSlot_35_lvl 
+attackSkillSlot_35_monsters 
+attackSkillSlot_35_dist 10
+attackSkillSlot_35_hp_lower 0
+attackSkillSlot_35_hp_upper 100
+attackSkillSlot_35_sp_lower 0
+attackSkillSlot_35_sp_upper 100
+attackSkillSlot_35_maxCastTime 5
+attackSkillSlot_35_minCastTime 0
+attackSkillSlot_35_stopWhenHit 0
+attackSkillSlot_35_maxAggressives 0
+attackSkillSlot_35_minAggressives 0
+attackSkillSlot_35_maxUses 0
+attackSkillSlot_35_inState 
+attackSkillSlot_35_noState 
+
+attackSkillSlot_36 火箭术
+attackSkillSlot_36_lvl 
+attackSkillSlot_36_monsters 
+attackSkillSlot_36_dist 10
+attackSkillSlot_36_hp_lower 0
+attackSkillSlot_36_hp_upper 100
+attackSkillSlot_36_sp_lower 0
+attackSkillSlot_36_sp_upper 100
+attackSkillSlot_36_maxCastTime 5
+attackSkillSlot_36_minCastTime 0
+attackSkillSlot_36_stopWhenHit 0
+attackSkillSlot_36_maxAggressives 0
+attackSkillSlot_36_minAggressives 0
+attackSkillSlot_36_maxUses 0
+attackSkillSlot_36_inState 
+attackSkillSlot_36_noState 
+
+attackSkillSlot_37 雷击术
+attackSkillSlot_37_lvl 
+attackSkillSlot_37_monsters 
+attackSkillSlot_37_dist 10
+attackSkillSlot_37_hp_lower 0
+attackSkillSlot_37_hp_upper 100
+attackSkillSlot_37_sp_lower 0
+attackSkillSlot_37_sp_upper 100
+attackSkillSlot_37_maxCastTime 5
+attackSkillSlot_37_minCastTime 0
+attackSkillSlot_37_stopWhenHit 0
+attackSkillSlot_37_maxAggressives 0
+attackSkillSlot_37_minAggressives 0
+attackSkillSlot_37_maxUses 0
+attackSkillSlot_37_inState 
+attackSkillSlot_37_noState 
+
+attackSkillSlot_38 雷鸣术
+attackSkillSlot_38_lvl 
+attackSkillSlot_38_monsters 
+attackSkillSlot_38_dist 10
+attackSkillSlot_38_hp_lower 0
+attackSkillSlot_38_hp_upper 100
+attackSkillSlot_38_sp_lower 0
+attackSkillSlot_38_sp_upper 100
+attackSkillSlot_38_maxCastTime 5
+attackSkillSlot_38_minCastTime 0
+attackSkillSlot_38_stopWhenHit 0
+attackSkillSlot_38_maxAggressives 0
+attackSkillSlot_38_minAggressives 0
+attackSkillSlot_38_maxUses 0
+attackSkillSlot_38_inState 
+attackSkillSlot_38_noState 
+
+attackSkillSlot_39 崩裂术
+attackSkillSlot_39_lvl 
+attackSkillSlot_39_monsters 
+attackSkillSlot_39_dist 10
+attackSkillSlot_39_hp_lower 0
+attackSkillSlot_39_hp_upper 100
+attackSkillSlot_39_sp_lower 0
+attackSkillSlot_39_sp_upper 100
+attackSkillSlot_39_maxCastTime 3
+attackSkillSlot_39_minCastTime 0
+attackSkillSlot_39_stopWhenHit 0
+attackSkillSlot_39_maxAggressives 0
+attackSkillSlot_39_minAggressives 0
+attackSkillSlot_39_maxUses 0
+attackSkillSlot_39_inState 
+attackSkillSlot_39_noState 
+
+attackSkillSlot_40 地震术
+attackSkillSlot_40_lvl 
+attackSkillSlot_40_monsters 
+attackSkillSlot_40_dist 10
+attackSkillSlot_40_hp_lower 0
+attackSkillSlot_40_hp_upper 100
+attackSkillSlot_40_sp_lower 0
+attackSkillSlot_40_sp_upper 100
+attackSkillSlot_40_maxCastTime 3
+attackSkillSlot_40_minCastTime 0
+attackSkillSlot_40_stopWhenHit 0
+attackSkillSlot_40_maxAggressives 0
+attackSkillSlot_40_minAggressives 0
+attackSkillSlot_40_maxUses 0
+attackSkillSlot_40_inState 
+attackSkillSlot_40_noState 
+
+attackSkillSlot_41 水球术
+attackSkillSlot_41_lvl 
+attackSkillSlot_41_monsters 
+attackSkillSlot_41_dist 10
+attackSkillSlot_41_hp_lower 0
+attackSkillSlot_41_hp_upper 100
+attackSkillSlot_41_sp_lower 0
+attackSkillSlot_41_sp_upper 100
+attackSkillSlot_41_maxCastTime 1
+attackSkillSlot_41_minCastTime 0
+attackSkillSlot_41_stopWhenHit 0
+attackSkillSlot_41_maxAggressives 0
+attackSkillSlot_41_minAggressives 0
+attackSkillSlot_41_maxUses 0
+attackSkillSlot_41_inState 
+attackSkillSlot_41_noState 
+
+attackSkillSlot_42 魔击术
+attackSkillSlot_42_lvl 
+attackSkillSlot_42_monsters 
+attackSkillSlot_42_dist 2
+attackSkillSlot_42_hp_lower 0
+attackSkillSlot_42_hp_upper 100
+attackSkillSlot_42_sp_lower 0
+attackSkillSlot_42_sp_upper 100
+attackSkillSlot_42_maxCastTime 0.2
+attackSkillSlot_42_minCastTime 0
+attackSkillSlot_42_stopWhenHit 0
+attackSkillSlot_42_maxAggressives 0
+attackSkillSlot_42_minAggressives 0
+attackSkillSlot_42_maxUses 0
+attackSkillSlot_42_inState 
+attackSkillSlot_42_noState 暗之障壁
+
+attackSkillSlot_43 念力连击
+attackSkillSlot_43_lvl 
+attackSkillSlot_43_monsters 
+attackSkillSlot_43_dist 10
+attackSkillSlot_43_hp_lower 0
+attackSkillSlot_43_hp_upper 100
+attackSkillSlot_43_sp_lower 0
+attackSkillSlot_43_sp_upper 100
+attackSkillSlot_43_maxCastTime 1
+attackSkillSlot_43_minCastTime 0
+attackSkillSlot_43_stopWhenHit 0
+attackSkillSlot_43_maxAggressives 0
+attackSkillSlot_43_minAggressives 0
+attackSkillSlot_43_maxUses 0
+attackSkillSlot_43_inState 
+attackSkillSlot_43_noState 
+
+attackSkillSlot_44 浸透劲
+attackSkillSlot_44_lvl 
+attackSkillSlot_44_monsters 
+attackSkillSlot_44_dist 2
+attackSkillSlot_44_hp_lower 0
+attackSkillSlot_44_hp_upper 100
+attackSkillSlot_44_sp_lower 0
+attackSkillSlot_44_sp_upper 100
+attackSkillSlot_44_maxCastTime 0.5
+attackSkillSlot_44_minCastTime 0
+attackSkillSlot_44_stopWhenHit 0
+attackSkillSlot_44_maxSpirits 0
+attackSkillSlot_44_minSpirits 1
+attackSkillSlot_44_maxAggressives 0
+attackSkillSlot_44_minAggressives 0
+attackSkillSlot_44_maxUses 0
+attackSkillSlot_44_inState 
+attackSkillSlot_44_noState 
+
+attackSkillSlot_45 弹指神通
+attackSkillSlot_45_lvl 
+attackSkillSlot_45_monsters 
+attackSkillSlot_45_dist 10
+attackSkillSlot_45_hp_lower 0
+attackSkillSlot_45_hp_upper 100
+attackSkillSlot_45_sp_lower 0
+attackSkillSlot_45_sp_upper 100
+attackSkillSlot_45_maxCastTime 0.5
+attackSkillSlot_45_minCastTime 0
+attackSkillSlot_45_stopWhenHit 0
+attackSkillSlot_45_maxSpirits 0
+attackSkillSlot_45_minSpirits 1
+attackSkillSlot_45_maxAggressives 0
+attackSkillSlot_45_minAggressives 0
+attackSkillSlot_45_maxUses 0
+attackSkillSlot_45_inState 
+attackSkillSlot_45_noState 
+
+attackSkillSlot_46 吸气
+attackSkillSlot_46_lvl 
+attackSkillSlot_46_monsters 
+attackSkillSlot_46_dist 2
+attackSkillSlot_46_hp_lower 0
+attackSkillSlot_46_hp_upper 100
+attackSkillSlot_46_sp_lower 0
+attackSkillSlot_46_sp_upper 100
+attackSkillSlot_46_maxCastTime 0.3
+attackSkillSlot_46_minCastTime 0
+attackSkillSlot_46_stopWhenHit 0
+attackSkillSlot_46_maxAggressives 0
+attackSkillSlot_46_minAggressives 0
+attackSkillSlot_46_maxUses 0
+attackSkillSlot_46_inState 
+attackSkillSlot_46_noState 
+
+attackSkillSlot_47 盾击
+attackSkillSlot_47_lvl 
+attackSkillSlot_47_monsters 
+attackSkillSlot_47_dist 2
+attackSkillSlot_47_hp_lower 0
+attackSkillSlot_47_hp_upper 100
+attackSkillSlot_47_sp_lower 0
+attackSkillSlot_47_sp_upper 100
+attackSkillSlot_47_maxCastTime 0.5
+attackSkillSlot_47_minCastTime 0
+attackSkillSlot_47_stopWhenHit 0
+attackSkillSlot_47_maxAggressives 0
+attackSkillSlot_47_minAggressives 0
+attackSkillSlot_47_maxUses 0
+attackSkillSlot_47_inState 
+attackSkillSlot_47_noState 暗之障壁
+
+attackSkillSlot_48 回旋盾击
+attackSkillSlot_48_lvl 
+attackSkillSlot_48_monsters 
+attackSkillSlot_48_dist 10
+attackSkillSlot_48_hp_lower 0
+attackSkillSlot_48_hp_upper 100
+attackSkillSlot_48_sp_lower 0
+attackSkillSlot_48_sp_upper 100
+attackSkillSlot_48_maxCastTime 1
+attackSkillSlot_48_minCastTime 0
+attackSkillSlot_48_stopWhenHit 0
+attackSkillSlot_48_maxAggressives 0
+attackSkillSlot_48_minAggressives 0
+attackSkillSlot_48_maxUses 0
+attackSkillSlot_48_inState 
+attackSkillSlot_48_noState 
+
+attackSkillSlot_49 圣十字攻击
+attackSkillSlot_49_lvl 
+attackSkillSlot_49_monsters 
+attackSkillSlot_49_dist 2
+attackSkillSlot_49_hp_lower 0
+attackSkillSlot_49_hp_upper 100
+attackSkillSlot_49_sp_lower 0
+attackSkillSlot_49_sp_upper 100
+attackSkillSlot_49_maxCastTime 0.5
+attackSkillSlot_49_minCastTime 0
+attackSkillSlot_49_stopWhenHit 0
+attackSkillSlot_49_maxAggressives 0
+attackSkillSlot_49_minAggressives 0
+attackSkillSlot_49_maxUses 0
+attackSkillSlot_49_inState 
+attackSkillSlot_49_noState 暗之障壁
+
+attackSkillSlot_50 圣十字审判
+attackSkillSlot_50_lvl 
+attackSkillSlot_50_monsters 
+attackSkillSlot_50_dist 10
+attackSkillSlot_50_hp_lower 0
+attackSkillSlot_50_hp_upper 100
+attackSkillSlot_50_sp_lower 0
+attackSkillSlot_50_sp_upper 100
+attackSkillSlot_50_maxCastTime 3
+attackSkillSlot_50_minCastTime 0
+attackSkillSlot_50_stopWhenHit 0
+attackSkillSlot_50_maxAggressives 0
+attackSkillSlot_50_minAggressives 0
+attackSkillSlot_50_maxUses 0
+attackSkillSlot_50_inState 
+attackSkillSlot_50_noState 
+
+attackSkillSlot_51 神之威压
+attackSkillSlot_51_lvl 
+attackSkillSlot_51_monsters 
+attackSkillSlot_51_dist 10
+attackSkillSlot_51_hp_lower 0
+attackSkillSlot_51_hp_upper 100
+attackSkillSlot_51_sp_lower 0
+attackSkillSlot_51_sp_upper 100
+attackSkillSlot_51_maxCastTime 3
+attackSkillSlot_51_minCastTime 0
+attackSkillSlot_51_stopWhenHit 0
+attackSkillSlot_51_maxAggressives 0
+attackSkillSlot_51_minAggressives 0
+attackSkillSlot_51_maxUses 0
+attackSkillSlot_51_inState 
+attackSkillSlot_51_noState 暗之障壁
+
+attackSkillSlot_52 舍命攻击
+attackSkillSlot_52_lvl 
+attackSkillSlot_52_monsters 
+attackSkillSlot_52_dist 2
+attackSkillSlot_52_hp_lower 10
+attackSkillSlot_52_hp_upper 100
+attackSkillSlot_52_sp_lower 0
+attackSkillSlot_52_sp_upper 100
+attackSkillSlot_52_maxCastTime 3
+attackSkillSlot_52_minCastTime 0
+attackSkillSlot_52_stopWhenHit 0
+attackSkillSlot_52_maxAggressives 0
+attackSkillSlot_52_minAggressives 0
+attackSkillSlot_52_maxUses 0
+attackSkillSlot_52_inState 
+attackSkillSlot_52_noState 暗之障壁
+
+attackSkillSlot_53 偷钱
+attackSkillSlot_53_lvl 
+attackSkillSlot_53_monsters 
+attackSkillSlot_53_dist 2
+attackSkillSlot_53_hp_lower 0
+attackSkillSlot_53_hp_upper 100
+attackSkillSlot_53_sp_lower 0
+attackSkillSlot_53_sp_upper 100
+attackSkillSlot_53_maxCastTime 0.3
+attackSkillSlot_53_minCastTime 0
+attackSkillSlot_53_stopWhenHit 0
+attackSkillSlot_53_maxAggressives 0
+attackSkillSlot_53_minAggressives 0
+attackSkillSlot_53_maxTrys 20
+attackSkillSlot_53_maxUses 1
+attackSkillSlot_53_inState 
+attackSkillSlot_53_noState 
+
+attackSkillSlot_54 火烟瓶投掷
+attackSkillSlot_54_lvl 
+attackSkillSlot_54_monsters 
+attackSkillSlot_54_dist 10
+attackSkillSlot_54_hp_lower 0
+attackSkillSlot_54_hp_upper 100
+attackSkillSlot_54_sp_lower 0
+attackSkillSlot_54_sp_upper 100
+attackSkillSlot_54_maxCastTime 1
+attackSkillSlot_54_minCastTime 0
+attackSkillSlot_54_stopWhenHit 0
+attackSkillSlot_54_maxAggressives 0
+attackSkillSlot_54_minAggressives 0
+attackSkillSlot_54_maxUses 0
+attackSkillSlot_54_inState 
+attackSkillSlot_54_noState 
+
+attackSkillSlot_55 强酸攻击
+attackSkillSlot_55_lvl 
+attackSkillSlot_55_monsters 
+attackSkillSlot_55_dist 10
+attackSkillSlot_55_hp_lower 0
+attackSkillSlot_55_hp_upper 100
+attackSkillSlot_55_sp_lower 0
+attackSkillSlot_55_sp_upper 100
+attackSkillSlot_55_maxCastTime 1
+attackSkillSlot_55_minCastTime 0
+attackSkillSlot_55_stopWhenHit 0
+attackSkillSlot_55_maxAggressives 0
+attackSkillSlot_55_minAggressives 0
+attackSkillSlot_55_maxUses 0
+attackSkillSlot_55_inState 
+attackSkillSlot_55_noState 
+
+attackSkillSlot_56 乐器攻击
+attackSkillSlot_56_lvl 
+attackSkillSlot_56_monsters 
+attackSkillSlot_56_dist 12
+attackSkillSlot_56_hp_lower 0
+attackSkillSlot_56_hp_upper 100
+attackSkillSlot_56_sp_lower 0
+attackSkillSlot_56_sp_upper 100
+attackSkillSlot_56_maxCastTime 1
+attackSkillSlot_56_minCastTime 0
+attackSkillSlot_56_stopWhenHit 0
+attackSkillSlot_56_maxAggressives 0
+attackSkillSlot_56_minAggressives 0
+attackSkillSlot_56_maxUses 0
+attackSkillSlot_56_inState 
+attackSkillSlot_56_noState 光之障壁
+
+attackSkillSlot_57 缠箭投掷
+attackSkillSlot_57_lvl 
+attackSkillSlot_57_monsters 
+attackSkillSlot_57_dist 12
+attackSkillSlot_57_hp_lower 0
+attackSkillSlot_57_hp_upper 100
+attackSkillSlot_57_sp_lower 0
+attackSkillSlot_57_sp_upper 100
+attackSkillSlot_57_maxCastTime 1
+attackSkillSlot_57_minCastTime 0
+attackSkillSlot_57_stopWhenHit 0
+attackSkillSlot_57_maxAggressives 0
+attackSkillSlot_57_minAggressives 0
+attackSkillSlot_57_maxUses 0
+attackSkillSlot_57_inState 
+attackSkillSlot_57_noState 光之障壁
+
+attackSkillSlot_58 奥义箭乱舞
+attackSkillSlot_58_lvl 
+attackSkillSlot_58_monsters 
+attackSkillSlot_58_dist 12
+attackSkillSlot_58_hp_lower 0
+attackSkillSlot_58_hp_upper 100
+attackSkillSlot_58_sp_lower 0
+attackSkillSlot_58_sp_upper 100
+attackSkillSlot_58_maxCastTime 1
+attackSkillSlot_58_minCastTime 0
+attackSkillSlot_58_stopWhenHit 0
+attackSkillSlot_58_maxAggressives 0
+attackSkillSlot_58_minAggressives 0
+attackSkillSlot_58_maxUses 0
+attackSkillSlot_58_inState 
+attackSkillSlot_58_noState 光之障壁
+
+attackSkillSlot_59 精神撼动
+attackSkillSlot_59_lvl 
+attackSkillSlot_59_monsters 
+attackSkillSlot_59_dist 10
+attackSkillSlot_59_hp_lower 0
+attackSkillSlot_59_hp_upper 100
+attackSkillSlot_59_sp_lower 0
+attackSkillSlot_59_sp_upper 100
+attackSkillSlot_59_maxCastTime 1
+attackSkillSlot_59_minCastTime 0
+attackSkillSlot_59_stopWhenHit 0
+attackSkillSlot_59_maxAggressives 0
+attackSkillSlot_59_minAggressives 0
+attackSkillSlot_59_maxUses 0
+attackSkillSlot_59_inState 
+attackSkillSlot_59_noState 精神撼动
+
+attackSkillSlot_60 随机技能
+attackSkillSlot_60_lvl 
+attackSkillSlot_60_monsters 
+attackSkillSlot_60_dist 2
+attackSkillSlot_60_hp_lower 0
+attackSkillSlot_60_hp_upper 100
+attackSkillSlot_60_sp_lower 0
+attackSkillSlot_60_sp_upper 100
+attackSkillSlot_60_maxCastTime 0.1
+attackSkillSlot_60_minCastTime 0
+attackSkillSlot_60_stopWhenHit 0
+attackSkillSlot_60_maxAggressives 0
+attackSkillSlot_60_minAggressives 0
+attackSkillSlot_60_maxUses 0
+attackSkillSlot_60_inState 
+attackSkillSlot_60_noState 
+
+attackSkillSlot_61 解放
+attackSkillSlot_61_lvl 
+attackSkillSlot_61_monsters 
+attackSkillSlot_61_dist 10
+attackSkillSlot_61_hp_lower 0
+attackSkillSlot_61_hp_upper 100
+attackSkillSlot_61_sp_lower 0
+attackSkillSlot_61_sp_upper 100
+attackSkillSlot_61_maxCastTime 0.1
+attackSkillSlot_61_minCastTime 0
+attackSkillSlot_61_stopWhenHit 0
+attackSkillSlot_61_maxAggressives 0
+attackSkillSlot_61_minAggressives 0
+attackSkillSlot_61_maxUses 0
+attackSkillSlot_61_inState 
+attackSkillSlot_61_noState 
+
+
+#━━━━━━━━━━━━━━━━ 辅助技能 ━━━━━━━━━━━━━━━━
+
+useSelf_skill_0 治愈术
+#──────────────── 技能名称
+useSelf_skill_0_smartHeal 1
+#──────────────── 自动选择治愈等级		(0关闭 1开启)
+useSelf_skill_0_lvl 
+#──────────────── 使用技能级数
+useSelf_skill_0_dist 0
+#──────────────── 与攻击目标的距离
+useSelf_skill_0_hp_lower 0
+useSelf_skill_0_hp_upper 75
+#──────────────── 当HP％在lower至upper范围时，使用技能
+useSelf_skill_0_sp_lower 0
+useSelf_skill_0_sp_upper 100
+#──────────────── 当SP％在lower至upper范围时，使用技能
+useSelf_skill_0_maxCastTime 0.5
+#──────────────── 最长施法时间
+useSelf_skill_0_minCastTime 0
+#──────────────── 最短施法时间
+useSelf_skill_0_stopWhenHit 1
+#──────────────── 当受到攻击时终止使用		(0关闭 1开启)
+useSelf_skill_0_stopWhenSit 0
+#──────────────── 当坐下时不使用		(0关闭 1开启)
+useSelf_skill_0_lockMapOnly 0
+#──────────────── 只在锁定地图使用
+useSelf_skill_0_maxSpirits 0
+#──────────────── 当气弹少于该数量时使用	(0关闭 1-99开启)
+useSelf_skill_0_minSpirits 0
+#──────────────── 当气弹多于等于该数量时使用	(0关闭 1-99开启)
+useSelf_skill_0_maxAggressives 1
+#──────────────── 当敌人少于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+useSelf_skill_0_minAggressives 0
+#──────────────── 当敌人多于等于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+useSelf_skill_0_monsters 
+#──────────────── 当敌人是指定怪物时使用	(可多选，例如：波利,土波利,波波利)
+useSelf_skill_0_timeout 0
+#──────────────── 每隔多少时间使用		(0关闭 1开启)
+useSelf_skill_0_inState 
+#──────────────── 当人物在这状态时使用		(可多选，请参考statusnametable.txt和msgstrings.txt)
+useSelf_skill_0_noState 
+#──────────────── 当人物不在这状态时使用	(可多选，请参考statusnametable.txt和msgstrings.txt)
+
+useSelf_skill_1 治愈术
+useSelf_skill_1_lvl 
+useSelf_skill_1_dist 0
+useSelf_skill_1_smartHeal 0
+useSelf_skill_1_hp_lower 0
+useSelf_skill_1_hp_upper 50
+useSelf_skill_1_sp_lower 0
+useSelf_skill_1_sp_upper 100
+useSelf_skill_1_maxCastTime 0.5
+useSelf_skill_1_minCastTime 0
+useSelf_skill_1_stopWhenHit 0
+useSelf_skill_1_stopWhenSit 0
+useSelf_skill_1_lockMapOnly 0
+useSelf_skill_1_maxAggressives 0
+useSelf_skill_1_minAggressives 0
+useSelf_skill_1_monsters 
+useSelf_skill_1_timeout 0
+useSelf_skill_1_inState 
+useSelf_skill_1_noState 
+
+useSelf_skill_2 双手剑攻击速度增加
+useSelf_skill_2_lvl 
+useSelf_skill_2_dist 0
+useSelf_skill_2_hp_lower 0
+useSelf_skill_2_hp_upper 100
+useSelf_skill_2_sp_lower 0
+useSelf_skill_2_sp_upper 100
+useSelf_skill_2_maxCastTime 1
+useSelf_skill_2_minCastTime 0
+useSelf_skill_2_stopWhenHit 0
+useSelf_skill_2_stopWhenSit 1
+useSelf_skill_2_lockMapOnly 1
+useSelf_skill_2_maxAggressives 0
+useSelf_skill_2_minAggressives 0
+useSelf_skill_2_monsters 
+useSelf_skill_2_timeout 2
+useSelf_skill_2_inState 
+useSelf_skill_2_noState 双手剑攻击速度增加
+
+useSelf_skill_3 狂暴状态
+useSelf_skill_3_lvl 
+useSelf_skill_3_dist 0
+useSelf_skill_3_hp_lower 0
+useSelf_skill_3_hp_upper 100
+useSelf_skill_3_sp_lower 0
+useSelf_skill_3_sp_upper 100
+useSelf_skill_3_maxCastTime 1
+useSelf_skill_3_minCastTime 0
+useSelf_skill_3_stopWhenHit 0
+useSelf_skill_3_stopWhenSit 1
+useSelf_skill_3_lockMapOnly 1
+useSelf_skill_3_maxAggressives 0
+useSelf_skill_3_minAggressives 0
+useSelf_skill_3_monsters 
+useSelf_skill_3_timeout 2
+useSelf_skill_3_inState 
+useSelf_skill_3_noState 狂暴状态
+
+useSelf_skill_4 灵气剑
+useSelf_skill_4_lvl 
+useSelf_skill_4_dist 0
+useSelf_skill_4_hp_lower 0
+useSelf_skill_4_hp_upper 100
+useSelf_skill_4_sp_lower 0
+useSelf_skill_4_sp_upper 100
+useSelf_skill_4_maxCastTime 1
+useSelf_skill_4_minCastTime 0
+useSelf_skill_4_stopWhenHit 0
+useSelf_skill_4_stopWhenSit 1
+useSelf_skill_4_lockMapOnly 1
+useSelf_skill_4_maxAggressives 0
+useSelf_skill_4_minAggressives 0
+useSelf_skill_4_monsters 
+useSelf_skill_4_timeout 2
+useSelf_skill_4_inState 
+useSelf_skill_4_noState 灵气剑
+
+useSelf_skill_5 双剑挌挡
+useSelf_skill_5_lvl 
+useSelf_skill_5_dist 0
+useSelf_skill_5_hp_lower 0
+useSelf_skill_5_hp_upper 100
+useSelf_skill_5_sp_lower 0
+useSelf_skill_5_sp_upper 100
+useSelf_skill_5_maxCastTime 1
+useSelf_skill_5_minCastTime 0
+useSelf_skill_5_stopWhenHit 0
+useSelf_skill_5_stopWhenSit 1
+useSelf_skill_5_lockMapOnly 1
+useSelf_skill_5_maxAggressives 0
+useSelf_skill_5_minAggressives 0
+useSelf_skill_5_monsters 
+useSelf_skill_5_timeout 2
+useSelf_skill_5_inState 
+useSelf_skill_5_noState 双剑挌挡
+
+useSelf_skill_6 集中攻击
+useSelf_skill_6_lvl 
+useSelf_skill_6_dist 0
+useSelf_skill_6_hp_lower 0
+useSelf_skill_6_hp_upper 100
+useSelf_skill_6_sp_lower 0
+useSelf_skill_6_sp_upper 100
+useSelf_skill_6_maxCastTime 1
+useSelf_skill_6_minCastTime 0
+useSelf_skill_6_stopWhenHit 0
+useSelf_skill_6_stopWhenSit 1
+useSelf_skill_6_lockMapOnly 1
+useSelf_skill_6_maxAggressives 0
+useSelf_skill_6_minAggressives 0
+useSelf_skill_6_monsters 
+useSelf_skill_6_timeout 2
+useSelf_skill_6_inState 
+useSelf_skill_6_noState 集中攻击
+
+useSelf_skill_7 大声吶喊
+useSelf_skill_7_lvl 
+useSelf_skill_7_dist 0
+useSelf_skill_7_hp_lower 0
+useSelf_skill_7_hp_upper 100
+useSelf_skill_7_sp_lower 0
+useSelf_skill_7_sp_upper 100
+useSelf_skill_7_maxCastTime 1
+useSelf_skill_7_minCastTime 0
+useSelf_skill_7_stopWhenHit 0
+useSelf_skill_7_stopWhenSit 1
+useSelf_skill_7_lockMapOnly 1
+useSelf_skill_7_maxAggressives 0
+useSelf_skill_7_minAggressives 0
+useSelf_skill_7_monsters 
+useSelf_skill_7_timeout 2
+useSelf_skill_7_inState 
+useSelf_skill_7_noState 大声吶喊
+
+useSelf_skill_8 速度激发
+useSelf_skill_8_lvl 
+useSelf_skill_8_dist 0
+useSelf_skill_8_hp_lower 0
+useSelf_skill_8_hp_upper 100
+useSelf_skill_8_sp_lower 0
+useSelf_skill_8_sp_upper 100
+useSelf_skill_8_maxCastTime 1
+useSelf_skill_8_minCastTime 0
+useSelf_skill_8_stopWhenHit 0
+useSelf_skill_8_stopWhenSit 1
+useSelf_skill_8_lockMapOnly 1
+useSelf_skill_8_maxAggressives 0
+useSelf_skill_8_minAggressives 0
+useSelf_skill_8_monsters 
+useSelf_skill_8_timeout 2
+useSelf_skill_8_inState 
+useSelf_skill_8_noState 速度激发
+
+useSelf_skill_9 凶砍
+useSelf_skill_9_lvl 
+useSelf_skill_9_dist 0
+useSelf_skill_9_hp_lower 0
+useSelf_skill_9_hp_upper 100
+useSelf_skill_9_sp_lower 0
+useSelf_skill_9_sp_upper 100
+useSelf_skill_9_maxCastTime 1
+useSelf_skill_9_minCastTime 0
+useSelf_skill_9_stopWhenHit 0
+useSelf_skill_9_stopWhenSit 1
+useSelf_skill_9_lockMapOnly 1
+useSelf_skill_9_maxAggressives 0
+useSelf_skill_9_minAggressives 0
+useSelf_skill_9_monsters 
+useSelf_skill_9_timeout 2
+useSelf_skill_9_inState 
+useSelf_skill_9_noState 凶砍
+
+useSelf_skill_10 武器值最大化
+useSelf_skill_10_lvl 
+useSelf_skill_10_dist 0
+useSelf_skill_10_hp_lower 0
+useSelf_skill_10_hp_upper 100
+useSelf_skill_10_sp_lower 0
+useSelf_skill_10_sp_upper 100
+useSelf_skill_10_maxCastTime 1
+useSelf_skill_10_minCastTime 0
+useSelf_skill_10_stopWhenHit 0
+useSelf_skill_10_stopWhenSit 1
+useSelf_skill_10_lockMapOnly 1
+useSelf_skill_10_maxAggressives 0
+useSelf_skill_10_minAggressives 0
+useSelf_skill_10_monsters 
+useSelf_skill_10_timeout 2
+useSelf_skill_10_inState 
+useSelf_skill_10_noState 武器值最大化
+
+useSelf_skill_11 无视体型攻击
+useSelf_skill_11_lvl 
+useSelf_skill_11_dist 0
+useSelf_skill_11_hp_lower 0
+useSelf_skill_11_hp_upper 100
+useSelf_skill_11_sp_lower 0
+useSelf_skill_11_sp_upper 100
+useSelf_skill_11_maxCastTime 1
+useSelf_skill_11_minCastTime 0
+useSelf_skill_11_stopWhenHit 0
+useSelf_skill_11_stopWhenSit 1
+useSelf_skill_11_lockMapOnly 1
+useSelf_skill_11_maxAggressives 0
+useSelf_skill_11_minAggressives 0
+useSelf_skill_11_monsters 
+useSelf_skill_11_timeout 2
+useSelf_skill_11_inState 
+useSelf_skill_11_noState 无视体型攻击
+
+useSelf_skill_12 野蛮凶砍
+useSelf_skill_12_lvl 
+useSelf_skill_12_dist 0
+useSelf_skill_12_hp_lower 0
+useSelf_skill_12_hp_upper 100
+useSelf_skill_12_sp_lower 0
+useSelf_skill_12_sp_upper 100
+useSelf_skill_12_maxCastTime 1
+useSelf_skill_12_minCastTime 0
+useSelf_skill_12_stopWhenHit 0
+useSelf_skill_12_stopWhenSit 1
+useSelf_skill_12_lockMapOnly 1
+useSelf_skill_12_maxAggressives 0
+useSelf_skill_12_minAggressives 0
+useSelf_skill_12_monsters 
+useSelf_skill_12_timeout 2
+useSelf_skill_12_inState 
+useSelf_skill_12_noState 野蛮凶砍
+
+useSelf_skill_13 手推车加速
+useSelf_skill_13_lvl 
+useSelf_skill_13_dist 0
+useSelf_skill_13_hp_lower 0
+useSelf_skill_13_hp_upper 100
+useSelf_skill_13_sp_lower 0
+useSelf_skill_13_sp_upper 100
+useSelf_skill_13_maxCastTime 1
+useSelf_skill_13_minCastTime 0
+useSelf_skill_13_stopWhenHit 0
+useSelf_skill_13_stopWhenSit 1
+useSelf_skill_13_lockMapOnly 1
+useSelf_skill_13_maxAggressives 0
+useSelf_skill_13_minAggressives 0
+useSelf_skill_13_monsters 
+useSelf_skill_13_timeout 2
+useSelf_skill_13_inState 
+useSelf_skill_13_noState 手推车加速
+
+useSelf_skill_14 心神凝聚
+useSelf_skill_14_lvl 
+useSelf_skill_14_dist 0
+useSelf_skill_14_hp_lower 0
+useSelf_skill_14_hp_upper 100
+useSelf_skill_14_sp_lower 0
+useSelf_skill_14_sp_upper 100
+useSelf_skill_14_maxCastTime 1
+useSelf_skill_14_minCastTime 0
+useSelf_skill_14_stopWhenHit 0
+useSelf_skill_14_stopWhenSit 1
+useSelf_skill_14_lockMapOnly 1
+useSelf_skill_14_maxAggressives 0
+useSelf_skill_14_minAggressives 0
+useSelf_skill_14_monsters 
+useSelf_skill_14_timeout 2
+useSelf_skill_14_inState 
+useSelf_skill_14_noState 心神凝聚
+
+useSelf_skill_15 狙杀瞄准
+useSelf_skill_15_lvl 
+useSelf_skill_15_dist 0
+useSelf_skill_15_hp_lower 0
+useSelf_skill_15_hp_upper 100
+useSelf_skill_15_sp_lower 0
+useSelf_skill_15_sp_upper 100
+useSelf_skill_15_maxCastTime 1
+useSelf_skill_15_minCastTime 0
+useSelf_skill_15_stopWhenHit 0
+useSelf_skill_15_stopWhenSit 1
+useSelf_skill_15_lockMapOnly 1
+useSelf_skill_15_maxAggressives 0
+useSelf_skill_15_minAggressives 0
+useSelf_skill_15_monsters 
+useSelf_skill_15_timeout 2
+useSelf_skill_15_inState 
+useSelf_skill_15_noState 狙杀瞄准
+
+useSelf_skill_16 风之步
+useSelf_skill_16_lvl 
+useSelf_skill_16_dist 0
+useSelf_skill_16_hp_lower 0
+useSelf_skill_16_hp_upper 100
+useSelf_skill_16_sp_lower 0
+useSelf_skill_16_sp_upper 100
+useSelf_skill_16_maxCastTime 1
+useSelf_skill_16_minCastTime 0
+useSelf_skill_16_stopWhenHit 0
+useSelf_skill_16_stopWhenSit 1
+useSelf_skill_16_lockMapOnly 1
+useSelf_skill_16_maxAggressives 0
+useSelf_skill_16_minAggressives 0
+useSelf_skill_16_monsters 
+useSelf_skill_16_timeout 2
+useSelf_skill_16_inState 
+useSelf_skill_16_noState 风之步
+
+useSelf_skill_17 解毒
+useSelf_skill_17_lvl 
+useSelf_skill_17_dist 0
+useSelf_skill_17_hp_lower 0
+useSelf_skill_17_hp_upper 100
+useSelf_skill_17_sp_lower 0
+useSelf_skill_17_sp_upper 100
+useSelf_skill_17_maxCastTime 1
+useSelf_skill_17_minCastTime 0
+useSelf_skill_17_stopWhenHit 0
+useSelf_skill_17_stopWhenSit 0
+useSelf_skill_17_lockMapOnly 0
+useSelf_skill_17_maxAggressives 0
+useSelf_skill_17_minAggressives 0
+useSelf_skill_17_monsters 
+useSelf_skill_17_timeout 3
+useSelf_skill_17_inState 中毒状态
+useSelf_skill_17_noState 
+
+useSelf_skill_18 涂毒
+useSelf_skill_18_lvl 
+useSelf_skill_18_dist 0
+useSelf_skill_18_hp_lower 0
+useSelf_skill_18_hp_upper 100
+useSelf_skill_18_sp_lower 0
+useSelf_skill_18_sp_upper 100
+useSelf_skill_18_maxCastTime 1
+useSelf_skill_18_minCastTime 0
+useSelf_skill_18_stopWhenHit 0
+useSelf_skill_18_stopWhenSit 1
+useSelf_skill_18_lockMapOnly 1
+useSelf_skill_18_maxAggressives 0
+useSelf_skill_18_minAggressives 0
+useSelf_skill_18_monsters 
+useSelf_skill_18_timeout 2
+useSelf_skill_18_inState 
+useSelf_skill_18_noState 涂毒
+
+useSelf_skill_19 加速术
+useSelf_skill_19_lvl
+useSelf_skill_19_dist 0
+useSelf_skill_19_hp_lower 0
+useSelf_skill_19_hp_upper 100
+useSelf_skill_19_sp_lower 0
+useSelf_skill_19_sp_upper 100
+useSelf_skill_19_maxCastTime 1
+useSelf_skill_19_minCastTime 0
+useSelf_skill_19_stopWhenHit 1
+useSelf_skill_19_stopWhenSit 1
+useSelf_skill_19_lockMapOnly 0
+useSelf_skill_19_maxAggressives 1
+useSelf_skill_19_minAggressives 0
+useSelf_skill_19_monsters 
+useSelf_skill_19_timeout 2
+useSelf_skill_19_inState 
+useSelf_skill_19_noState 加速术
+
+useSelf_skill_20 天使之赐福
+useSelf_skill_20_lvl
+useSelf_skill_20_dist 0
+useSelf_skill_20_hp_lower 0
+useSelf_skill_20_hp_upper 100
+useSelf_skill_20_sp_lower 0
+useSelf_skill_20_sp_upper 100
+useSelf_skill_20_maxCastTime 1
+useSelf_skill_20_minCastTime 0
+useSelf_skill_20_stopWhenHit 0
+useSelf_skill_20_stopWhenSit 0
+useSelf_skill_20_lockMapOnly 0
+useSelf_skill_20_maxAggressives 0
+useSelf_skill_20_minAggressives 0
+useSelf_skill_20_monsters 
+useSelf_skill_20_timeout 2
+useSelf_skill_20_inState 
+useSelf_skill_20_noState 天使之赐福
+
+useSelf_skill_21 天使之赐福
+useSelf_skill_21_lvl 
+useSelf_skill_21_dist 0
+useSelf_skill_21_hp_lower 0
+useSelf_skill_21_hp_upper 100
+useSelf_skill_21_sp_lower 0
+useSelf_skill_21_sp_upper 100
+useSelf_skill_21_maxCastTime 1
+useSelf_skill_21_minCastTime 0
+useSelf_skill_21_stopWhenHit 0
+useSelf_skill_21_stopWhenSit 1
+useSelf_skill_21_lockMapOnly 1
+useSelf_skill_21_maxAggressives 0
+useSelf_skill_21_minAggressives 0
+useSelf_skill_21_monsters 
+useSelf_skill_21_timeout 2
+useSelf_skill_21_inState 
+useSelf_skill_21_noState 天使之赐福
+
+useSelf_skill_22 神威祈福
+useSelf_skill_22_lvl 
+useSelf_skill_22_dist 0
+useSelf_skill_22_hp_lower 0
+useSelf_skill_22_hp_upper 100
+useSelf_skill_22_sp_lower 0
+useSelf_skill_22_sp_upper 100
+useSelf_skill_22_maxCastTime 1
+useSelf_skill_22_minCastTime 0
+useSelf_skill_22_stopWhenHit 0
+useSelf_skill_22_stopWhenSit 1
+useSelf_skill_22_lockMapOnly 1
+useSelf_skill_22_maxAggressives 0
+useSelf_skill_22_minAggressives 0
+useSelf_skill_22_monsters 
+useSelf_skill_22_timeout 2
+useSelf_skill_22_inState 
+useSelf_skill_22_noState 神威祈福
+
+useSelf_skill_23 天使之障壁
+useSelf_skill_23_lvl 
+useSelf_skill_23_dist 0
+useSelf_skill_23_hp_lower 0
+useSelf_skill_23_hp_upper 100
+useSelf_skill_23_sp_lower 0
+useSelf_skill_23_sp_upper 100
+useSelf_skill_23_maxCastTime 1
+useSelf_skill_23_minCastTime 0
+useSelf_skill_23_stopWhenHit 1
+useSelf_skill_23_stopWhenSit 1
+useSelf_skill_23_lockMapOnly 1
+useSelf_skill_23_maxAggressives 1
+useSelf_skill_23_minAggressives 0
+useSelf_skill_23_monsters 
+useSelf_skill_23_timeout 2
+useSelf_skill_23_inState 
+useSelf_skill_23_noState 天使之障壁
+
+useSelf_skill_24 霸邪之阵
+useSelf_skill_24_lvl 
+useSelf_skill_24_dist 0
+useSelf_skill_24_hp_lower 0
+useSelf_skill_24_hp_upper 100
+useSelf_skill_24_sp_lower 0
+useSelf_skill_24_sp_upper 100
+useSelf_skill_24_maxCastTime 4
+useSelf_skill_24_minCastTime 0
+useSelf_skill_24_stopWhenHit 1
+useSelf_skill_24_stopWhenSit 1
+useSelf_skill_24_lockMapOnly 1
+useSelf_skill_24_maxAggressives 1
+useSelf_skill_24_minAggressives 0
+useSelf_skill_24_monsters 
+useSelf_skill_24_timeout 2
+useSelf_skill_24_inState 
+useSelf_skill_24_noState 霸邪之阵
+
+useSelf_skill_25 圣母之颂歌
+useSelf_skill_25_lvl 
+useSelf_skill_25_dist 0
+useSelf_skill_25_hp_lower 0
+useSelf_skill_25_hp_upper 100
+useSelf_skill_25_sp_lower 0
+useSelf_skill_25_sp_upper 90
+useSelf_skill_25_maxCastTime 4
+useSelf_skill_25_minCastTime 0
+useSelf_skill_25_stopWhenHit 1
+useSelf_skill_25_stopWhenSit 0
+useSelf_skill_25_lockMapOnly 1
+useSelf_skill_25_maxAggressives 1
+useSelf_skill_25_minAggressives 0
+useSelf_skill_25_monsters 
+useSelf_skill_25_timeout 2
+useSelf_skill_25_inState 
+useSelf_skill_25_noState 圣母之颂歌
+
+useSelf_skill_26 幸运之颂歌
+useSelf_skill_26_lvl 
+useSelf_skill_26_dist 0
+useSelf_skill_26_hp_lower 0
+useSelf_skill_26_hp_upper 100
+useSelf_skill_26_sp_lower 0
+useSelf_skill_26_sp_upper 100
+useSelf_skill_26_maxCastTime 1
+useSelf_skill_26_minCastTime 0
+useSelf_skill_26_stopWhenHit 0
+useSelf_skill_26_stopWhenSit 1
+useSelf_skill_26_lockMapOnly 1
+useSelf_skill_26_maxAggressives 0
+useSelf_skill_26_minAggressives 0
+useSelf_skill_26_monsters 
+useSelf_skill_26_timeout 2
+useSelf_skill_26_inState 
+useSelf_skill_26_noState 幸运之颂歌
+
+useSelf_skill_27 光之障壁
+useSelf_skill_27_lvl 
+useSelf_skill_27_dist 7
+useSelf_skill_27_hp_lower 0
+useSelf_skill_27_hp_upper 100
+useSelf_skill_27_sp_lower 0
+useSelf_skill_27_sp_upper 100
+useSelf_skill_27_maxCastTime 1
+useSelf_skill_27_minCastTime 0
+useSelf_skill_27_stopWhenHit 0
+useSelf_skill_27_stopWhenSit 1
+useSelf_skill_27_lockMapOnly 1
+useSelf_skill_27_maxAggressives 0
+useSelf_skill_27_minAggressives 1
+useSelf_skill_27_monsters 邪骸弓箭手,兽人弓箭手,蝙蝠弓箭手,弓箭哥布灵,幽灵弓箭手,犬妖弓箭手,伍坦弹弓手
+useSelf_skill_27_timeout 0
+useSelf_skill_27_inState 
+useSelf_skill_27_noState 光之障壁
+
+useSelf_skill_28 暗之障壁
+useSelf_skill_28_lvl 
+useSelf_skill_28_dist 2
+useSelf_skill_28_hp_lower 0
+useSelf_skill_28_hp_upper 100
+useSelf_skill_28_sp_lower 0
+useSelf_skill_28_sp_upper 100
+useSelf_skill_28_maxCastTime 1
+useSelf_skill_28_minCastTime 0
+useSelf_skill_28_stopWhenHit 0
+useSelf_skill_28_stopWhenSit 1
+useSelf_skill_28_lockMapOnly 1
+useSelf_skill_28_maxAggressives 0
+useSelf_skill_28_minAggressives 1
+useSelf_skill_28_monsters 
+useSelf_skill_28_timeout 0
+useSelf_skill_28_inState 
+useSelf_skill_28_noState 暗之障壁
+
+useSelf_skill_29 光猎
+useSelf_skill_29_lvl 
+useSelf_skill_29_dist 0
+useSelf_skill_29_hp_lower 0
+useSelf_skill_29_hp_upper 100
+useSelf_skill_29_sp_lower 0
+useSelf_skill_29_sp_upper 100
+useSelf_skill_29_maxCastTime 0.5
+useSelf_skill_29_minCastTime 0
+useSelf_skill_29_stopWhenHit 0
+useSelf_skill_29_stopWhenSit 1
+useSelf_skill_29_lockMapOnly 1
+useSelf_skill_29_maxAggressives 0
+useSelf_skill_29_minAggressives 1
+useSelf_skill_29_monsters 
+useSelf_skill_29_timeout 2
+useSelf_skill_29_inState 
+useSelf_skill_29_noState 火狩／光猎状态
+
+useSelf_skill_30 圣母之祈福
+useSelf_skill_30_lvl 
+useSelf_skill_30_dist 0
+useSelf_skill_30_hp_lower 0
+useSelf_skill_30_hp_upper 100
+useSelf_skill_30_sp_lower 0
+useSelf_skill_30_sp_upper 100
+useSelf_skill_30_maxCastTime 4
+useSelf_skill_30_minCastTime 0
+useSelf_skill_30_stopWhenHit 1
+useSelf_skill_30_stopWhenSit 1
+useSelf_skill_30_lockMapOnly 1
+useSelf_skill_30_maxAggressives 1
+useSelf_skill_30_minAggressives 0
+useSelf_skill_30_monsters 
+useSelf_skill_30_timeout 2
+useSelf_skill_30_inState 
+useSelf_skill_30_noState 圣母之祈福
+
+useSelf_skill_31 能量外套
+useSelf_skill_31_lvl 
+useSelf_skill_31_dist 0
+useSelf_skill_31_hp_lower 0
+useSelf_skill_31_hp_upper 100
+useSelf_skill_31_sp_lower 0
+useSelf_skill_31_sp_upper 100
+useSelf_skill_31_maxCastTime 1
+useSelf_skill_31_minCastTime 0
+useSelf_skill_31_stopWhenHit 0
+useSelf_skill_31_stopWhenSit 1
+useSelf_skill_31_lockMapOnly 1
+useSelf_skill_31_maxAggressives 0
+useSelf_skill_31_minAggressives 0
+useSelf_skill_31_monsters 
+useSelf_skill_31_timeout 2
+useSelf_skill_31_inState 
+useSelf_skill_31_noState 能量外套
+
+useSelf_skill_32 火狩
+useSelf_skill_32_lvl 
+useSelf_skill_32_dist 0
+useSelf_skill_32_hp_lower 0
+useSelf_skill_32_hp_upper 100
+useSelf_skill_32_sp_lower 0
+useSelf_skill_32_sp_upper 100
+useSelf_skill_32_maxCastTime 0.5
+useSelf_skill_32_minCastTime 0
+useSelf_skill_32_stopWhenHit 0
+useSelf_skill_32_stopWhenSit 1
+useSelf_skill_32_lockMapOnly 1
+useSelf_skill_32_maxAggressives 0
+useSelf_skill_32_minAggressives 1
+useSelf_skill_32_monsters 
+useSelf_skill_32_timeout 2
+useSelf_skill_32_inState 
+useSelf_skill_32_noState 火狩／光猎状态
+
+useSelf_skill_33 魔力增幅
+useSelf_skill_33_lvl 
+useSelf_skill_33_dist 0
+useSelf_skill_33_hp_lower 0
+useSelf_skill_33_hp_upper 100
+useSelf_skill_33_sp_lower 0
+useSelf_skill_33_sp_upper 100
+useSelf_skill_33_maxCastTime 1
+useSelf_skill_33_minCastTime 0
+useSelf_skill_33_stopWhenHit 0
+useSelf_skill_33_stopWhenSit 1
+useSelf_skill_33_lockMapOnly 1
+useSelf_skill_33_maxAggressives 0
+useSelf_skill_33_minAggressives 0
+useSelf_skill_33_monsters 
+useSelf_skill_33_timeout 2
+useSelf_skill_33_inState 
+useSelf_skill_33_noState 魔力增幅
+
+useSelf_skill_34 蓄气
+useSelf_skill_34_lvl 
+useSelf_skill_34_dist 0
+useSelf_skill_34_hp_lower 0
+useSelf_skill_34_hp_upper 100
+useSelf_skill_34_sp_lower 0
+useSelf_skill_34_sp_upper 100
+useSelf_skill_34_maxCastTime 0.3
+useSelf_skill_34_minCastTime 0
+useSelf_skill_34_stopWhenHit 0
+useSelf_skill_34_stopWhenSit 1
+useSelf_skill_34_lockMapOnly 1
+useSelf_skill_34_maxSpirits 5
+useSelf_skill_34_minSpirits 0
+useSelf_skill_34_maxAggressives 1
+useSelf_skill_34_minAggressives 0
+useSelf_skill_34_monsters 
+useSelf_skill_34_timeout 0
+useSelf_skill_34_inState 
+useSelf_skill_34_noState 
+
+useSelf_skill_35 爆气
+useSelf_skill_35_lvl 
+useSelf_skill_35_dist 0
+useSelf_skill_35_hp_lower 0
+useSelf_skill_35_hp_upper 100
+useSelf_skill_35_sp_lower 0
+useSelf_skill_35_sp_upper 100
+useSelf_skill_35_maxCastTime 1
+useSelf_skill_35_minCastTime 0
+useSelf_skill_35_stopWhenHit 0
+useSelf_skill_35_stopWhenSit 1
+useSelf_skill_35_lockMapOnly 1
+useSelf_skill_35_maxSpirits 0
+useSelf_skill_35_minSpirits 5
+useSelf_skill_35_maxAggressives 1
+useSelf_skill_35_minAggressives 0
+useSelf_skill_35_monsters 
+useSelf_skill_35_timeout 2
+useSelf_skill_35_inState 
+useSelf_skill_35_noState 爆气
+
+useSelf_skill_36 金刚不坏
+useSelf_skill_36_lvl 
+useSelf_skill_36_dist 0
+useSelf_skill_36_hp_lower 0
+useSelf_skill_36_hp_upper 100
+useSelf_skill_36_sp_lower 0
+useSelf_skill_36_sp_upper 100
+useSelf_skill_36_maxCastTime 1
+useSelf_skill_36_minCastTime 0
+useSelf_skill_36_stopWhenHit 0
+useSelf_skill_36_stopWhenSit 1
+useSelf_skill_36_lockMapOnly 1
+useSelf_skill_36_maxSpirits 0
+useSelf_skill_36_minSpirits 5
+useSelf_skill_36_maxAggressives 0
+useSelf_skill_36_minAggressives 0
+useSelf_skill_36_monsters 
+useSelf_skill_36_timeout 2
+useSelf_skill_36_inState 
+useSelf_skill_36_noState 金刚不坏
+
+useSelf_skill_37 连环全身掌
+useSelf_skill_37_lvl 
+useSelf_skill_37_dist 2
+useSelf_skill_37_hp_lower 0
+useSelf_skill_37_hp_upper 100
+useSelf_skill_37_sp_lower 0
+useSelf_skill_37_sp_upper 100
+useSelf_skill_37_maxCastTime 1
+useSelf_skill_37_minCastTime 0
+useSelf_skill_37_stopWhenHit 0
+useSelf_skill_37_stopWhenSit 1
+useSelf_skill_37_lockMapOnly 1
+useSelf_skill_37_maxAggressives 0
+useSelf_skill_37_minAggressives 1
+useSelf_skill_37_monsters 
+useSelf_skill_37_timeout 2
+useSelf_skill_37_inState 六合拳
+useSelf_skill_37_noState 
+
+useSelf_skill_38 阿修罗霸凰拳
+useSelf_skill_38_lvl 
+useSelf_skill_38_dist 2
+useSelf_skill_38_hp_lower 0
+useSelf_skill_38_hp_upper 100
+useSelf_skill_38_sp_lower 0
+useSelf_skill_38_sp_upper 100
+useSelf_skill_38_maxCastTime 1
+useSelf_skill_38_minCastTime 0
+useSelf_skill_38_stopWhenHit 0
+useSelf_skill_38_stopWhenSit 1
+useSelf_skill_38_lockMapOnly 1
+useSelf_skill_38_maxSpirits 0
+useSelf_skill_38_minSpirits 5
+useSelf_skill_38_maxAggressives 0
+useSelf_skill_38_minAggressives 1
+useSelf_skill_38_monsters 
+useSelf_skill_38_timeout 2
+useSelf_skill_38_inState 爆气
+useSelf_skill_38_noState 
+
+useSelf_skill_39 猛虎硬爬山
+useSelf_skill_39_lvl 
+useSelf_skill_39_dist 2
+useSelf_skill_39_hp_lower 0
+useSelf_skill_39_hp_upper 100
+useSelf_skill_39_sp_lower 0
+useSelf_skill_39_sp_upper 100
+useSelf_skill_39_maxCastTime 1
+useSelf_skill_39_minCastTime 0
+useSelf_skill_39_stopWhenHit 0
+useSelf_skill_39_stopWhenSit 1
+useSelf_skill_39_lockMapOnly 1
+useSelf_skill_39_maxAggressives 0
+useSelf_skill_39_minAggressives 1
+useSelf_skill_39_monsters 
+useSelf_skill_39_timeout 2
+useSelf_skill_39_inState 爆气
+useSelf_skill_39_noState 
+
+useSelf_skill_40 狂蓄气
+useSelf_skill_40_lvl 
+useSelf_skill_40_dist 0
+useSelf_skill_40_hp_lower 0
+useSelf_skill_40_hp_upper 100
+useSelf_skill_40_sp_lower 0
+useSelf_skill_40_sp_upper 100
+useSelf_skill_40_maxCastTime 0.5
+useSelf_skill_40_minCastTime 0
+useSelf_skill_40_stopWhenHit 0
+useSelf_skill_40_stopWhenSit 1
+useSelf_skill_40_lockMapOnly 1
+useSelf_skill_40_maxSpirits 1
+useSelf_skill_40_minSpirits 0
+useSelf_skill_40_maxAggressives 0
+useSelf_skill_40_minAggressives 0
+useSelf_skill_40_monsters 
+useSelf_skill_40_timeout 0
+useSelf_skill_40_inState 
+useSelf_skill_40_noState 
+
+useSelf_skill_41 自动防御
+useSelf_skill_41_lvl 
+useSelf_skill_41_dist 0
+useSelf_skill_41_hp_lower 0
+useSelf_skill_41_hp_upper 100
+useSelf_skill_41_sp_lower 0
+useSelf_skill_41_sp_upper 100
+useSelf_skill_41_maxCastTime 1
+useSelf_skill_41_minCastTime 0
+useSelf_skill_41_stopWhenHit 1
+useSelf_skill_41_stopWhenSit 1
+useSelf_skill_41_lockMapOnly 1
+useSelf_skill_41_maxAggressives 1
+useSelf_skill_41_minAggressives 0
+useSelf_skill_41_monsters 
+useSelf_skill_41_timeout 2
+useSelf_skill_41_inState 
+useSelf_skill_41_noState 自动防御
+
+useSelf_skill_42 反射盾
+useSelf_skill_42_lvl 
+useSelf_skill_42_dist 0
+useSelf_skill_42_hp_lower 0
+useSelf_skill_42_hp_upper 100
+useSelf_skill_42_sp_lower 0
+useSelf_skill_42_sp_upper 100
+useSelf_skill_42_maxCastTime 1
+useSelf_skill_42_minCastTime 0
+useSelf_skill_42_stopWhenHit 1
+useSelf_skill_42_stopWhenSit 1
+useSelf_skill_42_lockMapOnly 1
+useSelf_skill_42_maxAggressives 1
+useSelf_skill_42_minAggressives 0
+useSelf_skill_42_monsters 
+useSelf_skill_42_timeout 2
+useSelf_skill_42_inState 
+useSelf_skill_42_noState 反射盾
+
+useSelf_skill_43 神佑之光
+useSelf_skill_43_lvl 
+useSelf_skill_43_dist 0
+useSelf_skill_43_hp_lower 0
+useSelf_skill_43_hp_upper 100
+useSelf_skill_43_sp_lower 0
+useSelf_skill_43_sp_upper 100
+useSelf_skill_43_maxCastTime 1
+useSelf_skill_43_minCastTime 0
+useSelf_skill_43_stopWhenHit 1
+useSelf_skill_43_stopWhenSit 1
+useSelf_skill_43_lockMapOnly 1
+useSelf_skill_43_maxAggressives 1
+useSelf_skill_43_minAggressives 0
+useSelf_skill_43_monsters 
+useSelf_skill_43_timeout 2
+useSelf_skill_43_inState 
+useSelf_skill_43_noState 神佑之光
+
+useSelf_skill_44 光之盾
+useSelf_skill_44_lvl 
+useSelf_skill_44_dist 0
+useSelf_skill_44_hp_lower 0
+useSelf_skill_44_hp_upper 100
+useSelf_skill_44_sp_lower 0
+useSelf_skill_44_sp_upper 100
+useSelf_skill_44_maxCastTime 1
+useSelf_skill_44_minCastTime 0
+useSelf_skill_44_stopWhenHit 0
+useSelf_skill_44_stopWhenSit 1
+useSelf_skill_44_lockMapOnly 1
+useSelf_skill_44_maxAggressives 0
+useSelf_skill_44_minAggressives 1
+useSelf_skill_44_monsters 邪骸弓箭手,兽人弓箭手,蝙蝠弓箭手,弓箭哥布灵,幽灵弓箭手,犬妖弓箭手,伍坦弹弓手
+useSelf_skill_44_timeout 0
+useSelf_skill_44_inState 
+useSelf_skill_44_noState 光之盾
+
+useSelf_skill_45 长矛加速术
+useSelf_skill_45_lvl 
+useSelf_skill_45_dist 0
+useSelf_skill_45_hp_lower 0
+useSelf_skill_45_hp_upper 100
+useSelf_skill_45_sp_lower 0
+useSelf_skill_45_sp_upper 100
+useSelf_skill_45_maxCastTime 1
+useSelf_skill_45_minCastTime 0
+useSelf_skill_45_stopWhenHit 0
+useSelf_skill_45_stopWhenSit 1
+useSelf_skill_45_lockMapOnly 1
+useSelf_skill_45_maxAggressives 0
+useSelf_skill_45_minAggressives 0
+useSelf_skill_45_monsters 
+useSelf_skill_45_timeout 2
+useSelf_skill_45_inState 
+useSelf_skill_45_noState 长矛加速术
+
+useSelf_skill_46 霸王魂
+useSelf_skill_46_lvl 
+useSelf_skill_46_dist 0
+useSelf_skill_46_hp_lower 0
+useSelf_skill_46_hp_upper 100
+useSelf_skill_46_sp_lower 0
+useSelf_skill_46_sp_upper 100
+useSelf_skill_46_maxCastTime 1
+useSelf_skill_46_minCastTime 0
+useSelf_skill_46_stopWhenHit 1
+useSelf_skill_46_stopWhenSit 1
+useSelf_skill_46_lockMapOnly 1
+useSelf_skill_46_maxAggressives 1
+useSelf_skill_46_minAggressives 0
+useSelf_skill_46_monsters 
+useSelf_skill_46_timeout 2
+useSelf_skill_46_inState 
+useSelf_skill_46_noState 霸王魂
+
+useSelf_skill_47 药水投掷
+useSelf_skill_47_lvl 
+useSelf_skill_47_dist 0
+useSelf_skill_47_hp_lower 0
+useSelf_skill_47_hp_upper 50
+useSelf_skill_47_sp_lower 0
+useSelf_skill_47_sp_upper 100
+useSelf_skill_47_maxCastTime 1
+useSelf_skill_47_minCastTime 0
+useSelf_skill_47_stopWhenHit 0
+useSelf_skill_47_stopWhenSit 1
+useSelf_skill_47_lockMapOnly 1
+useSelf_skill_47_maxAggressives 0
+useSelf_skill_47_minAggressives 0
+useSelf_skill_47_monsters 
+useSelf_skill_47_timeout 0
+useSelf_skill_47_inState 
+useSelf_skill_47_noState 
+
+useSelf_skill_48 HP转换
+useSelf_skill_48_lvl 
+useSelf_skill_48_dist 0
+useSelf_skill_48_hp_lower 20
+useSelf_skill_48_hp_upper 100
+useSelf_skill_48_sp_lower 0
+useSelf_skill_48_sp_upper 20
+useSelf_skill_48_maxCastTime 1
+useSelf_skill_48_minCastTime 0
+useSelf_skill_48_stopWhenHit 0
+useSelf_skill_48_stopWhenSit 1
+useSelf_skill_48_lockMapOnly 1
+useSelf_skill_48_maxAggressives 0
+useSelf_skill_48_minAggressives 0
+useSelf_skill_48_monsters 
+useSelf_skill_48_timeout 2
+useSelf_skill_48_inState 
+useSelf_skill_48_noState 
+
+useSelf_skill_49 凶砍最大值
+useSelf_skill_49_lvl 
+useSelf_skill_49_dist 0
+useSelf_skill_49_hp_lower 0
+useSelf_skill_49_hp_upper 100
+useSelf_skill_49_sp_lower 0
+useSelf_skill_49_sp_upper 100
+useSelf_skill_49_maxCastTime 1
+useSelf_skill_49_minCastTime 0
+useSelf_skill_49_stopWhenHit 0
+useSelf_skill_49_stopWhenSit 1
+useSelf_skill_49_lockMapOnly 1
+useSelf_skill_49_maxAggressives 0
+useSelf_skill_49_minAggressives 0
+useSelf_skill_49_monsters 
+useSelf_skill_49_timeout 2
+useSelf_skill_49_inState 
+useSelf_skill_49_noState 凶砍最大值
+
+#━━━━━━━━━━━━━━━━ 组队技能 ━━━━━━━━━━━━━━━━
+
+useParty_skill_0 治愈术
+#──────────────── 技能名称
+useParty_skill_0_lvl 
+#──────────────── 使用技能级数
+useParty_skill_0_dist 15
+#──────────────── 技能距离
+useParty_skill_0_hp_lower 0
+useParty_skill_0_hp_upper 100
+#──────────────── 当HP％在lower至upper范围时，使用技能
+useParty_skill_0_sp_lower 0
+useParty_skill_0_sp_upper 100
+#──────────────── 当SP％在lower至upper范围时，使用技能
+useParty_skill_0_maxAggressives 0
+#──────────────── 当敌人少于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+useParty_skill_0_minAggressives 0
+#──────────────── 当敌人多于等于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+useParty_skill_0_maxCastTime 0
+#──────────────── 最长施法时间
+useParty_skill_0_minCastTime 0
+#──────────────── 最短施法时间
+useParty_skill_0_useSelf 0
+#──────────────── 对自己使用技能		(0关闭 1开启 - 如圣母、幸运需要向自己使用技能)
+useParty_skill_0_stopWhenHit 0
+#──────────────── 当受到攻击时终止使用		(0关闭 1开启)
+useParty_skill_0_stopWhenSit 0
+#──────────────── 当坐下时不使用		(0关闭 1开启)
+useParty_skill_0_lockMapOnly 0
+#──────────────── 只在锁定地图使用		(0关闭 1开启)
+useParty_skill_0_timeout 0
+#──────────────── 每隔多少时间使用		(0关闭 1开启)
+useParty_skill_0_players 
+#──────────────── 对指定队友使用
+useParty_skill_0_player_hp_lower 0
+useParty_skill_0_player_hp_upper 90
+#──────────────── 当队友HP％在lower至upper范围时，使用技能
+useParty_skill_0_inState 
+#──────────────── 当队友在这状态时使用		(可多选，请参考statusnametable.txt和msgstrings.txt)
+useParty_skill_0_noState 
+#──────────────── 当队友不在这状态时使用	(可多选，请参考statusnametable.txt和msgstrings.txt)
+
+useParty_skill_1 加速术
+useParty_skill_1_lvl
+useParty_skill_1_dist 15
+useParty_skill_1_hp_lower 0
+useParty_skill_1_hp_upper 100
+useParty_skill_1_sp_lower 0
+useParty_skill_1_sp_upper 100
+useParty_skill_1_maxAggressives 0
+useParty_skill_1_minAggressives 0
+useParty_skill_1_maxCastTime 1.5
+useParty_skill_1_minCastTime 0
+useParty_skill_1_useSelf 0
+useParty_skill_1_stopWhenHit 0
+useParty_skill_1_stopWhenSit 1
+useParty_skill_1_lockMapOnly 0
+useParty_skill_1_timeout 2
+useParty_skill_1_players 
+useParty_skill_1_player_hp_lower 0
+useParty_skill_1_player_hp_upper 100
+useParty_skill_1_inState 
+useParty_skill_1_noState 加速术
+useParty_skill_1_stateTimeout 240
+
+useParty_skill_2 天使之赐福
+useParty_skill_2_lvl
+useParty_skill_2_dist 15
+useParty_skill_2_hp_lower 0
+useParty_skill_2_hp_upper 100
+useParty_skill_2_sp_lower 0
+useParty_skill_2_sp_upper 100
+useParty_skill_2_maxAggressives 0
+useParty_skill_2_minAggressives 0
+useParty_skill_2_maxCastTime 1
+useParty_skill_2_minCastTime 0
+useParty_skill_2_useSelf 0
+useParty_skill_2_stopWhenHit 0
+useParty_skill_2_stopWhenSit 1
+useParty_skill_2_lockMapOnly 0
+useParty_skill_2_timeout 2
+useParty_skill_2_players 
+useParty_skill_2_player_hp_lower 0
+useParty_skill_2_player_hp_upper 100
+useParty_skill_2_inState 
+useParty_skill_2_noState 天使之赐福
+useParty_skill_2_stateTimeout 240
+
+useParty_skill_3 神威祈福
+useParty_skill_3_lvl 
+useParty_skill_3_dist 15
+useParty_skill_3_hp_lower 0
+useParty_skill_3_hp_upper 100
+useParty_skill_3_sp_lower 0
+useParty_skill_3_sp_upper 100
+useParty_skill_3_maxAggressives 0
+useParty_skill_3_minAggressives 0
+useParty_skill_3_maxCastTime 1
+useParty_skill_3_minCastTime 0
+useParty_skill_3_useSelf 0
+useParty_skill_3_stopWhenHit 0
+useParty_skill_3_stopWhenSit 1
+useParty_skill_3_lockMapOnly 0
+useParty_skill_3_timeout 2
+useParty_skill_3_players 
+useParty_skill_3_player_hp_lower 0
+useParty_skill_3_player_hp_upper 100
+useParty_skill_3_inState 
+useParty_skill_3_noState 神威祈福
+useParty_skill_3_stateTimeout 60
+
+useParty_skill_4 霸邪之阵
+useParty_skill_4_lvl 
+useParty_skill_4_dist 15
+useParty_skill_4_hp_lower 0
+useParty_skill_4_hp_upper 100
+useParty_skill_4_sp_lower 0
+useParty_skill_4_sp_upper 100
+useParty_skill_4_maxAggressives 0
+useParty_skill_4_minAggressives 0
+useParty_skill_4_maxCastTime 1
+useParty_skill_4_minCastTime 0
+useParty_skill_4_useSelf 0
+useParty_skill_4_stopWhenHit 0
+useParty_skill_4_stopWhenSit 1
+useParty_skill_4_lockMapOnly 0
+useParty_skill_4_timeout 2
+useParty_skill_4_players 
+useParty_skill_4_player_hp_lower 0
+useParty_skill_4_player_hp_upper 100
+useParty_skill_4_inState 
+useParty_skill_4_noState 霸邪之阵
+useParty_skill_4_stateTimeout 120
+
+useParty_skill_5 圣母之颂歌
+useParty_skill_5_lvl 
+useParty_skill_5_dist 15
+useParty_skill_5_hp_lower 0
+useParty_skill_5_hp_upper 100
+useParty_skill_5_sp_lower 0
+useParty_skill_5_sp_upper 100
+useParty_skill_5_maxAggressives 0
+useParty_skill_5_minAggressives 0
+useParty_skill_5_maxCastTime 1
+useParty_skill_5_minCastTime 0
+useParty_skill_5_useSelf 1
+useParty_skill_5_stopWhenHit 0
+useParty_skill_5_stopWhenSit 1
+useParty_skill_5_lockMapOnly 0
+useParty_skill_5_timeout 2
+useParty_skill_5_players 
+useParty_skill_5_player_hp_lower 0
+useParty_skill_5_player_hp_upper 100
+useParty_skill_5_inState 
+useParty_skill_5_noState 圣母之颂歌
+useParty_skill_5_stateTimeout 100
+
+useParty_skill_6 幸运之颂歌
+useParty_skill_6_lvl 
+useParty_skill_6_dist 15
+useParty_skill_6_hp_lower 0
+useParty_skill_6_hp_upper 100
+useParty_skill_6_sp_lower 0
+useParty_skill_6_sp_upper 100
+useParty_skill_6_maxAggressives 0
+useParty_skill_6_minAggressives 0
+useParty_skill_6_maxCastTime 1
+useParty_skill_6_minCastTime 0
+useParty_skill_6_useSelf 1
+useParty_skill_6_stopWhenHit 0
+useParty_skill_6_stopWhenSit 1
+useParty_skill_6_lockMapOnly 0
+useParty_skill_6_timeout 2
+useParty_skill_6_players 
+useParty_skill_6_player_hp_lower 0
+useParty_skill_6_player_hp_upper 100
+useParty_skill_6_inState 
+useParty_skill_6_noState 幸运之颂歌
+useParty_skill_6_stateTimeout 30
+
+useParty_skill_7 天使之障壁
+useParty_skill_7_lvl 
+useParty_skill_7_dist 15
+useParty_skill_7_hp_lower 0
+useParty_skill_7_hp_upper 100
+useParty_skill_7_sp_lower 0
+useParty_skill_7_sp_upper 100
+useParty_skill_7_maxAggressives 0
+useParty_skill_7_minAggressives 0
+useParty_skill_7_maxCastTime 1
+useParty_skill_7_minCastTime 0
+useParty_skill_7_useSelf 1
+useParty_skill_7_stopWhenHit 0
+useParty_skill_7_stopWhenSit 1
+useParty_skill_7_lockMapOnly 0
+useParty_skill_7_timeout 2
+useParty_skill_7_players 
+useParty_skill_7_player_hp_lower 0
+useParty_skill_7_player_hp_upper 100
+useParty_skill_7_inState 
+useParty_skill_7_noState 天使之障壁
+useParty_skill_7_stateTimeout 100
+
+useParty_skill_8 痊愈术
+useParty_skill_8_lvl 
+useParty_skill_8_dist 15
+useParty_skill_8_hp_lower 0
+useParty_skill_8_hp_upper 100
+useParty_skill_8_sp_lower 0
+useParty_skill_8_sp_upper 100
+useParty_skill_8_maxAggressives 0
+useParty_skill_8_minAggressives 0
+useParty_skill_8_maxCastTime 1
+useParty_skill_8_minCastTime 0
+useParty_skill_8_useSelf 0
+useParty_skill_8_stopWhenHit 0
+useParty_skill_8_stopWhenSit 0
+useParty_skill_8_lockMapOnly 0
+useParty_skill_8_timeout 1
+useParty_skill_8_players 
+useParty_skill_8_player_hp_lower 0
+useParty_skill_8_player_hp_upper 100
+useParty_skill_8_inState 冰冻状态,石化状态,睡眠状态,昏迷状态,黑暗状态,诅咒状态
+useParty_skill_8_noState 
+useParty_skill_8_stateTimeout 
+
+useParty_skill_9 治疗术
+useParty_skill_9_lvl 
+useParty_skill_9_dist 15
+useParty_skill_9_hp_lower 0
+useParty_skill_9_hp_upper 100
+useParty_skill_9_sp_lower 0
+useParty_skill_9_sp_upper 100
+useParty_skill_9_maxAggressives 0
+useParty_skill_9_minAggressives 0
+useParty_skill_9_maxCastTime 1
+useParty_skill_9_minCastTime 0
+useParty_skill_9_useSelf 0
+useParty_skill_9_stopWhenHit 0
+useParty_skill_9_stopWhenSit 0
+useParty_skill_9_lockMapOnly 0
+useParty_skill_9_timeout 1
+useParty_skill_9_players 
+useParty_skill_9_player_hp_lower 0
+useParty_skill_9_player_hp_upper 100
+useParty_skill_9_inState 沉默状态
+useParty_skill_9_noState 
+useParty_skill_9_stateTimeout 
+
+useParty_skill_10 圣母之祈福
+useParty_skill_10_lvl 
+useParty_skill_10_dist 15
+useParty_skill_10_hp_lower 0
+useParty_skill_10_hp_upper 100
+useParty_skill_10_sp_lower 0
+useParty_skill_10_sp_upper 100
+useParty_skill_10_maxAggressives 0
+useParty_skill_10_minAggressives 0
+useParty_skill_10_maxCastTime 1
+useParty_skill_10_minCastTime 0
+useParty_skill_10_useSelf 0
+useParty_skill_10_stopWhenHit 0
+useParty_skill_10_stopWhenSit 1
+useParty_skill_10_lockMapOnly 0
+useParty_skill_10_timeout 2
+useParty_skill_10_players 
+useParty_skill_10_player_hp_lower 0
+useParty_skill_10_player_hp_upper 100
+useParty_skill_10_inState 
+useParty_skill_10_noState 圣母之祈福
+useParty_skill_10_stateTimeout 60
+
+useParty_skill_11 速度激发
+useParty_skill_11_lvl 
+useParty_skill_11_dist 15
+useParty_skill_11_hp_lower 0
+useParty_skill_11_hp_upper 100
+useParty_skill_11_sp_lower 0
+useParty_skill_11_sp_upper 100
+useParty_skill_11_maxAggressives 0
+useParty_skill_11_minAggressives 0
+useParty_skill_11_maxCastTime 1
+useParty_skill_11_minCastTime 0
+useParty_skill_11_useSelf 1
+useParty_skill_11_stopWhenHit 0
+useParty_skill_11_stopWhenSit 1
+useParty_skill_11_lockMapOnly 0
+useParty_skill_11_timeout 2
+useParty_skill_11_players 
+useParty_skill_11_player_hp_lower 0
+useParty_skill_11_player_hp_upper 100
+useParty_skill_11_inState 
+useParty_skill_11_noState 速度激发
+useParty_skill_11_stateTimeout 150
+
+useParty_skill_12 无视体型攻击
+useParty_skill_12_lvl 
+useParty_skill_12_dist 15
+useParty_skill_12_hp_lower 0
+useParty_skill_12_hp_upper 100
+useParty_skill_12_sp_lower 0
+useParty_skill_12_sp_upper 100
+useParty_skill_12_maxAggressives 0
+useParty_skill_12_minAggressives 0
+useParty_skill_12_maxCastTime 1
+useParty_skill_12_minCastTime 0
+useParty_skill_12_useSelf 1
+useParty_skill_12_stopWhenHit 0
+useParty_skill_12_stopWhenSit 1
+useParty_skill_12_lockMapOnly 0
+useParty_skill_12_timeout 2
+useParty_skill_12_players 
+useParty_skill_12_player_hp_lower 0
+useParty_skill_12_player_hp_upper 100
+useParty_skill_12_inState 
+useParty_skill_12_noState 无视体型攻击
+useParty_skill_12_stateTimeout 50
+
+useParty_skill_13 凶砍
+useParty_skill_13_lvl 
+useParty_skill_13_dist 15
+useParty_skill_13_hp_lower 0
+useParty_skill_13_hp_upper 100
+useParty_skill_13_sp_lower 0
+useParty_skill_13_sp_upper 100
+useParty_skill_13_maxAggressives 0
+useParty_skill_13_minAggressives 0
+useParty_skill_13_maxCastTime 1
+useParty_skill_13_minCastTime 0
+useParty_skill_13_useSelf 1
+useParty_skill_13_stopWhenHit 0
+useParty_skill_13_stopWhenSit 1
+useParty_skill_13_lockMapOnly 0
+useParty_skill_13_timeout 2
+useParty_skill_13_players 
+useParty_skill_13_player_hp_lower 0
+useParty_skill_13_player_hp_upper 100
+useParty_skill_13_inState 
+useParty_skill_13_noState 凶砍
+useParty_skill_13_stateTimeout 100
+
+useParty_skill_14 风之步
+useParty_skill_14_lvl 
+useParty_skill_14_dist 15
+useParty_skill_14_hp_lower 0
+useParty_skill_14_hp_upper 100
+useParty_skill_14_sp_lower 0
+useParty_skill_14_sp_upper 100
+useParty_skill_14_maxAggressives 0
+useParty_skill_14_minAggressives 0
+useParty_skill_14_maxCastTime 1
+useParty_skill_14_minCastTime 0
+useParty_skill_14_useSelf 1
+useParty_skill_14_stopWhenHit 0
+useParty_skill_14_stopWhenSit 1
+useParty_skill_14_lockMapOnly 0
+useParty_skill_14_timeout 2
+useParty_skill_14_players 
+useParty_skill_14_player_hp_lower 0
+useParty_skill_14_player_hp_upper 100
+useParty_skill_14_inState 
+useParty_skill_14_noState 风之步
+useParty_skill_14_stateTimeout 120
+
+useParty_skill_15 牺牲
+useParty_skill_15_lvl 
+useParty_skill_15_dist 15
+useParty_skill_15_hp_lower 0
+useParty_skill_15_hp_upper 100
+useParty_skill_15_sp_lower 0
+useParty_skill_15_sp_upper 100
+useParty_skill_15_maxAggressives 0
+useParty_skill_15_minAggressives 0
+useParty_skill_15_maxCastTime 1
+useParty_skill_15_minCastTime 0
+useParty_skill_15_useSelf 0
+useParty_skill_15_stopWhenHit 0
+useParty_skill_15_stopWhenSit 1
+useParty_skill_15_lockMapOnly 1
+useParty_skill_15_timeout 2
+useParty_skill_15_players 
+useParty_skill_15_player_hp_lower 0
+useParty_skill_15_player_hp_upper 100
+useParty_skill_15_inState 
+useParty_skill_15_noState 牺牲
+useParty_skill_15_stateTimeout 180
+
+
+
+guild_skill_0 治愈术
+#──────────────── 技能名称
+guild_skill_0_emotion 
+#──────────────── 表情符号编号
+guild_skill_0_msg 
+#──────────────── 公共频道的触发语句
+guild_skill_0_lvl 
+#──────────────── 使用技能级数
+guild_skill_0_dist 10
+#──────────────── 技能距离
+guild_skill_0_maxCastTime 0
+#──────────────── 最长施法时间
+guild_skill_0_minCastTime 0
+#──────────────── 最短施法时间
+guild_skill_0_useSelf 0
+#──────────────── 对自己使用技能		(0关闭 1开启 - 如圣母、幸运需要向自己使用技能)
+
+guild_skill_1 天使之赐福
+guild_skill_1_emotion 
+guild_skill_1_msg 
+guild_skill_1_lvl 
+guild_skill_1_dist 10
+guild_skill_1_maxCastTime 0
+guild_skill_1_minCastTime 0
+guild_skill_1_useSelf 0
+
+guild_skill_2 加速术
+guild_skill_2_emotion 
+guild_skill_2_msg 
+guild_skill_2_lvl 
+guild_skill_2_dist 10
+guild_skill_2_maxCastTime 1
+guild_skill_2_minCastTime 0
+guild_skill_2_useSelf 0
+
+guild_skill_3 霸邪之阵
+guild_skill_3_emotion 
+guild_skill_3_msg 
+guild_skill_3_lvl 
+guild_skill_3_dist 10
+guild_skill_3_maxCastTime 1
+guild_skill_3_minCastTime 0
+guild_skill_3_useSelf 0
+
+guild_skill_4 圣母之颂歌
+guild_skill_4_emotion 
+guild_skill_4_msg 
+guild_skill_4_lvl 
+guild_skill_4_dist 10
+guild_skill_4_maxCastTime 1
+guild_skill_4_minCastTime 0
+guild_skill_4_useSelf 1
+
+guild_skill_5 圣母之祈福
+guild_skill_5_emotion 
+guild_skill_5_msg 
+guild_skill_5_lvl 
+guild_skill_5_dist 10
+guild_skill_5_maxCastTime 4
+guild_skill_5_minCastTime 0
+guild_skill_5_useSelf 0
+
+guild_skill_6 所有化学武器保护
+guild_skill_6_emotion 
+guild_skill_6_msg 
+guild_skill_6_lvl 
+guild_skill_6_dist 5
+guild_skill_6_maxCastTime 2
+guild_skill_6_minCastTime 0
+guild_skill_6_useSelf 0

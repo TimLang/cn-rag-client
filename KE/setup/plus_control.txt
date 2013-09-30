@@ -1,0 +1,380 @@
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#			     KoreEasy 增强设置
+#─────────────────────────────────────
+
+
+proxy_host 
+#──────────────── Sock 5代理服务器IP地址
+proxy_port 
+#──────────────── Sock 5代理服务器端口
+
+
+#━━━━━━━━━━━━━━━━ 坐骑设置 ━━━━━━━━━━━━━━━━
+
+dismountAuto_item 坐骑用缰绳
+
+#━━━━━━━━━━━━━━━━ 战斗设置 ━━━━━━━━━━━━━━━━
+
+saveMap_warpToBuyOrSell 1
+#──────────────── 购买出售回储存地图		(0关闭 1开启)
+
+lockMap_x 
+lockMap_y 
+#──────────────── 锁定地图的坐标
+lockMap_rand 
+#──────────────── 锁定地图的坐标允许浮动的范围
+
+
+attackMaxRouteDistance 30
+#──────────────── 攻击移动最大距离
+attackMaxRouteTime 2
+#──────────────── 攻击路线最长算路时间
+attackSteal 0
+#──────────────── 抢怪方式			(0关闭 1开启)
+
+sitAuto_idle 0
+#──────────────── 空闲指定时间则坐下
+
+teleportAuto_idle 0
+#──────────────── 空闲指定时间则飞走		(0关闭 1开启)
+teleportAuto_portal 0
+#──────────────── 遇地图传送门飞走		(0关闭 1开启)
+teleportAuto_portalDist 0
+#──────────────── 遇地图传送门飞走的检测距离
+teleportAuto_roundMonstersSit 0
+#──────────────── 坐下休息时附近有怪物就飞	(0被攻击时才飞 1附近有怪物时飞)
+teleportAuto_roundMonstersDist 0
+#──────────────── 附近怪物的检测距离
+teleportAuto_portalPlayer 2
+#──────────────── 躲避恶意传送			(0关闭 1瞬移 2移动)
+teleportAuto_onlyWhenSafe 0
+#──────────────── 附近没其他玩家才能飞		(0关闭 1开启)
+teleportAuto_damage 1000
+#──────────────── 一次受到多少伤害飞		(HP数值)
+teleportAuto_skipMiss 0
+#──────────────── 围攻时，是否计算Miss攻击	(请分别填上怪物名称，如果全部都忽略，请填1)
+
+teleport_lv1_item 苍蝇翅膀,新手用苍蝇翅膀
+#──────────────── 使用瞬移技能的道具
+teleport_lv2_item 蝴蝶翅膀,新手用蝴蝶翅膀,回城咒术书
+#──────────────── 使用回城技能的道具
+
+route_randomWalk_maxRouteTime 5
+#──────────────── 随机路线移动最大算路时间
+route_step 10
+#──────────────── 每次移动的距离
+
+
+
+#━━━━━━━━━━━━━━━━ 特别设置 ━━━━━━━━━━━━━━━━
+
+petAuto_feed 40
+#──────────────── 宠物饱食度低于设置值自动喂养	(系统有自动保护，饱食度低于10时强行喂养，如果没有饲料或喂养失败会自动回收宠物)
+petAuto_return 1000
+#──────────────── 宠物亲密度达到设置值回收宠物	(系统有自动保护，亲密度低于100时自动回收，目前版本1000为最高亲密度)
+
+
+
+#━━━━━━━━━━━━━━━━ 物品设置 ━━━━━━━━━━━━━━━━
+
+itemsTakeDamage 30
+#──────────────── 对怪伤害超过设置％时才捡物	(不影响重要物品)
+itemsTakeMaxWeight 89
+#──────────────── 设置负重多少不检取普通物品
+itemsDropAuto 0
+#──────────────── 把设置为不捡的物品扔掉	(0关闭 1开启)
+itemsGatherAuto 0
+#──────────────── 收集无主物品			(0关闭 1开启 - 捡取附近所有物品)
+itemsKeepUnlock 0
+#──────────────── 解锁物品自动保留功能		(0关闭 1开启 - 开启时KE不自动保留buyAuto和getAuto物品，用作循环购物)
+
+pickupMonsters 兹诺克,白蚁,工蚁,兵蚁,波利,土波利,波波利,盗虫,玛勒盗虫,溜溜猴,库克雷
+#──────────────── 重要物品被怪吃掉时，立即攻击该怪
+
+cartAutoTake 1
+#──────────────── 把捡取的物品放进手推车	(0关闭 1开启)
+cartAutoSell 1
+#──────────────── 自动出售手推车物品		(0关闭 1开启 - 具有物品保留功能)
+cartAutoStorage 1
+#──────────────── 自动存仓手推车物品		(0关闭 1开启 - 具有物品保留功能)
+cartMaxWeight 80
+#──────────────── 当负重大于指定百分比时，不再放物品进手推车
+cartAutoItemMaxWeight 40
+#──────────────── 能堆叠物品的最大重量		(影响自动出售存仓时，每次从车子拿东西的数量)
+
+
+useSelf_item_0 初学者专用药水,魔物饲料,宠物饲料,香蕉,南瓜,红萝卜,蕃薯,肉,红色药草,黄色药草,白色药草,苹果,小蛋糕,姜饼,糖果,拐杖糖,红色药水,赤色药水,黄色药水,白色药水
+#──────────────── 使用物品名称			(可多选，例如：香蕉,南瓜,苹果)
+useSelf_item_0_hp_lower 0
+useSelf_item_0_hp_upper 0
+#──────────────── 当HP％在lower至upper范围时，使用物品
+useSelf_item_0_sp_lower 0
+useSelf_item_0_sp_upper 100
+#──────────────── 当SP％在lower至upper范围时，使用物品
+useSelf_item_0_stopWhenHit 0
+#──────────────── 当受到攻击时终止使用		(0关闭 1开启)
+useSelf_item_0_stopWhenSit 0
+#──────────────── 当坐下时不使用		(0关闭 1开启)
+useSelf_item_0_lockMapOnly 0
+#──────────────── 只在锁定地图使用		(0关闭 1开启)
+useSelf_item_0_repeat 0
+#──────────────── 每次使用数量			(0关闭 1以上设置每次使用数量)
+useSelf_item_0_timeout 0
+#──────────────── 每隔多少时间使用		(0关闭 1开启)
+useSelf_item_0_maxAggressives 0
+#──────────────── 当敌人少于该数量时使用	(0关闭 1-99开启 - 敌人指正在攻击你的怪物)
+useSelf_item_0_minAggressives 0
+#──────────────── 当敌人多于等于该数量时使用	(0关闭 1-99开启)
+useSelf_item_0_monsters 
+#──────────────── 当敌人是指定怪物时使用	(可多选，例如：波利,土波利,波波利)
+useSelf_item_0_inState 
+#──────────────── 当人物在这状态时使用		(可多选，请参考statusnametable.txt和msgstrings.txt)
+useSelf_item_0_noState 
+#──────────────── 当人物不在这状态时使用	(可多选，请参考statusnametable.txt和msgstrings.txt)
+
+useSelf_item_1 葡萄,蓝色药草,蜂蜜,葡萄汁,蓝色药水,蜂胶
+useSelf_item_1_hp_lower 0
+useSelf_item_1_hp_upper 100
+useSelf_item_1_sp_lower 0
+useSelf_item_1_sp_upper 0
+useSelf_item_1_stopWhenHit 0
+useSelf_item_1_stopWhenSit 0
+useSelf_item_1_lockMapOnly 0
+useSelf_item_1_repeat 0
+useSelf_item_1_timeout 0
+useSelf_item_1_maxAggressives 0
+useSelf_item_1_minAggressives 0
+useSelf_item_1_monsters 
+useSelf_item_1_inState 
+useSelf_item_1_noState 
+
+useSelf_item_2 绿色药草
+useSelf_item_2_hp_lower 0
+useSelf_item_2_hp_upper 100
+useSelf_item_2_sp_lower 0
+useSelf_item_2_sp_upper 100
+useSelf_item_2_stopWhenHit 0
+useSelf_item_2_stopWhenSit 0
+useSelf_item_2_lockMapOnly 0
+useSelf_item_2_repeat 0
+useSelf_item_2_timeout 10
+useSelf_item_2_maxAggressives 0
+useSelf_item_2_minAggressives 0
+useSelf_item_2_monsters 
+useSelf_item_2_inState 中毒状态
+useSelf_item_2_noState 病毒散拨
+
+useSelf_item_3 绿色药水
+useSelf_item_3_hp_lower 0
+useSelf_item_3_hp_upper 100
+useSelf_item_3_sp_lower 0
+useSelf_item_3_sp_upper 100
+useSelf_item_3_stopWhenHit 0
+useSelf_item_3_stopWhenSit 0
+useSelf_item_3_lockMapOnly 0
+useSelf_item_3_repeat 0
+useSelf_item_3_timeout 10
+useSelf_item_3_maxAggressives 0
+useSelf_item_3_minAggressives 0
+useSelf_item_3_monsters 
+useSelf_item_3_inState 中毒状态,沉默状态
+useSelf_item_3_noState 病毒散拨
+
+useSelf_item_4 万能药
+useSelf_item_4_hp_lower 0
+useSelf_item_4_hp_upper 100
+useSelf_item_4_sp_lower 0
+useSelf_item_4_sp_upper 100
+useSelf_item_4_stopWhenHit 0
+useSelf_item_4_stopWhenSit 0
+useSelf_item_4_lockMapOnly 0
+useSelf_item_4_repeat 0
+useSelf_item_4_timeout 10
+useSelf_item_4_maxAggressives 0
+useSelf_item_4_minAggressives 0
+useSelf_item_4_monsters 
+useSelf_item_4_inState 中毒状态,沉默状态,诅咒状态,黑暗状态
+useSelf_item_4_noState 病毒散拨
+
+useSelf_item_5 
+useSelf_item_5_hp_lower 0
+useSelf_item_5_hp_upper 100
+useSelf_item_5_sp_lower 0
+useSelf_item_5_sp_upper 100
+useSelf_item_5_stopWhenHit 0
+useSelf_item_5_stopWhenSit 1
+useSelf_item_5_lockMapOnly 1
+useSelf_item_5_repeat 0
+useSelf_item_5_timeout 5
+useSelf_item_5_maxAggressives 0
+useSelf_item_5_minAggressives 1
+useSelf_item_5_monsters 
+useSelf_item_5_inState 
+useSelf_item_5_noState 菠色克药水,觉醒药水,集中药水
+
+
+
+#━━━━━━━━━━━━━━━━ 组队设置 ━━━━━━━━━━━━━━━━
+
+attackAuto_party 0
+#──────────────── 帮助队友攻击			(0关闭 1开启)
+attackAuto_followTarget 0
+#──────────────── 帮助跟随目标攻击		(0关闭 1开启)
+partyAutoResurrect 10
+#──────────────── 自动复活队友的距离		(0关闭 1-20距离)
+
+follow 0
+#──────────────── 跟随目标			(0关闭 1开启)
+followTarget 
+#──────────────── 跟随目标的玩家名称
+followDistanceMax 5
+#──────────────── 与跟随目标最大距离
+followDistanceMin 3
+#──────────────── 与跟随目标最小距离
+followLostStep 12
+#──────────────── 跟随目标丢失找寻范围
+
+tankMode 0
+#──────────────── 肉盾模式			(0关闭 1只攻击一下 2一直攻击)
+tankModeTarget 
+#──────────────── 肉盾模式保护的玩家名称
+
+useParty_skill_0_lvl 
+useParty_skill_0_player_hp_upper 90
+#──────────────── 治愈术			(牧师)
+useParty_skill_1_lvl 
+#──────────────── 加速术
+useParty_skill_2_lvl 
+#──────────────── 天使之赐福
+useParty_skill_3_lvl 
+#──────────────── 神威祈福
+useParty_skill_4_lvl 
+#──────────────── 霸邪之阵
+useParty_skill_5_lvl 
+#──────────────── 圣母之颂歌
+useParty_skill_6_lvl 
+#──────────────── 幸运之颂歌
+useParty_skill_7_lvl 
+#──────────────── 天使之障壁
+useParty_skill_8_lvl 
+#──────────────── 痊愈术
+useParty_skill_9_lvl 
+#──────────────── 治疗术
+useParty_skill_10_lvl 
+#──────────────── 圣母之祈福			(神官)
+useParty_skill_11_lvl 
+#──────────────── 速度激发			(铁匠)
+useParty_skill_12_lvl 
+#──────────────── 无视体型攻击
+useParty_skill_13_lvl 
+#──────────────── 凶砍
+useParty_skill_14_lvl 
+#──────────────── 风之步			(神射手)
+useParty_skill_15_lvl 
+#──────────────── 牺牲				(十字军)
+
+
+#━━━━━━━━━━━━━━━━ 音乐提示 ━━━━━━━━━━━━━━━━
+
+playSound 1
+#──────────────── 播放音乐总开关		(0关闭 1开启)
+
+playGMSound 1
+#──────────────── 躲避GM时播放音乐开关		(0关闭 1开启)
+GMSoundFile sound/GM.wav
+#──────────────── GM音乐文件名			(必须是wav文件)
+playDcSound 1
+#──────────────── 断线时播放音乐开关		(0关闭 1开启)
+DcSoundFile sound/Dc.wav
+#──────────────── 断线音乐文件名		(必须是wav文件)
+playDeathSound 1
+#──────────────── 死亡时播放音乐开关		(0关闭 1开启)
+DeathSoundFile sound/Death.wav
+#──────────────── 死亡音乐文件名		(必须是wav文件)
+playPMSound 1
+#──────────────── 被密时播放音乐开关		(0关闭 1开启)
+PMSoundFile sound/PM.wav
+#──────────────── 被密音乐文件名		(必须是wav文件)
+playSameSound 1
+#──────────────── 相同帐号登陆时播放音乐开关	(0关闭 1开启)
+SameSoundFile sound/Same.wav
+#──────────────── 相同帐号登陆音乐文件名	(必须是wav文件)
+
+
+
+#━━━━━━━━━━━━━━━━ 其它设置 ━━━━━━━━━━━━━━━━
+
+verbose 0
+#──────────────── 人机应答			(0关闭 1开启)
+callSign kore
+#──────────────── 对受控角色的称呼		(0关闭 1开启)
+adminPassword 
+#──────────────── 遥控模式密码
+
+avoidGM 1
+#──────────────── 在能瞬移的地图躲避GM方式	(0瞬移 1瞬移后断线 2直接断线)
+avoidGM_skipInMaps 
+#──────────────── 指定地图忽略遇到GM，但不会忽略GM说话
+avoidGM_reconnect 10
+#──────────────── 断线时间			(单位:秒 - 在不能瞬移的地图下线时间为2倍)
+avoidGM_word 
+#──────────────── 在公告频道出现以上关键词下线	(系统会自动添加游戏角色的名字，无须设置)
+avoidGM_myName 0
+#──────────────── 在公告频道出现自己名字下线
+
+chatAutoExall 0
+#──────────────── 自动拒绝悄悄话		(0关闭 1开启)
+partyAutoDeny 1
+#──────────────── 自动拒绝组队邀请		(0关闭 1开启)
+partyAutoShare 1
+#──────────────── 自动分享组队经验		(0关闭 1开启)
+friendAutoDeny 0
+#──────────────── 自动拒绝好友邀请		(0关闭 1开启)
+
+dcOnDeath 0
+#──────────────── 人物死亡后退出		(0关闭 1开启)
+dcOnDualLogin 10
+#──────────────── 相同帐号登入时自动退出	(0关闭 1退出游戏 n秒后重新登入)
+autoRestart 0
+#──────────────── 自动重新启动的间隔		(0关闭 n秒后重新启动)
+healAuto 0
+#──────────────── 孙燕姿恢复			(0关闭 1开启)
+healAuto_hp 0
+#──────────────── 当HP少于％时回城恢复
+healAuto_sp 0
+#──────────────── 当SP少于％时回城恢复
+healAuto_npc_steps c c c r0 c c c n
+#──────────────── 对话步骤
+healAuto_whenBack 0
+#──────────────── 在回城时恢复			(当自动购买、存仓、出售前，会先跟孙燕姿对话恢复)
+
+#━━━━━━━━━━━━━━━━━ 系统设置 ━━━━━━━━━━━━━━━━━
+
+debug 0
+#──────────────── 使用调试模式			(0关闭 1简单模式 2增强模式)
+message_length_max 78
+#──────────────── 发送聊天信息最大长度
+seconds_per_block 0.20
+#──────────────── 移动一格需要的时间
+sleepTime 50000
+#──────────────── 接收发送封包的间隔		(单位: 毫秒)
+npcRecord 1
+#──────────────── 自动更新NPC列表文件		(0关闭 1开启)
+
+exeName Ragexe.exe
+#──────────────── 客户端运行程序名		(可能不支持部分打过补丁的客户端，请用原始的客户端文件)
+commandPrefix ;
+#──────────────── 内挂模式命令前缀		(内挂模式可以通过游戏聊天栏输入指令，命令前加上“;”号，如：“;exp”)
+
+#━━━━━━━━━━━━━━━━━ 显示设置 ━━━━━━━━━━━━━━━━━
+
+hideMsg_exp 0
+#──────────────── 不显示EXP获得			(0关闭 1开启)
+hideMsg_skillFail 1
+#──────────────── 不显示使用技能失败		(0关闭 1开启)
+hideMsg_chatPublic 0
+#──────────────── 不显示公聊信息		(0关闭 1开启)
+hideMsg_emotion 1
+#──────────────── 不显示表情信息		(0关闭 1开启)
+hideMsg_petStatus 0
+#──────────────── 不显示宠物状态		(0关闭 1开启)
