@@ -541,6 +541,8 @@ sub checkKey {
 	} else {
 =cut
 		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
+		Log::message(T("\n**** 国庆期间参加 www.CNKore.com 论坛活动将获得独有国庆点数,可以参加更多后续活动快速提升个人等级 ...\n\n"));
+		sleep(10);
 	}
 }
 
