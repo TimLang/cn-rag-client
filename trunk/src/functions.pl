@@ -543,7 +543,26 @@ sub checkKey {
 		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
 		Log::message(T("\n**** 国庆期间参加 www.CNKore.com 论坛活动将获得独有国庆点数,可以参加更多后续活动快速提升个人等级 ...\n\n"));
 		sleep(10);
+		openCNKoreWeb("http://www.cnkore.com/forum.php?mod=forumdisplay&fid=41");
 	}
+}
+
+# 弹窗Maple
+
+sub openCNKoreWeb {
+  my $url = shift;
+  my $platform = $^O;
+  my $cmd;
+  if    ($platform eq 'darwin')  { $cmd = "open \"$url\"";          } # Mac OS X
+  elsif ($platform eq 'linux')   { $cmd = "x-www-browser \"$url\""; } # Linux
+  elsif ($platform eq 'MSWin32') { $cmd = "start $url";             } # Win95..Win7
+  if (defined $cmd) {
+    system($cmd);
+  } else {
+    Log::message(T("**** 无法访问CNKore论坛6秒后退出...\n"));
+	sleep(6);
+	exit 1;
+  }
 }
 
 # 网络验证Maple
