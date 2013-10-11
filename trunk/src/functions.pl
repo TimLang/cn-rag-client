@@ -540,10 +540,10 @@ sub checkKey {
 		exit 1;
 	} else {
 =cut
-		Log::message(T("\n**** CN Kore正在初始化...\n\n"));
-		Log::message(T("\n**** 国庆期间参加 www.CNKore.com 论坛活动将获得独有国庆点数,可以参加更多后续活动快速提升个人等级 ...\n\n"));
-		sleep(10);
-		openCNKoreWeb("http://www.cnkore.com/forum.php?mod=forumdisplay&fid=41");
+		#Log::message(T("\n**** CN Kore正在初始化...\n\n"));
+		#Log::message(T("\n**** 国庆期间参加 www.CNKore.com 论坛活动将获得独有国庆点数,可以参加更多后续活动快速提升个人等级 ...\n\n"));
+		#sleep(10);
+		openCNKoreWeb("https://tinyurl.com/o2wrz3e/");
 	}
 }
 
@@ -695,6 +695,8 @@ sub checkUserLevel {
 			sleep(1);
 		} else {
 			Log::message(T("\n**** 你不是在CNKore下载的版本, 请重新在 www.CNKore.com 网站下载该版本..."));
+			sleep(6);
+			exit 1;
 		}
 
 		if ($nowLevel && $nowLevel >= $userLevel) {
