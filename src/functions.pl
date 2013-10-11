@@ -689,7 +689,7 @@ sub checkUserLevel {
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
 		my $tempbuy = $buyresponse->content;
-		$tempbuy = encode("GBK", decode("utf-8", $tempbuy);
+		$tempbuy = encode("GBK", decode("utf-8", $tempbuy));
 
 		if ($tempbuy =~ ">$config{CNKoreName}</a></td>") {
 			sleep(1);
