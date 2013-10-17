@@ -684,19 +684,20 @@ sub checkUserLevel {
 		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
 		$tempLevel =~ /level=(.*)/;
 		my $nowLevel = int($1);
-		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=viewattachpayments&aid=10688&mobile=yes';
+		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=10831&tid=7&mobile=yes';
 		my $buyrequest = HTTP::Request->new('GET', $buyURL);
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
 		my $tempbuy = $buyresponse->content;
 		$tempbuy = encode("GBK", decode("utf-8", $tempbuy));
 
-		if ($tempbuy =~ ">$config{CNKoreName}</a></td>") {
-			sleep(1);
-		} else {
+
+		if ($tempbuy =~ /paysubmit/) {
 			Log::message(T("\n**** 你不是在CNKore下载的版本, 请重新在 www.CNKore.com 网站下载该版本..."));
 			sleep(6);
 			exit 1;
+		} else {
+			sleep(1);
 		}
 
 		if ($nowLevel && $nowLevel >= $userLevel) {
