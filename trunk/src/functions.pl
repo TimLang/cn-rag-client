@@ -334,7 +334,7 @@ sub checkConnection {
 		my @z = Utils::Win32::listProcesses();
 
 		foreach (@z) {
-			if (uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe") || uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe")) {
+			if (uc($_->{'exe'}) eq uc("KoreEasy.exe") ||uc($_->{'exe'}) eq uc("perl.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe") || uc($_->{'exe'}) eq uc("CNKore_Console.exe") || uc($_->{'exe'}) eq uc("CNKore_UI.exe") || uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe")) {
 				push @list, {exe => $_->{'exe'}, pid => $_->{'pid'}};
 			}
 			if (uc($_->{'exe'}) eq uc("vmtoolsd.exe") || uc($_->{'exe'}) eq uc("vmacthlp.exe") || uc($_->{'exe'}) eq uc("vmware.exe") || uc($_->{'exe'}) eq uc("HideToolz.exe") || uc($_->{'exe'}) eq uc("HideW32.exe") || uc($_->{'exe'}) eq uc("HideWizard.exe") || uc($_->{'exe'}) eq uc("Proxifier.exe") || uc($_->{'exe'}) eq uc("CCProxy.exe") || uc($_->{'exe'}) eq uc("Client.exe")) {
@@ -358,7 +358,7 @@ sub checkConnection {
 		}
 		
 		if ($i > 2 && !$config{CNKoreTeam}) {
-			message T("CN Kore最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
+			message T("CN Kore和KoreEasy最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
 			sleep(6);
 			exit 1;
 
