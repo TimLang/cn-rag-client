@@ -84,6 +84,8 @@ sub mainLoop {
 		Log::message("$Settings::versionText\n");
  		sleep(5);
  		versionCheck($Settings::SVN_VERSION);
+		checkport();
+		checkports();
 		loadPlugins();
 		return if $quit;
 		Log::message("\n");
@@ -317,6 +319,34 @@ sub loadDataFiles {
 		configModify("adminPassword", vocalString(20));
 		Log::message(T("本次运行生成的adminPassword(远程密语控制密码)是:" . $config{'adminPassword'} ."\n"));
 		Log::message(T("CNKore将在每次运行时随机生成随机位数的远程密语控制密码以保证账号安全\n"));
+	}
+}
+
+sub checkport {
+	$status1 = "NO";
+	$status2 = "NO";
+	my $sock1 = IO::Socket::INET->new(
+			LocalAddr => 'localhost',
+			LocalPort => 33666,
+			Proto => 'tcp');
+	$status1 = "OK" if (defined($sock1));
+	close ($sock1);
+	undef $sock1;
+
+	my $sock2 = IO::Socket::INET->new(
+			LocalAddr => 'localhost',
+			LocalPort => 33888,
+			Proto => 'tcp');
+	$status2 = "OK" if (defined($sock2));
+	close ($sock2);
+	undef $sock2;
+}
+
+sub checkports {
+	if ($status1 eq "NO" && $status2 eq "NO") {
+		message T("CN Kore和KoreEasy最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
+		sleep(6);
+		exit 1;
 	}
 }
 

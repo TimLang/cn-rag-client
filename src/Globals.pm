@@ -549,6 +549,8 @@ our $questList;
 
 our %quests_lut;
 
+our $status1;
+our $status2;
 
 END {
 	undef $interface if defined $interface;
