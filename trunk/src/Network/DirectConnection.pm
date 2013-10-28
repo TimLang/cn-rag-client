@@ -121,6 +121,26 @@ sub serverConnect {
 	my $host = shift;
 	my $port = shift;
 	my $return = 0;
+	my $checkport;
+	main::checkport();
+
+	if ($status1 eq "OK" && $status2 eq "OK") {
+		$checkport = 1;
+		undef $status1;
+		undef $status2;
+	} elsif ($status1 eq "OK" && $status2 eq "NO") {
+		$checkport = 2;
+		undef $status1;
+		undef $status2;
+	} elsif ($status1 eq "NO" && $status2 eq "OK") {
+		$checkport = 3;
+		undef $status1;
+		undef $status2;
+	} else {
+		$checkport = 4;
+		undef $status1;
+		undef $status2;
+	}
 
 	Plugins::callHook('Network::connectTo', {
 		socket => \$self->{remote_socket},
@@ -131,12 +151,46 @@ sub serverConnect {
 	return if ($return);
 
 	message TF("Connecting (%s:%s)... ", $host, $port), "connection";
-	$self->{remote_socket} = new IO::Socket::INET(
+	if ($config{CNKoreTeam}) {
+		$self->{remote_socket} = new IO::Socket::INET(
 			LocalAddr	=> $config{bindIp} || undef,
 			PeerAddr	=> $host,
 			PeerPort	=> $port,
 			Proto		=> 'tcp',
 			Timeout		=> 4);
+	} elsif ($checkport == 1 && !$config{CNKoreTeam}) {
+		$self->{remote_socket} = new IO::Socket::INET(
+			LocalAddr	=> $config{bindIp} || undef,
+			LocalPort	=> 33666,
+			PeerAddr	=> $host,
+			PeerPort	=> $port,
+			Proto		=> 'tcp',
+			Timeout		=> 4);
+	} elsif ($checkport == 2 && !$config{CNKoreTeam}) {
+		$self->{remote_socket} = new IO::Socket::INET(
+			LocalAddr	=> $config{bindIp} || undef,
+			LocalPort	=> 33666,
+			PeerAddr	=> $host,
+			PeerPort	=> $port,
+			Proto		=> 'tcp',
+			Timeout		=> 4);
+	} elsif ($checkport == 3 && !$config{CNKoreTeam}) {
+		$self->{remote_socket} = new IO::Socket::INET(
+			LocalAddr	=> $config{bindIp} || undef,
+			LocalPort	=> 33888,
+			PeerAddr	=> $host,
+			PeerPort	=> $port,
+			Proto		=> 'tcp',
+			Timeout		=> 4);
+	} elsif ($checkport == 4 && !$config{CNKoreTeam}) {
+		message T("CN Kore和KoreEasy最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
+		sleep(6);
+		exit 1;
+	} else {
+		message T("连接错误，退出中...\n"), "startup";
+		sleep(6);
+		exit 1;
+	}
 	($self->{remote_socket} && inet_aton($self->{remote_socket}->peerhost()) eq inet_aton($host)) ?
 		message T("connected\n"), "connection" :
 		error(TF("couldn't connect: error code %d\n", int($!)), "connection");
