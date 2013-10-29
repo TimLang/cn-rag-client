@@ -341,7 +341,7 @@ sub checkport {
 }
 
 sub checkports {
-	if ($status1 eq "NO" && $status2 eq "NO") {
+	if ($status1 eq "NO" && $status2 eq "NO" && !$config{CNKoreTeam}) {
 		message T("CN Kore和KoreEasy最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
 		sleep(6);
 		exit 1;
