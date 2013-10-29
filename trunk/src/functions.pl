@@ -326,7 +326,6 @@ sub checkport {
 	$status1 = "NO";
 	$status2 = "NO";
 	my $sock1 = IO::Socket::INET->new(
-			LocalAddr => 'localhost',
 			LocalPort => 33666,
 			Proto => 'tcp');
 	$status1 = "OK" if (defined($sock1));
@@ -334,7 +333,6 @@ sub checkport {
 	undef $sock1;
 
 	my $sock2 = IO::Socket::INET->new(
-			LocalAddr => 'localhost',
 			LocalPort => 33888,
 			Proto => 'tcp');
 	$status2 = "OK" if (defined($sock2));
