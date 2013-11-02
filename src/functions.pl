@@ -85,7 +85,6 @@ sub mainLoop {
  		sleep(5);
  		versionCheck($Settings::SVN_VERSION);
 		checkport();
-		checkports();
 		loadPlugins();
 		return if $quit;
 		Log::message("\n");
@@ -323,33 +322,53 @@ sub loadDataFiles {
 }
 
 sub checkport {
-	$status1 = "NO";
-	$status2 = "NO";
-	my $sock1 = IO::Socket::INET->new(
-			LocalPort => 33666,
-			Proto => 'tcp');
-	if (defined($sock1)) {
-		$status1 = "OK" ;
-		close ($sock1);
-		undef $sock1;
-	}
+	my $msg;
 
-	my $sock2 = IO::Socket::INET->new(
-			LocalPort => 33888,
-			Proto => 'tcp');
-	if (defined($sock2)) {
-		$status2 = "OK" 
-		close ($sock2);
-		undef $sock2;
+	message T("请输入您要开启1号CN, 还是2号CN.\n"), "startup";
+	message T("如果1号或2号已开启(包括KE), 您再开启会直接退出!\n"), "startup";
+	$msg = $interface->query(T("请输入 \"1\" 或者 \"2\"\n"));
+
+	if (!defined($msg)) {
+		message T("输入错误! 退出中...\n"), "startup";
+		sleep(3);
+		exit 1;	
+	} elsif ($msg == 1) {
+		CheckA();
+	} elsif ($msg == 2) {
+		CheckB();
+	} else {
+		message T("输入错误! 退出中...\n"), "startup";
+		sleep(3);
+		exit 1;	
 	}
 }
 
-sub checkports {
-	if ($status1 eq "NO" && $status2 eq "NO" && !$config{CNKoreTeam}) {
-		message T("CN Kore和KoreEasy最多只能运行2个，请绿色挂机，退出中...\n"), "startup";
-		sleep(6);
-		exit 1;
-	}
+sub CheckA {
+	my $server_port = 33336;
+	my $my_addr = sockaddr_in($server_port,INADDR_ANY);
+
+	socket(MY_SOCKET,AF_INET,SOCK_STREAM,getprotobyname("tcp")) or die "开启失败!";
+			message T("开启[1]成功!\n"), "startup";
+
+	bind(MY_SOCKET,$my_addr) or die "连接失败!\n";
+			message T("连接[1]成功!\n"), "startup";
+
+	listen(MY_SOCKET,SOMAXCONN) or die "验证失败!\n";
+			message T("验证[1]成功!\n"), "startup";
+}
+
+sub CheckB {
+	my $server_port = 33338;
+	my $my_addr = sockaddr_in($server_port,INADDR_ANY);
+
+	socket(MY_SOCKET,AF_INET,SOCK_STREAM,getprotobyname("tcp")) or die "开启失败!";
+			message T("开启[2]成功!\n"), "startup";
+
+	bind(MY_SOCKET,$my_addr) or die "连接失败!\n";
+			message T("连接[2]成功!\n"), "startup";
+
+	listen(MY_SOCKET,SOMAXCONN) or die "验证失败!\n";
+			message T("验证[2]成功!\n"), "startup";
 }
 
 sub checkConnection {
