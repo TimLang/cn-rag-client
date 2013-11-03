@@ -324,7 +324,7 @@ sub loadDataFiles {
 sub checkport {
 	my $msg;
 
-	message T("请输入您要开启1号CN, 还是2号CN.\n"), "startup";
+	message T("请输入您要开启1号检测, 还是2号检测.\n"), "startup";
 	message T("如果1号或2号已开启(包括KE), 您再开启会直接退出!\n"), "startup";
 	$msg = $interface->query(T("请输入 \"1\" 或者 \"2\"\n"));
 
