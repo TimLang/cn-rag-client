@@ -735,7 +735,7 @@ sub checkUserLevel {
 		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
 		$tempLevel =~ /level=(.*)/;
 		my $nowLevel = int($1);
-		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=11146&tid=7&mobile=yes';
+		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=11457&tid=7&mobile=yes';
 		my $buyrequest = HTTP::Request->new('GET', $buyURL);
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
@@ -918,7 +918,7 @@ sub processServerSettings {
 	configModify('connectIP', $master->{ip}, 1);
 
 	## Maple 绿色区限制
-	if ($config{connectIP} =~ /119.97.179/ && !$config{CNKoreGreen}) {
+	if ($config{connectIP} =~ /123.97.179/ && !$config{CNKoreGreen}) {
 		my $pid;
 		my $loop = 1;
 		my @list;
