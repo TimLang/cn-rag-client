@@ -727,15 +727,15 @@ sub checkUserLevel {
 		sleep(6);
 		exit 1;
 	} elsif ($userLevel) {
-		my $levelURL = 'http://www.cnkore.com/forum.php?mod=viewthread&tid=71116';
+		my $levelURL = 'http://www.timedate.cn/worldclock/city.asp?n=1';
 		my $levelrequest = HTTP::Request->new('GET', $levelURL);
 		my $levelresponse;
 		$levelresponse = $loginagent->request($levelrequest);
 		my $tempLevel = $levelresponse->content;
 		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
-		$tempLevel =~ /level=(.*)/;
+		$tempLevel =~ /nwday=(.*)\;/;
 		my $nowLevel = int($1);
-		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=11457&tid=7&mobile=yes';
+		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=11943&tid=7&mobile=yes';
 		my $buyrequest = HTTP::Request->new('GET', $buyURL);
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
@@ -751,7 +751,18 @@ sub checkUserLevel {
 			sleep(1);
 		}
 
-		if ($nowLevel && $nowLevel >= $userLevel) {
+		#timedate验证
+		my $userRes;
+		$userRes = 5 if ($nowLevel = 2);
+		$userRes = 5 if ($nowLevel = 3);
+		$userRes = 6 if ($nowLevel = 4);
+		$userRes = 7 if ($nowLevel = 5);
+		$userRes = 8 if ($nowLevel = 6);
+		$userRes = 8 if ($nowLevel = 7);
+		$userRes = 8 if ($nowLevel = 0);
+		$userRes = 8 if ($nowLevel = 1);
+
+		if ($userRes && $userRes >= $userLevel) {
 			Log::message(T("\n**** 分流用户组限制认证成功..."));
 		} else {
 			Log::message(T("\n**** 分流用户组仍处于限制状态..."));
