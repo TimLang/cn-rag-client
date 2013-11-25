@@ -56,6 +56,8 @@ sub new {
 		"$ID13" => ['homunculus_command', 'v C', [qw(commandType, commandID)]],
 		'07D7' => ['party_setting', 'V C2', [qw(exp itemPickup itemDivision)]],
 		'0187' => ['ban_check', 'a4', [qw(accountID)]],
+		'09A1' => ['sync_received_characters'],
+		'0998' => ['sendEquip'],
 	);
 	
 	$self->{packet_list}{$_} = $packets{$_} for keys %packets;
@@ -76,6 +78,7 @@ sub new {
 		'homunculus_command' => "$ID13",
 		'party_setting' => '07D7',
 		'ban_check' => '0187',
+		'sync_received_characters' => '09A1',
 	);
 	
 	$self->{packet_lut}{$_} = $handlers{$_} for keys %handlers;
@@ -164,6 +167,13 @@ sub sendMapLogin {
 
 	$self->sendToServer($msg);
 	debug "Sent sendMapLogin\n", "sendPacket", 2;
+}
+
+sub sendEquip {
+	my ($self, $index, $type) = @_;
+	my $msg = pack('v2 V', 0x0998, $index, $type);
+	$self->sendToServer($msg);
+	debug "Sent Equip: $index Type: $type\n" , 2;
 }
 
 sub sendHomunculusCommand {

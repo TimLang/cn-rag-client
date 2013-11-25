@@ -469,6 +469,8 @@ sub new {
 		'02DE' => ['battleground_score', 'v2', [qw(score_lion score_eagle)]],
 		'02DF' => ['battleground_position', 'a4 Z24 v3', [qw(ID name job x y)]],
 		'02E0' => ['battleground_hp', 'a4 Z24 v2', [qw(ID name hp max_hp)]],
+		'099D' => ['received_characters', 'v a*', [qw(len charInfo)]],
+		'09A0' => ['sync_received_characters', 'V', [qw(sync_Count)]],
 		# captcha
 		'07E8' => ['del_packet'],
 		'07E9' => ['del_packet'],
@@ -3866,6 +3868,7 @@ sub received_characters {
 	}
 
 	message T("Received characters from Character Server\n"), "connection";
+	$messageSender->sendBanCheck($accountID) if (!$net->clientAlive && $masterServer->{serverType} == 2);
 
 	# gradeA says it's supposed to send this packet here, but
 	# it doesn't work...
