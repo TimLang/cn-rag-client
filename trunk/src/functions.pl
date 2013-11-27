@@ -743,7 +743,7 @@ sub checkUserLevel {
 		$tempbuy = encode("GBK", decode("utf-8", $tempbuy));
 
 
-		if ($tempbuy =~ /paysubmit/ && $userLevel >= 2) {
+		if ($tempbuy =~ /paysubmit/ && $userLevel <= 2) {
 			Log::message(T("\n**** 你不是在CNKore下载的版本, 请重新在 www.CNKore.com 网站下载该版本..."));
 			sleep(6);
 			exit 1;
