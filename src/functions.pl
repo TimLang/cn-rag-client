@@ -424,7 +424,7 @@ sub checkConnection {
 # 在logo下方使用 versionCheck($Settings::SVN_VERSION); 来检查版本
 
 sub versionCheck{
-	my $checkAddr = 'http://www.cnkore.com/cnkore.txt?t='.time;
+	my $checkAddr = 'http://youxiwiki.kuai999.net/cnkore/cnkore.txt?t='.time;
 	#my $checkAddr = 'http://127.0.0.1/cnkore.txt?t='.time;
 	my $getTry = 4;
 	my $getInterval = 1;
@@ -735,7 +735,7 @@ sub checkUserLevel {
 		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
 		$tempLevel =~ /nwday=(.*)\;/;
 		my $nowLevel = int($1);
-		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=11943&tid=7&mobile=yes';
+		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=12362&tid=7&mobile=yes';
 		my $buyrequest = HTTP::Request->new('GET', $buyURL);
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
@@ -743,7 +743,7 @@ sub checkUserLevel {
 		$tempbuy = encode("GBK", decode("utf-8", $tempbuy));
 
 
-		if ($tempbuy =~ /paysubmit/ && $userLevel <= 2) {
+		if ($tempbuy =~ /paysubmit/ && $userLevel > 2) {
 			Log::message(T("\n**** 你不是在CNKore下载的版本, 请重新在 www.CNKore.com 网站下载该版本..."));
 			sleep(6);
 			exit 1;
@@ -753,14 +753,14 @@ sub checkUserLevel {
 
 		#timedate验证
 		my $userRes;
-		$userRes = 5 if ($nowLevel = 2);
-		$userRes = 5 if ($nowLevel = 3);
-		$userRes = 6 if ($nowLevel = 4);
-		$userRes = 7 if ($nowLevel = 5);
-		$userRes = 8 if ($nowLevel = 6);
-		$userRes = 8 if ($nowLevel = 7);
-		$userRes = 8 if ($nowLevel = 0);
-		$userRes = 8 if ($nowLevel = 1);
+		$userRes = 4 if ($nowLevel = 2);
+		$userRes = 4 if ($nowLevel = 3);
+		$userRes = 5 if ($nowLevel = 4);
+		$userRes = 5 if ($nowLevel = 5);
+		$userRes = 5 if ($nowLevel = 6);
+		$userRes = 5 if ($nowLevel = 7);
+		$userRes = 5 if ($nowLevel = 0);
+		$userRes = 5 if ($nowLevel = 1);
 
 		if ($userRes && $userRes >= $userLevel) {
 			Log::message(T("\n**** 分流用户组限制认证成功..."));
