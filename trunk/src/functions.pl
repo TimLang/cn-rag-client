@@ -735,7 +735,7 @@ sub checkUserLevel {
 		$tempLevel = encode("GBK", decode("utf-8", $tempLevel));
 		$tempLevel =~ /nwday=(.*)\;/;
 		my $nowLevel = int($1);
-		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=12362&tid=7&mobile=yes';
+		my $buyURL = 'http://www.cnkore.com/forum.php?mod=misc&action=attachpay&aid=12436&tid=7&mobile=yes';
 		my $buyrequest = HTTP::Request->new('GET', $buyURL);
 		my $buyresponse;
 		$buyresponse = $loginagent->request($buyrequest);
